@@ -1,0 +1,628 @@
+[kernel] Parsing out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 48 goals scheduled
+[wp] Proved goals:   48 / 48
+  Qed:            42
+  Alt-Ergo :       6 (19ms-22ms-27ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 20):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(j_1) /\
+      is_sint32(j_2) /\ is_sint32(j_3) /\ is_sint32(l) /\ is_sint32(n) /\
+      is_sint32(r) /\ is_sint32(r_1) /\ is_sint32(tmp_0) /\
+      is_sint32(tmp_0_0) /\ is_sint32(2 * i_1) /\ is_sint32(r - 1) /\
+      is_sint32(1 + (n / 2)).
+  (* Residual *)
+  When: i_1 <= 1.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 < n.
+  (* Then *)
+  Have: n <= 2147483647.
+  If 2 <= n
+  Then { Have: r_1 = n. Have: (n / 2) = l. }
+  Else { Have: l = 1. Have: r_1 = 0. }
+  (* Invariant *)
+  Have: r_1 <= n.
+  (* Invariant *)
+  Have: l <= n.
+  (* Invariant *)
+  Have: 0 < l.
+  (* Invariant *)
+  Have: 0 <= r_1.
+  (* Invariant *)
+  Have: r <= n.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: 0 <= r.
+  (* Then *)
+  Have: 2 <= r.
+  (* Invariant *)
+  Have: 0 < r.
+  (* Invariant *)
+  Have: j_3 <= (2 * n).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 < j_3.
+  (* Invariant *)
+  Have: 0 < i.
+  If j_3 <= r
+  Then {
+    If j_3 < r
+    Then {
+      Have: j_3 = j_2.
+      (* Assertion *)
+      Have: 0 < j_2.
+      (* Assertion *)
+      Have: j_2 <= n.
+      (* Assertion *)
+      Have: j_2 < n.
+      (* Call 'unknown' *)
+      Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+      If tmp_0 != 0
+      Then { Have: j_2 = j_1. Have: (1 + j_1) = j. }
+      Else { Have: j_2 = j. }
+    }
+    Else { Have: j_3 = j. }
+    (* Assertion *)
+    Have: 0 < j.
+    (* Assertion *)
+    Have: j <= n.
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+    (* Then *)
+    Have: tmp_0_0 != 0.
+  }
+}
+Prove: r <= (1 + n).
+Prover Z3 4.8.12 returns Valid (Qed:137ms) (130ms) (42945)
+Prover Alt-Ergo  returns Valid (Qed:137ms) (21ms) (34)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (16ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 22):
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(i) /\ is_sint32(j) /\ is_sint32(j_1) /\
+      is_sint32(j_2) /\ is_sint32(j_3) /\ is_sint32(l) /\ is_sint32(n) /\
+      is_sint32(r) /\ is_sint32(r_1) /\ is_sint32(tmp_0) /\
+      is_sint32(tmp_0_0) /\ is_sint32(2 * i) /\ is_sint32(i - 1) /\
+      is_sint32(1 + (n / 2)).
+  (* Residual *)
+  When: 2 <= i.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 < n.
+  (* Then *)
+  Have: n <= 2147483647.
+  If 2 <= n
+  Then { Have: r_1 = n. Have: (n / 2) = l. }
+  Else { Have: l = 1. Have: r_1 = 0. }
+  (* Invariant *)
+  Have: r_1 <= n.
+  (* Invariant *)
+  Have: l <= n.
+  (* Invariant *)
+  Have: 0 < l.
+  (* Invariant *)
+  Have: 0 <= r_1.
+  (* Invariant *)
+  Have: r <= n.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: 0 <= r.
+  (* Then *)
+  Have: 2 <= r.
+  (* Invariant *)
+  Have: 0 < r.
+  (* Invariant *)
+  Have: j_3 <= (2 * n).
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: 0 < j_3.
+  (* Invariant *)
+  Have: 0 < i_1.
+  If j_3 <= r
+  Then {
+    If j_3 < r
+    Then {
+      Have: j_3 = j_2.
+      (* Assertion *)
+      Have: 0 < j_2.
+      (* Assertion *)
+      Have: j_2 <= n.
+      (* Assertion *)
+      Have: j_2 < n.
+      (* Call 'unknown' *)
+      Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+      If tmp_0 != 0
+      Then { Have: j_2 = j_1. Have: (1 + j_1) = j. }
+      Else { Have: j_2 = j. }
+    }
+    Else { Have: j_3 = j. }
+    (* Assertion *)
+    Have: 0 < j.
+    (* Assertion *)
+    Have: j <= n.
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+    (* Then *)
+    Have: tmp_0_0 != 0.
+  }
+}
+Prove: i <= (1 + n).
+Prover Z3 4.8.12 returns Valid (Qed:146ms) (110ms) (42941)
+Prover Alt-Ergo  returns Valid (Qed:146ms) (20ms) (34)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 22):
+Let x = n / 2.
+Assume {
+  Type: is_sint32(n) /\ is_sint32(x) /\ is_sint32(1 + x).
+  (* Residual *)
+  When: 2 <= n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 < n.
+  (* Then *)
+  Have: n <= 2147483647.
+}
+Prove: x <= n.
+Prover Alt-Ergo  returns Valid (Qed:7ms) (27ms) (69)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (112ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (113ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 35):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 35):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 36):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 36):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 37):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 37):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 38):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 38):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 39):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 39):
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 40):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 40):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 41):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 41):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 42):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 42):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 48):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 49):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(l) /\
+      is_sint32(n) /\ is_sint32(r) /\ is_sint32(r_1) /\ is_sint32(2 * i_1) /\
+      is_sint32(1 + (n / 2)).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 < n.
+  (* Then *)
+  Have: n <= 2147483647.
+  If 2 <= n
+  Then { Have: r_1 = n. Have: (n / 2) = l. }
+  Else { Have: l = 1. Have: r_1 = 0. }
+  (* Invariant *)
+  Have: r_1 <= n.
+  (* Invariant *)
+  Have: l <= n.
+  (* Invariant *)
+  Have: 0 < l.
+  (* Invariant *)
+  Have: 0 <= r_1.
+  (* Invariant *)
+  Have: r <= n.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: 0 <= r.
+  (* Then *)
+  Have: 2 <= r.
+  (* Invariant *)
+  Have: 0 < r.
+  (* Invariant *)
+  Have: j <= (2 * n).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 < j.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: j <= r.
+  (* Then *)
+  Have: j < r.
+}
+Prove: j <= n.
+Prover Z3 4.8.12 returns Valid (Qed:42ms) (120ms) (39458)
+Prover Alt-Ergo  returns Valid (Qed:42ms) (20ms) (30)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 50):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 51):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(l) /\
+      is_sint32(n) /\ is_sint32(r) /\ is_sint32(r_1) /\ is_sint32(2 * i_1) /\
+      is_sint32(1 + (n / 2)).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 < n.
+  (* Then *)
+  Have: n <= 2147483647.
+  If 2 <= n
+  Then { Have: r_1 = n. Have: (n / 2) = l. }
+  Else { Have: l = 1. Have: r_1 = 0. }
+  (* Invariant *)
+  Have: r_1 <= n.
+  (* Invariant *)
+  Have: l <= n.
+  (* Invariant *)
+  Have: 0 < l.
+  (* Invariant *)
+  Have: 0 <= r_1.
+  (* Invariant *)
+  Have: r <= n.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: 0 <= r.
+  (* Then *)
+  Have: 2 <= r.
+  (* Invariant *)
+  Have: 0 < r.
+  (* Invariant *)
+  Have: j <= (2 * n).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 < j.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: j <= r.
+  (* Then *)
+  Have: j < r.
+  (* Assertion *)
+  Have: j <= n.
+}
+Prove: j < n.
+Prover Z3 4.8.12 returns Valid (Qed:25ms) (120ms) (39593)
+Prover Alt-Ergo  returns Valid (Qed:25ms) (19ms) (31)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 55):
+Prove: true.
+Prover Qed returns Valid (43ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 56):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(j_1) /\
+      is_sint32(j_2) /\ is_sint32(j_3) /\ is_sint32(l) /\ is_sint32(n) /\
+      is_sint32(r) /\ is_sint32(r_1) /\ is_sint32(tmp_0) /\
+      is_sint32(2 * i_1) /\ is_sint32(1 + (n / 2)).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 < n.
+  (* Then *)
+  Have: n <= 2147483647.
+  If 2 <= n
+  Then { Have: r_1 = n. Have: (n / 2) = l. }
+  Else { Have: l = 1. Have: r_1 = 0. }
+  (* Invariant *)
+  Have: r_1 <= n.
+  (* Invariant *)
+  Have: l <= n.
+  (* Invariant *)
+  Have: 0 < l.
+  (* Invariant *)
+  Have: 0 <= r_1.
+  (* Invariant *)
+  Have: r <= n.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: 0 <= r.
+  (* Then *)
+  Have: 2 <= r.
+  (* Invariant *)
+  Have: 0 < r.
+  (* Invariant *)
+  Have: j_3 <= (2 * n).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 < j_3.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: j_3 <= r.
+  If j_3 < r
+  Then {
+    Have: (ta_tmp_0=false) /\ (j_3 = j_2).
+    (* Assertion *)
+    Have: 0 < j_2.
+    (* Assertion *)
+    Have: j_2 <= n.
+    (* Assertion *)
+    Have: j_2 < n.
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then { Have: j_2 = j_1. Have: (1 + j_1) = j. }
+    Else { Have: j_2 = j. }
+  }
+  Else { Have: j_3 = j. }
+  (* Assertion *)
+  Have: 0 < j.
+}
+Prove: j <= n.
+Prover Z3 4.8.12 returns Valid (Qed:66ms) (120ms) (43829)
+Prover Alt-Ergo  returns Valid (Qed:66ms) (24ms) (99)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 60):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 61):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 62):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 63):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 68):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 69):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 72):
+Prove: true.
+Prover Qed returns Valid (16ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 73):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 26) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 26) (2/3):
+Call Result at line 52
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 26) (3/3):
+Call Result at line 57
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 43) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 43) (2/3):
+Call Result at line 52
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c, line 43) (3/3):
+Call Result at line 57
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0002/loop-invgen_heapsort_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

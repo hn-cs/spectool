@@ -1,0 +1,388 @@
+[kernel] Parsing out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:43: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] FRAMAC_SHARE/libc/stdlib.h:394: Warning: 
+  Allocation, initialization and danglingness not yet implemented
+  (allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+[wp] out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: node*)
+[wp] out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:42: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 18 goals scheduled
+[wp] [Timeout] typed_append_to_list_assigns_normal_part1 (Qed 1ms) (Alt-Ergo 8s) (Stronger, 2 warnings)
+[wp] [Timeout] typed_append_to_list_assigns_exit (Qed 5ms) (Alt-Ergo 8s) (Stronger, 2 warnings)
+[wp] [Timeout] typed_append_to_list_assigns_normal_part3 (Qed 2ms) (Alt-Ergo 8s) (Stronger, 2 warnings)
+[wp] [Timeout] typed_append_to_list_assigns_normal_part4 (Qed 2ms) (Z3 8s) (Stronger, 2 warnings)
+[wp] [Timeout] typed_append_to_list_assigns_normal_part5 (Qed 2ms) (Z3 8s) (Stronger, 2 warnings)
+[wp] [Timeout] typed_append_to_list_low_ensures (Qed 7ms) (Z3 8s) (Stronger, 2 warnings)
+[wp] [Timeout] typed_append_to_list_low_ensures_3 (Qed 14ms) (Alt-Ergo 8s) (Stronger, 2 warnings)
+[wp] [Timeout] typed_append_to_list_low_ensures_4 (Qed 4ms) (Z3 8s) (Stronger, 2 warnings)
+[wp] [Timeout] typed_append_to_list_high_ensures_2 (Qed 4ms) (Alt-Ergo 8s) (Stronger, 2 warnings)
+[wp] [Timeout] typed_append_to_list_high_ensures_3 (Qed 9ms) (Z3 8s) (Stronger, 2 warnings)
+[wp] Proved goals:    8 / 18
+  Qed:             8
+  Timeout:        10
+------------------------------------------------------------
+  Function append_to_list
+------------------------------------------------------------
+
+Goal Complete behaviors 'high', 'low':
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Disjoint behaviors 'high', 'low':
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 18) in 'append_to_list':
+Call Effect at line 34
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Assume {
+  (* Heap *)
+  Type: (region(list_0.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, list_0, 1).
+}
+Prove: false.
+Prover Z3 4.8.12 returns Unknown (Qed:5ms)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 18) in 'append_to_list' (1/6):
+Call Effect at line 34
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Assume {
+  (* Heap *)
+  Type: (region(list_0.base) <= 0) /\ linked(Malloc_0) /\
+      is_sint32(fc_heap_status_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, list_0, 1).
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, 16)) -> (null = malloc_0)).
+}
+Prove: false.
+Prover Z3 4.8.12 returns Unknown (Qed:1ms)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 18) in 'append_to_list' (2/6):
+Call Result at line 34
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 18) in 'append_to_list' (3/6):
+Effect at line 35
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shiftfield_F4_node_next(node_0).
+Assume {
+  (* Heap *)
+  Type: (region(list_0.base) <= 0) /\ linked(Malloc_0) /\
+      is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a, 1).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, list_0, 1).
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, 16)) -> (null = malloc_0)).
+}
+Prove: a = list_0.
+Prover Z3 4.8.12 returns Unknown (Qed:2ms)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 18) in 'append_to_list' (4/6):
+Effect at line 36
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shiftfield_F4_node_value(node_0).
+Assume {
+  (* Heap *)
+  Type: (region(list_0.base) <= 0) /\ linked(Malloc_0) /\
+      is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a, 1).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, list_0, 1).
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, 16)) -> (null = malloc_0)).
+}
+Prove: a = list_0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 18) in 'append_to_list' (5/6):
+Effect at line 37
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shiftfield_F4_node_expected_list(node_0).
+Assume {
+  (* Heap *)
+  Type: (region(list_0.base) <= 0) /\ linked(Malloc_0) /\
+      is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a, 1).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, list_0, 1).
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, 16)) -> (null = malloc_0)).
+}
+Prove: a = list_0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 18) in 'append_to_list' (6/6):
+Effect at line 38
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function append_to_list with behavior high
+------------------------------------------------------------
+
+Goal Post-condition for 'high' (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 27) in 'append_to_list':
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Post-condition for 'high' (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 28) in 'append_to_list':
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Assume {
+  Type: is_sint32(exp_0) /\ is_sint32(val_0).
+  (* Heap *)
+  Type: (region(list_0.base) <= 0) /\ linked(Malloc_0) /\
+      is_sint32(fc_heap_status_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, list_0, 1).
+  (* Pre-condition for 'high' *)
+  Have: 0 <= val_0.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, 16)) -> (null = malloc_0)).
+}
+Prove: exp_0 = 1.
+Prover Z3 4.8.12 returns Unknown (Qed:4ms)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Post-condition for 'high' (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 29) in 'append_to_list':
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shiftfield_F4_node_next(node_0).
+Let a_1 = Mptr_0[list_0].
+Assume {
+  Type: is_sint32(val_0).
+  (* Heap *)
+  Type: (region(list_0.base) <= 0) /\ framed(Mptr_0) /\ linked(Malloc_0) /\
+      is_sint32(fc_heap_status_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, list_0, 1).
+  (* Pre-condition for 'high' *)
+  Have: 0 <= val_0.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, 16)) -> (null = malloc_0)).
+}
+Prove: Mptr_0[a <- a_1][list_0 <- node_0][a] = a_1.
+Prover Z3 4.8.12 returns Timeout (Qed:9ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:9ms) (8s)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function append_to_list with behavior low
+------------------------------------------------------------
+
+Goal Post-condition for 'low' (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 21) in 'append_to_list':
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Assume {
+  Type: is_sint32(val_0).
+  (* Heap *)
+  Type: (region(list_0.base) <= 0) /\ framed(Mptr_0) /\ linked(Malloc_0) /\
+      is_sint32(fc_heap_status_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, list_0, 1).
+  (* Pre-condition for 'low' *)
+  Have: val_0 < 0.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, 16)) -> (null = malloc_0)).
+}
+Prove: valid_rw(Malloc_0, Mptr_0[list_0], 3).
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Post-condition for 'low' (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 22) in 'append_to_list':
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Post-condition for 'low' (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 23) in 'append_to_list':
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Assume {
+  Type: is_sint32(exp_0) /\ is_sint32(val_0).
+  (* Heap *)
+  Type: (region(list_0.base) <= 0) /\ linked(Malloc_0) /\
+      is_sint32(fc_heap_status_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, list_0, 1).
+  (* Pre-condition for 'low' *)
+  Have: val_0 < 0.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, 16)) -> (null = malloc_0)).
+}
+Prove: exp_0 = (-1).
+Prover Z3 4.8.12 returns Unknown (Qed:14ms)
+Prover Alt-Ergo  returns Timeout (Qed:14ms) (8s)
+
+------------------------------------------------------------
+
+Goal Post-condition for 'low' (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 24) in 'append_to_list':
+out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:34: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shiftfield_F4_node_next(node_0).
+Let a_1 = Mptr_0[list_0].
+Assume {
+  Type: is_sint32(val_0).
+  (* Heap *)
+  Type: (region(list_0.base) <= 0) /\ framed(Mptr_0) /\ linked(Malloc_0) /\
+      is_sint32(fc_heap_status_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, list_0, 1).
+  (* Pre-condition for 'low' *)
+  Have: val_0 < 0.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, 16)) -> (null = malloc_0)).
+}
+Prove: Mptr_0[a <- a_1][list_0 <- node_0][a] = a_1.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function create_list
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 17) in 'append_to_list'' in 'create_list' at call 'append_to_list' (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 45)
+:
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 17) in 'append_to_list'' in 'create_list' at call 'append_to_list' (file out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c, line 47)
+:
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:18: Warning: 
+  No \from specification for assigned pointer '*list'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:40: Warning: 
+  No 'assigns' specification for function 'create_list'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/heap-data_quick_sort_split/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_0001/heap-data_quick_sort_split_gen_0.c:51: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

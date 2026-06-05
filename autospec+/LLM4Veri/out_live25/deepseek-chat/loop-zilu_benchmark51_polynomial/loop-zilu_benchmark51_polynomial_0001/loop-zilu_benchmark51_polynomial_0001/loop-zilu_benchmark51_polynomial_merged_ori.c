@@ -1,0 +1,23 @@
+#include<limits.h>
+/*@
+assigns \nothing;
+ensures INT_MIN <= \result < INT_MAX;
+*/
+int unknown();
+#include <assert.h>
+int main() {
+  int x = unknown();
+  if (!((x>=0) && (x<=50))) return 0;
+  /*@
+  loop invariant x <= 51;
+  loop invariant 0 <= x;
+  loop assigns x;
+  */
+  while (unknown()) {
+    if (x>50) x++;
+    if (x == 0) { x ++;
+    } else x--;
+  }
+  //@assert((x>=0) && (x<=50));
+  return 0;
+}

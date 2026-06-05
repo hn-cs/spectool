@@ -1,0 +1,42 @@
+[kernel] Parsing out/deepseek-chat/code2_92/code2_92_0001/code2_92_0001/code2_92_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 5 goals scheduled
+[wp] Proved goals:    5 / 5
+  Qed:             5
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_92/code2_92_0001/code2_92_0001/code2_92_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_92/code2_92_0001/code2_92_0001/code2_92_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (0.59ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_92/code2_92_0001/code2_92_0001/code2_92_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_92/code2_92_0001/code2_92_0001/code2_92_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/code2_92/code2_92_0001/code2_92_0001/code2_92_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/code2_92/code2_92_0001/code2_92_0001/code2_92_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

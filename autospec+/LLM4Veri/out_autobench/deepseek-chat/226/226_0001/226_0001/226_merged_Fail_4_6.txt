@@ -1,0 +1,62 @@
+[kernel] Parsing out/deepseek-chat/226/226_0001/226_0001/226_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 6 goals scheduled
+[wp] [Timeout] typed_main_assert_2 (Qed 0.58ms) (Z3 8s)
+[wp] [Timeout] typed_main_assert (Qed 3ms) (Z3 8s)
+[wp] Proved goals:    4 / 6
+  Qed:             4
+  Timeout:         2
+------------------------------------------------------------
+  Function div_rem
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/226/226_0001/226_0001/226_merged.c, line 4) in 'div_rem' (1/2):
+Effect at line 7
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/226/226_0001/226_0001/226_merged.c, line 4) in 'div_rem' (2/2):
+Effect at line 8
+Prove: true.
+Prover Qed returns Valid (0.57ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/226/226_0001/226_0001/226_merged.c, line 15):
+Assume { Type: is_uint32(q). }
+Prove: q = 3.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/226/226_0001/226_0001/226_merged.c, line 16):
+Assume { Type: is_uint32(r). }
+Prove: r = 1.
+Prover Z3 4.8.12 returns Timeout (Qed:0.58ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.58ms) (8s)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/226/226_0001/226_0001/226_merged.c, line 2) in 'div_rem'' in 'main' at call 'div_rem' (file out/deepseek-chat/226/226_0001/226_0001/226_merged.c, line 14)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/226/226_0001/226_0001/226_merged.c, line 3) in 'div_rem'' in 'main' at call 'div_rem' (file out/deepseek-chat/226/226_0001/226_0001/226_merged.c, line 14)
+:
+Prove: true.
+Prover Qed returns Valid (1.00ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/226/226_0001/226_0001/226_merged.c:12: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

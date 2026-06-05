@@ -1,0 +1,92 @@
+[kernel] Parsing out/gpt-5.5/loop-zilu_benchmark17_conjunctive/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-zilu_benchmark17_conjunctive/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 7 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_established (Qed 1ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 8ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_3_established (Qed 4ms) (Z3 8s)
+[wp] Proved goals:    4 / 7
+  Qed:             4
+  Timeout:         3
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark17_conjunctive/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_merged.c, line 14):
+Let x = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Then *)
+  Have: i < n.
+}
+Prove: x != n.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark17_conjunctive/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_merged.c, line 14):
+Assume {
+  Type: is_sint32(n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+}
+Prove: n != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark17_conjunctive/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark17_conjunctive/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark17_conjunctive/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark17_conjunctive/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_merged.c, line 16):
+Assume {
+  Type: is_sint32(n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Invariant *)
+  Have: n != 0.
+}
+Prove: 0 <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-zilu_benchmark17_conjunctive/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-zilu_benchmark17_conjunctive/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_0001/loop-zilu_benchmark17_conjunctive_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

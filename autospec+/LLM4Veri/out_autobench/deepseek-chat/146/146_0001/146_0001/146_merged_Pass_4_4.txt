@@ -1,0 +1,54 @@
+[kernel] Parsing out/deepseek-chat/146/146_0001/146_0001/146_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/146/146_0001/146_0001/146_merged.c:17: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/146/146_0001/146_0001/146_merged.c:8: Warning: 
+  Neither code nor specification for function unknown1, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 4 goals scheduled
+[wp] Proved goals:    4 / 4
+  Qed:             3
+  Alt-Ergo :       1 (17ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/146/146_0001/146_0001/146_merged.c, line 13):
+Assume {
+  Type: is_sint32(k) /\ is_sint32(tmp_0) /\ is_sint32(1 + k).
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: tmp_0 != 0.
+}
+Prove: (-1) <= k.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (120ms) (34690)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (17ms) (18)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/146/146_0001/146_0001/146_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/146/146_0001/146_0001/146_merged.c, line 14) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/146/146_0001/146_0001/146_merged.c, line 14) (2/2):
+Call Result at line 17
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/146/146_0001/146_0001/146_merged.c:2: Warning: 
+  No 'assigns' specification for function 'unknown1'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/146/146_0001/146_0001/146_merged.c:8: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

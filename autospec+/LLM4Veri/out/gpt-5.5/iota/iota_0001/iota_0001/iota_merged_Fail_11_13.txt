@@ -1,0 +1,253 @@
+[kernel] Parsing out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_iota_loop_invariant_2_preserved (Qed 6ms) (Z3 8s)
+[wp] [Timeout] typed_iota_loop_invariant_2_established (Qed 3ms) (Z3 8s)
+[wp] Proved goals:   11 / 13
+  Qed:             7
+  Alt-Ergo :       4 (25ms-39ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function iota
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 24):
+Let x = 1 + i.
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(v) /\ is_sint32(1 + v) /\
+      is_sint32(v - i).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      ((i
+        + havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), n)
+            [shift_sint32(a, i_1)]) = (v + i_1)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+}
+Prove: x = to_uint32(x).
+Prover Z3 4.8.12 returns Valid (Qed:11ms) (130ms) (85086)
+Prover Alt-Ergo  returns Valid (Qed:11ms) (30ms) (55)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 25):
+Let x = n + v.
+Let x_1 = 1 + v_1.
+Let x_2 = -v.
+Assume {
+  Type: is_uint32(n) /\ is_sint32(v) /\ is_sint32(v_1) /\ is_sint32(x_1) /\
+      is_uint32(v_1 - v) /\ is_uint32(1 + v_1 - v).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: x != v_1.
+  (* Invariant *)
+  Have: v_1 <= x.
+  (* Invariant *)
+  Have: forall i : Z. let x_3 = v + i in ((0 <= i) -> ((x_3 < v_1) ->
+      (havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), n)[shift_sint32(a, i)] =
+       x_3))).
+  (* Invariant *)
+  Have: v <= v_1.
+  (* Then *)
+  Have: v_1 < x.
+}
+Prove: x != x_1.
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 25):
+Assume { Type: is_uint32(n). }
+Prove: n != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 27):
+Let x = 1 + i.
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), n).
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(tmp_0) /\
+      is_sint32(1 + tmp_0) /\ is_sint32(tmp_0 - i).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Invariant *)
+  Have: x = to_uint32(x).
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      ((i + a_1[shift_sint32(a, i_2)]) = (tmp_0 + i_2)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: x != n.
+  (* Invariant *)
+  Have: i < n.
+}
+Prove: (i + a_1[shift_sint32(a, i) <- tmp_0][shift_sint32(a, i_1)]) =
+    (i_1 + tmp_0).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (160ms) (114633)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (36ms) (129)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (0.64ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 28):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), n).
+Let x = -v.
+Let x_1 = tmp_0 - v.
+Let x_2 = n + v.
+Let x_3 = 1 + tmp_0.
+Assume {
+  Type: is_uint32(n) /\ is_sint32(tmp_0) /\ is_sint32(v) /\ is_sint32(x_3) /\
+      is_uint32(x_1) /\ is_uint32(1 + tmp_0 - v).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: x_2 != tmp_0.
+  (* Invariant *)
+  Have: tmp_0 <= x_2.
+  (* Invariant *)
+  Have: forall i : Z. let x_4 = v + i in ((0 <= i) -> ((x_4 < tmp_0) ->
+      (a_1[shift_sint32(a, i)] = x_4))).
+  (* Invariant *)
+  Have: v <= tmp_0.
+  (* Then *)
+  Have: tmp_0 < x_2.
+  (* Invariant *)
+  Have: x_2 != x_3.
+  (* Invariant *)
+  Have: forall i : Z. let x_4 = v + i in ((0 <= i) -> ((x_4 <= tmp_0) ->
+      (a_1[shift_sint32(a, x_1) <- tmp_0][shift_sint32(a, i)] = x_4))).
+}
+Prove: v <= x_3.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (100ms) (50193)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (25ms) (26)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 29) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 29) (2/3):
+Effect at line 34
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c, line 29) (3/3):
+Effect at line 34
+Let x = 1 + tmp_0.
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Let x_1 = -v.
+Let x_2 = tmp_0 - v.
+Let a_3 = shift_sint32(a, x_2).
+Let x_3 = n + v.
+Assume {
+  Type: is_uint32(n) /\ is_sint32(tmp_0) /\ is_sint32(v) /\ is_sint32(x) /\
+      is_uint32(x_2) /\ is_uint32(1 + tmp_0 - v).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: x_3 != tmp_0.
+  (* Invariant *)
+  Have: tmp_0 <= x_3.
+  (* Invariant *)
+  Have: forall i : Z. let x_4 = v + i in ((0 <= i) -> ((x_4 < tmp_0) ->
+      (a_2[shift_sint32(a, i)] = x_4))).
+  (* Invariant *)
+  Have: v <= tmp_0.
+  (* Then *)
+  Have: tmp_0 < x_3.
+  (* Invariant *)
+  Have: x_3 != x.
+  (* Invariant *)
+  Have: forall i : Z. let x_4 = v + i in ((0 <= i) -> ((x_4 <= tmp_0) ->
+      (a_2[a_3 <- tmp_0][shift_sint32(a, i)] = x_4))).
+  (* Invariant *)
+  Have: v <= x.
+}
+Prove: included(a_3, 1, a_1, n).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (150ms) (100990)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (39ms) (177)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c:21: Warning: 
+  No 'assigns' specification for function 'iota'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/iota/iota_0001/iota_0001/iota_merged.c:37: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

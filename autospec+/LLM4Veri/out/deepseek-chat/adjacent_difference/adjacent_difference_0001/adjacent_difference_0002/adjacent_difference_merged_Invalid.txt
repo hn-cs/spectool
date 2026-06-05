@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/adjacent_difference/adjacent_difference_0001/adjacent_difference_0002/adjacent_difference_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/adjacent_difference/adjacent_difference_0001/adjacent_difference_0002/adjacent_difference_merged.c:70: Warning: 
+  logic label `L' not found. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/adjacent_difference/adjacent_difference_0001/adjacent_difference_0002/adjacent_difference_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

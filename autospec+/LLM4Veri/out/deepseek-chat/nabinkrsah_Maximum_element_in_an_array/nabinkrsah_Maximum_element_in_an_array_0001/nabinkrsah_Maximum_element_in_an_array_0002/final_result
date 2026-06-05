@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=2, microseconds=600294), 'total_solve_time': datetime.timedelta(seconds=20, microseconds=997804), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 143, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1, 1], '1': ['loop invariant max == arr[0] || (\\exists integer k; 0 <= k < j && max == arr[k]);', 'loop invariant \\forall integer k; 0 <= k < j ==> max >= arr[k];', 'loop invariant 0 <= j;', 'loop assigns max;', 'loop assigns j;'], '2': ['requires n > 0;', 'requires \\valid(arr+(0..n-1));', 'ensures \\forall integer i; 0 <= i < n ==> \\result >= arr[i];', 'assigns \\nothing;'], '3': [], 'MSLines': ['#include<limits.h>\n', '/* 2. FUNC CONTRACT */\nint Max_in_Array(int arr[],int n)\n', '{\n', ' int max=arr[0];\n', ' /* 1. LOOP INVARIANT */\n for(int j=0;j<n;j++)\n', ' {\n', ' if(arr[j]>max)\n', ' {\n', ' max=arr[j];\n', ' }\n', ' }\n', ' return max;\n', '}\n', '/* 3. FUNC CONTRACT */\nint main()\n', '{\n', 'int n=5;\n', 'int arr[]={50,44,33,2,88};\n', 'int k=Max_in_Array(arr,n);\n', '//@ assert \\forall integer i; 0<=i<n ==> k>=arr[i];\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

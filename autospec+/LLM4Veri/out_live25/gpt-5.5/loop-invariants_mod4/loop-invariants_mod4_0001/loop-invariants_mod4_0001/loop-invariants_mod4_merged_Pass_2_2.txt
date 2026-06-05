@@ -1,0 +1,28 @@
+[kernel] Parsing out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0001/loop-invariants_mod4_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0001/loop-invariants_mod4_merged.c:12: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 2 goals scheduled
+[wp] Proved goals:    2 / 2
+  Qed:             2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0001/loop-invariants_mod4_merged.c, line 10) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0001/loop-invariants_mod4_merged.c, line 10) (2/2):
+Call Result at line 12
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0001/loop-invariants_mod4_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

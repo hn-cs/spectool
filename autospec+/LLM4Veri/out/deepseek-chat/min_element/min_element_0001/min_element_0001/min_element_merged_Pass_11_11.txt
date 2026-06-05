@@ -1,0 +1,141 @@
+[kernel] Parsing out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] Proved goals:   11 / 11
+  Qed:             9
+  Alt-Ergo :       2 (30ms-36ms)
+------------------------------------------------------------
+  Function min_element
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c, line 58):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c, line 58):
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c, line 59):
+Let x = Mint_0[shift_sint32(a, i)].
+Let x_1 = Mint_0[shift_sint32(a, min_1)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(min_0) /\ is_uint32(min_1) /\
+      is_uint32(n) /\ is_sint32(x) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Then *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: min_1 < n.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (x_1 <= Mint_0[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: 0 <= min_1.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x < x_1
+  Then { Have: min_0 = i. }
+  Else { Have: min_1 = min_0. }
+  (* Invariant *)
+  Have: min_0 < n.
+}
+Prove: to_uint32(1 + i) <= n.
+Prover Z3 4.8.12 returns Valid (Qed:13ms) (150ms) (113919)
+Prover Alt-Ergo  returns Valid (Qed:13ms) (30ms) (93)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c, line 59):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c, line 60):
+Let x = to_uint32(1 + i_1).
+Let x_1 = Mint_0[shift_sint32(a, i_1)].
+Let x_2 = Mint_0[shift_sint32(a, min_1)].
+Assume {
+  Type: is_uint32(i_1) /\ is_uint32(min_0) /\ is_uint32(min_1) /\
+      is_uint32(n) /\ is_sint32(x_1) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i < x).
+  (* Then *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: min_1 < n.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (x_2 <= Mint_0[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: 0 <= min_1.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  If x_1 < x_2
+  Then { Have: min_0 = i_1. }
+  Else { Have: min_1 = min_0. }
+  (* Invariant *)
+  Have: min_0 < n.
+  (* Invariant *)
+  Have: x <= n.
+}
+Prove: Mint_0[shift_sint32(a, min_0)] <= Mint_0[shift_sint32(a, i)].
+Prover Alt-Ergo  returns Valid (Qed:10ms) (36ms) (142)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c, line 60):
+Prove: true.
+Prover Qed returns Valid (0.59ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c, line 61):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c, line 61):
+Prove: true.
+Prover Qed returns Valid (0.77ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c, line 62):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c, line 62):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c, line 63):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/min_element/min_element_0001/min_element_0001/min_element_merged.c:53: Warning: 
+  No 'assigns' specification for function 'min_element'.
+  Callers assumptions might be imprecise.

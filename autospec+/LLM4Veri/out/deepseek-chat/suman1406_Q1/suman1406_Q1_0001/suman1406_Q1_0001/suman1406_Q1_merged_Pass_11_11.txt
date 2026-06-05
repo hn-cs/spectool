@@ -1,0 +1,130 @@
+[kernel] Parsing out/deepseek-chat/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] Proved goals:   11 / 11
+  Qed:             8
+  Alt-Ergo :       3 (16ms-18ms)
+------------------------------------------------------------
+  Function calculateGrade
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 4) in 'calculateGrade':
+Assume {
+  Type: is_sint32(calculateGrade_0) /\ is_sint32(mark_0).
+  (* Residual *)
+  When: 401 <= mark_0.
+  (* Residual *)
+  When: 0 < mark_0.
+  (* Pre-condition *)
+  Have: mark_0 <= 1000.
+  If mark_0 <= 100
+  Then { Have: calculateGrade_0 = 1. }
+  Else {
+    If mark_0 <= 200
+    Then { Have: calculateGrade_0 = 2. }
+    Else {
+      If mark_0 <= 300
+      Then { Have: calculateGrade_0 = 3. }
+      Else { Have: calculateGrade_0 = 0. }
+    }
+  }
+}
+Prove: calculateGrade_0 = 0.
+Prover Z3 4.8.12 returns Valid (Qed:28ms) (120ms) (35230)
+Prover Alt-Ergo  returns Valid (Qed:28ms) (18ms) (23)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 5) in 'calculateGrade':
+Assume {
+  Type: is_sint32(calculateGrade_0) /\ is_sint32(mark_0).
+  (* Residual *)
+  When: 0 < mark_0.
+  (* Goal *)
+  When: (301 <= mark_0) /\ (mark_0 <= 400).
+  (* Pre-condition *)
+  Have: mark_0 <= 1000.
+  If mark_0 <= 100
+  Then { Have: calculateGrade_0 = 1. }
+  Else {
+    If mark_0 <= 200
+    Then { Have: calculateGrade_0 = 2. }
+    Else { Have: calculateGrade_0 = 4. }
+  }
+}
+Prove: calculateGrade_0 = 4.
+Prover Z3 4.8.12 returns Valid (Qed:17ms) (120ms) (35162)
+Prover Alt-Ergo  returns Valid (Qed:17ms) (18ms) (23)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 6) in 'calculateGrade':
+Assume {
+  Type: is_sint32(mark_0).
+  (* Residual *)
+  When: mark_0 <= 100.
+  (* Residual *)
+  When: 0 < mark_0.
+  (* Goal *)
+  When: (201 <= mark_0) /\ (mark_0 <= 300).
+  (* Pre-condition *)
+  Have: mark_0 <= 1000.
+}
+Prove: false.
+Prover Alt-Ergo  returns Valid (Qed:14ms) (16ms) (12)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 7) in 'calculateGrade':
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 8) in 'calculateGrade':
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 9) in 'calculateGrade' (1/6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 9) in 'calculateGrade' (2/6):
+Effect at line 14
+Prove: true.
+Prover Qed returns Valid (0.66ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 9) in 'calculateGrade' (3/6):
+Effect at line 17
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 9) in 'calculateGrade' (4/6):
+Effect at line 20
+Prove: true.
+Prover Qed returns Valid (0.86ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 9) in 'calculateGrade' (5/6):
+Effect at line 23
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 9) in 'calculateGrade' (6/6):
+Effect at line 25
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------

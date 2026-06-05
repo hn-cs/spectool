@@ -1,0 +1,116 @@
+[kernel] Parsing out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c:22: Warning: 
+  Calling function unknown2 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c:40: Warning: 
+  Calling function unknown3 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c:11: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c:5: Warning: 
+  Neither code nor specification for function unknown1, generating default assigns from the prototype
+[kernel:annot:missing-spec] out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c:5: Warning: 
+  Neither code nor specification for function unknown2, generating default assigns from the prototype
+[kernel:annot:missing-spec] out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c:5: Warning: 
+  Neither code nor specification for function unknown3, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c:11: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 10 goals scheduled
+[wp] [Timeout] typed_foo_loop_invariant_established (Qed 3ms) (Z3 3s)
+[wp] [Timeout] typed_foo_loop_invariant_2_established (Qed 3ms) (Z3 3s)
+[wp] Proved goals:    8 / 10
+  Qed:             8
+  Timeout:         2
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c, line 15):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c, line 15):
+Assume {
+  Type: is_sint32(k) /\ is_sint32(tmp_1_0) /\ is_sint32(y) /\ is_sint32(z).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+}
+Prove: (k + y) = z.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (3s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (3s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c, line 16):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c, line 16):
+Assume {
+  Type: is_sint32(k) /\ is_sint32(tmp_1_0) /\ is_sint32(x) /\ is_sint32(z) /\
+      is_sint32(z - k).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+}
+Prove: (k + x) = z.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (3s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (3s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c, line 17):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c, line 18) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c, line 18) (2/2):
+Call Result at line 22
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c, line 37) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c, line 37) (2/2):
+Call Result at line 40
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c:1: Warning: 
+  No 'assigns' specification for function 'unknown1'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c:2: Warning: 
+  No 'assigns' specification for function 'unknown2'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c:3: Warning: 
+  No 'assigns' specification for function 'unknown3'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/166/166_0001/166_0002/166_loop_assigns.c:5: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

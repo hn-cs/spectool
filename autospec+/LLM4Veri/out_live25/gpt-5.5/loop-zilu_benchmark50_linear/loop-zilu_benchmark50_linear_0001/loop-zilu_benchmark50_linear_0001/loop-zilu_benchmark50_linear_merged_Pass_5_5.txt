@@ -1,0 +1,45 @@
+[kernel] Parsing out/gpt-5.5/loop-zilu_benchmark50_linear/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-zilu_benchmark50_linear/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 5 goals scheduled
+[wp] Proved goals:    5 / 5
+  Qed:             5
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark50_linear/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark50_linear/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.79ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark50_linear/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark50_linear/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-zilu_benchmark50_linear/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-zilu_benchmark50_linear/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_0001/loop-zilu_benchmark50_linear_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

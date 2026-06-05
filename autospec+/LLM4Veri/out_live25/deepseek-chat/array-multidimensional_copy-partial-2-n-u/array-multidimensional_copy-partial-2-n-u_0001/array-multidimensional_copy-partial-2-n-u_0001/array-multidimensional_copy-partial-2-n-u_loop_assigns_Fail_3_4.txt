@@ -1,0 +1,69 @@
+[kernel] Parsing out/deepseek-chat/array-multidimensional_copy-partial-2-n-u/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_loop_assigns.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-multidimensional_copy-partial-2-n-u/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_loop_assigns.c:24: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-multidimensional_copy-partial-2-n-u/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_loop_assigns.c:33: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-multidimensional_copy-partial-2-n-u/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_loop_assigns.c:43: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-multidimensional_copy-partial-2-n-u/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_loop_assigns.c:41: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-multidimensional_copy-partial-2-n-u/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_loop_assigns.c:31: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-multidimensional_copy-partial-2-n-u/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_loop_assigns.c:18: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 4 goals scheduled
+[wp] [Timeout] typed_main_loop_assigns_part4 (Qed 6ms) (Z3 3s)
+[wp] Proved goals:    3 / 4
+  Qed:             3
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_copy-partial-2-n-u/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_loop_assigns.c, line 21) (1/4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_copy-partial-2-n-u/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_loop_assigns.c, line 21) (2/4):
+Effect at line 23
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_copy-partial-2-n-u/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_loop_assigns.c, line 21) (3/4):
+Call Result at line 24
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_copy-partial-2-n-u/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_loop_assigns.c, line 21) (4/4):
+Effect at line 25
+Assume {
+  Type: is_sint32(i) /\ is_sint32(m) /\ is_sint32(n) /\ is_sint32(v).
+  (* Then *)
+  Have: i < m.
+  (* Loop assigns ... *)
+  Have: (forall i_1 : Z. ((i_1 != i) -> (B[i_1] = B_1[i_1]))) /\
+      (forall i_1 : Z. ((0 <= i) -> ((0 <= i_1) -> ((i <= 499) ->
+       ((i_1 <= 699) -> (((i_1 < 0) \/ (n <= i_1)) ->
+       (B[i][i_1] = B_1[i][i_1]))))))).
+  (* Then *)
+  Have: 0 < n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (3s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (3s)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-multidimensional_copy-partial-2-n-u/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_0001/array-multidimensional_copy-partial-2-n-u_loop_assigns.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

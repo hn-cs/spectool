@@ -1,0 +1,18 @@
+[kernel] Parsing out/gpt-5.5/MarcoGrillo_Minimum-Period-of-a-String_period/MarcoGrillo_Minimum-Period-of-a-String_period_0001/MarcoGrillo_Minimum-Period-of-a-String_period_0004/MarcoGrillo_Minimum-Period-of-a-String_period_merged.c (with preprocessing)
+[kernel] out/gpt-5.5/MarcoGrillo_Minimum-Period-of-a-String_period/MarcoGrillo_Minimum-Period-of-a-String_period_0001/MarcoGrillo_Minimum-Period-of-a-String_period_0004/MarcoGrillo_Minimum-Period-of-a-String_period_merged.c:21: 
+  syntax error:
+  Location: between lines 21 and 35
+  19                loop invariant i <= l-p-1;
+  20                loop invariant i >= 0;
+  
+  21            */
+  22            /*@
+  23            loop invariant p < l;
+  24-32 [... omitted ...]
+  33            loop invariant 0 <= i;
+  34            loop assigns i;
+  35            */
+  
+  36            for (unsigned i = 0 ; i < l-p-1 ; ++i) {
+  37                if (x[i] != x[i + p])
+[kernel] Frama-C aborted: invalid user input.

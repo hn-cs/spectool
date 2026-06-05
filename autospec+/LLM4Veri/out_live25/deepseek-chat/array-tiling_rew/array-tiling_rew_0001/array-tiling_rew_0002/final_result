@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=2, microseconds=596457), 'total_solve_time': datetime.timedelta(seconds=23, microseconds=702950), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 160, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 3, 1], '1': ['loop invariant val2 == 3;', 'loop invariant val1 == 0;', 'loop invariant low == 2;', 'loop invariant i <= SIZE;', 'loop invariant \\forall integer j; 0 <= j < i ==> a[j] == val2;', 'loop invariant 0 <= i;', 'loop assigns i;', 'loop assigns a[0..SIZE-1];'], '2': ['loop invariant low == 2;', 'loop invariant i <= SIZE;', 'loop invariant \\forall integer j; 0 <= j < SIZE ==> a[j] >= low;', 'loop invariant \\forall integer j; 0 <= j < SIZE ==> a[j] == 3;', 'loop invariant 0 <= i;', 'loop assigns i;'], '3': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result < INT_MAX;\n', '*/\n', 'int unknown();\n', '#include<stdlib.h>\n', 'int SIZE;\n', 'const int MAX = 100000;\n', '/* 3. FUNC CONTRACT */\nint main()\n', '{\n', '\tSIZE = unknown();\n', '\tif(SIZE > 1 && SIZE < MAX)\n', '\t{\n', '\t\tint i;\n', '\t\tint *a = malloc(sizeof(int)*SIZE);\n', '\t\tint val2 = 3;\n', '\t\tint val1 = 0;\n', '\t\tint low=2;\n', '\t\t/* 1. LOOP INVARIANT */\n\t\tfor(i = 0; i < SIZE; i++)\n', '\t\t{\n', '\t\t\tif(i+1 < SIZE)\n', '\t\t\t{\n', '\t\t\t\ta[i+1] = val1;\n', '\t\t\t}\n', '\t\t\ta[i] = val2;\n', '\t\t}\n', '\t\t/* 2. LOOP INVARIANT */\n\t\tfor(i = 0; i < SIZE; i++)\n', '\t\t{\n', '\t\t\t//@ assert(a[i] >= low);\n', '\t\t}\n', '\t}\n', '\treturn 1;\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

@@ -1,0 +1,104 @@
+[kernel] Parsing out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c:12: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c:5: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] Proved goals:    8 / 8
+  Qed:             6
+  Alt-Ergo :       2 (20ms-22ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c, line 8):
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(c_2) /\ is_sint32(n) /\
+      is_sint32(tmp_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: c_2 <= n.
+  (* Invariant *)
+  Have: 0 <= c_2.
+  (* Then *)
+  Have: tmp_0 != 0.
+  If n = c_2
+  Then { Have: c = 1. }
+  Else { Have: c_2 = c_1. Have: (1 + c_1) = c. }
+}
+Prove: c <= n.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (130ms) (36371)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (22ms) (28)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c, line 9):
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(c_2) /\ is_sint32(n) /\
+      is_sint32(tmp_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: c_2 <= n.
+  (* Invariant *)
+  Have: 0 <= c_2.
+  (* Then *)
+  Have: tmp_0 != 0.
+  If n = c_2
+  Then { Have: c = 1. }
+  Else { Have: c_2 = c_1. Have: (1 + c_1) = c. }
+  (* Invariant *)
+  Have: c <= n.
+}
+Prove: 0 <= c.
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (120ms) (36477)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (20ms) (30)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c, line 10) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c, line 10) (2/2):
+Call Result at line 12
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c:1: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/code2_39/code2_39_0001/code2_39_0001/code2_39_merged.c:5: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

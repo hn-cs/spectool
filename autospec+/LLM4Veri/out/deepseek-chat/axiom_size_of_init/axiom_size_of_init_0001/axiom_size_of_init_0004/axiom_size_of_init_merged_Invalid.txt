@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/axiom_size_of_init/axiom_size_of_init_0001/axiom_size_of_init_0004/axiom_size_of_init_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/axiom_size_of_init/axiom_size_of_init_0001/axiom_size_of_init_0004/axiom_size_of_init_merged.c:126: Warning: 
+  unexpected token '{'
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/axiom_size_of_init/axiom_size_of_init_0001/axiom_size_of_init_0004/axiom_size_of_init_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

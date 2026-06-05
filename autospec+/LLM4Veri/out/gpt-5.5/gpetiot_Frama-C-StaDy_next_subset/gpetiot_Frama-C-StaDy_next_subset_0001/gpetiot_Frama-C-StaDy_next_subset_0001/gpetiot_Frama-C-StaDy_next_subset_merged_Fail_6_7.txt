@@ -1,0 +1,84 @@
+[kernel] Parsing out/gpt-5.5/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c:20: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 7 goals scheduled
+[wp] [Timeout] typed_nextSubset_loop_invariant_3_established (Qed 1ms) (Z3 8s)
+[wp] Proved goals:    6 / 7
+  Qed:             5
+  Alt-Ergo :       1 (33ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function nextSubset
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 13):
+Let x = Mint_0[shift_sint32(s, k)].
+Assume {
+  Type: is_sint32(k) /\ is_sint32(n) /\ is_sint32(k - 1) /\
+      is_sint32(n - 1) /\ is_sint32(x).
+  (* Heap *)
+  Type: region(s.base) <= 0.
+  (* Goal *)
+  When: (k <= i) /\ (i < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: k < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((k < i_1) ->
+      (Mint_0[shift_sint32(s, i_1)] != 0))).
+  (* Invariant *)
+  Have: (-1) <= k.
+  (* Then *)
+  Have: 0 <= k.
+  (* Else *)
+  Have: x != 0.
+}
+Prove: Mint_0[shift_sint32(s, i)] != 0.
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (160ms) (210637)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (33ms) (64)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 14):
+Assume { Type: is_sint32(n) /\ is_sint32(n - 1). }
+Prove: 0 <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c:9: Warning: 
+  No 'assigns' specification for function 'nextSubset'.
+  Callers assumptions might be imprecise.

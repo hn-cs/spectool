@@ -1,0 +1,99 @@
+[kernel] Parsing out/gpt-5.5/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 9 goals scheduled
+[wp] Proved goals:    9 / 9
+  Qed:             7
+  Alt-Ergo :       2 (24ms-25ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_merged.c, line 6):
+Assume {
+  Type: is_uint32(x) /\ is_uint32(y).
+  (* Invariant *)
+  Have: ((0 < y) -> (x = 0)).
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 1)).
+  (* Invariant *)
+  Have: y <= 1024.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: y <= 1023.
+  Have: to_uint32(1 + y) = 0.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (130ms) (35392)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (25ms) (39)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_merged.c, line 7):
+Let x_1 = to_uint32(1 + y).
+Assume {
+  Type: is_uint32(x) /\ is_uint32(y).
+  (* Invariant *)
+  Have: ((0 < y) -> (x = 0)).
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 1)).
+  (* Invariant *)
+  Have: y <= 1024.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: y <= 1023.
+  (* Invariant *)
+  Have: x_1 != 0.
+}
+Prove: x_1 <= 1024.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (120ms) (35468)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (24ms) (46)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (0.59ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (0.56ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,125 @@
+[kernel] Parsing out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c:36: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_bor_loop_invariant_3_preserved (Qed 10ms) (Z3 8s)
+[wp] Proved goals:    8 / 9
+  Qed:             7
+  Alt-Ergo :       1 (46ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function bor
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c, line 17):
+Let x_1 = Mint_0[shift_sint32(x, i_1)].
+Let x_2 = lsl(1, i).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint64(res_0) /\ is_sint32(1 + i_1) /\
+      is_sint32(Mint_0[shift_sint32(x, 0)]) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: region(x.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= 31).
+  (* Invariant *)
+  Have: i_1 <= 100000.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_3 = lsl(1, i_2) in ((0 <= i_2) ->
+      ((i_2 <= 31) ->
+      ((exists i_3 : Z. (land(x_3, Mint_0[shift_sint32(x, i_3)]) != 0) /\
+        (0 <= i_3) /\ (i_3 < i_1)) <-> (land(res_0, x_3) != 0)))).
+  (* Invariant *)
+  Have: i_1 != 100000.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 <= 99999.
+}
+Prove: (exists i_2 : Z. (land(x_2, Mint_0[shift_sint32(x, i_2)]) != 0) /\
+        (i_2 <= i_1) /\ (0 <= i_2)) <-> (land(lor(res_0, x_1), x_2) != 0).
+Prover Alt-Ergo  returns Valid (Qed:12ms) (46ms) (309)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c, line 18):
+Let x_1 = Mint_0[shift_sint32(x, i)].
+Assume {
+  Type: is_sint32(i) /\ is_sint64(res_0) /\ is_sint32(1 + i) /\
+      is_sint32(Mint_0[shift_sint32(x, 0)]) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: region(x.base) <= 0.
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_2 = lsl(1, i_1) in ((0 <= i_1) ->
+      ((i_1 <= 31) ->
+      ((exists i_2 : Z. (land(x_2, Mint_0[shift_sint32(x, i_2)]) != 0) /\
+        (0 <= i_2) /\ (i_2 < i)) <-> (land(res_0, x_2) != 0)))).
+  (* Invariant *)
+  Have: i != 100000.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= 99999.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_2 = lsl(1, i_1) in ((0 <= i_1) ->
+      ((i_1 <= 31) ->
+      ((exists i_2 : Z. (land(x_2, Mint_0[shift_sint32(x, i_2)]) != 0) /\
+        (i_2 <= i) /\ (0 <= i_2)) <-> (land(lor(res_0, x_1), x_2) != 0)))).
+}
+Prove: i != 99999.
+Prover Z3 4.8.12 returns Timeout (Qed:10ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:10ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.92ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c:10: Warning: 
+  No 'assigns' specification for function 'bor'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/array-crafted_bor4/array-crafted_bor4_0001/array-crafted_bor4_0001/array-crafted_bor4_merged.c:28: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

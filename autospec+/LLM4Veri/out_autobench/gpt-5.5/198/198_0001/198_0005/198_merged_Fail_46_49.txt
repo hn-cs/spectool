@@ -1,0 +1,537 @@
+[kernel] Parsing out/gpt-5.5/198/198_0001/198_0005/198_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 49 goals scheduled
+[wp] [Timeout] typed_binarysearch_loop_invariant_established (Qed 0.78ms) (Z3 8s)
+[wp] [Timeout] typed_binarysearch_loop_invariant_2_preserved (Qed 15ms) (Z3 8s)
+[wp] [Timeout] typed_binarysearch_loop_invariant_2_established (Qed 2ms) (Z3 8s)
+[wp] Proved goals:   46 / 49
+  Qed:            41
+  Alt-Ergo :       5 (23ms-49ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function binarysearch
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 8):
+Let x_1 = (high_1 + low_1) / 2.
+Let x_2 = Mint_0[shift_sint32(a, x_1)].
+Assume {
+  Type: is_sint32(high_0) /\ is_sint32(high_1) /\ is_sint32(high_2) /\
+      is_sint32(low_0) /\ is_sint32(low_1) /\ is_sint32(p) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: 0 <= high_2.
+  (* Invariant *)
+  Have: 0 < high_2.
+  (* Invariant *)
+  Have: low_1 < high_1.
+  (* Invariant *)
+  Have: (2 + low_1) <= high_1.
+  (* Invariant *)
+  Have: 0 <= high_1.
+  (* Invariant *)
+  Have: 0 < high_1.
+  (* Invariant *)
+  Have: high_1 <= high_2.
+  (* Invariant *)
+  Have: (-1) <= low_1.
+  (* Invariant *)
+  Have: (p = high_1) \/ (p = low_1) \/ ((high_2 = high_1) /\ (low_1 = (-1))).
+  (* Else *)
+  Have: x_2 != x.
+  If x_2 < x
+  Then { Have: high_1 = high_0. Have: ((high_0 + low_1) / 2) = low_0. }
+  Else { Have: low_1 = low_0. Have: ((high_1 + low_0) / 2) = high_0. }
+}
+Prove: low_0 < high_0.
+Prover Z3 4.8.12 returns Valid (Qed:20ms) (140ms) (102652)
+Prover Alt-Ergo  returns Valid (Qed:20ms) (46ms) (316)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 8):
+Assume { Type: is_sint32(high_0). }
+Prove: 0 <= high_0.
+Prover Z3 4.8.12 returns Timeout (Qed:0.78ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.78ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 9):
+Let x_1 = (high_1 + low_1) / 2.
+Let x_2 = Mint_0[shift_sint32(a, x_1)].
+Assume {
+  Type: is_sint32(high_0) /\ is_sint32(high_1) /\ is_sint32(high_2) /\
+      is_sint32(low_0) /\ is_sint32(low_1) /\ is_sint32(p) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: 0 <= high_2.
+  (* Invariant *)
+  Have: 0 < high_2.
+  (* Invariant *)
+  Have: low_1 < high_1.
+  (* Invariant *)
+  Have: (2 + low_1) <= high_1.
+  (* Invariant *)
+  Have: 0 <= high_1.
+  (* Invariant *)
+  Have: 0 < high_1.
+  (* Invariant *)
+  Have: high_1 <= high_2.
+  (* Invariant *)
+  Have: (-1) <= low_1.
+  (* Invariant *)
+  Have: (p = high_1) \/ (p = low_1) \/ ((high_2 = high_1) /\ (low_1 = (-1))).
+  (* Else *)
+  Have: x_2 != x.
+  If x_2 < x
+  Then { Have: high_1 = high_0. Have: ((high_0 + low_1) / 2) = low_0. }
+  Else { Have: low_1 = low_0. Have: ((high_1 + low_0) / 2) = high_0. }
+  (* Invariant *)
+  Have: low_0 < high_0.
+}
+Prove: (2 + low_0) <= high_0.
+Prover Z3 4.8.12 returns Timeout (Qed:15ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:15ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 9):
+Assume { Type: is_sint32(high_0). (* Invariant *) Have: 0 <= high_0. }
+Prove: 0 < high_0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.67ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.88ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.91ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.87ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1.00ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.71ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.69ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.82ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 20):
+Let x_1 = 2 + low_0.
+Let x_2 = high_0 + low_0.
+Let x_3 = x_2 / 2.
+Let x_4 = Mint_0[shift_sint32(a, x_3)].
+Assume {
+  Type: is_sint32(high_0) /\ is_sint32(high_1) /\ is_sint32(low_0) /\
+      is_sint32(p) /\ is_sint32(x) /\ is_sint32(x_3) /\ is_sint32(x_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x <= x_4.
+  (* Invariant *)
+  Have: 0 <= high_1.
+  (* Invariant *)
+  Have: 0 < high_1.
+  (* Invariant *)
+  Have: low_0 < high_0.
+  (* Invariant *)
+  Have: x_1 <= high_0.
+  (* Invariant *)
+  Have: 0 <= high_0.
+  (* Invariant *)
+  Have: 0 < high_0.
+  (* Invariant *)
+  Have: high_0 <= high_1.
+  (* Invariant *)
+  Have: (-1) <= low_0.
+  (* Invariant *)
+  Have: (p = high_0) \/ (p = low_0) \/ ((high_1 = high_0) /\ (low_0 = (-1))).
+  (* Else *)
+  Have: x_4 != x.
+  (* Invariant *)
+  Have: low_0 < x_3.
+  (* Invariant *)
+  Have: x_1 <= x_3.
+}
+Prove: (-1) <= x_2.
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (160ms) (85966)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (49ms) (35)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (0.81ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 24):
+Let x_1 = high_0 + low_0.
+Let x_2 = 2 + low_0.
+Let x_3 = x_1 / 2.
+Let x_4 = Mint_0[shift_sint32(a, x_3)].
+Assume {
+  Type: is_sint32(high_0) /\ is_sint32(high_1) /\ is_sint32(low_0) /\
+      is_sint32(p) /\ is_sint32(x) /\ is_sint32(x_3) /\ is_sint32(x_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x <= x_4.
+  (* Invariant *)
+  Have: 0 <= high_1.
+  (* Invariant *)
+  Have: 0 < high_1.
+  (* Invariant *)
+  Have: low_0 < high_0.
+  (* Invariant *)
+  Have: x_2 <= high_0.
+  (* Invariant *)
+  Have: 0 <= high_0.
+  (* Invariant *)
+  Have: 0 < high_0.
+  (* Invariant *)
+  Have: high_0 <= high_1.
+  (* Invariant *)
+  Have: (-1) <= low_0.
+  (* Invariant *)
+  Have: (p = high_0) \/ (p = low_0) \/ ((high_1 = high_0) /\ (low_0 = (-1))).
+  (* Else *)
+  Have: x_4 != x.
+  (* Invariant *)
+  Have: low_0 < x_3.
+  (* Invariant *)
+  Have: x_2 <= x_3.
+  (* Invariant *)
+  Have: (-1) <= x_1.
+}
+Prove: 2 <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:16ms) (140ms) (99318)
+Prover Alt-Ergo  returns Valid (Qed:16ms) (37ms) (167)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (0.97ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (0.93ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (0.98ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 28):
+Let x_1 = high_0 + low_0.
+Let x_2 = 2 + low_0.
+Let x_3 = x_1 / 2.
+Let x_4 = Mint_0[shift_sint32(a, x_3)].
+Assume {
+  Type: is_sint32(high_0) /\ is_sint32(low_0) /\ is_sint32(n) /\
+      is_sint32(p) /\ is_sint32(x) /\ is_sint32(x_3) /\ is_sint32(x_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x <= x_4.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: low_0 < high_0.
+  (* Invariant *)
+  Have: x_2 <= high_0.
+  (* Invariant *)
+  Have: 0 <= high_0.
+  (* Invariant *)
+  Have: 0 < high_0.
+  (* Invariant *)
+  Have: high_0 <= n.
+  (* Invariant *)
+  Have: (-1) <= low_0.
+  (* Invariant *)
+  Have: (p = high_0) \/ (p = low_0) \/ ((low_0 = (-1)) /\ (n = high_0)).
+  (* Else *)
+  Have: x_4 != x.
+  (* Invariant *)
+  Have: low_0 < x_3.
+  (* Invariant *)
+  Have: x_2 <= x_3.
+  (* Invariant *)
+  Have: (-1) <= x_1.
+  (* Invariant *)
+  Have: 2 <= x_1.
+}
+Prove: x_3 <= n.
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (130ms) (99068)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (34ms) (134)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 29):
+Let x_1 = high_0 + low_0.
+Let x_2 = x_1 / 2.
+Let x_3 = Mint_0[shift_sint32(a, x_2)].
+Assume {
+  Type: is_sint32(high_0) /\ is_sint32(high_1) /\ is_sint32(low_0) /\
+      is_sint32(p) /\ is_sint32(x) /\ is_sint32(x_2) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_3 < x.
+  (* Invariant *)
+  Have: 0 <= high_1.
+  (* Invariant *)
+  Have: 0 < high_1.
+  (* Invariant *)
+  Have: low_0 < high_0.
+  (* Invariant *)
+  Have: (2 + low_0) <= high_0.
+  (* Invariant *)
+  Have: 0 <= high_0.
+  (* Invariant *)
+  Have: 0 < high_0.
+  (* Invariant *)
+  Have: high_0 <= high_1.
+  (* Invariant *)
+  Have: (-1) <= low_0.
+  (* Invariant *)
+  Have: (p = high_0) \/ (p = low_0) \/ ((high_1 = high_0) /\ (low_0 = (-1))).
+  (* Invariant *)
+  Have: x_2 < high_0.
+  (* Invariant *)
+  Have: (2 + x_2) <= high_0.
+}
+Prove: (-3) <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:15ms) (130ms) (85815)
+Prover Alt-Ergo  returns Valid (Qed:15ms) (23ms) (32)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (0.75ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/198/198_0001/198_0005/198_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/198/198_0001/198_0005/198_merged.c:1: Warning: 
+  No 'assigns' specification for function 'binarysearch'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/198/198_0001/198_0005/198_merged.c:49: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

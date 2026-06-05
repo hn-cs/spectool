@@ -1,0 +1,485 @@
+[kernel] Parsing out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:13: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 24 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_7_established (Qed 15ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_assigns_2_part2 (Qed 29ms) (Z3 8s) (Stronger)
+[wp] Proved goals:   22 / 24
+  Qed:            17
+  Alt-Ergo :       4 (35ms-93ms)
+  Z3 4.8.12:       1 (160ms-5.4s-8s)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 15):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), 100000).
+Let x = 1 + i.
+Let x_1 = (i * (i - 1)) / 2.
+Let x_2 = i + x_1.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(unknown_0) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (0 <= a_1[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(a, i_1)] = ((i_1 * (i_1 - 1)) / 2)))).
+  (* Invariant *)
+  Have: i != 100000.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 99999.
+}
+Prove: ((i * x) / 2) = x_2.
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (160ms) (114835)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 15):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 16):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 16):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 17):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), 100000).
+Let x = 1 + i.
+Let x_1 = (i * x) / 2.
+Let x_2 = x_1 - i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(unknown_0) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Invariant *)
+  Have: x_1 = (i + ((i * (i - 1)) / 2)).
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (0 <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, i_2)] = ((i_2 * (i_2 - 1)) / 2)))).
+  (* Invariant *)
+  Have: i != 100000.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 99999.
+}
+Prove: 0 <= a_1[shift_sint32(a, i) <- x_2][shift_sint32(a, i_1)].
+Prover Z3 4.8.12 returns Valid (Qed:11ms) (190ms) (244848)
+Prover Alt-Ergo  returns Valid (Qed:11ms) (64ms) (626)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 17):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.51ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 18):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), 100000).
+Let x = 1 + i.
+Let x_1 = (i * x) / 2.
+Let x_2 = x_1 - i.
+Let a_2 = a_1[shift_sint32(a, i) <- x_2].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(unknown_0) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Invariant *)
+  Have: x_1 = (i + ((i * (i - 1)) / 2)).
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (0 <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, i_2)] = ((i_2 * (i_2 - 1)) / 2)))).
+  (* Invariant *)
+  Have: i != 100000.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 99999.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      (0 <= a_2[shift_sint32(a, i_2)]))).
+}
+Prove: a_2[shift_sint32(a, i_1)] = ((i_1 * (i_1 - 1)) / 2).
+Prover Alt-Ergo  returns Valid (Qed:11ms) (93ms) (1385)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 18):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 19):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), 100000).
+Let x = 1 + i.
+Let x_1 = (i * x) / 2.
+Let x_2 = x_1 - i.
+Let a_2 = a_1[shift_sint32(a, i) <- x_2].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(unknown_0) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Invariant *)
+  Have: x_1 = (i + ((i * (i - 1)) / 2)).
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (0 <= a_1[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(a, i_1)] = ((i_1 * (i_1 - 1)) / 2)))).
+  (* Invariant *)
+  Have: i != 100000.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 99999.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 <= i) -> ((0 <= i_1) ->
+      (0 <= a_2[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 <= i) -> ((0 <= i_1) ->
+      (a_2[shift_sint32(a, i_1)] = ((i_1 * (i_1 - 1)) / 2)))).
+}
+Prove: i != 99999.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 19):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 20):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 20):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.94ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 33):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 33):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), 100000).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(unknown_0) /\ is_sint32(unknown_1) /\
+      is_sint32((i * (i - 1)) / 2).
+  (* Residual *)
+  When: i <= 99999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_1) /\ (unknown_1 <= 2147483646).
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (0 <= a_1[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(a, i_1)] = ((i_1 * (i_1 - 1)) / 2)))).
+  (* Invariant *)
+  Have: i != 100000.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Then *)
+  Have: unknown_0 != 0.
+}
+Prove: 0 < i.
+Prover Z3 4.8.12 returns Timeout (Qed:15ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:15ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 34):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, 100000).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(unknown_0) /\ is_sint32(unknown_1) /\
+      is_sint32((i_1 * (i_1 - 1)) / 2).
+  (* Residual *)
+  When: i_1 <= 99999.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_1) /\ (unknown_1 <= 2147483646).
+  (* Invariant *)
+  Have: i_1 <= 100000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (0 <= a_2[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_2[shift_sint32(a, i_2)] = ((i_2 * (i_2 - 1)) / 2)))).
+  (* Invariant *)
+  Have: i_1 != 100000.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Then *)
+  Have: unknown_0 != 0.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: 0 <= Mint_undef_0[a_1].
+  (* Invariant *)
+  Have: 2 <= i_1.
+}
+Prove: 0 <= a_2[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Valid (Qed:27ms) (130ms) (87629)
+Prover Alt-Ergo  returns Valid (Qed:27ms) (35ms) (120)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 34):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, 100000).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(unknown_0) /\ is_sint32(unknown_1) /\
+      is_sint32((i * (i - 1)) / 2).
+  (* Residual *)
+  When: i <= 99999.
+  (* Goal *)
+  When: (i_1 <= 0) /\ (0 <= i_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_1) /\ (unknown_1 <= 2147483646).
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (0 <= a_2[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_2[shift_sint32(a, i_2)] = ((i_2 * (i_2 - 1)) / 2)))).
+  (* Invariant *)
+  Have: i != 100000.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Then *)
+  Have: unknown_0 != 0.
+  (* Invariant *)
+  Have: 0 < i.
+}
+Prove: 0 <= Mint_undef_0[a_1].
+Prover Alt-Ergo  returns Valid (Qed:22ms) (72ms) (1045)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 35):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 35):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 21) (1/3):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 21) (2/3):
+Effect at line 26
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c, line 21) (3/3):
+Effect at line 29
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns nothing (1/2):
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns nothing (2/2):
+Effect at line 38
+out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, 100000).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(unknown_0) /\ is_sint32(unknown_1) /\
+      is_sint32((i * (i - 1)) / 2).
+  (* Residual *)
+  When: i <= 99999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_1) /\ (unknown_1 <= 2147483646).
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (0 <= a_2[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_2[shift_sint32(a, i_1)] = ((i_1 * (i_1 - 1)) / 2)))).
+  (* Invariant *)
+  Have: i != 100000.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Then *)
+  Have: unknown_0 != 0.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: 0 <= Mint_undef_0[a_1].
+  (* Invariant *)
+  Have: 2 <= i.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 <= 1) ->
+      (0 <= a_2[shift_sint32(a, i_1)]))).
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:29ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:29ms) (8s)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-cav19_array_init_var_plus_ind/array-cav19_array_init_var_plus_ind_0001/array-cav19_array_init_var_plus_ind_0002/array-cav19_array_init_var_plus_ind_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

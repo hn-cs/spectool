@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 2, 'Iteration': 2, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=8, microseconds=518351), 'total_solve_time': datetime.timedelta(microseconds=772884), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 169, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 3, 1], '1': ['loop invariant index <= SIZE;', 'loop invariant \\forall integer k; 0 <= k < index ==> array[k] == k % 2;', 'loop invariant SIZE - index;', 'loop invariant 0 <= index;', 'loop assigns index;', 'loop assigns array[0..SIZE-1];'], '2': ['loop invariant index <= SIZE;', 'loop invariant \\forall integer k; 0 <= k < SIZE ==> array[k] == k % 2;', 'loop invariant SIZE - index;', 'loop invariant 0 <= index;', 'loop assigns index;'], '3': [], 'MSLines': ['#define SIZE 1000\n', '#include <assert.h>\n', '/* 3. FUNC CONTRACT */\nint main()\n', '{\n', '  unsigned int array[SIZE];\n', '  unsigned int index;\n', '  /* 1. LOOP INVARIANT */\n  for (index = 0; index < SIZE; index++) {\n', '    array[index] = (index % 2);\n', '  }\n', '  /* 2. LOOP INVARIANT */\n  for (index = 0; index < SIZE; index++) {\n', '    if (index % 2 == 0) {\n', '      //@ assert(array[index] == 0);\n', '    } else {\n', '      //@ assert(array[index] != 0);\n', '    }\n', '  }\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

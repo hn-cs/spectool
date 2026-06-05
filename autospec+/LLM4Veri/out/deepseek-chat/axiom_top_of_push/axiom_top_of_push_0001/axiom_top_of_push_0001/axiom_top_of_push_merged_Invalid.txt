@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/axiom_top_of_push/axiom_top_of_push_0001/axiom_top_of_push_0001/axiom_top_of_push_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/axiom_top_of_push/axiom_top_of_push_0001/axiom_top_of_push_0001/axiom_top_of_push_merged.c:137: Warning: 
+  unexpected token '('
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/axiom_top_of_push/axiom_top_of_push_0001/axiom_top_of_push_0001/axiom_top_of_push_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

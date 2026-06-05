@@ -1,0 +1,183 @@
+[kernel] Parsing out/deepseek-chat/219/219_0001/219_0001/219_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 10 goals scheduled
+[wp] [Timeout] typed_func_loop_invariant_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_func_loop_invariant_3_preserved (Qed 15ms) (Z3 8s)
+[wp] Proved goals:    8 / 10
+  Qed:             6
+  Alt-Ergo :       2 (41ms-43ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function func
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/219/219_0001/219_0001/219_merged.c, line 3):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/219/219_0001/219_0001/219_merged.c, line 3):
+Assume { Type: is_sint32(n). }
+Prove: 0 <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/219/219_0001/219_0001/219_merged.c, line 4):
+Let a_1 = havoc(Mint_undef_0, Mint_1, shift_sint32(a, 0), n).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(1 + i_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: ((i % 2) = 0) /\ (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. (((i_2 % 2) = 0) -> ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = shift_sint32(a, i_2) in
+      (((i_2 % 2) != 0) -> ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_1[a_2] = Mint_1[a_2])))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  If (i_1 % 2) = 0
+  Then {
+    Have: a_1 = Mint_2.
+    Have: Mint_2[shift_sint32(a, i_1) <- 0] = Mint_0.
+  }
+  Else { Have: a_1 = Mint_0. }
+}
+Prove: Mint_0[shift_sint32(a, i)] = 0.
+Prover Z3 4.8.12 returns Valid (Qed:19ms) (150ms) (118747)
+Prover Alt-Ergo  returns Valid (Qed:19ms) (43ms) (292)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/219/219_0001/219_0001/219_merged.c, line 4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/219/219_0001/219_0001/219_merged.c, line 5):
+Let a_1 = havoc(Mint_undef_0, Mint_1, shift_sint32(a, 0), n).
+Let a_2 = shift_sint32(a, i).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(1 + i_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: ((i % 2) != 0) /\ (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. (((i_2 % 2) = 0) -> ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = shift_sint32(a, i_2) in
+      (((i_2 % 2) != 0) -> ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_1[a_3] = Mint_1[a_3])))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  If (i_1 % 2) = 0
+  Then {
+    Have: a_1 = Mint_2.
+    Have: Mint_2[shift_sint32(a, i_1) <- 0] = Mint_0.
+  }
+  Else { Have: a_1 = Mint_0. }
+  (* Invariant *)
+  Have: forall i_2 : Z. (((i_2 % 2) = 0) -> ((i_2 <= i_1) -> ((0 <= i_2) ->
+      (Mint_0[shift_sint32(a, i_2)] = 0)))).
+}
+Prove: Mint_0[a_2] = Mint_1[a_2].
+Prover Z3 4.8.12 returns Timeout (Qed:15ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:15ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/219/219_0001/219_0001/219_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/219/219_0001/219_0001/219_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/219/219_0001/219_0001/219_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/219/219_0001/219_0001/219_merged.c, line 7) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/219/219_0001/219_0001/219_merged.c, line 7) (2/2):
+Effect at line 12
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Let x = i - 1.
+Let a_3 = shift_sint32(a, x).
+Let a_4 = a_2[a_3 <- 0].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: i <= (1 + n).
+  (* Invariant *)
+  Have: forall i_1 : Z. (((i_1 % 2) = 0) -> ((0 <= i_1) ->
+      (((2 + i_1) <= i) -> (a_2[shift_sint32(a, i_1)] = 0)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(a, i_1) in
+      (((i_1 % 2) != 0) -> ((0 <= i_1) -> (((2 + i_1) <= i) ->
+      (a_2[a_5] = Mint_0[a_5])))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= n.
+  (* Then *)
+  Have: (x % 2) = 0.
+  (* Invariant *)
+  Have: forall i_1 : Z. (((i_1 % 2) = 0) -> ((0 <= i_1) -> ((i_1 < i) ->
+      (a_4[shift_sint32(a, i_1)] = 0)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(a, i_1) in
+      (((i_1 % 2) != 0) -> ((0 <= i_1) -> ((i_1 < i) ->
+      (a_4[a_5] = Mint_0[a_5])))).
+}
+Prove: included(a_3, 1, a_1, n).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (140ms) (103835)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (41ms) (249)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/219/219_0001/219_0001/219_merged.c:1: Warning: 
+  No 'assigns' specification for function 'func'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/219/219_0001/219_0001/219_merged.c:17: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

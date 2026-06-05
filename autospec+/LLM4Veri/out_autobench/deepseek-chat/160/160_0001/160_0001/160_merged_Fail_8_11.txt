@@ -1,0 +1,142 @@
+[kernel] Parsing out/deepseek-chat/160/160_0001/160_0001/160_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/160/160_0001/160_0001/160_merged.c:24: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/160/160_0001/160_0001/160_merged.c:12: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 11 goals scheduled
+[wp] [Timeout] typed_foo_loop_invariant_2_established (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_foo_loop_invariant_4_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_foo_loop_invariant_5_established (Qed 3ms) (Z3 8s)
+[wp] Proved goals:    8 / 11
+  Qed:             7
+  Alt-Ergo :       1 (21ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/160/160_0001/160_0001/160_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/160/160_0001/160_0001/160_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.53ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/160/160_0001/160_0001/160_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/160/160_0001/160_0001/160_merged.c, line 15):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(l) /\ is_sint32(n).
+  (* Pre-condition *)
+  Have: 0 < l.
+  (* Then *)
+  Have: k < n.
+}
+Prove: i <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/160/160_0001/160_0001/160_merged.c, line 16):
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(k) /\ is_sint32(l) /\ is_sint32(l_1) /\
+      is_sint32(n) /\ is_sint32(1 + i_1).
+  (* Goal *)
+  When: (l <= i) /\ (i <= i_1).
+  (* Pre-condition *)
+  Have: 0 < l_1.
+  (* Then *)
+  Have: k < n.
+  (* Invariant *)
+  Have: l <= n.
+  (* Invariant *)
+  Have: 0 < k.
+  (* Invariant *)
+  Have: 0 <= l.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((l <= i_2) -> (i_2 < n))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+}
+Prove: i < n.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (120ms) (37328)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (21ms) (40)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/160/160_0001/160_0001/160_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/160/160_0001/160_0001/160_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/160/160_0001/160_0001/160_merged.c, line 17):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(l) /\ is_sint32(n).
+  (* Pre-condition *)
+  Have: 0 < l.
+  (* Then *)
+  Have: k < n.
+  (* Invariant *)
+  Have: i <= n.
+}
+Prove: 0 < k.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/160/160_0001/160_0001/160_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/160/160_0001/160_0001/160_merged.c, line 18):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(l) /\ is_sint32(n).
+  (* Pre-condition *)
+  Have: 0 < l.
+  (* Then *)
+  Have: k < n.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 < k.
+}
+Prove: 0 <= i.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/160/160_0001/160_0001/160_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/160/160_0001/160_0001/160_merged.c:9: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

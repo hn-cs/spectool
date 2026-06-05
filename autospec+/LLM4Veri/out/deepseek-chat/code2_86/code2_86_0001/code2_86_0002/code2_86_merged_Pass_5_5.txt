@@ -1,0 +1,56 @@
+[kernel] Parsing out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 5 goals scheduled
+[wp] Proved goals:    5 / 5
+  Qed:             4
+  Alt-Ergo :       1 (20ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c, line 6):
+Let x_1 = x + y.
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(1 + y) /\ is_sint32(x_1).
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: (-50) <= x.
+  (* Then *)
+  Have: x < 0.
+  (* Invariant *)
+  Have: (-1) <= y.
+}
+Prove: (-50) <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (120ms) (35212)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (20ms) (14)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

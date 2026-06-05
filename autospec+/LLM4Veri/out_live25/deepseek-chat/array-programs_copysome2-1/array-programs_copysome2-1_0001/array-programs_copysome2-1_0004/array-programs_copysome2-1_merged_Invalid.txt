@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/array-programs_copysome2-1/array-programs_copysome2-1_0001/array-programs_copysome2-1_0004/array-programs_copysome2-1_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/array-programs_copysome2-1/array-programs_copysome2-1_0001/array-programs_copysome2-1_0004/array-programs_copysome2-1_merged.c:21: Warning: 
+  unbound logic variable N. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/array-programs_copysome2-1/array-programs_copysome2-1_0001/array-programs_copysome2-1_0004/array-programs_copysome2-1_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

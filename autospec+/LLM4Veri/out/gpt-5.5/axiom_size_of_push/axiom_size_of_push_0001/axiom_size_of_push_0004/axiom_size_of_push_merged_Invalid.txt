@@ -1,0 +1,8 @@
+[kernel] Parsing out/gpt-5.5/axiom_size_of_push/axiom_size_of_push_0001/axiom_size_of_push_0004/axiom_size_of_push_merged.c (with preprocessing)
+[kernel:annot-error] out/gpt-5.5/axiom_size_of_push/axiom_size_of_push_0001/axiom_size_of_push_0004/axiom_size_of_push_merged.c:139: Warning: 
+  unexpected token '>'
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/gpt-5.5/axiom_size_of_push/axiom_size_of_push_0001/axiom_size_of_push_0004/axiom_size_of_push_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

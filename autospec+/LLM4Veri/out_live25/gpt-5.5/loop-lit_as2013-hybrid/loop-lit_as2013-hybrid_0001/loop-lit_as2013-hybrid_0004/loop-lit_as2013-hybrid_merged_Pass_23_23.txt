@@ -1,0 +1,198 @@
+[kernel] Parsing out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 23 goals scheduled
+[wp] Proved goals:   23 / 23
+  Qed:            21
+  Alt-Ergo :       2 (20ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 15):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(i - 1) /\ is_sint32(1 + j).
+  (* Invariant *)
+  Have: i <= 10.
+  (* Invariant *)
+  Have: i != 11.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: (-10) <= i.
+  (* Invariant *)
+  Have: j <= (10 + i).
+  (* Invariant *)
+  Have: j <= 10.
+  (* Invariant *)
+  Have: i <= (10 + j).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j <= 9.
+}
+Prove: j <= (9 + i).
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (120ms) (35879)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (20ms) (30)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 17):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(i - 1) /\ is_sint32(1 + j).
+  (* Invariant *)
+  Have: i <= 10.
+  (* Invariant *)
+  Have: i != 11.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: (-10) <= i.
+  (* Invariant *)
+  Have: j <= (10 + i).
+  (* Invariant *)
+  Have: j <= 10.
+  (* Invariant *)
+  Have: i <= (10 + j).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j <= 9.
+  (* Invariant *)
+  Have: j <= (9 + i).
+}
+Prove: i <= (11 + j).
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (110ms) (35991)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (19ms) (31)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.68ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 9) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 9) (2/2):
+Effect at line 23
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-lit_as2013-hybrid/loop-lit_as2013-hybrid_0001/loop-lit_as2013-hybrid_0004/loop-lit_as2013-hybrid_merged.c:2: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

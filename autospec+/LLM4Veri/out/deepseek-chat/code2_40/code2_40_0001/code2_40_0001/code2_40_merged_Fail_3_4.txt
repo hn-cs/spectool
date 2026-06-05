@@ -1,0 +1,83 @@
+[kernel] Parsing out/deepseek-chat/code2_40/code2_40_0001/code2_40_0001/code2_40_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/code2_40/code2_40_0001/code2_40_0001/code2_40_merged.c:12: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/code2_40/code2_40_0001/code2_40_0001/code2_40_merged.c:5: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/code2_40/code2_40_0001/code2_40_0001/code2_40_merged.c:11: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 4 goals scheduled
+[wp] [Timeout] typed_foo_loop_invariant_preserved (Qed 15ms) (Z3 8s)
+[wp] Proved goals:    3 / 4
+  Qed:             2
+  Alt-Ergo :       1 (20ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_40/code2_40_0001/code2_40_0001/code2_40_merged.c, line 8):
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(n) /\ is_sint32(n_1) /\
+      is_sint32(tmp_0_0).
+  (* Pre-condition *)
+  Have: 0 < n_1.
+  (* Invariant *)
+  Have: c_1 <= n.
+  (* Invariant *)
+  Have: 0 <= c_1.
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If n = c_1
+  Then { Have: c = 1. }
+  Else { Have: c_1 = c. }
+}
+Prove: c <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:15ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:15ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_40/code2_40_0001/code2_40_0001/code2_40_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_40/code2_40_0001/code2_40_0001/code2_40_merged.c, line 9):
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(n) /\ is_sint32(n_1) /\
+      is_sint32(tmp_0_0).
+  (* Pre-condition *)
+  Have: 0 < n_1.
+  (* Invariant *)
+  Have: c_1 <= n.
+  (* Invariant *)
+  Have: 0 <= c_1.
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If n = c_1
+  Then { Have: c = 1. }
+  Else { Have: c_1 = c. }
+  (* Invariant *)
+  Have: c <= n.
+}
+Prove: 0 <= c.
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (130ms) (36120)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (20ms) (30)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_40/code2_40_0001/code2_40_0001/code2_40_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.64ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/code2_40/code2_40_0001/code2_40_0001/code2_40_merged.c:1: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/code2_40/code2_40_0001/code2_40_0001/code2_40_merged.c:5: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

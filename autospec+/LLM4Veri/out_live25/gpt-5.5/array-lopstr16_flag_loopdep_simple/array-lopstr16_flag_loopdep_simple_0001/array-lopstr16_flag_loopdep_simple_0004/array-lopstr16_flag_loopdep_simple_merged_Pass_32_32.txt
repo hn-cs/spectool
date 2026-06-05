@@ -1,0 +1,375 @@
+[kernel] Parsing out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c:30: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 32 goals scheduled
+[wp] Proved goals:   32 / 32
+  Qed:            26
+  Alt-Ergo :       6 (30ms-39ms-59ms)
+------------------------------------------------------------
+  Function init
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 16) in 'init':
+Let x = Mint_0[shiftfield_F1_n(shift_S1(a, i))].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(size_0).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < size_0).
+  (* Pre-condition *)
+  Have: 0 <= size_0.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_S1(a, 0), size_0).
+  (* Loop assigns ... *)
+  Have: forall a_1 : addr.
+      ((forall i_2 : Z. ((0 <= i_2) -> ((i_2 < size_0) ->
+        (shiftfield_F1_n(shift_S1(a, i_2)) != a_1)))) ->
+      (Mint_1[a_1] = Mint_0[a_1])).
+  (* Invariant *)
+  Have: forall i_2 : Z.
+      let x_1 = Mint_0[shiftfield_F1_n(shift_S1(a, i_2))] in ((0 <= i_2) ->
+      ((i_2 < i_1) -> (((-2147483648) <= x_1) /\ (x_1 <= 2147483646)))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: size_0 <= i_1.
+}
+Prove: ((-2147483648) <= x) /\ (x <= 2147483646).
+Prover Z3 4.8.12 returns Valid (Qed:15ms) (180ms) (104521)
+Prover Alt-Ergo  returns Valid (Qed:15ms) (43ms) (83)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 23):
+Let x = Mint_0[shiftfield_F1_n(shift_S1(a, i)) <- v]
+          [shiftfield_F1_n(shift_S1(a, i_1))].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(size_0) /\ is_sint32(v) /\
+      is_sint32(1 + i).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Pre-condition *)
+  Have: 0 <= size_0.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_S1(a, 0), size_0).
+  (* Loop assigns ... *)
+  Have: forall a_1 : addr.
+      ((forall i_2 : Z. ((0 <= i_2) -> ((i_2 < size_0) ->
+        (shiftfield_F1_n(shift_S1(a, i_2)) != a_1)))) ->
+      (Mint_1[a_1] = Mint_0[a_1])).
+  (* Invariant *)
+  Have: forall i_2 : Z.
+      let x_1 = Mint_0[shiftfield_F1_n(shift_S1(a, i_2))] in ((0 <= i_2) ->
+      ((i_2 < i) -> (((-2147483648) <= x_1) /\ (x_1 <= 2147483646)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < size_0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+}
+Prove: ((-2147483648) <= x) /\ (x <= 2147483646).
+Prover Alt-Ergo  returns Valid (Qed:6ms) (59ms) (205)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 25) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 25) (2/2):
+Call Result at line 30
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 17) in 'init' (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 17) in 'init' (2/3):
+Effect at line 28
+Prove: true.
+Prover Qed returns Valid (0.97ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 17) in 'init' (3/3):
+Effect at line 28
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 17) in 'init' (1/2):
+Effect at line 28
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 17) in 'init' (2/2):
+Effect at line 28
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 41):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 41):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 42):
+Let x = a[i].F1_n.
+Assume {
+  Type: is_sint32(flag_0) /\ is_sint32(i) /\ is_sint32(x) /\
+      is_sint32(1 + i).
+  (* Call 'init' *)
+  Have: forall i_1 : Z. let x_1 = a[i_1].F1_n in ((0 <= i_1) ->
+      ((i_1 <= 999999) -> (((-2147483648) <= x_1) /\ (x_1 <= 2147483646)))).
+  (* Call Effects *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 <= 999999) ->
+      (((i_1 < 0) \/ (1000000 <= i_1)) ->
+      ((a_1[i_1].F1_n) = (a[i_1].F1_n))))).
+  (* Invariant *)
+  Have: i <= 1000000.
+  (* Invariant *)
+  Have: ((flag_0 = 1) ->
+      (exists i_1 : Z. ((a[i_1].F1_n) != 0) /\ (0 <= i_1) /\ (i_1 < i))).
+  (* Invariant *)
+  Have: (flag_0 = 0) \/ (flag_0 = 1).
+  (* Invariant *)
+  Have: ((flag_0 = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) -> ((a[i_1].F1_n) = 0))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 999999.
+  If x != 0
+  Else { Have: flag_0 = 1. }
+}
+Prove: exists i_1 : Z. ((a[i_1].F1_n) != 0) /\ (i_1 <= i) /\ (0 <= i_1).
+Prover Z3 4.8.12 returns Valid (Qed:19ms) (140ms) (40278)
+Prover Alt-Ergo  returns Valid (Qed:19ms) (41ms) (104)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 42):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 43):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 43):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 44):
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(1 + i_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Call 'init' *)
+  Have: forall i_2 : Z. let x = a[i_2].F1_n in ((0 <= i_2) ->
+      ((i_2 <= 999999) -> (((-2147483648) <= x) /\ (x <= 2147483646)))).
+  (* Call Effects *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= 999999) ->
+      (((i_2 < 0) \/ (1000000 <= i_2)) ->
+      ((a_1[i_2].F1_n) = (a[i_2].F1_n))))).
+  (* Invariant *)
+  Have: i_1 <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) -> ((a[i_2].F1_n) = 0))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 <= 999999.
+  Have: (a[i_1].F1_n) = 0.
+}
+Prove: (a[i].F1_n) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:15ms) (140ms) (38580)
+Prover Alt-Ergo  returns Valid (Qed:15ms) (30ms) (60)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 44):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 45):
+Prove: true.
+Prover Qed returns Valid (18ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 45):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 57):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 57):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 58):
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(i_2) /\ is_sint32(1 + i_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= 999999).
+  (* Call 'init' *)
+  Have: forall i_3 : Z. let x = a[i_3].F1_n in ((0 <= i_3) ->
+      ((i_3 <= 999999) -> (((-2147483648) <= x) /\ (x <= 2147483646)))).
+  (* Call Effects *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 <= 999999) ->
+      (((i_3 < 0) \/ (1000000 <= i_3)) ->
+      ((a_1[i_3].F1_n) = (a[i_3].F1_n))))).
+  (* Invariant *)
+  Have: i_2 <= 1000000.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i_2) -> ((a[i_3].F1_n) = 0))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: 1000000 <= i_2.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 <= 999999) ->
+      ((a[i_3].F1_n) = 0))).
+  (* Invariant *)
+  Have: i_1 <= 1000000.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 <= 999999.
+}
+Prove: (a[i].F1_n) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (150ms) (39140)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (31ms) (44)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 58):
+Assume {
+  Type: is_sint32(i_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= 999999).
+  (* Call 'init' *)
+  Have: forall i_2 : Z. let x = a[i_2].F1_n in ((0 <= i_2) ->
+      ((i_2 <= 999999) -> (((-2147483648) <= x) /\ (x <= 2147483646)))).
+  (* Call Effects *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= 999999) ->
+      (((i_2 < 0) \/ (1000000 <= i_2)) ->
+      ((a_1[i_2].F1_n) = (a[i_2].F1_n))))).
+  (* Invariant *)
+  Have: i_1 <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) -> ((a[i_2].F1_n) = 0))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: 1000000 <= i_1.
+}
+Prove: (a[i].F1_n) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (150ms) (37789)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (32ms) (36)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 59):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 59):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 46):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 60):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 14) in 'init'' in 'main' at call 'init' (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 39)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 15) in 'init'' in 'main' at call 'init' (file out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c, line 39)
+:
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0004/array-lopstr16_flag_loopdep_simple_merged.c:33: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

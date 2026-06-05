@@ -1,0 +1,371 @@
+[kernel] Parsing out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 17 goals scheduled
+[wp] [Timeout] typed_find_end_call_equal_requires_valid_2 (Qed 6ms) (Z3 8s)
+[wp] [Timeout] typed_find_end_call_equal_requires_valid (Qed 7ms) (Z3 8s)
+[wp] Proved goals:   15 / 17
+  Qed:             9
+  Alt-Ergo :       6 (30ms-58ms)
+  Timeout:         2
+------------------------------------------------------------
+  Axiomatic 'HasSubRange'
+------------------------------------------------------------
+
+Lemma HasSubRange_Sizes:
+Prove: (P_HasSubRange_1_ Mint_0 a_0 m_0 n_0 b_0 p_0) -> ((m_0+p_0)<=n_0)
+Prover Z3 4.8.12 returns Valid (150ms) (71191)
+Prover Alt-Ergo  returns Valid (33ms) (33)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function find_end
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 58):
+Let x = 1 + r.
+Assume {
+  Type: is_uint32(i) /\ is_uint32(p) /\ is_uint32(r_1) /\ is_uint32(r_2) /\
+      is_uint32(r) /\ is_sint32(equal_0).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Then *)
+  Have: 0 < p.
+  (* Then *)
+  Have: p <= r.
+  (* Invariant *)
+  Have: p <= x.
+  (* Invariant *)
+  Have: (r = r_2) \/ (r_2 < i).
+  (* Invariant *)
+  Have: ((r != r_2) ->
+      P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, r_2), p, b)).
+  (* Invariant *)
+  Have: (i + p) <= x.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < i) -> ((r_2 < i_1) ->
+      (!P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_1), p, b)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_1), p, b) ->
+      ((r != r_2) /\ (i_1 <= r_2))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= to_uint32(r - p).
+  (* Call 'equal' *)
+  Have: P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i), p, b) <->
+      (equal_0 != 0).
+  If equal_0 != 0
+  Then { Have: r_1 = i. }
+  Else { Have: r_2 = r_1. }
+}
+Prove: (r = r_1) \/ (r_1 < to_uint32(1 + i)).
+Prover Z3 4.8.12 returns Valid (Qed:40ms) (200ms) (265770)
+Prover Alt-Ergo  returns Valid (Qed:40ms) (48ms) (173)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 58):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 59):
+Prove: true.
+Prover Qed returns Valid (27ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 59):
+Prove: true.
+Prover Qed returns Valid (0.71ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 60):
+Let x = to_uint32(1 + i).
+Let x_1 = 1 + r.
+Assume {
+  Type: is_uint32(i) /\ is_uint32(p) /\ is_uint32(r_1) /\ is_uint32(r_2) /\
+      is_uint32(r) /\ is_sint32(equal_0).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Then *)
+  Have: 0 < p.
+  (* Then *)
+  Have: p <= r.
+  (* Invariant *)
+  Have: p <= x_1.
+  (* Invariant *)
+  Have: (r = r_2) \/ (r_2 < i).
+  (* Invariant *)
+  Have: ((r != r_2) ->
+      P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, r_2), p, b)).
+  (* Invariant *)
+  Have: (i + p) <= x_1.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < i) -> ((r_2 < i_1) ->
+      (!P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_1), p, b)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_1), p, b) ->
+      ((r != r_2) /\ (i_1 <= r_2))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= to_uint32(r - p).
+  (* Call 'equal' *)
+  Have: P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i), p, b) <->
+      (equal_0 != 0).
+  If equal_0 != 0
+  Then { Have: r_1 = i. }
+  Else { Have: r_2 = r_1. }
+  (* Invariant *)
+  Have: (r = r_1) \/ (r_1 < x).
+  (* Invariant *)
+  Have: ((r != r_1) ->
+      P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, r_1), p, b)).
+}
+Prove: (p + x) <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:36ms) (250ms) (266660)
+Prover Alt-Ergo  returns Valid (Qed:36ms) (58ms) (225)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 60):
+Assume {
+  Type: is_uint32(p) /\ is_uint32(r).
+  (* Then *)
+  Have: 0 < p.
+  (* Then *)
+  Have: p <= r.
+}
+Prove: p <= (1 + r).
+Prover Alt-Ergo  returns Valid (Qed:5ms) (30ms) (16)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 61):
+Let x = to_uint32(1 + i_1).
+Let x_1 = 1 + r_2.
+Assume {
+  Type: is_uint32(i_1) /\ is_uint32(p) /\ is_uint32(r) /\ is_uint32(r_1) /\
+      is_uint32(r_2) /\ is_sint32(equal_0).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Goal *)
+  When: (r < i) /\ (i < x).
+  (* Then *)
+  Have: 0 < p.
+  (* Then *)
+  Have: p <= r_2.
+  (* Invariant *)
+  Have: p <= x_1.
+  (* Invariant *)
+  Have: (r_2 = r_1) \/ (r_1 < i_1).
+  (* Invariant *)
+  Have: ((r_2 != r_1) ->
+      P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, r_1), p, b)).
+  (* Invariant *)
+  Have: (i_1 + p) <= x_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((r_1 < i_2) ->
+      (!P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_2), p, b)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_2), p, b) ->
+      ((r_2 != r_1) /\ (i_2 <= r_1))))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 <= to_uint32(r_2 - p).
+  (* Call 'equal' *)
+  Have: P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_1), p, b) <->
+      (equal_0 != 0).
+  If equal_0 != 0
+  Then { Have: r = i_1. }
+  Else { Have: r_1 = r. }
+  (* Invariant *)
+  Have: (r_2 = r) \/ (r < x).
+  (* Invariant *)
+  Have: ((r_2 != r) -> P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, r), p, b)).
+  (* Invariant *)
+  Have: (p + x) <= x_1.
+}
+Prove: !P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i), p, b).
+Prover Alt-Ergo  returns Valid (Qed:29ms) (42ms) (209)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 61):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 62):
+Let x = to_uint32(1 + i_1).
+Let x_1 = 1 + r.
+Assume {
+  Type: is_uint32(i_1) /\ is_uint32(p) /\ is_uint32(r_1) /\ is_uint32(r_2) /\
+      is_uint32(r) /\ is_sint32(equal_0).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < x) /\
+      P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i), p, b).
+  (* Then *)
+  Have: 0 < p.
+  (* Then *)
+  Have: p <= r.
+  (* Invariant *)
+  Have: p <= x_1.
+  (* Invariant *)
+  Have: (r = r_2) \/ (r_2 < i_1).
+  (* Invariant *)
+  Have: ((r != r_2) ->
+      P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, r_2), p, b)).
+  (* Invariant *)
+  Have: (i_1 + p) <= x_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((r_2 < i_2) ->
+      (!P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_2), p, b)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_2), p, b) ->
+      ((r != r_2) /\ (i_2 <= r_2))))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 <= to_uint32(r - p).
+  (* Call 'equal' *)
+  Have: P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_1), p, b) <->
+      (equal_0 != 0).
+  If equal_0 != 0
+  Then { Have: r_1 = i_1. }
+  Else { Have: r_2 = r_1. }
+  (* Invariant *)
+  Have: (r = r_1) \/ (r_1 < x).
+  (* Invariant *)
+  Have: ((r != r_1) ->
+      P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, r_1), p, b)).
+  (* Invariant *)
+  Have: (p + x) <= x_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((r_1 < i_2) -> ((i_2 < x) ->
+      (!P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_2), p, b)))).
+}
+Prove: (r != r_1) /\ (i <= r_1).
+Prover Alt-Ergo  returns Valid (Qed:25ms) (49ms) (338)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 62):
+Prove: true.
+Prover Qed returns Valid (0.58ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 63):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 63):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 64) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 64) (2/2):
+Call Result at line 68
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition 'valid' in 'equal'' in 'find_end' at call 'equal' (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 68)
+:
+Let x = 1 + r_1.
+Assume {
+  Type: is_uint32(i) /\ is_uint32(p) /\ is_uint32(r) /\ is_uint32(r_1).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Then *)
+  Have: 0 < p.
+  (* Then *)
+  Have: p <= r_1.
+  (* Invariant *)
+  Have: p <= x.
+  (* Invariant *)
+  Have: (r_1 = r) \/ (r < i).
+  (* Invariant *)
+  Have: ((r_1 != r) -> P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, r), p, b)).
+  (* Invariant *)
+  Have: (i + p) <= x.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < i) -> ((r < i_1) ->
+      (!P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_1), p, b)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_1), p, b) ->
+      ((r_1 != r) /\ (i_1 <= r))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= to_uint32(r_1 - p).
+}
+Prove: valid_rd(Malloc_0, shift_sint32(a, i), p).
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition 'valid' in 'equal'' in 'find_end' at call 'equal' (file out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c, line 68)
+:
+Let x = 1 + r_1.
+Assume {
+  Type: is_uint32(i) /\ is_uint32(p) /\ is_uint32(r) /\ is_uint32(r_1).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Then *)
+  Have: 0 < p.
+  (* Then *)
+  Have: p <= r_1.
+  (* Invariant *)
+  Have: p <= x.
+  (* Invariant *)
+  Have: (r_1 = r) \/ (r < i).
+  (* Invariant *)
+  Have: ((r_1 != r) -> P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, r), p, b)).
+  (* Invariant *)
+  Have: (i + p) <= x.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < i) -> ((r < i_1) ->
+      (!P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_1), p, b)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (P_Equal_2_(Mint_0, Mint_0, shift_sint32(a, i_1), p, b) ->
+      ((r_1 != r) /\ (i_1 <= r))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= to_uint32(r_1 - p).
+}
+Prove: valid_rd(Malloc_0, shift_sint32(b, 0), p).
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/find_end/find_end_0001/find_end_0001/find_end_merged.c:52: Warning: 
+  No 'assigns' specification for function 'find_end'.
+  Callers assumptions might be imprecise.

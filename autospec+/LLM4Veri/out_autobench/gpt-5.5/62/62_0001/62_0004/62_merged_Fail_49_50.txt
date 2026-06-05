@@ -1,0 +1,546 @@
+[kernel] Parsing out/gpt-5.5/62/62_0001/62_0004/62_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/gpt-5.5/62/62_0001/62_0004/62_merged.c:34: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/62/62_0001/62_0004/62_merged.c:4: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 50 goals scheduled
+[wp] [Timeout] typed_foo_assert (Qed 10ms) (Z3 8s)
+[wp] Proved goals:   49 / 50
+  Qed:            44
+  Alt-Ergo :       5 (20ms-26ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 8):
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(c_2) /\ is_sint32(c_3) /\
+      is_sint32(c_4) /\ is_sint32(n) /\ is_sint32(tmp_0) /\
+      is_sint32(tmp_0_0).
+  (* Goal *)
+  When: 0 < c.
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: ((n = c_4) -> (0 < c_4)).
+  (* Invariant *)
+  Have: (c_4 = 0) \/ (0 < c_4).
+  (* Invariant *)
+  Have: ((c_4 != 0) -> (0 < c_4)).
+  (* Invariant *)
+  Have: (0 <= c_4) /\ (c_4 <= n).
+  (* Invariant *)
+  Have: (n = c_4) \/ (c_4 < n).
+  (* Invariant *)
+  Have: ((n != c_4) -> (c_4 < n)).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If tmp_0 != 0
+  Then {
+    Have: c_4 = c_2.
+    If n != c_2
+    Then { Have: c_2 = c_1. Have: (1 + c_1) = c. }
+    Else { Have: c_2 = c. }
+  }
+  Else {
+    Have: c_4 = c_3.
+    If n = c_3
+    Then { Have: c = 1. }
+    Else { Have: c_3 = c. }
+  }
+}
+Prove: c <= n.
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (130ms) (39248)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (23ms) (62)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 11):
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(c_2) /\ is_sint32(c_3) /\
+      is_sint32(c_4) /\ is_sint32(n) /\ is_sint32(tmp_0) /\
+      is_sint32(tmp_0_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: ((n = c_4) -> (0 < c_4)).
+  (* Invariant *)
+  Have: (c_4 = 0) \/ (0 < c_4).
+  (* Invariant *)
+  Have: ((c_4 != 0) -> (0 < c_4)).
+  (* Invariant *)
+  Have: (0 <= c_4) /\ (c_4 <= n).
+  (* Invariant *)
+  Have: (n = c_4) \/ (c_4 < n).
+  (* Invariant *)
+  Have: ((n != c_4) -> (c_4 < n)).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If tmp_0 != 0
+  Then {
+    Have: c_4 = c_2.
+    If n != c_2
+    Then { Have: c_2 = c_1. Have: (1 + c_1) = c. }
+    Else { Have: c_2 = c. }
+  }
+  Else {
+    Have: c_4 = c_3.
+    If n = c_3
+    Then { Have: c = 1. }
+    Else { Have: c_3 = c. }
+  }
+  (* Invariant *)
+  Have: ((0 < c) -> (c <= n)).
+  (* Invariant *)
+  Have: ((n = c) -> (0 < c)).
+}
+Prove: (c = 0) \/ (0 < c).
+Prover Alt-Ergo  returns Valid (Qed:10ms) (26ms) (68)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 12):
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(c_2) /\ is_sint32(c_3) /\
+      is_sint32(c_4) /\ is_sint32(n) /\ is_sint32(tmp_0) /\
+      is_sint32(tmp_0_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: ((n = c_4) -> (0 < c_4)).
+  (* Invariant *)
+  Have: (c_4 = 0) \/ (0 < c_4).
+  (* Invariant *)
+  Have: ((c_4 != 0) -> (0 < c_4)).
+  (* Invariant *)
+  Have: (0 <= c_4) /\ (c_4 <= n).
+  (* Invariant *)
+  Have: (n = c_4) \/ (c_4 < n).
+  (* Invariant *)
+  Have: ((n != c_4) -> (c_4 < n)).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If tmp_0 != 0
+  Then {
+    Have: c_4 = c_2.
+    If n != c_2
+    Then { Have: c_2 = c_1. Have: (1 + c_1) = c. }
+    Else { Have: c_2 = c. }
+  }
+  Else {
+    Have: c_4 = c_3.
+    If n = c_3
+    Then { Have: c = 1. }
+    Else { Have: c_3 = c. }
+  }
+  (* Invariant *)
+  Have: ((0 < c) -> (c <= n)).
+  (* Invariant *)
+  Have: ((n = c) -> (0 < c)).
+  (* Invariant *)
+  Have: (c = 0) \/ (0 < c).
+}
+Prove: (c = 0) \/ (c <= n).
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (90ms) (5479)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (20ms) (32)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 15):
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(c_2) /\ is_sint32(c_3) /\
+      is_sint32(c_4) /\ is_sint32(n) /\ is_sint32(tmp_0) /\
+      is_sint32(tmp_0_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: ((n = c_4) -> (0 < c_4)).
+  (* Invariant *)
+  Have: (c_4 = 0) \/ (0 < c_4).
+  (* Invariant *)
+  Have: ((c_4 != 0) -> (0 < c_4)).
+  (* Invariant *)
+  Have: (0 <= c_4) /\ (c_4 <= n).
+  (* Invariant *)
+  Have: (n = c_4) \/ (c_4 < n).
+  (* Invariant *)
+  Have: ((n != c_4) -> (c_4 < n)).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If tmp_0 != 0
+  Then {
+    Have: c_4 = c_2.
+    If n != c_2
+    Then { Have: c_2 = c_1. Have: (1 + c_1) = c. }
+    Else { Have: c_2 = c. }
+  }
+  Else {
+    Have: c_4 = c_3.
+    If n = c_3
+    Then { Have: c = 1. }
+    Else { Have: c_3 = c. }
+  }
+  (* Invariant *)
+  Have: ((0 < c) -> (c <= n)).
+  (* Invariant *)
+  Have: ((n = c) -> (0 < c)).
+  (* Invariant *)
+  Have: (c = 0) \/ (0 < c).
+  (* Invariant *)
+  Have: (c = 0) \/ (c <= n).
+  (* Invariant *)
+  Have: ((c != 0) -> (0 < c)).
+}
+Prove: (0 <= c) /\ (c <= n).
+Prover Z3 4.8.12 returns Valid (Qed:29ms) (130ms) (39903)
+Prover Alt-Ergo  returns Valid (Qed:29ms) (24ms) (38)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 17):
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(c_2) /\ is_sint32(c_3) /\
+      is_sint32(c_4) /\ is_sint32(n) /\ is_sint32(tmp_0) /\
+      is_sint32(tmp_0_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: ((n = c_4) -> (0 < c_4)).
+  (* Invariant *)
+  Have: (c_4 = 0) \/ (0 < c_4).
+  (* Invariant *)
+  Have: ((c_4 != 0) -> (0 < c_4)).
+  (* Invariant *)
+  Have: (0 <= c_4) /\ (c_4 <= n).
+  (* Invariant *)
+  Have: (n = c_4) \/ (c_4 < n).
+  (* Invariant *)
+  Have: ((n != c_4) -> (c_4 < n)).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If tmp_0 != 0
+  Then {
+    Have: c_4 = c_2.
+    If n != c_2
+    Then { Have: c_2 = c_1. Have: (1 + c_1) = c. }
+    Else { Have: c_2 = c. }
+  }
+  Else {
+    Have: c_4 = c_3.
+    If n = c_3
+    Then { Have: c = 1. }
+    Else { Have: c_3 = c. }
+  }
+  (* Invariant *)
+  Have: ((n = c) -> (0 < c)).
+  (* Invariant *)
+  Have: (c = 0) \/ (0 < c).
+  (* Invariant *)
+  Have: ((c != 0) -> (0 < c)).
+  (* Invariant *)
+  Have: (0 <= c) /\ (c <= n).
+}
+Prove: (n = c) \/ (c < n).
+Prover Z3 4.8.12 returns Valid (Qed:11ms) (110ms) (39208)
+Prover Alt-Ergo  returns Valid (Qed:11ms) (21ms) (36)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.64ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (0.62ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (0.98ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (0.80ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (0.91ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 48):
+Assume {
+  Type: is_sint32(c) /\ is_sint32(n).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: ((n = c) -> (0 < c)).
+  (* Invariant *)
+  Have: (c = 0) \/ (0 < c).
+  (* Invariant *)
+  Have: ((c != 0) -> (0 < c)).
+  (* Invariant *)
+  Have: (0 <= c) /\ (c <= n).
+  (* Invariant *)
+  Have: (n = c) \/ (c < n).
+  (* Invariant *)
+  Have: ((n != c) -> (c < n)).
+}
+Prove: 0 < c.
+Prover Z3 4.8.12 returns Timeout (Qed:10ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:10ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 31) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 31) (2/3):
+Call Result at line 33
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/62/62_0001/62_0004/62_merged.c, line 31) (3/3):
+Call Result at line 34
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/62/62_0001/62_0004/62_merged.c:4: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/62/62_0001/62_0004/62_merged.c:34: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

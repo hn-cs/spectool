@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/loops-crafted-1_iftelse/loops-crafted-1_iftelse_0001/loops-crafted-1_iftelse_0002/loops-crafted-1_iftelse_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/loops-crafted-1_iftelse/loops-crafted-1_iftelse_0001/loops-crafted-1_iftelse_0002/loops-crafted-1_iftelse_merged.c:9: Warning: 
+  unbound logic variable n. Ignoring logic specification of function main
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/loops-crafted-1_iftelse/loops-crafted-1_iftelse_0001/loops-crafted-1_iftelse_0002/loops-crafted-1_iftelse_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

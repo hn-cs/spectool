@@ -1,0 +1,193 @@
+[kernel] Parsing out/gpt-5.5/214/214_0001/214_0001/214_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] [Timeout] typed_array_max_advanced_loop_invariant_2_preserved (Qed 18ms) (Z3 8s)
+[wp] [Timeout] typed_array_max_advanced_loop_invariant_2_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_array_max_advanced_loop_invariant_3_established (Qed 2ms) (Z3 8s)
+[wp] Proved goals:    8 / 11
+  Qed:             6
+  Alt-Ergo :       2 (30ms-35ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function array_max_advanced
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/214/214_0001/214_0001/214_merged.c, line 8):
+Let x = Mint_0[shift_sint32(arr_0, i_1)].
+Let x_1 = Mint_0[shift_sint32(arr_0, i)].
+Let x_2 = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x_2) /\
+      is_sint32(Mint_0[shift_sint32(arr_0, 0)]) /\ is_sint32(x_1) /\
+      is_sint32(x).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: 0 < n.
+  (* Invariant *)
+  Have: (i_1 <= i) /\ (0 <= i_1) /\ (i_1 < n).
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(arr_0, i_2)] <= x))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x < x_1
+  Then { Have: x_1 = max_0. }
+  Else { Have: x = max_0. }
+}
+Prove: exists i_2 : Z. (Mint_0[shift_sint32(arr_0, i_2)] = max_0) /\
+    (0 <= i_2) /\ (i_2 < n) /\ (i_2 <= x_2).
+Prover Z3 4.8.12 returns Valid (Qed:22ms) (140ms) (88158)
+Prover Alt-Ergo  returns Valid (Qed:22ms) (30ms) (85)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/214/214_0001/214_0001/214_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/214/214_0001/214_0001/214_merged.c, line 9):
+Let x = 1 + i.
+Let x_1 = Mint_0[shift_sint32(arr_0, i)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(max_0) /\ is_sint32(n) /\ is_sint32(x) /\
+      is_sint32(Mint_0[shift_sint32(arr_0, 0)]) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: ((0 < n) ->
+      (exists i_1 : Z. (Mint_0[shift_sint32(arr_0, i_1)] = max_0) /\
+       (i_1 <= i) /\ (0 <= i_1) /\ (i_1 < n))).
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (Mint_0[shift_sint32(arr_0, i_1)] <= max_0))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If max_0 < x_1
+  Then { Have: x_1 = max_1. }
+  Else { Have: max_0 = max_1. }
+  (* Invariant *)
+  Have: ((0 < n) ->
+      (exists i_1 : Z. (Mint_0[shift_sint32(arr_0, i_1)] = max_1) /\
+       (0 <= i_1) /\ (i_1 < n) /\ (i_1 <= x))).
+}
+Prove: x != n.
+Prover Z3 4.8.12 returns Timeout (Qed:18ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:18ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/214/214_0001/214_0001/214_merged.c, line 9):
+Assume { Type: is_sint32(n). }
+Prove: n != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/214/214_0001/214_0001/214_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/214/214_0001/214_0001/214_merged.c, line 10):
+Assume { Type: is_sint32(n). (* Invariant *) Have: n != 0. }
+Prove: 0 <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/214/214_0001/214_0001/214_merged.c, line 11):
+Let x = 1 + i_1.
+Let x_1 = Mint_0[shift_sint32(arr_0, i_1)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(max_1) /\ is_sint32(n) /\ is_sint32(x) /\
+      is_sint32(Mint_0[shift_sint32(arr_0, 0)]) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: ((0 < n) ->
+      (exists i_2 : Z. (Mint_0[shift_sint32(arr_0, i_2)] = max_1) /\
+       (i_2 <= i_1) /\ (0 <= i_2) /\ (i_2 < n))).
+  (* Invariant *)
+  Have: n != i_1.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (Mint_0[shift_sint32(arr_0, i_2)] <= max_1))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  If max_1 < x_1
+  Then { Have: x_1 = max_0. }
+  Else { Have: max_1 = max_0. }
+  (* Invariant *)
+  Have: ((0 < n) ->
+      (exists i_2 : Z. (Mint_0[shift_sint32(arr_0, i_2)] = max_0) /\
+       (0 <= i_2) /\ (i_2 < n) /\ (i_2 <= x))).
+  (* Invariant *)
+  Have: x != n.
+}
+Prove: Mint_0[shift_sint32(arr_0, i)] <= max_0.
+Prover Alt-Ergo  returns Valid (Qed:16ms) (35ms) (149)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/214/214_0001/214_0001/214_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/214/214_0001/214_0001/214_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/214/214_0001/214_0001/214_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.89ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/214/214_0001/214_0001/214_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/214/214_0001/214_0001/214_merged.c:5: Warning: 
+  No 'assigns' specification for function 'array_max_advanced'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/214/214_0001/214_0001/214_merged.c:25: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,144 @@
+[kernel] Parsing out/deepseek-chat/loop-lit_hhk2008/loop-lit_hhk2008_0001/loop-lit_hhk2008_0001/loop-lit_hhk2008_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-lit_hhk2008/loop-lit_hhk2008_0001/loop-lit_hhk2008_0001/loop-lit_hhk2008_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 8ms) (Z3 8s)
+[wp] Proved goals:    7 / 9
+  Qed:             6
+  Alt-Ergo :       1 (18ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_hhk2008/loop-lit_hhk2008_0001/loop-lit_hhk2008_0001/loop-lit_hhk2008_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_hhk2008/loop-lit_hhk2008_0001/loop-lit_hhk2008_0001/loop-lit_hhk2008_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_hhk2008/loop-lit_hhk2008_0001/loop-lit_hhk2008_0001/loop-lit_hhk2008_merged.c, line 18):
+Let x = b + res_0.
+Let x_1 = 1 + res_1.
+Let x_2 = -res_1.
+Assume {
+  Type: is_sint32(b) /\ is_sint32(res_1) /\ is_sint32(res_0) /\
+      is_sint32(x_1) /\ is_sint32(b + res_0 - res_1) /\
+      is_sint32(b + res_0 - 1 - res_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= res_0) /\ (res_0 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= b) /\ (b <= 2147483646).
+  (* Else *)
+  Have: res_0 <= 1000000.
+  (* Then *)
+  Have: 0 <= b.
+  (* Then *)
+  Have: b <= 1000000.
+  (* Invariant *)
+  Have: b != 0.
+  (* Invariant *)
+  Have: x != res_1.
+  (* Invariant *)
+  Have: res_0 <= res_1.
+  (* Invariant *)
+  Have: res_1 <= x.
+  (* Then *)
+  Have: res_1 < x.
+}
+Prove: x != x_1.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_hhk2008/loop-lit_hhk2008_0001/loop-lit_hhk2008_0001/loop-lit_hhk2008_merged.c, line 18):
+Assume {
+  Type: is_sint32(a) /\ is_sint32(b).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= a) /\ (a <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= b) /\ (b <= 2147483646).
+  (* Else *)
+  Have: a <= 1000000.
+  (* Then *)
+  Have: 0 <= b.
+  (* Then *)
+  Have: b <= 1000000.
+}
+Prove: b != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_hhk2008/loop-lit_hhk2008_0001/loop-lit_hhk2008_0001/loop-lit_hhk2008_merged.c, line 19):
+Let x = cnt_0 + res_0.
+Let x_1 = 1 + res_0.
+Assume {
+  Type: is_sint32(a) /\ is_sint32(cnt_0) /\ is_sint32(res_0) /\
+      is_sint32(cnt_0 - 1) /\ is_sint32(x_1) /\ is_sint32(cnt_0 + res_0 - a).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= a) /\ (a <= 2147483646).
+  (* Call 'unknown' *)
+  Have: (x <= (2147483646 + a)) /\ (a <= (2147483648 + cnt_0 + res_0)).
+  (* Else *)
+  Have: a <= 1000000.
+  (* Then *)
+  Have: a <= x.
+  (* Then *)
+  Have: x <= (1000000 + a).
+  (* Invariant *)
+  Have: x != a.
+  (* Invariant *)
+  Have: cnt_0 != 0.
+  (* Invariant *)
+  Have: a <= res_0.
+  (* Invariant *)
+  Have: 0 <= cnt_0.
+  (* Then *)
+  Have: 0 < cnt_0.
+  (* Invariant *)
+  Have: cnt_0 != 1.
+}
+Prove: a <= x_1.
+Prover Alt-Ergo  returns Valid (Qed:6ms) (18ms) (21)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_hhk2008/loop-lit_hhk2008_0001/loop-lit_hhk2008_0001/loop-lit_hhk2008_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_hhk2008/loop-lit_hhk2008_0001/loop-lit_hhk2008_0001/loop-lit_hhk2008_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_hhk2008/loop-lit_hhk2008_0001/loop-lit_hhk2008_0001/loop-lit_hhk2008_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-lit_hhk2008/loop-lit_hhk2008_0001/loop-lit_hhk2008_0001/loop-lit_hhk2008_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-lit_hhk2008/loop-lit_hhk2008_0001/loop-lit_hhk2008_0001/loop-lit_hhk2008_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

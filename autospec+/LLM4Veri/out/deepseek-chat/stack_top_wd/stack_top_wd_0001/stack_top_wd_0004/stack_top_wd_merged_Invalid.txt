@@ -1,0 +1,17 @@
+[kernel] Parsing out/deepseek-chat/stack_top_wd/stack_top_wd_0001/stack_top_wd_0004/stack_top_wd_merged.c (with preprocessing)
+[kernel] out/deepseek-chat/stack_top_wd/stack_top_wd_0001/stack_top_wd_0004/stack_top_wd_merged.c:110: 
+  syntax error:
+  Location: between lines 110 and 115
+  108   value_type
+  109   stack_top(const Stack* s);
+  
+  110   bool
+  111   /*@
+  112   requires \valid(t) && StackInvariant(t);
+  113   requires \valid(s) && StackInvariant(s);
+  114   ensures \result <==> (StackSize(s) == 0 && StackSize(t) == 0) || (StackSize(s) != 0 && StackSize(t) != 0 && StackTop(s) == StackTop(t));
+  115   assigns \nothing;
+  
+  116   */
+  117   stack_top_wd(const Stack* s, const Stack* t)
+[kernel] Frama-C aborted: invalid user input.

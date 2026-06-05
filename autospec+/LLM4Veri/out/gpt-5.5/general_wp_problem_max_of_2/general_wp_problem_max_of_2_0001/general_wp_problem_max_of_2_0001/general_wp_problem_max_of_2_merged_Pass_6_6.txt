@@ -1,0 +1,66 @@
+[kernel] Parsing out/gpt-5.5/general_wp_problem_max_of_2/general_wp_problem_max_of_2_0001/general_wp_problem_max_of_2_0001/general_wp_problem_max_of_2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 6 goals scheduled
+[wp] Proved goals:    6 / 6
+  Qed:             4
+  Alt-Ergo :       2 (16ms-18ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/general_wp_problem_max_of_2/general_wp_problem_max_of_2_0001/general_wp_problem_max_of_2_0001/general_wp_problem_max_of_2_merged.c, line 15):
+Assume {
+  Type: is_sint32(s).
+  (* Call 'max' *)
+  Have: (34 <= s) /\ (45 <= s) /\ ((s = 34) \/ (s = 45)).
+}
+Prove: s = 45.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (34439)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (16ms) (14)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/general_wp_problem_max_of_2/general_wp_problem_max_of_2_0001/general_wp_problem_max_of_2_0001/general_wp_problem_max_of_2_merged.c, line 17):
+Assume {
+  Type: is_sint32(t).
+  (* Call 'max' *)
+  Have: ((-43) <= t) /\ (34 <= t) /\ ((t = (-43)) \/ (t = 34)).
+}
+Prove: t = 34.
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (120ms) (34443)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (18ms) (14)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function max
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/general_wp_problem_max_of_2/general_wp_problem_max_of_2_0001/general_wp_problem_max_of_2_0001/general_wp_problem_max_of_2_merged.c, line 3) in 'max':
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/general_wp_problem_max_of_2/general_wp_problem_max_of_2_0001/general_wp_problem_max_of_2_0001/general_wp_problem_max_of_2_merged.c, line 4) in 'max':
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'max' (1/2):
+Effect at line 9
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'max' (2/2):
+Effect at line 10
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/general_wp_problem_max_of_2/general_wp_problem_max_of_2_0001/general_wp_problem_max_of_2_0001/general_wp_problem_max_of_2_merged.c:12: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

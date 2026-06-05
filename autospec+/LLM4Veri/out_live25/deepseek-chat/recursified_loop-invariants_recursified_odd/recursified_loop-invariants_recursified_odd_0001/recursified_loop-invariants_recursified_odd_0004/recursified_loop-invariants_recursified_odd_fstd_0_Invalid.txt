@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/recursified_loop-invariants_recursified_odd/recursified_loop-invariants_recursified_odd_0001/recursified_loop-invariants_recursified_odd_0004/recursified_loop-invariants_recursified_odd_gen_0.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/recursified_loop-invariants_recursified_odd/recursified_loop-invariants_recursified_odd_0001/recursified_loop-invariants_recursified_odd_0004/recursified_loop-invariants_recursified_odd_gen_0.c:11: Warning: 
+  unexpected token ')'
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/recursified_loop-invariants_recursified_odd/recursified_loop-invariants_recursified_odd_0001/recursified_loop-invariants_recursified_odd_0004/recursified_loop-invariants_recursified_odd_gen_0.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -nA3 -i \"docker pull\\\\|docker run\\\\|veri-clang\\\\|frama-c --version\\\\|install\" \"autospec+/README.md\")",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 -m spectool.cli inject --src /tmp/sum.c --out /tmp/sum.acsl.c --func sum --acsl 'requires n >= 0; requires \\\\valid\\(a+\\(0..n-1\\)\\); ensures \\\\result == s; assigns \\\\nothing;' --loops '[{\"line\":5,\"acsl\":\"loop invariant 0 <= i <= n; loop assigns i, s;\"}]')",
+      "Bash(python3 -m spectool.cli split-blocks --func @/tmp/sum.c --granularity 3)",
+      "Bash(python3 -m spectool.cli state init --proj /tmp/proj --plan '{\"tasks\":[{\"fqn\":\"sum\",\"file\":\"sum.c\",\"line\":3,\"loops\":[5],\"deps\":[]}],\"verify_order\":[\"sum\"]}')",
+      "Bash(python3 -m spectool.cli state next --proj /tmp/proj)",
+      "Bash(python3 -m spectool.cli contracts put --proj /tmp/proj --fqn sum --signature \"int sum\\(int*,int\\)\" --acsl 'ensures \\\\result==s;' --wp Pass_5_5)",
+      "Bash([ -d \"$d/.git\" ])",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git rm *)",
+      "Bash(rm -rf autospec+/LLM4Veri/dataset/live/FM-bench-verified/.git autospec+/LLM4Veri/dataset/live/Live-FM-Bench/.git)"
+    ]
+  }
+}

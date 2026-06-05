@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=12, microseconds=804869), 'total_solve_time': datetime.timedelta(seconds=12, microseconds=379035), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 124, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1, 1], '1': ['loop invariant i <= length;', 'loop invariant \\forall integer k; 0 <= k < i ==> array[k] != element;', 'loop invariant 0 <= i;', 'loop assigns i;'], '2': ['requires \\valid_read(array+(0..length-1));', 'ensures \\result == \\null || \\exists integer i; 0 <= i < length && \\result == &array[i] && array[i] == element;', 'ensures \\result == \\null ==> \\forall integer i; 0 <= i < length ==> array[i] != element;', 'assigns \\nothing;'], '3': [], 'MSLines': ['#include <stddef.h>\n', '#include <limits.h>\n', '/* 2. FUNC CONTRACT */\nint* search(int* array, size_t length, int element){\n', '    /* 1. LOOP INVARIANT */\n    for(size_t i = 0; i < length; i++){\n', '        if(array[i] == element) return &array[i];\n', '    }\n', '    return NULL;\n', '}\n', '/* 3. FUNC CONTRACT */\nint main(){\n', '    int array[] = {1,2,3,4,5};\n', '    int *p = search(array,5,6);\n', '    //@ assert p == NULL;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

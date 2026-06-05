@@ -1,0 +1,42 @@
+[kernel] Parsing out/deepseek-chat/loop-lit_gr2006/loop-lit_gr2006_0001/loop-lit_gr2006_0001/loop-lit_gr2006_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 5 goals scheduled
+[wp] Proved goals:    5 / 5
+  Qed:             5
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_gr2006/loop-lit_gr2006_0001/loop-lit_gr2006_0001/loop-lit_gr2006_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_gr2006/loop-lit_gr2006_0001/loop-lit_gr2006_0001/loop-lit_gr2006_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_gr2006/loop-lit_gr2006_0001/loop-lit_gr2006_0001/loop-lit_gr2006_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_gr2006/loop-lit_gr2006_0001/loop-lit_gr2006_0001/loop-lit_gr2006_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-lit_gr2006/loop-lit_gr2006_0001/loop-lit_gr2006_0001/loop-lit_gr2006_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-lit_gr2006/loop-lit_gr2006_0001/loop-lit_gr2006_0001/loop-lit_gr2006_merged.c:2: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

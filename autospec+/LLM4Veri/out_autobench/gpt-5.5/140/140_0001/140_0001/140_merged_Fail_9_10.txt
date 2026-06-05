@@ -1,0 +1,98 @@
+[kernel] Parsing out/gpt-5.5/140/140_0001/140_0001/140_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/140/140_0001/140_0001/140_merged.c:24: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/140/140_0001/140_0001/140_merged.c:10: Warning: 
+  Neither code nor specification for function unknown1, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 10 goals scheduled
+[wp] [Timeout] typed_foo_loop_invariant_preserved (Qed 8ms) (Z3 8s)
+[wp] Proved goals:    9 / 10
+  Qed:             9
+  Timeout:         1
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/140/140_0001/140_0001/140_merged.c, line 15):
+Let x = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+}
+Prove: x != n.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/140/140_0001/140_0001/140_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/140/140_0001/140_0001/140_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/140/140_0001/140_0001/140_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.74ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/140/140_0001/140_0001/140_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/140/140_0001/140_0001/140_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.62ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/140/140_0001/140_0001/140_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/140/140_0001/140_0001/140_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.60ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/140/140_0001/140_0001/140_merged.c, line 19) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/140/140_0001/140_0001/140_merged.c, line 19) (2/2):
+Call Result at line 24
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/140/140_0001/140_0001/140_merged.c:2: Warning: 
+  No 'assigns' specification for function 'unknown1'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/140/140_0001/140_0001/140_merged.c:10: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,128 @@
+[kernel] Parsing out/deepseek-chat/240/240_0001/240_0001/240_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/240/240_0001/240_0001/240_merged.c:9: Warning: 
+  Calling function unknown_int that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/240/240_0001/240_0001/240_merged.c:7: Warning: 
+  Neither code nor implicit assigns clause for function unknown_int, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/240/240_0001/240_0001/240_merged.c:28: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 6ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 1ms) (Z3 8s)
+[wp] Proved goals:    7 / 9
+  Qed:             6
+  Alt-Ergo :       1 (32ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 14):
+Let x = 2 + i.
+Let x_1 = i / 2.
+Let x_2 = -x_1.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x) /\ is_sint32(n - x_1) /\
+      is_sint32(n - 1 - x_1).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483647).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Then *)
+  Have: i < n.
+}
+Prove: (x / 2) = (1 + x_1).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (140ms) (38286)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (32ms) (159)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 15):
+Let x = 2 + i.
+Let x_1 = x / 2.
+Let x_2 = k + x_1.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(k - 1) /\ is_sint32(x) /\
+      is_sint32(k + x_1 - 1).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483647) <= x_2) /\ (x_2 <= 2147483648).
+  (* Invariant *)
+  Have: 0 < x_2.
+  (* Invariant *)
+  Have: x_1 = (1 + (i / 2)).
+  (* Invariant *)
+  Have: i < x_2.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Then *)
+  Have: x <= x_2.
+}
+Prove: (3 + i) <= x_2.
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 15):
+Assume {
+  Type: is_sint32(n).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483647).
+}
+Prove: 0 <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.96ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/240/240_0001/240_0001/240_merged.c:5: Warning: 
+  No 'assigns' specification for function 'unknown_int'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/240/240_0001/240_0001/240_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

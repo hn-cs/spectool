@@ -1,0 +1,346 @@
+[kernel] Parsing out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c:43: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c:58: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c:56: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c:74: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c:72: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c:69: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c:53: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 32 goals scheduled
+[kernel] out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c:82: 
+  enumerating 999 integers
+[wp] [Timeout] typed_main_loop_assigns_2_part2 (Qed 14ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_assigns_2_part3 (Qed 11ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_assigns_2_part4 (Qed 23ms) (Z3 8s)
+[wp] Proved goals:   29 / 32
+  Qed:            28
+  Z3 4.8.12:       1 (350ms-6s-8s)
+  Timeout:         3
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.77ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.85ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (19ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 37):
+Prove: true.
+Prover Qed returns Valid (18ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 37):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 38):
+Prove: true.
+Prover Qed returns Valid (37ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 38):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 21) (1/5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 21) (2/5):
+Effect at line 24
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 21) (3/5):
+Effect at line 25
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 21) (4/5):
+Effect at line 26
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 21) (5/5):
+Effect at line 34
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 32) (1/4):
+Effect at line 34
+Assume {
+  Type: is_sint32(i_3) /\ is_sint32(k).
+  (* Goal *)
+  When: (0 <= i_4) /\ (i_4 < i_3) /\ (0 <= i_5) /\ (0 <= i_6) /\ (0 <= i) /\
+      (i < i_3) /\ (0 <= i_1) /\ (0 <= i_2) /\ (i_4 <= 999) /\
+      (i_5 <= 999) /\ (i_6 <= 999) /\ (i_1 <= 999) /\ (i_2 <= 999).
+  (* Loop assigns ... *)
+  Have: forall i_9,i_8,i_7 : Z. ((0 <= i_9) -> ((0 <= i_8) -> ((0 <= i_7) ->
+      ((i_9 <= 999) -> ((i_8 <= 999) -> ((i_7 <= 999) ->
+      (((i_9 < 0) \/ (i_8 < 0) \/ (i_7 < 0) \/ (1000 <= i_9) \/
+        (1000 <= i_8) \/ (1000 <= i_7)) ->
+      (B[i_9][i_8][i_7] = B_1[i_9][i_8][i_7])))))))).
+  (* Then *)
+  Have: i_3 <= 999.
+  (* Loop assigns ... *)
+  Have: forall i_9,i_8,i_7 : Z. ((0 <= i_9) -> ((0 <= i_8) -> ((0 <= i_7) ->
+      ((i_9 <= 999) -> ((i_8 <= 999) -> ((i_7 <= 999) ->
+      (((i_9 < 0) \/ (i_3 <= i_9) \/ (i_8 < 0) \/ (i_7 < 0) \/
+        (1000 <= i_8) \/ (1000 <= i_7)) ->
+      (B_1[i_9][i_8][i_7] = B_2[i_9][i_8][i_7])))))))).
+  (* Loop assigns ... *)
+  Have: (forall i_7 : Z. ((i_7 != i_3) -> (B_2[i_7] = B_3[i_7]))) /\
+      (forall i_7 : Z. ((i_7 != 0) -> (B_2[i_3][i_7] = B_3[i_3][i_7]))).
+  (* Invariant *)
+  Have: k <= 1000.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Else *)
+  Have: 1000 <= k.
+}
+Prove: exists i_9,i_8,i_7 : Z. (i_9 <= i) /\ (i_8 <= i_1) /\ (i_7 <= i_2) /\
+    (0 <= i_9) /\ (i_9 < i_3) /\ (i <= i_9) /\ (0 <= i_8) /\ (i_1 <= i_8) /\
+    (0 <= i_7) /\ (i_2 <= i_7) /\ (i_8 <= 999) /\ (i_7 <= 999).
+Prover Z3 4.8.12 returns Valid (Qed:33ms) (350ms) (254217)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 32) (2/4):
+Effect at line 35
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k).
+  (* Loop assigns ... *)
+  Have: forall i_3,i_2,i_1 : Z. ((0 <= i_3) -> ((0 <= i_2) -> ((0 <= i_1) ->
+      ((i_3 <= 999) -> ((i_2 <= 999) -> ((i_1 <= 999) ->
+      (((i_3 < 0) \/ (i_2 < 0) \/ (i_1 < 0) \/ (1000 <= i_3) \/
+        (1000 <= i_2) \/ (1000 <= i_1)) ->
+      (B[i_3][i_2][i_1] = B_1[i_3][i_2][i_1])))))))).
+  (* Then *)
+  Have: i <= 999.
+  (* Loop assigns ... *)
+  Have: forall i_3,i_2,i_1 : Z. ((0 <= i_3) -> ((0 <= i_2) -> ((0 <= i_1) ->
+      ((i_3 <= 999) -> ((i_2 <= 999) -> ((i_1 <= 999) ->
+      (((i_3 < 0) \/ (i <= i_3) \/ (i_2 < 0) \/ (i_1 < 0) \/ (1000 <= i_2) \/
+        (1000 <= i_1)) -> (B_1[i_3][i_2][i_1] = B_2[i_3][i_2][i_1])))))))).
+  (* Loop assigns ... *)
+  Have: (forall i_1 : Z. ((i_1 != i) -> (B_2[i_1] = B_3[i_1]))) /\
+      (forall i_1 : Z. ((i_1 != 0) -> (B_2[i][i_1] = B_3[i][i_1]))).
+  (* Invariant *)
+  Have: k <= 1000.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Else *)
+  Have: 1000 <= k.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:14ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:14ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 32) (3/4):
+Effect at line 42
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k).
+  (* Loop assigns ... *)
+  Have: forall i_3,i_2,i_1 : Z. ((0 <= i_3) -> ((0 <= i_2) -> ((0 <= i_1) ->
+      ((i_3 <= 999) -> ((i_2 <= 999) -> ((i_1 <= 999) ->
+      (((i_3 < 0) \/ (i_2 < 0) \/ (i_1 < 0) \/ (1000 <= i_3) \/
+        (1000 <= i_2) \/ (1000 <= i_1)) ->
+      (B[i_3][i_2][i_1] = B_1[i_3][i_2][i_1])))))))).
+  (* Then *)
+  Have: i <= 999.
+  (* Loop assigns ... *)
+  Have: forall i_3,i_2,i_1 : Z. ((0 <= i_3) -> ((0 <= i_2) -> ((0 <= i_1) ->
+      ((i_3 <= 999) -> ((i_2 <= 999) -> ((i_1 <= 999) ->
+      (((i_3 < 0) \/ (i <= i_3) \/ (i_2 < 0) \/ (i_1 < 0) \/ (1000 <= i_2) \/
+        (1000 <= i_1)) -> (B_1[i_3][i_2][i_1] = B_2[i_3][i_2][i_1])))))))).
+  (* Loop assigns ... *)
+  Have: (forall i_1 : Z. ((i_1 != i) -> (B_2[i_1] = B_3[i_1]))) /\
+      (forall i_1 : Z. ((i_1 != 0) -> (B_2[i][i_1] = B_3[i][i_1]))).
+  (* Invariant *)
+  Have: k <= 1000.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Else *)
+  Have: 1000 <= k.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:11ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:11ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 32) (4/4):
+Effect at line 46
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k).
+  (* Loop assigns ... *)
+  Have: forall i_3,i_2,i_1 : Z. ((0 <= i_3) -> ((0 <= i_2) -> ((0 <= i_1) ->
+      ((i_3 <= 999) -> ((i_2 <= 999) -> ((i_1 <= 999) ->
+      (((i_3 < 0) \/ (i_2 < 0) \/ (i_1 < 0) \/ (1000 <= i_3) \/
+        (1000 <= i_2) \/ (1000 <= i_1)) ->
+      (B[i_3][i_2][i_1] = B_1[i_3][i_2][i_1])))))))).
+  (* Then *)
+  Have: i <= 999.
+  (* Loop assigns ... *)
+  Have: forall i_3,i_2,i_1 : Z. ((0 <= i_3) -> ((0 <= i_2) -> ((0 <= i_1) ->
+      ((i_3 <= 999) -> ((i_2 <= 999) -> ((i_1 <= 999) ->
+      (((i_3 < 0) \/ (i <= i_3) \/ (i_2 < 0) \/ (i_1 < 0) \/ (1000 <= i_2) \/
+        (1000 <= i_1)) -> (B_1[i_3][i_2][i_1] = B_2[i_3][i_2][i_1])))))))).
+  (* Loop assigns ... *)
+  Have: (forall i_1 : Z. ((i_1 != i) -> (B_2[i_1] = B_3[i_1]))) /\
+      (forall i_1 : Z. ((i_1 != 0) -> (B_2[i][i_1] = B_3[i][i_1]))).
+  (* Invariant *)
+  Have: k <= 1000.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Else *)
+  Have: 1000 <= k.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:23ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:23ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 39) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 39) (2/3):
+Effect at line 42
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c, line 39) (3/3):
+Call Result at line 43
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0003/array-multidimensional_rev-3-u_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

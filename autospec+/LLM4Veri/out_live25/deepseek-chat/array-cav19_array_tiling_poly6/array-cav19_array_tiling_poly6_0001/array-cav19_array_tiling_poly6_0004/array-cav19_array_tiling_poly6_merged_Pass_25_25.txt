@@ -1,0 +1,375 @@
+[kernel] Parsing out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: Warning: 
+  Cast with incompatible pointers types (source: sint64*) (target: sint8*)
+[wp] out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+[wp] 25 goals scheduled
+[wp] Proved goals:   25 / 25
+  Qed:            20
+  Alt-Ergo :       5 (17ms-33ms-39ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 12):
+Assume {
+  Type: is_sint32(S).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+}
+Prove: (0 < S) /\ (S <= 2305843009213693951).
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (110ms) (34478)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (17ms) (14)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 14):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint64(a, 0), S).
+Let x = 1 + i_1.
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i_1) /\ is_sint64(x).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      ((i_2 * i_2) = (1 + a_1[shift_sint64(a, i_2)])))).
+  (* Invariant *)
+  Have: i_1 <= S.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint64(a, i_2)] = ((i_2 - 1) * (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < S.
+}
+Prove: (i * i) =
+    (1 + a_1[shift_sint64(a, i_1) <- (i_1 - 1) * x][shift_sint64(a, i)]).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (170ms) (225295)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (39ms) (267)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 14):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 15):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 15):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 16):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint64(a, 0), S).
+Let x = 1 + i.
+Let a_2 = a_1[shift_sint64(a, i) <- (i - 1) * x].
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i) /\ is_sint64(x).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      ((i_2 * i_2) = (1 + a_1[shift_sint64(a, i_2)])))).
+  (* Invariant *)
+  Have: i <= S.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint64(a, i_2)] = ((i_2 - 1) * (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < S.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      ((i_2 * i_2) = (1 + a_2[shift_sint64(a, i_2)])))).
+}
+Prove: a_2[shift_sint64(a, i_1)] = ((i_1 - 1) * (1 + i_1)).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (150ms) (115038)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (36ms) (122)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 16):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 17):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 17):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 24):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 24):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 25):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 25):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 32):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 32):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 33):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 33):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 18) (1/3):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 18) (2/3):
+Effect at line 21
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 18) (3/3):
+Effect at line 22
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, S).
+Let x = i - 1.
+Let a_3 = shift_sint64(a, x).
+Let a_4 = a_2[a_3 <- i * (i - 2)].
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i) /\ is_sint64(x).
+  (* Heap *)
+  Type: linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + i_1) <= i) ->
+      ((i_1 * i_1) = (1 + a_2[shift_sint64(a, i_1)])))).
+  (* Invariant *)
+  Have: i <= (1 + S).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + i_1) <= i) ->
+      (a_2[shift_sint64(a, i_1)] = ((i_1 - 1) * (1 + i_1))))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= S.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      ((i_1 * i_1) = (1 + a_4[shift_sint64(a, i_1)])))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_4[shift_sint64(a, i_1)] = ((i_1 - 1) * (1 + i_1))))).
+}
+Prove: included(a_3, 1, a_1, S).
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (140ms) (101305)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (39ms) (211)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 26) (1/3):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 26) (2/3):
+Effect at line 29
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 26) (3/3):
+Effect at line 30
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, S).
+Let x = i - 1.
+Let a_3 = shift_sint64(a, x).
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i) /\ is_sint64(i_1) /\ is_sint64(x).
+  (* Heap *)
+  Type: linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      ((i_2 * i_2) = (1 + a_2[shift_sint64(a, i_2)])))).
+  (* Invariant *)
+  Have: i_1 <= S.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_2[shift_sint64(a, i_2)] = ((i_2 - 1) * (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: S <= i_1.
+  (* Invariant *)
+  Have: i <= (1 + S).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= S.
+}
+Prove: included(a_3, 1, a_1, S).
+Prover Z3 4.8.12 returns Valid (Qed:11ms) (140ms) (99546)
+Prover Alt-Ergo  returns Valid (Qed:11ms) (35ms) (121)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 34) (1/2):
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c, line 34) (2/2):
+Effect at line 37
+out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0004/array-cav19_array_tiling_poly6_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

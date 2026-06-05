@@ -1,0 +1,822 @@
+[kernel] Parsing out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:52: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 26 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 18ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_4_preserved (Qed 18ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_4_established (Qed 4ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_7_preserved (Qed 48ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_7_established (Qed 14ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_8_established (Qed 10ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_assigns_2_part3 (Qed 22ms) (Z3 8s) (Stronger)
+[wp] Proved goals:   19 / 26
+  Qed:            15
+  Alt-Ergo :       4 (18ms-72ms)
+  Timeout:         7
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 16):
+Assume {
+  Type: is_sint32(CELLCOUNT_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+}
+Prove: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (120ms) (34580)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (18ms) (16)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 20):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 20):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 21):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 3 * i_1.
+Let a = shift_sint32(volArray_0, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, CELLCOUNT_0).
+Let x_1 = CELLCOUNT_0 / 3.
+Let x_2 = 3 * i_2.
+Let a_2 = havoc(Mint_undef_1, Mint_0, a, CELLCOUNT_0).
+Let x_3 = i % 3.
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(i_1) /\ is_sint32(i_2) /\
+      is_sint32(j) /\ is_sint32(1 + i_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i < x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+  (* Invariant *)
+  Have: (-2) <= CELLCOUNT_0.
+  (* Invariant *)
+  Have: x_1 != 1.
+  (* Invariant *)
+  Have: i_2 <= (1 + x_1).
+  (* Invariant *)
+  Have: forall i_3 : Z. let x_4 = i_3 % 3 in ((0 <= i_3) ->
+      (((4 + i_3) <= x_2) ->
+      (a_2[shift_sint32(volArray_0, i_3)] = (if (2 <= x_4) then x_4 else 0)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_3 = a_2[shift_sint32(volArray_0, i_3)] in
+      ((0 <= i_3) -> (((4 + i_3) <= x_2) ->
+      ((a_3 = 0) \/ (a_3 = 1) \/ (a_3 = 2) \/ (a_3 = 3)))).
+  (* Invariant *)
+  Have: x_1 != i_2.
+  (* Invariant *)
+  Have: 0 < i_2.
+  (* Then *)
+  Have: i_2 <= x_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < x_2) ->
+      (a_2[shift_sint32(volArray_0, i_3)] <= 3))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_3 = a_2[shift_sint32(volArray_0, i_3)] in
+      ((0 <= i_3) -> ((i_3 < x_2) -> ((a_3 = 0) \/ (2 <= a_3)))).
+  (* Invariant *)
+  Have: i_1 <= x_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < x) ->
+      (a_1[shift_sint32(volArray_0, i_3)] <= 3))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_3 = a_1[shift_sint32(volArray_0, i_3)] in
+      ((0 <= i_3) -> ((i_3 < x) -> ((a_3 = 0) \/ (2 <= a_3)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Else *)
+  Have: j <= 0.
+}
+Prove: a_1[shift_sint32(volArray_0, i)] = (if (2 <= x_3) then x_3 else 0).
+Prover Z3 4.8.12 returns Timeout (Qed:18ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:18ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 21):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 22):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 3 * i_1.
+Let a = shift_sint32(volArray_0, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, CELLCOUNT_0).
+Let x_1 = CELLCOUNT_0 / 3.
+Let x_2 = 3 * i_2.
+Let a_2 = havoc(Mint_undef_1, Mint_0, a, CELLCOUNT_0).
+Let a_3 = a_1[shift_sint32(volArray_0, i)].
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(i_1) /\ is_sint32(i_2) /\
+      is_sint32(j) /\ is_sint32(1 + i_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i < x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+  (* Invariant *)
+  Have: (-2) <= CELLCOUNT_0.
+  (* Invariant *)
+  Have: x_1 != 1.
+  (* Invariant *)
+  Have: i_2 <= (1 + x_1).
+  (* Invariant *)
+  Have: forall i_3 : Z. let x_3 = i_3 % 3 in ((0 <= i_3) ->
+      (((4 + i_3) <= x_2) ->
+      (a_2[shift_sint32(volArray_0, i_3)] = (if (2 <= x_3) then x_3 else 0)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_4 = a_2[shift_sint32(volArray_0, i_3)] in
+      ((0 <= i_3) -> (((4 + i_3) <= x_2) ->
+      ((a_4 = 0) \/ (a_4 = 1) \/ (a_4 = 2) \/ (a_4 = 3)))).
+  (* Invariant *)
+  Have: x_1 != i_2.
+  (* Invariant *)
+  Have: 0 < i_2.
+  (* Then *)
+  Have: i_2 <= x_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < x_2) ->
+      (a_2[shift_sint32(volArray_0, i_3)] <= 3))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_4 = a_2[shift_sint32(volArray_0, i_3)] in
+      ((0 <= i_3) -> ((i_3 < x_2) -> ((a_4 = 0) \/ (2 <= a_4)))).
+  (* Invariant *)
+  Have: i_1 <= x_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < x) ->
+      (a_1[shift_sint32(volArray_0, i_3)] <= 3))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_4 = a_1[shift_sint32(volArray_0, i_3)] in
+      ((0 <= i_3) -> ((i_3 < x) -> ((a_4 = 0) \/ (2 <= a_4)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Else *)
+  Have: j <= 0.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x_3 = i_3 % 3 in ((0 <= i_3) -> ((i_3 < x) ->
+      (a_1[shift_sint32(volArray_0, i_3)] = (if (2 <= x_3) then x_3 else 0)))).
+}
+Prove: (a_3 = 0) \/ (a_3 = 1) \/ (a_3 = 2) \/ (a_3 = 3).
+Prover Z3 4.8.12 returns Valid (Qed:17ms) (140ms) (106891)
+Prover Alt-Ergo  returns Valid (Qed:17ms) (41ms) (306)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 22):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 23):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 3 * i.
+Let a = shift_sint32(volArray_0, 0).
+Let a_1 = havoc(Mint_undef_1, Mint_0, a, CELLCOUNT_0).
+Let x_1 = CELLCOUNT_0 / 3.
+Let x_2 = 3 * i_1.
+Let a_2 = havoc(Mint_undef_0, Mint_0, a, CELLCOUNT_0).
+Let x_3 = 1 + i.
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(i) /\ is_sint32(i_1) /\
+      is_sint32(j) /\ is_sint32(x_3).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+  (* Invariant *)
+  Have: (-2) <= CELLCOUNT_0.
+  (* Invariant *)
+  Have: x_1 != 1.
+  (* Invariant *)
+  Have: i_1 <= (1 + x_1).
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_4 = i_2 % 3 in ((0 <= i_2) ->
+      (((4 + i_2) <= x_2) ->
+      (a_2[shift_sint32(volArray_0, i_2)] = (if (2 <= x_4) then x_4 else 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_2[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> (((4 + i_2) <= x_2) ->
+      ((a_3 = 0) \/ (a_3 = 1) \/ (a_3 = 2) \/ (a_3 = 3)))).
+  (* Invariant *)
+  Have: x_1 != i_1.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 <= x_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < x_2) ->
+      (a_2[shift_sint32(volArray_0, i_2)] <= 3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_2[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < x_2) -> ((a_3 = 0) \/ (2 <= a_3)))).
+  (* Invariant *)
+  Have: i <= x_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < x) ->
+      (a_1[shift_sint32(volArray_0, i_2)] <= 3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_1[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < x) -> ((a_3 = 0) \/ (2 <= a_3)))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Else *)
+  Have: j <= 0.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_4 = i_2 % 3 in ((0 <= i_2) -> ((i_2 < x) ->
+      (a_1[shift_sint32(volArray_0, i_2)] = (if (2 <= x_4) then x_4 else 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_1[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < x) ->
+      ((a_3 = 0) \/ (a_3 = 1) \/ (a_3 = 2) \/ (a_3 = 3)))).
+}
+Prove: x_1 != x_3.
+Prover Z3 4.8.12 returns Timeout (Qed:18ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:18ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 23):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Assume {
+  Type: is_sint32(CELLCOUNT_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+  (* Invariant *)
+  Have: (-2) <= CELLCOUNT_0.
+}
+Prove: (CELLCOUNT_0 / 3) != 1.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 24):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 24):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 32):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 32):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 33):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 3 * i_1.
+Let a = shift_sint32(volArray_0, 0).
+Let a_1 = havoc(Mint_undef_1, Mint_1, a, CELLCOUNT_0).
+Let x_1 = CELLCOUNT_0 / 3.
+Let x_2 = 3 * i_2.
+Let a_2 = havoc(Mint_undef_0, Mint_1, a, CELLCOUNT_0).
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(i_1) /\ is_sint32(i_2) /\
+      is_sint32(j).
+  (* Goal *)
+  When: (0 <= i) /\ (i < x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+  (* Invariant *)
+  Have: (-2) <= CELLCOUNT_0.
+  (* Invariant *)
+  Have: x_1 != 1.
+  (* Invariant *)
+  Have: i_2 <= (1 + x_1).
+  (* Invariant *)
+  Have: forall i_3 : Z. let x_3 = i_3 % 3 in ((0 <= i_3) ->
+      (((4 + i_3) <= x_2) ->
+      (a_2[shift_sint32(volArray_0, i_3)] = (if (2 <= x_3) then x_3 else 0)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_3 = a_2[shift_sint32(volArray_0, i_3)] in
+      ((0 <= i_3) -> (((4 + i_3) <= x_2) ->
+      ((a_3 = 0) \/ (a_3 = 1) \/ (a_3 = 2) \/ (a_3 = 3)))).
+  (* Invariant *)
+  Have: x_1 != i_2.
+  (* Invariant *)
+  Have: 0 < i_2.
+  (* Then *)
+  Have: i_2 <= x_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < x_2) ->
+      (a_2[shift_sint32(volArray_0, i_3)] <= 3))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_3 = a_2[shift_sint32(volArray_0, i_3)] in
+      ((0 <= i_3) -> ((i_3 < x_2) -> ((a_3 = 0) \/ (2 <= a_3)))).
+  (* Invariant *)
+  Have: i_1 <= x_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < x) ->
+      (a_1[shift_sint32(volArray_0, i_3)] <= 3))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_3 = a_1[shift_sint32(volArray_0, i_3)] in
+      ((0 <= i_3) -> ((i_3 < x) -> ((a_3 = 0) \/ (2 <= a_3)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: 0 < j.
+  If 2 <= j
+  Then { Have: a_1[shift_sint32(volArray_0, x - j) <- j] = Mint_0. }
+  Else { Have: a_1[shift_sint32(volArray_0, x - 1) <- 0] = Mint_0. }
+}
+Prove: Mint_0[shift_sint32(volArray_0, i)] <= 3.
+Prover Z3 4.8.12 returns Timeout (Qed:48ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:48ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 33):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = CELLCOUNT_0 / 3.
+Let x_1 = 3 * i_1.
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(volArray_0, 0), CELLCOUNT_0).
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(i_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i < x_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+  (* Invariant *)
+  Have: (-2) <= CELLCOUNT_0.
+  (* Invariant *)
+  Have: x != 1.
+  (* Invariant *)
+  Have: i_1 <= (1 + x).
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_2 = i_2 % 3 in ((0 <= i_2) ->
+      (((4 + i_2) <= x_1) ->
+      (a[shift_sint32(volArray_0, i_2)] = (if (2 <= x_2) then x_2 else 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_1 = a[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> (((4 + i_2) <= x_1) ->
+      ((a_1 = 0) \/ (a_1 = 1) \/ (a_1 = 2) \/ (a_1 = 3)))).
+  (* Invariant *)
+  Have: x != i_1.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 <= x.
+}
+Prove: a[shift_sint32(volArray_0, i)] <= 3.
+Prover Z3 4.8.12 returns Timeout (Qed:14ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:14ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 34):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 3 * i_1.
+Let a = shift_sint32(volArray_0, 0).
+Let a_1 = havoc(Mint_undef_1, Mint_1, a, CELLCOUNT_0).
+Let x_1 = CELLCOUNT_0 / 3.
+Let x_2 = 3 * i_2.
+Let a_2 = havoc(Mint_undef_0, Mint_1, a, CELLCOUNT_0).
+Let x_3 = Mint_0[shift_sint32(volArray_0, i)].
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(i_1) /\ is_sint32(i_2) /\
+      is_sint32(j).
+  (* Goal *)
+  When: (0 <= i) /\ (i < x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+  (* Invariant *)
+  Have: (-2) <= CELLCOUNT_0.
+  (* Invariant *)
+  Have: x_1 != 1.
+  (* Invariant *)
+  Have: i_2 <= (1 + x_1).
+  (* Invariant *)
+  Have: forall i_3 : Z. let x_4 = i_3 % 3 in ((0 <= i_3) ->
+      (((4 + i_3) <= x_2) ->
+      (a_2[shift_sint32(volArray_0, i_3)] = (if (2 <= x_4) then x_4 else 0)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_3 = a_2[shift_sint32(volArray_0, i_3)] in
+      ((0 <= i_3) -> (((4 + i_3) <= x_2) ->
+      ((a_3 = 0) \/ (a_3 = 1) \/ (a_3 = 2) \/ (a_3 = 3)))).
+  (* Invariant *)
+  Have: x_1 != i_2.
+  (* Invariant *)
+  Have: 0 < i_2.
+  (* Then *)
+  Have: i_2 <= x_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < x_2) ->
+      (a_2[shift_sint32(volArray_0, i_3)] <= 3))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_3 = a_2[shift_sint32(volArray_0, i_3)] in
+      ((0 <= i_3) -> ((i_3 < x_2) -> ((a_3 = 0) \/ (2 <= a_3)))).
+  (* Invariant *)
+  Have: i_1 <= x_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < x) ->
+      (a_1[shift_sint32(volArray_0, i_3)] <= 3))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_3 = a_1[shift_sint32(volArray_0, i_3)] in
+      ((0 <= i_3) -> ((i_3 < x) -> ((a_3 = 0) \/ (2 <= a_3)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: 0 < j.
+  If 2 <= j
+  Then { Have: a_1[shift_sint32(volArray_0, x - j) <- j] = Mint_0. }
+  Else { Have: a_1[shift_sint32(volArray_0, x - 1) <- 0] = Mint_0. }
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < x) ->
+      (Mint_0[shift_sint32(volArray_0, i_3)] <= 3))).
+}
+Prove: (x_3 = 0) \/ (2 <= x_3).
+Prover Alt-Ergo  returns Valid (Qed:64ms) (72ms) (595)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 34):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 3 * i_1.
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(volArray_0, 0), CELLCOUNT_0).
+Let x_1 = CELLCOUNT_0 / 3.
+Let a_1 = a[shift_sint32(volArray_0, i)].
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(i_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i < x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+  (* Invariant *)
+  Have: (-2) <= CELLCOUNT_0.
+  (* Invariant *)
+  Have: x_1 != 1.
+  (* Invariant *)
+  Have: i_1 <= (1 + x_1).
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_2 = i_2 % 3 in ((0 <= i_2) ->
+      (((4 + i_2) <= x) ->
+      (a[shift_sint32(volArray_0, i_2)] = (if (2 <= x_2) then x_2 else 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> (((4 + i_2) <= x) ->
+      ((a_2 = 0) \/ (a_2 = 1) \/ (a_2 = 2) \/ (a_2 = 3)))).
+  (* Invariant *)
+  Have: x_1 != i_1.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 <= x_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < x) ->
+      (a[shift_sint32(volArray_0, i_2)] <= 3))).
+}
+Prove: (a_1 = 0) \/ (2 <= a_1).
+Prover Z3 4.8.12 returns Timeout (Qed:10ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:10ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 35):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 35):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 25) (1/3):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 25) (2/3):
+Effect at line 29
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 25) (3/3):
+Effect at line 40
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 36) (1/4):
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 36) (2/4):
+Effect at line 40
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 36) (3/4):
+Effect at line 44
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 3 * i.
+Let a = shift_sint32(volArray_0, 0).
+Let a_1 = havoc(Mint_undef_1, Mint_0, a, CELLCOUNT_0).
+Let a_2 = shift_sint32(volArray_0, x - j).
+Let a_3 = a_1[a_2 <- j].
+Let x_1 = CELLCOUNT_0 / 3.
+Let x_2 = 3 * i_1.
+Let a_4 = havoc(Mint_undef_0, Mint_0, a, CELLCOUNT_0).
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(i) /\ is_sint32(i_1) /\
+      is_sint32(j).
+  (* Heap *)
+  Type: linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_2, 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+  (* Invariant *)
+  Have: (-2) <= CELLCOUNT_0.
+  (* Invariant *)
+  Have: x_1 != 1.
+  (* Invariant *)
+  Have: i_1 <= (1 + x_1).
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_3 = i_2 % 3 in ((0 <= i_2) ->
+      (((4 + i_2) <= x_2) ->
+      (a_4[shift_sint32(volArray_0, i_2)] = (if (2 <= x_3) then x_3 else 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_4[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> (((4 + i_2) <= x_2) ->
+      ((a_5 = 0) \/ (a_5 = 1) \/ (a_5 = 2) \/ (a_5 = 3)))).
+  (* Invariant *)
+  Have: x_1 != i_1.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 <= x_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < x_2) ->
+      (a_4[shift_sint32(volArray_0, i_2)] <= 3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_4[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < x_2) -> ((a_5 = 0) \/ (2 <= a_5)))).
+  (* Invariant *)
+  Have: i <= x_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < x) ->
+      (a_1[shift_sint32(volArray_0, i_2)] <= 3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < x) -> ((a_5 = 0) \/ (2 <= a_5)))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: 0 < j.
+  (* Then *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < x) ->
+      (a_3[shift_sint32(volArray_0, i_2)] <= 3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_3[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < x) -> ((a_5 = 0) \/ (2 <= a_5)))).
+}
+Prove: included(a_2, 1, a, CELLCOUNT_0).
+Prover Z3 4.8.12 returns Timeout (Qed:22ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:22ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c, line 36) (4/4):
+Effect at line 48
+out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 3 * i.
+Let a = shift_sint32(volArray_0, 0).
+Let a_1 = havoc(Mint_undef_1, Mint_0, a, CELLCOUNT_0).
+Let a_2 = shift_sint32(volArray_0, x - 1).
+Let a_3 = a_1[a_2 <- 0].
+Let x_1 = CELLCOUNT_0 / 3.
+Let x_2 = 3 * i_1.
+Let a_4 = havoc(Mint_undef_0, Mint_0, a, CELLCOUNT_0).
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(i) /\ is_sint32(i_1) /\
+      is_sint32(j).
+  (* Heap *)
+  Type: linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, shift_sint32(volArray_0, x - j), 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+  (* Invariant *)
+  Have: (-2) <= CELLCOUNT_0.
+  (* Invariant *)
+  Have: x_1 != 1.
+  (* Invariant *)
+  Have: i_1 <= (1 + x_1).
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_3 = i_2 % 3 in ((0 <= i_2) ->
+      (((4 + i_2) <= x_2) ->
+      (a_4[shift_sint32(volArray_0, i_2)] = (if (2 <= x_3) then x_3 else 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_4[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> (((4 + i_2) <= x_2) ->
+      ((a_5 = 0) \/ (a_5 = 1) \/ (a_5 = 2) \/ (a_5 = 3)))).
+  (* Invariant *)
+  Have: x_1 != i_1.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 <= x_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < x_2) ->
+      (a_4[shift_sint32(volArray_0, i_2)] <= 3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_4[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < x_2) -> ((a_5 = 0) \/ (2 <= a_5)))).
+  (* Invariant *)
+  Have: i <= x_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < x) ->
+      (a_1[shift_sint32(volArray_0, i_2)] <= 3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < x) -> ((a_5 = 0) \/ (2 <= a_5)))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: 0 < j.
+  (* Else *)
+  Have: j <= 1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < x) ->
+      (a_3[shift_sint32(volArray_0, i_2)] <= 3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_3[shift_sint32(volArray_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < x) -> ((a_5 = 0) \/ (2 <= a_5)))).
+}
+Prove: included(a_2, 1, a, CELLCOUNT_0).
+Prover Alt-Ergo  returns Valid (Qed:27ms) (57ms) (615)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0002/array-tiling_nr3_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

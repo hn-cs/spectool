@@ -1,0 +1,186 @@
+[kernel] Parsing out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:18: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 13 goals scheduled
+[wp] Proved goals:   13 / 13
+  Qed:            11
+  Alt-Ergo :       2 (37ms-50ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 3):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 6):
+out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 6):
+out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 7):
+out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_1, shift_sint32(a, 0), 1000000).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(1 + i_1).
+  (* Goal *)
+  When: (i <= i_1) /\ (500001 <= i).
+  (* Invariant *)
+  Have: i_1 <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((500001 <= i_2) ->
+      (a_1[shift_sint32(a, i_2)] = (i_2 % 5)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) -> ((i_1 <= 500000) ->
+      (a_1[shift_sint32(a, i_2)] = (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 <= 999999.
+  If 500001 <= i_1
+  Then {
+    Have: a_1[shift_sint32(a, i_1) <- to_sint32(to_uint32(i_1) % 5)] =
+        Mint_0.
+  }
+  Else { Have: a_1[shift_sint32(a, i_1) <- 1 + i_1] = Mint_0. }
+}
+Prove: Mint_0[shift_sint32(a, i)] = (i % 5).
+Prover Z3 4.8.12 returns Valid (Qed:26ms) (160ms) (169247)
+Prover Alt-Ergo  returns Valid (Qed:26ms) (50ms) (332)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 7):
+out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 8):
+out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(1 + i_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1) /\ (i_1 <= 499999).
+  (* Invariant *)
+  Have: i_1 <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) -> ((i_1 <= 500000) ->
+      (havoc(Mint_undef_0, Mint_1, shift_sint32(a, 0), 1000000)
+         [shift_sint32(a, i_2)] = (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 <= 999999.
+  If 500001 <= i_1
+  Then {
+    Have: havoc(Mint_undef_0, Mint_1, shift_sint32(a, 0), 1000000)
+            [shift_sint32(a, i_1) <- to_sint32(to_uint32(i_1) % 5)] = Mint_0.
+  }
+  Else {
+    Have: havoc(Mint_undef_0, Mint_1, shift_sint32(a, 0), 1000000)
+            [shift_sint32(a, i_1) <- 1 + i_1] = Mint_0.
+  }
+}
+Prove: Mint_0[shift_sint32(a, i)] = (1 + i).
+Prover Z3 4.8.12 returns Valid (Qed:24ms) (150ms) (185593)
+Prover Alt-Ergo  returns Valid (Qed:24ms) (37ms) (203)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 8):
+out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.56ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 9):
+out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 9):
+out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 10) (1/4):
+out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 10) (2/4):
+Effect at line 13
+out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 10) (3/4):
+Effect at line 14
+out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c, line 10) (4/4):
+Effect at line 16
+out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:3: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-programs_partial_mod_count_5/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_0001/array-programs_partial_mod_count_5_merged.c:2: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

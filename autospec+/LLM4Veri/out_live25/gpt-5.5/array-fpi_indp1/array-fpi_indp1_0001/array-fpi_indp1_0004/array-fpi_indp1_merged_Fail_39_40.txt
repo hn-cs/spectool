@@ -1,0 +1,1208 @@
+[kernel] Parsing out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:11: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] FRAMAC_SHARE/libc/stdlib.h:394: Warning: 
+  Allocation, initialization and danglingness not yet implemented
+  (allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+[wp] out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+[wp] 40 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_14_preserved (Qed 22ms) (Z3 8s) (Stronger, 2 warnings)
+[wp] Proved goals:   39 / 40
+  Qed:            27
+  Alt-Ergo :      12 (34ms-48ms-70ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 17):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 17):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 18):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint64(a, 0), N).
+Let x = 1 + i.
+Let x_1 = 1 + i_1.
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i) /\ is_sint64(x).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_2 = 1 + i_2 in ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint64(a, i_2)] = (x_2 * x_2)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < N.
+}
+Prove: a_1[shift_sint64(a, i) <- x * x][shift_sint64(a, i_1)] = (x_1 * x_1).
+Prover Alt-Ergo  returns Valid (Qed:8ms) (48ms) (507)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 18):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 19):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 19):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 28):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 28):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 29):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, N).
+Let a_3 = havoc(Mint_undef_1, Mint_0, a_1, N).
+Let a_4 = shift_sint64(a, i).
+Let a_5 = a_2[a_4].
+Let x = 1 + i_1.
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i) /\ is_sint64(i_2) /\ is_sint64(1 + i) /\
+      is_sint64(a_5).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (i_1 < N) /\ (i < i_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_2 <= N.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x_1 = 1 + i_3 in ((0 <= i_3) -> ((i_3 < i_2) ->
+      (a_3[shift_sint64(a, i_3)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: N <= i_2.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x_1 = 1 + i_3 in ((0 <= i_3) -> ((i_3 < N) ->
+      (a_3[shift_sint64(a, i_3)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x_1 = 1 + i_3 in ((i_3 < N) -> ((i <= i_3) ->
+      (a_2[shift_sint64(a, i_3)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i) ->
+      (a_2[shift_sint64(a, i_3)] = (1 + (2 * i_3))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < N.
+}
+Prove: a_2[a_4 <- a_5 - (i * i)][shift_sint64(a, i_1)] = (x * x).
+Prover Alt-Ergo  returns Valid (Qed:10ms) (48ms) (706)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 29):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint64(a, 0), N).
+Let x = 1 + i.
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i_1).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < N).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_1 <= N.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_1 = 1 + i_2 in ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint64(a, i_2)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: N <= i_1.
+}
+Prove: a_1[shift_sint64(a, i)] = (x * x).
+Prover Alt-Ergo  returns Valid (Qed:6ms) (35ms) (69)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 30):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, N).
+Let a_3 = shift_sint64(a, i).
+Let a_4 = a_2[a_3].
+Let a_5 = a_2[a_3 <- a_4 - (i * i)].
+Let a_6 = havoc(Mint_undef_1, Mint_0, a_1, N).
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i) /\ is_sint64(i_2) /\ is_sint64(1 + i) /\
+      is_sint64(a_4).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_2 <= N.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x = 1 + i_3 in ((0 <= i_3) -> ((i_3 < i_2) ->
+      (a_6[shift_sint64(a, i_3)] = (x * x)))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: N <= i_2.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x = 1 + i_3 in ((0 <= i_3) -> ((i_3 < N) ->
+      (a_6[shift_sint64(a, i_3)] = (x * x)))).
+  (* Invariant *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x = 1 + i_3 in ((i_3 < N) -> ((i <= i_3) ->
+      (a_2[shift_sint64(a, i_3)] = (x * x)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i) ->
+      (a_2[shift_sint64(a, i_3)] = (1 + (2 * i_3))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < N.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x = 1 + i_3 in ((i < i_3) -> ((i_3 < N) ->
+      (a_5[shift_sint64(a, i_3)] = (x * x)))).
+}
+Prove: a_5[shift_sint64(a, i_1)] = (1 + (2 * i_1)).
+Prover Alt-Ergo  returns Valid (Qed:11ms) (62ms) (997)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 30):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.91ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 31):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 31):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 40):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 40):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 41):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, N).
+Let a_3 = havoc(Mint_undef_2, Mint_0, a_1, N).
+Let a_4 = havoc(Mint_undef_1, Mint_0, a_1, N).
+Let a_5 = shift_sint64(a, i).
+Let a_6 = a_2[a_5].
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i) /\ is_sint64(i_2) /\ is_sint64(i_3) /\
+      is_sint64(1 + i) /\ is_sint64(a_6).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (i_1 < N) /\ (i < i_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_3 <= N.
+  (* Invariant *)
+  Have: forall i_4 : Z. let x = 1 + i_4 in ((0 <= i_4) -> ((i_4 < i_3) ->
+      (a_4[shift_sint64(a, i_4)] = (x * x)))).
+  (* Invariant *)
+  Have: 0 <= i_3.
+  (* Else *)
+  Have: N <= i_3.
+  (* Invariant *)
+  Have: forall i_4 : Z. let x = 1 + i_4 in ((0 <= i_4) -> ((i_4 < N) ->
+      (a_4[shift_sint64(a, i_4)] = (x * x)))).
+  (* Invariant *)
+  Have: i_2 <= N.
+  (* Invariant *)
+  Have: forall i_4 : Z. let x = 1 + i_4 in ((i_4 < N) -> ((i_2 <= i_4) ->
+      (a_3[shift_sint64(a, i_4)] = (x * x)))).
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i_2) ->
+      (a_3[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: N <= i_2.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < N) ->
+      (a_3[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+  (* Invariant *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((i_4 < N) -> ((i <= i_4) ->
+      (a_2[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i) ->
+      (a_2[shift_sint64(a, i_4)] = (1 + i_4)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < N.
+}
+Prove: a_2[a_5 <- a_6 - i][shift_sint64(a, i_1)] = (1 + (2 * i_1)).
+Prover Alt-Ergo  returns Valid (Qed:16ms) (45ms) (448)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 41):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, N).
+Let a_3 = havoc(Mint_undef_1, Mint_0, a_1, N).
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i_1) /\ is_sint64(i_2).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < N).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_2 <= N.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x = 1 + i_3 in ((0 <= i_3) -> ((i_3 < i_2) ->
+      (a_3[shift_sint64(a, i_3)] = (x * x)))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: N <= i_2.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x = 1 + i_3 in ((0 <= i_3) -> ((i_3 < N) ->
+      (a_3[shift_sint64(a, i_3)] = (x * x)))).
+  (* Invariant *)
+  Have: i_1 <= N.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x = 1 + i_3 in ((i_3 < N) -> ((i_1 <= i_3) ->
+      (a_2[shift_sint64(a, i_3)] = (x * x)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i_1) ->
+      (a_2[shift_sint64(a, i_3)] = (1 + (2 * i_3))))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: N <= i_1.
+}
+Prove: a_2[shift_sint64(a, i)] = (1 + (2 * i)).
+Prover Z3 4.8.12 returns Valid (Qed:11ms) (140ms) (90640)
+Prover Alt-Ergo  returns Valid (Qed:11ms) (39ms) (88)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 42):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, N).
+Let a_3 = shift_sint64(a, i).
+Let a_4 = a_2[a_3].
+Let a_5 = a_2[a_3 <- a_4 - i].
+Let a_6 = havoc(Mint_undef_2, Mint_0, a_1, N).
+Let a_7 = havoc(Mint_undef_1, Mint_0, a_1, N).
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i) /\ is_sint64(i_2) /\ is_sint64(i_3) /\
+      is_sint64(1 + i) /\ is_sint64(a_4).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_3 <= N.
+  (* Invariant *)
+  Have: forall i_4 : Z. let x = 1 + i_4 in ((0 <= i_4) -> ((i_4 < i_3) ->
+      (a_7[shift_sint64(a, i_4)] = (x * x)))).
+  (* Invariant *)
+  Have: 0 <= i_3.
+  (* Else *)
+  Have: N <= i_3.
+  (* Invariant *)
+  Have: forall i_4 : Z. let x = 1 + i_4 in ((0 <= i_4) -> ((i_4 < N) ->
+      (a_7[shift_sint64(a, i_4)] = (x * x)))).
+  (* Invariant *)
+  Have: i_2 <= N.
+  (* Invariant *)
+  Have: forall i_4 : Z. let x = 1 + i_4 in ((i_4 < N) -> ((i_2 <= i_4) ->
+      (a_6[shift_sint64(a, i_4)] = (x * x)))).
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i_2) ->
+      (a_6[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: N <= i_2.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < N) ->
+      (a_6[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+  (* Invariant *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((i_4 < N) -> ((i <= i_4) ->
+      (a_2[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i) ->
+      (a_2[shift_sint64(a, i_4)] = (1 + i_4)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < N.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((i < i_4) -> ((i_4 < N) ->
+      (a_5[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+}
+Prove: a_5[shift_sint64(a, i_1)] = (1 + i_1).
+Prover Alt-Ergo  returns Valid (Qed:18ms) (52ms) (550)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 42):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 43):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 43):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 52):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 52):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 53):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, N).
+Let a_3 = havoc(Mint_undef_2, Mint_0, a_1, N).
+Let a_4 = havoc(Mint_undef_1, Mint_0, a_1, N).
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i_1) /\ is_sint64(i_2) /\ is_sint64(i_3) /\
+      is_sint64(i_4) /\ is_sint64(1 + i_1).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < N).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_4 <= N.
+  (* Invariant *)
+  Have: forall i_5 : Z. let x = 1 + i_5 in ((0 <= i_5) -> ((i_5 < i_4) ->
+      (a_4[shift_sint64(a, i_5)] = (x * x)))).
+  (* Invariant *)
+  Have: 0 <= i_4.
+  (* Else *)
+  Have: N <= i_4.
+  (* Invariant *)
+  Have: forall i_5 : Z. let x = 1 + i_5 in ((0 <= i_5) -> ((i_5 < N) ->
+      (a_4[shift_sint64(a, i_5)] = (x * x)))).
+  (* Invariant *)
+  Have: i_3 <= N.
+  (* Invariant *)
+  Have: forall i_5 : Z. let x = 1 + i_5 in ((i_5 < N) -> ((i_3 <= i_5) ->
+      (a_3[shift_sint64(a, i_5)] = (x * x)))).
+  (* Invariant *)
+  Have: forall i_5 : Z. ((0 <= i_5) -> ((i_5 < i_3) ->
+      (a_3[shift_sint64(a, i_5)] = (1 + (2 * i_5))))).
+  (* Invariant *)
+  Have: 0 <= i_3.
+  (* Else *)
+  Have: N <= i_3.
+  (* Invariant *)
+  Have: forall i_5 : Z. ((0 <= i_5) -> ((i_5 < N) ->
+      (a_3[shift_sint64(a, i_5)] = (1 + (2 * i_5))))).
+  (* Invariant *)
+  Have: i_2 <= N.
+  (* Invariant *)
+  Have: forall i_5 : Z. ((i_5 < N) -> ((i_2 <= i_5) ->
+      (a_2[shift_sint64(a, i_5)] = (1 + (2 * i_5))))).
+  (* Invariant *)
+  Have: forall i_5 : Z. ((0 <= i_5) -> ((i_5 < i_2) ->
+      (a_2[shift_sint64(a, i_5)] = (1 + i_5)))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: N <= i_2.
+  (* Invariant *)
+  Have: forall i_5 : Z. ((0 <= i_5) -> ((i_5 < N) ->
+      (a_2[shift_sint64(a, i_5)] = (1 + i_5)))).
+  (* Invariant *)
+  Have: i_1 <= N.
+  (* Invariant *)
+  Have: i_1 != N.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < N.
+}
+Prove: a_2[shift_sint64(a, i)] = (1 + i).
+Prover Alt-Ergo  returns Valid (Qed:16ms) (34ms) (115)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 53):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, N).
+Let a_3 = havoc(Mint_undef_2, Mint_0, a_1, N).
+Let a_4 = havoc(Mint_undef_1, Mint_0, a_1, N).
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i_1) /\ is_sint64(i_2) /\ is_sint64(i_3).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < N).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_3 <= N.
+  (* Invariant *)
+  Have: forall i_4 : Z. let x = 1 + i_4 in ((0 <= i_4) -> ((i_4 < i_3) ->
+      (a_4[shift_sint64(a, i_4)] = (x * x)))).
+  (* Invariant *)
+  Have: 0 <= i_3.
+  (* Else *)
+  Have: N <= i_3.
+  (* Invariant *)
+  Have: forall i_4 : Z. let x = 1 + i_4 in ((0 <= i_4) -> ((i_4 < N) ->
+      (a_4[shift_sint64(a, i_4)] = (x * x)))).
+  (* Invariant *)
+  Have: i_2 <= N.
+  (* Invariant *)
+  Have: forall i_4 : Z. let x = 1 + i_4 in ((i_4 < N) -> ((i_2 <= i_4) ->
+      (a_3[shift_sint64(a, i_4)] = (x * x)))).
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i_2) ->
+      (a_3[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: N <= i_2.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < N) ->
+      (a_3[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+  (* Invariant *)
+  Have: i_1 <= N.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((i_4 < N) -> ((i_1 <= i_4) ->
+      (a_2[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i_1) ->
+      (a_2[shift_sint64(a, i_4)] = (1 + i_4)))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: N <= i_1.
+}
+Prove: a_2[shift_sint64(a, i)] = (1 + i).
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (140ms) (94563)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (40ms) (104)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 54):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_2, Mint_0, a_1, N).
+Let a_3 = havoc(Mint_undef_1, Mint_0, a_1, N).
+Let a_4 = havoc(Mint_undef_0, Mint_0, a_1, N).
+Let x = 1 + i.
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i) /\ is_sint64(i_1) /\ is_sint64(i_2) /\
+      is_sint64(i_3) /\ is_sint64(x).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_3 <= N.
+  (* Invariant *)
+  Have: forall i_4 : Z. let x_1 = 1 + i_4 in ((0 <= i_4) -> ((i_4 < i_3) ->
+      (a_4[shift_sint64(a, i_4)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: 0 <= i_3.
+  (* Else *)
+  Have: N <= i_3.
+  (* Invariant *)
+  Have: forall i_4 : Z. let x_1 = 1 + i_4 in ((0 <= i_4) -> ((i_4 < N) ->
+      (a_4[shift_sint64(a, i_4)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: i_2 <= N.
+  (* Invariant *)
+  Have: forall i_4 : Z. let x_1 = 1 + i_4 in ((i_4 < N) -> ((i_2 <= i_4) ->
+      (a_3[shift_sint64(a, i_4)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i_2) ->
+      (a_3[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: N <= i_2.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < N) ->
+      (a_3[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+  (* Invariant *)
+  Have: i_1 <= N.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((i_4 < N) -> ((i_1 <= i_4) ->
+      (a_2[shift_sint64(a, i_4)] = (1 + (2 * i_4))))).
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i_1) ->
+      (a_2[shift_sint64(a, i_4)] = (1 + i_4)))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: N <= i_1.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < N) ->
+      (a_2[shift_sint64(a, i_4)] = (1 + i_4)))).
+  (* Invariant *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: i != N.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < N.
+}
+Prove: x != N.
+Prover Z3 4.8.12 returns Timeout (Qed:22ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:22ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 54):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 55):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (18ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 55):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 20) (1/3):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 20) (2/3):
+Effect at line 23
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 20) (3/3):
+Effect at line 25
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, N).
+Let x = i - 1.
+Let a_3 = shift_sint64(a, x).
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i) /\ is_sint64(x).
+  (* Heap *)
+  Type: linked(Malloc_0) /\ is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i <= (1 + N).
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_1 = 1 + i_1 in ((0 <= i_1) ->
+      (((2 + i_1) <= i) -> (a_2[shift_sint64(a, i_1)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_1 = 1 + i_1 in ((0 <= i_1) -> ((i_1 < i) ->
+      (a_2[a_3 <- i * i][shift_sint64(a, i_1)] = (x_1 * x_1)))).
+}
+Prove: included(a_3, 1, a_1, N).
+Prover Z3 4.8.12 returns Valid (Qed:12ms) (170ms) (101206)
+Prover Alt-Ergo  returns Valid (Qed:12ms) (51ms) (214)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 32) (1/3):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 32) (2/3):
+Effect at line 35
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 32) (3/3):
+Effect at line 37
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, N).
+Let x = i - 1.
+Let a_3 = shift_sint64(a, x).
+Let a_4 = a_2[a_3].
+Let a_5 = a_2[a_3 <- a_4 - (x * x)].
+Let a_6 = havoc(Mint_undef_1, Mint_0, a_1, N).
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i) /\ is_sint64(i_1) /\ is_sint64(x) /\
+      is_sint64(a_4).
+  (* Heap *)
+  Type: linked(Malloc_0) /\ is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_1 <= N.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_1 = 1 + i_2 in ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_6[shift_sint64(a, i_2)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: N <= i_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_1 = 1 + i_2 in ((0 <= i_2) -> ((i_2 < N) ->
+      (a_6[shift_sint64(a, i_2)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: i <= (1 + N).
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_1 = 1 + i_2 in ((i_2 < N) -> ((i <= x_1) ->
+      (a_2[shift_sint64(a, i_2)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> (((2 + i_2) <= i) ->
+      (a_2[shift_sint64(a, i_2)] = (1 + (2 * i_2))))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_1 = 1 + i_2 in ((i_2 < N) -> ((i <= i_2) ->
+      (a_5[shift_sint64(a, i_2)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_5[shift_sint64(a, i_2)] = (1 + (2 * i_2))))).
+}
+Prove: included(a_3, 1, a_1, N).
+Prover Z3 4.8.12 returns Valid (Qed:19ms) (180ms) (107914)
+Prover Alt-Ergo  returns Valid (Qed:19ms) (70ms) (461)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 44) (1/3):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 44) (2/3):
+Effect at line 47
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 44) (3/3):
+Effect at line 49
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, N).
+Let x = i - 1.
+Let a_3 = shift_sint64(a, x).
+Let a_4 = a_2[a_3].
+Let a_5 = a_2[a_3 <- 1 + a_4 - i].
+Let a_6 = havoc(Mint_undef_2, Mint_0, a_1, N).
+Let a_7 = havoc(Mint_undef_1, Mint_0, a_1, N).
+Assume {
+  Type: is_sint32(N) /\ is_sint64(i) /\ is_sint64(i_1) /\ is_sint64(i_2) /\
+      is_sint64(x) /\ is_sint64(a_4).
+  (* Heap *)
+  Type: linked(Malloc_0) /\ is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_2 <= N.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x_1 = 1 + i_3 in ((0 <= i_3) -> ((i_3 < i_2) ->
+      (a_7[shift_sint64(a, i_3)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: N <= i_2.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x_1 = 1 + i_3 in ((0 <= i_3) -> ((i_3 < N) ->
+      (a_7[shift_sint64(a, i_3)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: i_1 <= N.
+  (* Invariant *)
+  Have: forall i_3 : Z. let x_1 = 1 + i_3 in ((i_3 < N) -> ((i_1 <= i_3) ->
+      (a_6[shift_sint64(a, i_3)] = (x_1 * x_1)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i_1) ->
+      (a_6[shift_sint64(a, i_3)] = (1 + (2 * i_3))))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: N <= i_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < N) ->
+      (a_6[shift_sint64(a, i_3)] = (1 + (2 * i_3))))).
+  (* Invariant *)
+  Have: i <= (1 + N).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_3 < N) -> ((i <= (1 + i_3)) ->
+      (a_2[shift_sint64(a, i_3)] = (1 + (2 * i_3))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> (((2 + i_3) <= i) ->
+      (a_2[shift_sint64(a, i_3)] = (1 + i_3)))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_3 < N) -> ((i <= i_3) ->
+      (a_5[shift_sint64(a, i_3)] = (1 + (2 * i_3))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i) ->
+      (a_5[shift_sint64(a, i_3)] = (1 + i_3)))).
+}
+Prove: included(a_3, 1, a_1, N).
+Prover Z3 4.8.12 returns Valid (Qed:25ms) (170ms) (111519)
+Prover Alt-Ergo  returns Valid (Qed:25ms) (55ms) (365)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c, line 56):
+out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-fpi_indp1/array-fpi_indp1_0001/array-fpi_indp1_0004/array-fpi_indp1_merged.c:9: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

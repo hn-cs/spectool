@@ -1,0 +1,72 @@
+[kernel] Parsing out/gpt-5.5/loop-acceleration_simple_1-2/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 6 goals scheduled
+[wp] Proved goals:    6 / 6
+  Qed:             4
+  Alt-Ergo :       2 (27ms-30ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_simple_1-2/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_merged.c, line 4):
+Assume {
+  Type: is_uint32(x).
+  (* Invariant *)
+  Have: x <= 268435456.
+  (* Invariant *)
+  Have: (x % 2) = 0.
+  (* Then *)
+  Have: x <= 268435454.
+}
+Prove: to_uint32(2 + x) <= 268435456.
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (130ms) (35305)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (27ms) (100)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_simple_1-2/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_merged.c, line 4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_simple_1-2/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_merged.c, line 5):
+Let x_1 = to_uint32(2 + x).
+Assume {
+  Type: is_uint32(x).
+  (* Invariant *)
+  Have: x <= 268435456.
+  (* Invariant *)
+  Have: (x % 2) = 0.
+  (* Then *)
+  Have: x <= 268435454.
+  (* Invariant *)
+  Have: x_1 <= 268435456.
+}
+Prove: (x_1 % 2) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (120ms) (37027)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (30ms) (139)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_simple_1-2/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (0.51ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-acceleration_simple_1-2/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.88ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-acceleration_simple_1-2/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-acceleration_simple_1-2/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_0001/loop-acceleration_simple_1-2_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

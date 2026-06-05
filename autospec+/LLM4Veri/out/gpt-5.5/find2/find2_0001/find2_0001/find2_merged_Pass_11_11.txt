@@ -1,0 +1,173 @@
+[kernel] Parsing out/gpt-5.5/find2/find2_0001/find2_0001/find2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] Proved goals:   11 / 11
+  Qed:             4
+  Alt-Ergo :       6 (27ms-33ms)
+  Z3 4.8.12:       1
+------------------------------------------------------------
+  Axiomatic 'SomeNone'
+------------------------------------------------------------
+
+Lemma NoneEqual_NotSomeEqual:
+Assume: 'NotSomeEqual_NoneEqual'
+Prove: (is_sint32 v_0) -> (P_NoneEqual_1_ Mint_0 a_0 m_0 n_0 v_0)
+       -> (not (P_SomeEqual_1_ Mint_0 a_0 m_0 n_0 v_0))
+Prover Alt-Ergo  returns Valid (31ms) (58)
+
+------------------------------------------------------------
+
+Lemma NotSomeEqual_NoneEqual:
+Prove: (is_sint32 v_0) -> (not (P_SomeEqual_1_ Mint_0 a_0 m_0 n_0 v_0))
+       -> (P_NoneEqual_1_ Mint_0 a_0 m_0 n_0 v_0)
+Prover Alt-Ergo  returns Valid (33ms) (58)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function find2
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/find2/find2_0001/find2_0001/find2_merged.c, line 39):
+Let x = Mint_0[shift_sint32(a, i)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(v) /\ is_sint32(x).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_NoneEqual_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_NoneEqual_1_(Mint_0, a, 0, i, v).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Else *)
+  Have: x != v.
+}
+Prove: to_uint32(1 + i) <= n.
+Prover Alt-Ergo  returns Valid (Qed:9ms) (29ms) (80)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/find2/find2_0001/find2_0001/find2_merged.c, line 39):
+Prove: true.
+Prover Qed returns Valid (0.95ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/find2/find2_0001/find2_0001/find2_merged.c, line 40):
+Let x = to_uint32(1 + i).
+Let x_1 = Mint_0[shift_sint32(a, i)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(v) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_NoneEqual_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_NoneEqual_1_(Mint_0, a, 0, i, v).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Else *)
+  Have: x_1 != v.
+  (* Invariant *)
+  Have: x <= n.
+}
+Prove: P_NoneEqual_1_(Mint_0, a, 0, x, v).
+Prover Alt-Ergo  returns Valid (Qed:3ms) (33ms) (126)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/find2/find2_0001/find2_0001/find2_merged.c, line 40):
+Assume {
+  Type: is_uint32(n) /\ is_sint32(v).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: 0 <= n.
+}
+Prove: P_NoneEqual_1_(Mint_0, a, 0, 0, v).
+Prover Alt-Ergo  returns Valid (Qed:0.73ms) (27ms) (48)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/find2/find2_0001/find2_0001/find2_merged.c, line 41):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/find2/find2_0001/find2_0001/find2_merged.c, line 41):
+Prove: true.
+Prover Qed returns Valid (0.60ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/find2/find2_0001/find2_0001/find2_merged.c, line 46):
+Let x = Mint_0[shift_sint32(a, i)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(x).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_NoneEqual_1_(Mint_0, a, 0, 0, x).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_NoneEqual_1_(Mint_0, a, 0, i, x).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+}
+Prove: P_SomeEqual_2_(Mint_0, a, 1 + i, x).
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (130ms) (89868)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (28ms) (80)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/find2/find2_0001/find2_0001/find2_merged.c, line 50):
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(v).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_NoneEqual_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_NoneEqual_1_(Mint_0, a, 0, i, v).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: n <= i.
+}
+Prove: P_NoneEqual_2_(Mint_0, a, i, v).
+Prover Z3 4.8.12 returns Valid (Qed:2ms)
+Prover Alt-Ergo  returns Valid (Qed:2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/find2/find2_0001/find2_0001/find2_merged.c, line 42):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/find2/find2_0001/find2_0001/find2_merged.c:36: Warning: 
+  No 'assigns' specification for function 'find2'.
+  Callers assumptions might be imprecise.

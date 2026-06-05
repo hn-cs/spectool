@@ -1,0 +1,248 @@
+[kernel] Parsing out/gpt-5.5/150/150_0001/150_0002/150_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 20 goals scheduled
+[wp] [Timeout] typed_foo_loop_invariant_2_preserved (Qed 8ms) (Z3 8s)
+[wp] Proved goals:   19 / 20
+  Qed:            16
+  Alt-Ergo :       1 (23ms)
+  Z3 4.8.12:       2 (150ms-2.8s-8s)
+  Timeout:         1
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 14):
+Let x = i - 1.
+Let x_1 = 1 + i.
+Let x_2 = (i * x * x_1) / 6.
+Let x_3 = 1 + x_2.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(x_1) /\
+      is_sint32(x_3) /\ is_sint32(1 + (i * j) + x_2 - ((j * (j - 1)) / 2)).
+  (* Invariant *)
+  Have: ((2 <= n) -> (0 < n)).
+  (* Invariant *)
+  Have: ((2 <= n) -> (i <= n)).
+  (* Invariant *)
+  Have: i <= x_3.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: j <= i.
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Else *)
+  Have: i <= j.
+}
+Prove: (((i * x) / 2) + ((i * x_1 * (2 + i)) / 6)) = ((i * i) + x_2).
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 15):
+Let x = i * j.
+Let x_1 = (j * (j - 1)) / 2.
+Let x_2 = 1 + i.
+Let x_3 = (i * x_2 * (2 + i)) / 6.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(x_2) /\
+      is_sint32(1 + x_3) /\ is_sint32(1 + x_1 + x_3 - x).
+  (* Invariant *)
+  Have: ((2 <= n) -> (0 < n)).
+  (* Invariant *)
+  Have: ((2 <= n) -> (i <= n)).
+  (* Invariant *)
+  Have: (x_1 + x_3) = (x + ((i * (i - 1) * x_2) / 6)).
+  (* Invariant *)
+  Have: (i + x) <= (1 + x_1 + x_3).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: j <= i.
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Else *)
+  Have: i <= j.
+}
+Prove: i <= x_3.
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (150ms) (61650)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.62ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 25):
+Let x = j + k_1.
+Let x_1 = k + n.
+Let x_2 = -k.
+Let x_3 = j + k_1 - k.
+Let x_4 = j * x_3.
+Let x_5 = (j * (j - 1)) / 2.
+Let x_6 = 1 + j.
+Assume {
+  Type: is_sint32(j) /\ is_sint32(k_1) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(x_6) /\ is_sint32(x_3) /\ is_sint32(k + x_5 - x_4).
+  (* Invariant *)
+  Have: ((2 <= n) -> (0 < n)).
+  (* Invariant *)
+  Have: ((2 <= n) -> (x <= x_1)).
+  (* Invariant *)
+  Have: (1 + x_4 + ((x_3 * (j + k_1 - 1 - k) * (1 + j + k_1 - k)) / 6))
+          = (k + x_5).
+  (* Invariant *)
+  Have: (j + k_1 + x_4) <= ((2 * k) + x_5).
+  (* Invariant *)
+  Have: k < x.
+  (* Then *)
+  Have: x < x_1.
+  (* Invariant *)
+  Have: k <= k_1.
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: k < k_1.
+}
+Prove: (k + (x_6 * x_3) + x_5) = (k_1 + x_4 + ((j * x_6) / 2)).
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (150ms) (73754)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 28):
+Let x = -k.
+Let x_1 = 1 + i + k_1 - k.
+Let x_2 = i * x_1.
+Let x_3 = i + k_1 - k.
+Let x_4 = (x_3 * x_1) / 2.
+Let x_5 = k + x_4.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(k_1) /\ is_sint32(n) /\
+      is_sint32(x_3) /\ is_sint32(x_1) /\ is_sint32(k + x_4 - x_2).
+  (* Invariant *)
+  Have: ((2 <= n) -> (0 < n)).
+  (* Invariant *)
+  Have: ((2 <= n) -> (i <= n)).
+  (* Invariant *)
+  Have: x_5 = (1 + x_2 + ((i * (i - 1) * (1 + i)) / 6)).
+  (* Invariant *)
+  Have: (i + x_2) <= x_5.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: (k_1 + x_2 + ((x_3 * (i + k_1 - 1 - k)) / 2)) = (k + (i * x_3) + x_4).
+  (* Invariant *)
+  Have: k_1 <= k.
+  (* Invariant *)
+  Have: k <= (i + k_1).
+  (* Then *)
+  Have: k_1 < k.
+}
+Prove: k <= (1 + i + k_1).
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (120ms) (38702)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (23ms) (40)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/150/150_0001/150_0002/150_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/150/150_0001/150_0002/150_merged.c:7: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

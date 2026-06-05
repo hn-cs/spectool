@@ -1,0 +1,28 @@
+[kernel] Parsing out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0001/corinnt_minus-4_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 2 goals scheduled
+[wp] [Timeout] typed_minus_loop_2_assert (Qed 5ms) (Z3 8s)
+[wp] Proved goals:    1 / 2
+  Qed:             1
+  Timeout:         1
+------------------------------------------------------------
+  Function minus_loop_2
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0001/corinnt_minus-4_merged.c, line 12):
+Assume { Type: is_sint32(rm_0) /\ is_sint32(x). (* Else *) Have: 0 <= x. }
+Prove: (rm_0 = 0) /\ (x = 0).
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0001/corinnt_minus-4_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0001/corinnt_minus-4_merged.c:1: Warning: 
+  No 'assigns' specification for function 'minus_loop_2'.
+  Callers assumptions might be imprecise.

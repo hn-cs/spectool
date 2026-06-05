@@ -1,0 +1,84 @@
+[kernel] Parsing out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 10 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 1ms) (Z3 8s)
+[wp] Proved goals:    9 / 10
+  Qed:             9
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 14):
+Assume { Type: is_sint32(a). }
+Prove: a = 5.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.87ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 2) in 'reset_1st_if_2nd_is_true'' in 'main' at call 'reset_1st_if_2nd_is_true' (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 13)
+:
+Prove: true.
+Prover Qed returns Valid (0.68ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 3) in 'reset_1st_if_2nd_is_true'' in 'main' at call 'reset_1st_if_2nd_is_true' (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 13)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 2) in 'reset_1st_if_2nd_is_true'' in 'main' at call 'reset_1st_if_2nd_is_true' (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 17)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 3) in 'reset_1st_if_2nd_is_true'' in 'main' at call 'reset_1st_if_2nd_is_true' (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 17)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function reset_1st_if_2nd_is_true
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 4) in 'reset_1st_if_2nd_is_true':
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c, line 5) in 'reset_1st_if_2nd_is_true':
+Effect at line 8
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/corinnt_condit-set/corinnt_condit-set_0001/corinnt_condit-set_0005/corinnt_condit-set_merged.c:10: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

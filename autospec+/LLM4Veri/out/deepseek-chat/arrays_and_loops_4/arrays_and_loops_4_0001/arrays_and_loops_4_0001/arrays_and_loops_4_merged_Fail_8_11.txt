@@ -1,0 +1,128 @@
+[kernel] Parsing out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] [Timeout] typed_test_loop_invariant_2_established (Qed 0.63ms) (Z3 8s)
+[wp] [Timeout] typed_test_loop_invariant_2_preserved (Qed 6ms) (Z3 8s)
+[wp] [Timeout] typed_test_loop_invariant_5_established (Qed 0.81ms) (Z3 8s)
+[wp] Proved goals:    8 / 11
+  Qed:             7
+  Alt-Ergo :       1 (20ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function test
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c, line 7):
+Let x = 1 + y.
+Let x_1 = -y.
+Assume {
+  Type: is_sint32(a) /\ is_sint32(y) /\ is_sint32(x) /\ is_sint32(a - y) /\
+      is_sint32(a - 1 - y).
+  (* Invariant *)
+  Have: a != 0.
+  (* Invariant *)
+  Have: 0 <= a.
+  (* Invariant *)
+  Have: y != a.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: y <= a.
+}
+Prove: x != a.
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c, line 7):
+Assume { Type: is_sint32(a). }
+Prove: a != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:0.63ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.63ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.65ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c, line 10):
+Let x = 1 + y.
+Let x_1 = -y.
+Assume {
+  Type: is_sint32(a) /\ is_sint32(y) /\ is_sint32(x) /\ is_sint32(a - y) /\
+      is_sint32(a - 1 - y).
+  (* Invariant *)
+  Have: a != 0.
+  (* Invariant *)
+  Have: 0 <= a.
+  (* Invariant *)
+  Have: y != a.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: y <= a.
+  (* Invariant *)
+  Have: x != a.
+  (* Invariant *)
+  Have: (-1) <= y.
+}
+Prove: y < a.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (35865)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (20ms) (18)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c, line 10):
+Assume { Type: is_sint32(a). (* Invariant *) Have: a != 0. }
+Prove: 0 <= a.
+Prover Z3 4.8.12 returns Timeout (Qed:0.81ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.81ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c:2: Warning: 
+  No 'assigns' specification for function 'test'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/arrays_and_loops_4/arrays_and_loops_4_0001/arrays_and_loops_4_0001/arrays_and_loops_4_merged.c:20: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

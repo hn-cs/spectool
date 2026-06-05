@@ -1,0 +1,106 @@
+[kernel] Parsing out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c:24: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 13 goals scheduled
+[wp] Proved goals:   13 / 13
+  Qed:            13
+------------------------------------------------------------
+  Function func_to_recursive_line_13_to_18_0
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 9) in 'func_to_recursive_line_13_to_18_0':
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 10) in 'func_to_recursive_line_13_to_18_0' (1/5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 10) in 'func_to_recursive_line_13_to_18_0' (2/5):
+Call Result at line 14
+Prove: true.
+Prover Qed returns Valid (0.88ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 10) in 'func_to_recursive_line_13_to_18_0' (3/5):
+Effect at line 19
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 10) in 'func_to_recursive_line_13_to_18_0' (4/5):
+Call Result at line 24
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 10) in 'func_to_recursive_line_13_to_18_0' (5/5):
+Call Effect at line 31
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 10) in 'func_to_recursive_line_13_to_18_0' (1/5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 10) in 'func_to_recursive_line_13_to_18_0' (2/5):
+Call Result at line 14
+Prove: true.
+Prover Qed returns Valid (0.85ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 10) in 'func_to_recursive_line_13_to_18_0' (3/5):
+Effect at line 19
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 10) in 'func_to_recursive_line_13_to_18_0' (4/5):
+Call Result at line 24
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 10) in 'func_to_recursive_line_13_to_18_0' (5/5):
+Call Effect at line 31
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 8) in 'func_to_recursive_line_13_to_18_0'' in 'func_to_recursive_line_13_to_18_0' at call 'func_to_recursive_line_13_to_18_0' (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 31)
+:
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 8) in 'func_to_recursive_line_13_to_18_0'' in 'main' at call 'func_to_recursive_line_13_to_18_0' (file out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c, line 40)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/recursified_loop-invariants_recursified_const/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_0001/recursified_loop-invariants_recursified_const_merged.c:37: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

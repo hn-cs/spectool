@@ -1,0 +1,447 @@
+[kernel] Parsing out/deepseek-chat/221/221_0001/221_0004/221_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 20 goals scheduled
+[wp] Proved goals:   20 / 20
+  Qed:             9
+  Alt-Ergo :      11 (22ms-28ms-38ms)
+------------------------------------------------------------
+  Function arrayDouble
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 4) in 'arrayDouble':
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Let a_3 = shift_sint32(a, i).
+Assume {
+  Type: is_uint32(n) /\ is_sint32(p).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < n).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_4 = shift_sint32(a, i_1) in ((i_1 < n) ->
+      ((p <= i_1) -> (a_2[a_4] = Mint_0[a_4]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_4 = shift_sint32(a, i_1) in ((0 <= i_1) ->
+      ((i_1 < p) -> (a_2[a_4] = (2 * Mint_0[a_4])))).
+  (* Invariant *)
+  Have: 0 <= p.
+  (* Else *)
+  Have: n <= to_uint32(p).
+}
+Prove: a_2[a_3] = (2 * Mint_0[a_3]).
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (140ms) (96735)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (34ms) (121)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 11):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Assume {
+  Type: is_uint32(n) /\ is_sint32(p) /\ is_sint32(1 + p).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: forall i : Z. let a_3 = shift_sint32(a, i) in ((i < n) ->
+      ((p <= i) -> (a_2[a_3] = Mint_0[a_3]))).
+  (* Invariant *)
+  Have: forall i : Z. let a_3 = shift_sint32(a, i) in ((0 <= i) ->
+      ((i < p) -> (a_2[a_3] = (2 * Mint_0[a_3])))).
+  (* Invariant *)
+  Have: 0 <= p.
+  (* Then *)
+  Have: to_uint32(p) < n.
+}
+Prove: p < n.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (140ms) (87511)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (29ms) (84)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.79ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 12):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Let a_3 = shift_sint32(a, p).
+Let a_4 = a_2[a_3].
+Let a_5 = shift_sint32(a, i).
+Assume {
+  Type: is_uint32(n) /\ is_sint32(p) /\ is_sint32(1 + p) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (i < n) /\ (p < i).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = shift_sint32(a, i_1) in ((i_1 < n) ->
+      ((p <= i_1) -> (a_2[a_6] = Mint_0[a_6]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = shift_sint32(a, i_1) in ((0 <= i_1) ->
+      ((i_1 < p) -> (a_2[a_6] = (2 * Mint_0[a_6])))).
+  (* Invariant *)
+  Have: 0 <= p.
+  (* Then *)
+  Have: to_uint32(p) < n.
+  (* Invariant *)
+  Have: p < n.
+}
+Prove: a_2[a_3 <- 2 * a_4][a_5] = Mint_0[a_5].
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (140ms) (114432)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (34ms) (145)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.64ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 13):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Let a_3 = shift_sint32(a, p).
+Let a_4 = a_2[a_3].
+Let a_5 = a_2[a_3 <- 2 * a_4].
+Let a_6 = shift_sint32(a, i).
+Assume {
+  Type: is_uint32(n) /\ is_sint32(p) /\ is_sint32(1 + p) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= p).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_7 = shift_sint32(a, i_1) in ((i_1 < n) ->
+      ((p <= i_1) -> (a_2[a_7] = Mint_0[a_7]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_7 = shift_sint32(a, i_1) in ((0 <= i_1) ->
+      ((i_1 < p) -> (a_2[a_7] = (2 * Mint_0[a_7])))).
+  (* Invariant *)
+  Have: 0 <= p.
+  (* Then *)
+  Have: to_uint32(p) < n.
+  (* Invariant *)
+  Have: p < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_7 = shift_sint32(a, i_1) in ((i_1 < n) ->
+      ((p < i_1) -> (a_5[a_7] = Mint_0[a_7]))).
+}
+Prove: a_5[a_6] = (2 * Mint_0[a_6]).
+Prover Alt-Ergo  returns Valid (Qed:6ms) (37ms) (196)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.95ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 15) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 15) (2/2):
+Effect at line 19
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Let x = p - 1.
+Let a_3 = shift_sint32(a, x).
+Let a_4 = a_2[a_3].
+Let a_5 = a_2[a_3 <- 2 * a_4].
+Assume {
+  Type: is_uint32(n) /\ is_sint32(p) /\ is_sint32(x) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: p <= (1 + n).
+  (* Invariant *)
+  Have: forall i : Z. let a_6 = shift_sint32(a, i) in ((i < n) ->
+      ((p <= (1 + i)) -> (a_2[a_6] = Mint_0[a_6]))).
+  (* Invariant *)
+  Have: forall i : Z. let a_6 = shift_sint32(a, i) in ((0 <= i) ->
+      (((2 + i) <= p) -> (a_2[a_6] = (2 * Mint_0[a_6])))).
+  (* Invariant *)
+  Have: 0 < p.
+  (* Then *)
+  Have: to_uint32(x) < n.
+  (* Invariant *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: forall i : Z. let a_6 = shift_sint32(a, i) in ((i < n) ->
+      ((p <= i) -> (a_5[a_6] = Mint_0[a_6]))).
+  (* Invariant *)
+  Have: forall i : Z. let a_6 = shift_sint32(a, i) in ((0 <= i) ->
+      ((i < p) -> (a_5[a_6] = (2 * Mint_0[a_6])))).
+}
+Prove: included(a_3, 1, a_1, n).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (140ms) (103876)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (38ms) (243)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 5) in 'arrayDouble':
+Effect at line 18
+Prove: true.
+Prover Qed returns Valid (0.86ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 27):
+Let x = arr_0[0].
+Assume {
+  Type: is_sint32(x) /\ is_sint32(arr_0[1]) /\ is_sint32(arr_0[2]) /\
+      is_sint32(arr_0[3]) /\ is_sint32(arr_0[4]) /\ is_sint32(arr_0[5]).
+  (* Initializer *)
+  Init: arr_1[0] = 0.
+  (* Initializer *)
+  Init: arr_1[1] = 1.
+  (* Initializer *)
+  Init: arr_1[2] = 2.
+  (* Initializer *)
+  Init: arr_1[3] = 3.
+  (* Initializer *)
+  Init: arr_1[4] = 4.
+  (* Initializer *)
+  Init: arr_1[5] = 5.
+  (* Call 'arrayDouble' *)
+  Have: forall i : Z. ((0 <= i) -> ((i <= 5) ->
+      (arr_0[i] = (2 * arr_1[i])))).
+}
+Prove: x = 0.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (37636)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (24ms) (52)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 28):
+Let x = arr_0[1].
+Assume {
+  Type: is_sint32(x) /\ is_sint32(arr_0[2]) /\ is_sint32(arr_0[3]) /\
+      is_sint32(arr_0[4]) /\ is_sint32(arr_0[5]).
+  (* Initializer *)
+  Init: arr_1[0] = 0.
+  (* Initializer *)
+  Init: arr_1[1] = 1.
+  (* Initializer *)
+  Init: arr_1[2] = 2.
+  (* Initializer *)
+  Init: arr_1[3] = 3.
+  (* Initializer *)
+  Init: arr_1[4] = 4.
+  (* Initializer *)
+  Init: arr_1[5] = 5.
+  (* Call 'arrayDouble' *)
+  Have: forall i : Z. ((0 <= i) -> ((i <= 5) ->
+      (arr_0[i] = (2 * arr_1[i])))).
+  (* Assertion *)
+  Have: arr_0[0] = 0.
+}
+Prove: x = 2.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (37564)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (23ms) (51)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 29):
+Let x = arr_0[2].
+Assume {
+  Type: is_sint32(x) /\ is_sint32(arr_0[3]) /\ is_sint32(arr_0[4]) /\
+      is_sint32(arr_0[5]).
+  (* Initializer *)
+  Init: arr_1[0] = 0.
+  (* Initializer *)
+  Init: arr_1[1] = 1.
+  (* Initializer *)
+  Init: arr_1[2] = 2.
+  (* Initializer *)
+  Init: arr_1[3] = 3.
+  (* Initializer *)
+  Init: arr_1[4] = 4.
+  (* Initializer *)
+  Init: arr_1[5] = 5.
+  (* Call 'arrayDouble' *)
+  Have: forall i : Z. ((0 <= i) -> ((i <= 5) ->
+      (arr_0[i] = (2 * arr_1[i])))).
+  (* Assertion *)
+  Have: arr_0[0] = 0.
+  (* Assertion *)
+  Have: arr_0[1] = 2.
+}
+Prove: x = 4.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (120ms) (37490)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (23ms) (52)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 30):
+Let x = arr_0[3].
+Assume {
+  Type: is_sint32(x) /\ is_sint32(arr_0[4]) /\ is_sint32(arr_0[5]).
+  (* Initializer *)
+  Init: arr_1[0] = 0.
+  (* Initializer *)
+  Init: arr_1[1] = 1.
+  (* Initializer *)
+  Init: arr_1[2] = 2.
+  (* Initializer *)
+  Init: arr_1[3] = 3.
+  (* Initializer *)
+  Init: arr_1[4] = 4.
+  (* Initializer *)
+  Init: arr_1[5] = 5.
+  (* Call 'arrayDouble' *)
+  Have: forall i : Z. ((0 <= i) -> ((i <= 5) ->
+      (arr_0[i] = (2 * arr_1[i])))).
+  (* Assertion *)
+  Have: arr_0[0] = 0.
+  (* Assertion *)
+  Have: arr_0[1] = 2.
+  (* Assertion *)
+  Have: arr_0[2] = 4.
+}
+Prove: x = 6.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (120ms) (37420)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (24ms) (52)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 31):
+Let x = arr_0[4].
+Assume {
+  Type: is_sint32(x) /\ is_sint32(arr_0[5]).
+  (* Initializer *)
+  Init: arr_1[0] = 0.
+  (* Initializer *)
+  Init: arr_1[1] = 1.
+  (* Initializer *)
+  Init: arr_1[2] = 2.
+  (* Initializer *)
+  Init: arr_1[3] = 3.
+  (* Initializer *)
+  Init: arr_1[4] = 4.
+  (* Initializer *)
+  Init: arr_1[5] = 5.
+  (* Call 'arrayDouble' *)
+  Have: forall i : Z. ((0 <= i) -> ((i <= 5) ->
+      (arr_0[i] = (2 * arr_1[i])))).
+  (* Assertion *)
+  Have: arr_0[0] = 0.
+  (* Assertion *)
+  Have: arr_0[1] = 2.
+  (* Assertion *)
+  Have: arr_0[2] = 4.
+  (* Assertion *)
+  Have: arr_0[3] = 6.
+}
+Prove: x = 8.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (37340)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (22ms) (52)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 32):
+Let x = arr_0[5].
+Assume {
+  Type: is_sint32(x).
+  (* Initializer *)
+  Init: arr_1[0] = 0.
+  (* Initializer *)
+  Init: arr_1[1] = 1.
+  (* Initializer *)
+  Init: arr_1[2] = 2.
+  (* Initializer *)
+  Init: arr_1[3] = 3.
+  (* Initializer *)
+  Init: arr_1[4] = 4.
+  (* Initializer *)
+  Init: arr_1[5] = 5.
+  (* Call 'arrayDouble' *)
+  Have: forall i : Z. ((0 <= i) -> ((i <= 5) ->
+      (arr_0[i] = (2 * arr_1[i])))).
+  (* Assertion *)
+  Have: arr_0[0] = 0.
+  (* Assertion *)
+  Have: arr_0[1] = 2.
+  (* Assertion *)
+  Have: arr_0[2] = 4.
+  (* Assertion *)
+  Have: arr_0[3] = 6.
+  (* Assertion *)
+  Have: arr_0[4] = 8.
+}
+Prove: x = 10.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (37260)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (23ms) (52)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 2) in 'arrayDouble'' in 'main' at call 'arrayDouble' (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 26)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 3) in 'arrayDouble'' in 'main' at call 'arrayDouble' (file out/deepseek-chat/221/221_0001/221_0004/221_merged.c, line 26)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/221/221_0001/221_0004/221_merged.c:24: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,240 @@
+[kernel] Parsing out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 19 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 16ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 16ms) (Z3 8s)
+[wp] Proved goals:   17 / 19
+  Qed:            15
+  Alt-Ergo :       2 (23ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 6):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(2 + x).
+  (* Residual *)
+  When: 750000 <= x.
+  (* Residual *)
+  When: 500000 <= x.
+  (* Invariant *)
+  Have: x <= 1000000.
+  (* Invariant *)
+  Have: x <= 999999.
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 500000)).
+  (* Invariant *)
+  Have: ((x <= 500000) -> (y = 500000)).
+  (* Invariant *)
+  Have: 0 <= x.
+}
+Prove: x <= 999998.
+Prover Z3 4.8.12 returns Timeout (Qed:16ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:16ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 7):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\
+      is_sint32(x_4) /\ is_sint32(x_5) /\ is_sint32(y).
+  (* Invariant *)
+  Have: x_5 <= 1000000.
+  (* Invariant *)
+  Have: x_5 <= 999999.
+  (* Invariant *)
+  Have: ((x_5 = 0) -> (y = 500000)).
+  (* Invariant *)
+  Have: ((x_5 <= 500000) -> (y = 500000)).
+  (* Invariant *)
+  Have: 0 <= x_5.
+  If x_5 <= 499999
+  Then { Have: x_5 = x_1. Have: (1 + x_1) = x. }
+  Else {
+    Have: x_5 = x_4.
+    If x_4 <= 749999
+    Then { Have: x_4 = x_2. Have: (1 + x_2) = x. }
+    Else { Have: x_4 = x_3. Have: (2 + x_3) = x. }
+  }
+  (* Invariant *)
+  Have: x <= 1000000.
+}
+Prove: x <= 999999.
+Prover Z3 4.8.12 returns Timeout (Qed:16ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:16ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (16ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.67ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.87ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 13):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\
+      is_sint32(x_4) /\ is_sint32(x_5) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2).
+  (* Goal *)
+  When: x <= 500000.
+  (* Invariant *)
+  Have: x_5 <= 1000000.
+  (* Invariant *)
+  Have: x_5 <= 999999.
+  (* Invariant *)
+  Have: ((x_5 = 0) -> (y_2 = 500000)).
+  (* Invariant *)
+  Have: ((x_5 <= 500000) -> (y_2 = 500000)).
+  (* Invariant *)
+  Have: 0 <= x_5.
+  If x_5 <= 499999
+  Then { Have: (x_5 = x_1) /\ (y_2 = y). Have: (1 + x_1) = x. }
+  Else {
+    Have: (x_5 = x_4) /\ (y_2 = y_1).
+    If x_4 <= 749999
+    Then { Have: x_4 = x_2. Have: (1 + x_2) = x. }
+    Else { Have: x_4 = x_3. Have: (2 + x_3) = x. }
+    Have: (1 + y_1) = y.
+  }
+  (* Invariant *)
+  Have: x <= 1000000.
+  (* Invariant *)
+  Have: x <= 999999.
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 500000)).
+}
+Prove: y = 500000.
+Prover Z3 4.8.12 returns Valid (Qed:39ms) (130ms) (40079)
+Prover Alt-Ergo  returns Valid (Qed:39ms) (23ms) (85)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 14):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\
+      is_sint32(x_4) /\ is_sint32(x_5) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2).
+  (* Invariant *)
+  Have: x_5 <= 1000000.
+  (* Invariant *)
+  Have: x_5 <= 999999.
+  (* Invariant *)
+  Have: ((x_5 = 0) -> (y_2 = 500000)).
+  (* Invariant *)
+  Have: ((x_5 <= 500000) -> (y_2 = 500000)).
+  (* Invariant *)
+  Have: 0 <= x_5.
+  If x_5 <= 499999
+  Then { Have: (x_5 = x_1) /\ (y_2 = y). Have: (1 + x_1) = x. }
+  Else {
+    Have: (x_5 = x_4) /\ (y_2 = y_1).
+    If x_4 <= 749999
+    Then { Have: x_4 = x_2. Have: (1 + x_2) = x. }
+    Else { Have: x_4 = x_3. Have: (2 + x_3) = x. }
+    Have: (1 + y_1) = y.
+  }
+  (* Invariant *)
+  Have: x <= 1000000.
+  (* Invariant *)
+  Have: x <= 999999.
+  (* Invariant *)
+  Have: ((500001 <= x) -> (0 <= x)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 500000)).
+  (* Invariant *)
+  Have: ((x <= 500000) -> (y = 500000)).
+}
+Prove: 0 <= x.
+Prover Alt-Ergo  returns Valid (Qed:21ms) (22ms) (75)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.75ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_mono-crafted_6/loops-crafted-1_mono-crafted_6_0001/loops-crafted-1_mono-crafted_6_0004/loops-crafted-1_mono-crafted_6_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

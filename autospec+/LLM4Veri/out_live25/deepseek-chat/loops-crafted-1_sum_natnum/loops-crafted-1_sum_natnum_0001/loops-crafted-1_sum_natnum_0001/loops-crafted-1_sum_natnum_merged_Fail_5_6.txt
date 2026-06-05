@@ -1,0 +1,60 @@
+[kernel] Parsing out/deepseek-chat/loops-crafted-1_sum_natnum/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 6 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 3ms) (Z3 8s)
+[wp] Proved goals:    5 / 6
+  Qed:             5
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_sum_natnum/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_sum_natnum/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_sum_natnum/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_sum_natnum/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.57ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/loops-crafted-1_sum_natnum/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_merged.c, line 22):
+Assume {
+  Type: is_sint32(i) /\ is_uint64(sum_0).
+  (* Invariant *)
+  Have: i <= 40000.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: 40000 <= i.
+}
+Prove: sum_0 = 800020000.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_sum_natnum/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_sum_natnum/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_0001/loops-crafted-1_sum_natnum_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

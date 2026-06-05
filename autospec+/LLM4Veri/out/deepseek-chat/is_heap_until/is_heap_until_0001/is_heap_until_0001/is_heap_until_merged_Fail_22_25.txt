@@ -1,0 +1,428 @@
+[kernel] Parsing out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 25 goals scheduled
+[wp] [Timeout] typed_is_heap_until_loop_invariant_preserved (Qed 26ms) (Z3 8s)
+[wp] [Timeout] typed_is_heap_until_loop_invariant_3_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_is_heap_until_loop_invariant_4_established (Qed 3ms) (Z3 8s)
+[wp] Proved goals:   22 / 25
+  Qed:             6
+  Alt-Ergo :      16 (22ms-96ms-744ms)
+  Timeout:         3
+------------------------------------------------------------
+  Axiomatic 'ArrayUpdate'
+------------------------------------------------------------
+
+Lemma ArrayUpdate_Shrink:
+Prove: (0<=i_0) -> ((2+i_0)<=n_0) -> (is_sint32 v_0)
+       -> (P_ArrayUpdate Mint_0 Mint_1 a_0 n_0 i_0 v_0)
+       -> (P_ArrayUpdate Mint_0 Mint_1 a_0 (n_0-1) i_0 v_0)
+Prover Alt-Ergo  returns Valid (31ms) (94)
+
+------------------------------------------------------------
+
+Lemma ArrayUpdate_UpperBound:
+Assume: 'ArrayUpdate_Shrink'
+Prove: (v_0<=w_0) -> (is_sint32 v_0) -> (is_sint32 w_0)
+       -> (P_UpperBound_2_ Mint_1 a_0 n_0 w_0)
+       -> (P_ArrayUpdate Mint_0 Mint_1 a_0 n_0 i_0 v_0)
+       -> (P_UpperBound_2_ Mint_0 a_0 n_0 w_0)
+Prover Alt-Ergo  returns Valid (37ms) (165)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Axiomatic 'Heap'
+------------------------------------------------------------
+
+Lemma HeapCompatible_Update:
+Assume: 'Heap_Unchanged' 'Heap_Shrink'
+Prove: (0<=m_0) -> (m_0<n_0) -> (is_sint32 v_0) -> (P_Heap Mint_1 a_0 n_0)
+       -> (P_HeapCompatible Mint_1 a_0 n_0 m_0 v_0)
+       -> (P_ArrayUpdate Mint_0 Mint_1 a_0 n_0 m_0 v_0)
+       -> (P_Heap Mint_0 a_0 n_0)
+Prover Alt-Ergo  returns Valid (744ms) (12451)
+
+------------------------------------------------------------
+
+Lemma Heap_Shrink:
+Prove: (0<=m_0) -> (m_0<=n_0) -> (P_Heap Mint_0 a_0 n_0)
+       -> (P_Heap Mint_0 a_0 m_0)
+Prover Alt-Ergo  returns Valid (28ms) (88)
+
+------------------------------------------------------------
+
+Lemma Heap_Unchanged:
+Assume: 'Heap_Shrink'
+Prove: (0<=n_0) -> (P_Heap Mint_1 a_0 n_0)
+       -> (P_Unchanged_2_ Mint_0 Mint_1 a_0 n_0) -> (P_Heap Mint_0 a_0 n_0)
+Prover Alt-Ergo  returns Valid (34ms) (162)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Axiomatic 'HeapNodes'
+------------------------------------------------------------
+
+Lemma HeapParent_Zero:
+Prove: (L_HeapParent 0)=0
+Prover Z3 4.8.12 returns Valid (130ms) (23117)
+Prover Alt-Ergo  returns Valid (22ms) (41)
+
+------------------------------------------------------------
+
+Lemma Heap_ChildBounds:
+Assume: 'Heap_ParentBounds' 'Heap_Childs' 'Heap_ParentChild'
+  'Heap_ParentRight' 'Heap_ParentLeft' 'HeapParent_Zero'
+Prove: let x_0 = (L_HeapLeft p_0) in
+       (0<=p_0) -> ((p_0<x_0) /\ (x_0<(L_HeapRight p_0)))
+Prover Alt-Ergo  returns Valid (22ms) (40)
+
+------------------------------------------------------------
+
+Lemma Heap_Childs:
+Assume: 'Heap_ParentChild' 'Heap_ParentRight' 'Heap_ParentLeft'
+  'HeapParent_Zero'
+Prove: ((L_HeapParent b_0)=(L_HeapParent a_0)) -> (0<a_0) -> (0<b_0)
+       -> ((b_0=a_0) \/ ((1+a_0)=b_0) \/ ((1+b_0)=a_0))
+Prover Alt-Ergo  returns Valid (30ms) (193)
+
+------------------------------------------------------------
+
+Lemma Heap_ParentBounds:
+Assume: 'Heap_Childs' 'Heap_ParentChild' 'Heap_ParentRight' 'Heap_ParentLeft'
+  'HeapParent_Zero'
+Prove: let x_0 = (L_HeapParent c_0) in (0<c_0) -> ((0<=x_0) /\ (x_0<c_0))
+Prover Alt-Ergo  returns Valid (27ms) (102)
+
+------------------------------------------------------------
+
+Lemma Heap_ParentChild:
+Assume: 'Heap_ParentRight' 'Heap_ParentLeft' 'HeapParent_Zero'
+Prove: ((L_HeapParent c_0)=p_0) -> (0<c_0)
+       -> (((L_HeapLeft p_0)=c_0) \/ ((L_HeapRight p_0)=c_0))
+Prover Alt-Ergo  returns Valid (26ms) (105)
+
+------------------------------------------------------------
+
+Lemma Heap_ParentLeft:
+Assume: 'HeapParent_Zero'
+Prove: (0<=p_0) -> ((L_HeapParent (L_HeapLeft p_0))=p_0)
+Prover Alt-Ergo  returns Valid (26ms) (109)
+
+------------------------------------------------------------
+
+Lemma Heap_ParentRight:
+Assume: 'Heap_ParentLeft' 'HeapParent_Zero'
+Prove: (0<=p_0) -> ((L_HeapParent (L_HeapRight p_0))=p_0)
+Prover Alt-Ergo  returns Valid (25ms) (111)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function is_heap_until
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 149):
+Let x = Mint_0[shift_sint32(a, child_0)].
+Let x_1 = child_0 / 2.
+Let x_2 = Mint_0[shift_sint32(a, x_1)].
+Let x_3 = Mint_0[shift_sint32(a, 0)].
+Assume {
+  Type: is_uint32(child_0) /\ is_uint32(n) /\ is_uint32(parent_0) /\
+      is_uint32(x_1) /\ is_sint32(x) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: n != 1.
+  (* Invariant *)
+  Have: (Mint_0[shift_sint32(a, 1)] <= x_3) /\
+      (Mint_0[shift_sint32(a, 2)] <= x_3).
+  (* Invariant *)
+  Have: x_1 < child_0.
+  (* Invariant *)
+  Have: n != child_0.
+  (* Invariant *)
+  Have: forall i : Z. let x_4 = 2 * i in
+      let x_5 = Mint_0[shift_sint32(a, i)] in ((0 <= i) -> ((i <= x_1) ->
+      ((Mint_0[shift_sint32(a, 1 + x_4)] <= x_5) /\
+       (Mint_0[shift_sint32(a, 2 + x_4)] <= x_5)))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 < i) -> ((i < child_0) ->
+      (Mint_0[shift_sint32(a, i)] <= Mint_0[shift_sint32(a, (i - 1) / 2)]))).
+  (* Invariant *)
+  Have: (-1) <= child_0.
+  (* Then *)
+  Have: child_0 < n.
+  (* Else *)
+  Have: x <= x_2.
+  If to_uint32(child_0 % 2) = 0
+  Then { Have: to_uint32(1 + x_1) = parent_0. }
+  Else { Have: x_1 = parent_0. }
+}
+Prove: (to_uint32(1 + child_0) / 2) = parent_0.
+Prover Z3 4.8.12 returns Timeout (Qed:26ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:26ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 149):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 150):
+Let x = Mint_0[shift_sint32(a, child_0)].
+Let x_1 = child_0 / 2.
+Let x_2 = Mint_0[shift_sint32(a, x_1)].
+Let x_3 = Mint_0[shift_sint32(a, 0)].
+Let x_4 = to_uint32(1 + child_0).
+Assume {
+  Type: is_uint32(child_0) /\ is_uint32(n) /\ is_uint32(x_1) /\
+      is_sint32(x) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: n != 1.
+  (* Invariant *)
+  Have: (Mint_0[shift_sint32(a, 1)] <= x_3) /\
+      (Mint_0[shift_sint32(a, 2)] <= x_3).
+  (* Invariant *)
+  Have: x_1 < child_0.
+  (* Invariant *)
+  Have: n != child_0.
+  (* Invariant *)
+  Have: forall i : Z. let x_5 = 2 * i in
+      let x_6 = Mint_0[shift_sint32(a, i)] in ((0 <= i) -> ((i <= x_1) ->
+      ((Mint_0[shift_sint32(a, 1 + x_5)] <= x_6) /\
+       (Mint_0[shift_sint32(a, 2 + x_5)] <= x_6)))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 < i) -> ((i < child_0) ->
+      (Mint_0[shift_sint32(a, i)] <= Mint_0[shift_sint32(a, (i - 1) / 2)]))).
+  (* Invariant *)
+  Have: (-1) <= child_0.
+  (* Then *)
+  Have: child_0 < n.
+  (* Else *)
+  Have: x <= x_2.
+  If to_uint32(child_0 % 2) = 0
+  Then { Have: (x_4 / 2) = to_uint32(1 + x_1). }
+  Else { Have: (x_4 / 2) = x_1. }
+}
+Prove: (x_4 / 2) < x_4.
+Prover Alt-Ergo  returns Valid (Qed:15ms) (54ms) (404)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 150):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 151):
+Let x = to_uint32(1 + child_0).
+Let x_1 = Mint_0[shift_sint32(a, child_0)].
+Let x_2 = child_0 / 2.
+Let x_3 = Mint_0[shift_sint32(a, x_2)].
+Let x_4 = Mint_0[shift_sint32(a, 0)].
+Assume {
+  Type: is_uint32(child_0) /\ is_uint32(n) /\ is_uint32(x_2) /\
+      is_sint32(x_1) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: n != 1.
+  (* Invariant *)
+  Have: (Mint_0[shift_sint32(a, 1)] <= x_4) /\
+      (Mint_0[shift_sint32(a, 2)] <= x_4).
+  (* Invariant *)
+  Have: x_2 < child_0.
+  (* Invariant *)
+  Have: n != child_0.
+  (* Invariant *)
+  Have: forall i : Z. let x_5 = 2 * i in
+      let x_6 = Mint_0[shift_sint32(a, i)] in ((0 <= i) -> ((i <= x_2) ->
+      ((Mint_0[shift_sint32(a, 1 + x_5)] <= x_6) /\
+       (Mint_0[shift_sint32(a, 2 + x_5)] <= x_6)))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 < i) -> ((i < child_0) ->
+      (Mint_0[shift_sint32(a, i)] <= Mint_0[shift_sint32(a, (i - 1) / 2)]))).
+  (* Invariant *)
+  Have: (-1) <= child_0.
+  (* Then *)
+  Have: child_0 < n.
+  (* Else *)
+  Have: x_1 <= x_3.
+  If to_uint32(child_0 % 2) = 0
+  Then { Have: (x / 2) = to_uint32(1 + x_2). }
+  Else { Have: (x / 2) = x_2. }
+  (* Invariant *)
+  Have: (x / 2) < x.
+}
+Prove: x != n.
+Prover Alt-Ergo  returns Valid (Qed:16ms) (71ms) (557)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 151):
+Assume { Type: is_uint32(n). }
+Prove: n != 1.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 152):
+Let x = to_uint32(1 + child_0).
+Let x_1 = x / 2.
+Let x_2 = Mint_0[shift_sint32(a, child_0)].
+Let x_3 = child_0 / 2.
+Let x_4 = Mint_0[shift_sint32(a, x_3)].
+Let x_5 = Mint_0[shift_sint32(a, 0)].
+Let x_6 = 2 * i.
+Let x_7 = Mint_0[shift_sint32(a, i)].
+Assume {
+  Type: is_uint32(child_0) /\ is_uint32(n) /\ is_uint32(x_3) /\
+      is_sint32(x_2) /\ is_sint32(x_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= x_1).
+  (* Invariant *)
+  Have: n != 1.
+  (* Invariant *)
+  Have: (Mint_0[shift_sint32(a, 1)] <= x_5) /\
+      (Mint_0[shift_sint32(a, 2)] <= x_5).
+  (* Invariant *)
+  Have: x_3 < child_0.
+  (* Invariant *)
+  Have: n != child_0.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_8 = 2 * i_1 in
+      let x_9 = Mint_0[shift_sint32(a, i_1)] in ((0 <= i_1) ->
+      ((i_1 <= x_3) ->
+      ((Mint_0[shift_sint32(a, 1 + x_8)] <= x_9) /\
+       (Mint_0[shift_sint32(a, 2 + x_8)] <= x_9)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < child_0) ->
+      (Mint_0[shift_sint32(a, i_1)] <= Mint_0[shift_sint32(a, (i_1 - 1) / 2)]))).
+  (* Invariant *)
+  Have: (-1) <= child_0.
+  (* Then *)
+  Have: child_0 < n.
+  (* Else *)
+  Have: x_2 <= x_4.
+  If to_uint32(child_0 % 2) = 0
+  Then { Have: x_1 = to_uint32(1 + x_3). }
+  Else { Have: x_1 = x_3. }
+  (* Invariant *)
+  Have: x_1 < x.
+  (* Invariant *)
+  Have: x != n.
+}
+Prove: (Mint_0[shift_sint32(a, 1 + x_6)] <= x_7) /\
+    (Mint_0[shift_sint32(a, 2 + x_6)] <= x_7).
+Prover Alt-Ergo  returns Valid (Qed:38ms) (213ms) (1193)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 152):
+Let x = Mint_0[shift_sint32(a, 0)].
+Assume {
+  Type: is_uint32(n).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (i <= 0) /\ (0 <= i).
+  (* Invariant *)
+  Have: n != 1.
+}
+Prove: (Mint_0[shift_sint32(a, 1)] <= x) /\
+    (Mint_0[shift_sint32(a, 2)] <= x).
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 153):
+Let x = to_uint32(1 + child_0).
+Let x_1 = x / 2.
+Let x_2 = Mint_0[shift_sint32(a, child_0)].
+Let x_3 = child_0 / 2.
+Let x_4 = Mint_0[shift_sint32(a, x_3)].
+Let x_5 = Mint_0[shift_sint32(a, 0)].
+Assume {
+  Type: is_uint32(child_0) /\ is_uint32(n) /\ is_uint32(x_3) /\
+      is_sint32(x_2) /\ is_sint32(x_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 < i) /\ (i < x).
+  (* Invariant *)
+  Have: n != 1.
+  (* Invariant *)
+  Have: (Mint_0[shift_sint32(a, 1)] <= x_5) /\
+      (Mint_0[shift_sint32(a, 2)] <= x_5).
+  (* Invariant *)
+  Have: x_3 < child_0.
+  (* Invariant *)
+  Have: n != child_0.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_6 = 2 * i_1 in
+      let x_7 = Mint_0[shift_sint32(a, i_1)] in ((0 <= i_1) ->
+      ((i_1 <= x_3) ->
+      ((Mint_0[shift_sint32(a, 1 + x_6)] <= x_7) /\
+       (Mint_0[shift_sint32(a, 2 + x_6)] <= x_7)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < child_0) ->
+      (Mint_0[shift_sint32(a, i_1)] <= Mint_0[shift_sint32(a, (i_1 - 1) / 2)]))).
+  (* Invariant *)
+  Have: (-1) <= child_0.
+  (* Then *)
+  Have: child_0 < n.
+  (* Else *)
+  Have: x_2 <= x_4.
+  If to_uint32(child_0 % 2) = 0
+  Then { Have: x_1 = to_uint32(1 + x_3). }
+  Else { Have: x_1 = x_3. }
+  (* Invariant *)
+  Have: x_1 < x.
+  (* Invariant *)
+  Have: x != n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_6 = 2 * i_1 in
+      let x_7 = Mint_0[shift_sint32(a, i_1)] in ((0 <= i_1) ->
+      ((i_1 <= x_1) ->
+      ((Mint_0[shift_sint32(a, 1 + x_6)] <= x_7) /\
+       (Mint_0[shift_sint32(a, 2 + x_6)] <= x_7)))).
+}
+Prove: Mint_0[shift_sint32(a, i)] <= Mint_0[shift_sint32(a, (i - 1) / 2)].
+Prover Alt-Ergo  returns Valid (Qed:25ms) (144ms) (1197)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 153):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 154):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 154):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c, line 155):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/is_heap_until/is_heap_until_0001/is_heap_until_0001/is_heap_until_merged.c:145: Warning: 
+  No 'assigns' specification for function 'is_heap_until'.
+  Callers assumptions might be imprecise.

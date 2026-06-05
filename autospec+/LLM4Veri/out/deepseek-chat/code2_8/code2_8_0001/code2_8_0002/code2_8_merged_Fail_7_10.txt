@@ -1,0 +1,174 @@
+[kernel] Parsing out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c:13: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c:5: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c:13: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 10 goals scheduled
+[wp] [Timeout] typed_foo_loop_invariant_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_foo_loop_invariant_2_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_foo_loop_invariant_3_established (Qed 2ms) (Z3 8s)
+[wp] Proved goals:    7 / 10
+  Qed:             5
+  Alt-Ergo :       2 (50ms-54ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c, line 7):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y).
+  (* Pre-condition *)
+  Have: (0 <= x) /\ (x <= 10).
+  (* Pre-condition *)
+  Have: (0 <= y) /\ (y <= 10).
+}
+Prove: y <= x.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c, line 8):
+Let x_2 = 10 + y.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(y) /\
+      is_sint32(y_1) /\ is_sint32(10 + x) /\ is_sint32(x_2).
+  (* Pre-condition *)
+  Have: (0 <= x_1) /\ (x_1 <= 10).
+  (* Pre-condition *)
+  Have: (0 <= y_1) /\ (y_1 <= 10).
+  (* Invariant *)
+  Have: y_1 <= x_1.
+  (* Invariant *)
+  Have: (y_1 % 10) = 0.
+  (* Invariant *)
+  Have: (x_1 % 10) = 0.
+  (* Invariant *)
+  Have: y <= x.
+  (* Invariant *)
+  Have: (y % 10) = 0.
+  (* Invariant *)
+  Have: (x % 10) = 0.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: tmp_0 != 0.
+}
+Prove: (x_2 % 10) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (190ms) (77701)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (50ms) (281)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c, line 8):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y).
+  (* Pre-condition *)
+  Have: (0 <= x) /\ (x <= 10).
+  (* Pre-condition *)
+  Have: (0 <= y) /\ (y <= 10).
+  (* Invariant *)
+  Have: y <= x.
+}
+Prove: (y % 10) = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c, line 9):
+Let x_2 = 10 + y.
+Let x_3 = 10 + x.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(y) /\
+      is_sint32(y_1) /\ is_sint32(x_3) /\ is_sint32(x_2).
+  (* Pre-condition *)
+  Have: (0 <= x_1) /\ (x_1 <= 10).
+  (* Pre-condition *)
+  Have: (0 <= y_1) /\ (y_1 <= 10).
+  (* Invariant *)
+  Have: y_1 <= x_1.
+  (* Invariant *)
+  Have: (y_1 % 10) = 0.
+  (* Invariant *)
+  Have: (x_1 % 10) = 0.
+  (* Invariant *)
+  Have: y <= x.
+  (* Invariant *)
+  Have: (y % 10) = 0.
+  (* Invariant *)
+  Have: (x % 10) = 0.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: (x_2 % 10) = 0.
+}
+Prove: (x_3 % 10) = 0.
+Prover Alt-Ergo  returns Valid (Qed:6ms) (54ms) (335)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c, line 9):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y).
+  (* Pre-condition *)
+  Have: (0 <= x) /\ (x <= 10).
+  (* Pre-condition *)
+  Have: (0 <= y) /\ (y <= 10).
+  (* Invariant *)
+  Have: y <= x.
+  (* Invariant *)
+  Have: (y % 10) = 0.
+}
+Prove: (x % 10) = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c:5: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/code2_8/code2_8_0001/code2_8_0002/code2_8_merged.c:13: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

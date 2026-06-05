@@ -1,0 +1,74 @@
+[kernel] Parsing out/deepseek-chat/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c:10: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c:9: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c:8: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 6 goals scheduled
+[wp] Proved goals:    6 / 6
+  Qed:             5
+  Alt-Ergo :       1 (22ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 17):
+Assume {
+  Type: is_uint32(v) /\ is_uint32(w) /\ is_uint32(x) /\ is_uint32(y) /\
+      is_uint32(z).
+  (* Then *)
+  Have: w <= 268435454.
+  (* Then *)
+  Have: x <= 9.
+  (* Then *)
+  Have: y <= 9.
+  (* Then *)
+  Have: z <= 9.
+  (* Invariant *)
+  Have: v <= 10.
+  (* Invariant *)
+  Have: 0 <= v.
+  (* Then *)
+  Have: v <= 9.
+}
+Prove: to_uint32(1 + v) <= 10.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (130ms) (35931)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (22ms) (40)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 19):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

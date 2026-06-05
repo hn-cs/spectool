@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/loops-crafted-1_nested3-1/loops-crafted-1_nested3-1_0001/loops-crafted-1_nested3-1_0003/loops-crafted-1_nested3-1_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/loops-crafted-1_nested3-1/loops-crafted-1_nested3-1_0001/loops-crafted-1_nested3-1_0003/loops-crafted-1_nested3-1_merged.c:10: Warning: 
+  unbound logic variable z. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/loops-crafted-1_nested3-1/loops-crafted-1_nested3-1_0001/loops-crafted-1_nested3-1_0003/loops-crafted-1_nested3-1_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

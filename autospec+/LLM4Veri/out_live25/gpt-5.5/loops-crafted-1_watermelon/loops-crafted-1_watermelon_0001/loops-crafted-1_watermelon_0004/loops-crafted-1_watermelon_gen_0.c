@@ -1,0 +1,70 @@
+#include<limits.h>
+/*@
+assigns \nothing;
+ensures 0 < \result < 10000000;
+*/
+int unknown();
+int true = 1;
+int false = 0;
+/*@
+requires w <= INT_MAX - 1;
+assigns \nothing;
+*/
+int correct_version(int w)
+{
+  int is_divisible = true;
+  if(w < 4)
+    is_divisible = false;
+  else
+  {
+    int i;
+    /*@
+    loop invariant i <= w + 1;
+    loop invariant i % 2 == 0;
+    loop invariant 0 <= i;
+    loop assigns i;
+    */
+    for(i = 0; i < w; i += 2)
+    {}
+    if(i != w)
+      is_divisible = false;
+  }
+  return is_divisible;
+}
+/*@
+requires w <= INT_MAX - 1;
+assigns \nothing;
+ensures \result == correct_version(w);
+*/
+int student_version(int w)
+{
+  int is_divisible = true;
+  if(w < 4)
+    is_divisible = false;
+  else
+  {
+    int i;
+    /*@
+    loop invariant i <= w + 1;
+    loop invariant i % 2 == 0;
+    loop invariant 0 <= i;
+    loop assigns i;
+    */
+    for(i = 0; i < w; i += 2)
+    {}
+    if(i != w)
+      is_divisible = false;
+  }
+  return is_divisible;
+}
+int main(){
+  int w=unknown();
+  int is_divisible1 = true, is_divisible2 = true;
+  if(w > 0 && w < 10000000)
+  {
+    is_divisible1 = correct_version(w);
+    is_divisible2 = student_version(w);
+    // @ assert(is_divisible1 == is_divisible2);
+  }
+  return 0;
+}

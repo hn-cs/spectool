@@ -1,0 +1,277 @@
+[kernel] Parsing out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 21 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_3_preserved (Qed 4ms) (Z3 8s)
+[wp] Proved goals:   20 / 21
+  Qed:            17
+  Alt-Ergo :       3 (23ms-28ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 5):
+Let x = 2 * i.
+Let x_1 = j / 2.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\
+      is_sint32(1 + i - x_1).
+  (* Invariant *)
+  Have: (i_1 = 0) \/ (i_1 = 1) \/ (i_1 = 2) \/ (i_1 = 3).
+  (* Invariant *)
+  Have: i_1 <= 4.
+  (* Invariant *)
+  Have: i_1 != 4.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Invariant *)
+  Have: i_1 <= 3.
+  (* Invariant *)
+  Have: j <= 4.
+  (* Invariant *)
+  Have: j <= x.
+  (* Invariant *)
+  Have: x <= (6 + j).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: 3 <= j.
+}
+Prove: (x_1 = i) \/ (x_1 = (1 + i)) \/ ((1 + x_1) = i) \/ ((2 + x_1) = i) \/
+    ((3 + x_1) = i).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (130ms) (38125)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (28ms) (164)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 6):
+Let x = j / 2.
+Let x_1 = 3 + x.
+Let x_2 = 2 * i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\
+      is_sint32(1 + i - x).
+  (* Invariant *)
+  Have: (i_1 = 0) \/ (i_1 = 1) \/ (i_1 = 2) \/ (i_1 = 3).
+  (* Invariant *)
+  Have: i_1 <= 4.
+  (* Invariant *)
+  Have: i_1 != 4.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Invariant *)
+  Have: i_1 <= 3.
+  (* Invariant *)
+  Have: j <= 4.
+  (* Invariant *)
+  Have: j <= x_2.
+  (* Invariant *)
+  Have: x_2 <= (6 + j).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: 3 <= j.
+  (* Invariant *)
+  Have: (x = i) \/ (x = (1 + i)) \/ ((1 + x) = i) \/ ((2 + x) = i) \/
+      (x_1 = i).
+}
+Prove: i <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (37962)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (23ms) (64)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 7):
+Let x = j / 2.
+Let x_1 = 3 + x.
+Let x_2 = 2 * i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\
+      is_sint32(1 + i - x).
+  (* Invariant *)
+  Have: (i_1 = 0) \/ (i_1 = 1) \/ (i_1 = 2) \/ (i_1 = 3).
+  (* Invariant *)
+  Have: i_1 <= 4.
+  (* Invariant *)
+  Have: i_1 != 4.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Invariant *)
+  Have: i_1 <= 3.
+  (* Invariant *)
+  Have: j <= 4.
+  (* Invariant *)
+  Have: j <= x_2.
+  (* Invariant *)
+  Have: x_2 <= (6 + j).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: 3 <= j.
+  (* Invariant *)
+  Have: (x = i) \/ (x = (1 + i)) \/ ((1 + x) = i) \/ ((2 + x) = i) \/
+      (x_1 = i).
+  (* Invariant *)
+  Have: i <= x_1.
+}
+Prove: x_1 != i.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 8):
+Let x = j / 2.
+Let x_1 = 3 + x.
+Let x_2 = 1 + i.
+Let x_3 = 2 * i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\
+      is_sint32(1 + i - x).
+  (* Invariant *)
+  Have: (i_1 = 0) \/ (i_1 = 1) \/ (i_1 = 2) \/ (i_1 = 3).
+  (* Invariant *)
+  Have: i_1 <= 4.
+  (* Invariant *)
+  Have: i_1 != 4.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Invariant *)
+  Have: i_1 <= 3.
+  (* Invariant *)
+  Have: j <= 4.
+  (* Invariant *)
+  Have: j <= x_3.
+  (* Invariant *)
+  Have: x_3 <= (6 + j).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: 3 <= j.
+  (* Invariant *)
+  Have: (x = i) \/ (x = x_2) \/ ((1 + x) = i) \/ ((2 + x) = i).
+  (* Invariant *)
+  Have: i <= x_1.
+  (* Invariant *)
+  Have: x_1 != i.
+}
+Prove: x <= x_2.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (38122)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (25ms) (75)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.82ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.73ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 9) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 9) (2/2):
+Effect at line 22
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0002/loop-lit_bh2017-ex1-poly_merged.c:2: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

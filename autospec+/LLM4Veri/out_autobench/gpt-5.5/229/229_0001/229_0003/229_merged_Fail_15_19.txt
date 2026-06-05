@@ -1,0 +1,216 @@
+[kernel] Parsing out/gpt-5.5/229/229_0001/229_0003/229_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 19 goals scheduled
+[wp] [Timeout] typed_test_assert_2 (Qed 4ms) (Z3 8s)
+[wp] [Timeout] typed_test_assert (Qed 4ms) (Z3 8s)
+[wp] [Timeout] typed_test_assert_3 (Qed 4ms) (Z3 8s)
+[wp] [Timeout] typed_test_assert_4 (Qed 4ms) (Z3 8s)
+[wp] Proved goals:   15 / 19
+  Qed:            14
+  Alt-Ergo :       1 (33ms)
+  Timeout:         4
+------------------------------------------------------------
+  Function order_3
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 4) in 'order_3':
+Let x = Mint_2[c].
+Let x_1 = Mint_2[b].
+Let x_2 = Mint_4[c].
+Let x_3 = Mint_4[a].
+Let x_4 = Mint_6[b].
+Let x_5 = Mint_6[a].
+Let x_6 = Mint_0[a].
+Let x_7 = Mint_0[b].
+Let x_8 = Mint_0[c].
+Assume {
+  Type: is_sint32(x_6) /\ is_sint32(x_7) /\ is_sint32(x_8) /\
+      is_sint32(Mint_1[b]) /\ is_sint32(x_1) /\ is_sint32(x) /\
+      is_sint32(Mint_3[a]) /\ is_sint32(x_3) /\ is_sint32(x_2) /\
+      is_sint32(Mint_5[a]) /\ is_sint32(x_5) /\ is_sint32(x_4).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\
+      (region(c.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, 1) /\ valid_rw(Malloc_0, b, 1) /\
+      valid_rw(Malloc_0, c, 1).
+  (* Pre-condition *)
+  Have: (b != a) /\ (c != a) /\ (c != b).
+  If x_4 < x_5
+  Then {
+    Let x_9 = Mint_5[a].
+    Have: Mint_6 = Mint_5.
+    Have: Mint_5[b <- x_9][a <- x_9] = Mint_4.
+  }
+  Else { Have: Mint_6 = Mint_4. }
+  If x_2 < x_3
+  Then {
+    Have: Mint_4 = Mint_3.
+    Have: Mint_3[a <- Mint_3[c]][c <- Mint_3[a]] = Mint_2.
+  }
+  Else { Have: Mint_4 = Mint_2. }
+  If x < x_1
+  Then {
+    Have: Mint_2 = Mint_1.
+    Have: Mint_1[b <- Mint_1[c]][c <- Mint_1[b]] = Mint_0.
+  }
+  Else { Have: Mint_2 = Mint_0. }
+}
+Prove: (x_6 <= x_7) /\ (x_7 <= x_8).
+Prover Z3 4.8.12 returns Valid (Qed:41ms) (150ms) (115998)
+Prover Alt-Ergo  returns Valid (Qed:41ms) (33ms) (220)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 5) in 'order_3' (1/6):
+Effect at line 10
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 5) in 'order_3' (2/6):
+Effect at line 11
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 5) in 'order_3' (3/6):
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 5) in 'order_3' (4/6):
+Effect at line 16
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 5) in 'order_3' (5/6):
+Effect at line 20
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 5) in 'order_3' (6/6):
+Effect at line 21
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function test
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 29):
+Assume {
+  Type: is_sint32(a1_0) /\ is_sint32(b1_0) /\ is_sint32(c1_0).
+  (* Call 'order_3' *)
+  Have: (a1_0 <= b1_0) /\ (b1_0 <= c1_0).
+}
+Prove: (a1_0 = 3) /\ (b1_0 = 4) /\ (c1_0 = 5).
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 33):
+Assume {
+  Type: is_sint32(a2_0) /\ is_sint32(b2_0) /\ is_sint32(c2_0).
+  (* Call 'order_3' *)
+  Have: (a2_0 <= b2_0) /\ (b2_0 <= c2_0).
+}
+Prove: (a2_0 = 2) /\ (b2_0 = 2) /\ (c2_0 = 2).
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 37):
+Assume {
+  Type: is_sint32(a3_0) /\ is_sint32(b3_0) /\ is_sint32(c3_0).
+  (* Call 'order_3' *)
+  Have: (a3_0 <= b3_0) /\ (b3_0 <= c3_0).
+}
+Prove: (a3_0 = 3) /\ (b3_0 = 4) /\ (c3_0 = 4).
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 41):
+Assume {
+  Type: is_sint32(a4_0) /\ is_sint32(b4_0) /\ is_sint32(c4_0).
+  (* Call 'order_3' *)
+  Have: (a4_0 <= b4_0) /\ (b4_0 <= c4_0).
+}
+Prove: (a4_0 = 4) /\ (b4_0 = 4) /\ (c4_0 = 5).
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 2) in 'order_3'' in 'test' at call 'order_3' (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 28)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 3) in 'order_3'' in 'test' at call 'order_3' (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 28)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 2) in 'order_3'' in 'test' at call 'order_3' (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 32)
+:
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 3) in 'order_3'' in 'test' at call 'order_3' (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 32)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 2) in 'order_3'' in 'test' at call 'order_3' (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 36)
+:
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 3) in 'order_3'' in 'test' at call 'order_3' (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 36)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 2) in 'order_3'' in 'test' at call 'order_3' (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 40)
+:
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 3) in 'order_3'' in 'test' at call 'order_3' (file out/gpt-5.5/229/229_0001/229_0003/229_merged.c, line 40)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/229/229_0001/229_0003/229_merged.c:25: Warning: 
+  No 'assigns' specification for function 'test'.
+  Callers assumptions might be imprecise.

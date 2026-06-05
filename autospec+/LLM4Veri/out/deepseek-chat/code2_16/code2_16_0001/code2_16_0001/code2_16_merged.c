@@ -1,0 +1,24 @@
+/*@
+requires n > 0;
+*/
+void foo(int n)
+{
+    int x = 0;
+    int m = 0;
+    /*@
+    loop invariant x <= n;
+    loop invariant 0 <= x;
+    loop invariant 0 <= m;
+    loop assigns x;
+    loop assigns m;
+    */
+    while (x < n) {
+        if (unknown()) {
+            m = x;
+        }
+        x = x + 1;
+    }
+    if(n > 0) {
+       //@ assert m >= 0;
+    }
+}

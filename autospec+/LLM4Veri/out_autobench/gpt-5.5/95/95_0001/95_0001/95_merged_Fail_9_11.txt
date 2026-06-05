@@ -1,0 +1,101 @@
+[kernel] Parsing out/gpt-5.5/95/95_0001/95_0001/95_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] [Timeout] typed_foo_loop_invariant_3_established (Qed 1ms) (Z3 8s)
+[wp] [Timeout] typed_foo_loop_invariant_3_preserved (Qed 5ms) (Z3 8s)
+[wp] Proved goals:    9 / 11
+  Qed:             9
+  Timeout:         2
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/95/95_0001/95_0001/95_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/95/95_0001/95_0001/95_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/95/95_0001/95_0001/95_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/95/95_0001/95_0001/95_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/95/95_0001/95_0001/95_merged.c, line 9):
+Let x_1 = 1 + x.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(x) /\ is_sint32(1 + i).
+  (* Invariant *)
+  Have: ((0 <= x) -> ((-1) <= x)).
+  (* Invariant *)
+  Have: x != (-1).
+  (* Invariant *)
+  Have: ((0 <= x) -> (i <= x_1)).
+  (* Invariant *)
+  Have: x_1 != i.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= x.
+}
+Prove: x != i.
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/95/95_0001/95_0001/95_merged.c, line 9):
+Assume { Type: is_sint32(x). (* Invariant *) Have: ((0 <= x) -> ((-1) <= x)).
+}
+Prove: x != (-1).
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/95/95_0001/95_0001/95_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/95/95_0001/95_0001/95_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.53ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/95/95_0001/95_0001/95_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/95/95_0001/95_0001/95_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.79ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/95/95_0001/95_0001/95_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/95/95_0001/95_0001/95_merged.c:1: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

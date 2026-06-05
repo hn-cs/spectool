@@ -1,0 +1,188 @@
+[kernel] Parsing out/gpt-5.5/copy/copy_0001/copy_0003/copy_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 10 goals scheduled
+[wp] Proved goals:   10 / 10
+  Qed:             5
+  Alt-Ergo :       5 (29ms-44ms-51ms)
+------------------------------------------------------------
+  Function copy
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/copy/copy_0001/copy_0003/copy_merged.c, line 43):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(b, 0), n).
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_2 = shift_sint32(b, i_1) in ((i <= i_1) ->
+      ((i_1 < n) -> (a_1[a_2] = Mint_0[a_2]))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+}
+Prove: P_Unchanged_1_(a_1[shift_sint32(b, i) <- a_1[shift_sint32(a, i)]],
+         Mint_0, b, to_uint32(1 + i), n).
+Prover Alt-Ergo  returns Valid (Qed:11ms) (47ms) (253)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/copy/copy_0001/copy_0003/copy_merged.c, line 43):
+Assume { Type: is_uint32(n). (* Heap *) Type: region(b.base) <= 0. }
+Prove: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+Prover Z3 4.8.12 returns Valid (Qed:1ms) (140ms) (48102)
+Prover Alt-Ergo  returns Valid (Qed:1ms) (29ms) (24)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/copy/copy_0001/copy_0003/copy_merged.c, line 44):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(b, 0), n).
+Let x = to_uint32(1 + i).
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_2 = shift_sint32(b, i_1) in ((i <= i_1) ->
+      ((i_1 < n) -> (a_1[a_2] = Mint_0[a_2]))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1[shift_sint32(b, i) <- a_1[shift_sint32(a, i)]],
+          Mint_0, b, x, n).
+}
+Prove: x <= n.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (150ms) (98269)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (46ms) (113)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/copy/copy_0001/copy_0003/copy_merged.c, line 44):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/copy/copy_0001/copy_0003/copy_merged.c, line 45):
+Let x = to_uint32(1 + i).
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(b, 0), n).
+Let a_2 = a_1[shift_sint32(b, i) <- a_1[shift_sint32(a, i)]].
+Let a_3 = shift_sint32(b, i_1).
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Goal *)
+  When: (i_1 < n) /\ (x <= i_1).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_4 = shift_sint32(b, i_2) in ((i <= i_2) ->
+      ((i_2 < n) -> (a_1[a_4] = Mint_0[a_4]))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_2, Mint_0, b, x, n).
+  (* Invariant *)
+  Have: x <= n.
+}
+Prove: a_2[a_3] = Mint_0[a_3].
+Prover Alt-Ergo  returns Valid (Qed:12ms) (51ms) (175)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/copy/copy_0001/copy_0003/copy_merged.c, line 45):
+Prove: true.
+Prover Qed returns Valid (0.89ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/copy/copy_0001/copy_0003/copy_merged.c, line 46):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/copy/copy_0001/copy_0003/copy_merged.c, line 46):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/copy/copy_0001/copy_0003/copy_merged.c, line 47) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/copy/copy_0001/copy_0003/copy_merged.c, line 47) (2/2):
+Effect at line 51
+Let x = to_uint32(1 + i).
+Let a_1 = shift_sint32(b, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Let a_3 = shift_sint32(b, i).
+Let a_4 = a_2[a_3 <- a_2[shift_sint32(a, i)]].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_2, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(b, i_1) in ((i <= i_1) ->
+      ((i_1 < n) -> (a_2[a_5] = Mint_0[a_5]))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_4, Mint_0, b, x, n).
+  (* Invariant *)
+  Have: x <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(b, i_1) in ((i_1 < n) ->
+      ((x <= i_1) -> (a_4[a_5] = Mint_0[a_5]))).
+}
+Prove: included(a_3, 1, a_1, n).
+Prover Alt-Ergo  returns Valid (Qed:10ms) (48ms) (157)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/copy/copy_0001/copy_0003/copy_merged.c:40: Warning: 
+  No 'assigns' specification for function 'copy'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,3 @@
+/app/LLM4Veri/out/deepseek-chat/rotate/rotate_0001/rotate_0003/rotate_merged.c:73:39: error: unterminated comment
+   73 | ensures Unchanged{Pre,Here}(a, 0, 0); /* ensures the rest is unchanged, though already covered;
+      |                                       ^

@@ -1,0 +1,135 @@
+[kernel] Parsing out/deepseek-chat/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c:21: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_nextSubset_loop_invariant_2_established (Qed 0.90ms) (Z3 8s)
+[wp] [Timeout] typed_nextSubset_loop_invariant_2_preserved (Qed 6ms) (Z3 8s)
+[wp] [Timeout] typed_nextSubset_loop_invariant_3_preserved (Qed 5ms) (Z3 8s)
+[wp] [Timeout] typed_nextSubset_loop_invariant_4_established (Qed 1ms) (Z3 8s)
+[wp] Proved goals:    5 / 9
+  Qed:             5
+  Timeout:         4
+------------------------------------------------------------
+  Function nextSubset
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 13):
+Let x = Mint_0[shift_sint32(s, k)].
+Assume {
+  Type: is_sint32(k) /\ is_sint32(n) /\ is_sint32(k - 1) /\
+      is_sint32(n - 1) /\ is_sint32(x).
+  (* Heap *)
+  Type: region(s.base) <= 0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: k < n.
+  (* Invariant *)
+  Have: k != (-1).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((k < i) ->
+      (Mint_0[shift_sint32(s, i)] = 1))).
+  (* Invariant *)
+  Have: (-1) <= k.
+  (* Then *)
+  Have: 0 <= k.
+  (* Else *)
+  Have: x != 0.
+}
+Prove: k != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 13):
+Assume { Type: is_sint32(n) /\ is_sint32(n - 1). }
+Prove: n != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:0.90ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.90ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 14):
+Let x = Mint_0[shift_sint32(s, k)].
+Assume {
+  Type: is_sint32(k) /\ is_sint32(n) /\ is_sint32(k - 1) /\
+      is_sint32(n - 1) /\ is_sint32(x).
+  (* Heap *)
+  Type: region(s.base) <= 0.
+  (* Goal *)
+  When: (k <= i) /\ (i < n).
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: k < n.
+  (* Invariant *)
+  Have: k != (-1).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((k < i_1) ->
+      (Mint_0[shift_sint32(s, i_1)] = 1))).
+  (* Invariant *)
+  Have: (-1) <= k.
+  (* Then *)
+  Have: 0 <= k.
+  (* Else *)
+  Have: x != 0.
+  (* Invariant *)
+  Have: k != 0.
+}
+Prove: Mint_0[shift_sint32(s, i)] = 1.
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.59ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 15):
+Assume {
+  Type: is_sint32(n) /\ is_sint32(n - 1).
+  (* Invariant *)
+  Have: n != 0.
+}
+Prove: 0 <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/gpetiot_Frama-C-StaDy_next_subset/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_0001/gpetiot_Frama-C-StaDy_next_subset_merged.c:9: Warning: 
+  No 'assigns' specification for function 'nextSubset'.
+  Callers assumptions might be imprecise.

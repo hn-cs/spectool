@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 5, 'Iteration': 5, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=4, microseconds=6395), 'total_solve_time': datetime.timedelta(seconds=96, microseconds=986769), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 103, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant res == a + (b - cnt);', 'loop invariant res - a == b - cnt;', 'loop invariant res + cnt == a + b;', 'loop invariant cnt <= b;', 'loop invariant a <= res;', 'loop assigns res;', 'loop assigns cnt;'], '2': [], 'MSLines': ['// hhk2008_true-unreach-call.c\n', '/* 2. FUNC CONTRACT */\nint main() {\n', '    int a;\n', '    int b;\n', '    \n', '    int res, cnt;\n', '\n', '    res = a;\n', '    cnt = b;\n', '    \n', '    /* 1. LOOP INVARIANT */\n    while (cnt > 0) {\n', '    \tcnt = cnt - 1;\n', '        res = res + 1;\n', '    }\n', '\n', '    //@ assert(res == a + b);\n', '    \n', '    return 0;\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

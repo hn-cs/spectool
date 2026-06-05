@@ -1,0 +1,177 @@
+[kernel] Parsing out/gpt-5.5/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] Proved goals:   11 / 11
+  Qed:             8
+  Alt-Ergo :       3 (18ms-24ms)
+------------------------------------------------------------
+  Function calculateGrade
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 3) in 'calculateGrade':
+Assume {
+  Type: is_sint32(calculateGrade_0) /\ is_sint32(mark_0).
+  (* Goal *)
+  When: (mark_0 <= 0) \/ (401 <= mark_0).
+  If 0 < mark_0
+  Then {
+    If mark_0 <= 100
+    Then { Have: calculateGrade_0 = 1. }
+    Else {
+      If mark_0 <= 200
+      Then { Have: calculateGrade_0 = 2. }
+      Else {
+        If mark_0 <= 300
+        Then { Have: calculateGrade_0 = 3. }
+        Else {
+          If mark_0 <= 400
+          Then { Have: calculateGrade_0 = 4. }
+          Else { Have: calculateGrade_0 = 0. }
+        }
+      }
+    }
+  }
+  Else {
+    If 101 <= mark_0
+    Then {
+      If mark_0 <= 200
+      Then { Have: calculateGrade_0 = 2. }
+      Else {
+        If mark_0 <= 300
+        Then { Have: calculateGrade_0 = 3. }
+        Else {
+          If mark_0 <= 400
+          Then { Have: calculateGrade_0 = 4. }
+          Else { Have: calculateGrade_0 = 0. }
+        }
+      }
+    }
+    Else {
+      If 201 <= mark_0
+      Then {
+        If mark_0 <= 300
+        Then { Have: calculateGrade_0 = 3. }
+        Else {
+          If mark_0 <= 400
+          Then { Have: calculateGrade_0 = 4. }
+          Else { Have: calculateGrade_0 = 0. }
+        }
+      }
+      Else {
+        If 301 <= mark_0
+        Then {
+          If mark_0 <= 400
+          Then { Have: calculateGrade_0 = 4. }
+          Else { Have: calculateGrade_0 = 0. }
+        }
+        Else { Have: calculateGrade_0 = 0. }
+      }
+    }
+  }
+}
+Prove: calculateGrade_0 = 0.
+Prover Z3 4.8.12 returns Valid (Qed:86ms) (120ms) (35733)
+Prover Alt-Ergo  returns Valid (Qed:86ms) (19ms) (34)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 4) in 'calculateGrade':
+Assume {
+  Type: is_sint32(calculateGrade_0) /\ is_sint32(grade_0) /\
+      is_sint32(mark_0).
+  (* Goal *)
+  When: (301 <= mark_0) /\ (mark_0 <= 400).
+  If 0 < mark_0
+  Then {
+    If mark_0 <= 100
+    Then { Have: grade_0 = 1. Have: calculateGrade_0 = 1. }
+    Else {
+      If mark_0 <= 200
+      Then { Have: grade_0 = 2. Have: calculateGrade_0 = 2. }
+      Else { Have: grade_0 = 4. Have: calculateGrade_0 = 4. }
+    }
+  }
+  Else {
+    If 101 <= mark_0
+    Then {
+      If mark_0 <= 200
+      Then { Have: grade_0 = 2. Have: calculateGrade_0 = 2. }
+      Else { Have: grade_0 = 4. Have: calculateGrade_0 = 4. }
+    }
+    Else { Core: (calculateGrade_0 = 4) /\ (grade_0 = 4). }
+  }
+}
+Prove: (calculateGrade_0 = 4) /\ (grade_0 = 4).
+Prover Z3 4.8.12 returns Valid (Qed:47ms) (120ms) (35937)
+Prover Alt-Ergo  returns Valid (Qed:47ms) (24ms) (27)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 5) in 'calculateGrade':
+Assume {
+  Type: is_sint32(mark_0).
+  (* Residual *)
+  When: mark_0 <= 100.
+  (* Residual *)
+  When: 0 < mark_0.
+  (* Goal *)
+  When: (201 <= mark_0) /\ (mark_0 <= 300).
+}
+Prove: false.
+Prover Alt-Ergo  returns Valid (Qed:20ms) (18ms) (12)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 6) in 'calculateGrade':
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 7) in 'calculateGrade':
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 8) in 'calculateGrade' (1/6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 8) in 'calculateGrade' (2/6):
+Effect at line 13
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 8) in 'calculateGrade' (3/6):
+Effect at line 16
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 8) in 'calculateGrade' (4/6):
+Effect at line 19
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 8) in 'calculateGrade' (5/6):
+Effect at line 22
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/suman1406_Q1/suman1406_Q1_0001/suman1406_Q1_0001/suman1406_Q1_merged.c, line 8) in 'calculateGrade' (6/6):
+Effect at line 24
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------

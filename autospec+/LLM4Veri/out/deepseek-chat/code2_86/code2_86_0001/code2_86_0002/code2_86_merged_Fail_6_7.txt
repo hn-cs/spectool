@@ -1,0 +1,92 @@
+[kernel] Parsing out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 7 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 13ms) (Z3 8s)
+[wp] Proved goals:    6 / 7
+  Qed:             5
+  Alt-Ergo :       1 (45ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c, line 5):
+Let x = y * (y - 1).
+Let x_1 = 1 + y.
+Let x_2 = x / 2.
+Let x_3 = -x_2.
+Assume {
+  Type: is_sint32(y) /\ is_sint32(x_1) /\ is_sint32(-50 - x_2) /\
+      is_sint32(y - 50 - x_2).
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: x <= 1.
+  (* Then *)
+  Have: (-99) <= x.
+}
+Prove: x_2 = (y + ((y * x_1) / 2)).
+Prover Z3 4.8.12 returns Timeout (Qed:13ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:13ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (0.69ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c, line 7):
+Let x = 1 + y.
+Let x_1 = y * x.
+Let x_2 = x_1 / 2.
+Let x_3 = y + x_2.
+Let x_4 = -x_2.
+Assume {
+  Type: is_sint32(y) /\ is_sint32(x) /\ is_sint32(-50 - x_2) /\
+      is_sint32(-50 - y - x_2).
+  (* Invariant *)
+  Have: ((y * (y - 1)) / 2) = x_3.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: x_3 <= 0.
+  (* Then *)
+  Have: (-49) <= x_3.
+  (* Invariant *)
+  Have: (-1) <= y.
+}
+Prove: x_1 <= 1.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (180ms) (37762)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (45ms) (227)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/code2_86/code2_86_0001/code2_86_0002/code2_86_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

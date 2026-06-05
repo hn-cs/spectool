@@ -1,0 +1,42 @@
+[kernel] Parsing out/gpt-5.5/234/234_0001/234_0001/234_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 5 goals scheduled
+[wp] Proved goals:    5 / 5
+  Qed:             5
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/234/234_0001/234_0001/234_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/234/234_0001/234_0001/234_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/234/234_0001/234_0001/234_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/234/234_0001/234_0001/234_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.59ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/234/234_0001/234_0001/234_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/234/234_0001/234_0001/234_merged.c:4: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

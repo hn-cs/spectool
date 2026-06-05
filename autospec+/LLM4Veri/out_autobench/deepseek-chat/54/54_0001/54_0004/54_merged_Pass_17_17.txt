@@ -1,0 +1,206 @@
+[kernel] Parsing out/deepseek-chat/54/54_0001/54_0004/54_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/deepseek-chat/54/54_0001/54_0004/54_merged.c:18: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/54/54_0001/54_0004/54_merged.c:4: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 17 goals scheduled
+[wp] Proved goals:   17 / 17
+  Qed:            13
+  Alt-Ergo :       4 (20ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 8):
+Let x = 1 + n.
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(n) /\ is_sint32(tmp_0_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: c_1 <= x.
+  (* Invariant *)
+  Have: c_1 <= n.
+  (* Invariant *)
+  Have: 0 <= c_1.
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If n = c_1
+  Then { Have: c = 1. }
+  Else { Have: c_1 = c. }
+}
+Prove: c <= x.
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (130ms) (35950)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (21ms) (30)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 9):
+Let x = 1 + n.
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(n) /\ is_sint32(tmp_0_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: c_1 <= x.
+  (* Invariant *)
+  Have: c_1 <= n.
+  (* Invariant *)
+  Have: 0 <= c_1.
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If n = c_1
+  Then { Have: c = 1. }
+  Else { Have: c_1 = c. }
+  (* Invariant *)
+  Have: c <= x.
+}
+Prove: (x = c) \/ (c <= n).
+Prover Z3 4.8.12 returns Valid (Qed:11ms) (120ms) (36140)
+Prover Alt-Ergo  returns Valid (Qed:11ms) (20ms) (16)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.59ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 10):
+Let x = 1 + n.
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(n) /\ is_sint32(tmp_0_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: c_1 <= x.
+  (* Invariant *)
+  Have: c_1 <= n.
+  (* Invariant *)
+  Have: 0 <= c_1.
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If n = c_1
+  Then { Have: c = 1. }
+  Else { Have: c_1 = c. }
+  (* Invariant *)
+  Have: c <= x.
+  (* Invariant *)
+  Have: (x = c) \/ (c <= n).
+}
+Prove: c <= n.
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (120ms) (36210)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (21ms) (34)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 14):
+Let x = 1 + n.
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(n) /\ is_sint32(tmp_0_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: c_1 <= x.
+  (* Invariant *)
+  Have: c_1 <= n.
+  (* Invariant *)
+  Have: 0 <= c_1.
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If n = c_1
+  Then { Have: c = 1. }
+  Else { Have: c_1 = c. }
+  (* Invariant *)
+  Have: c <= x.
+  (* Invariant *)
+  Have: c <= n.
+}
+Prove: 0 <= c.
+Prover Z3 4.8.12 returns Valid (Qed:11ms) (140ms) (36154)
+Prover Alt-Ergo  returns Valid (Qed:11ms) (20ms) (34)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 15) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 15) (2/3):
+Call Result at line 17
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/54/54_0001/54_0004/54_merged.c, line 15) (3/3):
+Call Result at line 18
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/54/54_0001/54_0004/54_merged.c:4: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/54/54_0001/54_0004/54_merged.c:18: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

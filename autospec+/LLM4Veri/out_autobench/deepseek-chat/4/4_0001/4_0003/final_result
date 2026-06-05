@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 4, 'Iteration': 4, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=4, microseconds=362856), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=138312), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 184, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant z == \\at(z, Pre);', 'loop invariant y <= z;', 'loop invariant y <= z || x == 0;', 'loop invariant x == \\at(x, Pre) + ( \\at(y, Pre) > z ? (x - \\at(x, Pre)) : (x - \\at(x, Pre)) );', 'loop invariant x <= 500;', 'loop invariant \\old(y) == y && \\old(z) == z;', 'loop invariant \\old(y) == \\old(y);', 'loop invariant \\at(y, Pre) == y || y <= z;', 'loop invariant 500 - x;', 'loop invariant 0 <= x;', 'loop assigns y;', 'loop assigns x;'], '2': [], 'MSLines': ['\n', '/* 2. FUNC CONTRACT */\nvoid foo(int y, int z)\n', '{\n', '   int x = 0;\n', '\n', '   /* 1. LOOP INVARIANT */\n   while(x < 500) {\n', '      x += 1;\n', '      if( z <= y) {\n', '         y = z;\n', '      }\n', '   }\n', '\n', '   //post-condition\n', '   //@ assert(z >= y);\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

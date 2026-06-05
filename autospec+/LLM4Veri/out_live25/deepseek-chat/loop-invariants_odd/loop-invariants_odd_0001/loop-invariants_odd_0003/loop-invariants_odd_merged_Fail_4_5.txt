@@ -1,0 +1,50 @@
+[kernel] Parsing out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c:13: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 5 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 4ms) (Z3 8s)
+[wp] Proved goals:    4 / 5
+  Qed:             4
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 16):
+Assume { Type: is_uint32(x). (* Invariant *) Have: 0 <= x. }
+Prove: (x % 2) != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 11) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 11) (2/2):
+Call Result at line 13
+Prove: true.
+Prover Qed returns Valid (0.98ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

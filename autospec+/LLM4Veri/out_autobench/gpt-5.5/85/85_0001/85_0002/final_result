@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 2, 'Iteration': 2, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=58, microseconds=163410), 'total_solve_time': datetime.timedelta(seconds=11, microseconds=805506), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 84, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant y == 0 ==> x == -15000;', 'loop invariant y <= 174;', 'loop invariant x == -15000 + (y * (y - 1)) / 2;', 'loop invariant x <= y;', 'loop invariant 0 <= y;', 'loop invariant -15000 <= x;', 'loop assigns y;', 'loop assigns x;'], '2': [], 'MSLines': ['/* 2. FUNC CONTRACT */\nint main() {\n', '  int x = -15000;\n', '  int y = 0;\n', '  \n', '  /* 1. LOOP INVARIANT */\n  while (x < 0) {\n', '    x  = x + y;\n', '    y  = y + 1;\n', '  }\n', '  // post-condition\n', '  //@ assert(y > 0);\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

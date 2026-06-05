@@ -1,0 +1,238 @@
+[kernel] Parsing out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:13: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:12: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:32: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:29: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:12: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 22ms) (Z3 8s) (Stronger, 3 warnings)
+[wp] Proved goals:   12 / 13
+  Qed:            12
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 11):
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 12):
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 15):
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 15):
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 16):
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0,
+            havoc(Mint_undef_1, Mint_0, shift_sint32(a, 0), 100000),
+            shift_sint32(b, 0), 100000).
+Let a_2 = a_1[shift_sint32(a, i) <- unknown_0][shift_sint32(b, i)
+            <- -unknown_0].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(unknown_0) /\ is_sint32(unknown_1) /\
+      is_sint32(1 + i).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-99999) <= unknown_1) /\ (unknown_1 <= 99999).
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      ((a_1[shift_sint32(a, i_2)] + a_1[shift_sint32(b, i_2)]) = 0))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 99999.
+  (* Call 'unknown' *)
+  Have: ((-99999) <= unknown_0) /\ (unknown_0 <= 99999).
+}
+Prove: (a_2[shift_sint32(a, i_1)] + a_2[shift_sint32(b, i_1)]) = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:22ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:22ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 16):
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.86ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 17):
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 17):
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 18) (1/4):
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 18) (2/4):
+Effect at line 23
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 18) (3/4):
+Effect at line 26
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c, line 18) (4/4):
+Effect at line 27
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:10: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:11: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-cav19_array_init_pair_symmetr/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_0001/array-cav19_array_init_pair_symmetr_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

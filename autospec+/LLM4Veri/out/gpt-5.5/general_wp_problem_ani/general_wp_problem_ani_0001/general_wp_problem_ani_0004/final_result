@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 2, 'Iteration': 2, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=39, microseconds=719652), 'total_solve_time': datetime.timedelta(seconds=13, microseconds=553708), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 1472, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1, 1], '1': ['loop invariant x == 1 + (i - 7) / 3;', 'loop invariant n >= 7 ==> i <= n + 3;', 'loop invariant n < 7 ==> x == 1;', 'loop invariant n < 7 ==> i == 7;', 'loop invariant i == 7 + 3 * (x - 1);', 'loop invariant i == 3 * x + 4;', 'loop invariant 7 <= i;', 'loop invariant 1 <= x;', 'loop invariant (i - 7) % 3 == 0;', 'loop assigns x;', 'loop assigns i;'], '2': ['ensures n >= 7 ==> \\result == (n + 2) / 3 - 1;', 'ensures n < 7 ==> \\result == 1;', 'assigns \\nothing;'], '3': [], 'MSLines': ['#include <stdio.h>\n', '/* 2. FUNC CONTRACT */\nint fun(int n) {\n', '    int i = 7;\n', '    int x = 1;\n', '    /* 1. LOOP INVARIANT */\n    while(i <= n) {\n', '        x += 1;\n', '        i += 3;\n', '    }\n', '    return x;\n', '}\n', '/* 3. FUNC CONTRACT */\nint main() {\n', '    int a = fun(10);\n', '    //@ assert a == 3;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

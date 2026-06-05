@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=19, microseconds=335647), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=34143), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 363, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant y + 2*z == j;', 'loop invariant x + z == i;', 'loop invariant 0 <= z;', 'loop assigns z;', 'loop assigns y;', 'loop assigns x;'], '2': [], 'MSLines': ['// jm2006_variant_true-unreach-call.c\n', '/* 2. FUNC CONTRACT */\nint main() {\n', '    int i;\n', '    int j;\n', '\n', '    int x = i;\n', '    int y = j;\n', '    int z = 0;\n', '    \n', '    /* 1. LOOP INVARIANT */\n    while (x != 0) {\n', '    \tx--;\n', '    \ty -= 2;\n', '    \tz++;\n', '    }\n', '\n', '    if (i == j) {\n', '    \t//@ assert(y == -z);\n', '    }\n', '    \n', '    return 0;\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

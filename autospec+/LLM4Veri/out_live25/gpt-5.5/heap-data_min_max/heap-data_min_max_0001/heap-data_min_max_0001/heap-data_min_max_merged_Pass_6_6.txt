@@ -1,0 +1,137 @@
+[kernel] Parsing out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c:25: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] FRAMAC_SHARE/libc/stdlib.h:394: Warning: 
+  Allocation, initialization and danglingness not yet implemented
+  (allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+[wp] out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c:24: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: node*)
+[wp] out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c:35: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c:23: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 6 goals scheduled
+[wp] Proved goals:    6 / 6
+  Qed:             4
+  Alt-Ergo :       2 (24ms-26ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c, line 19):
+out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c:24: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.57ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c, line 20):
+out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c:24: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Assume {
+  Type: is_sint32(max_0) /\ is_sint32(max_1) /\ is_sint32(min_0) /\
+      is_sint32(min_1) /\ is_sint32(tmp_1_0) /\ is_sint32(v).
+  (* Invariant *)
+  Have: min_1 <= 2147483647.
+  (* Invariant *)
+  Have: (null = l_1) \/ (min_1 <= max_1).
+  (* Invariant *)
+  Have: (-2147483647) <= max_1.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, 16)) -> (null = malloc_0)).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+  If v < min_1
+  Then { Have: v = min_0. }
+  Else { Have: min_1 = min_0. }
+  If max_1 < v
+  Then { Have: v = max_0. }
+  Else { Have: max_1 = max_0. }
+  (* Invariant *)
+  Have: min_0 <= 2147483647.
+}
+Prove: (null = l) \/ (min_0 <= max_0).
+Prover Z3 4.8.12 returns Valid (Qed:26ms) (140ms) (80426)
+Prover Alt-Ergo  returns Valid (Qed:26ms) (26ms) (57)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (0.73ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c, line 21):
+out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c:24: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: node*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Assume {
+  Type: is_sint32(max_0) /\ is_sint32(max_1) /\ is_sint32(min_0) /\
+      is_sint32(min_1) /\ is_sint32(tmp_1_0).
+  (* Residual *)
+  When: max_1 < max_0.
+  (* Invariant *)
+  Have: min_1 <= 2147483647.
+  (* Invariant *)
+  Have: (null = l) \/ (min_1 <= max_1).
+  (* Invariant *)
+  Have: (-2147483647) <= max_1.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, 16)) -> (null = malloc_0)).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= max_0) /\ (max_0 <= 2147483646).
+  If max_0 < min_1
+  Then { Have: min_0 = max_0. }
+  Else { Have: min_1 = min_0. }
+  (* Invariant *)
+  Have: min_0 <= 2147483647.
+  (* Invariant *)
+  Have: (null = l_1) \/ (min_0 <= max_0).
+}
+Prove: (-2147483647) <= max_0.
+Prover Z3 4.8.12 returns Valid (Qed:19ms) (120ms) (78818)
+Prover Alt-Ergo  returns Valid (Qed:19ms) (24ms) (40)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/heap-data_min_max/heap-data_min_max_0001/heap-data_min_max_0001/heap-data_min_max_merged.c:15: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

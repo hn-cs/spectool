@@ -1,0 +1,113 @@
+[kernel] Parsing out/deepseek-chat/frama-c-wp-tutorial-en_9/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] Proved goals:    8 / 8
+  Qed:             4
+  Alt-Ergo :       4 (18ms-25ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/frama-c-wp-tutorial-en_9/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_merged.c, line 19):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y).
+  (* Call 'max_ptr' *)
+  Have: (y <= x) /\ ((x = 10) \/ (x = 20)) /\ ((y = 10) \/ (y = 20)) /\
+      (((x = 10) /\ (y = 20)) \/ ((x = 20) /\ (y = 10))).
+}
+Prove: (x = 20) /\ (y = 10).
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (120ms) (35205)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (18ms) (14)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/frama-c-wp-tutorial-en_9/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_merged.c, line 2) in 'max_ptr'' in 'main' at call 'max_ptr' (file out/deepseek-chat/frama-c-wp-tutorial-en_9/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_merged.c, line 18)
+:
+Prove: true.
+Prover Qed returns Valid (0.53ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function max_ptr
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/frama-c-wp-tutorial-en_9/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_merged.c, line 3) in 'max_ptr':
+Let x = Mint_0[a].
+Let x_1 = Mint_0[b].
+Let x_2 = Mint_0[b <- x][a <- x_1][b].
+Assume {
+  Type: is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Residual *)
+  When: x < x_1.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, 1) /\ valid_rw(Malloc_0, b, 1).
+}
+Prove: (x_2 = x) \/ (x_2 = x_1).
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (140ms) (93623)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (24ms) (41)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/frama-c-wp-tutorial-en_9/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_merged.c, line 4) in 'max_ptr':
+Let x = Mint_0[a].
+Let x_1 = Mint_0[b].
+Let x_2 = Mint_0[b <- x][a <- x_1][b].
+Assume {
+  Type: is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Residual *)
+  When: x < x_1.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, 1) /\ valid_rw(Malloc_0, b, 1).
+}
+Prove: x_2 <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (140ms) (93398)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (25ms) (39)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/frama-c-wp-tutorial-en_9/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_merged.c, line 5) in 'max_ptr':
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/frama-c-wp-tutorial-en_9/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_merged.c, line 6) in 'max_ptr':
+Let x = Mint_0[a].
+Let x_1 = Mint_0[b].
+Let x_2 = Mint_0[b <- x][a <- x_1][b].
+Assume {
+  Type: is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Residual *)
+  When: x < x_1.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, 1) /\ valid_rw(Malloc_0, b, 1).
+}
+Prove: x_2 = x.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (130ms) (93410)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (24ms) (38)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/frama-c-wp-tutorial-en_9/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_merged.c, line 7) in 'max_ptr' (1/2):
+Effect at line 12
+Prove: true.
+Prover Qed returns Valid (0.74ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/frama-c-wp-tutorial-en_9/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_merged.c, line 7) in 'max_ptr' (2/2):
+Effect at line 13
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/frama-c-wp-tutorial-en_9/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_0001/frama-c-wp-tutorial-en_9_merged.c:16: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

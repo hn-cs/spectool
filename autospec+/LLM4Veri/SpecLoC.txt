@@ -1,0 +1,1 @@
+remove_copy===tmp_autofuzz_workspace/gpt-5.5_live24/remove_copy.c:46===@49

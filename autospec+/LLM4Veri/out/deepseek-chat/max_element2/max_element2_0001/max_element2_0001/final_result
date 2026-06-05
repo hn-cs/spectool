@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=1, microseconds=606805), 'total_solve_time': datetime.timedelta(seconds=10, microseconds=586305), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 62, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant max < n;', 'loop invariant i <= n;', 'loop invariant \\forall integer k; 0 <= k < i ==> a[k] <= a[max];', 'loop invariant UpperBound(a, i, a[max]);', 'loop invariant 0 <= max;', 'loop invariant 0 <= i;', 'loop assigns max;', 'loop assigns i;'], '2': [], 'MSLines': ['#include <limits.h>\n', '#ifndef __cplusplus\n', 'typedef int bool;\n', '#define false\t\t((bool)0)\n', '#define true\t\t((bool)1)\n', '#endif\n', 'typedef int value_type;\n', '#define VALUE_TYPE_MAX  INT_MAX\n', '#define VALUE_TYPE_MIN  INT_MIN\n', 'typedef unsigned int size_type;\n', '#define SIZE_TYPE_MAX  UINT_MAX\n', '/*@\n', '  axiomatic ArrayBounds\n', '  {\n', '    predicate\n', '    LowerBound{L}(value_type* a, integer m, integer n, value_type v) =\n', '      \\forall integer i; m <= i < n  ==>  v <= a[i];\n', '    predicate\n', '    LowerBound{L}(value_type* a, integer n, value_type v) =\n', '      LowerBound{L}(a, 0, n, v);\n', '    predicate\n', '    StrictLowerBound{L}(value_type* a, integer m, integer n, value_type v) =\n', '      \\forall integer i; m <= i < n  ==>  v < a[i];\n', '    predicate\n', '    StrictLowerBound{L}(value_type* a, integer n, value_type v) =\n', '      StrictLowerBound{L}(a, 0, n, v);\n', '    predicate\n', '    UpperBound{L}(value_type* a, integer m, integer n, value_type v) =\n', '      \\forall integer i; m <= i < n  ==>  a[i] <= v;\n', '    predicate\n', '    UpperBound{L}(value_type* a, integer n, value_type v) =\n', '      UpperBound{L}(a, 0, n, v);\n', '    predicate\n', '    StrictUpperBound{L}(value_type* a, integer m, integer n, value_type v) =\n', '      \\forall integer i; m <= i < n  ==>  a[i] < v;\n', '    predicate\n', '    StrictUpperBound{L}(value_type* a, integer n, value_type v) =\n', '      StrictUpperBound{L}(a, 0, n, v);\n', '  }\n', '*/\n', '/*@\n', '  axiomatic ArrayExtrema\n', '  {\n', '    predicate\n', '    MaxElement{L}(value_type* a, integer n, integer max) =\n', '      0 <= max < n && UpperBound(a, n, a[max]);\n', '    predicate\n', '    MinElement{L}(value_type* a, integer n, integer min) =\n', '      0 <= min < n && LowerBound(a, n, a[min]);\n', '  }\n', '*/\n', 'size_type\n', '/* 2. FUNC CONTRACT */\nmax_element2(const value_type* a, size_type n)\n', '{\n', '  if (0u < n) {\n', '    size_type max = 0u;\n', '    /* 1. LOOP INVARIANT */\n    for (size_type i = 0u; i < n; i++) {\n', '      if (a[max] < a[i]) {\n', '        max = i;\n', '      }\n', '    }\n', '    //@ assert MaxElement(a, n, max);\n', '    return max;\n', '  }\n', '  return n;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 3, 'Iteration': 3, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=5, microseconds=376574), 'total_solve_time': datetime.timedelta(seconds=60, microseconds=730560), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 242, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 3, 1], '1': ['loop invariant k <= n-1;', 'loop assigns k;'], '2': ['loop invariant k+1 <= i;', 'loop invariant i <= n;', 'loop invariant \\forall integer j; k+1 <= j < i ==> s[j] == 0;', 'loop assigns s[k+1..n-1];', 'loop assigns i;'], '3': [], 'MSLines': ['/*@ \n', 'predicate is_dset{L}(int *a, integer n) =\n', '  \\forall integer i; 0 <= i < n ==> (a[i] == 0 || a[i] == 1);\n', 'predicate is_eq{L1,L2}(int *a, integer n) =\n', '  \\forall integer i; 0 <= i < n ==> \\at(a[i],L1) == \\at(a[i],L2);\n', 'predicate lt{L1,L2}(int* a, integer i) =\n', '  \\at(a[i],L1) < \\at(a[i],L2); \n', '*/\n', '/* 3. FUNC CONTRACT */\nint nextSubset(int s[], int n) {\n', '  int i,k;\n', '  /* 1. LOOP INVARIANT */\n  for (k = n-1; k >= 0; k--) { if (s[k] == 0) { break; } }\n', '  if (k == -1) { return -1; }\n', '  s[k] = 1;\n', '  /* 2. LOOP INVARIANT */\n  for (i = k+1; i < n; i++) { s[i] = 0; }\n', '  //@ assert is_dset(s,n);\n', '  return k;\n', '}']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

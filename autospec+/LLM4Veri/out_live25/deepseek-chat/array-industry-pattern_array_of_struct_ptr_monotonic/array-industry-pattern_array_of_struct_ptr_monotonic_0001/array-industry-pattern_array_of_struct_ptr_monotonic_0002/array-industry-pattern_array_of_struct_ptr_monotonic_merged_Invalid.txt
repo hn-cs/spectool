@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/array-industry-pattern_array_of_struct_ptr_monotonic/array-industry-pattern_array_of_struct_ptr_monotonic_0001/array-industry-pattern_array_of_struct_ptr_monotonic_0002/array-industry-pattern_array_of_struct_ptr_monotonic_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/array-industry-pattern_array_of_struct_ptr_monotonic/array-industry-pattern_array_of_struct_ptr_monotonic_0001/array-industry-pattern_array_of_struct_ptr_monotonic_0002/array-industry-pattern_array_of_struct_ptr_monotonic_merged.c:21: Warning: 
+  unexpected token ')'
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/array-industry-pattern_array_of_struct_ptr_monotonic/array-industry-pattern_array_of_struct_ptr_monotonic_0001/array-industry-pattern_array_of_struct_ptr_monotonic_0002/array-industry-pattern_array_of_struct_ptr_monotonic_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

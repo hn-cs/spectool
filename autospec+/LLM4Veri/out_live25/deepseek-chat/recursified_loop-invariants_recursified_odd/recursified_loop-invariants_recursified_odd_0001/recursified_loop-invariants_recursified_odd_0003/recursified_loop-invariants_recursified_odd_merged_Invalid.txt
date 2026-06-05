@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/recursified_loop-invariants_recursified_odd/recursified_loop-invariants_recursified_odd_0001/recursified_loop-invariants_recursified_odd_0003/recursified_loop-invariants_recursified_odd_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/recursified_loop-invariants_recursified_odd/recursified_loop-invariants_recursified_odd_0001/recursified_loop-invariants_recursified_odd_0003/recursified_loop-invariants_recursified_odd_merged.c:9: Warning: 
+  invalid operands to binary *; unexpected ℤ and unsigned int *. Ignoring logic specification of function func_to_recursive_line_13_to_14_0
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/recursified_loop-invariants_recursified_odd/recursified_loop-invariants_recursified_odd_0001/recursified_loop-invariants_recursified_odd_0003/recursified_loop-invariants_recursified_odd_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

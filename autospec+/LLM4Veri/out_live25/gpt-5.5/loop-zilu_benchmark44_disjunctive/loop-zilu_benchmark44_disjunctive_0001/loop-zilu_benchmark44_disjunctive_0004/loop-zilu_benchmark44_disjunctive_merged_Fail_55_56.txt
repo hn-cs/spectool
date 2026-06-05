@@ -1,0 +1,941 @@
+[kernel] Parsing out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 56 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 4ms) (Z3 8s)
+[wp] Proved goals:   55 / 56
+  Qed:            46
+  Alt-Ergo :       9 (18ms-31ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 13):
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(unknown_1) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\ is_sint32(x_4) /\
+      is_sint32(x_5) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(y_2) /\
+      is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\ is_sint32(y_6).
+  (* Goal *)
+  When: y <= x.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_1) /\ (unknown_1 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Else *)
+  Have: unknown_1 < unknown_0.
+  (* Invariant *)
+  Have: unknown_0 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= (23 + unknown_0).
+  (* Invariant *)
+  Have: unknown_1 <= (24 + unknown_0).
+  (* Invariant *)
+  Have: (-2147483647) <= unknown_0.
+  (* Invariant *)
+  Have: ((-2147483648) <= y_6) /\ (y_6 <= 2147483647).
+  (* Invariant *)
+  Have: ((-2147483648) <= x_5) /\ (x_5 <= 2147483647).
+  (* Invariant *)
+  Have: x_5 <= (23 + y_6).
+  (* Invariant *)
+  Have: x_5 <= (24 + y_6).
+  (* Invariant *)
+  Have: x_5 <= y_6.
+  (* Invariant *)
+  Have: (-2147483647) <= y_6.
+  (* Then *)
+  Have: x_5 < y_6.
+  If x_5 < 0
+  Then {
+    Have: (x_5 = x_6) /\ (y_6 = y_5).
+    If y_5 < 0
+    Then {
+      Have: (x_6 = x_4) /\ (y_5 = y_4).
+      Have: (7 + x_4) = x_3.
+      Have: (10 + y_7) = y_4.
+    }
+    Else { Have: (x_6 = x_3) /\ (y_5 = y_7). }
+  }
+  Else { Have: (x_5 = x_3) /\ (y_6 = y_7). }
+  If x_3 < 0
+  Then {
+    Have: (x_3 = x_7) /\ (y_7 = y_3).
+    If 0 <= y_3
+    Then {
+      Have: (x_7 = x_1) /\ (y_3 = y_1).
+      Have: (7 + x_1) = x.
+      Have: (3 + y_1) = y.
+    }
+    Else {
+      Have: (x_7 = x_2) /\ (y_3 = y_2).
+      Have: (10 + x_2) = x.
+      Have: (3 + y_2) = y.
+    }
+  }
+  Else {
+    Have: (x_3 = x_2) /\ (y_7 = y_2).
+    Have: (10 + x_2) = x.
+    Have: (3 + y_2) = y.
+  }
+}
+Prove: x <= (23 + y).
+Prover Z3 4.8.12 returns Valid (Qed:79ms) (130ms) (46969)
+Prover Alt-Ergo  returns Valid (Qed:79ms) (26ms) (160)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 14):
+Let x_8 = 23 + y.
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(unknown_1) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\ is_sint32(x_4) /\
+      is_sint32(x_5) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(y_2) /\
+      is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\ is_sint32(y_6).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_1) /\ (unknown_1 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Else *)
+  Have: unknown_1 < unknown_0.
+  (* Invariant *)
+  Have: unknown_0 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= (23 + unknown_0).
+  (* Invariant *)
+  Have: unknown_1 <= (24 + unknown_0).
+  (* Invariant *)
+  Have: (-2147483647) <= unknown_0.
+  (* Invariant *)
+  Have: ((-2147483648) <= y_6) /\ (y_6 <= 2147483647).
+  (* Invariant *)
+  Have: ((-2147483648) <= x_5) /\ (x_5 <= 2147483647).
+  (* Invariant *)
+  Have: x_5 <= (23 + y_6).
+  (* Invariant *)
+  Have: x_5 <= (24 + y_6).
+  (* Invariant *)
+  Have: x_5 <= y_6.
+  (* Invariant *)
+  Have: (-2147483647) <= y_6.
+  (* Then *)
+  Have: x_5 < y_6.
+  If x_5 < 0
+  Then {
+    Have: (x_5 = x_6) /\ (y_6 = y_5).
+    If y_5 < 0
+    Then {
+      Have: (x_6 = x_4) /\ (y_5 = y_4).
+      Have: (7 + x_4) = x_3.
+      Have: (10 + y_7) = y_4.
+    }
+    Else { Have: (x_6 = x_3) /\ (y_5 = y_7). }
+  }
+  Else { Have: (x_5 = x_3) /\ (y_6 = y_7). }
+  If x_3 < 0
+  Then {
+    Have: (x_3 = x_7) /\ (y_7 = y_3).
+    If 0 <= y_3
+    Then {
+      Have: (x_7 = x_1) /\ (y_3 = y_1).
+      Have: (7 + x_1) = x.
+      Have: (3 + y_1) = y.
+    }
+    Else {
+      Have: (x_7 = x_2) /\ (y_3 = y_2).
+      Have: (10 + x_2) = x.
+      Have: (3 + y_2) = y.
+    }
+  }
+  Else {
+    Have: (x_3 = x_2) /\ (y_7 = y_2).
+    Have: (10 + x_2) = x.
+    Have: (3 + y_2) = y.
+  }
+  (* Invariant *)
+  Have: ((y <= x) -> (x <= x_8)).
+}
+Prove: (x < y) \/ ((y <= x) /\ (x <= x_8)).
+Prover Z3 4.8.12 returns Valid (Qed:79ms) (110ms) (44061)
+Prover Alt-Ergo  returns Valid (Qed:79ms) (25ms) (104)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.67ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 16):
+Let x_8 = 23 + y.
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(unknown_1) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\ is_sint32(x_4) /\
+      is_sint32(x_5) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(y_2) /\
+      is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\ is_sint32(y_6).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_1) /\ (unknown_1 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Else *)
+  Have: unknown_1 < unknown_0.
+  (* Invariant *)
+  Have: unknown_0 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= (23 + unknown_0).
+  (* Invariant *)
+  Have: unknown_1 <= (24 + unknown_0).
+  (* Invariant *)
+  Have: (-2147483647) <= unknown_0.
+  (* Invariant *)
+  Have: ((-2147483648) <= y_6) /\ (y_6 <= 2147483647).
+  (* Invariant *)
+  Have: ((-2147483648) <= x_5) /\ (x_5 <= 2147483647).
+  (* Invariant *)
+  Have: x_5 <= (23 + y_6).
+  (* Invariant *)
+  Have: x_5 <= (24 + y_6).
+  (* Invariant *)
+  Have: x_5 <= y_6.
+  (* Invariant *)
+  Have: (-2147483647) <= y_6.
+  (* Then *)
+  Have: x_5 < y_6.
+  If x_5 < 0
+  Then {
+    Have: (x_5 = x_6) /\ (y_6 = y_5).
+    If y_5 < 0
+    Then {
+      Have: (x_6 = x_4) /\ (y_5 = y_4).
+      Have: (7 + x_4) = x_3.
+      Have: (10 + y_7) = y_4.
+    }
+    Else { Have: (x_6 = x_3) /\ (y_5 = y_7). }
+  }
+  Else { Have: (x_5 = x_3) /\ (y_6 = y_7). }
+  If x_3 < 0
+  Then {
+    Have: (x_3 = x_7) /\ (y_7 = y_3).
+    If 0 <= y_3
+    Then {
+      Have: (x_7 = x_1) /\ (y_3 = y_1).
+      Have: (7 + x_1) = x.
+      Have: (3 + y_1) = y.
+    }
+    Else {
+      Have: (x_7 = x_2) /\ (y_3 = y_2).
+      Have: (10 + x_2) = x.
+      Have: (3 + y_2) = y.
+    }
+  }
+  Else {
+    Have: (x_3 = x_2) /\ (y_7 = y_2).
+    Have: (10 + x_2) = x.
+    Have: (3 + y_2) = y.
+  }
+  (* Invariant *)
+  Have: ((y <= x) -> (x <= x_8)).
+  (* Invariant *)
+  Have: (x < y) \/ ((y <= x) /\ (x <= x_8)).
+}
+Prove: ((-2147483648) <= y) /\ (y <= 2147483647).
+Prover Z3 4.8.12 returns Valid (Qed:79ms) (120ms) (44627)
+Prover Alt-Ergo  returns Valid (Qed:79ms) (29ms) (145)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 17):
+Let x_8 = 23 + y.
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(unknown_1) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\ is_sint32(x_4) /\
+      is_sint32(x_5) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(y_2) /\
+      is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\ is_sint32(y_6).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_1) /\ (unknown_1 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Else *)
+  Have: unknown_1 < unknown_0.
+  (* Invariant *)
+  Have: unknown_0 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= (23 + unknown_0).
+  (* Invariant *)
+  Have: unknown_1 <= (24 + unknown_0).
+  (* Invariant *)
+  Have: (-2147483647) <= unknown_0.
+  (* Invariant *)
+  Have: ((-2147483648) <= y_6) /\ (y_6 <= 2147483647).
+  (* Invariant *)
+  Have: ((-2147483648) <= x_5) /\ (x_5 <= 2147483647).
+  (* Invariant *)
+  Have: x_5 <= (23 + y_6).
+  (* Invariant *)
+  Have: x_5 <= (24 + y_6).
+  (* Invariant *)
+  Have: x_5 <= y_6.
+  (* Invariant *)
+  Have: (-2147483647) <= y_6.
+  (* Then *)
+  Have: x_5 < y_6.
+  If x_5 < 0
+  Then {
+    Have: (x_5 = x_6) /\ (y_6 = y_5).
+    If y_5 < 0
+    Then {
+      Have: (x_6 = x_4) /\ (y_5 = y_4).
+      Have: (7 + x_4) = x_3.
+      Have: (10 + y_7) = y_4.
+    }
+    Else { Have: (x_6 = x_3) /\ (y_5 = y_7). }
+  }
+  Else { Have: (x_5 = x_3) /\ (y_6 = y_7). }
+  If x_3 < 0
+  Then {
+    Have: (x_3 = x_7) /\ (y_7 = y_3).
+    If 0 <= y_3
+    Then {
+      Have: (x_7 = x_1) /\ (y_3 = y_1).
+      Have: (7 + x_1) = x.
+      Have: (3 + y_1) = y.
+    }
+    Else {
+      Have: (x_7 = x_2) /\ (y_3 = y_2).
+      Have: (10 + x_2) = x.
+      Have: (3 + y_2) = y.
+    }
+  }
+  Else {
+    Have: (x_3 = x_2) /\ (y_7 = y_2).
+    Have: (10 + x_2) = x.
+    Have: (3 + y_2) = y.
+  }
+  (* Invariant *)
+  Have: ((y <= x) -> (x <= x_8)).
+  (* Invariant *)
+  Have: (x < y) \/ ((y <= x) /\ (x <= x_8)).
+  (* Invariant *)
+  Have: ((-2147483648) <= y) /\ (y <= 2147483647).
+}
+Prove: ((-2147483648) <= x) /\ (x <= 2147483647).
+Prover Z3 4.8.12 returns Valid (Qed:81ms) (110ms) (44837)
+Prover Alt-Ergo  returns Valid (Qed:81ms) (30ms) (150)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 18):
+Let x_8 = 23 + y.
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(unknown_1) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\ is_sint32(x_4) /\
+      is_sint32(x_5) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(y_2) /\
+      is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\ is_sint32(y_6).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_1) /\ (unknown_1 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Else *)
+  Have: unknown_1 < unknown_0.
+  (* Invariant *)
+  Have: unknown_0 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= (23 + unknown_0).
+  (* Invariant *)
+  Have: unknown_1 <= (24 + unknown_0).
+  (* Invariant *)
+  Have: (-2147483647) <= unknown_0.
+  (* Invariant *)
+  Have: ((-2147483648) <= y_6) /\ (y_6 <= 2147483647).
+  (* Invariant *)
+  Have: ((-2147483648) <= x_5) /\ (x_5 <= 2147483647).
+  (* Invariant *)
+  Have: x_5 <= (23 + y_6).
+  (* Invariant *)
+  Have: x_5 <= (24 + y_6).
+  (* Invariant *)
+  Have: x_5 <= y_6.
+  (* Invariant *)
+  Have: (-2147483647) <= y_6.
+  (* Then *)
+  Have: x_5 < y_6.
+  If x_5 < 0
+  Then {
+    Have: (x_5 = x_6) /\ (y_6 = y_5).
+    If y_5 < 0
+    Then {
+      Have: (x_6 = x_4) /\ (y_5 = y_4).
+      Have: (7 + x_4) = x_3.
+      Have: (10 + y_7) = y_4.
+    }
+    Else { Have: (x_6 = x_3) /\ (y_5 = y_7). }
+  }
+  Else { Have: (x_5 = x_3) /\ (y_6 = y_7). }
+  If x_3 < 0
+  Then {
+    Have: (x_3 = x_7) /\ (y_7 = y_3).
+    If 0 <= y_3
+    Then {
+      Have: (x_7 = x_1) /\ (y_3 = y_1).
+      Have: (7 + x_1) = x.
+      Have: (3 + y_1) = y.
+    }
+    Else {
+      Have: (x_7 = x_2) /\ (y_3 = y_2).
+      Have: (10 + x_2) = x.
+      Have: (3 + y_2) = y.
+    }
+  }
+  Else {
+    Have: (x_3 = x_2) /\ (y_7 = y_2).
+    Have: (10 + x_2) = x.
+    Have: (3 + y_2) = y.
+  }
+  (* Invariant *)
+  Have: ((y <= x) -> (x <= x_8)).
+  (* Invariant *)
+  Have: (x < y) \/ ((y <= x) /\ (x <= x_8)).
+  (* Invariant *)
+  Have: ((-2147483648) <= y) /\ (y <= 2147483647).
+  (* Invariant *)
+  Have: ((-2147483648) <= x) /\ (x <= 2147483647).
+}
+Prove: x <= x_8.
+Prover Z3 4.8.12 returns Valid (Qed:81ms) (110ms) (44572)
+Prover Alt-Ergo  returns Valid (Qed:81ms) (19ms) (41)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 18):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= x) /\ (x <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= y) /\ (y <= 2147483646).
+  (* Else *)
+  Have: x < y.
+  (* Invariant *)
+  Have: y <= 2147483647.
+  (* Invariant *)
+  Have: x <= 2147483647.
+}
+Prove: x <= (23 + y).
+Prover Alt-Ergo  returns Valid (Qed:2ms) (18ms) (23)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.87ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (0.71ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 24):
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(unknown_1) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\ is_sint32(x_4) /\
+      is_sint32(x_5) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(y_2) /\
+      is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\ is_sint32(y_6).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_1) /\ (unknown_1 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Else *)
+  Have: unknown_1 < unknown_0.
+  (* Invariant *)
+  Have: unknown_0 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= (23 + unknown_0).
+  (* Invariant *)
+  Have: unknown_1 <= (24 + unknown_0).
+  (* Invariant *)
+  Have: (-2147483647) <= unknown_0.
+  (* Invariant *)
+  Have: ((-2147483648) <= y_6) /\ (y_6 <= 2147483647).
+  (* Invariant *)
+  Have: ((-2147483648) <= x_5) /\ (x_5 <= 2147483647).
+  (* Invariant *)
+  Have: x_5 <= (23 + y_6).
+  (* Invariant *)
+  Have: x_5 <= (24 + y_6).
+  (* Invariant *)
+  Have: x_5 <= y_6.
+  (* Invariant *)
+  Have: (-2147483647) <= y_6.
+  (* Then *)
+  Have: x_5 < y_6.
+  If x_5 < 0
+  Then {
+    Have: (x_5 = x_6) /\ (y_6 = y_5).
+    If y_5 < 0
+    Then {
+      Have: (x_6 = x_4) /\ (y_5 = y_4).
+      Have: (7 + x_4) = x_3.
+      Have: (10 + y_7) = y_4.
+    }
+    Else { Have: (x_6 = x_3) /\ (y_5 = y_7). }
+  }
+  Else { Have: (x_5 = x_3) /\ (y_6 = y_7). }
+  If x_3 < 0
+  Then {
+    Have: (x_3 = x_7) /\ (y_7 = y_3).
+    If 0 <= y_3
+    Then {
+      Have: (x_7 = x_1) /\ (y_3 = y_1).
+      Have: (7 + x_1) = x.
+      Have: (3 + y_1) = y.
+    }
+    Else {
+      Have: (x_7 = x_2) /\ (y_3 = y_2).
+      Have: (10 + x_2) = x.
+      Have: (3 + y_2) = y.
+    }
+  }
+  Else {
+    Have: (x_3 = x_2) /\ (y_7 = y_2).
+    Have: (10 + x_2) = x.
+    Have: (3 + y_2) = y.
+  }
+  (* Invariant *)
+  Have: ((-2147483648) <= y) /\ (y <= 2147483647).
+  (* Invariant *)
+  Have: ((-2147483648) <= x) /\ (x <= 2147483647).
+  (* Invariant *)
+  Have: x <= (23 + y).
+}
+Prove: x <= (24 + y).
+Prover Z3 4.8.12 returns Valid (Qed:100ms) (110ms) (44552)
+Prover Alt-Ergo  returns Valid (Qed:100ms) (19ms) (40)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 24):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= x) /\ (x <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= y) /\ (y <= 2147483646).
+  (* Else *)
+  Have: x < y.
+  (* Invariant *)
+  Have: y <= 2147483647.
+  (* Invariant *)
+  Have: x <= 2147483647.
+  (* Invariant *)
+  Have: x <= (23 + y).
+}
+Prove: x <= (24 + y).
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (110ms) (35222)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (18ms) (24)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (0.90ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (0.81ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (16ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (16ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (19ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid (19ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 34):
+Prove: true.
+Prover Qed returns Valid (18ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 34):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 35):
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 35):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 36):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 36):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 37):
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 37):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 38):
+Prove: true.
+Prover Qed returns Valid (16ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 38):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 39):
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(unknown_1) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\ is_sint32(x_4) /\
+      is_sint32(x_5) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(y_2) /\
+      is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\ is_sint32(y_6).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_1) /\ (unknown_1 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Else *)
+  Have: unknown_1 < unknown_0.
+  (* Invariant *)
+  Have: unknown_0 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= (23 + unknown_0).
+  (* Invariant *)
+  Have: unknown_1 <= (24 + unknown_0).
+  (* Invariant *)
+  Have: (-2147483647) <= unknown_0.
+  (* Invariant *)
+  Have: ((-2147483648) <= y_6) /\ (y_6 <= 2147483647).
+  (* Invariant *)
+  Have: ((-2147483648) <= x_5) /\ (x_5 <= 2147483647).
+  (* Invariant *)
+  Have: x_5 <= (23 + y_6).
+  (* Invariant *)
+  Have: x_5 <= (24 + y_6).
+  (* Invariant *)
+  Have: x_5 <= y_6.
+  (* Invariant *)
+  Have: (-2147483647) <= y_6.
+  (* Then *)
+  Have: x_5 < y_6.
+  If x_5 < 0
+  Then {
+    Have: (x_5 = x_6) /\ (y_6 = y_5).
+    If y_5 < 0
+    Then {
+      Have: (x_6 = x_4) /\ (y_5 = y_4).
+      Have: (7 + x_4) = x_3.
+      Have: (10 + y_7) = y_4.
+    }
+    Else { Have: (x_6 = x_3) /\ (y_5 = y_7). }
+  }
+  Else { Have: (x_5 = x_3) /\ (y_6 = y_7). }
+  If x_3 < 0
+  Then {
+    Have: (x_3 = x_7) /\ (y_7 = y_3).
+    If 0 <= y_3
+    Then {
+      Have: (x_7 = x_1) /\ (y_3 = y_1).
+      Have: (7 + x_1) = x.
+      Have: (3 + y_1) = y.
+    }
+    Else {
+      Have: (x_7 = x_2) /\ (y_3 = y_2).
+      Have: (10 + x_2) = x.
+      Have: (3 + y_2) = y.
+    }
+  }
+  Else {
+    Have: (x_3 = x_2) /\ (y_7 = y_2).
+    Have: (10 + x_2) = x.
+    Have: (3 + y_2) = y.
+  }
+  (* Invariant *)
+  Have: ((-2147483648) <= y) /\ (y <= 2147483647).
+  (* Invariant *)
+  Have: ((-2147483648) <= x) /\ (x <= 2147483647).
+  (* Invariant *)
+  Have: x <= (23 + y).
+  (* Invariant *)
+  Have: x <= (24 + y).
+  (* Invariant *)
+  Have: ((x < y) -> (x <= y)).
+}
+Prove: (-2147483647) <= y.
+Prover Z3 4.8.12 returns Valid (Qed:119ms) (130ms) (45282)
+Prover Alt-Ergo  returns Valid (Qed:119ms) (31ms) (233)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 39):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 53):
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(unknown_1) /\ is_sint32(x) /\
+      is_sint32(y).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_1) /\ (unknown_1 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Else *)
+  Have: unknown_1 < unknown_0.
+  (* Invariant *)
+  Have: unknown_0 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= 2147483647.
+  (* Invariant *)
+  Have: unknown_1 <= (23 + unknown_0).
+  (* Invariant *)
+  Have: unknown_1 <= (24 + unknown_0).
+  (* Invariant *)
+  Have: (-2147483647) <= unknown_0.
+  (* Invariant *)
+  Have: ((-2147483648) <= y) /\ (y <= 2147483647).
+  (* Invariant *)
+  Have: ((-2147483648) <= x) /\ (x <= 2147483647).
+  (* Invariant *)
+  Have: x <= (23 + y).
+  (* Invariant *)
+  Have: x <= (24 + y).
+  (* Invariant *)
+  Have: (-2147483647) <= y.
+  (* Else *)
+  Have: y <= x.
+}
+Prove: x <= (16 + y).
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c, line 40):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-zilu_benchmark44_disjunctive/loop-zilu_benchmark44_disjunctive_0001/loop-zilu_benchmark44_disjunctive_0004/loop-zilu_benchmark44_disjunctive_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

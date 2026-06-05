@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 3, 'Iteration': 3, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=3, microseconds=967919), 'total_solve_time': datetime.timedelta(seconds=113, microseconds=199705), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 227, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant y % 10 == y - (y / 10) * 10;', 'loop invariant x >= 0 && y >= 0;', 'loop invariant x - y <= 10;', 'loop invariant x % 10 == x - (x / 10) * 10;', 'loop invariant 0 <= y;', 'loop invariant 0 <= x;', 'loop invariant 0 <= x - y || x - y <= 10;', 'loop invariant 0 <= x && 0 <= y;', 'loop assigns y;', 'loop assigns x;'], '2': [], 'MSLines': ['/*@\n', '  requires 0 <= x <= 10;\n', '  requires 0 <= y <= 10;\n', '*/\n', '/* 2. FUNC CONTRACT */\nvoid foo(int x, int y) {\n', '  /* 1. LOOP INVARIANT */\n  while (unknown()) {\n', '    x  = x + 10;\n', '    y  = y + 10;\n', '  }\n', '  if (x == 20) {\n', '    //@ assert y != 0;\n', '  }\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

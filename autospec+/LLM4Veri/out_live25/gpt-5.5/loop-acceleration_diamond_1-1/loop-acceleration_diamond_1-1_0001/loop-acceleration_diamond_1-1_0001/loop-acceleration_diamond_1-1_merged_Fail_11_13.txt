@@ -1,0 +1,202 @@
+[kernel] Parsing out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_3_preserved (Qed 4ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_5_preserved (Qed 16ms) (Z3 8s)
+[wp] Proved goals:   11 / 13
+  Qed:             9
+  Alt-Ergo :       2 (24ms-36ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 11):
+Let x_1 = 2 + x.
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(x) /\ is_sint32(x_1).
+  (* Goal *)
+  When: (unknown_0 % 2) = 0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Invariant *)
+  Have: (x % 2) = 0.
+  (* Invariant *)
+  Have: x <= 100.
+  (* Invariant *)
+  Have: x != 100.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: x <= 98.
+}
+Prove: (x_1 % 2) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (130ms) (39252)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (36ms) (173)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 13):
+Let x_1 = y % 2.
+Let x_2 = 1 + x.
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(x_2).
+  (* Goal *)
+  When: x_1 != 0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= y) /\ (y <= 2147483646).
+  (* Invariant *)
+  Have: x <= 99.
+  (* Invariant *)
+  Have: x <= 100.
+  (* Invariant *)
+  Have: x != 100.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: x <= 98.
+}
+Prove: ((x_2 % 2) = x_1) \/ (x <= 97).
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 15):
+Let x_4 = unknown_0 % 2.
+Let x_5 = x % 2.
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(x_2) /\ is_sint32(x_3).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Invariant *)
+  Have: ((x_4 = 0) -> ((x_3 % 2) = 0)).
+  (* Invariant *)
+  Have: ((x_4 != 0) -> (x_3 <= 99)).
+  (* Invariant *)
+  Have: x_3 <= 100.
+  (* Invariant *)
+  Have: x_3 != 100.
+  (* Invariant *)
+  Have: 0 <= x_3.
+  (* Then *)
+  Have: x_3 <= 98.
+  If x_4 = 0
+  Then { Have: x_3 = x_1. Have: (2 + x_1) = x. }
+  Else { Have: x_3 = x_2. Have: (1 + x_2) = x. }
+  (* Invariant *)
+  Have: ((x_4 = 0) -> (x_5 = 0)).
+  (* Invariant *)
+  Have: ((x_4 != 0) -> (x <= 99)).
+  (* Invariant *)
+  Have: ((x_4 != 0) -> ((x_5 = x_4) \/ (x <= 98))).
+  (* Invariant *)
+  Have: x <= 100.
+}
+Prove: x != 100.
+Prover Z3 4.8.12 returns Timeout (Qed:16ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:16ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.89ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 16):
+Let x_4 = unknown_0 % 2.
+Let x_5 = x % 2.
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(x_2) /\ is_sint32(x_3).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Invariant *)
+  Have: ((x_4 = 0) -> ((x_3 % 2) = 0)).
+  (* Invariant *)
+  Have: ((x_4 != 0) -> (x_3 <= 99)).
+  (* Invariant *)
+  Have: x_3 <= 100.
+  (* Invariant *)
+  Have: x_3 != 100.
+  (* Invariant *)
+  Have: 0 <= x_3.
+  (* Then *)
+  Have: x_3 <= 98.
+  If x_4 = 0
+  Then { Have: x_3 = x_1. Have: (2 + x_1) = x. }
+  Else { Have: x_3 = x_2. Have: (1 + x_2) = x. }
+  (* Invariant *)
+  Have: ((x_4 = 0) -> (x_5 = 0)).
+  (* Invariant *)
+  Have: ((x_4 != 0) -> (x <= 99)).
+  (* Invariant *)
+  Have: ((x_4 != 0) -> ((x_5 = x_4) \/ (x <= 98))).
+  (* Invariant *)
+  Have: x <= 100.
+  (* Invariant *)
+  Have: x != 100.
+}
+Prove: 0 <= x.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (140ms) (39864)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (24ms) (46)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.59ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

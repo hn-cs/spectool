@@ -1,0 +1,118 @@
+[kernel] Parsing out/deepseek-chat/9/9_0001/9_0002/9_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/deepseek-chat/9/9_0001/9_0002/9_merged.c:17: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/9/9_0001/9_0002/9_merged.c:5: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 14 goals scheduled
+[wp] [Timeout] typed_foo_loop_invariant_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_foo_loop_invariant_3_established (Qed 0.88ms) (Z3 8s)
+[wp] Proved goals:   12 / 14
+  Qed:            12
+  Timeout:         2
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 8):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y).
+  (* Pre-condition *)
+  Have: (0 <= x) /\ (x <= 2).
+  (* Pre-condition *)
+  Have: (0 <= y) /\ (y <= 2).
+}
+Prove: y = x.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 10):
+Assume { Type: is_sint32(x). (* Pre-condition *) Have: (0 <= x) /\ (x <= 2).
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:0.88ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.88ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 14) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/9/9_0001/9_0002/9_merged.c, line 14) (2/2):
+Call Result at line 17
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/9/9_0001/9_0002/9_merged.c:5: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/9/9_0001/9_0002/9_merged.c:17: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

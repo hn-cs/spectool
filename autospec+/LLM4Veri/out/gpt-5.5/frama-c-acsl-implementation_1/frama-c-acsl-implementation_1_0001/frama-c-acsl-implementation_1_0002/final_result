@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 2, 'Iteration': 2, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=12, microseconds=413451), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=45470), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 363, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': ['requires \\valid(q);', 'requires \\valid(p);', 'ensures n > 0 ==> *p == n;', 'ensures n <= 0 ==> *q == n;', 'assigns *p, *q;'], '2': [], 'MSLines': ['/* 1. FUNC CONTRACT */\nvoid f(int n, int *p, int *q) {\n', '    if (n > 0) *p = n;\n', '    else *q = n;\n', '}\n', '/* 2. FUNC CONTRACT */\nint main(){\n', '    int n = 10;\n', '    int p = 1,q = 2;\n', '    f(n, &p, &q);\n', '    //@ assert p == 10;\n', '    n = -10;\n', '    f(n, &p, &q);\n', '    //@ assert q == -10;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

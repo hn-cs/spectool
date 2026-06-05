@@ -1,0 +1,94 @@
+[kernel] Parsing out/deepseek-chat/190/190_0001/190_0001/190_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 10 goals scheduled
+[wp] Proved goals:   10 / 10
+  Qed:             8
+  Alt-Ergo :       2 (18ms-21ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/190/190_0001/190_0001/190_merged.c, line 19):
+Assume {
+  Type: is_sint32(s).
+  (* Call 'max' *)
+  Have: (34 <= s) /\ (45 <= s) /\ ((s = 34) \/ (s = 45)).
+}
+Prove: s = 45.
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (120ms) (34439)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (18ms) (14)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/190/190_0001/190_0001/190_merged.c, line 21):
+Assume {
+  Type: is_sint32(t).
+  (* Call 'max' *)
+  Have: ((-43) <= t) /\ (34 <= t) /\ ((t = (-43)) \/ (t = 34)).
+}
+Prove: t = 34.
+Prover Z3 4.8.12 returns Valid (Qed:1ms) (120ms) (34443)
+Prover Alt-Ergo  returns Valid (Qed:1ms) (21ms) (14)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/190/190_0001/190_0001/190_merged.c, line 4) in 'max'' in 'foo' at initialization of 's' (file out/deepseek-chat/190/190_0001/190_0001/190_merged.c, line 18)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/190/190_0001/190_0001/190_merged.c, line 5) in 'max'' in 'foo' at initialization of 's' (file out/deepseek-chat/190/190_0001/190_0001/190_merged.c, line 18)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/190/190_0001/190_0001/190_merged.c, line 4) in 'max'' in 'foo' at initialization of 't' (file out/deepseek-chat/190/190_0001/190_0001/190_merged.c, line 20)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/190/190_0001/190_0001/190_merged.c, line 5) in 'max'' in 'foo' at initialization of 't' (file out/deepseek-chat/190/190_0001/190_0001/190_merged.c, line 20)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function max
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/190/190_0001/190_0001/190_merged.c, line 6) in 'max':
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/190/190_0001/190_0001/190_merged.c, line 7) in 'max':
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'max' (1/2):
+Effect at line 12
+Prove: true.
+Prover Qed returns Valid (0.51ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'max' (2/2):
+Effect at line 13
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/190/190_0001/190_0001/190_merged.c:16: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

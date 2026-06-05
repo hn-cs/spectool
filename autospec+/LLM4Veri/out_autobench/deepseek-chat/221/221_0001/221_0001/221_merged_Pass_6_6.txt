@@ -1,0 +1,85 @@
+[kernel] Parsing out/deepseek-chat/221/221_0001/221_0001/221_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 6 goals scheduled
+[wp] Proved goals:    6 / 6
+  Qed:             4
+  Alt-Ergo :       2 (24ms-28ms)
+------------------------------------------------------------
+  Function arrayDouble
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/221/221_0001/221_0001/221_merged.c, line 5):
+Assume {
+  Type: is_uint32(n) /\ is_sint32(p) /\ is_sint32(1 + p).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: 0 <= p.
+  (* Then *)
+  Have: to_uint32(p) < n.
+}
+Prove: p < n.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (130ms) (35405)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (24ms) (46)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/221/221_0001/221_0001/221_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (0.53ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/221/221_0001/221_0001/221_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/221/221_0001/221_0001/221_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/221/221_0001/221_0001/221_merged.c, line 7) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/221/221_0001/221_0001/221_merged.c, line 7) (2/2):
+Effect at line 11
+Let x = p - 1.
+Let a_1 = shift_sint32(a, x).
+Assume {
+  Type: is_uint32(n) /\ is_sint32(p) /\ is_sint32(x).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_1, 1).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: p <= (1 + n).
+  (* Invariant *)
+  Have: 0 < p.
+  (* Then *)
+  Have: to_uint32(x) < n.
+  (* Invariant *)
+  Have: p <= n.
+}
+Prove: included(a_1, 1, shift_sint32(a, 0), n).
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (130ms) (91311)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (28ms) (79)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/221/221_0001/221_0001/221_merged.c:1: Warning: 
+  No 'assigns' specification for function 'arrayDouble'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/221/221_0001/221_0001/221_merged.c:16: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,160 @@
+[kernel] Parsing out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 12 goals scheduled
+[wp] Proved goals:   12 / 12
+  Qed:             9
+  Alt-Ergo :       3 (32ms-35ms)
+------------------------------------------------------------
+  Function firstSubset
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 4) in 'firstSubset':
+Let a = shift_sint32(s, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Assume {
+  Type: is_sint32(k) /\ is_sint32(n).
+  (* Heap *)
+  Type: (region(s.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < n).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, n).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < k) ->
+      (a_1[shift_sint32(s, i_1)] = 0))).
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Else *)
+  Have: n <= k.
+}
+Prove: a_1[shift_sint32(s, i)] = 0.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (140ms) (82933)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (32ms) (64)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 10):
+Let a = shift_sint32(s, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Assume {
+  Type: is_sint32(k) /\ is_sint32(n) /\ is_sint32(1 + k).
+  (* Heap *)
+  Type: (region(s.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= k).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, n).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < k) ->
+      (a_1[shift_sint32(s, i_1)] = 0))).
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: k < n.
+}
+Prove: a_1[shift_sint32(s, k) <- 0][shift_sint32(s, i)] = 0.
+Prover Alt-Ergo  returns Valid (Qed:4ms) (35ms) (119)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 12) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 12) (2/2):
+Effect at line 16
+Let a = shift_sint32(s, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let x = k - 1.
+Let a_2 = shift_sint32(s, x).
+Assume {
+  Type: is_sint32(k) /\ is_sint32(n) /\ is_sint32(x).
+  (* Heap *)
+  Type: (region(s.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_2, 1).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, n).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> (((2 + i) <= k) ->
+      (a_1[shift_sint32(s, i)] = 0))).
+  (* Invariant *)
+  Have: 0 < k.
+  (* Then *)
+  Have: k <= n.
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < k) ->
+      (a_1[a_2 <- 0][shift_sint32(s, i)] = 0))).
+}
+Prove: included(a_2, 1, a, n).
+Prover Z3 4.8.12 returns Valid (Qed:11ms) (150ms) (99751)
+Prover Alt-Ergo  returns Valid (Qed:11ms) (35ms) (120)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 5) in 'firstSubset' (1/2):
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 5) in 'firstSubset' (2/2):
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 2) in 'firstSubset'' in 'main' at call 'firstSubset' (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 21)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 3) in 'firstSubset'' in 'main' at call 'firstSubset' (file out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c, line 21)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/gpetiot_Frama-C-StaDy_first_subset/gpetiot_Frama-C-StaDy_first_subset_0001/gpetiot_Frama-C-StaDy_first_subset_0002/gpetiot_Frama-C-StaDy_first_subset_merged.c:19: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

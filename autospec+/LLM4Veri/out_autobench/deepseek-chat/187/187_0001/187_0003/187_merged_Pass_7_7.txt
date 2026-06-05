@@ -1,0 +1,57 @@
+[kernel] Parsing out/deepseek-chat/187/187_0001/187_0003/187_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 7 goals scheduled
+[wp] Proved goals:    7 / 7
+  Qed:             7
+------------------------------------------------------------
+  Function fun
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/187/187_0001/187_0003/187_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/187/187_0001/187_0003/187_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/187/187_0001/187_0003/187_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/187/187_0001/187_0003/187_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/187/187_0001/187_0003/187_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/187/187_0001/187_0003/187_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/187/187_0001/187_0003/187_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/187/187_0001/187_0003/187_merged.c:3: Warning: 
+  No 'assigns' specification for function 'fun'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/187/187_0001/187_0003/187_merged.c:21: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

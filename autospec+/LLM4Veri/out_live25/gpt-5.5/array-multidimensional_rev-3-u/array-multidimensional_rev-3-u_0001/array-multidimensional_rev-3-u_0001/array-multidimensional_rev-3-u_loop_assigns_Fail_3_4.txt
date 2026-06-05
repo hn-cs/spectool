@@ -1,0 +1,81 @@
+[kernel] Parsing out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c:25: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c:19: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c:40: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c:38: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c:56: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c:54: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c:51: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c:35: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c:16: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 4 goals scheduled
+[wp] [Timeout] typed_main_loop_assigns_part4 (Qed 8ms) (Z3 3s)
+[wp] Proved goals:    3 / 4
+  Qed:             3
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c, line 22) (1/4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c, line 22) (2/4):
+Effect at line 24
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c, line 22) (3/4):
+Call Result at line 25
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c, line 22) (4/4):
+Effect at line 26
+Let m = B[i].
+Let m_1 = B_1[i].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n) /\
+      is_sint32(n_1) /\ is_sint32(v).
+  (* Then *)
+  Have: i_1 < n_1.
+  (* Then *)
+  Have: j < n.
+  (* Loop assigns ... *)
+  Have: (forall i_2 : Z. ((i_2 != i) -> (B[i_2] = B_1[i_2]))) /\
+      (forall i_2 : Z. ((i_2 != j) -> (m[i_2] = m_1[i_2]))) /\
+      (forall i_2 : Z. ((0 <= i) -> ((0 <= i_2) -> ((0 <= j) ->
+       ((i <= 999) -> ((i_2 <= 999) -> ((j <= 999) ->
+       (((i_2 < 0) \/ (n <= i_2)) -> (m[j][i_2] = m_1[j][i_2]))))))))).
+  (* Then *)
+  Have: 0 < n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (3s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (3s)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-multidimensional_rev-3-u/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_0001/array-multidimensional_rev-3-u_loop_assigns.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

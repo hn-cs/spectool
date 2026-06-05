@@ -1,0 +1,404 @@
+[kernel] Parsing out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:12: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:55: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:48: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 25 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_4_preserved (Qed 23ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_8_preserved (Qed 35ms) (Z3 8s) (Stronger)
+[wp] Proved goals:   23 / 25
+  Qed:            20
+  Alt-Ergo :       3 (46ms-53ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 16):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 16):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 17):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(vectorx_0, 0), 100000).
+Let a_1 = a[shift_sint32(vectorx_0, i) <- v][shift_sint32(vectorx_0, i_1)].
+Assume {
+  Type: is_sint32(element_0) /\ is_sint32(i) /\ is_sint32(v) /\
+      is_sint32(1 + i).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= element_0) /\ (element_0 <= 2147483646).
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a[shift_sint32(vectorx_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < i) ->
+      (((-2147483648) <= a_2) /\ (a_2 <= 2147483647)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 99999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+}
+Prove: ((-2147483648) <= a_1) /\ (a_1 <= 2147483647).
+Prover Alt-Ergo  returns Valid (Qed:16ms) (46ms) (195)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 17):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 18):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 18):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 27):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(vectorx_0, 0), 100000).
+Assume {
+  Type: is_sint32(element_0) /\ is_sint32(i) /\ is_sint32(i_1) /\
+      is_sint32(1 + i) /\ is_sint32(a[shift_sint32(vectorx_0, i)]).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= element_0) /\ (element_0 <= 2147483646).
+  (* Invariant *)
+  Have: i_1 <= 100000.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_1 = a[shift_sint32(vectorx_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < i_1) ->
+      (((-2147483648) <= a_1) /\ (a_1 <= 2147483647)))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: 100000 <= i_1.
+  (* Invariant *)
+  Have: i != 100000.
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a[shift_sint32(vectorx_0, i_2)] != element_0))).
+  (* Then *)
+  Have: i <= 99999.
+}
+Prove: i != 99999.
+Prover Z3 4.8.12 returns Timeout (Qed:23ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:23ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 27):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 28):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 28):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 29):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(vectorx_0, 0), 100000).
+Let a_1 = a[shift_sint32(vectorx_0, i)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(1 + i) /\ is_sint32(a_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= a_1) /\ (a_1 <= 2147483646).
+  (* Invariant *)
+  Have: i_1 <= 100000.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a[shift_sint32(vectorx_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < i_1) ->
+      (((-2147483648) <= a_2) /\ (a_2 <= 2147483647)))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: 100000 <= i_1.
+  (* Invariant *)
+  Have: i != 100000.
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a[shift_sint32(vectorx_0, i_2)] != a_1))).
+  (* Then *)
+  Have: i <= 99999.
+  (* Invariant *)
+  Have: i != 99999.
+}
+Prove: exists i_2 : Z. (a[shift_sint32(vectorx_0, i_2)] = a_1) /\
+    (i_2 <= i) /\ (0 <= i_2).
+Prover Alt-Ergo  returns Valid (Qed:28ms) (53ms) (69)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 29):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 30):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (25ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 30):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.97ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 31):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(vectorx_0, 0), 100000).
+Let a_1 = a[shift_sint32(vectorx_0, pos_0)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(pos_0) /\ is_sint32(1 + pos_0) /\
+      is_sint32(a_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= a_1) /\ (a_1 <= 2147483646).
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a[shift_sint32(vectorx_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < i) ->
+      (((-2147483648) <= a_2) /\ (a_2 <= 2147483647)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: 100000 <= i.
+  (* Invariant *)
+  Have: pos_0 != 100000.
+  (* Invariant *)
+  Have: pos_0 <= 100000.
+  (* Invariant *)
+  Have: 0 <= pos_0.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < pos_0) ->
+      (a[shift_sint32(vectorx_0, i_2)] != a_1))).
+  (* Then *)
+  Have: pos_0 <= 99999.
+  (* Invariant *)
+  Have: pos_0 != 99999.
+  (* Invariant *)
+  Have: (a_1 = a[shift_sint32(vectorx_0, i_1)]) /\ (0 <= i_1) /\
+      (i_1 <= pos_0).
+}
+Prove: a_1 = pos_0.
+Prover Z3 4.8.12 returns Timeout (Qed:35ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:35ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 31):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 32):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (29ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 32):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 33):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(vectorx_0, 0), 100000).
+Let a_1 = a[shift_sint32(vectorx_0, i_1)].
+Assume {
+  Type: is_sint32(element_0) /\ is_sint32(i_1) /\ is_sint32(i_2) /\
+      is_sint32(1 + i_1) /\ is_sint32(a_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= element_0) /\ (element_0 <= 2147483646).
+  (* Invariant *)
+  Have: i_2 <= 100000.
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_2 = a[shift_sint32(vectorx_0, i_3)] in
+      ((0 <= i_3) -> ((i_3 < i_2) ->
+      (((-2147483648) <= a_2) /\ (a_2 <= 2147483647)))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: 100000 <= i_2.
+  (* Invariant *)
+  Have: i_1 != 100000.
+  (* Invariant *)
+  Have: i_1 <= 100000.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i_1) ->
+      (a[shift_sint32(vectorx_0, i_3)] != element_0))).
+  (* Then *)
+  Have: i_1 <= 99999.
+  Have: a_1 != element_0.
+  (* Invariant *)
+  Have: i_1 != 99999.
+  (* Invariant *)
+  Have: (-1) <= i_1.
+}
+Prove: a[shift_sint32(vectorx_0, i)] != element_0.
+Prover Alt-Ergo  returns Valid (Qed:28ms) (48ms) (121)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 33):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 19) (1/3):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 19) (2/3):
+Effect at line 22
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 19) (3/3):
+Call Result at line 24
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c, line 34):
+out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-examples_sanfoundry_10_ground/array-examples_sanfoundry_10_ground_0001/array-examples_sanfoundry_10_ground_0002/array-examples_sanfoundry_10_ground_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

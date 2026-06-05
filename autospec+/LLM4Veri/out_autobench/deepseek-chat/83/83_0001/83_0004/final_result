@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 5, 'Iteration': 5, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=6, microseconds=23787), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=480899), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 189, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant x == -5000 + y*(y-1)/2;', 'loop invariant x + y == \\at(x, Pre) + \\at(y, Pre);', 'loop invariant x + y <= 0;', 'loop invariant x + y < 0;', 'loop invariant x + y < 0;', 'loop invariant x + y < 0;', 'loop invariant x + y < 0;', 'loop invariant x + y < 0;', 'loop invariant x + y < 0;', 'loop invariant x + y < 0;', 'loop invariant x + y < 0;', 'loop invariant \\at(x, Pre) == -5000;', 'loop invariant 0 <= y;', 'loop invariant 0 <= x;', 'loop invariant 0 <= x + y;', 'loop assigns y;', 'loop assigns x;'], '2': [], 'MSLines': ['/* 2. FUNC CONTRACT */\nint main() {\n', '  int x = -5000;\n', '  int y = 0;\n', '  \n', '  /* 1. LOOP INVARIANT */\n  while ((x < 0)) {\n', '    x  = x + y;\n', '    y  = y + 1;\n', '  }\n', '  // post-condition\n', '  //@ assert(y > 0);\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

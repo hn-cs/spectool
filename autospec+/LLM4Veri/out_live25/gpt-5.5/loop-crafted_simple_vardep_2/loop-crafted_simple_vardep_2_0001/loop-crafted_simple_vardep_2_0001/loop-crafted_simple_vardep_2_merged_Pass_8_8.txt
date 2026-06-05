@@ -1,0 +1,88 @@
+[kernel] Parsing out/gpt-5.5/loop-crafted_simple_vardep_2/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] Proved goals:    8 / 8
+  Qed:             6
+  Alt-Ergo :       2 (27ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-crafted_simple_vardep_2/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-crafted_simple_vardep_2/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-crafted_simple_vardep_2/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_merged.c, line 8):
+Let x = to_uint32(1 + i).
+Let x_1 = 3 * x.
+Let x_2 = 3 * i.
+Let x_3 = 2 * x.
+Let x_4 = 2 * i.
+Assume {
+  Type: is_uint32(i) /\ is_uint32(x_4) /\ is_uint32(x_2) /\ is_uint32(x_3) /\
+      is_uint32(x_1).
+  (* Invariant *)
+  Have: i <= 89478485.
+  (* Then *)
+  Have: i <= 89478484.
+  Have: x_3 = to_uint32(2 + x_4).
+  Have: x_1 = to_uint32(3 + x_2).
+}
+Prove: x <= 89478485.
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (120ms) (36811)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (27ms) (77)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-crafted_simple_vardep_2/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-crafted_simple_vardep_2/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-crafted_simple_vardep_2/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.86ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-crafted_simple_vardep_2/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_merged.c, line 18):
+Let x = 2 * i.
+Let x_1 = 3 * i.
+Let x_2 = to_uint32(1 + i).
+Assume {
+  Type: is_uint32(i) /\ is_uint32(x) /\ is_uint32(x_1).
+  (* Invariant *)
+  Have: i <= 89478485.
+  (* Then *)
+  Have: i <= 89478484.
+}
+Prove: ((2 * x_2) = to_uint32(2 + x)) /\ ((3 * x_2) = to_uint32(3 + x_1)).
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (130ms) (36566)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (27ms) (68)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-crafted_simple_vardep_2/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-crafted_simple_vardep_2/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_0001/loop-crafted_simple_vardep_2_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

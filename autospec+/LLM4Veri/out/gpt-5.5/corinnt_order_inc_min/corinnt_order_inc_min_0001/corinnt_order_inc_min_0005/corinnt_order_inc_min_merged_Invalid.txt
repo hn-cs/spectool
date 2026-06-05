@@ -1,0 +1,11 @@
+[kernel] Parsing out/gpt-5.5/corinnt_order_inc_min/corinnt_order_inc_min_0001/corinnt_order_inc_min_0005/corinnt_order_inc_min_merged.c (with preprocessing)
+[kernel] out/gpt-5.5/corinnt_order_inc_min/corinnt_order_inc_min_0001/corinnt_order_inc_min_0005/corinnt_order_inc_min_merged.c:16: 
+  syntax error:
+  
+  14    requires \valid(a) && \valid(b);
+  15    ensures *a >= *b;
+  16    assigns *a, *b;
+        ^^^^^^^^^^^^^^^
+  17    */
+  18    void max_ptr(int* a, int* b){
+[kernel] Frama-C aborted: invalid user input.

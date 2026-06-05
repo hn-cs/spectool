@@ -1,0 +1,18 @@
+[kernel] Parsing out/gpt-5.5/rotate/rotate_0001/rotate_0003/rotate_merged.c (with preprocessing)
+[kernel] out/gpt-5.5/rotate/rotate_0001/rotate_0003/rotate_merged.c:66: 
+  syntax error:
+  Location: between lines 66 and 76
+  64        Equal{K,L}(value_type* a, integer m, integer n, integer p) =
+  65          Equal{K,L}(a, m, n, a, p);
+  
+  66      }
+  67    */
+  68    size_type
+  69-73 [... omitted ...]
+  74    ensures no_rotation: !(0u < m && m < n) ==> Unchanged{Old,Here}(a, n);
+  75    ensures left: (0u < m && m < n) ==> Equal{Old,Here}(a, 0, m, n-m);
+  76    assigns a[0..n-1];
+  
+  77    */
+  78    rotate(value_type* a, size_type m, size_type n)
+[kernel] Frama-C aborted: invalid user input.

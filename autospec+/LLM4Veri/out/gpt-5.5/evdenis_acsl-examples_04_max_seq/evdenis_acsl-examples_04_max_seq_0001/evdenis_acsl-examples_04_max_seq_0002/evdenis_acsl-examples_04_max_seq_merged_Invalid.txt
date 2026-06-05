@@ -1,0 +1,11 @@
+[kernel] Parsing out/gpt-5.5/evdenis_acsl-examples_04_max_seq/evdenis_acsl-examples_04_max_seq_0001/evdenis_acsl-examples_04_max_seq_0002/evdenis_acsl-examples_04_max_seq_merged.c (with preprocessing)
+[kernel] out/gpt-5.5/evdenis_acsl-examples_04_max_seq/evdenis_acsl-examples_04_max_seq_0001/evdenis_acsl-examples_04_max_seq_0002/evdenis_acsl-examples_04_max_seq_merged.c:22: 
+  syntax error:
+  
+  20    ensures n > 0 ==> 0 <= \result < n;
+  21    ensures n == 0 ==> \result == 0;
+  22    assigns \nothing;
+        ^^^^^^^^^^^^^^^^^
+  23    */
+  24    int max_element(int* a, int n)
+[kernel] Frama-C aborted: invalid user input.

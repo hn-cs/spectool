@@ -1,0 +1,133 @@
+[kernel] Parsing out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c:10: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c:9: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c:8: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 7ms) (Z3 3s)
+[wp] Proved goals:    8 / 9
+  Qed:             6
+  Alt-Ergo :       2 (18ms-22ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 16):
+Assume {
+  Type: is_uint32(v) /\ is_uint32(w) /\ is_uint32(x) /\ is_uint32(y).
+  (* Then *)
+  Have: w <= 268435454.
+  (* Then *)
+  Have: x <= 9.
+  (* Then *)
+  Have: y <= 9.
+  (* Invariant *)
+  Have: v <= 10.
+  (* Invariant *)
+  Have: v != 10.
+  (* Invariant *)
+  Have: 0 <= v.
+  (* Then *)
+  Have: v <= 9.
+}
+Prove: to_uint32(1 + v) <= 10.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (130ms) (35714)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (22ms) (40)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 17):
+Let x_1 = to_uint32(1 + v).
+Assume {
+  Type: is_uint32(v) /\ is_uint32(w) /\ is_uint32(x) /\ is_uint32(y).
+  (* Then *)
+  Have: w <= 268435454.
+  (* Then *)
+  Have: x <= 9.
+  (* Then *)
+  Have: y <= 9.
+  (* Invariant *)
+  Have: v <= 10.
+  (* Invariant *)
+  Have: v != 10.
+  (* Invariant *)
+  Have: 0 <= v.
+  (* Then *)
+  Have: v <= 9.
+  (* Invariant *)
+  Have: x_1 <= 10.
+}
+Prove: x_1 != 10.
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (3s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (3s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 12) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 12) (2/2):
+Effect at line 14
+Assume {
+  Type: is_uint32(v) /\ is_uint32(w) /\ is_uint32(x) /\ is_uint32(y).
+  (* Then *)
+  Have: w <= 268435454.
+  (* Then *)
+  Have: x <= 9.
+  (* Then *)
+  Have: y <= 9.
+  (* Invariant *)
+  Have: v <= 10.
+  (* Invariant *)
+  Have: v != 10.
+  (* Invariant *)
+  Have: 0 <= v.
+  (* Else *)
+  Have: 10 <= v.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (35404)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (18ms) (18)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c, line 19):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0002/loops-crafted-1_nested5-1_loop_assigns.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

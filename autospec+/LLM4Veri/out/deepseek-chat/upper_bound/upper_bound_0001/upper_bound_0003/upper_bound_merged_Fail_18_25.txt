@@ -1,0 +1,667 @@
+[kernel] Parsing out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 25 goals scheduled
+[wp] [Timeout] typed_upper_bound_loop_invariant_established (Qed 1ms) (Z3 8s)
+[wp] [Timeout] typed_upper_bound_loop_invariant_2_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_upper_bound_loop_invariant_4_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_upper_bound_loop_invariant_5_preserved (Qed 25ms) (Z3 8s)
+[wp] [Timeout] typed_upper_bound_loop_invariant_5_established (Qed 4ms) (Z3 8s)
+[wp] [Timeout] typed_upper_bound_loop_invariant_6_preserved (Qed 29ms) (Z3 8s)
+[wp] [Timeout] typed_upper_bound_loop_invariant_7_preserved (Qed 33ms) (Z3 8s)
+[wp] Proved goals:   18 / 25
+  Qed:            14
+  Alt-Ergo :       4 (31ms-55ms)
+  Timeout:         7
+------------------------------------------------------------
+  Function upper_bound
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 67):
+Prove: true.
+Prover Qed returns Valid (18ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 67):
+Let x = Mint_0[shift_sint32(a, right_0)].
+Assume {
+  Type: is_uint32(right_0) /\ is_sint32(v) /\ is_sint32(x).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+}
+Prove: v <= x.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 68):
+Prove: true.
+Prover Qed returns Valid (24ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 68):
+Let x = Mint_0[shift_sint32(a, right_0)].
+Assume {
+  Type: is_uint32(right_0) /\ is_sint32(v) /\ is_sint32(x).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: v <= x.
+}
+Prove: v < x.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 69):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 69):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 70):
+Let x = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_1 = Mint_0[shift_sint32(a, right_0)].
+Let x_2 = Mint_0[shift_sint32(a, -1)].
+Let x_3 = Mint_0[shift_sint32(a, n)].
+Let x_4 = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_5 = Mint_0[shift_sint32(a, x_4)].
+Let x_6 = Mint_0[shift_sint32(a, to_uint32(1 + x_4) - 1)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(n) /\ is_uint32(right_0) /\
+      is_sint32(v) /\ is_sint32(x_2) /\ is_sint32(x_3) /\ is_sint32(x_1) /\
+      is_sint32(x) /\ is_sint32(x_5) /\ is_sint32(x_6).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_5 <= v.
+  (* Invariant *)
+  Have: v <= x_3.
+  (* Invariant *)
+  Have: v < x_3.
+  (* Invariant *)
+  Have: x_2 <= v.
+  (* Invariant *)
+  Have: x_2 < v.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: v <= x_1.
+  (* Invariant *)
+  Have: v < x_1.
+  (* Invariant *)
+  Have: x <= v.
+  (* Invariant *)
+  Have: x < v.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Invariant *)
+  Have: left_0 <= n.
+  (* Then *)
+  Have: left_0 < right_0.
+}
+Prove: x_6 <= v.
+Prover Alt-Ergo  returns Valid (Qed:21ms) (55ms) (304)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 70):
+Let x = Mint_0[shift_sint32(a, n)].
+Let x_1 = Mint_0[shift_sint32(a, -1)].
+Assume {
+  Type: is_uint32(n) /\ is_sint32(v) /\ is_sint32(x_1) /\ is_sint32(x).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: v <= x.
+  (* Invariant *)
+  Have: v < x.
+}
+Prove: x_1 <= v.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 71):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = Mint_0[shift_sint32(a, to_uint32(1 + x) - 1)].
+Let x_2 = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_3 = Mint_0[shift_sint32(a, right_0)].
+Let x_4 = Mint_0[shift_sint32(a, -1)].
+Let x_5 = Mint_0[shift_sint32(a, n)].
+Let x_6 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(n) /\ is_uint32(right_0) /\
+      is_sint32(v) /\ is_sint32(x_4) /\ is_sint32(x_5) /\ is_sint32(x_3) /\
+      is_sint32(x_2) /\ is_sint32(x_6) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_6 <= v.
+  (* Invariant *)
+  Have: v <= x_5.
+  (* Invariant *)
+  Have: v < x_5.
+  (* Invariant *)
+  Have: x_4 <= v.
+  (* Invariant *)
+  Have: x_4 < v.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: v <= x_3.
+  (* Invariant *)
+  Have: v < x_3.
+  (* Invariant *)
+  Have: x_2 <= v.
+  (* Invariant *)
+  Have: x_2 < v.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Invariant *)
+  Have: left_0 <= n.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: x_1 <= v.
+}
+Prove: x_1 < v.
+Prover Z3 4.8.12 returns Timeout (Qed:25ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:25ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 71):
+Let x = Mint_0[shift_sint32(a, -1)].
+Let x_1 = Mint_0[shift_sint32(a, n)].
+Assume {
+  Type: is_uint32(n) /\ is_sint32(v) /\ is_sint32(x) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: v <= x_1.
+  (* Invariant *)
+  Have: v < x_1.
+  (* Invariant *)
+  Have: x <= v.
+}
+Prove: x < v.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 72):
+Let x = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_1 = Mint_0[shift_sint32(a, right_0)].
+Let x_2 = Mint_0
+            [shift_sint32(a,
+               to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2)))].
+Let x_3 = Mint_0[shift_sint32(a, left_1 - 1)].
+Let x_4 = Mint_0[shift_sint32(a, right_1)].
+Let x_5 = Mint_0[shift_sint32(a, -1)].
+Let x_6 = Mint_0[shift_sint32(a, n)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_0) /\ is_uint32(right_1) /\
+      is_sint32(v) /\ is_sint32(x_5) /\ is_sint32(x_6) /\ is_sint32(x_1) /\
+      is_sint32(x_4) /\ is_sint32(x) /\ is_sint32(x_3) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (i < n) /\ (right_0 <= i).
+  (* Invariant *)
+  Have: v <= x_6.
+  (* Invariant *)
+  Have: v < x_6.
+  (* Invariant *)
+  Have: x_5 <= v.
+  (* Invariant *)
+  Have: x_5 < v.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: v <= x_4.
+  (* Invariant *)
+  Have: v < x_4.
+  (* Invariant *)
+  Have: x_3 <= v.
+  (* Invariant *)
+  Have: x_3 < v.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((right_1 <= i_1) ->
+      (v < Mint_0[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < left_1) ->
+      (Mint_0[shift_sint32(a, i_1)] <= v))).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: left_1 <= right_1.
+  (* Invariant *)
+  Have: 0 <= right_1.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Invariant *)
+  Have: left_1 <= n.
+  (* Then *)
+  Have: left_1 < right_1.
+  If x_2 <= v
+  Then {
+    Have: (right_1 = right_0) /\
+        (to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2)) = middle_0).
+    Have: to_uint32(1 + middle_0) = left_0.
+  }
+  Else {
+    Have: (left_1 = left_0) /\
+        (to_uint32(left_0 + (to_uint32(right_1 - left_0) / 2)) = right_0).
+  }
+  (* Invariant *)
+  Have: v <= x_1.
+  (* Invariant *)
+  Have: v < x_1.
+  (* Invariant *)
+  Have: x <= v.
+  (* Invariant *)
+  Have: x < v.
+}
+Prove: v < Mint_0[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Timeout (Qed:29ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:29ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 72):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 73):
+Let x = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_1 = Mint_0[shift_sint32(a, right_0)].
+Let x_2 = Mint_0
+            [shift_sint32(a,
+               to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2)))].
+Let x_3 = Mint_0[shift_sint32(a, left_1 - 1)].
+Let x_4 = Mint_0[shift_sint32(a, right_1)].
+Let x_5 = Mint_0[shift_sint32(a, -1)].
+Let x_6 = Mint_0[shift_sint32(a, n)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_0) /\ is_uint32(right_1) /\
+      is_sint32(v) /\ is_sint32(x_5) /\ is_sint32(x_6) /\ is_sint32(x_1) /\
+      is_sint32(x_4) /\ is_sint32(x) /\ is_sint32(x_3) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i < left_0).
+  (* Invariant *)
+  Have: v <= x_6.
+  (* Invariant *)
+  Have: v < x_6.
+  (* Invariant *)
+  Have: x_5 <= v.
+  (* Invariant *)
+  Have: x_5 < v.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: v <= x_4.
+  (* Invariant *)
+  Have: v < x_4.
+  (* Invariant *)
+  Have: x_3 <= v.
+  (* Invariant *)
+  Have: x_3 < v.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((right_1 <= i_1) ->
+      (v < Mint_0[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < left_1) ->
+      (Mint_0[shift_sint32(a, i_1)] <= v))).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: left_1 <= right_1.
+  (* Invariant *)
+  Have: 0 <= right_1.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Invariant *)
+  Have: left_1 <= n.
+  (* Then *)
+  Have: left_1 < right_1.
+  If x_2 <= v
+  Then {
+    Have: (right_1 = right_0) /\
+        (to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2)) = middle_0).
+    Have: to_uint32(1 + middle_0) = left_0.
+  }
+  Else {
+    Have: (left_1 = left_0) /\
+        (to_uint32(left_0 + (to_uint32(right_1 - left_0) / 2)) = right_0).
+  }
+  (* Invariant *)
+  Have: v <= x_1.
+  (* Invariant *)
+  Have: v < x_1.
+  (* Invariant *)
+  Have: x <= v.
+  (* Invariant *)
+  Have: x < v.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((right_0 <= i_1) ->
+      (v < Mint_0[shift_sint32(a, i_1)]))).
+}
+Prove: Mint_0[shift_sint32(a, i)] <= v.
+Prover Z3 4.8.12 returns Timeout (Qed:33ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:33ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 73):
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 74):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_2 = Mint_0[shift_sint32(a, right_0)].
+Let x_3 = Mint_0[shift_sint32(a, -1)].
+Let x_4 = Mint_0[shift_sint32(a, n)].
+Let x_5 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(n) /\ is_uint32(right_0) /\
+      is_sint32(v) /\ is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(x_2) /\
+      is_sint32(x_1) /\ is_sint32(x_5).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: v < x_5.
+  (* Invariant *)
+  Have: v <= x_4.
+  (* Invariant *)
+  Have: v < x_4.
+  (* Invariant *)
+  Have: x_3 <= v.
+  (* Invariant *)
+  Have: x_3 < v.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: v <= x_2.
+  (* Invariant *)
+  Have: v < x_2.
+  (* Invariant *)
+  Have: x_1 <= v.
+  (* Invariant *)
+  Have: x_1 < v.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Invariant *)
+  Have: left_0 <= n.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((x <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+}
+Prove: x <= n.
+Prover Alt-Ergo  returns Valid (Qed:21ms) (50ms) (326)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 74):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 75):
+Let x = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_1 = Mint_0[shift_sint32(a, right_0)].
+Let x_2 = Mint_0
+            [shift_sint32(a,
+               to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2)))].
+Let x_3 = Mint_0[shift_sint32(a, left_1 - 1)].
+Let x_4 = Mint_0[shift_sint32(a, right_1)].
+Let x_5 = Mint_0[shift_sint32(a, -1)].
+Let x_6 = Mint_0[shift_sint32(a, n)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_0) /\ is_uint32(right_1) /\
+      is_sint32(v) /\ is_sint32(x_5) /\ is_sint32(x_6) /\ is_sint32(x_1) /\
+      is_sint32(x_4) /\ is_sint32(x) /\ is_sint32(x_3) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: v <= x_6.
+  (* Invariant *)
+  Have: v < x_6.
+  (* Invariant *)
+  Have: x_5 <= v.
+  (* Invariant *)
+  Have: x_5 < v.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: v <= x_4.
+  (* Invariant *)
+  Have: v < x_4.
+  (* Invariant *)
+  Have: x_3 <= v.
+  (* Invariant *)
+  Have: x_3 < v.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_1 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_1) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: left_1 <= right_1.
+  (* Invariant *)
+  Have: 0 <= right_1.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Invariant *)
+  Have: left_1 <= n.
+  (* Then *)
+  Have: left_1 < right_1.
+  If x_2 <= v
+  Then {
+    Have: (right_1 = right_0) /\
+        (to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2)) = middle_0).
+    Have: to_uint32(1 + middle_0) = left_0.
+  }
+  Else {
+    Have: (left_1 = left_0) /\
+        (to_uint32(left_0 + (to_uint32(right_1 - left_0) / 2)) = right_0).
+  }
+  (* Invariant *)
+  Have: v <= x_1.
+  (* Invariant *)
+  Have: v < x_1.
+  (* Invariant *)
+  Have: x <= v.
+  (* Invariant *)
+  Have: x < v.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: right_0 <= n.
+}
+Prove: left_0 <= right_0.
+Prover Alt-Ergo  returns Valid (Qed:42ms) (42ms) (220)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 75):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 76):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 76):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 77):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 77):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 78):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = to_uint32(1 + x).
+Let x_2 = Mint_0[shift_sint32(a, x_1 - 1)].
+Let x_3 = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_4 = Mint_0[shift_sint32(a, right_0)].
+Let x_5 = Mint_0[shift_sint32(a, -1)].
+Let x_6 = Mint_0[shift_sint32(a, n)].
+Let x_7 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(n) /\ is_uint32(right_0) /\
+      is_sint32(v) /\ is_sint32(x_5) /\ is_sint32(x_6) /\ is_sint32(x_4) /\
+      is_sint32(x_3) /\ is_sint32(x_7) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_7 <= v.
+  (* Invariant *)
+  Have: v <= x_6.
+  (* Invariant *)
+  Have: v < x_6.
+  (* Invariant *)
+  Have: x_5 <= v.
+  (* Invariant *)
+  Have: x_5 < v.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: v <= x_4.
+  (* Invariant *)
+  Have: v < x_4.
+  (* Invariant *)
+  Have: x_3 <= v.
+  (* Invariant *)
+  Have: x_3 < v.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Invariant *)
+  Have: left_0 <= n.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: x_2 <= v.
+  (* Invariant *)
+  Have: x_2 < v.
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < x_1) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: x_1 <= right_0.
+}
+Prove: x_1 <= n.
+Prover Z3 4.8.12 returns Valid (Qed:26ms) (140ms) (91901)
+Prover Alt-Ergo  returns Valid (Qed:26ms) (31ms) (47)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 78):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 79):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c:62: Warning: 
+  No 'assigns' specification for function 'upper_bound'.
+  Callers assumptions might be imprecise.

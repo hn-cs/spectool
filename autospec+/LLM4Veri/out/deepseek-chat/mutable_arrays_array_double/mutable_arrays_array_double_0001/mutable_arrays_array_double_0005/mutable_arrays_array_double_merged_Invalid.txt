@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/mutable_arrays_array_double/mutable_arrays_array_double_0001/mutable_arrays_array_double_0005/mutable_arrays_array_double_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/mutable_arrays_array_double/mutable_arrays_array_double_0001/mutable_arrays_array_double_0005/mutable_arrays_array_double_merged.c:4: Warning: 
+  unbound logic variable p. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/mutable_arrays_array_double/mutable_arrays_array_double_0001/mutable_arrays_array_double_0005/mutable_arrays_array_double_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

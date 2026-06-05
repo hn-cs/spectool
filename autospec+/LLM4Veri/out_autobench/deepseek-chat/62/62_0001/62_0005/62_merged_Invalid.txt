@@ -1,0 +1,10 @@
+[kernel] Parsing out/deepseek-chat/62/62_0001/62_0005/62_merged.c (with preprocessing)
+[kernel] "/app/LLM4Veri/out/deepseek-chat/62/62_0001/62_0005/62_merged.c":44: User Error: 
+  Can't preprocess annotation: Preprocessor call exited with an error
+  Some annotations will be kept as is
+[kernel:annot-error] out/deepseek-chat/62/62_0001/62_0005/62_merged.c:22: Warning: 
+  lexical error, unexpected block-comment opening
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on file "out/deepseek-chat/62/62_0001/62_0005/62_merged.c" that has
+  errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

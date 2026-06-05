@@ -1,0 +1,44 @@
+#include<limits.h>
+/*@
+assigns \nothing;
+ensures INT_MIN <= \result < INT_MAX;
+*/
+int unknown();
+#include<stdlib.h>
+int SIZE;
+const int MAX = 100000;
+int main()
+{
+	SIZE = unknown();
+	if(SIZE > 1 && SIZE < MAX)
+	{
+		long long i;
+		long long *a = malloc(sizeof(long long)*SIZE);
+		/*@
+		loop invariant i <= SIZE;
+		loop invariant \forall long long k; 0 <= k < i ==> a[k] == k*k;
+		loop invariant \forall integer k; 0 <= k < i ==> a[k] == k*k;
+		loop invariant 0 <= i;
+		loop assigns i;
+		loop assigns a[0..SIZE-1];
+		*/
+		for(i=0; i<SIZE; i++)
+		{
+			a[i] = i*i;
+		}
+		/*@
+		loop invariant \forall long long k; 0 <= k < i ==> a[k] == k*k;
+		loop invariant \exists long long k; 0 <= k < i && a[k] == k*k;
+		loop invariant \forall long long k; i <= k < SIZE ==> a[k] == k*k;
+		loop invariant i <= SIZE;
+		loop invariant 0 <= i;
+		loop assigns i;
+		loop assigns a[0..SIZE-1];
+		*/
+		for(i=0; i<SIZE; i++)
+		{
+			// @ assert(a[i] == i*i);
+		}
+	}
+	return 1;
+}

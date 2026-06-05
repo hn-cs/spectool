@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spectool"
+version = "0.1.0"
+description = "Deterministic toolbox for ACSL spec generation/verification (Frama-C/veri-clang wrapper for Claude Code skills)"
+requires-python = ">=3.8"
+# Intentionally dependency-free: only the Python standard library is used.
+# Frama-C / veri-clang are external binaries provided by the docker image.
+dependencies = []
+
+[project.scripts]
+spectool = "spectool.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["spectool*"]

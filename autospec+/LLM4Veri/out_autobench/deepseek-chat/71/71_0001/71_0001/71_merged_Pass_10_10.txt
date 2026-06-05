@@ -1,0 +1,128 @@
+[kernel] Parsing out/deepseek-chat/71/71_0001/71_0001/71_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/deepseek-chat/71/71_0001/71_0001/71_merged.c:16: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/71/71_0001/71_0001/71_merged.c:4: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 10 goals scheduled
+[wp] Proved goals:   10 / 10
+  Qed:             8
+  Alt-Ergo :       2 (19ms-23ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/71/71_0001/71_0001/71_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (17ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/71/71_0001/71_0001/71_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/71/71_0001/71_0001/71_merged.c, line 10):
+Let x = 36 * y.
+Let x_1 = c_2 + x.
+Let x_2 = c + x.
+Assume {
+  Type: is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(c_2) /\
+      is_sint32(tmp_0) /\ is_sint32(y) /\ is_sint32(x) /\ is_sint32(x_2) /\
+      is_sint32(x_1).
+  (* Goal *)
+  When: 127 <= y.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: 0 <= x_1.
+  (* Invariant *)
+  Have: c_2 <= 36.
+  (* Invariant *)
+  Have: 0 <= c_2.
+  (* Then *)
+  Have: tmp_0 != 0.
+  If c_2 <= 35
+  Then { Have: c_2 = c_1. Have: (1 + c_1) = c. }
+  Else { Have: c = 36. }
+}
+Prove: 0 <= x_2.
+Prover Z3 4.8.12 returns Valid (Qed:19ms) (130ms) (37297)
+Prover Alt-Ergo  returns Valid (Qed:19ms) (23ms) (44)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/71/71_0001/71_0001/71_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/71/71_0001/71_0001/71_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (17ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/71/71_0001/71_0001/71_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/71/71_0001/71_0001/71_merged.c, line 12):
+Let x = 36 * y.
+Let x_1 = c + x.
+Assume {
+  Type: is_sint32(c) /\ is_sint32(tmp_0) /\ is_sint32(y) /\ is_sint32(x) /\
+      is_sint32(1 + c) /\ is_sint32(x_1) /\ is_sint32(1 + c + x).
+  (* Residual *)
+  When: c <= 35.
+  (* Pre-condition *)
+  Have: 127 <= y.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: 0 <= x_1.
+  (* Invariant *)
+  Have: c <= 36.
+  (* Invariant *)
+  Have: 0 <= c.
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: (-1) <= x_1.
+}
+Prove: (-1) <= c.
+Prover Z3 4.8.12 returns Valid (Qed:16ms) (110ms) (36370)
+Prover Alt-Ergo  returns Valid (Qed:16ms) (19ms) (17)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/71/71_0001/71_0001/71_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/71/71_0001/71_0001/71_merged.c, line 13) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/71/71_0001/71_0001/71_merged.c, line 13) (2/2):
+Call Result at line 16
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/71/71_0001/71_0001/71_merged.c:4: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/71/71_0001/71_0001/71_merged.c:16: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

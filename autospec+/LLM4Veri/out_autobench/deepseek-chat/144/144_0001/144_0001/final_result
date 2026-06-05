@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=1, microseconds=48649), 'total_solve_time': datetime.timedelta(microseconds=682855), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 23, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant j == 2*i;', 'loop invariant i <= x;', 'loop invariant 0 <= i;', 'loop assigns j;', 'loop assigns i;'], '2': [], 'MSLines': ['#include <assert.h>\n', 'int unknown1();\n', 'int unknown2();\n', 'int unknown3();\n', 'int unknown4();\n', '\n', '\n', '\n', '/* 2. FUNC CONTRACT */\nvoid main()\n', '{\n', '  int j = 0;\n', '  int i;\n', '  int x = 100;\n', '   \n', '  /* 1. LOOP INVARIANT */\n  for (i = 0; i < x ; i++){\n', '    j = j + 2;\n', '  }\n', '\n', '  //@ assert(j == 2*x);\n', '}\n', '\n', '\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

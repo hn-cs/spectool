@@ -1,0 +1,73 @@
+[kernel] Parsing out/gpt-5.5/code2_8/code2_8_0001/code2_8_0001/code2_8_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/gpt-5.5/code2_8/code2_8_0001/code2_8_0001/code2_8_merged.c:12: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/code2_8/code2_8_0001/code2_8_0001/code2_8_merged.c:5: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 6 goals scheduled
+[wp] Proved goals:    6 / 6
+  Qed:             5
+  Alt-Ergo :       1 (18ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/code2_8/code2_8_0001/code2_8_0001/code2_8_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/code2_8/code2_8_0001/code2_8_0001/code2_8_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/code2_8/code2_8_0001/code2_8_0001/code2_8_merged.c, line 8):
+Let x_2 = 10 + x_1.
+Let x_3 = -x.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(y) /\
+      is_sint32(x_2) /\ is_sint32(x_1 + y - x) /\
+      is_sint32(10 + x_1 + y - x).
+  (* Pre-condition *)
+  Have: (0 <= x) /\ (x <= 10).
+  (* Pre-condition *)
+  Have: (0 <= y) /\ (y <= 10).
+  (* Invariant *)
+  Have: x <= x_1.
+  (* Then *)
+  Have: tmp_0 != 0.
+}
+Prove: x <= x_2.
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (120ms) (36206)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (18ms) (16)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/code2_8/code2_8_0001/code2_8_0001/code2_8_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/code2_8/code2_8_0001/code2_8_0001/code2_8_merged.c, line 9) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/code2_8/code2_8_0001/code2_8_0001/code2_8_merged.c, line 9) (2/2):
+Call Result at line 12
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/code2_8/code2_8_0001/code2_8_0001/code2_8_merged.c:5: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/code2_8/code2_8_0001/code2_8_0001/code2_8_merged.c:12: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

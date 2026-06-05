@@ -1,0 +1,404 @@
+[kernel] Parsing out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 26 goals scheduled
+[wp] [Timeout] typed_count2_loop_invariant_established (Qed 2ms) (Alt-Ergo 8s)
+[wp] [Timeout] typed_count2_loop_invariant_preserved (Qed 8ms) (Z3 8s)
+[wp] Proved goals:   24 / 26
+  Qed:             5
+  Alt-Ergo :      19 (27ms-435ms-8s)
+  Timeout:         2
+------------------------------------------------------------
+  Axiomatic 'Count'
+------------------------------------------------------------
+
+Lemma Count_Empty:
+Assume: 'CountInd_Miss' 'CountInd_Hit' 'CountInd_Empty'
+  'Unchanged_Transitive' 'Unchanged_Symmetric' 'Unchanged_Extend'
+  'Unchanged_Shrink'
+Prove: (n_0<=m_0) -> (is_sint32 v_0)
+       -> ((L_Count_1_ Mint_0 a_0 m_0 n_0 v_0)=0)
+Prover Alt-Ergo  returns Valid (28ms) (32)
+
+------------------------------------------------------------
+
+Lemma Count_Hit:
+Assume: 'Count_Empty' 'CountInd_Miss' 'CountInd_Hit' 'CountInd_Empty'
+  'Unchanged_Transitive' 'Unchanged_Symmetric' 'Unchanged_Extend'
+  'Unchanged_Shrink'
+Prove: let x_0 = (n_0-1) in
+       let x_1 = Mint_0[(shift_sint32 a_0 x_0)] in
+       (x_1=v_0) -> (m_0<n_0) -> (is_sint32 v_0) -> (is_sint32 x_1)
+       -> ((1+(L_Count_1_ Mint_0 a_0 m_0 x_0 v_0))=
+           (L_Count_1_ Mint_0 a_0 m_0 n_0 v_0))
+Prover Alt-Ergo  returns Valid (33ms) (79)
+
+------------------------------------------------------------
+
+Lemma Count_Miss:
+Assume: 'Count_Hit' 'Count_Empty' 'CountInd_Miss' 'CountInd_Hit'
+  'CountInd_Empty' 'Unchanged_Transitive' 'Unchanged_Symmetric'
+  'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: let x_0 = (n_0-1) in
+       let x_1 = Mint_0[(shift_sint32 a_0 x_0)] in
+       (x_1!=v_0) -> (m_0<n_0) -> (is_sint32 v_0) -> (is_sint32 x_1)
+       -> ((L_Count_1_ Mint_0 a_0 m_0 x_0 v_0)=
+           (L_Count_1_ Mint_0 a_0 m_0 n_0 v_0))
+Prover Alt-Ergo  returns Valid (30ms) (105)
+
+------------------------------------------------------------
+
+Lemma Count_One:
+Assume: 'Count_Miss' 'Count_Hit' 'Count_Empty' 'CountInd_Miss' 'CountInd_Hit'
+  'CountInd_Empty' 'Unchanged_Transitive' 'Unchanged_Symmetric'
+  'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: let x_0 = (1+n_0) in
+       (m_0<=n_0) -> (is_sint32 v_0)
+       -> (((L_Count_1_ Mint_0 a_0 m_0 n_0 v_0)+
+            (L_Count_1_ Mint_0 a_0 n_0 x_0 v_0))=
+           (L_Count_1_ Mint_0 a_0 m_0 x_0 v_0))
+Prover Alt-Ergo  returns Valid (39ms) (309)
+
+------------------------------------------------------------
+
+Lemma Count_Single:
+Assume: 'Count_One' 'Count_Miss' 'Count_Hit' 'Count_Empty' 'CountInd_Miss'
+  'CountInd_Hit' 'CountInd_Empty' 'Unchanged_Transitive'
+  'Unchanged_Symmetric' 'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: let x_0 = Mint_1[(shift_sint32 a_0 m_0)] in
+       let x_1 = Mint_0[(shift_sint32 b_0 n_0)] in
+       (x_0=x_1) -> (is_sint32 v_0) -> (is_sint32 x_1) -> (is_sint32 x_0)
+       -> ((L_Count_1_ Mint_1 a_0 m_0 (1+m_0) v_0)=
+           (L_Count_1_ Mint_0 b_0 n_0 (1+n_0) v_0))
+Prover Alt-Ergo  returns Valid (37ms) (236)
+
+------------------------------------------------------------
+
+Lemma Count_Single_Bounds:
+Assume: 'Count_Single' 'Count_One' 'Count_Miss' 'Count_Hit' 'Count_Empty'
+  'CountInd_Miss' 'CountInd_Hit' 'CountInd_Empty' 'Unchanged_Transitive'
+  'Unchanged_Symmetric' 'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: let x_0 = (L_Count_1_ Mint_0 a_0 n_0 (1+n_0) v_0) in
+       (is_sint32 v_0) -> ((0<=x_0) /\ (x_0<=1))
+Prover Alt-Ergo  returns Valid (35ms) (132)
+
+------------------------------------------------------------
+
+Lemma Count_Single_Shift:
+Assume: 'Count_Single_Bounds' 'Count_Single' 'Count_One' 'Count_Miss'
+  'Count_Hit' 'Count_Empty' 'CountInd_Miss' 'CountInd_Hit' 'CountInd_Empty'
+  'Unchanged_Transitive' 'Unchanged_Symmetric' 'Unchanged_Extend'
+  'Unchanged_Shrink'
+Prove: (0<=n_0) -> (is_sint32 v_0)
+       -> ((L_Count_1_ Mint_0 (shift_sint32 a_0 n_0) 0 1 v_0)=
+           (L_Count_1_ Mint_0 a_0 n_0 (1+n_0) v_0))
+Prover Alt-Ergo  returns Valid (93ms) (1595)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Axiomatic 'CountIndImplicit'
+------------------------------------------------------------
+
+Lemma CountInd_Empty:
+Assume: 'Unchanged_Transitive' 'Unchanged_Symmetric' 'Unchanged_Extend'
+  'Unchanged_Shrink'
+Prove: (n_0<=0) -> (is_sint32 v_0) -> (P_CountInd Mint_0 a_0 n_0 v_0 0)
+Prover Z3 4.8.12 returns Valid (130ms) (96191)
+Prover Alt-Ergo  returns Valid (27ms) (29)
+
+------------------------------------------------------------
+
+Lemma CountInd_Hit:
+Assume: 'CountInd_Empty' 'Unchanged_Transitive' 'Unchanged_Symmetric'
+  'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: let x_0 = (n_0-1) in
+       let x_1 = Mint_0[(shift_sint32 a_0 x_0)] in
+       (x_1=v_0) -> (0<n_0) -> (is_sint32 v_0) -> (is_sint32 x_1)
+       -> (P_CountInd Mint_0 a_0 x_0 v_0 sum_0)
+       -> (P_CountInd Mint_0 a_0 n_0 v_0 (1+sum_0))
+Prover Z3 4.8.12 returns Valid (140ms) (97444)
+Prover Alt-Ergo  returns Valid (32ms) (90)
+
+------------------------------------------------------------
+
+Lemma CountInd_Miss:
+Assume: 'CountInd_Hit' 'CountInd_Empty' 'Unchanged_Transitive'
+  'Unchanged_Symmetric' 'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: let x_0 = (n_0-1) in
+       let x_1 = Mint_0[(shift_sint32 a_0 x_0)] in
+       (x_1!=v_0) -> (0<n_0) -> (is_sint32 v_0) -> (is_sint32 x_1)
+       -> (P_CountInd Mint_0 a_0 x_0 v_0 sum_0)
+       -> (P_CountInd Mint_0 a_0 n_0 v_0 sum_0)
+Prover Alt-Ergo  returns Valid (33ms) (109)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Axiomatic 'CountIndLemmas'
+------------------------------------------------------------
+
+Lemma CountInd_Inverse:
+Assume: 'CountInd_Miss' 'CountInd_Hit' 'CountInd_Empty'
+  'Unchanged_Transitive' 'Unchanged_Symmetric' 'Unchanged_Extend'
+  'Unchanged_Shrink'
+Prove: let x_0 = (n_0-1) in
+       let x_1 = Mint_0[(shift_sint32 a_0 x_0)] in
+       (is_sint32 v_0) -> (P_CountInd Mint_0 a_0 n_0 v_0 sum_0)
+       -> (is_sint32 x_1)
+       -> (((sum_0=0) /\ (n_0<=0))
+           \/ ((x_1=v_0) /\ (0<n_0)
+               /\ (P_CountInd Mint_0 a_0 x_0 v_0 (sum_0-1)))
+           \/ ((x_1!=v_0) /\ (0<n_0)
+               /\ (P_CountInd Mint_0 a_0 x_0 v_0 sum_0)))
+Prover Alt-Ergo  returns Valid (40ms) (365)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Axiomatic 'UnchangedLemmas'
+------------------------------------------------------------
+
+Lemma Unchanged_Extend:
+Assume: 'Unchanged_Shrink'
+Prove: let a_1 = (shift_sint32 a_0 n_0) in
+       let x_0 = Mint_1[a_1] in
+       let x_1 = Mint_0[a_1] in
+       (x_0=x_1) -> (P_Unchanged_2_ Mint_0 Mint_1 a_0 n_0) -> (is_sint32 x_1)
+       -> (is_sint32 x_0) -> (P_Unchanged_2_ Mint_0 Mint_1 a_0 (1+n_0))
+Prover Alt-Ergo  returns Valid (31ms) (93)
+
+------------------------------------------------------------
+
+Lemma Unchanged_Shrink:
+Prove: (q_0<=n_0) -> (m_0<=p_0) -> (p_0<=q_0)
+       -> (P_Unchanged_1_ Mint_0 Mint_1 a_0 m_0 n_0)
+       -> (P_Unchanged_1_ Mint_0 Mint_1 a_0 p_0 q_0)
+Prover Alt-Ergo  returns Valid (31ms) (67)
+
+------------------------------------------------------------
+
+Lemma Unchanged_Symmetric:
+Assume: 'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: (P_Unchanged_1_ Mint_1 Mint_0 a_0 m_0 n_0)
+       -> (P_Unchanged_1_ Mint_0 Mint_1 a_0 m_0 n_0)
+Prover Alt-Ergo  returns Valid (30ms) (52)
+
+------------------------------------------------------------
+
+Lemma Unchanged_Transitive:
+Assume: 'Unchanged_Symmetric' 'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: (P_Unchanged_1_ Mint_0 Mint_2 a_0 m_0 n_0)
+       -> (P_Unchanged_1_ Mint_2 Mint_1 a_0 m_0 n_0)
+       -> (P_Unchanged_1_ Mint_0 Mint_1 a_0 m_0 n_0)
+Prover Alt-Ergo  returns Valid (32ms) (59)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function count2
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c, line 151):
+Assume {
+  Type: is_uint32(counted_0) /\ is_uint32(i) /\ is_uint32(n) /\
+      is_sint32(v) /\ is_sint32(Mint_0[shift_sint32(a, i)]).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_CountInd(Mint_0, a, 0, v, 0).
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: counted_0 <= i.
+  (* Invariant *)
+  Have: P_CountInd(Mint_0, a, i, v, counted_0).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+}
+Prove: to_uint32(1 + i) != n.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c, line 151):
+Assume { Type: is_uint32(n). }
+Prove: n != 0.
+Prover Z3 4.8.12 returns Unknown (Qed:2ms)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c, line 152):
+Let x = to_uint32(1 + i).
+Assume {
+  Type: is_uint32(counted_0) /\ is_uint32(i) /\ is_uint32(n) /\
+      is_sint32(v) /\ is_sint32(Mint_0[shift_sint32(a, i)]).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_CountInd(Mint_0, a, 0, v, 0).
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: counted_0 <= i.
+  (* Invariant *)
+  Have: P_CountInd(Mint_0, a, i, v, counted_0).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: x != n.
+}
+Prove: x <= n.
+Prover Alt-Ergo  returns Valid (Qed:8ms) (33ms) (112)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c, line 152):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c, line 153):
+Let x = to_uint32(1 + i).
+Let x_1 = Mint_0[shift_sint32(a, i)].
+Assume {
+  Type: is_uint32(counted_0) /\ is_uint32(counted_1) /\
+      is_uint32(counted_2) /\ is_uint32(i) /\ is_uint32(n) /\ is_sint32(v) /\
+      is_sint32(x_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_CountInd(Mint_0, a, 0, v, 0).
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: counted_2 <= i.
+  (* Invariant *)
+  Have: P_CountInd(Mint_0, a, i, v, counted_2).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x_1 = v
+  Then {
+    Have: counted_2 = counted_1.
+    Have: to_uint32(1 + counted_1) = counted_0.
+  }
+  Else { Have: counted_2 = counted_0. }
+  (* Invariant *)
+  Have: x != n.
+  (* Invariant *)
+  Have: x <= n.
+}
+Prove: counted_0 <= x.
+Prover Alt-Ergo  returns Valid (Qed:11ms) (39ms) (150)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c, line 153):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c, line 154):
+Let x = to_uint32(1 + i).
+Let x_1 = Mint_0[shift_sint32(a, i)].
+Assume {
+  Type: is_uint32(counted_0) /\ is_uint32(counted_1) /\
+      is_uint32(counted_2) /\ is_uint32(i) /\ is_uint32(n) /\ is_sint32(v) /\
+      is_sint32(x_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_CountInd(Mint_0, a, 0, v, 0).
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: counted_2 <= i.
+  (* Invariant *)
+  Have: P_CountInd(Mint_0, a, i, v, counted_2).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x_1 = v
+  Then {
+    Have: counted_2 = counted_1.
+    Have: to_uint32(1 + counted_1) = counted_0.
+  }
+  Else { Have: counted_2 = counted_0. }
+  (* Invariant *)
+  Have: x != n.
+  (* Invariant *)
+  Have: x <= n.
+  (* Invariant *)
+  Have: counted_0 <= x.
+}
+Prove: P_CountInd(Mint_0, a, x, v, counted_0).
+Prover Alt-Ergo  returns Valid (Qed:12ms) (54ms) (452)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c, line 154):
+Assume {
+  Type: is_uint32(n) /\ is_sint32(v).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+}
+Prove: P_CountInd(Mint_0, a, 0, v, 0).
+Prover Alt-Ergo  returns Valid (Qed:3ms) (29ms) (36)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c, line 155):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c, line 155):
+Prove: true.
+Prover Qed returns Valid (0.98ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c, line 156):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/count2/count2_0001/count2_0001/count2_merged.c:147: Warning: 
+  No 'assigns' specification for function 'count2'.
+  Callers assumptions might be imprecise.

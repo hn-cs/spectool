@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/arrays_and_loops_3/arrays_and_loops_3_0001/arrays_and_loops_3_0001/arrays_and_loops_3_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/arrays_and_loops_3/arrays_and_loops_3_0001/arrays_and_loops_3_0001/arrays_and_loops_3_merged.c:4: Warning: 
+  unbound logic variable x. Ignoring logic specification of function func
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/arrays_and_loops_3/arrays_and_loops_3_0001/arrays_and_loops_3_0001/arrays_and_loops_3_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

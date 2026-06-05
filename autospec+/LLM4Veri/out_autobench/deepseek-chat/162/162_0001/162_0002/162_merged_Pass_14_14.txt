@@ -1,0 +1,115 @@
+[kernel] Parsing out/deepseek-chat/162/162_0001/162_0002/162_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/162/162_0001/162_0002/162_merged.c:38: Warning: 
+  Calling function unknown2 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/deepseek-chat/162/162_0001/162_0002/162_merged.c:23: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/162/162_0001/162_0002/162_merged.c:5: Warning: 
+  Neither code nor specification for function unknown1, generating default assigns from the prototype
+[kernel:annot:missing-spec] out/deepseek-chat/162/162_0001/162_0002/162_merged.c:5: Warning: 
+  Neither code nor specification for function unknown2, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 14 goals scheduled
+[wp] Proved goals:   14 / 14
+  Qed:            14
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.65ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.72ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.85ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 34):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 34):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 43):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 16) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 16) (2/3):
+Call Result at line 23
+Prove: true.
+Prover Qed returns Valid (17ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 16) (3/3):
+Call Result at line 38
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 35) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/162/162_0001/162_0002/162_merged.c, line 35) (2/2):
+Call Result at line 38
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/162/162_0001/162_0002/162_merged.c:1: Warning: 
+  No 'assigns' specification for function 'unknown1'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/162/162_0001/162_0002/162_merged.c:2: Warning: 
+  No 'assigns' specification for function 'unknown2'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/162/162_0001/162_0002/162_merged.c:5: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

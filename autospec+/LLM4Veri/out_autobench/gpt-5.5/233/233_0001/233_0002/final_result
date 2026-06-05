@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 2, 'Iteration': 2, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=6, microseconds=623238), 'total_solve_time': datetime.timedelta(seconds=11, microseconds=99773), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 97, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant y > 0 ==> x >= y;', 'loop invariant y == 0 ==> x == 1;', 'loop invariant y <= x;', 'loop invariant y <= 1000;', 'loop invariant x == 1 + (y*(y-1))/2;', 'loop invariant 1 <= x;', 'loop invariant 0 <= y;', 'loop assigns y;', 'loop assigns x;'], '2': [], 'MSLines': ['// Source: E. De Angelis, F. Fioravanti, J. A. Navas, M. Proietti:\n', '// "Verification of Programs by Combining Iterated Specialization with\n', '// Interpolation", HCVS 2014\n', '\n', '#include "assert.h"\n', '\n', '/* 2. FUNC CONTRACT */\nint main() {\n', '    int x = 1;\n', '    int y = 0;\n', '    /* 1. LOOP INVARIANT */\n    while (y < 1000) {\n', '        x = x + y;\n', '        y = y + 1;\n', '    }\n', '    //@ assert(x >= y);\n', '    return 0;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

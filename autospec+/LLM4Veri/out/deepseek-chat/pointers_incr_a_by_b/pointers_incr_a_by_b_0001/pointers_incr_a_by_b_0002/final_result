@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 2, 'Iteration': 2, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=2, microseconds=395416), 'total_solve_time': datetime.timedelta(seconds=10, microseconds=113439), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 76, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': ['requires \\valid(b);', 'requires \\valid(a);', 'ensures \\result == *a;', 'ensures *a == \\old(*a) + \\old(*b);', 'assigns *a;'], '2': [], 'MSLines': ['/* 1. FUNC CONTRACT */\nint incr_a_by_b(int* a, int const* b){\n', '    *a += *b;\n', '    return *a;\n', '}\n', '/* 2. FUNC CONTRACT */\nvoid main() {\n', '    int a = 10;\n', '    int b = 20;\n', '    incr_a_by_b(&a, &b);\n', '    //@ assert a == 30;\n', '    //@ assert b == 20;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

@@ -1,0 +1,331 @@
+[kernel] Parsing out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 25 goals scheduled
+[wp] [Timeout] typed_arraymax_loop_invariant_established (Qed 1ms) (Z3 8s)
+[wp] [Timeout] typed_arraymax_loop_invariant_preserved (Qed 24ms) (Z3 8s)
+[wp] Proved goals:   23 / 25
+  Qed:            20
+  Alt-Ergo :       3 (34ms-50ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function arraymax
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 5):
+Let x = Mint_0[shift_sint32(a, i_1)].
+Let x_1 = Mint_0[shift_sint32(a, 0)].
+Let x_2 = Mint_0[shift_sint32(a, i - 1)].
+Let x_3 = Mint_0[shift_sint32(a, i_2)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\ is_sint32(x_1) /\
+      is_sint32(Mint_0[shift_sint32(a, i)]) /\ is_sint32(x) /\
+      is_sint32(x_3) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Initializer *)
+  Init: x_3 = x_1.
+  (* Invariant *)
+  Have: 2 <= n.
+  (* Invariant *)
+  Have: x_1 <= x_3.
+  (* Invariant *)
+  Have: (i_2 <= 0) /\ (0 <= i_2).
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: x_2 <= x.
+  (* Invariant *)
+  Have: x_1 <= x.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i) ->
+      (Mint_0[shift_sint32(a, i_3)] <= x))).
+  (* Invariant *)
+  Have: (0 <= i_1) /\ (i_1 < i).
+  (* Invariant *)
+  Have: 0 < i.
+}
+Prove: (2 + i) <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:24ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:24ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 5):
+Assume { Type: is_sint32(n). }
+Prove: 2 <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (25ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 13):
+Let x = Mint_0[shift_sint32(a, i_1)].
+Let x_1 = Mint_0[shift_sint32(a, 0)].
+Let x_2 = Mint_0[shift_sint32(a, i - 1)].
+Let x_3 = Mint_0[shift_sint32(a, i_2)].
+Let x_4 = Mint_0[shift_sint32(a, i)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\ is_sint32(x_1) /\
+      is_sint32(x_4) /\ is_sint32(x) /\ is_sint32(x_3) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x < x_4.
+  (* Initializer *)
+  Init: x_3 = x_1.
+  (* Invariant *)
+  Have: 2 <= n.
+  (* Invariant *)
+  Have: x_1 <= x_3.
+  (* Invariant *)
+  Have: (i_2 <= 0) /\ (0 <= i_2).
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: x_2 <= x.
+  (* Invariant *)
+  Have: x_1 <= x.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i) ->
+      (Mint_0[shift_sint32(a, i_3)] <= x))).
+  (* Invariant *)
+  Have: (0 <= i_1) /\ (i_1 < i).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: (2 + i) <= n.
+}
+Prove: x_1 <= x_4.
+Prover Z3 4.8.12 returns Valid (Qed:31ms) (170ms) (87508)
+Prover Alt-Ergo  returns Valid (Qed:31ms) (34ms) (36)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.77ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 14):
+Let x = Mint_0[shift_sint32(a, 0)].
+Let x_1 = Mint_0[shift_sint32(a, i_1)].
+Let x_2 = Mint_0[shift_sint32(a, i_2)].
+Let x_3 = Mint_0[shift_sint32(a, i_1 - 1)].
+Let x_4 = Mint_0[shift_sint32(a, i_3)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(max_0) /\ is_sint32(n) /\
+      is_sint32(1 + i_1) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(x_2) /\ is_sint32(x_4) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Initializer *)
+  Init: x_4 = x.
+  (* Invariant *)
+  Have: 2 <= n.
+  (* Invariant *)
+  Have: x <= x_4.
+  (* Invariant *)
+  Have: (i_3 <= 0) /\ (0 <= i_3).
+  (* Invariant *)
+  Have: i_1 < n.
+  (* Invariant *)
+  Have: x_3 <= x_2.
+  (* Invariant *)
+  Have: x <= x_2.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i_1) ->
+      (Mint_0[shift_sint32(a, i_4)] <= x_2))).
+  (* Invariant *)
+  Have: (0 <= i_2) /\ (i_2 < i_1).
+  (* Invariant *)
+  Have: 0 < i_1.
+  If x_2 < x_1
+  Then { Have: x_1 = max_0. }
+  Else { Have: x_2 = max_0. }
+  (* Invariant *)
+  Have: (2 + i_1) <= n.
+  (* Invariant *)
+  Have: x_1 <= max_0.
+  (* Invariant *)
+  Have: x <= max_0.
+}
+Prove: Mint_0[shift_sint32(a, i)] <= max_0.
+Prover Alt-Ergo  returns Valid (Qed:35ms) (41ms) (177)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 15):
+Let x = Mint_0[shift_sint32(a, 0)].
+Let x_1 = Mint_0[shift_sint32(a, i)].
+Let x_2 = Mint_0[shift_sint32(a, i_1)].
+Let x_3 = Mint_0[shift_sint32(a, i - 1)].
+Let x_4 = Mint_0[shift_sint32(a, i_2)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(max_0) /\ is_sint32(n) /\
+      is_sint32(1 + i) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_4) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Initializer *)
+  Init: x_4 = x.
+  (* Invariant *)
+  Have: 2 <= n.
+  (* Invariant *)
+  Have: x <= x_4.
+  (* Invariant *)
+  Have: (i_2 <= 0) /\ (0 <= i_2).
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: x_3 <= x_2.
+  (* Invariant *)
+  Have: x <= x_2.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i) ->
+      (Mint_0[shift_sint32(a, i_3)] <= x_2))).
+  (* Invariant *)
+  Have: (0 <= i_1) /\ (i_1 < i).
+  (* Invariant *)
+  Have: 0 < i.
+  If x_2 < x_1
+  Then { Have: x_1 = max_0. }
+  Else { Have: x_2 = max_0. }
+  (* Invariant *)
+  Have: (2 + i) <= n.
+  (* Invariant *)
+  Have: x_1 <= max_0.
+  (* Invariant *)
+  Have: x <= max_0.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_3 <= i) -> ((0 <= i_3) ->
+      (Mint_0[shift_sint32(a, i_3)] <= max_0))).
+}
+Prove: exists i_3 : Z. (Mint_0[shift_sint32(a, i_3)] = max_0) /\
+    (i_3 <= i) /\ (0 <= i_3).
+Prover Alt-Ergo  returns Valid (Qed:38ms) (50ms) (138)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c:1: Warning: 
+  No 'assigns' specification for function 'arraymax'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/immutable_array_max/immutable_array_max_0001/immutable_array_max_0005/immutable_array_max_merged.c:27: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

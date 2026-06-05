@@ -1,0 +1,130 @@
+[kernel] Parsing out/deepseek-chat/165/165_0001/165_0001/165_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 24ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_3_established (Qed 2ms) (Z3 8s)
+[wp] Proved goals:    7 / 9
+  Qed:             5
+  Alt-Ergo :       2 (16ms-29ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/165/165_0001/165_0001/165_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/165/165_0001/165_0001/165_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/165/165_0001/165_0001/165_merged.c, line 16):
+Let x = n % 2.
+Let x_1 = 1 + n.
+Assume {
+  Type: is_sint32(b) /\ is_sint32(i) /\ is_sint32(j) /\ is_sint32(j_1) /\
+      is_sint32(j_2) /\ is_sint32(n) /\ is_sint32(x_1) /\ is_sint32(j_2 + x).
+  (* Invariant *)
+  Have: n <= 200.
+  (* Invariant *)
+  Have: (x = 1) <-> (b != 0).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 199.
+  If b != 0
+  Then { Have: j_2 = j. Have: (1 + j + x) = i. }
+  Else { Have: (j_2 = j_1) /\ ((j_2 + x) = i). Have: (1 + j_2) = j. }
+}
+Prove: (j + (x_1 % 2)) = i.
+Prover Z3 4.8.12 returns Timeout (Qed:24ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:24ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/165/165_0001/165_0001/165_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.57ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/165/165_0001/165_0001/165_merged.c, line 17):
+Let x = n % 2.
+Let x_1 = 1 + n.
+Let x_2 = x_1 % 2.
+Assume {
+  Type: is_sint32(n) /\ is_sint32(x_1).
+  (* Invariant *)
+  Have: n <= 200.
+  (* Invariant *)
+  Have: x != 1.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 199.
+  Have: x = (1 + x_2).
+}
+Prove: x_2 = 1.
+Prover Z3 4.8.12 returns Valid (Qed:23ms) (120ms) (36487)
+Prover Alt-Ergo  returns Valid (Qed:23ms) (29ms) (129)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/165/165_0001/165_0001/165_merged.c, line 17):
+Assume { Type: is_sint32(b). }
+Prove: b = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/165/165_0001/165_0001/165_merged.c, line 18):
+Let x = 1 + n.
+Let x_1 = x % 2.
+Let x_2 = n % 2.
+Assume {
+  Type: is_sint32(b) /\ is_sint32(i) /\ is_sint32(j) /\ is_sint32(j_1) /\
+      is_sint32(j_2) /\ is_sint32(n) /\ is_sint32(x) /\
+      is_sint32(j_2 + x_2) /\ is_sint32(j + x_1).
+  (* Invariant *)
+  Have: n <= 200.
+  (* Invariant *)
+  Have: (x_2 = 1) <-> (b != 0).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 199.
+  If b != 0
+  Then {
+    Let x_3 = j + x_1.
+    Have: (x_1 = (1 + x_2)) /\ (x_3 = (1 + i)) /\ (x_3 = (1 + j_2 + x_2)).
+  }
+  Else { Have: (j_2 = j_1) /\ ((1 + j_1) = j) /\ (x_2 = (1 + x_1)). }
+  (* Invariant *)
+  Have: (x_1 = 1) <-> (b = 0).
+}
+Prove: (-1) <= n.
+Prover Alt-Ergo  returns Valid (Qed:20ms) (16ms) (21)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/165/165_0001/165_0001/165_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.73ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/165/165_0001/165_0001/165_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/165/165_0001/165_0001/165_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

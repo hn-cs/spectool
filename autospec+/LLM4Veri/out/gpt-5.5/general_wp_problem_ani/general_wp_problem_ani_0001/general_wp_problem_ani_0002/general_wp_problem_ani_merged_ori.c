@@ -1,0 +1,28 @@
+#include <stdio.h>
+/*@
+requires n <= INT_MAX - 3;
+ensures n >= 7 ==> 3 * (\result - 1) + 4 <= n < 3 * \result + 4;
+ensures n < 7 ==> \result == 1;
+ensures \result >= 1;
+assigns \nothing;
+*/
+int fun(int n) {
+    int i = 7;
+    int x = 1;
+    /*@
+    loop invariant n >= 7 ==> i <= n + 3;
+    loop invariant i == 3 * x + 4;
+    loop invariant 1 <= x;
+    loop assigns x;
+    loop assigns i;
+    */
+    while(i <= n) {
+        x += 1;
+        i += 3;
+    }
+    return x;
+}
+int main() {
+    int a = fun(10);
+    // @ assert a == 3;
+}

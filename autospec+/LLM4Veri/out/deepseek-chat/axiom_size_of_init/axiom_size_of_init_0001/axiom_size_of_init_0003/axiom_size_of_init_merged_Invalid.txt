@@ -1,0 +1,19 @@
+[kernel] Parsing out/deepseek-chat/axiom_size_of_init/axiom_size_of_init_0001/axiom_size_of_init_0003/axiom_size_of_init_merged.c (with preprocessing)
+[kernel] out/deepseek-chat/axiom_size_of_init/axiom_size_of_init_0001/axiom_size_of_init_0003/axiom_size_of_init_merged.c:124: 
+  syntax error:
+  Location: between lines 124 and 131
+  122   size_type
+  123   stack_size(const Stack* s);
+  
+  124   size_type
+  125   /*@
+  126   requires valid: \valid(s);
+  127   requires storage: \valid(a + (0..n-1));
+  128   requires sep: \separated(s, a + (0..n-1));
+  129   requires capacity: n > 0;
+  130   ensures \result == 0;
+  131   assigns s- > obj, s- > capacity, s- > size;
+  
+  132   */
+  133   axiom_size_of_init(Stack* s, value_type* a, size_type n)
+[kernel] Frama-C aborted: invalid user input.

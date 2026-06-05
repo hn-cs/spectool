@@ -1,0 +1,3 @@
+/app/LLM4Veri/out/deepseek-chat/21/21_0001/21_0005/21_merged.c:10:52: warning: trigraph ??) ignored, use -trigraphs to enable [-Wtrigraphs]
+   10 |     loop invariant m == \max(1, ???);
+      |                                                     

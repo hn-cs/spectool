@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=2, microseconds=662207), 'total_solve_time': datetime.timedelta(seconds=3, microseconds=713834), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 104, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1, 1], '1': ['loop invariant i <= \\at(i, Pre);', 'loop invariant f == factorial(\\at(i, Pre) - i);', 'loop invariant f <= SPEC_ULONG_MAX / (i + 1);', 'loop invariant 1 <= f;', 'loop invariant 0 <= i;', 'loop assigns i;', 'loop assigns f;'], '2': ['requires i <= 20; // 20! fits in unsigned long (since 21! > 2^64);', 'ensures \\result == factorial(i);', 'ensures 0 < \\result <= SPEC_ULONG_MAX;', 'assigns \\nothing;'], '3': [], 'MSLines': ['/*@ axiomatic Factorial {\n', '    logic integer factorial(integer i);\n', '    axiom nil:\n', '       factorial(0) == 1;\n', '    axiom step:\n', '       \\forall integer i; i >= 0 ==>\n', '          factorial(i) == factorial(i - 1) * i;\n', '    lemma non_negative:\n', '       \\forall integer i; i >= 0 ==>\n', '          factorial(i) > 0;\n', '    }\n', ' */\n', '#define SPEC_ULONG_MAX 18446744073709551615UL\n', '/* 2. FUNC CONTRACT */\nunsigned long factorial(unsigned i)\n', '{\n', '\tunsigned long f = 1;\n', '\t/* 1. LOOP INVARIANT */\n\twhile (i) {\n', '\t\tf *= i--;\n', '\t}\n', '\treturn f;\n', '}\n', '/* 3. FUNC CONTRACT */\nint main(){\n', '    unsigned long f = factorial(5);\n', '    //@ assert f == 120;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

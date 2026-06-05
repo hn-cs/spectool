@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=2, microseconds=154627), 'total_solve_time': datetime.timedelta(seconds=20, microseconds=156586), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 111, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1, 1], '1': ['loop invariant \\forall integer i; 0 <= i < p ==> a[i] != x;', 'loop invariant 0 <= p;', 'loop assigns p;'], '2': ['requires n >= 0;', 'requires \\valid(a+(0..n-1));', 'ensures \\result == 1 <==> (\\exists integer i; 0 <= i < n && a[i] == x);', 'assigns \\nothing;'], '3': [], 'MSLines': ['/* 2. FUNC CONTRACT */\nint arraysearch(int* a, int x, int n) { \n', '\n', '  /* 1. LOOP INVARIANT */\n  for (int p = 0; p < n; p++) {\n', '    // STart\n', '    if (x == a[p]) \n', '       return 1;\n', '    // End\n', '  }\n', '  return 0;\n', '}\n', '\n', '// write a test\n', '/* 3. FUNC CONTRACT */\nvoid main() {\n', '  int arr[5] = {1, 2, 3, 4, 5};\n', '  int sum = arraysearch(arr, 3, 5);\n', '  //@ assert sum == 1;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

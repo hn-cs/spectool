@@ -1,0 +1,173 @@
+[kernel] Parsing out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c:17: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c:5: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] Proved goals:   11 / 11
+  Qed:             7
+  Alt-Ergo :       4 (17ms-61ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c, line 10):
+Let x_1 = x + y_1 - y.
+Let x_2 = y_1 % 2.
+Let x_3 = x + y_1.
+Let x_4 = 2 + y.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(x_4) /\ is_sint32(x_1).
+  (* Pre-condition *)
+  Have: (y <= x_3) /\ (x_3 <= x_4).
+  (* Pre-condition *)
+  Have: (0 <= y_1) /\ (y_1 <= 2).
+  (* Invariant *)
+  Have: x_2 = (y % 2).
+  (* Invariant *)
+  Have: (x_1 % 2) = (x % 2).
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: tmp_0 != 0.
+}
+Prove: (x_4 % 2) = x_2.
+Prover Z3 4.8.12 returns Valid (Qed:13ms) (190ms) (138970)
+Prover Alt-Ergo  returns Valid (Qed:13ms) (54ms) (406)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.94ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c, line 12):
+Let x_1 = 2 + y_1.
+Let x_2 = y % 2.
+Let x_3 = x + y - y_1.
+Let x_4 = x_3 % 2.
+Let x_5 = x + y.
+Let x_6 = 2 + x.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(x_6) /\ is_sint32(x_1) /\ is_sint32(x_3).
+  (* Pre-condition *)
+  Have: (y_1 <= x_5) /\ (x_5 <= x_1).
+  (* Pre-condition *)
+  Have: (0 <= y) /\ (y <= 2).
+  (* Invariant *)
+  Have: (y_1 % 2) = x_2.
+  (* Invariant *)
+  Have: x_4 = (x % 2).
+  (* Invariant *)
+  Have: 0 <= y_1.
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: (x_1 % 2) = x_2.
+}
+Prove: x_4 = (x_6 % 2).
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (170ms) (128117)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (61ms) (616)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.67ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c, line 13):
+Let x_2 = 2 + x_1.
+Let x_3 = x % 2.
+Let x_4 = -x.
+Let x_5 = 2 + x_1 + y - x.
+Let x_6 = y % 2.
+Let x_7 = x_1 + y - x.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x_1) /\ is_sint32(x) /\ is_sint32(y) /\
+      is_sint32(x_2) /\ is_sint32(x_7) /\ is_sint32(x_5).
+  (* Pre-condition *)
+  Have: (0 <= x) /\ (x <= 2).
+  (* Pre-condition *)
+  Have: (0 <= y) /\ (y <= 2).
+  (* Invariant *)
+  Have: (x_7 % 2) = x_6.
+  (* Invariant *)
+  Have: x_3 = (x_1 % 2).
+  (* Invariant *)
+  Have: x <= (x_1 + y).
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: (x_5 % 2) = x_6.
+  (* Invariant *)
+  Have: (x_2 % 2) = x_3.
+}
+Prove: x <= (2 + x_1 + y).
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (37400)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (18ms) (25)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c, line 22):
+Let x_1 = x + y.
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(x_1).
+  (* Pre-condition *)
+  Have: (0 <= x_1) /\ (x_1 <= 2).
+  (* Pre-condition *)
+  Have: (0 <= y) /\ (y <= 2).
+  (* Invariant *)
+  Have: (y % 2) = 0.
+  (* Invariant *)
+  Have: (x_1 % 2) = (x % 2).
+}
+Prove: x != 4.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (110ms) (34994)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (17ms) (14)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c, line 14) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c, line 14) (2/2):
+Call Result at line 17
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c:5: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/code2_14/code2_14_0001/code2_14_0001/code2_14_merged.c:17: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

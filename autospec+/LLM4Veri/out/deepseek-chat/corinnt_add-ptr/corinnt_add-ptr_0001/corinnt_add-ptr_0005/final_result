@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 5, 'Iteration': 5, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=5, microseconds=419935), 'total_solve_time': datetime.timedelta(seconds=38, microseconds=649671), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 263, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': ['requires \\valid(p) && \\valid(q) && \\valid(r);', 'ensures \\result == *r;', 'ensures *r == \\old(*p) + \\old(*q);', 'assigns *r;'], '2': [], 'MSLines': ['#include <limits.h>\n', '/* 1. FUNC CONTRACT */\nint add(int* p, int* q, int* r){\n', '  int result = *p + *q; \n', '  *r = result;\n', '  return result;\n', '}\n', '/* 2. FUNC CONTRACT */\nint main(){\n', '  int a = 24 ;\n', '  int b = 42 ;\n', '  int res; \n', '  int x;\n', '  x = add(&a, &b, &res) ;\n', '  //@ assert x == a + b ;\n', '  //@ assert x == 66 ;\n', '  x = add(&a, &a, &res) ;\n', '  //@ assert x == a + a ;\n', '  //@ assert x == 48 ;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

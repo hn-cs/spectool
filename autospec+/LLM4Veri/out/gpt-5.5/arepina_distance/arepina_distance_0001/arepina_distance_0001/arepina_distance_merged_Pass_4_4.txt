@@ -1,0 +1,40 @@
+[kernel] Parsing out/gpt-5.5/arepina_distance/arepina_distance_0001/arepina_distance_0001/arepina_distance_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 4 goals scheduled
+[wp] Proved goals:    4 / 4
+  Qed:             2
+  Alt-Ergo :       2 (24ms-28ms)
+------------------------------------------------------------
+  Function distance
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/arepina_distance/arepina_distance_0001/arepina_distance_0001/arepina_distance_merged.c, line 2) in 'distance':
+Assume { Type: is_uint32(a) /\ is_uint32(b). (* Residual *) When: b < a. }
+Prove: (b + to_uint32(a - b)) = a.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (140ms) (34891)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (24ms) (28)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/arepina_distance/arepina_distance_0001/arepina_distance_0001/arepina_distance_merged.c, line 3) in 'distance':
+Assume { Type: is_uint32(a) /\ is_uint32(b). (* Goal *) When: a < b. }
+Prove: (a + to_uint32(b - a)) = b.
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (140ms) (34877)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (28ms) (28)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'distance' (1/2):
+Effect at line 8
+Prove: true.
+Prover Qed returns Valid (0.87ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'distance' (2/2):
+Effect at line 8
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------

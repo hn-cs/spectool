@@ -1,0 +1,1239 @@
+[kernel] Parsing out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 49 goals scheduled
+[wp] [Timeout] typed_binary_search_loop_invariant_established (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_binary_search_loop_invariant_preserved (Qed 38ms) (Z3 8s)
+[wp] [Timeout] typed_binary_search_loop_invariant_5_established (Qed 4ms) (Z3 8s)
+[wp] [Timeout] typed_binary_search_loop_invariant_11_preserved (Qed 31ms) (Z3 8s)
+[wp] [Timeout] typed_binary_search_loop_invariant_11_established (Qed 4ms) (Z3 8s)
+[wp] [Timeout] typed_binary_search_loop_invariant_13_preserved (Qed 31ms) (Z3 8s)
+[wp] [Timeout] typed_binary_search_loop_invariant_14_preserved (Qed 33ms) (Z3 8s)
+[wp] Proved goals:   42 / 49
+  Qed:            33
+  Alt-Ergo :       9 (25ms-49ms)
+  Timeout:         7
+------------------------------------------------------------
+  Function binary_search
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 7):
+Let x = l_1 + ((u_1 - l_1) / 2).
+Let x_1 = Mint_0[shift_sint32(a, x)].
+Let x_2 = 1 + u_2.
+Let x_3 = Mint_0[shift_sint32(a, l_1)].
+Let x_4 = Mint_0[shift_sint32(a, u_1)].
+Let x_5 = Mint_0[shift_sint32(a, 0)].
+Let x_6 = Mint_0[shift_sint32(a, u_2)].
+Let x_7 = Mint_0[shift_sint32(a, l)].
+Let x_8 = Mint_0[shift_sint32(a, u)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(l_1) /\ is_sint32(u) /\ is_sint32(u_1) /\
+      is_sint32(u_2) /\ is_sint32(v) /\ is_sint32(x_2) /\ is_sint32(x_5) /\
+      is_sint32(x_7) /\ is_sint32(x_3) /\ is_sint32(x_8) /\ is_sint32(x_4) /\
+      is_sint32(x_6) /\ is_sint32(x) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: l <= u.
+  (* Invariant *)
+  Have: (x_5 <= v) /\ (v <= x_6).
+  (* Invariant *)
+  Have: 0 <= u_2.
+  (* Invariant *)
+  Have: (-1) <= u_2.
+  (* Invariant *)
+  Have: 0 < u_2.
+  (* Invariant *)
+  Have: (x_3 <= v) /\ (v <= x_4).
+  (* Invariant *)
+  Have: u_1 <= x_2.
+  (* Invariant *)
+  Have: u_1 <= u_2.
+  (* Invariant *)
+  Have: l_1 <= u_1.
+  (* Invariant *)
+  Have: l_1 <= x_2.
+  (* Invariant *)
+  Have: l_1 < u_1.
+  (* Invariant *)
+  Have: l_1 <= u_2.
+  (* Invariant *)
+  Have: forall i : Z. ((u_1 < i) -> ((i <= u_2) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < l_1) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: (-1) <= l_1.
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: 0 <= l_1.
+  (* Else *)
+  Have: x_1 != v.
+  If x_1 < v
+  Then { Have: u_1 = u. Have: (1 + l_1 + ((u - l_1) / 2)) = l. }
+  Else { Have: l_1 = l. Have: (l + ((u_1 - l) / 2)) = (1 + u). }
+}
+Prove: (x_7 <= v) /\ (v <= x_8).
+Prover Z3 4.8.12 returns Timeout (Qed:38ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:38ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 7):
+Let x = n - 1.
+Let x_1 = Mint_0[shift_sint32(a, 0)].
+Let x_2 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_sint32(n) /\ is_sint32(v) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: 0 < n.
+}
+Prove: (x_1 <= v) /\ (v <= x_2).
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 8):
+Let x = (u - l) / 2.
+Let x_1 = l + x - 1.
+Let x_2 = Mint_0[shift_sint32(a, x_1)].
+Let x_3 = l + x.
+Let x_4 = Mint_0[shift_sint32(a, x_3)].
+Let x_5 = 1 + u_1.
+Let x_6 = Mint_0[shift_sint32(a, l)].
+Let x_7 = Mint_0[shift_sint32(a, u)].
+Let x_8 = Mint_0[shift_sint32(a, 0)].
+Let x_9 = Mint_0[shift_sint32(a, u_1)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(u) /\ is_sint32(u_1) /\ is_sint32(v) /\
+      is_sint32(x_5) /\ is_sint32(x_8) /\ is_sint32(x_6) /\ is_sint32(x_7) /\
+      is_sint32(x_9) /\ is_sint32(x_3) /\ is_sint32(x_1) /\ is_sint32(x_4) /\
+      is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: v <= x_4.
+  (* Invariant *)
+  Have: (x_8 <= v) /\ (v <= x_9).
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: 0 < u_1.
+  (* Invariant *)
+  Have: (x_6 <= v) /\ (v <= x_7).
+  (* Invariant *)
+  Have: u <= x_5.
+  (* Invariant *)
+  Have: u <= u_1.
+  (* Invariant *)
+  Have: l <= u.
+  (* Invariant *)
+  Have: l <= x_5.
+  (* Invariant *)
+  Have: l < u.
+  (* Invariant *)
+  Have: l <= u_1.
+  (* Invariant *)
+  Have: forall i : Z. ((u < i) -> ((i <= u_1) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < l) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u.
+  (* Invariant *)
+  Have: (-1) <= l.
+  (* Invariant *)
+  Have: 0 <= u.
+  (* Invariant *)
+  Have: 0 <= l.
+  (* Else *)
+  Have: x_4 != v.
+  (* Invariant *)
+  Have: (((2 + l) <= u) -> (v <= x_2)).
+}
+Prove: x_3 <= (2 + u_1).
+Prover Alt-Ergo  returns Valid (Qed:28ms) (39ms) (194)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.82ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 10):
+Let x = (u - l) / 2.
+Let x_1 = l + x.
+Let x_2 = l + x - 1.
+Let x_3 = Mint_0[shift_sint32(a, x_2)].
+Let x_4 = Mint_0[shift_sint32(a, x_1)].
+Let x_5 = 1 + u_1.
+Let x_6 = Mint_0[shift_sint32(a, l)].
+Let x_7 = Mint_0[shift_sint32(a, u)].
+Let x_8 = Mint_0[shift_sint32(a, 0)].
+Let x_9 = Mint_0[shift_sint32(a, u_1)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(u) /\ is_sint32(u_1) /\ is_sint32(v) /\
+      is_sint32(x_5) /\ is_sint32(x_8) /\ is_sint32(x_6) /\ is_sint32(x_7) /\
+      is_sint32(x_9) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_4) /\
+      is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: v <= x_4.
+  (* Invariant *)
+  Have: (x_8 <= v) /\ (v <= x_9).
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: 0 < u_1.
+  (* Invariant *)
+  Have: (x_6 <= v) /\ (v <= x_7).
+  (* Invariant *)
+  Have: u <= x_5.
+  (* Invariant *)
+  Have: u <= u_1.
+  (* Invariant *)
+  Have: l <= u.
+  (* Invariant *)
+  Have: l <= x_5.
+  (* Invariant *)
+  Have: l < u.
+  (* Invariant *)
+  Have: l <= u_1.
+  (* Invariant *)
+  Have: forall i : Z. ((u < i) -> ((i <= u_1) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < l) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u.
+  (* Invariant *)
+  Have: (-1) <= l.
+  (* Invariant *)
+  Have: 0 <= u.
+  (* Invariant *)
+  Have: 0 <= l.
+  (* Else *)
+  Have: x_4 != v.
+  (* Invariant *)
+  Have: (((2 + l) <= u) -> (v <= x_3)).
+  (* Invariant *)
+  Have: x_1 <= (2 + u_1).
+}
+Prove: x_1 <= x_5.
+Prover Z3 4.8.12 returns Valid (Qed:28ms) (150ms) (93518)
+Prover Alt-Ergo  returns Valid (Qed:28ms) (41ms) (188)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.90ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 11):
+Let x = 1 + u_2.
+Let x_1 = Mint_0[shift_sint32(a, l)].
+Let x_2 = Mint_0[shift_sint32(a, u)].
+Let x_3 = l_1 + ((u_1 - l_1) / 2).
+Let x_4 = Mint_0[shift_sint32(a, x_3)].
+Let x_5 = Mint_0[shift_sint32(a, l_1)].
+Let x_6 = Mint_0[shift_sint32(a, u_1)].
+Let x_7 = Mint_0[shift_sint32(a, 0)].
+Let x_8 = Mint_0[shift_sint32(a, u_2)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(l_1) /\ is_sint32(u) /\ is_sint32(u_1) /\
+      is_sint32(u_2) /\ is_sint32(v) /\ is_sint32(x) /\ is_sint32(x_7) /\
+      is_sint32(x_1) /\ is_sint32(x_5) /\ is_sint32(x_2) /\ is_sint32(x_6) /\
+      is_sint32(x_8) /\ is_sint32(x_3) /\ is_sint32(x_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: (x_7 <= v) /\ (v <= x_8).
+  (* Invariant *)
+  Have: 0 <= u_2.
+  (* Invariant *)
+  Have: (-1) <= u_2.
+  (* Invariant *)
+  Have: 0 < u_2.
+  (* Invariant *)
+  Have: (x_5 <= v) /\ (v <= x_6).
+  (* Invariant *)
+  Have: u_1 <= x.
+  (* Invariant *)
+  Have: u_1 <= u_2.
+  (* Invariant *)
+  Have: l_1 <= u_1.
+  (* Invariant *)
+  Have: l_1 <= x.
+  (* Invariant *)
+  Have: l_1 < u_1.
+  (* Invariant *)
+  Have: l_1 <= u_2.
+  (* Invariant *)
+  Have: forall i : Z. ((u_1 < i) -> ((i <= u_2) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < l_1) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: (-1) <= l_1.
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: 0 <= l_1.
+  (* Else *)
+  Have: x_4 != v.
+  If x_4 < v
+  Then { Have: u_1 = u. Have: (1 + l_1 + ((u - l_1) / 2)) = l. }
+  Else { Have: l_1 = l. Have: (l + ((u_1 - l) / 2)) = (1 + u). }
+  (* Invariant *)
+  Have: ((l <= u) -> ((x_1 <= v) /\ (v <= x_2))).
+  (* Invariant *)
+  Have: u <= x.
+  (* Invariant *)
+  Have: u <= u_2.
+}
+Prove: l <= u.
+Prover Alt-Ergo  returns Valid (Qed:33ms) (49ms) (321)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 11):
+Let x = Mint_0[shift_sint32(a, 0)].
+Let x_1 = n - 1.
+Let x_2 = Mint_0[shift_sint32(a, x_1)].
+Assume {
+  Type: is_sint32(n) /\ is_sint32(v) /\ is_sint32(x_1) /\ is_sint32(x) /\
+      is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: ((0 < n) -> ((x <= v) /\ (v <= x_2))).
+}
+Prove: 0 < n.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 16):
+Let x = (u - l) / 2.
+Let x_1 = l + x.
+Let x_2 = 1 + l + x.
+Let x_3 = Mint_0[shift_sint32(a, x_2)].
+Let x_4 = 1 + u_1.
+Let x_5 = Mint_0[shift_sint32(a, l)].
+Let x_6 = Mint_0[shift_sint32(a, u)].
+Let x_7 = Mint_0[shift_sint32(a, 0)].
+Let x_8 = Mint_0[shift_sint32(a, u_1)].
+Let x_9 = Mint_0[shift_sint32(a, x_1)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(u) /\ is_sint32(u_1) /\ is_sint32(v) /\
+      is_sint32(x_4) /\ is_sint32(x_7) /\ is_sint32(x_5) /\ is_sint32(x_6) /\
+      is_sint32(x_8) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_9) /\
+      is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_9 < v.
+  (* Invariant *)
+  Have: (x_7 <= v) /\ (v <= x_8).
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: 0 < u_1.
+  (* Invariant *)
+  Have: (x_5 <= v) /\ (v <= x_6).
+  (* Invariant *)
+  Have: u <= x_4.
+  (* Invariant *)
+  Have: u <= u_1.
+  (* Invariant *)
+  Have: l <= u.
+  (* Invariant *)
+  Have: l <= x_4.
+  (* Invariant *)
+  Have: l < u.
+  (* Invariant *)
+  Have: l <= u_1.
+  (* Invariant *)
+  Have: forall i : Z. ((u < i) -> ((i <= u_1) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < l) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u.
+  (* Invariant *)
+  Have: (-1) <= l.
+  (* Invariant *)
+  Have: 0 <= u.
+  (* Invariant *)
+  Have: 0 <= l.
+  (* Invariant *)
+  Have: x_3 <= v.
+  (* Invariant *)
+  Have: x_1 < u.
+}
+Prove: x_1 <= u_1.
+Prover Z3 4.8.12 returns Valid (Qed:26ms) (130ms) (91413)
+Prover Alt-Ergo  returns Valid (Qed:26ms) (25ms) (52)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 17):
+Let x = 1 + u_2.
+Let x_1 = Mint_0[shift_sint32(a, l)].
+Let x_2 = Mint_0[shift_sint32(a, u)].
+Let x_3 = l_1 + ((u_1 - l_1) / 2).
+Let x_4 = Mint_0[shift_sint32(a, x_3)].
+Let x_5 = Mint_0[shift_sint32(a, l_1)].
+Let x_6 = Mint_0[shift_sint32(a, u_1)].
+Let x_7 = Mint_0[shift_sint32(a, 0)].
+Let x_8 = Mint_0[shift_sint32(a, u_2)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(l_1) /\ is_sint32(u) /\ is_sint32(u_1) /\
+      is_sint32(u_2) /\ is_sint32(v) /\ is_sint32(x) /\ is_sint32(x_7) /\
+      is_sint32(x_1) /\ is_sint32(x_5) /\ is_sint32(x_2) /\ is_sint32(x_6) /\
+      is_sint32(x_8) /\ is_sint32(x_3) /\ is_sint32(x_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: (x_7 <= v) /\ (v <= x_8).
+  (* Invariant *)
+  Have: 0 <= u_2.
+  (* Invariant *)
+  Have: (-1) <= u_2.
+  (* Invariant *)
+  Have: 0 < u_2.
+  (* Invariant *)
+  Have: (x_5 <= v) /\ (v <= x_6).
+  (* Invariant *)
+  Have: u_1 <= x.
+  (* Invariant *)
+  Have: u_1 <= u_2.
+  (* Invariant *)
+  Have: l_1 <= u_1.
+  (* Invariant *)
+  Have: l_1 <= x.
+  (* Invariant *)
+  Have: l_1 < u_1.
+  (* Invariant *)
+  Have: l_1 <= u_2.
+  (* Invariant *)
+  Have: forall i : Z. ((u_1 < i) -> ((i <= u_2) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < l_1) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: (-1) <= l_1.
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: 0 <= l_1.
+  (* Else *)
+  Have: x_4 != v.
+  If x_4 < v
+  Then { Have: u_1 = u. Have: (1 + l_1 + ((u - l_1) / 2)) = l. }
+  Else { Have: l_1 = l. Have: (l + ((u_1 - l) / 2)) = (1 + u). }
+  (* Invariant *)
+  Have: (x_1 <= v) /\ (v <= x_2).
+  (* Invariant *)
+  Have: u <= x.
+  (* Invariant *)
+  Have: u <= u_2.
+  (* Invariant *)
+  Have: l <= u.
+  (* Invariant *)
+  Have: l <= x.
+}
+Prove: l < u.
+Prover Z3 4.8.12 returns Timeout (Qed:31ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:31ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 17):
+Let x = Mint_0[shift_sint32(a, 0)].
+Let x_1 = n - 1.
+Let x_2 = Mint_0[shift_sint32(a, x_1)].
+Assume {
+  Type: is_sint32(n) /\ is_sint32(v) /\ is_sint32(x_1) /\ is_sint32(x) /\
+      is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: (x <= v) /\ (v <= x_2).
+  (* Invariant *)
+  Have: 0 < n.
+}
+Prove: 2 <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 18):
+Let x = (u - l) / 2.
+Let x_1 = l + x.
+Let x_2 = 1 + l + x.
+Let x_3 = Mint_0[shift_sint32(a, x_2)].
+Let x_4 = 1 + u_1.
+Let x_5 = Mint_0[shift_sint32(a, l)].
+Let x_6 = Mint_0[shift_sint32(a, u)].
+Let x_7 = Mint_0[shift_sint32(a, 0)].
+Let x_8 = Mint_0[shift_sint32(a, u_1)].
+Let x_9 = Mint_0[shift_sint32(a, x_1)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(u) /\ is_sint32(u_1) /\ is_sint32(v) /\
+      is_sint32(x_4) /\ is_sint32(x_7) /\ is_sint32(x_5) /\ is_sint32(x_6) /\
+      is_sint32(x_8) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_9) /\
+      is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_9 < v.
+  (* Invariant *)
+  Have: (x_7 <= v) /\ (v <= x_8).
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: 0 < u_1.
+  (* Invariant *)
+  Have: (x_5 <= v) /\ (v <= x_6).
+  (* Invariant *)
+  Have: u <= x_4.
+  (* Invariant *)
+  Have: u <= u_1.
+  (* Invariant *)
+  Have: l <= u.
+  (* Invariant *)
+  Have: l <= x_4.
+  (* Invariant *)
+  Have: l < u.
+  (* Invariant *)
+  Have: l <= u_1.
+  (* Invariant *)
+  Have: forall i : Z. ((u < i) -> ((i <= u_1) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < l) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u.
+  (* Invariant *)
+  Have: (-1) <= l.
+  (* Invariant *)
+  Have: 0 <= u.
+  (* Invariant *)
+  Have: 0 <= l.
+  (* Invariant *)
+  Have: x_3 <= v.
+  (* Invariant *)
+  Have: x_1 < u.
+  (* Invariant *)
+  Have: x_1 <= u_1.
+  (* Invariant *)
+  Have: (2 + l + x) <= u.
+}
+Prove: x_1 < u_1.
+Prover Alt-Ergo  returns Valid (Qed:29ms) (25ms) (53)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 19):
+Let x = 1 + u_2.
+Let x_1 = Mint_0[shift_sint32(a, l)].
+Let x_2 = Mint_0[shift_sint32(a, u)].
+Let x_3 = l_1 + ((u_1 - l_1) / 2).
+Let x_4 = Mint_0[shift_sint32(a, x_3)].
+Let x_5 = Mint_0[shift_sint32(a, l_1)].
+Let x_6 = Mint_0[shift_sint32(a, u_1)].
+Let x_7 = Mint_0[shift_sint32(a, 0)].
+Let x_8 = Mint_0[shift_sint32(a, u_2)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(l_1) /\ is_sint32(u) /\ is_sint32(u_1) /\
+      is_sint32(u_2) /\ is_sint32(v) /\ is_sint32(x) /\ is_sint32(x_7) /\
+      is_sint32(x_1) /\ is_sint32(x_5) /\ is_sint32(x_2) /\ is_sint32(x_6) /\
+      is_sint32(x_8) /\ is_sint32(x_3) /\ is_sint32(x_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (u < i) /\ (i <= u_2).
+  (* Invariant *)
+  Have: (x_7 <= v) /\ (v <= x_8).
+  (* Invariant *)
+  Have: 0 <= u_2.
+  (* Invariant *)
+  Have: (-1) <= u_2.
+  (* Invariant *)
+  Have: 0 < u_2.
+  (* Invariant *)
+  Have: (x_5 <= v) /\ (v <= x_6).
+  (* Invariant *)
+  Have: u_1 <= x.
+  (* Invariant *)
+  Have: u_1 <= u_2.
+  (* Invariant *)
+  Have: l_1 <= u_1.
+  (* Invariant *)
+  Have: l_1 <= x.
+  (* Invariant *)
+  Have: l_1 < u_1.
+  (* Invariant *)
+  Have: l_1 <= u_2.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((u_1 < i_1) -> ((i_1 <= u_2) ->
+      (v < Mint_0[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < l_1) ->
+      (Mint_0[shift_sint32(a, i_1)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: (-1) <= l_1.
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: 0 <= l_1.
+  (* Else *)
+  Have: x_4 != v.
+  If x_4 < v
+  Then { Have: u_1 = u. Have: (1 + l_1 + ((u - l_1) / 2)) = l. }
+  Else { Have: l_1 = l. Have: (l + ((u_1 - l) / 2)) = (1 + u). }
+  (* Invariant *)
+  Have: (x_1 <= v) /\ (v <= x_2).
+  (* Invariant *)
+  Have: u <= x.
+  (* Invariant *)
+  Have: u <= u_2.
+  (* Invariant *)
+  Have: l <= u.
+  (* Invariant *)
+  Have: l <= x.
+  (* Invariant *)
+  Have: l < u.
+  (* Invariant *)
+  Have: l <= u_2.
+}
+Prove: v < Mint_0[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Timeout (Qed:31ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:31ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 20):
+Let x = 1 + u_2.
+Let x_1 = Mint_0[shift_sint32(a, l)].
+Let x_2 = Mint_0[shift_sint32(a, u)].
+Let x_3 = l_1 + ((u_1 - l_1) / 2).
+Let x_4 = Mint_0[shift_sint32(a, x_3)].
+Let x_5 = Mint_0[shift_sint32(a, l_1)].
+Let x_6 = Mint_0[shift_sint32(a, u_1)].
+Let x_7 = Mint_0[shift_sint32(a, 0)].
+Let x_8 = Mint_0[shift_sint32(a, u_2)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(l_1) /\ is_sint32(u) /\ is_sint32(u_1) /\
+      is_sint32(u_2) /\ is_sint32(v) /\ is_sint32(x) /\ is_sint32(x_7) /\
+      is_sint32(x_1) /\ is_sint32(x_5) /\ is_sint32(x_2) /\ is_sint32(x_6) /\
+      is_sint32(x_8) /\ is_sint32(x_3) /\ is_sint32(x_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i < l).
+  (* Invariant *)
+  Have: (x_7 <= v) /\ (v <= x_8).
+  (* Invariant *)
+  Have: 0 <= u_2.
+  (* Invariant *)
+  Have: (-1) <= u_2.
+  (* Invariant *)
+  Have: 0 < u_2.
+  (* Invariant *)
+  Have: (x_5 <= v) /\ (v <= x_6).
+  (* Invariant *)
+  Have: u_1 <= x.
+  (* Invariant *)
+  Have: u_1 <= u_2.
+  (* Invariant *)
+  Have: l_1 <= u_1.
+  (* Invariant *)
+  Have: l_1 <= x.
+  (* Invariant *)
+  Have: l_1 < u_1.
+  (* Invariant *)
+  Have: l_1 <= u_2.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((u_1 < i_1) -> ((i_1 <= u_2) ->
+      (v < Mint_0[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < l_1) ->
+      (Mint_0[shift_sint32(a, i_1)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: (-1) <= l_1.
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: 0 <= l_1.
+  (* Else *)
+  Have: x_4 != v.
+  If x_4 < v
+  Then { Have: u_1 = u. Have: (1 + l_1 + ((u - l_1) / 2)) = l. }
+  Else { Have: l_1 = l. Have: (l + ((u_1 - l) / 2)) = (1 + u). }
+  (* Invariant *)
+  Have: (x_1 <= v) /\ (v <= x_2).
+  (* Invariant *)
+  Have: u <= x.
+  (* Invariant *)
+  Have: u <= u_2.
+  (* Invariant *)
+  Have: l <= u.
+  (* Invariant *)
+  Have: l <= x.
+  (* Invariant *)
+  Have: l < u.
+  (* Invariant *)
+  Have: l <= u_2.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((u < i_1) -> ((i_1 <= u_2) ->
+      (v < Mint_0[shift_sint32(a, i_1)]))).
+}
+Prove: Mint_0[shift_sint32(a, i)] < v.
+Prover Z3 4.8.12 returns Timeout (Qed:33ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:33ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (0.51ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 21):
+Let x = (u - l) / 2.
+Let x_1 = l + x.
+Let x_2 = 1 + u_1.
+Let x_3 = l + x - 1.
+Let x_4 = Mint_0[shift_sint32(a, x_3)].
+Let x_5 = Mint_0[shift_sint32(a, x_1)].
+Let x_6 = Mint_0[shift_sint32(a, l)].
+Let x_7 = Mint_0[shift_sint32(a, u)].
+Let x_8 = Mint_0[shift_sint32(a, 0)].
+Let x_9 = Mint_0[shift_sint32(a, u_1)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(u) /\ is_sint32(u_1) /\ is_sint32(v) /\
+      is_sint32(x_2) /\ is_sint32(x_8) /\ is_sint32(x_6) /\ is_sint32(x_7) /\
+      is_sint32(x_9) /\ is_sint32(x_1) /\ is_sint32(x_3) /\ is_sint32(x_5) /\
+      is_sint32(x_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: v <= x_5.
+  (* Invariant *)
+  Have: (x_8 <= v) /\ (v <= x_9).
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: 0 < u_1.
+  (* Invariant *)
+  Have: (x_6 <= v) /\ (v <= x_7).
+  (* Invariant *)
+  Have: u <= x_2.
+  (* Invariant *)
+  Have: u <= u_1.
+  (* Invariant *)
+  Have: l <= u.
+  (* Invariant *)
+  Have: l <= x_2.
+  (* Invariant *)
+  Have: l < u.
+  (* Invariant *)
+  Have: l <= u_1.
+  (* Invariant *)
+  Have: forall i : Z. ((u < i) -> ((i <= u_1) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < l) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u.
+  (* Invariant *)
+  Have: (-1) <= l.
+  (* Invariant *)
+  Have: 0 <= u.
+  (* Invariant *)
+  Have: 0 <= l.
+  (* Else *)
+  Have: x_5 != v.
+  (* Invariant *)
+  Have: v <= x_4.
+  (* Invariant *)
+  Have: x_1 <= (2 + u_1).
+  (* Invariant *)
+  Have: x_1 <= x_2.
+  (* Invariant *)
+  Have: (2 + l) <= u.
+  (* Invariant *)
+  Have: (4 + l) <= u.
+  (* Invariant *)
+  Have: forall i : Z. ((i <= u_1) -> ((x_1 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+}
+Prove: 0 <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:32ms) (130ms) (95229)
+Prover Alt-Ergo  returns Valid (Qed:32ms) (38ms) (165)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 25):
+Let x = (u - l) / 2.
+Let x_1 = l + x.
+Let x_2 = 1 + l + x.
+Let x_3 = Mint_0[shift_sint32(a, x_2)].
+Let x_4 = 1 + u_1.
+Let x_5 = Mint_0[shift_sint32(a, l)].
+Let x_6 = Mint_0[shift_sint32(a, u)].
+Let x_7 = Mint_0[shift_sint32(a, 0)].
+Let x_8 = Mint_0[shift_sint32(a, u_1)].
+Let x_9 = Mint_0[shift_sint32(a, x_1)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(u) /\ is_sint32(u_1) /\ is_sint32(v) /\
+      is_sint32(x_4) /\ is_sint32(x_7) /\ is_sint32(x_5) /\ is_sint32(x_6) /\
+      is_sint32(x_8) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_9) /\
+      is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_9 < v.
+  (* Invariant *)
+  Have: (x_7 <= v) /\ (v <= x_8).
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: 0 < u_1.
+  (* Invariant *)
+  Have: (x_5 <= v) /\ (v <= x_6).
+  (* Invariant *)
+  Have: u <= x_4.
+  (* Invariant *)
+  Have: u <= u_1.
+  (* Invariant *)
+  Have: l <= u.
+  (* Invariant *)
+  Have: l <= x_4.
+  (* Invariant *)
+  Have: l < u.
+  (* Invariant *)
+  Have: l <= u_1.
+  (* Invariant *)
+  Have: forall i : Z. ((u < i) -> ((i <= u_1) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < l) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u.
+  (* Invariant *)
+  Have: (-1) <= l.
+  (* Invariant *)
+  Have: 0 <= u.
+  (* Invariant *)
+  Have: 0 <= l.
+  (* Invariant *)
+  Have: x_3 <= v.
+  (* Invariant *)
+  Have: x_1 < u.
+  (* Invariant *)
+  Have: x_1 <= u_1.
+  (* Invariant *)
+  Have: (2 + l + x) <= u.
+  (* Invariant *)
+  Have: x_1 < u_1.
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i <= x_1) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+}
+Prove: (-2) <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:30ms) (140ms) (95019)
+Prover Alt-Ergo  returns Valid (Qed:30ms) (35ms) (165)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 28):
+Let x = (u - l) / 2.
+Let x_1 = l + x.
+Let x_2 = 1 + u_1.
+Let x_3 = l + x - 1.
+Let x_4 = Mint_0[shift_sint32(a, x_3)].
+Let x_5 = Mint_0[shift_sint32(a, x_1)].
+Let x_6 = Mint_0[shift_sint32(a, l)].
+Let x_7 = Mint_0[shift_sint32(a, u)].
+Let x_8 = Mint_0[shift_sint32(a, 0)].
+Let x_9 = Mint_0[shift_sint32(a, u_1)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(u) /\ is_sint32(u_1) /\ is_sint32(v) /\
+      is_sint32(x_2) /\ is_sint32(x_8) /\ is_sint32(x_6) /\ is_sint32(x_7) /\
+      is_sint32(x_9) /\ is_sint32(x_1) /\ is_sint32(x_3) /\ is_sint32(x_5) /\
+      is_sint32(x_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: v <= x_5.
+  (* Invariant *)
+  Have: (x_8 <= v) /\ (v <= x_9).
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: 0 < u_1.
+  (* Invariant *)
+  Have: (x_6 <= v) /\ (v <= x_7).
+  (* Invariant *)
+  Have: u <= x_2.
+  (* Invariant *)
+  Have: u <= u_1.
+  (* Invariant *)
+  Have: l <= u.
+  (* Invariant *)
+  Have: l <= x_2.
+  (* Invariant *)
+  Have: l < u.
+  (* Invariant *)
+  Have: l <= u_1.
+  (* Invariant *)
+  Have: forall i : Z. ((u < i) -> ((i <= u_1) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < l) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u.
+  (* Invariant *)
+  Have: (-1) <= l.
+  (* Invariant *)
+  Have: 0 <= u.
+  (* Invariant *)
+  Have: 0 <= l.
+  (* Else *)
+  Have: x_5 != v.
+  (* Invariant *)
+  Have: v <= x_4.
+  (* Invariant *)
+  Have: x_1 <= (2 + u_1).
+  (* Invariant *)
+  Have: x_1 <= x_2.
+  (* Invariant *)
+  Have: (2 + l) <= u.
+  (* Invariant *)
+  Have: (4 + l) <= u.
+  (* Invariant *)
+  Have: forall i : Z. ((i <= u_1) -> ((x_1 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: 0 <= x_1.
+}
+Prove: 0 < x_1.
+Prover Z3 4.8.12 returns Valid (Qed:29ms) (130ms) (95388)
+Prover Alt-Ergo  returns Valid (Qed:29ms) (29ms) (65)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 29):
+Let x = (u - l) / 2.
+Let x_1 = l + x.
+Let x_2 = 1 + l + x.
+Let x_3 = Mint_0[shift_sint32(a, x_2)].
+Let x_4 = 1 + u_1.
+Let x_5 = Mint_0[shift_sint32(a, l)].
+Let x_6 = Mint_0[shift_sint32(a, u)].
+Let x_7 = Mint_0[shift_sint32(a, 0)].
+Let x_8 = Mint_0[shift_sint32(a, u_1)].
+Let x_9 = Mint_0[shift_sint32(a, x_1)].
+Assume {
+  Type: is_sint32(l) /\ is_sint32(u) /\ is_sint32(u_1) /\ is_sint32(v) /\
+      is_sint32(x_4) /\ is_sint32(x_7) /\ is_sint32(x_5) /\ is_sint32(x_6) /\
+      is_sint32(x_8) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_9) /\
+      is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_9 < v.
+  (* Invariant *)
+  Have: (x_7 <= v) /\ (v <= x_8).
+  (* Invariant *)
+  Have: 0 <= u_1.
+  (* Invariant *)
+  Have: (-1) <= u_1.
+  (* Invariant *)
+  Have: 0 < u_1.
+  (* Invariant *)
+  Have: (x_5 <= v) /\ (v <= x_6).
+  (* Invariant *)
+  Have: u <= x_4.
+  (* Invariant *)
+  Have: u <= u_1.
+  (* Invariant *)
+  Have: l <= u.
+  (* Invariant *)
+  Have: l <= x_4.
+  (* Invariant *)
+  Have: l < u.
+  (* Invariant *)
+  Have: l <= u_1.
+  (* Invariant *)
+  Have: forall i : Z. ((u < i) -> ((i <= u_1) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < l) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+  (* Invariant *)
+  Have: (-1) <= u.
+  (* Invariant *)
+  Have: (-1) <= l.
+  (* Invariant *)
+  Have: 0 <= u.
+  (* Invariant *)
+  Have: 0 <= l.
+  (* Invariant *)
+  Have: x_3 <= v.
+  (* Invariant *)
+  Have: x_1 < u.
+  (* Invariant *)
+  Have: x_1 <= u_1.
+  (* Invariant *)
+  Have: (2 + l + x) <= u.
+  (* Invariant *)
+  Have: x_1 < u_1.
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i <= x_1) ->
+      (Mint_0[shift_sint32(a, i)] < v))).
+  (* Invariant *)
+  Have: (-2) <= x_1.
+}
+Prove: (-1) <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:31ms) (130ms) (95127)
+Prover Alt-Ergo  returns Valid (Qed:31ms) (40ms) (202)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c:4: Warning: 
+  No 'assigns' specification for function 'binary_search'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/nikunjjain02_Arrays_4/nikunjjain02_Arrays_4_0001/nikunjjain02_Arrays_4_0005/nikunjjain02_Arrays_4_merged.c:42: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

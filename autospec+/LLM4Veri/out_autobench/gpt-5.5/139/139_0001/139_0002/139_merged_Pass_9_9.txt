@@ -1,0 +1,85 @@
+[kernel] Parsing out/gpt-5.5/139/139_0001/139_0002/139_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/139/139_0001/139_0002/139_merged.c:30: Warning: 
+  Calling function unknown2 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/gpt-5.5/139/139_0001/139_0002/139_merged.c:23: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/139/139_0001/139_0002/139_merged.c:7: Warning: 
+  Neither code nor specification for function unknown1, generating default assigns from the prototype
+[kernel:annot:missing-spec] out/gpt-5.5/139/139_0001/139_0002/139_merged.c:7: Warning: 
+  Neither code nor specification for function unknown2, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 9 goals scheduled
+[wp] Proved goals:    9 / 9
+  Qed:             9
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/139/139_0001/139_0002/139_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/139/139_0001/139_0002/139_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/139/139_0001/139_0002/139_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/139/139_0001/139_0002/139_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/139/139_0001/139_0002/139_merged.c, line 18) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/139/139_0001/139_0002/139_merged.c, line 18) (2/3):
+Call Result at line 23
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/139/139_0001/139_0002/139_merged.c, line 18) (3/3):
+Call Result at line 30
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/139/139_0001/139_0002/139_merged.c, line 27) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/139/139_0001/139_0002/139_merged.c, line 27) (2/2):
+Call Result at line 30
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/139/139_0001/139_0002/139_merged.c:2: Warning: 
+  No 'assigns' specification for function 'unknown1'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/139/139_0001/139_0002/139_merged.c:3: Warning: 
+  No 'assigns' specification for function 'unknown2'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/139/139_0001/139_0002/139_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

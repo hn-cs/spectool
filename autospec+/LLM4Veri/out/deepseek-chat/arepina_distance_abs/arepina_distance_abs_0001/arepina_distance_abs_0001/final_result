@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 2, 'Iteration': 2, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=3, microseconds=67453), 'total_solve_time': datetime.timedelta(microseconds=383069), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 239, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1], '1': [], 'MSLines': ['#define SPEC_INT_MIN -2147483648\n', '#define SPEC_INT_MAX 2147483647\n', '/* 1. FUNC CONTRACT */\nunsigned distance_abs(int a, int b)\n', '{\n', '   unsigned ua = a < 0 ? -a : a;\n', '   unsigned ub = b < 0 ? -b : b;\n', '   return ua > ub ? ua - ub : ub - ua;\n', '}\n', '#ifdef OUT_OF_TASK\n', '#include <stdio.h>\n', 'int main(void)\n', '{\n', '   int a = distance_abs(3, 30);\n', '   int b = distance_abs(-5, -20);\n', '   int c = distance_abs(7, -10);\n', '   int d = distance_abs(-2, 15);\n', '   //@ assert a == 27;\n', '   //@ assert b == 15;\n', '   //@ assert c == 17;\n', '   //@ assert d == 17;\n', '   return 0;\n', '}\n', '#endif']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

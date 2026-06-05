@@ -1,0 +1,343 @@
+[kernel] Parsing out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:29: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 20 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_4_preserved (Qed 23ms) (Z3 8s) (Stronger, 3 warnings)
+[wp] Proved goals:   19 / 20
+  Qed:            19
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 6):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 7):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 9):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 9):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 10):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 10):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 20):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 20):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 21):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0,
+            havoc(Mint_undef_1,
+              havoc(Mint_undef_2, Mint_0, shift_sint32(a, 0), 100000),
+              shift_sint32(b, 0), 100000), shift_sint32(c, 0), 100000).
+Let a_2 = a_1[shift_sint32(a, i)].
+Let a_3 = a_1[shift_sint32(b, i)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_2) /\ is_sint32(1 + i) /\
+      is_sint32(a_2) /\ is_sint32(a_3).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Invariant *)
+  Have: i_2 <= 100000.
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: 100000 <= i_2.
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i) ->
+      (a_1[shift_sint32(c, i_3)] = 3))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 99999.
+}
+Prove: a_1[shift_sint32(c, i) <- a_2 + a_3][shift_sint32(c, i_1)] = 3.
+Prover Z3 4.8.12 returns Timeout (Qed:23ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:23ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 21):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 22):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (22ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 22):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 11) (1/4):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 11) (2/4):
+Effect at line 15
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 11) (3/4):
+Effect at line 16
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 11) (4/4):
+Effect at line 17
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 23) (1/3):
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 23) (2/3):
+Effect at line 26
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c, line 23) (3/3):
+Effect at line 27
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:6: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:7: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0002/array-cav19_array_init_pair_sum_const_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

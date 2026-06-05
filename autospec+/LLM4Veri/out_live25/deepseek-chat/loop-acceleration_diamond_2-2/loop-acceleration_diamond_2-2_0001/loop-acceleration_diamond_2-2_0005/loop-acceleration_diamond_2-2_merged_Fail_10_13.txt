@@ -1,0 +1,176 @@
+[kernel] Parsing out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 17ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 19ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_3_established (Qed 2ms) (Z3 8s)
+[wp] Proved goals:   10 / 13
+  Qed:             9
+  Alt-Ergo :       1 (35ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 11):
+Let x_1 = x - 18.
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(x - 16) /\ is_sint32(x - 14) /\ is_sint32(x - 12) /\
+      is_sint32(x - 10) /\ is_sint32(x - 8) /\ is_sint32(x - 6) /\
+      is_sint32(x - 4) /\ is_sint32(x - 2) /\ is_sint32(2 + x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Invariant *)
+  Have: (unknown_0 % 2) = 0.
+  (* Invariant *)
+  Have: x <= 126.
+  (* Invariant *)
+  Have: x <= 125.
+  (* Invariant *)
+  Have: (x_1 % 2) = 0.
+  (* Invariant *)
+  Have: 18 <= x.
+  (* Then *)
+  Have: x <= 116.
+}
+Prove: x <= 106.
+Prover Z3 4.8.12 returns Timeout (Qed:17ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:17ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 12):
+Let x_1 = x - 18.
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(x - 16) /\ is_sint32(x - 14) /\ is_sint32(x - 12) /\
+      is_sint32(x - 10) /\ is_sint32(x - 8) /\ is_sint32(x - 6) /\
+      is_sint32(x - 4) /\ is_sint32(x - 2) /\ is_sint32(2 + x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Invariant *)
+  Have: (unknown_0 % 2) = 0.
+  (* Invariant *)
+  Have: x <= 126.
+  (* Invariant *)
+  Have: x <= 125.
+  (* Invariant *)
+  Have: (x_1 % 2) = 0.
+  (* Invariant *)
+  Have: 18 <= x.
+  (* Then *)
+  Have: x <= 116.
+  (* Invariant *)
+  Have: x <= 106.
+}
+Prove: x <= 105.
+Prover Z3 4.8.12 returns Timeout (Qed:19ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:19ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 13):
+Let x_1 = x - 18.
+Let x_2 = 2 + x.
+Assume {
+  Type: is_sint32(unknown_0) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(x - 16) /\ is_sint32(x - 14) /\ is_sint32(x - 12) /\
+      is_sint32(x - 10) /\ is_sint32(x - 8) /\ is_sint32(x - 6) /\
+      is_sint32(x - 4) /\ is_sint32(x - 2) /\ is_sint32(x_2).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Invariant *)
+  Have: (unknown_0 % 2) = 0.
+  (* Invariant *)
+  Have: x <= 126.
+  (* Invariant *)
+  Have: x <= 125.
+  (* Invariant *)
+  Have: (x_1 % 2) = 0.
+  (* Invariant *)
+  Have: 18 <= x.
+  (* Then *)
+  Have: x <= 116.
+  (* Invariant *)
+  Have: x <= 106.
+  (* Invariant *)
+  Have: x <= 105.
+}
+Prove: (x_2 % 2) = 0.
+Prover Alt-Ergo  returns Valid (Qed:24ms) (35ms) (205)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 13):
+Assume {
+  Type: is_sint32(y).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= y) /\ (y <= 2147483646).
+}
+Prove: (y % 2) = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

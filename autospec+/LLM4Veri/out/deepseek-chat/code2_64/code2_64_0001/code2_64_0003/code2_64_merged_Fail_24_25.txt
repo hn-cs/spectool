@@ -1,0 +1,180 @@
+[kernel] Parsing out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 25 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 4ms) (Z3 8s)
+[wp] Proved goals:   24 / 25
+  Qed:            24
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 6):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(10 - x).
+  (* Invariant *)
+  Have: y <= 9.
+  (* Invariant *)
+  Have: y <= 8.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: x <= 11.
+  (* Invariant *)
+  Have: 0 < x.
+  (* Then *)
+  Have: x <= 10.
+}
+Prove: 2 <= x.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.91ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.67ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.73ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.72ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/code2_64/code2_64_0001/code2_64_0003/code2_64_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

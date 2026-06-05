@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 2, 'Iteration': 2, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=39, microseconds=611718), 'total_solve_time': datetime.timedelta(seconds=24, microseconds=800865), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 1242, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1, 1], '1': ['loop invariant i > 1 ==> f == fact(i - 1);', 'loop invariant i == 1 || i <= n + 1;', 'loop invariant i == 1 ==> f == 1;', 'loop invariant f == fact(i - 1);', 'loop invariant \\forall integer k; 1 <= k < i ==> fact(k) >= 1;', 'loop invariant 1 <= i;', 'loop invariant 1 <= f;', 'loop assigns i;', 'loop assigns f;'], '2': ['requires 0 <= n <= 12;', 'ensures n == 5 ==> \\result == 120;', 'ensures \\result >= 1;', 'ensures \\result == fact(n);', 'assigns \\nothing;'], '3': [], 'MSLines': ['#include <stdio.h>\n', '/*@\n', '  axiomatic Factorial {\n', '  logic integer fact(integer n);\n', '  axiom case_n:\n', '    \\forall integer n;\n', '    n >= 1 ==> fact(n) == n*fact(n-1);\n', '  axiom case_0:\n', '    fact(0) == 1;\n', '  }\n', '*/\n', '/* 2. FUNC CONTRACT */\nint factorial(int n) {\n', '  int i = 1;\n', '  int f = 1;\n', '  /* 1. LOOP INVARIANT */\n  while (i <= n)  {\n', '    f = f * i;\n', '    i = i + 1;\n', '  }\n', '  return f;\n', '}\n', '/* 3. FUNC CONTRACT */\nvoid main() {\n', '  int t = factorial(5);\n', '  //@ assert t == 120;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

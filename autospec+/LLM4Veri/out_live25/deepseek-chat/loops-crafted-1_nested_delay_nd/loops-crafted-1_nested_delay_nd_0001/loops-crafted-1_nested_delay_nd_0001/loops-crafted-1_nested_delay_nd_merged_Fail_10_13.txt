@@ -1,0 +1,216 @@
+[kernel] Parsing out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c:11: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c:14: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_3_established (Qed 6ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_5_preserved (Qed 23ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_5_established (Qed 9ms) (Z3 8s)
+[wp] Proved goals:   10 / 13
+  Qed:             8
+  Alt-Ergo :       2 (22ms-335ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 18):
+Assume {
+  Type: is_sint32(SIZE_0) /\ is_sint32(c) /\ is_sint32(last_0) /\
+      is_sint32(last_1) /\ is_sint32(st_0) /\ is_sint32(st_1) /\
+      is_sint32(1 + c).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= last_1) /\ (last_1 <= 2147483646).
+  (* Invariant *)
+  Have: 0 <= SIZE_0.
+  (* Invariant *)
+  Have: SIZE_0 != 0.
+  (* Invariant *)
+  Have: (st_1 = 0) \/ (st_1 = 1).
+  (* Invariant *)
+  Have: (exists i : Z. (0 <= i) /\ (i < c) /\ (last_0 <= i)) <-> (st_1 = 0).
+  (* Invariant *)
+  Have: c <= SIZE_0.
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < c) -> ((last_0 <= i) ->
+      (st_1 = 0)))).
+  (* Invariant *)
+  Have: c != SIZE_0.
+  (* Invariant *)
+  Have: 0 <= c.
+  (* Then *)
+  Have: c < SIZE_0.
+  If last_0 <= c
+  Then { Have: st_0 = 0. }
+  Else { Have: st_1 = st_0. }
+  (* Invariant *)
+  Have: (st_0 = 0) \/ (st_0 = 1).
+}
+Prove: (exists i : Z. (i <= c) /\ (0 <= i) /\ (last_0 <= i)) <-> (st_0 = 0).
+Prover Alt-Ergo  returns Valid (Qed:22ms) (335ms) (3088)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 19):
+Assume {
+  Type: is_sint32(SIZE_0) /\ is_sint32(last_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= last_0) /\ (last_0 <= 2147483646).
+}
+Prove: 0 <= SIZE_0.
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 20):
+Assume {
+  Type: is_sint32(SIZE_0) /\ is_sint32(c) /\ is_sint32(last_0) /\
+      is_sint32(last_1) /\ is_sint32(st_0) /\ is_sint32(1 + c).
+  (* Residual *)
+  When: c < last_0.
+  (* Goal *)
+  When: (i <= c) /\ (0 <= i) /\ (last_0 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= last_1) /\ (last_1 <= 2147483646).
+  (* Invariant *)
+  Have: 0 <= SIZE_0.
+  (* Invariant *)
+  Have: SIZE_0 != 0.
+  (* Invariant *)
+  Have: (st_0 = 0) \/ (st_0 = 1).
+  (* Invariant *)
+  Have: (exists i_1 : Z. (0 <= i_1) /\ (i_1 < c) /\ (last_0 <= i_1)) <->
+      (st_0 = 0).
+  (* Invariant *)
+  Have: c <= SIZE_0.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < c) -> ((last_0 <= i_1) ->
+      (st_0 = 0)))).
+  (* Invariant *)
+  Have: c != SIZE_0.
+  (* Invariant *)
+  Have: 0 <= c.
+  (* Then *)
+  Have: c < SIZE_0.
+  (* Invariant *)
+  Have: (exists i_1 : Z. (i_1 <= c) /\ (0 <= i_1) /\ (last_0 <= i_1)) <->
+      (st_0 = 0).
+}
+Prove: st_0 = 0.
+Prover Alt-Ergo  returns Valid (Qed:21ms) (22ms) (20)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 21):
+Let x = 1 + c.
+Assume {
+  Type: is_sint32(SIZE_0) /\ is_sint32(c) /\ is_sint32(last_0) /\
+      is_sint32(last_1) /\ is_sint32(st_0) /\ is_sint32(st_1) /\
+      is_sint32(x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= last_1) /\ (last_1 <= 2147483646).
+  (* Invariant *)
+  Have: 0 <= SIZE_0.
+  (* Invariant *)
+  Have: SIZE_0 != 0.
+  (* Invariant *)
+  Have: (st_1 = 0) \/ (st_1 = 1).
+  (* Invariant *)
+  Have: (exists i : Z. (0 <= i) /\ (i < c) /\ (last_0 <= i)) <-> (st_1 = 0).
+  (* Invariant *)
+  Have: c <= SIZE_0.
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < c) -> ((last_0 <= i) ->
+      (st_1 = 0)))).
+  (* Invariant *)
+  Have: c != SIZE_0.
+  (* Invariant *)
+  Have: 0 <= c.
+  (* Then *)
+  Have: c < SIZE_0.
+  If last_0 <= c
+  Then { Have: st_0 = 0. }
+  Else { Have: st_1 = st_0. }
+  (* Invariant *)
+  Have: (st_0 = 0) \/ (st_0 = 1).
+  (* Invariant *)
+  Have: (exists i : Z. (i <= c) /\ (0 <= i) /\ (last_0 <= i)) <-> (st_0 = 0).
+  (* Invariant *)
+  Have: forall i : Z. ((i <= c) -> ((0 <= i) -> ((last_0 <= i) ->
+      (st_0 = 0)))).
+}
+Prove: x != SIZE_0.
+Prover Z3 4.8.12 returns Timeout (Qed:23ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:23ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 21):
+Assume {
+  Type: is_sint32(SIZE_0) /\ is_sint32(last_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= last_0) /\ (last_0 <= 2147483646).
+  (* Invariant *)
+  Have: 0 <= SIZE_0.
+}
+Prove: SIZE_0 != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:9ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:9ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_merged.c:9: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

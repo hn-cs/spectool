@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=10, microseconds=967935), 'total_solve_time': datetime.timedelta(seconds=22, microseconds=285388), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 255, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 3, 1], '1': ['loop invariant k == i;', 'loop invariant i <= N;', 'loop invariant \\forall integer j; 0 <= j < i ==> a[j] == j;', 'loop invariant 0 <= i;', 'loop assigns k;', 'loop assigns i;', 'loop assigns a[0..N-1];'], '2': ['loop invariant i <= N;', 'loop invariant \\forall integer j; 0 <= j < N ==> a[j] == j;', 'loop invariant 0 <= i;', 'loop assigns i;'], '3': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result < INT_MAX;\n', '*/\n', 'int unknown();\n', '#include <assert.h>\n', '#define fun main\n', 'int N;\n', '/* 3. FUNC CONTRACT */\nint main() {\n', ' N=unknown();\n', ' if(N>0) {\n', '  int i,k;\n', '  int a[N];\n', '  i=0;\n', '  k=0;\n', '  /* 1. LOOP INVARIANT */\n  while(i < N) {\n', '   a[k]=k;\n', '   i=i+1;\n', '   k=k+1;\n', '  }\n', '  i=0;\n', '  /* 2. LOOP INVARIANT */\n  while(i < N) {\n', '   //@ assert(a[i]==i);\n', '   i=i+1;\n', '  }\n', ' }\n', ' return 0;\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

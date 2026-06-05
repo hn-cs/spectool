@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/heap-data_shared_mem1/heap-data_shared_mem1_0001/heap-data_shared_mem1_0004/heap-data_shared_mem1_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/heap-data_shared_mem1/heap-data_shared_mem1_0001/heap-data_shared_mem1_0004/heap-data_shared_mem1_merged.c:27: Warning: 
+  unexpected token '>'
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/heap-data_shared_mem1/heap-data_shared_mem1_0001/heap-data_shared_mem1_0004/heap-data_shared_mem1_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

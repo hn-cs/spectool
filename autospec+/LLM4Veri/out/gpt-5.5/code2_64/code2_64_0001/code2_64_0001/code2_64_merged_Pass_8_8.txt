@@ -1,0 +1,60 @@
+[kernel] Parsing out/gpt-5.5/code2_64/code2_64_0001/code2_64_0001/code2_64_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] Proved goals:    8 / 8
+  Qed:             8
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/code2_64/code2_64_0001/code2_64_0001/code2_64_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/code2_64/code2_64_0001/code2_64_0001/code2_64_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/code2_64/code2_64_0001/code2_64_0001/code2_64_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/code2_64/code2_64_0001/code2_64_0001/code2_64_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/code2_64/code2_64_0001/code2_64_0001/code2_64_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/code2_64/code2_64_0001/code2_64_0001/code2_64_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/code2_64/code2_64_0001/code2_64_0001/code2_64_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/code2_64/code2_64_0001/code2_64_0001/code2_64_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/code2_64/code2_64_0001/code2_64_0001/code2_64_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

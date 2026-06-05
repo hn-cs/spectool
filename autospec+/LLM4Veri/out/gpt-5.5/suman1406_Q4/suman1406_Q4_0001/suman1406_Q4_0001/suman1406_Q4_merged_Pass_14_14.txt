@@ -1,0 +1,146 @@
+[kernel] Parsing out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c:23: Warning: 
+  Calling function unknown2 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c:6: Warning: 
+  Neither code nor specification for function unknown2, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 14 goals scheduled
+[wp] Proved goals:   14 / 14
+  Qed:            12
+  Alt-Ergo :       2 (26ms-31ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 13):
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(y) /\
+      is_sint32(1 + x) /\ is_sint32(1 + y).
+  (* Residual *)
+  When: (y % 2) = 0.
+  (* Invariant *)
+  Have: y <= 1.
+  (* Invariant *)
+  Have: x <= 1.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: tmp_0 != 0.
+}
+Prove: y <= 0.
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (130ms) (36433)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (26ms) (106)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.53ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 14):
+Let x_1 = 1 + x.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(z) /\ is_sint32(x_1).
+  (* Residual *)
+  When: (x_1 % 2) = 1.
+  (* Invariant *)
+  Have: y_2 <= 1.
+  (* Invariant *)
+  Have: x <= 1.
+  (* Invariant *)
+  Have: 0 <= y_2.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: tmp_0 != 0.
+  If (y_2 % 2) = 0
+  Then { Have: (y_2 = y_1) /\ (z = y_1). Have: (1 + y_1) = y. }
+  Else { Have: y_2 = y. }
+  (* Invariant *)
+  Have: y <= 1.
+}
+Prove: x <= 0.
+Prover Z3 4.8.12 returns Valid (Qed:21ms) (130ms) (38124)
+Prover Alt-Ergo  returns Valid (Qed:21ms) (31ms) (168)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.79ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (19ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.85ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (27ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 18) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c, line 18) (2/2):
+Call Result at line 23
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c:3: Warning: 
+  No 'assigns' specification for function 'unknown2'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/suman1406_Q4/suman1406_Q4_0001/suman1406_Q4_0001/suman1406_Q4_merged.c:6: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

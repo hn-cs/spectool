@@ -1,0 +1,87 @@
+[kernel] Parsing out/deepseek-chat/143/143_0001/143_0001/143_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/143/143_0001/143_0001/143_merged.c:25: Warning: 
+  Calling function unknown2 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/143/143_0001/143_0001/143_merged.c:7: Warning: 
+  Neither code nor specification for function unknown2, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] Proved goals:   11 / 11
+  Qed:            11
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/143/143_0001/143_0001/143_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/143/143_0001/143_0001/143_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/143/143_0001/143_0001/143_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/143/143_0001/143_0001/143_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/143/143_0001/143_0001/143_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/143/143_0001/143_0001/143_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.54ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/143/143_0001/143_0001/143_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (16ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/143/143_0001/143_0001/143_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/143/143_0001/143_0001/143_merged.c, line 37):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/143/143_0001/143_0001/143_merged.c, line 20) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/143/143_0001/143_0001/143_merged.c, line 20) (2/2):
+Call Result at line 25
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/143/143_0001/143_0001/143_merged.c:3: Warning: 
+  No 'assigns' specification for function 'unknown2'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/143/143_0001/143_0001/143_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

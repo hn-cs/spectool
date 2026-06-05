@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 2, 'Iteration': 2, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=14, microseconds=35050), 'total_solve_time': datetime.timedelta(microseconds=920009), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 482, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': ['requires -2147483648 <= 180 - first - second <= 2147483647;', 'requires -2147483467 <= first;', 'ensures \\result == 180 - first - second;', 'assigns \\nothing;'], '2': [], 'MSLines': ['/* 1. FUNC CONTRACT */\nint last_angle(int first, int second){\n', '    return 180 - first - second ;\n', '}\n', '/* 2. FUNC CONTRACT */\nint main(){\n', '    int first = 45;\n', '    int second = 45;\n', '    int result = last_angle(first, second);\n', '    //@ assert result == 90;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

@@ -1,0 +1,429 @@
+[kernel] Parsing out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:12: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:39: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] FRAMAC_SHARE/libc/stdlib.h:394: Warning: 
+  Allocation, initialization and danglingness not yet implemented
+  (allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+[wp] out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 18 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_5_preserved (Qed 27ms) (Z3 8s) (Stronger, 2 warnings)
+[wp] Proved goals:   17 / 18
+  Qed:            14
+  Alt-Ergo :       3 (53ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 21):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 21):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 22):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 22):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 23):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 23):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 24):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 24):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 25):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = havoc(Mint_undef_0, Mint_1, shift_sint32(a, 0), SIZE_0).
+Let x = 1 + i.
+Assume {
+  Type: is_sint32(SIZE_0) /\ is_sint32(i) /\ is_sint32(x).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 < i_1) /\ (i_1 < SIZE_0) /\ (i_1 <= x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= SIZE_0) /\ (SIZE_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= SIZE_0.
+  (* Then *)
+  Have: SIZE_0 <= 99999.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(SIZE_0)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: 0 <= SIZE_0.
+  (* Invariant *)
+  Have: i <= SIZE_0.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i) -> ((i_2 < SIZE_0) ->
+      (a_1[shift_sint32(a, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, i_2)] = 3))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < SIZE_0.
+  If (2 + i) <= SIZE_0
+  Then { Have: a_1 = Mint_2. Have: Mint_2[shift_sint32(a, x) <- 0] = Mint_0.
+  }
+  Else { Have: havoc(Mint_undef_0, Mint_1, shift_sint32(a, 0), x) = Mint_0. }
+}
+Prove: Mint_0[shift_sint32(a, i) <- 3][shift_sint32(a, i_1)] = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:27ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:27ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 25):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.67ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 26):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let x = 1 + i.
+Let m = Mint_0[shift_sint32(a, i) <- 3].
+Let a_1 = havoc(Mint_undef_0, Mint_1, shift_sint32(a, 0), SIZE_0).
+Assume {
+  Type: is_sint32(SIZE_0) /\ is_sint32(i) /\ is_sint32(x).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= SIZE_0) /\ (SIZE_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= SIZE_0.
+  (* Then *)
+  Have: SIZE_0 <= 99999.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(SIZE_0)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: 0 <= SIZE_0.
+  (* Invariant *)
+  Have: i <= SIZE_0.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i) -> ((i_2 < SIZE_0) ->
+      (a_1[shift_sint32(a, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, i_2)] = 3))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < SIZE_0.
+  If (2 + i) <= SIZE_0
+  Then { Have: a_1 = Mint_2. Have: Mint_2[shift_sint32(a, x) <- 0] = Mint_0.
+  }
+  Else { Have: havoc(Mint_undef_0, Mint_1, shift_sint32(a, 0), x) = Mint_0. }
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < SIZE_0) -> ((i_2 <= x) ->
+      (m[shift_sint32(a, i_2)] = 0)))).
+}
+Prove: m[shift_sint32(a, i_1)] = 3.
+Prover Z3 4.8.12 returns Valid (Qed:39ms) (210ms) (141205)
+Prover Alt-Ergo  returns Valid (Qed:39ms) (53ms) (125)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 26):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 27):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 27):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 28) (1/4):
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 28) (2/4):
+Effect at line 31
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 28) (3/4):
+Effect at line 35
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, SIZE_0).
+Let a_3 = shift_sint32(a, i).
+Let x = i - 1.
+Let a_4 = a_2[a_3 <- 0][shift_sint32(a, x) <- 3].
+Assume {
+  Type: is_sint32(SIZE_0) /\ is_sint32(i) /\ is_sint32(x).
+  (* Heap *)
+  Type: linked(Malloc_0) /\ is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= SIZE_0) /\ (SIZE_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= SIZE_0.
+  (* Then *)
+  Have: SIZE_0 <= 99999.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(SIZE_0)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: 0 <= SIZE_0.
+  (* Invariant *)
+  Have: i <= (1 + SIZE_0).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < SIZE_0) -> ((i_1 < i) ->
+      (a_2[shift_sint32(a, i_1)] = 0)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + i_1) <= i) ->
+      (a_2[shift_sint32(a, i_1)] = 3))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= SIZE_0.
+  (* Then *)
+  Have: i < SIZE_0.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 <= i) -> ((i_1 < SIZE_0) ->
+      (a_4[shift_sint32(a, i_1)] = 0)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_4[shift_sint32(a, i_1)] = 3))).
+}
+Prove: included(a_3, 1, a_1, SIZE_0).
+Prover Z3 4.8.12 returns Valid (Qed:12ms) (180ms) (119957)
+Prover Alt-Ergo  returns Valid (Qed:12ms) (52ms) (216)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c, line 28) (4/4):
+Effect at line 37
+out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let x = i - 1.
+Let a_1 = shift_sint32(a, x).
+Let m = Mint_2[a_1 <- 3].
+Let a_2 = shift_sint32(a, 0).
+Let a_3 = havoc(Mint_undef_0, Mint_0, a_2, SIZE_0).
+Assume {
+  Type: is_sint32(SIZE_0) /\ is_sint32(i) /\ is_sint32(x).
+  (* Heap *)
+  Type: linked(Malloc_0) /\ is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_1, 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= SIZE_0) /\ (SIZE_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= SIZE_0.
+  (* Then *)
+  Have: SIZE_0 <= 99999.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(SIZE_0)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: 0 <= SIZE_0.
+  (* Invariant *)
+  Have: i <= (1 + SIZE_0).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < SIZE_0) -> ((i_1 < i) ->
+      (a_3[shift_sint32(a, i_1)] = 0)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + i_1) <= i) ->
+      (a_3[shift_sint32(a, i_1)] = 3))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= SIZE_0.
+  If i < SIZE_0
+  Then { Have: a_3 = Mint_1. Have: Mint_1[shift_sint32(a, i) <- 0] = Mint_2.
+  }
+  Else { Have: a_3 = Mint_2. }
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 <= i) -> ((i_1 < SIZE_0) ->
+      (m[shift_sint32(a, i_1)] = 0)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (m[shift_sint32(a, i_1)] = 3))).
+}
+Prove: included(a_1, 1, a_2, SIZE_0).
+Prover Alt-Ergo  returns Valid (Qed:40ms) (54ms) (295)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-tiling_rew/array-tiling_rew_0001/array-tiling_rew_0001/array-tiling_rew_merged.c:10: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

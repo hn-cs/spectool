@@ -1,0 +1,113 @@
+[kernel] Parsing out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0002/loops-crafted-1_watermelon_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0002/loops-crafted-1_watermelon_merged.c:49: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 10 goals scheduled
+[wp] [Timeout] typed_correct_version_ensures (Qed 10ms) (Z3 8s)
+[wp] Proved goals:    9 / 10
+  Qed:             8
+  Alt-Ergo :       1 (30ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function correct_version
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0002/loops-crafted-1_watermelon_merged.c, line 10) in 'correct_version':
+Assume {
+  Type: is_sint32(correct_version_0) /\ is_sint32(i) /\ is_sint32(w).
+  If w <= 3
+  Else {
+    (* Block In *)
+    Have: (ta_i_0=false).
+    (* Invariant *)
+    Have: (i % 2) = 0.
+    (* Invariant *)
+    Have: 0 <= i.
+    (* Else *)
+    Have: w <= i.
+  }
+}
+Prove: (((w % 2) = 0) /\ (4 <= w)) <-> (correct_version_0 != 0).
+Prover Z3 4.8.12 returns Timeout (Qed:10ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:10ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0002/loops-crafted-1_watermelon_merged.c, line 22):
+Let x = 2 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(w) /\ is_sint32(x).
+  (* Else *)
+  Have: 4 <= w.
+  (* Invariant *)
+  Have: (i % 2) = 0.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < w.
+}
+Prove: (x % 2) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (140ms) (37370)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (30ms) (115)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0002/loops-crafted-1_watermelon_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0002/loops-crafted-1_watermelon_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0002/loops-crafted-1_watermelon_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0002/loops-crafted-1_watermelon_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'correct_version' (1/4):
+Effect at line 17
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'correct_version' (2/4):
+Effect at line 26
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'correct_version' (3/4):
+Effect at line 26
+Prove: true.
+Prover Qed returns Valid (0.57ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'correct_version' (4/4):
+Effect at line 29
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0002/loops-crafted-1_watermelon_merged.c:33: Warning: 
+  No 'assigns' specification for function 'student_version'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0002/loops-crafted-1_watermelon_merged.c:48: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

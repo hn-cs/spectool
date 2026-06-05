@@ -1,0 +1,104 @@
+[kernel] Parsing out/gpt-5.5/226/226_0001/226_0002/226_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 0.79ms) (Z3 8s)
+[wp] Proved goals:    8 / 9
+  Qed:             6
+  Alt-Ergo :       2 (34ms-38ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function div_rem
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/226/226_0001/226_0002/226_merged.c, line 5) in 'div_rem':
+Let x_1 = x % y.
+Assume {
+  Type: is_uint32(x) /\ is_uint32(y).
+  (* Heap *)
+  Type: (region(q.base) <= 0) /\ (region(r.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: y != 0.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, r, 1).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, q, 1).
+}
+Prove: x_1 = to_uint32(x_1).
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (130ms) (78538)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (34ms) (103)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/226/226_0001/226_0002/226_merged.c, line 6) in 'div_rem':
+Assume {
+  Type: is_uint32(x) /\ is_uint32(y).
+  (* Heap *)
+  Type: (region(q.base) <= 0) /\ (region(r.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: y != 0.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, r, 1).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, q, 1).
+}
+Prove: to_uint32(x % y) < y.
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (140ms) (87148)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (38ms) (103)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/226/226_0001/226_0002/226_merged.c, line 7) in 'div_rem' (1/2):
+Effect at line 10
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/226/226_0001/226_0002/226_merged.c, line 7) in 'div_rem' (2/2):
+Effect at line 11
+Prove: true.
+Prover Qed returns Valid (0.92ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/226/226_0001/226_0002/226_merged.c, line 18):
+Assume { Type: is_uint32(q). }
+Prove: q = 3.
+Prover Z3 4.8.12 returns Timeout (Qed:0.79ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.79ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/226/226_0001/226_0002/226_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/226/226_0001/226_0002/226_merged.c, line 2) in 'div_rem'' in 'main' at call 'div_rem' (file out/gpt-5.5/226/226_0001/226_0002/226_merged.c, line 17)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/226/226_0001/226_0002/226_merged.c, line 3) in 'div_rem'' in 'main' at call 'div_rem' (file out/gpt-5.5/226/226_0001/226_0002/226_merged.c, line 17)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/226/226_0001/226_0002/226_merged.c, line 4) in 'div_rem'' in 'main' at call 'div_rem' (file out/gpt-5.5/226/226_0001/226_0002/226_merged.c, line 17)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/226/226_0001/226_0002/226_merged.c:15: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

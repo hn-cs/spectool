@@ -1,0 +1,86 @@
+[kernel] Parsing out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c:14: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c:15: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 5 goals scheduled
+[wp] [Timeout] typed_main_loop_assigns_part4 (Qed 9ms) (Z3 3s)
+[wp] [Timeout] typed_main_loop_assigns_part5 (Qed 7ms) (Z3 3s)
+[wp] Proved goals:    3 / 5
+  Qed:             3
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c, line 17) (1/5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c, line 17) (2/5):
+Effect at line 19
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c, line 17) (3/5):
+Call Result at line 21
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c, line 17) (4/5):
+Effect at line 23
+Assume {
+  Type: is_uint32(N_COL_0) /\ is_uint32(N_LIN_0) /\ is_uint32(j) /\
+      is_sint32(maior_0) /\ is_sint32(maior_1) /\ is_sint32(v).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= maior_1) /\ (maior_1 <= 2147483646).
+  (* Then *)
+  Have: j < N_COL_0.
+  (* Loop assigns ... *)
+  Have: forall i : Z. ((i != j) -> (matriz_0[i] = matriz_1[i])).
+  (* Then *)
+  Have: 0 < N_LIN_0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+  (* Then *)
+  Have: maior_0 <= v.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:9ms) (3s)
+Prover Alt-Ergo  returns Timeout (Qed:9ms) (3s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c, line 17) (5/5):
+Effect at line 19
+Assume {
+  Type: is_uint32(N_COL_0) /\ is_uint32(N_LIN_0) /\ is_uint32(j) /\
+      is_sint32(maior_0) /\ is_sint32(v).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= maior_0) /\ (maior_0 <= 2147483646).
+  (* Then *)
+  Have: j < N_COL_0.
+  (* Loop assigns ... *)
+  Have: forall i : Z. ((i != j) -> (matriz_0[i] = matriz_1[i])).
+  (* Then *)
+  Have: 0 < N_LIN_0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (3s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (3s)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

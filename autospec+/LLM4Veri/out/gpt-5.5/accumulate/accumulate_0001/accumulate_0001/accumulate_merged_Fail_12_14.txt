@@ -1,0 +1,205 @@
+[kernel] Parsing out/gpt-5.5/accumulate/accumulate_0001/accumulate_0001/accumulate_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 14 goals scheduled
+[wp] [Timeout] typed_accumulate_loop_invariant_preserved (Qed 8ms) (Z3 8s)
+[wp] [Timeout] typed_accumulate_loop_invariant_established (Qed 1ms) (Alt-Ergo 8s)
+[wp] Proved goals:   12 / 14
+  Qed:             4
+  Alt-Ergo :       8 (30ms-926ms-8s)
+  Timeout:         2
+------------------------------------------------------------
+  Axiomatic 'Accumulate'
+------------------------------------------------------------
+
+Lemma Accumulate_Init:
+Assume: 'Unchanged_Transitive' 'Unchanged_Symmetric' 'Unchanged_Extend'
+  'Unchanged_Shrink'
+Prove: (n_0<=0) -> (is_sint32 init_0)
+       -> ((L_Accumulate Mint_0 a_0 n_0 init_0)=init_0)
+Prover Z3 4.8.12 returns Valid (160ms) (91043)
+Prover Alt-Ergo  returns Valid (34ms) (32)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Axiomatic 'UnchangedLemmas'
+------------------------------------------------------------
+
+Lemma Unchanged_Extend:
+Assume: 'Unchanged_Shrink'
+Prove: let a_1 = (shift_sint32 a_0 n_0) in
+       let x_0 = Mint_1[a_1] in
+       let x_1 = Mint_0[a_1] in
+       (x_0=x_1) -> (P_Unchanged_2_ Mint_0 Mint_1 a_0 n_0) -> (is_sint32 x_1)
+       -> (is_sint32 x_0) -> (P_Unchanged_2_ Mint_0 Mint_1 a_0 (1+n_0))
+Prover Alt-Ergo  returns Valid (41ms) (93)
+
+------------------------------------------------------------
+
+Lemma Unchanged_Shrink:
+Prove: (q_0<=n_0) -> (m_0<=p_0) -> (p_0<=q_0)
+       -> (P_Unchanged_1_ Mint_0 Mint_1 a_0 m_0 n_0)
+       -> (P_Unchanged_1_ Mint_0 Mint_1 a_0 p_0 q_0)
+Prover Alt-Ergo  returns Valid (30ms) (67)
+
+------------------------------------------------------------
+
+Lemma Unchanged_Symmetric:
+Assume: 'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: (P_Unchanged_1_ Mint_1 Mint_0 a_0 m_0 n_0)
+       -> (P_Unchanged_1_ Mint_0 Mint_1 a_0 m_0 n_0)
+Prover Z3 4.8.12 returns Valid (140ms) (46993)
+Prover Alt-Ergo  returns Valid (32ms) (52)
+
+------------------------------------------------------------
+
+Lemma Unchanged_Transitive:
+Assume: 'Unchanged_Symmetric' 'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: (P_Unchanged_1_ Mint_0 Mint_2 a_0 m_0 n_0)
+       -> (P_Unchanged_1_ Mint_2 Mint_1 a_0 m_0 n_0)
+       -> (P_Unchanged_1_ Mint_0 Mint_1 a_0 m_0 n_0)
+Prover Alt-Ergo  returns Valid (43ms) (59)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function accumulate
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/accumulate/accumulate_0001/accumulate_0001/accumulate_merged.c, line 64):
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(init_0) /\
+      is_sint32(Mint_0[shift_sint32(a, i)]) /\
+      is_sint32(L_Accumulate(Mint_0, a, i, init_0)).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  Have: L_Accumulate(Mint_0, a, 0, init_0) = init_0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+}
+Prove: to_uint32(1 + i) != n.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/accumulate/accumulate_0001/accumulate_0001/accumulate_merged.c, line 64):
+Assume { Type: is_uint32(n). }
+Prove: n != 0.
+Prover Z3 4.8.12 returns Unknown (Qed:1ms)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/accumulate/accumulate_0001/accumulate_0001/accumulate_merged.c, line 65):
+Let x = to_uint32(1 + i).
+Let x_1 = Mint_0[shift_sint32(a, i)].
+Let x_2 = L_Accumulate(Mint_0, a, i, init_0).
+Let x_3 = x_1 + x_2.
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(init_0) /\
+      is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  Have: L_Accumulate(Mint_0, a, 0, init_0) = init_0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: x != n.
+}
+Prove: x_3 = L_Accumulate(Mint_0, a, x, init_0).
+Prover Alt-Ergo  returns Valid (Qed:9ms) (48ms) (115)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/accumulate/accumulate_0001/accumulate_0001/accumulate_merged.c, line 65):
+Assume {
+  Type: is_uint32(n) /\ is_sint32(init_0).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: n != 0.
+}
+Prove: L_Accumulate(Mint_0, a, 0, init_0) = init_0.
+Prover Alt-Ergo  returns Valid (Qed:3ms) (47ms) (32)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/accumulate/accumulate_0001/accumulate_0001/accumulate_merged.c, line 66):
+Let x = to_uint32(1 + i).
+Let x_1 = L_Accumulate(Mint_0, a, i, init_0).
+Let x_2 = Mint_0[shift_sint32(a, i)].
+Let x_3 = x_2 + x_1.
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(init_0) /\
+      is_sint32(x_2) /\ is_sint32(x_1) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  Have: L_Accumulate(Mint_0, a, 0, init_0) = init_0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: x_3 = L_Accumulate(Mint_0, a, x, init_0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: x != n.
+}
+Prove: x <= n.
+Prover Alt-Ergo  returns Valid (Qed:10ms) (56ms) (112)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/accumulate/accumulate_0001/accumulate_0001/accumulate_merged.c, line 66):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/accumulate/accumulate_0001/accumulate_0001/accumulate_merged.c, line 67):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/accumulate/accumulate_0001/accumulate_0001/accumulate_merged.c, line 67):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/accumulate/accumulate_0001/accumulate_0001/accumulate_merged.c, line 68):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/accumulate/accumulate_0001/accumulate_0001/accumulate_merged.c:61: Warning: 
+  No 'assigns' specification for function 'accumulate'.
+  Callers assumptions might be imprecise.

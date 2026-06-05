@@ -1,0 +1,630 @@
+[kernel] Parsing out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: Warning: 
+  Cast with incompatible pointers types (source: sint64*) (target: sint8*)
+[wp] out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+[wp] 30 goals scheduled
+[wp] Proved goals:   30 / 30
+  Qed:            20
+  Alt-Ergo :      10 (16ms-35ms-42ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 12):
+Assume {
+  Type: is_sint32(S).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+}
+Prove: (0 < S) /\ (S <= 2305843009213693951).
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (120ms) (34478)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (16ms) (14)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 14):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 14):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 15):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint64(a, 0), S).
+Let x = 1 + i.
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i) /\ is_sint64(x).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: i <= S.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint64(a, i_2)] = ((i_2 - 1) * (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < S.
+}
+Prove: a_1[shift_sint64(a, i) <- (i - 1) * x][shift_sint64(a, i_1)] =
+    ((i_1 - 1) * (1 + i_1)).
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (160ms) (225013)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (36ms) (254)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 15):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 16):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 16):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 23):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 23):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 24):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, S).
+Let a_3 = havoc(Mint_undef_1, Mint_0, a_1, S).
+Let a_4 = shift_sint64(a, i).
+Let a_5 = a_2[a_4].
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i) /\ is_sint64(i_2) /\ is_sint64(1 + i) /\
+      is_sint64(a_5).
+  (* Goal *)
+  When: (i_1 < S) /\ (i < i_1).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: i_2 <= S.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i_2) ->
+      (a_3[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: S <= i_2.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < S) ->
+      (a_3[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+  (* Invariant *)
+  Have: i <= S.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_3 < S) -> ((i <= i_3) ->
+      (a_2[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i) ->
+      (a_2[shift_sint64(a, i_3)] = (-1)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < S.
+}
+Prove: a_2[a_4 <- a_5 - (i * i)][shift_sint64(a, i_1)] =
+    ((i_1 - 1) * (1 + i_1)).
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (150ms) (119863)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (41ms) (360)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 24):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint64(a, 0), S).
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i < S).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: i_1 <= S.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint64(a, i_2)] = ((i_2 - 1) * (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: S <= i_1.
+}
+Prove: a_1[shift_sint64(a, i)] = ((i - 1) * (1 + i)).
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (140ms) (85355)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (42ms) (54)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 25):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, S).
+Let a_3 = shift_sint64(a, i).
+Let a_4 = a_2[a_3].
+Let a_5 = a_2[a_3 <- a_4 - (i * i)].
+Let a_6 = havoc(Mint_undef_1, Mint_0, a_1, S).
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i) /\ is_sint64(i_2) /\ is_sint64(1 + i) /\
+      is_sint64(a_4).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: i_2 <= S.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i_2) ->
+      (a_6[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: S <= i_2.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < S) ->
+      (a_6[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+  (* Invariant *)
+  Have: i <= S.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_3 < S) -> ((i <= i_3) ->
+      (a_2[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i) ->
+      (a_2[shift_sint64(a, i_3)] = (-1)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < S.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i < i_3) -> ((i_3 < S) ->
+      (a_5[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+}
+Prove: a_5[shift_sint64(a, i_1)] = (-1).
+Prover Alt-Ergo  returns Valid (Qed:11ms) (42ms) (472)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 25):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (0.80ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 26):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 26):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 33):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 33):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 34):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, S).
+Let a_3 = havoc(Mint_undef_1, Mint_0, a_1, S).
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i_1) /\ is_sint64(i_2) /\ is_sint64(i_3) /\
+      is_sint64(1 + i_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i < S).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: i_3 <= S.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i_3) ->
+      (a_3[shift_sint64(a, i_4)] = ((i_4 - 1) * (1 + i_4))))).
+  (* Invariant *)
+  Have: 0 <= i_3.
+  (* Else *)
+  Have: S <= i_3.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < S) ->
+      (a_3[shift_sint64(a, i_4)] = ((i_4 - 1) * (1 + i_4))))).
+  (* Invariant *)
+  Have: i_2 <= S.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((i_4 < S) -> ((i_2 <= i_4) ->
+      (a_2[shift_sint64(a, i_4)] = ((i_4 - 1) * (1 + i_4))))).
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i_2) ->
+      (a_2[shift_sint64(a, i_4)] = (-1)))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: S <= i_2.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < S) ->
+      (a_2[shift_sint64(a, i_4)] = (-1)))).
+  (* Invariant *)
+  Have: i_1 <= S.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < S.
+  (* Assertion *)
+  Have: a_2[shift_sint64(a, i_1)] = (-1).
+}
+Prove: a_2[shift_sint64(a, i)] = (-1).
+Prover Z3 4.8.12 returns Valid (Qed:16ms) (130ms) (91403)
+Prover Alt-Ergo  returns Valid (Qed:16ms) (33ms) (95)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 34):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, S).
+Let a_3 = havoc(Mint_undef_1, Mint_0, a_1, S).
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i_1) /\ is_sint64(i_2).
+  (* Goal *)
+  When: (0 <= i) /\ (i < S).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: i_2 <= S.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i_2) ->
+      (a_3[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: S <= i_2.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < S) ->
+      (a_3[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+  (* Invariant *)
+  Have: i_1 <= S.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_3 < S) -> ((i_1 <= i_3) ->
+      (a_2[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i_1) ->
+      (a_2[shift_sint64(a, i_3)] = (-1)))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: S <= i_1.
+}
+Prove: a_2[shift_sint64(a, i)] = (-1).
+Prover Alt-Ergo  returns Valid (Qed:10ms) (30ms) (71)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 35):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 35):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 39):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, S).
+Let a_3 = havoc(Mint_undef_1, Mint_0, a_1, S).
+Let a_4 = a_2[shift_sint64(a, i)].
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i) /\ is_sint64(i_1) /\ is_sint64(i_2) /\
+      is_sint64(a_4).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: i_2 <= S.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i_2) ->
+      (a_3[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: S <= i_2.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < S) ->
+      (a_3[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+  (* Invariant *)
+  Have: i_1 <= S.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_3 < S) -> ((i_1 <= i_3) ->
+      (a_2[shift_sint64(a, i_3)] = ((i_3 - 1) * (1 + i_3))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i_1) ->
+      (a_2[shift_sint64(a, i_3)] = (-1)))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: S <= i_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < S) ->
+      (a_2[shift_sint64(a, i_3)] = (-1)))).
+  (* Invariant *)
+  Have: i <= S.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < S.
+}
+Prove: a_4 = (-1).
+Prover Z3 4.8.12 returns Valid (Qed:19ms) (140ms) (90841)
+Prover Alt-Ergo  returns Valid (Qed:19ms) (31ms) (79)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 17) (1/3):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 17) (2/3):
+Effect at line 20
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 17) (3/3):
+Effect at line 21
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, S).
+Let x = i - 1.
+Let a_3 = shift_sint64(a, x).
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i) /\ is_sint64(x).
+  (* Heap *)
+  Type: linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: i <= (1 + S).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + i_1) <= i) ->
+      (a_2[shift_sint64(a, i_1)] = ((i_1 - 1) * (1 + i_1))))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= S.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_2[a_3 <- i * (i - 2)][shift_sint64(a, i_1)] =
+       ((i_1 - 1) * (1 + i_1))))).
+}
+Prove: included(a_3, 1, a_1, S).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (140ms) (100175)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (37ms) (160)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 27) (1/3):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 27) (2/3):
+Effect at line 30
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 27) (3/3):
+Effect at line 31
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Let a_1 = shift_sint64(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, S).
+Let x = i - 1.
+Let a_3 = shift_sint64(a, x).
+Let a_4 = a_2[a_3].
+Let a_5 = a_2[a_3 <- a_4 - (x * x)].
+Let a_6 = havoc(Mint_undef_1, Mint_0, a_1, S).
+Assume {
+  Type: is_sint32(S) /\ is_sint64(i) /\ is_sint64(i_1) /\ is_sint64(x) /\
+      is_sint64(a_4).
+  (* Heap *)
+  Type: linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 2147483646).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < S) /\ (S <= 2305843009213693951).
+  (* Invariant *)
+  Have: i_1 <= S.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_6[shift_sint64(a, i_2)] = ((i_2 - 1) * (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: S <= i_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < S) ->
+      (a_6[shift_sint64(a, i_2)] = ((i_2 - 1) * (1 + i_2))))).
+  (* Invariant *)
+  Have: i <= (1 + S).
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_1 = 1 + i_2 in ((i_2 < S) -> ((i <= x_1) ->
+      (a_2[shift_sint64(a, i_2)] = ((i_2 - 1) * x_1)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> (((2 + i_2) <= i) ->
+      (a_2[shift_sint64(a, i_2)] = (-1)))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= S.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < S) -> ((i <= i_2) ->
+      (a_5[shift_sint64(a, i_2)] = ((i_2 - 1) * (1 + i_2))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_5[shift_sint64(a, i_2)] = (-1)))).
+}
+Prove: included(a_3, 1, a_1, S).
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (140ms) (106301)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (41ms) (364)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c, line 36):
+out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-cav19_array_tiling_poly6/array-cav19_array_tiling_poly6_0001/array-cav19_array_tiling_poly6_0003/array-cav19_array_tiling_poly6_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

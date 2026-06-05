@@ -1,0 +1,265 @@
+[kernel] Parsing out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 19 goals scheduled
+[wp] [Timeout] typed_factorial_loop_invariant_established (Z3 8s)
+[wp] [Timeout] typed_factorial_loop_invariant_4_established (Qed 1ms) (Z3 8s)
+[wp] Proved goals:   17 / 19
+  Qed:            12
+  Alt-Ergo :       5 (19ms-33ms-50ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function factorial
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 16):
+Let x = L_fact(i - 1).
+Let x_1 = i * x.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\ is_sint32(x) /\
+      is_sint32(x_1).
+  (* Goal *)
+  When: n <= i.
+  (* Invariant *)
+  Have: ((n <= 0) -> (L_fact(n) = 1)).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: L_fact(0) = 1.
+  (* Invariant *)
+  Have: ((i = 1) -> (x = 1)).
+  (* Invariant *)
+  Have: i <= (1 + n).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < i) -> (0 < L_fact(i_1)))).
+  (* Invariant *)
+  Have: 0 < x.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= n.
+}
+Prove: x_1 = L_fact(i).
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (150ms) (38846)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (50ms) (125)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 16):
+Assume { Type: is_sint32(n). (* Goal *) When: n <= 0. }
+Prove: L_fact(n) = 1.
+Prover Z3 4.8.12 returns Timeout (8s)
+Prover Alt-Ergo  returns Timeout (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 17):
+Let x = L_fact(i - 1).
+Let x_1 = i * x.
+Let x_2 = L_fact(n).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\ is_sint32(x) /\
+      is_sint32(x_1).
+  (* Goal *)
+  When: 0 < i.
+  (* Invariant *)
+  Have: ((n <= 0) -> (x_2 = 1)).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: L_fact(0) = 1.
+  (* Invariant *)
+  Have: ((i = 1) -> (x = 1)).
+  (* Invariant *)
+  Have: i <= (1 + n).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < i) -> (0 < L_fact(i_1)))).
+  (* Invariant *)
+  Have: 0 < x.
+  (* Then *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: ((n <= i) -> (x_1 = x_2)).
+}
+Prove: x_1 = L_fact(i).
+Prover Alt-Ergo  returns Valid (Qed:9ms) (42ms) (105)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 19):
+Assume {
+  Type: is_sint32(n).
+  (* Invariant *)
+  Have: ((n <= 0) -> (L_fact(n) = 1)).
+}
+Prove: 0 <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 20):
+Let x = L_fact(i_1 - 1).
+Let x_1 = i_1 * x.
+Let x_2 = L_fact(n).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(1 + i_1) /\
+      is_sint32(x) /\ is_sint32(x_1).
+  (* Goal *)
+  When: (0 < i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: ((n <= 0) -> (x_2 = 1)).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: L_fact(0) = 1.
+  (* Invariant *)
+  Have: ((i_1 = 1) -> (x = 1)).
+  (* Invariant *)
+  Have: i_1 <= (1 + n).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) -> (0 < L_fact(i_2)))).
+  (* Invariant *)
+  Have: 0 < x.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: ((n <= i_1) -> (x_1 = x_2)).
+  (* Invariant *)
+  Have: x_1 = L_fact(i_1).
+}
+Prove: 0 < L_fact(i).
+Prover Alt-Ergo  returns Valid (Qed:11ms) (31ms) (170)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (0.59ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 21):
+Let x = L_fact(i - 1).
+Let x_1 = i * x.
+Let x_2 = L_fact(n).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\ is_sint32(x) /\
+      is_sint32(x_1).
+  (* Invariant *)
+  Have: ((n <= 0) -> (x_2 = 1)).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: L_fact(0) = 1.
+  (* Invariant *)
+  Have: ((i = 1) -> (x = 1)).
+  (* Invariant *)
+  Have: i <= (1 + n).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < i) -> (0 < L_fact(i_1)))).
+  (* Invariant *)
+  Have: 0 < x.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: ((n <= i) -> (x_1 = x_2)).
+  (* Invariant *)
+  Have: x_1 = L_fact(i).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 <= i) -> (0 < L_fact(i_1)))).
+}
+Prove: 0 < x_1.
+Prover Alt-Ergo  returns Valid (Qed:11ms) (20ms) (35)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 23):
+Assume {
+  Type: is_sint32(n).
+  (* Invariant *)
+  Have: ((n <= 0) -> (L_fact(n) = 1)).
+  (* Invariant *)
+  Have: 0 <= n.
+}
+Prove: L_fact(0) = 1.
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (90ms) (3923)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (19ms) (14)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c:12: Warning: 
+  No 'assigns' specification for function 'factorial'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c:34: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

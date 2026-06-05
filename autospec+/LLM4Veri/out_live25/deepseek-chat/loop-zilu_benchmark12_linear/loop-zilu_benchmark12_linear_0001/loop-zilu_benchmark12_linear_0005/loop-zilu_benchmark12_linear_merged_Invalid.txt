@@ -1,0 +1,13 @@
+[kernel] Parsing out/deepseek-chat/loop-zilu_benchmark12_linear/loop-zilu_benchmark12_linear_0001/loop-zilu_benchmark12_linear_0005/loop-zilu_benchmark12_linear_merged.c (with preprocessing)
+[kernel] Warning: end of file reached before line 40
+[kernel] FRAMAC_SHARE/libc/assert.h:40: 
+  syntax error:
+  Location: between 40:2 and 13:15
+  11    loop invariant t <= y;
+  12    loop invariant \at(y, Pre) <= y;
+  
+  13    loop assigns y;
+  14    */
+  15    int main() {
+  16-37 [... omitted ...]
+[kernel] Frama-C aborted: invalid user input.

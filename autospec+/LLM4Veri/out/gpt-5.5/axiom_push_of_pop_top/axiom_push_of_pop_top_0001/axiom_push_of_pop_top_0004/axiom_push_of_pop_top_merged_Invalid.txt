@@ -1,0 +1,18 @@
+[kernel] Parsing out/gpt-5.5/axiom_push_of_pop_top/axiom_push_of_pop_top_0001/axiom_push_of_pop_top_0004/axiom_push_of_pop_top_merged.c (with preprocessing)
+[kernel] out/gpt-5.5/axiom_push_of_pop_top/axiom_push_of_pop_top_0001/axiom_push_of_pop_top_0004/axiom_push_of_pop_top_merged.c:157: 
+  syntax error:
+  Location: between lines 157 and 167
+  155   value_type
+  156   stack_top(const Stack* s);
+  
+  157   void
+  158   /*@
+  159   requires valid: \valid(s) && StackInvariant(s);
+  160-164 [... omitted ...]
+  165   ensures equal: StackEqual{Old,Here}(s, s);
+  166   ensures capacity: StackCapacity(s) == StackCapacity{Old}(s);
+  167   assigns s- > size, s- > obj[s- > size-1];
+  
+  168   */
+  169   axiom_push_of_pop_top(Stack* s)
+[kernel] Frama-C aborted: invalid user input.

@@ -1,0 +1,340 @@
+[kernel] Parsing out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 23 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 24ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_8_established (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_11_established (Qed 2ms) (Z3 8s)
+[wp] Proved goals:   19 / 23
+  Qed:            16
+  Alt-Ergo :       1 (22ms)
+  Z3 4.8.12:       2 (340ms-5.7s-8s)
+  Timeout:         4
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (22ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 13):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j * j).
+}
+Prove: i <= j.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 14):
+Let x = j - j_1.
+Let x_1 = x * x.
+Let x_2 = j * j.
+Let x_3 = 2 * j_1.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j_1) /\ is_sint32(j) /\ is_sint32(j_2) /\
+      is_sint32(x).
+  (* Residual *)
+  When: j <= x_3.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j_2) /\ (j_2 <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j_2 * j_2).
+  (* Invariant *)
+  Have: i <= j_2.
+  (* Invariant *)
+  Have: i < j_2.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: 0 <= j_1.
+  (* Invariant *)
+  Have: 0 < j_1.
+  (* Invariant *)
+  Have: x_1 <= x_2.
+  (* Invariant *)
+  Have: x_1 < x_2.
+  (* Invariant *)
+  Have: j_1 <= j.
+  (* Invariant *)
+  Have: j_1 < j.
+}
+Prove: j < x_3.
+Prover Z3 4.8.12 returns Timeout (Qed:24ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:24ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 14):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j * j).
+  (* Invariant *)
+  Have: i <= j.
+}
+Prove: i < j.
+Prover Alt-Ergo  returns Valid (Qed:3ms) (22ms) (23)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.82ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.51ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 17):
+Let x = j_4 - j_3.
+Let x_1 = x * x.
+Let x_2 = j_4 * j_4.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(i_2) /\ is_sint32(j) /\
+      is_sint32(j_1) /\ is_sint32(j_2) /\ is_sint32(j_3) /\ is_sint32(j_4) /\
+      is_sint32(j_5) /\ is_sint32(x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i_2) /\ (i_2 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j_5) /\ (j_5 <= 2147483646).
+  (* Else *)
+  Have: (i_2 * i_2) < (j_5 * j_5).
+  (* Invariant *)
+  Have: i_2 <= j_5.
+  (* Invariant *)
+  Have: i_2 < j_5.
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Invariant *)
+  Have: 0 < i_2.
+  (* Invariant *)
+  Have: 0 <= j_3.
+  (* Invariant *)
+  Have: 0 < j_3.
+  (* Invariant *)
+  Have: x_1 <= x_2.
+  (* Invariant *)
+  Have: x_1 < x_2.
+  (* Invariant *)
+  Have: j_3 <= j_4.
+  (* Invariant *)
+  Have: j_3 < j_4.
+  If (2 * j_3) < j_4
+  Then {
+    Have: (j_2 = i) /\ (j_3 = j_2) /\ (j_4 = j_1) /\ ((i_1 + j_2) = j_1) /\
+        ((j + j_2) = j_1).
+  }
+  Else { Have: (j_3 = j) /\ ((i + j_3) = j_4). }
+  (* Invariant *)
+  Have: i <= j.
+  (* Invariant *)
+  Have: i < j.
+}
+Prove: (i * i) <= (j * j).
+Prover Z3 4.8.12 returns Valid (Qed:23ms) (340ms) (339962)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.60ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 18):
+Let x = i * i.
+Let x_1 = j * j.
+Let x_2 = j_4 - j_3.
+Let x_3 = x_2 * x_2.
+Let x_4 = j_4 * j_4.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(i_2) /\ is_sint32(j) /\
+      is_sint32(j_1) /\ is_sint32(j_2) /\ is_sint32(j_3) /\ is_sint32(j_4) /\
+      is_sint32(j_5) /\ is_sint32(x_2).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i_2) /\ (i_2 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j_5) /\ (j_5 <= 2147483646).
+  (* Else *)
+  Have: (i_2 * i_2) < (j_5 * j_5).
+  (* Invariant *)
+  Have: i_2 <= j_5.
+  (* Invariant *)
+  Have: i_2 < j_5.
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Invariant *)
+  Have: 0 < i_2.
+  (* Invariant *)
+  Have: 0 <= j_3.
+  (* Invariant *)
+  Have: 0 < j_3.
+  (* Invariant *)
+  Have: x_3 <= x_4.
+  (* Invariant *)
+  Have: x_3 < x_4.
+  (* Invariant *)
+  Have: j_3 <= j_4.
+  (* Invariant *)
+  Have: j_3 < j_4.
+  If (2 * j_3) < j_4
+  Then {
+    Have: (j_2 = i) /\ (j_3 = j_2) /\ (j_4 = j_1) /\ ((i_1 + j_2) = j_1) /\
+        ((j + j_2) = j_1).
+  }
+  Else { Have: (j_3 = j) /\ ((i + j_3) = j_4). }
+  (* Invariant *)
+  Have: i <= j.
+  (* Invariant *)
+  Have: i < j.
+  (* Invariant *)
+  Have: x <= x_1.
+}
+Prove: x < x_1.
+Prover Z3 4.8.12 returns Valid (Qed:24ms) (2s) (4311773)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (30ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 20):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j * j).
+  (* Invariant *)
+  Have: i <= j.
+  (* Invariant *)
+  Have: i < j.
+}
+Prove: 0 <= i.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (0.91ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (22ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 23):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j * j).
+  (* Invariant *)
+  Have: i <= j.
+  (* Invariant *)
+  Have: i < j.
+  (* Invariant *)
+  Have: 0 <= i.
+}
+Prove: 0 < i.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

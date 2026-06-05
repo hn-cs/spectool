@@ -1,0 +1,244 @@
+[kernel] Parsing out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 14 goals scheduled
+[wp] [Timeout] typed_lower_bound_assert (Qed 6ms) (Z3 8s)
+[wp] [Timeout] typed_main_assert (Qed 1ms) (Z3 8s)
+[wp] Proved goals:   12 / 14
+  Qed:             8
+  Alt-Ergo :       4 (20ms-37ms-64ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function lower_bound
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 5) in 'lower_bound':
+Assume {
+  Type: is_uint32(lower_bound_0) /\ is_uint32(n) /\ is_uint32(right_0).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(a, 0), n).
+  (* Pre-condition *)
+  Have: forall i : Z. ((0 <= i) -> (((2 + i) <= n) ->
+      (Mint_0[shift_sint32(a, i)] <= Mint_0[shift_sint32(a, 1 + i)]))).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: lower_bound_0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= lower_bound_0.
+  (* Else *)
+  Have: right_0 <= lower_bound_0.
+}
+Prove: lower_bound_0 <= n.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (130ms) (82349)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (24ms) (33)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 14):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(n) /\ is_uint32(right_0) /\
+      is_sint32(val_0) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Residual *)
+  When: val_0 <= x_1.
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(a, 0), n).
+  (* Pre-condition *)
+  Have: forall i : Z. ((0 <= i) -> (((2 + i) <= n) ->
+      (Mint_0[shift_sint32(a, i)] <= Mint_0[shift_sint32(a, 1 + i)]))).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+}
+Prove: x <= n.
+Prover Z3 4.8.12 returns Valid (Qed:12ms) (150ms) (101231)
+Prover Alt-Ergo  returns Valid (Qed:12ms) (41ms) (157)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 15):
+Let x = Mint_0
+          [shift_sint32(a,
+             to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2)))].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_0) /\ is_uint32(right_1) /\
+      is_sint32(val_0) /\ is_sint32(x).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(a, 0), n).
+  (* Pre-condition *)
+  Have: forall i : Z. ((0 <= i) -> (((2 + i) <= n) ->
+      (Mint_0[shift_sint32(a, i)] <= Mint_0[shift_sint32(a, 1 + i)]))).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: left_1 <= right_1.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Then *)
+  Have: left_1 < right_1.
+  If x < val_0
+  Then {
+    Have: (right_1 = right_0) /\
+        (to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2)) = middle_0).
+    (* Assertion *)
+    Have: forall i : Z. ((0 <= i) -> ((i <= middle_0) ->
+        (Mint_0[shift_sint32(a, i)] < val_0))).
+    Have: to_uint32(1 + middle_0) = left_0.
+  }
+  Else {
+    Have: (left_1 = left_0) /\
+        (to_uint32(left_0 + (to_uint32(right_1 - left_0) / 2)) = right_0).
+  }
+  (* Invariant *)
+  Have: right_0 <= n.
+}
+Prove: left_0 <= right_0.
+Prover Z3 4.8.12 returns Valid (Qed:18ms) (150ms) (110844)
+Prover Alt-Ergo  returns Valid (Qed:18ms) (64ms) (531)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 24):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(n) /\ is_uint32(right_0) /\
+      is_sint32(val_0) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= x).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(a, 0), n).
+  (* Pre-condition *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + i_1) <= n) ->
+      (Mint_0[shift_sint32(a, i_1)] <= Mint_0[shift_sint32(a, 1 + i_1)]))).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Then *)
+  Have: x_1 < val_0.
+}
+Prove: Mint_0[shift_sint32(a, i)] < val_0.
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'lower_bound':
+Effect at line 21
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 34):
+Assume {
+  Type: is_uint32(result_0).
+  (* Call 'lower_bound' *)
+  Have: result_0 <= 5.
+}
+Prove: result_0 = 2.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 2) in 'lower_bound'' in 'main' at initialization of 'result' (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 33)
+:
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 3) in 'lower_bound'' in 'main' at initialization of 'result' (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 33)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 4) in 'lower_bound'' in 'main' at initialization of 'result' (file out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c, line 33)
+:
+Assume {
+  (* Goal *)
+  When: (0 <= i) /\ (i <= 3).
+  (* Initializer *)
+  Init: a[0] = 1.
+  (* Initializer *)
+  Init: a[1] = 2.
+  (* Initializer *)
+  Init: a[2] = 3.
+  (* Initializer *)
+  Init: a[3] = 4.
+  (* Initializer *)
+  Init: a[4] = 5.
+}
+Prove: a[i] <= a[1 + i].
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (150ms) (24844)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (20ms) (34)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/evdenis_small-examples_lower_bound/evdenis_small-examples_lower_bound_0001/evdenis_small-examples_lower_bound_0002/evdenis_small-examples_lower_bound_merged.c:30: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

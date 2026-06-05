@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 2, 'Iteration': 2, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=2, microseconds=267188), 'total_solve_time': datetime.timedelta(seconds=9, microseconds=88160), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 68, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [2, 3, 1], '1': ['loop invariant j <= i;', 'loop invariant j <= 4;', 'loop invariant i <= j + 3;', 'loop invariant \\at(i, Pre) + j == i;', 'loop invariant 0 <= j;', 'loop assigns j;', 'loop assigns i;'], '2': ['loop invariant i == \\at(i, Pre);', 'loop invariant i <= 4;', 'loop invariant 0 <= i;', 'loop assigns i;'], '3': [], 'MSLines': ['#include <assert.h>\n', '/* 3. FUNC CONTRACT */\nint main() {\n', '  int i = 0;\n', '  /* 2. LOOP INVARIANT */\n  while (i < 4) {\n', '    int j = 0;\n', '    /* 1. LOOP INVARIANT */\n    while (j < 4) {\n', '      i++;\n', '      j++;\n', '      //@ assert(0 <= j);\n', '      //@ assert(j <= i);\n', '      //@ assert(i <= j + 3);\n', '      //@ assert(j <= 4);\n', '    }\n', '    //@ assert(0 <= j);\n', '    //@ assert(j <= i);\n', '    //@ assert(i <= j + 3);\n', '    //@ assert(j <= 4);\n', '    i = i - j + 1;\n', '  }\n', '  return 0;\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

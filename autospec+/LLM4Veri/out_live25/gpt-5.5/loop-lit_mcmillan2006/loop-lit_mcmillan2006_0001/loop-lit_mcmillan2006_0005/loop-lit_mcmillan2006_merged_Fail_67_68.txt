@@ -1,0 +1,2437 @@
+[kernel] Parsing out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:50: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] FRAMAC_SHARE/libc/stdlib.h:394: Warning: 
+  Allocation, initialization and danglingness not yet implemented
+  (allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+[wp] out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 68 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 18ms) (Z3 8s) (Stronger, 2 warnings)
+[wp] Proved goals:   67 / 68
+  Qed:            51
+  Alt-Ergo :      15 (23ms-44ms-81ms)
+  Z3 4.8.12:       1 (190ms-8s)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 14):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 14):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 15):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 15):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 16):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 16):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 17):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 17):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 18):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[a].
+Let a_3 = a_1[shift_sint32(x, i - 1)].
+Let a_4 = a_1[shift_sint32(x, i) <- 0].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_2) /\ is_sint32(a_3) /\ is_sint32(a_4[a]).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 < n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: ((n = 0) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (Mint_0[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_1[shift_sint32(x, i_2)] = 0) \/ (i <= i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_2 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_1[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_3 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((i_2 < n) ->
+      (a_1[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_2))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2 - 1)] = a_1[shift_sint32(x, i_2)]))).
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((0 <= i_2) ->
+      ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_3)] = a_1[shift_sint32(x, i_2)]))))).
+  (* Then *)
+  Have: i < n.
+}
+Prove: (a_4[shift_sint32(x, i_1)] = 0) \/ (i < i_1).
+Prover Alt-Ergo  returns Valid (Qed:37ms) (81ms) (615)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 18):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 19):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Let a_5 = a_2[shift_sint32(x, i_1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4) /\ is_sint32(a_2[a]).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: ((n = 0) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (Mint_0[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_1[shift_sint32(x, i_2)] = 0) \/ (i <= i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_6 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_6 * a_6) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_1[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((i_2 < n) ->
+      (a_1[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_6 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_6 <= 0) /\ (0 <= a_6)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2 - 1)] = a_1[shift_sint32(x, i_2)]))).
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((0 <= i_2) ->
+      ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_3)] = a_1[shift_sint32(x, i_2)]))))).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_2[shift_sint32(x, i_2)] = 0) \/ (i < i_2)))).
+}
+Prove: (a_5 * a_5) = 0.
+Prover Alt-Ergo  returns Valid (Qed:43ms) (61ms) (375)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 19):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 20):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 20):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 21):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 21):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 22):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (30ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 22):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 23):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 23):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 24):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4) /\ is_sint32(a_2[a]).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: ((n = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+       (Mint_0[shift_sint32(x, i_1)] = 0))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+      ((a_1[shift_sint32(x, i_1)] = 0) \/ (i <= i_1)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = a_1[shift_sint32(x, i_1)] in ((0 <= i_1) ->
+      ((i_1 < i) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+       (a_1[shift_sint32(x, i_1)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) -> ((i_1 < n) ->
+      (a_1[shift_sint32(x, i_1)] = 0)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_1)] = a_3))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_1)] = 0))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = a_1[shift_sint32(x, i_1)] in ((0 <= i_1) ->
+      ((i_1 < i) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_1 - 1)] = a_1[shift_sint32(x, i_1)]))).
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((0 <= i_1) ->
+      ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_1[shift_sint32(x, i_1)]))))).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+      ((a_2[shift_sint32(x, i_1)] = 0) \/ (i < i_1)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = a_2[shift_sint32(x, i_1)] in ((i_1 <= i) ->
+      ((0 <= i_1) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = (-1))).
+  (* Invariant *)
+  Have: (-1) <= i.
+}
+Prove: n <= (1001 + i).
+Prover Z3 4.8.12 returns Valid (Qed:57ms) (160ms) (100595)
+Prover Alt-Ergo  returns Valid (Qed:57ms) (29ms) (28)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 24):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 25):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 25):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 26):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Let a_5 = a_2[a].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4) /\ is_sint32(a_5).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: 0 <= i.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+      ((a_1[shift_sint32(x, i_1)] = 0) \/ (i <= i_1)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = a_1[shift_sint32(x, i_1)] in ((0 <= i_1) ->
+      ((i_1 < i) -> ((a_6 * a_6) = 0))).
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+       (a_1[shift_sint32(x, i_1)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) -> ((i_1 < n) ->
+      (a_1[shift_sint32(x, i_1)] = 0)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_1)] = a_3))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_1)] = 0))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = a_1[shift_sint32(x, i_1)] in ((0 <= i_1) ->
+      ((i_1 < i) -> ((a_6 <= 0) /\ (0 <= a_6)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_1 - 1)] = a_1[shift_sint32(x, i_1)]))).
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((0 <= i_1) ->
+      ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_1[shift_sint32(x, i_1)]))))).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+      ((a_2[shift_sint32(x, i_1)] = 0) \/ (i < i_1)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = a_2[shift_sint32(x, i_1)] in ((i_1 <= i) ->
+      ((0 <= i_1) -> ((a_6 * a_6) = 0))).
+  (* Invariant *)
+  Have: n <= (1001 + i).
+}
+Prove: a_5 = 0.
+Prover Z3 4.8.12 returns Valid (Qed:48ms) (170ms) (153911)
+Prover Alt-Ergo  returns Valid (Qed:48ms) (31ms) (91)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 26):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.74ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 27):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 27):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 28):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Let x_1 = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x_1) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: ((n = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+       (Mint_0[shift_sint32(x, i_1)] = 0))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+      ((a_1[shift_sint32(x, i_1)] = 0) \/ (i <= i_1)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = a_1[shift_sint32(x, i_1)] in ((0 <= i_1) ->
+      ((i_1 < i) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+       (a_1[shift_sint32(x, i_1)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) -> ((i_1 < n) ->
+      (a_1[shift_sint32(x, i_1)] = 0)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_1)] = a_3))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_1)] = 0))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = a_1[shift_sint32(x, i_1)] in ((0 <= i_1) ->
+      ((i_1 < i) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_1 - 1)] = a_1[shift_sint32(x, i_1)]))).
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((0 <= i_1) ->
+      ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_1[shift_sint32(x, i_1)]))))).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+      ((a_2[shift_sint32(x, i_1)] = 0) \/ (i < i_1)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = a_2[shift_sint32(x, i_1)] in ((i_1 <= i) ->
+      ((0 <= i_1) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = (-1))).
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Invariant *)
+  Have: n <= (1001 + i).
+  (* Invariant *)
+  Have: a_2[a] = 0.
+}
+Prove: (x_1 = n) \/ ((2 + i) <= n).
+Prover Z3 4.8.12 returns Valid (Qed:38ms) (140ms) (102589)
+Prover Alt-Ergo  returns Valid (Qed:38ms) (28ms) (37)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 28):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Assume {
+  Type: is_sint32(n).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+}
+Prove: (n = 0) \/ (0 < n).
+Prover Alt-Ergo  returns Valid (Qed:6ms) (23ms) (22)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 29):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let x_1 = 1 + i.
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, x_1).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(x_1) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483649) <= i) /\ (i <= 2147483645).
+  (* Then *)
+  Have: (-1) <= i.
+  (* Then *)
+  Have: i <= 999.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(x_1)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: ((i = (-1)) ->
+      (forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+       (Mint_0[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      ((a_1[shift_sint32(x, i_2)] = 0) \/ (i <= i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((i = (-1)) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2 - 1)] = a_1[shift_sint32(x, i_2)]))).
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((0 <= i_2) ->
+      ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_3)] = a_1[shift_sint32(x, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      (a_2[shift_sint32(x, i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_2[shift_sint32(x, i_2)] in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: a_2[a] = 0.
+}
+Prove: a_2[shift_sint32(x, i_1)] = 0.
+Prover Z3 4.8.12 returns Valid (Qed:33ms) (160ms) (101251)
+Prover Alt-Ergo  returns Valid (Qed:33ms) (46ms) (256)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 29):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 30):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 30):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 31):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 31):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 32):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 32):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 33):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 33):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 34):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (2 + i) <= n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: ((n = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+       (Mint_0[shift_sint32(x, i_1)] = 0))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+      ((a_1[shift_sint32(x, i_1)] = 0) \/ (i <= i_1)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = a_1[shift_sint32(x, i_1)] in ((0 <= i_1) ->
+      ((i_1 < i) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+       (a_1[shift_sint32(x, i_1)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) -> ((i_1 < n) ->
+      (a_1[shift_sint32(x, i_1)] = 0)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_1)] = a_3))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_1)] = 0))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = a_1[shift_sint32(x, i_1)] in ((0 <= i_1) ->
+      ((i_1 < i) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_1 - 1)] = a_1[shift_sint32(x, i_1)]))).
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((0 <= i_1) ->
+      ((i_1 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_1[shift_sint32(x, i_1)]))))).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+      ((a_2[shift_sint32(x, i_1)] = 0) \/ (i < i_1)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = a_2[shift_sint32(x, i_1)] in ((i_1 <= i) ->
+      ((0 <= i_1) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = (-1))).
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Invariant *)
+  Have: n <= (1001 + i).
+  (* Invariant *)
+  Have: a_2[a] = 0.
+}
+Prove: i <= 998.
+Prover Z3 4.8.12 returns Valid (Qed:27ms) (130ms) (100782)
+Prover Alt-Ergo  returns Valid (Qed:27ms) (23ms) (31)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 34):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 35):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 35):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 36):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let x_1 = 2 + i.
+Let x_2 = 1 + i.
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x_2) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 < n) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: ((n = 0) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (Mint_0[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_1[shift_sint32(x, i_2)] = 0) \/ (i <= i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_1[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((i_2 < n) ->
+      (a_1[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2 - 1)] = a_1[shift_sint32(x, i_2)]))).
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((0 <= i_2) ->
+      ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_3)] = a_1[shift_sint32(x, i_2)]))))).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_2[shift_sint32(x, i_2)] = 0) \/ (i < i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_2[shift_sint32(x, i_2)] in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = (-1))).
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Invariant *)
+  Have: n <= (1001 + i).
+  (* Invariant *)
+  Have: a_2[a] = 0.
+  (* Invariant *)
+  Have: (x_2 = n) \/ (x_1 <= n).
+  (* Invariant *)
+  Have: ((x_2 = n) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_2[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: ((x_1 <= n) -> (i <= 998)).
+}
+Prove: a_2[shift_sint32(x, i_1)] = 0.
+Prover Z3 4.8.12 returns Valid (Qed:37ms) (130ms) (105505)
+Prover Alt-Ergo  returns Valid (Qed:37ms) (43ms) (316)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 36):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.86ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 37):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let x_1 = 2 + i.
+Let x_2 = 1 + i.
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x_2) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: ((n = 0) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (Mint_0[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_1[shift_sint32(x, i_2)] = 0) \/ (i <= i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_1[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((i_2 < n) ->
+      (a_1[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2 - 1)] = a_1[shift_sint32(x, i_2)]))).
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((0 <= i_2) ->
+      ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_3)] = a_1[shift_sint32(x, i_2)]))))).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_2[shift_sint32(x, i_2)] = 0) \/ (i < i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_2[shift_sint32(x, i_2)] in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = (-1))).
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Invariant *)
+  Have: n <= (1001 + i).
+  (* Invariant *)
+  Have: a_2[a] = 0.
+  (* Invariant *)
+  Have: (x_2 = n) \/ (x_1 <= n).
+  (* Invariant *)
+  Have: ((x_2 = n) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_2[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: ((x_1 <= n) -> (i <= 998)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) -> ((i_2 < n) ->
+      (a_2[shift_sint32(x, i_2)] = 0)))).
+}
+Prove: a_2[shift_sint32(x, i_1)] = 0.
+Prover Z3 4.8.12 returns Valid (Qed:41ms) (140ms) (105522)
+Prover Alt-Ergo  returns Valid (Qed:41ms) (50ms) (377)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 37):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 38):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let x_1 = 2 + i.
+Let x_2 = 1 + i.
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x_2) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: ((n = 0) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (Mint_0[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_1[shift_sint32(x, i_2)] = 0) \/ (i <= i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_1[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((i_2 < n) ->
+      (a_1[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2 - 1)] = a_1[shift_sint32(x, i_2)]))).
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((0 <= i_2) ->
+      ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_3)] = a_1[shift_sint32(x, i_2)]))))).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_2[shift_sint32(x, i_2)] = 0) \/ (i < i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_2[shift_sint32(x, i_2)] in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = (-1))).
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Invariant *)
+  Have: n <= (1001 + i).
+  (* Invariant *)
+  Have: a_2[a] = 0.
+  (* Invariant *)
+  Have: (x_2 = n) \/ (x_1 <= n).
+  (* Invariant *)
+  Have: ((x_2 = n) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_2[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: ((x_1 <= n) -> (i <= 998)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) -> ((i_2 < n) ->
+      (a_2[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      (a_2[shift_sint32(x, i_2)] = 0))).
+}
+Prove: a_2[shift_sint32(x, i_1)] = 0.
+Prover Z3 4.8.12 returns Valid (Qed:35ms) (150ms) (106649)
+Prover Alt-Ergo  returns Valid (Qed:35ms) (58ms) (359)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 38):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.88ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 39):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let x_1 = 2 + i.
+Let x_2 = 1 + i.
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x_2) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: ((n = 0) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (Mint_0[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_1[shift_sint32(x, i_2)] = 0) \/ (i <= i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_1[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((i_2 < n) ->
+      (a_1[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2 - 1)] = a_1[shift_sint32(x, i_2)]))).
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((0 <= i_2) ->
+      ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_3)] = a_1[shift_sint32(x, i_2)]))))).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_2[shift_sint32(x, i_2)] = 0) \/ (i < i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_2[shift_sint32(x, i_2)] in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = (-1))).
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Invariant *)
+  Have: n <= (1001 + i).
+  (* Invariant *)
+  Have: a_2[a] = 0.
+  (* Invariant *)
+  Have: (x_2 = n) \/ (x_1 <= n).
+  (* Invariant *)
+  Have: ((x_2 = n) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_2[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: ((x_1 <= n) -> (i <= 998)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) -> ((i_2 < n) ->
+      (a_2[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      (a_2[shift_sint32(x, i_2)] = 0))).
+}
+Prove: a_2[shift_sint32(x, i_1)] = 0.
+Prover Z3 4.8.12 returns Valid (Qed:60ms) (150ms) (106649)
+Prover Alt-Ergo  returns Valid (Qed:60ms) (43ms) (359)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 39):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 40):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let x_1 = 2 + i.
+Let x_2 = 1 + i.
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Let a_5 = a_2[shift_sint32(x, i_1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x_2) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: ((n = 0) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (Mint_0[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_1[shift_sint32(x, i_2)] = 0) \/ (i <= i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_6 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_6 * a_6) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_1[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((i_2 < n) ->
+      (a_1[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_6 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_6 <= 0) /\ (0 <= a_6)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2 - 1)] = a_1[shift_sint32(x, i_2)]))).
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((0 <= i_2) ->
+      ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_3)] = a_1[shift_sint32(x, i_2)]))))).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_2[shift_sint32(x, i_2)] = 0) \/ (i < i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_6 = a_2[shift_sint32(x, i_2)] in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((a_6 * a_6) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = (-1))).
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Invariant *)
+  Have: n <= (1001 + i).
+  (* Invariant *)
+  Have: a_2[a] = 0.
+  (* Invariant *)
+  Have: (x_2 = n) \/ (x_1 <= n).
+  (* Invariant *)
+  Have: ((x_2 = n) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_2[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: ((x_1 <= n) -> (i <= 998)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) -> ((i_2 < n) ->
+      (a_2[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      (a_2[shift_sint32(x, i_2)] = 0))).
+}
+Prove: (a_5 <= 0) /\ (0 <= a_5).
+Prover Alt-Ergo  returns Valid (Qed:34ms) (49ms) (461)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 40):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.99ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 41):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let x_1 = 2 + i.
+Let x_2 = 1 + i.
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x_2) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 < i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: ((n = 0) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (Mint_0[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_1[shift_sint32(x, i_2)] = 0) \/ (i <= i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_1[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((i_2 < n) ->
+      (a_1[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = a_3))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_1[shift_sint32(x, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_2 - 1)] = a_1[shift_sint32(x, i_2)]))).
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((0 <= i_2) ->
+      ((i_2 < i) ->
+      (a_1[shift_sint32(x, i_3)] = a_1[shift_sint32(x, i_2)]))))).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+      ((a_2[shift_sint32(x, i_2)] = 0) \/ (i < i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_2[shift_sint32(x, i_2)] in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = (-1))).
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Invariant *)
+  Have: n <= (1001 + i).
+  (* Invariant *)
+  Have: a_2[a] = 0.
+  (* Invariant *)
+  Have: (x_2 = n) \/ (x_1 <= n).
+  (* Invariant *)
+  Have: ((x_2 = n) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < n) ->
+       (a_2[shift_sint32(x, i_2)] = 0))))).
+  (* Invariant *)
+  Have: ((x_1 <= n) -> (i <= 998)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) -> ((i_2 < n) ->
+      (a_2[shift_sint32(x, i_2)] = 0)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      (a_2[shift_sint32(x, i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = a_2[shift_sint32(x, i_2)] in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+}
+Prove: a_2[shift_sint32(x, i_1 - 1)] = a_2[shift_sint32(x, i_1)].
+Prover Alt-Ergo  returns Valid (Qed:43ms) (47ms) (372)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 41):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 42):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = a_1[shift_sint32(x, i) <- 0].
+Let x_1 = 2 + i.
+Let x_2 = 1 + i.
+Let a_3 = a_1[a].
+Let a_4 = a_1[shift_sint32(x, i - 1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x_2) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_3) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_2) /\ (0 <= i_1) /\ (i_2 <= i) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: ((n = 0) ->
+      (forall i_3 : Z. ((0 <= i_3) -> ((i_3 < n) ->
+       (Mint_0[shift_sint32(x, i_3)] = 0))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < n) ->
+      ((a_1[shift_sint32(x, i_3)] = 0) \/ (i <= i_3)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_5 = a_1[shift_sint32(x, i_3)] in ((0 <= i_3) ->
+      ((i_3 < i) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((0 < i) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_3 : Z. ((0 <= i_3) -> ((i_3 < n) ->
+       (a_1[shift_sint32(x, i_3)] = 0))))).
+  (* Invariant *)
+  Have: (i = 0) \/ (a_4 = 0).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: i <= 999.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((i_3 < n) ->
+      (a_1[shift_sint32(x, i_3)] = 0)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i) ->
+      (a_1[shift_sint32(x, i_3)] = a_3))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < i) ->
+      (a_1[shift_sint32(x, i_3)] = 0))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_5 = a_1[shift_sint32(x, i_3)] in ((0 <= i_3) ->
+      ((i_3 < i) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i) ->
+      (a_1[shift_sint32(x, i_3 - 1)] = a_1[shift_sint32(x, i_3)]))).
+  (* Invariant *)
+  Have: forall i_4,i_3 : Z. ((0 <= i_4) -> ((i_4 < i) -> ((0 <= i_3) ->
+      ((i_3 < i) ->
+      (a_1[shift_sint32(x, i_4)] = a_1[shift_sint32(x, i_3)]))))).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < n) ->
+      ((a_2[shift_sint32(x, i_3)] = 0) \/ (i < i_3)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_5 = a_2[shift_sint32(x, i_3)] in ((i_3 <= i) ->
+      ((0 <= i_3) -> ((a_5 * a_5) = 0))).
+  (* Invariant *)
+  Have: ((n = 0) -> (i = (-1))).
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Invariant *)
+  Have: n <= (1001 + i).
+  (* Invariant *)
+  Have: a_2[a] = 0.
+  (* Invariant *)
+  Have: (x_2 = n) \/ (x_1 <= n).
+  (* Invariant *)
+  Have: ((x_2 = n) ->
+      (forall i_3 : Z. ((0 <= i_3) -> ((i_3 < n) ->
+       (a_2[shift_sint32(x, i_3)] = 0))))).
+  (* Invariant *)
+  Have: ((x_1 <= n) -> (i <= 998)).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_3 <= i) -> ((0 <= i_3) -> ((i_3 < n) ->
+      (a_2[shift_sint32(x, i_3)] = 0)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_3 <= i) -> ((0 <= i_3) ->
+      (a_2[shift_sint32(x, i_3)] = 0))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_5 = a_2[shift_sint32(x, i_3)] in ((i_3 <= i) ->
+      ((0 <= i_3) -> ((a_5 <= 0) /\ (0 <= a_5)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 <= i) ->
+      (a_2[shift_sint32(x, i_3 - 1)] = a_2[shift_sint32(x, i_3)]))).
+}
+Prove: a_2[shift_sint32(x, i_1)] = a_2[shift_sint32(x, i_2)].
+Prover Alt-Ergo  returns Valid (Qed:39ms) (50ms) (460)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 42):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 43):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 43):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 44):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 44):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 45):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 45):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 50):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x_1, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_1, a, i_1).
+Let a_2 = a_1[a].
+Let a_3 = a_1[shift_sint32(x_1, i_1 - 1)].
+Let x_2 = Mint_0[shift_sint32(x, i)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(x_2) /\
+      is_sint32(Mint_1[shift_sint32(x_1, -1)]) /\ is_sint32(Mint_1[a]) /\
+      is_sint32(a_2) /\ is_sint32(a_3).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i_1) /\ (i_1 <= 2147483646).
+  (* Then *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(i_1)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: (i_1 = 0) \/ (0 < i_1).
+  (* Invariant *)
+  Have: ((i_1 = 0) ->
+      (forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+       (Mint_1[shift_sint32(x_1, i_2)] = 0))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(x_1, i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_4 = a_1[shift_sint32(x_1, i_2)] in
+      ((0 <= i_2) -> ((i_2 < i_1) -> ((a_4 * a_4) = 0))).
+  (* Invariant *)
+  Have: ((0 < i_1) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: ((0 < i_1) -> (a_2 = 0)).
+  (* Invariant *)
+  Have: (i_1 = 0) \/ (a_3 = 0).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(x_1, i_2)] = a_2))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_4 = a_1[shift_sint32(x_1, i_2)] in
+      ((0 <= i_2) -> ((i_2 < i_1) -> ((a_4 <= 0) /\ (0 <= a_4)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(x_1, i_2 - 1)] = a_1[shift_sint32(x_1, i_2)]))).
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i_1) -> ((0 <= i_2) ->
+      ((i_2 < i_1) ->
+      (a_1[shift_sint32(x_1, i_3)] = a_1[shift_sint32(x_1, i_2)]))))).
+  (* Then *)
+  Have: i < n.
+}
+Prove: x_2 = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:18ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:18ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 46) (1/3):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 46) (2/3):
+Effect at line 49
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c, line 46) (3/3):
+Effect at line 49
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a = shift_sint32(x, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let x_1 = i - 1.
+Let a_2 = shift_sint32(x, x_1).
+Let a_3 = a_1[a_2 <- 0].
+Let a_4 = a_1[a].
+Let x_2 = 1 + n.
+Let a_5 = a_1[shift_sint32(x, i - 2)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x_1) /\
+      is_sint32(Mint_0[shift_sint32(x, -1)]) /\ is_sint32(Mint_0[a]) /\
+      is_sint32(a_4) /\ is_sint32(a_5).
+  (* Heap *)
+  Type: linked(Malloc_0) /\ is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_2, 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+      ((a_1[shift_sint32(x, i_1)] = 0) \/ (i <= (1 + i_1))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = a_1[shift_sint32(x, i_1)] in ((0 <= i_1) ->
+      (((2 + i_1) <= i) -> ((a_6 * a_6) = 0))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: n <= (999 + i).
+  (* Invariant *)
+  Have: ((2 <= i) -> (a_5 = 0)).
+  (* Invariant *)
+  Have: ((2 <= i) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: ((x_2 = i) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+       (a_1[shift_sint32(x, i_1)] = 0))))).
+  (* Invariant *)
+  Have: (i = 1) \/ (a_5 = 0).
+  (* Invariant *)
+  Have: i <= x_2.
+  (* Invariant *)
+  Have: i <= 1001.
+  (* Invariant *)
+  Have: i <= 1000.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) -> (((2 + i_1) <= i) ->
+      (a_1[shift_sint32(x, i_1)] = 0)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + i_1) <= i) ->
+      (a_1[shift_sint32(x, i_1)] = a_4))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + i_1) <= i) ->
+      (a_1[shift_sint32(x, i_1)] = 0))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = a_1[shift_sint32(x, i_1)] in ((0 <= i_1) ->
+      (((2 + i_1) <= i) -> ((a_6 <= 0) /\ (0 <= a_6)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> (((2 + i_1) <= i) ->
+      (a_1[shift_sint32(x, i_1 - 1)] = a_1[shift_sint32(x, i_1)]))).
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((0 <= i_2) -> ((0 <= i_1) ->
+      (((2 + i_2) <= i) -> (((2 + i_1) <= i) ->
+      (a_1[shift_sint32(x, i_2)] = a_1[shift_sint32(x, i_1)]))))).
+  (* Then *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+      ((a_3[shift_sint32(x, i_1)] = 0) \/ (i <= i_1)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = a_3[shift_sint32(x, i_1)] in ((0 <= i_1) ->
+      ((i_1 < i) -> ((a_6 * a_6) = 0))).
+  (* Invariant *)
+  Have: n <= (1000 + i).
+  (* Invariant *)
+  Have: a_3[a] = 0.
+  (* Invariant *)
+  Have: (n = i) \/ (i < n).
+  (* Invariant *)
+  Have: ((n = i) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+       (a_3[shift_sint32(x, i_1)] = 0))))).
+  (* Invariant *)
+  Have: ((i < n) -> (i <= 999)).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) -> ((i_1 < n) ->
+      (a_3[shift_sint32(x, i_1)] = 0)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_3[shift_sint32(x, i_1)] = 0))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = a_3[shift_sint32(x, i_1)] in ((0 <= i_1) ->
+      ((i_1 < i) -> ((a_6 <= 0) /\ (0 <= a_6)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < i) ->
+      (a_3[shift_sint32(x, i_1 - 1)] = a_3[shift_sint32(x, i_1)]))).
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((0 <= i_1) ->
+      ((i_1 < i) ->
+      (a_3[shift_sint32(x, i_2)] = a_3[shift_sint32(x, i_1)]))))).
+}
+Prove: included(a_2, 1, a, n).
+Prover Z3 4.8.12 returns Valid (Qed:57ms) (190ms) (165164)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0005/loop-lit_mcmillan2006_merged.c:9: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

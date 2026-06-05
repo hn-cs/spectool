@@ -1,0 +1,439 @@
+[kernel] Parsing out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:11: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] FRAMAC_SHARE/libc/stdlib.h:394: Warning: 
+  Allocation, initialization and danglingness not yet implemented
+  (allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+[wp] out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 22 goals scheduled
+[wp] Proved goals:   22 / 22
+  Qed:            18
+  Alt-Ergo :       4 (33ms-36ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 19):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 19):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.87ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 20):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), N).
+Assume {
+  Type: is_sint32(N) /\ is_sint32(i) /\ is_sint32(1 + i).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, i_2)] = 1))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < N.
+}
+Prove: a_1[shift_sint32(a, i) <- 1][shift_sint32(a, i_1)] = 1.
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (180ms) (282140)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (34ms) (139)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 20):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.57ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 21):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 21):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 30):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 30):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 31):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 31):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 44):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 44):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 45):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (16ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 45):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 22) (1/3):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 22) (2/3):
+Effect at line 25
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 22) (3/3):
+Effect at line 27
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, N).
+Let x = i - 1.
+Let a_3 = shift_sint32(a, x).
+Assume {
+  Type: is_sint32(N) /\ is_sint32(i) /\ is_sint32(x).
+  (* Heap *)
+  Type: linked(Malloc_0) /\ is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i <= (1 + N).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + i_1) <= i) ->
+      (a_2[shift_sint32(a, i_1)] = 1))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_2[a_3 <- 1][shift_sint32(a, i_1)] = 1))).
+}
+Prove: included(a_3, 1, a_1, N).
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (140ms) (100681)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (36ms) (134)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 32) (1/4):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 32) (2/4):
+Effect at line 35
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 32) (3/4):
+Effect at line 38
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint32(a, 0).
+Let x = i - 1.
+Let a_2 = shift_sint32(a, x).
+Assume {
+  Type: is_sint32(N) /\ is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(x).
+  (* Heap *)
+  Type: linked(Malloc_0) /\ is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_2, 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_1 <= N.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (havoc(Mint_undef_0, Mint_0, a_1, N)[shift_sint32(a, i_2)] = 1))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: N <= i_1.
+  (* Invariant *)
+  Have: i <= (1 + N).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= N.
+  (* Then *)
+  Have: havoc(Mint_undef_1, Mint_0, a_1, N)[a_2] = 1.
+}
+Prove: included(a_2, 1, a_1, N).
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (140ms) (100410)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (33ms) (121)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 32) (4/4):
+Effect at line 40
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Let a_1 = shift_sint32(a, 0).
+Let x = i - 1.
+Let a_2 = shift_sint32(a, x).
+Let a_3 = havoc(Mint_undef_0, Mint_0, a_1, N)[a_2].
+Assume {
+  Type: is_sint32(N) /\ is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(x) /\
+      is_sint32(a_3).
+  (* Heap *)
+  Type: linked(Malloc_0) /\ is_sint32(fc_heap_status_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_2, 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 536870911).
+  (* Else *)
+  Have: 0 < N.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(N)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: i_1 <= N.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (havoc(Mint_undef_1, Mint_0, a_1, N)[shift_sint32(a, i_2)] = 1))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: N <= i_1.
+  (* Invariant *)
+  Have: i <= (1 + N).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= N.
+  (* Else *)
+  Have: a_3 != 1.
+}
+Prove: included(a_2, 1, a_1, N).
+Prover Alt-Ergo  returns Valid (Qed:10ms) (33ms) (127)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c, line 46):
+out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-fpi_s32if/array-fpi_s32if_0001/array-fpi_s32if_0004/array-fpi_s32if_merged.c:9: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

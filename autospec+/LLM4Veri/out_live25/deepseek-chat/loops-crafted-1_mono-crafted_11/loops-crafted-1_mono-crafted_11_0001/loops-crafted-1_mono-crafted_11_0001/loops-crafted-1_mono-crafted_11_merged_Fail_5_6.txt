@@ -1,0 +1,58 @@
+[kernel] Parsing out/deepseek-chat/loops-crafted-1_mono-crafted_11/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 6 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 2ms) (Z3 8s)
+[wp] Proved goals:    5 / 6
+  Qed:             5
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_11/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_merged.c, line 4):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_11/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_merged.c, line 4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_11/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_mono-crafted_11/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/loops-crafted-1_mono-crafted_11/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_merged.c, line 15):
+Assume {
+  Type: is_uint32(x).
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Else *)
+  Have: 100000000 <= x.
+}
+Prove: (x % 2) = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_mono-crafted_11/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_mono-crafted_11/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_0001/loops-crafted-1_mono-crafted_11_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

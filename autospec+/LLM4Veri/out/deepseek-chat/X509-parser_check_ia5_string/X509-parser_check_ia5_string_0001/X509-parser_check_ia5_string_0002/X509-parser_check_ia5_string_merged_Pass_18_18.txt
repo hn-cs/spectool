@@ -1,0 +1,237 @@
+[kernel] Parsing out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 18 goals scheduled
+[wp] Proved goals:   18 / 18
+  Qed:            13
+  Alt-Ergo :       5 (20ms-33ms)
+------------------------------------------------------------
+  Function check_ia5_string
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 13) in 'check_ia5_string':
+Let x = Mint_0[shift_uint8(buf_0, i)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(len_0) /\ is_uint8(x).
+  (* Heap *)
+  Type: (region(buf_0.base) <= 0) /\ linked(Malloc_0).
+  (* Residual *)
+  When: i < len_0.
+  (* Residual *)
+  When: null != buf_0.
+  (* Pre-condition *)
+  Have: 0 < len_0.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_uint8(buf_0, 0), len_0).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (Mint_0[shift_uint8(buf_0, i_1)] <= 127))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: 128 <= x.
+}
+Prove: exists i_1 : Z. (0 <= i_1) /\ (i_1 < len_0) /\
+    (128 <= Mint_0[shift_uint8(buf_0, i_1)]).
+Prover Z3 4.8.12 returns Valid (Qed:17ms) (130ms) (86475)
+Prover Alt-Ergo  returns Valid (Qed:17ms) (26ms) (45)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 14) in 'check_ia5_string':
+Let x = Mint_0[shift_uint8(buf_0, i)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(len_0) /\ is_uint8(x).
+  (* Heap *)
+  Type: (region(buf_0.base) <= 0) /\ linked(Malloc_0).
+  (* Residual *)
+  When: i < len_0.
+  (* Residual *)
+  When: null != buf_0.
+  (* Pre-condition *)
+  Have: 0 < len_0.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_uint8(buf_0, 0), len_0).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (Mint_0[shift_uint8(buf_0, i_1)] <= 127))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: 128 <= x.
+}
+Prove: exists i_1 : Z. (0 <= i_1) /\ (i_1 < len_0) /\
+    (128 <= Mint_0[shift_uint8(buf_0, i_1)]).
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (120ms) (86475)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (27ms) (45)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 26):
+Let x = Mint_0[shift_uint8(buf_0, i)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(len_0) /\ is_uint8(x).
+  (* Heap *)
+  Type: (region(buf_0.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 < len_0.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_uint8(buf_0, 0), len_0).
+  (* Else *)
+  Have: null != buf_0.
+  (* Invariant *)
+  Have: i <= len_0.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (Mint_0[shift_uint8(buf_0, i_1)] <= 127))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < len_0.
+  (* Else *)
+  Have: x <= 127.
+}
+Prove: to_uint32(1 + i) <= len_0.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (140ms) (98011)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (32ms) (81)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 27):
+Let x = to_uint32(1 + i_1).
+Let x_1 = Mint_0[shift_uint8(buf_0, i_1)].
+Assume {
+  Type: is_uint32(i_1) /\ is_uint32(len_0) /\ is_uint8(x_1).
+  (* Heap *)
+  Type: (region(buf_0.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < x).
+  (* Pre-condition *)
+  Have: 0 < len_0.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_uint8(buf_0, 0), len_0).
+  (* Else *)
+  Have: null != buf_0.
+  (* Invariant *)
+  Have: i_1 <= len_0.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (Mint_0[shift_uint8(buf_0, i_2)] <= 127))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < len_0.
+  (* Else *)
+  Have: x_1 <= 127.
+  (* Invariant *)
+  Have: x <= len_0.
+}
+Prove: Mint_0[shift_uint8(buf_0, i)] <= 127.
+Prover Alt-Ergo  returns Valid (Qed:4ms) (33ms) (93)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (1.00ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'check_ia5_string' (1/5):
+Effect at line 22
+Prove: true.
+Prover Qed returns Valid (0.64ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'check_ia5_string' (2/5):
+Effect at line 32
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'check_ia5_string' (3/5):
+Effect at line 32
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'check_ia5_string' (4/5):
+Effect at line 34
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'check_ia5_string' (5/5):
+Effect at line 38
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 46):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 47):
+Assume {
+  (* Goal *)
+  When: (0 <= i) /\ (i <= 4).
+  (* Call 'check_ia5_string' *)
+  Have: (forall i_1 : Z. ((0 <= i_1) -> ((i_1 <= 4) -> (buf_0[i_1] <= 127)))) /\
+      (forall i_1 : Z. (i_1 < 0) \/ (5 <= i_1) \/ (buf_0[i_1] <= 127)).
+}
+Prove: buf_0[i] <= 127.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (120ms) (23394)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (20ms) (17)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 11) in 'check_ia5_string'' in 'main' at initialization of 'ret' (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 45)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 12) in 'check_ia5_string'' in 'main' at initialization of 'ret' (file out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c, line 45)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/X509-parser_check_ia5_string/X509-parser_check_ia5_string_0001/X509-parser_check_ia5_string_0002/X509-parser_check_ia5_string_merged.c:42: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

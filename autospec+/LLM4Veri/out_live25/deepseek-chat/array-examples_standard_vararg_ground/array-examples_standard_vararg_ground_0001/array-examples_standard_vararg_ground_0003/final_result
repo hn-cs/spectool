@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 2, 'Iteration': 2, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=3, microseconds=55449), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=162168), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 121, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 3, 3, 1], '1': ['loop invariant i <= N;', 'loop invariant \\forall integer k; 0 <= k < i ==> INT_MIN <= aa[k] < INT_MAX;', 'loop invariant 0 <= i;', 'loop assigns i;', 'loop assigns aa[0..N-1];'], '2': ['loop invariant a <= N;', 'loop invariant \\forall integer k; 0 <= k < a ==> aa[k] >= 0;', 'loop invariant N - a;', 'loop invariant 0 <= a;', 'loop assigns a;'], '3': ['loop invariant x <= a;', 'loop invariant \\forall integer k; 0 <= k < x ==> aa[k] >= 0;', 'loop invariant 0 <= x;', 'loop assigns x;'], '4': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result < INT_MAX;\n', '*/\n', 'int unknown();\n', '#include <assert.h>\n', '#define N 100000\n', '/* 4. FUNC CONTRACT */\nint main( ){\n', '  int aa [N]; \n', '  int a = 0;\n', '\t/* 1. LOOP INVARIANT */\n\tfor(int i = 0; i < N; i++)\n', '\t{\n', '\t  aa[i] = unknown();\n', '\t}\n', '  /* 2. LOOP INVARIANT */\n  while( aa[a] >= 0 ) {\n', '    a++;\n', '  }\n', '  int x;\n', '  /* 3. LOOP INVARIANT */\n  for ( x = 0 ; x < a ; x++ ) {\n', '    //@ assert(aa[x] >= 0  );\n', '  }\n', '  return 0;\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

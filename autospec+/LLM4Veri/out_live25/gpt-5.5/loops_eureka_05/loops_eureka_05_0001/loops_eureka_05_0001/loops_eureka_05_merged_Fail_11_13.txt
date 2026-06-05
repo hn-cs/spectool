@@ -1,0 +1,186 @@
+[kernel] Parsing out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c:8: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_SelectionSort_loop_invariant_2_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_SelectionSort_loop_invariant_2_preserved (Qed 15ms) (Z3 8s)
+[wp] Proved goals:   11 / 13
+  Qed:            10
+  Alt-Ergo :       1 (30ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function SelectionSort
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (17ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (1.00ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 12):
+Let x = array_0[i].
+Let x_1 = array_0[rh_1].
+Let x_2 = 1 + lh_0.
+Let x_3 = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(lh_0) /\ is_sint32(n) /\ is_sint32(rh_0) /\
+      is_sint32(rh_1) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_3) /\
+      is_sint32(x_2).
+  (* Then *)
+  Have: lh_0 < n.
+  (* Invariant *)
+  Have: x_2 != n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((lh_0 <= i_1) -> ((i_1 <= lh_0) ->
+      (array_0[lh_0] <= array_0[i_1]))).
+  (* Invariant *)
+  Have: rh_1 < i.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: lh_0 <= rh_1.
+  (* Invariant *)
+  Have: lh_0 < i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < i) -> ((lh_0 <= i_1) ->
+      (x_1 <= array_0[i_1]))).
+  (* Then *)
+  Have: i < n.
+  If x < x_1
+  Then { Have: rh_0 = i. }
+  Else { Have: rh_1 = rh_0. }
+  (* Invariant *)
+  Have: rh_0 <= i.
+}
+Prove: x_3 != n.
+Prover Z3 4.8.12 returns Timeout (Qed:15ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:15ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 12):
+Let x = 1 + lh_0.
+Assume {
+  Type: is_sint32(lh_0) /\ is_sint32(n) /\ is_sint32(x).
+  (* Then *)
+  Have: lh_0 < n.
+}
+Prove: x != n.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 16):
+Let x = 1 + i_1.
+Let x_1 = array_0[i_1].
+Let x_2 = array_0[rh_1].
+Let x_3 = 1 + lh_0.
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(lh_0) /\ is_sint32(n) /\
+      is_sint32(rh_0) /\ is_sint32(rh_1) /\ is_sint32(x_1) /\
+      is_sint32(x_2) /\ is_sint32(x) /\ is_sint32(x_3).
+  (* Goal *)
+  When: (lh_0 <= i) /\ (i <= i_1).
+  (* Then *)
+  Have: lh_0 < n.
+  (* Invariant *)
+  Have: x_3 != n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((lh_0 <= i_2) -> ((i_2 <= lh_0) ->
+      (array_0[lh_0] <= array_0[i_2]))).
+  (* Invariant *)
+  Have: rh_1 < i_1.
+  (* Invariant *)
+  Have: n != i_1.
+  (* Invariant *)
+  Have: lh_0 <= rh_1.
+  (* Invariant *)
+  Have: lh_0 < i_1.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((lh_0 <= i_2) ->
+      (x_2 <= array_0[i_2]))).
+  (* Then *)
+  Have: i_1 < n.
+  If x_1 < x_2
+  Then { Have: rh_0 = i_1. }
+  Else { Have: rh_1 = rh_0. }
+  (* Invariant *)
+  Have: rh_0 <= i_1.
+  (* Invariant *)
+  Have: x != n.
+  (* Invariant *)
+  Have: lh_0 <= rh_0.
+}
+Prove: array_0[rh_0] <= array_0[i].
+Prover Z3 4.8.12 returns Valid (Qed:25ms) (130ms) (49300)
+Prover Alt-Ergo  returns Valid (Qed:25ms) (30ms) (150)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c:5: Warning: 
+  No 'assigns' specification for function 'SelectionSort'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0001/loops_eureka_05_merged.c:27: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

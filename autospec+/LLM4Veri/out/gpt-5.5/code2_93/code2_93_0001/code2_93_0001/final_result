@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=2, microseconds=552222), 'total_solve_time': datetime.timedelta(seconds=9, microseconds=821914), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 38, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant x + y == 3 * i;', 'loop invariant i <= n;', 'loop invariant 0 <= i;', 'loop assigns y;', 'loop assigns x;', 'loop assigns i;'], '2': [], 'MSLines': ['/*@\n', 'requires n >= 0;\n', '*/\n', '/* 2. FUNC CONTRACT */\nvoid foo(int n) {\n', '  int i = 0;\n', '  int x = 0;\n', '  int y = 0;\n', '  /* 1. LOOP INVARIANT */\n  while (i < n) {\n', '    i = i + 1;\n', '    if (unknown()) {\n', '      x  = x + 1;\n', '      y  = y + 2;\n', '    } else {\n', '      x  = x + 2;\n', '      y  = y + 1;\n', '    }\n', '  }\n', '  //@ assert (3 * n) == (x + y);\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

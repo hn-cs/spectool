@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 4, 'Iteration': 4, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=48, microseconds=854153), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=214252), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 2160, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': [], '2': [], 'MSLines': ['/* 1. FUNC CONTRACT */\nvoid func_to_recursive_line_20_to_25_0(unsigned int *k, unsigned int *j, unsigned int *i)\n', '{\n', '  if ((*k) < 0x0fffffff)\n', '  {\n', '    {\n', '      *i = (*i) + 1;\n', '      *j = (*j) + 2;\n', '      *k = (*k) + 3;\n', '      //@assert((*k) == ((*i) + (*j)));\n', '    }\n', '    func_to_recursive_line_20_to_25_0(k, j, i);\n', '  }\n', '  else\n', '  {\n', '  }\n', '}\n', '/* 2. FUNC CONTRACT */\nint main()\n', '{\n', '  unsigned int i = 0;\n', '  unsigned int j = 0;\n', '  unsigned int k = 0;\n', '  func_to_recursive_line_20_to_25_0(&k, &j, &i);\n', '  //@assert(k == (i + j));\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

@@ -1,0 +1,79 @@
+[kernel] Parsing out/deepseek-chat/code2_57/code2_57_0001/code2_57_0001/code2_57_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/deepseek-chat/code2_57/code2_57_0001/code2_57_0001/code2_57_merged.c:11: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/code2_57/code2_57_0001/code2_57_0001/code2_57_merged.c:4: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/code2_57/code2_57_0001/code2_57_0001/code2_57_merged.c:10: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 4 goals scheduled
+[wp] Proved goals:    4 / 4
+  Qed:             3
+  Alt-Ergo :       1 (18ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_57/code2_57_0001/code2_57_0001/code2_57_merged.c, line 7):
+Let x = 1 + c.
+Assume {
+  Type: is_sint32(c) /\ is_sint32(n) /\ is_sint32(n_1) /\ is_sint32(tmp_0) /\
+      is_sint32(tmp_0_0) /\ is_sint32(x).
+  (* Residual *)
+  When: n < c.
+  (* Residual *)
+  When: tmp_0 != 0.
+  (* Pre-condition *)
+  Have: 0 < n_1.
+  (* Invariant *)
+  Have: 0 <= c.
+  (* Then *)
+  Have: tmp_0_0 != 0.
+}
+Prove: x != n.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_57/code2_57_0001/code2_57_0001/code2_57_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_57/code2_57_0001/code2_57_0001/code2_57_merged.c, line 8):
+Let x = 1 + c.
+Assume {
+  Type: is_sint32(c) /\ is_sint32(n) /\ is_sint32(n_1) /\ is_sint32(tmp_0) /\
+      is_sint32(tmp_0_0) /\ is_sint32(x).
+  (* Residual *)
+  When: n < c.
+  (* Residual *)
+  When: tmp_0 != 0.
+  (* Pre-condition *)
+  Have: 0 < n_1.
+  (* Invariant *)
+  Have: 0 <= c.
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  (* Invariant *)
+  Have: x != n.
+}
+Prove: (-1) <= c.
+Prover Z3 4.8.12 returns Valid (Qed:12ms) (120ms) (35845)
+Prover Alt-Ergo  returns Valid (Qed:12ms) (18ms) (14)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_57/code2_57_0001/code2_57_0001/code2_57_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/code2_57/code2_57_0001/code2_57_0001/code2_57_merged.c:4: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/code2_57/code2_57_0001/code2_57_0001/code2_57_merged.c:11: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

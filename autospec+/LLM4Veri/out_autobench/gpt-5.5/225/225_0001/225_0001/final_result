@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=4, microseconds=638898), 'total_solve_time': datetime.timedelta(microseconds=714899), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 57, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': ['requires \\valid_read(r);', 'requires \\valid_read(b);', 'requires \\valid_read(a);', 'requires INT_MIN <= *a + *b + *r <= INT_MAX;', 'ensures \\result == *a + *b + *r;', 'assigns \\nothing;'], '2': [], 'MSLines': ['#include <limits.h>\n', '\n', '/* 1. FUNC CONTRACT */\nint add(int *a, int *b, int *r) {\n', '    return *a + *b + *r;\n', '}\n', '\n', '/* 2. FUNC CONTRACT */\nint main() {\n', '    int a = 24;\n', '    int b = 32;\n', '    int r = 12;\n', '    int x;\n', '\n', '    x = add(&a, &b, &r) ;\n', '    //@ assert x == a + b + r;\n', '    //@ assert x == 68 ;\n', '\n', '    x = add(&a, &a, &a) ;\n', '    //@ assert x == a + a + a;\n', '    //@ assert x == 72 ;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

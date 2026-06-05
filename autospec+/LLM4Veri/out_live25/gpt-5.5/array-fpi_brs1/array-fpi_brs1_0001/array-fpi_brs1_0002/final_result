@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=17, microseconds=796337), 'total_solve_time': datetime.timedelta(seconds=13, microseconds=454457), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 692, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 3, 1], '1': ['loop invariant i <= N;', 'loop invariant \\forall integer j; 0 <= j < i ==> a[j] == 1;', 'loop invariant 0 <= i;', 'loop assigns i;', 'loop assigns a[0..N-1];'], '2': ['loop invariant i > 0 ==> sum[0] == i - 1;', 'loop invariant i > 0 ==> sum[0] <= i;', 'loop invariant i <= N;', 'loop invariant \\forall integer j; 0 <= j < N ==> a[j] == 1;', 'loop invariant 1 <= N;', 'loop invariant 0 <= i;', 'loop assigns sum[0];', 'loop assigns i;'], '3': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result <= INT_MAX/4;\n', '*/\n', 'int unknown();\n', '#include<stdlib.h>\n', 'int N;\n', '/* 3. FUNC CONTRACT */\nint main()\n', '{\n', '\tN = unknown();\n', '\tif(N <= 0) return 1;\n', '\t//@ assert (N <= 2147483647/4);\n', '\tint i;\n', '\tint sum[1];\n', '\tint *a = malloc(sizeof(int)*N);\n', '\t/* 1. LOOP INVARIANT */\n\tfor(i=0; i<N; i++)\n', '\t{\n', '\t\tif(i%1==0) {\n', '\t\t\ta[i] = 1;\n', '\t\t} else {\n', '\t\t\ta[i] = 0;\n', '\t\t}\n', '\t}\n', '\t/* 2. LOOP INVARIANT */\n\tfor(i=0; i<N; i++)\n', '\t{\n', '\t\tif(i==0) {\n', '\t\t\tsum[0] = 0;\n', '\t\t} else {\n', '\t\t\tsum[0] = sum[0] + a[i];\n', '\t\t}\n', '\t}\n', '\t//@ assert(sum[0] <= N);\n', '\treturn 1;\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

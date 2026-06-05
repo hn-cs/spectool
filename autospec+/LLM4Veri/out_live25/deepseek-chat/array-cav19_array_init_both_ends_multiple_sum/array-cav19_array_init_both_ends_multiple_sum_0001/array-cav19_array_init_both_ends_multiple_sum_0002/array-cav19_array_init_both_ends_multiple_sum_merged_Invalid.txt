@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/array-cav19_array_init_both_ends_multiple_sum/array-cav19_array_init_both_ends_multiple_sum_0001/array-cav19_array_init_both_ends_multiple_sum_0002/array-cav19_array_init_both_ends_multiple_sum_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/array-cav19_array_init_both_ends_multiple_sum/array-cav19_array_init_both_ends_multiple_sum_0001/array-cav19_array_init_both_ends_multiple_sum_0002/array-cav19_array_init_both_ends_multiple_sum_merged.c:20: Warning: 
+  unbound logic variable b. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/array-cav19_array_init_both_ends_multiple_sum/array-cav19_array_init_both_ends_multiple_sum_0001/array-cav19_array_init_both_ends_multiple_sum_0002/array-cav19_array_init_both_ends_multiple_sum_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

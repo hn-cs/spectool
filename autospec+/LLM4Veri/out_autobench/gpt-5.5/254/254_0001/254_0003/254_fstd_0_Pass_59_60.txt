@@ -1,0 +1,762 @@
+[kernel] Parsing out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 60 goals scheduled
+[wp] [Timeout] typed_parse_algoid_params_none_call_parse_null_requires (Qed 13ms) (Alt-Ergo 8s)
+[wp] Proved goals:   59 / 60
+  Qed:            48
+  Alt-Ergo :      11 (20ms-693ms-8s)
+  Timeout:         1
+------------------------------------------------------------
+  Function bufs_differ
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 23) in 'bufs_differ':
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(bufs_differ_0) /\
+      is_sint32(ret_0).
+  (* Heap *)
+  Type: (region(b1_0.base) <= 0) /\ (region(b2_0.base) <= 0) /\
+      linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b2_0, 0), n).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b1_0, 0), n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: ((ret_0 = 1) ->
+      (exists i_1 : Z.
+       (Mint_0[shift_uint8(b2_0, i_1)] != Mint_0[shift_uint8(b1_0, i_1)]) /\
+       (0 <= i_1) /\ (i_1 < i))).
+  (* Invariant *)
+  Have: (ret_0 = 0) \/ (ret_0 = 1).
+  (* Invariant *)
+  Have: ((ret_0 = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+       (Mint_0[shift_uint8(b2_0, i_1)] = Mint_0[shift_uint8(b1_0, i_1)]))))).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  If i < n
+  Then {
+    (* Then *)
+    Have: Mint_0[shift_uint8(b2_0, i)] != Mint_0[shift_uint8(b1_0, i)].
+    Have: bufs_differ_0 = 1.
+  }
+  Else { Have: ret_0 = bufs_differ_0. }
+}
+Prove: (exists i_1 : Z.
+        (Mint_0[shift_uint8(b2_0, i_1)] != Mint_0[shift_uint8(b1_0, i_1)]) /\
+        (0 <= i_1) /\ (i_1 < n)) <-> (bufs_differ_0 = 1).
+Prover Alt-Ergo  returns Valid (Qed:20ms) (35ms) (219)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 24) in 'bufs_differ':
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 25) in 'bufs_differ':
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(bufs_differ_0) /\
+      is_sint32(ret_0).
+  (* Heap *)
+  Type: (region(b1_0.base) <= 0) /\ (region(b2_0.base) <= 0) /\
+      linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b2_0, 0), n).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b1_0, 0), n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: ((ret_0 = 1) ->
+      (exists i_1 : Z.
+       (Mint_0[shift_uint8(b2_0, i_1)] != Mint_0[shift_uint8(b1_0, i_1)]) /\
+       (0 <= i_1) /\ (i_1 < i))).
+  (* Invariant *)
+  Have: (ret_0 = 0) \/ (ret_0 = 1).
+  (* Invariant *)
+  Have: ((ret_0 = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+       (Mint_0[shift_uint8(b2_0, i_1)] = Mint_0[shift_uint8(b1_0, i_1)]))))).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  If i < n
+  Then {
+    (* Then *)
+    Have: Mint_0[shift_uint8(b2_0, i)] != Mint_0[shift_uint8(b1_0, i)].
+    Have: bufs_differ_0 = 1.
+  }
+  Else { Have: ret_0 = bufs_differ_0. }
+}
+Prove: (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+        (Mint_0[shift_uint8(b2_0, i_1)] = Mint_0[shift_uint8(b1_0, i_1)])))) <->
+    (bufs_differ_0 = 0).
+Prover Alt-Ergo  returns Valid (Qed:14ms) (37ms) (236)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 34):
+Let x = Mint_0[shift_uint8(b2_0, i)].
+Let x_1 = Mint_0[shift_uint8(b1_0, i)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_uint8(x_1) /\ is_uint8(x).
+  (* Heap *)
+  Type: (region(b1_0.base) <= 0) /\ (region(b2_0.base) <= 0) /\
+      linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b2_0, 0), n).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b1_0, 0), n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (Mint_0[shift_uint8(b2_0, i_1)] != Mint_0[shift_uint8(b1_0, i_1)]) /\
+      (0 <= i_1) /\ (i_1 < i).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Else *)
+  Have: x = x_1.
+}
+Prove: exists i_2 : Z.
+    (Mint_0[shift_uint8(b2_0, i_2)] != Mint_0[shift_uint8(b1_0, i_2)]) /\
+    (0 <= i_2) /\ (i_2 < to_uint32(1 + i)).
+Prover Alt-Ergo  returns Valid (Qed:6ms) (30ms) (111)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 34):
+Prove: true.
+Prover Qed returns Valid (0.56ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 35):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 35):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 36):
+Let x = Mint_0[shift_uint8(b2_0, i_1)].
+Let x_1 = Mint_0[shift_uint8(b1_0, i_1)].
+Assume {
+  Type: is_uint32(i_1) /\ is_uint32(n) /\ is_uint8(x_1) /\ is_uint8(x).
+  (* Heap *)
+  Type: (region(b1_0.base) <= 0) /\ (region(b2_0.base) <= 0) /\
+      linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < to_uint32(1 + i_1)).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b2_0, 0), n).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b1_0, 0), n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (Mint_0[shift_uint8(b2_0, i_2)] = Mint_0[shift_uint8(b1_0, i_2)]))).
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Else *)
+  Have: x = x_1.
+}
+Prove: Mint_0[shift_uint8(b2_0, i)] = Mint_0[shift_uint8(b1_0, i)].
+Prover Alt-Ergo  returns Valid (Qed:4ms) (33ms) (113)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 36):
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 37):
+Let x = to_uint32(1 + i).
+Let x_1 = Mint_0[shift_uint8(b2_0, i)].
+Let x_2 = Mint_0[shift_uint8(b1_0, i)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(ret_0) /\ is_uint8(x_2) /\
+      is_uint8(x_1).
+  (* Heap *)
+  Type: (region(b1_0.base) <= 0) /\ (region(b2_0.base) <= 0) /\
+      linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b2_0, 0), n).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b1_0, 0), n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: ((ret_0 = 1) ->
+      (exists i_1 : Z.
+       (Mint_0[shift_uint8(b2_0, i_1)] != Mint_0[shift_uint8(b1_0, i_1)]) /\
+       (0 <= i_1) /\ (i_1 < i))).
+  (* Invariant *)
+  Have: (ret_0 = 0) \/ (ret_0 = 1).
+  (* Invariant *)
+  Have: ((ret_0 = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+       (Mint_0[shift_uint8(b2_0, i_1)] = Mint_0[shift_uint8(b1_0, i_1)]))))).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Else *)
+  Have: x_1 = x_2.
+  (* Invariant *)
+  Have: ((ret_0 = 1) ->
+      (exists i_1 : Z.
+       (Mint_0[shift_uint8(b2_0, i_1)] != Mint_0[shift_uint8(b1_0, i_1)]) /\
+       (0 <= i_1) /\ (i_1 < x))).
+  (* Invariant *)
+  Have: ((ret_0 = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < x) ->
+       (Mint_0[shift_uint8(b2_0, i_1)] = Mint_0[shift_uint8(b1_0, i_1)]))))).
+}
+Prove: x <= n.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (140ms) (144881)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (32ms) (114)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 37):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 38):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 38):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 39):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'bufs_differ' (1/3):
+Effect at line 42
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'bufs_differ' (2/3):
+Effect at line 42
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'bufs_differ' (3/3):
+Effect at line 44
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function parse_algoid_params_none
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 61) in 'parse_null'' in 'parse_algoid_params_none' at call 'parse_null' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 145)
+:
+Tags: Case 2.
+Let a = shift_uint8(cert_0, off_0).
+Assume {
+  Type: is_uint32(off_0).
+  (* Heap *)
+  Type: (region(cert_0.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: a != null.
+  (* Else *)
+  Have: null != cert_0.
+}
+Prove: valid_rd(Malloc_0[L_parsed_1771 <- 1], a, 2).
+Prover Z3 4.8.12 returns Unknown (Qed:13ms)
+Prover Alt-Ergo  returns Timeout (Qed:13ms) (8s)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 62) in 'parse_null'' in 'parse_algoid_params_none' at call 'parse_null' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 145)
+:
+Tags: Case 2.
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function parse_null
+------------------------------------------------------------
+
+Goal Complete behaviors 'invalid_args', 'invalid_encoding', 'invalid_len',
+                        'valid_null':
+Let a = shift_uint8(buf_0, 0).
+Let x = Mint_0[a].
+Let x_1 = Mint_0[shift_uint8(buf_0, 1)].
+Assume {
+  Type: is_uint32(len_0) /\ is_uint8(x) /\ is_uint8(x_1).
+  (* Heap *)
+  Type: (region(buf_0.base) <= 0) /\ (region(parsed_0.base) <= 0) /\
+      linked(Malloc_0).
+  (* Pre-condition *)
+  Have: ((len_0 = 2) -> ((null != buf_0) -> valid_rd(Malloc_0, a, 2))).
+  (* Pre-condition *)
+  Have: ((len_0 = 2) -> ((null != buf_0) -> ((null != parsed_0) ->
+      valid_rw(Malloc_0, parsed_0, 1)))).
+}
+Prove: (len_0 = 0) \/ (null = buf_0) \/ (null = parsed_0) \/
+    ((len_0 != 0) /\ (len_0 != 2) /\ (null != buf_0) /\ (null != parsed_0)) \/
+    ((len_0 = 2) /\ (null != buf_0) /\ (null != parsed_0) /\ (x = 5) /\
+     (x_1 = 0)) \/
+    ((len_0 = 2) /\ (null != buf_0) /\ (null != parsed_0) /\
+     ((x != 5) \/ (x_1 != 0))).
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (82667)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (20ms) (17)
+
+------------------------------------------------------------
+
+Goal Disjoint behaviors 'invalid_args', 'invalid_encoding', 'invalid_len',
+                        'valid_null':
+Let a = shift_uint8(buf_0, 0).
+Let x = Mint_0[a].
+Let x_1 = Mint_0[shift_uint8(buf_0, 1)].
+Assume {
+  Type: is_uint32(len_0) /\ is_uint8(x) /\ is_uint8(x_1).
+  (* Heap *)
+  Type: (region(buf_0.base) <= 0) /\ (region(parsed_0.base) <= 0) /\
+      linked(Malloc_0).
+  (* Pre-condition *)
+  Have: ((len_0 = 2) -> ((null != buf_0) -> valid_rd(Malloc_0, a, 2))).
+  (* Pre-condition *)
+  Have: ((len_0 = 2) -> ((null != buf_0) -> ((null != parsed_0) ->
+      valid_rw(Malloc_0, parsed_0, 1)))).
+}
+Prove: ((len_0 = 0) \/ (len_0 = 2) \/ (null = buf_0) \/ (null = parsed_0) \/
+        ((len_0 != 0) /\ (null != buf_0) /\ (null != parsed_0))) /\
+    ((len_0 != 2) \/ (null = buf_0) \/ (null = parsed_0) \/ (x != 5) \/
+     (x_1 != 0) \/ ((len_0 != 0) /\ (null != buf_0) /\ (null != parsed_0))) /\
+    ((len_0 != 2) \/ (null = buf_0) \/ (null = parsed_0) \/
+     ((len_0 != 0) /\ (null != buf_0) /\ (null != parsed_0)) \/
+     ((x = 5) /\ (x_1 = 0))) /\
+    ((len_0 != 2) \/ (null = buf_0) \/ (null = parsed_0) \/ (x != 5) \/
+     (x_1 != 0) \/ ((x = 5) /\ (x_1 = 0))).
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (130ms) (112589)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (20ms) (40)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 21) in 'bufs_differ'' in 'parse_null' at call 'bufs_differ' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 106)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 22) in 'bufs_differ'' in 'parse_null' at call 'bufs_differ' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 106)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function parse_null with behavior invalid_args
+------------------------------------------------------------
+
+Goal Post-condition for 'invalid_args' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 67) in 'parse_null':
+Prove: true.
+Prover Qed returns Valid (25ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_args' nothing in 'parse_null':
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_args' nothing in 'parse_null' (1/7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_args' nothing in 'parse_null' (2/7):
+Effect at line 95
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_args' nothing in 'parse_null' (3/7):
+Effect at line 101
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_args' nothing in 'parse_null' (4/7):
+Call Result at line 106
+Prove: true.
+Prover Qed returns Valid (0.69ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_args' nothing in 'parse_null' (5/7):
+Effect at line 108
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_args' nothing in 'parse_null' (6/7):
+Effect at line 113
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_args' nothing in 'parse_null' (7/7):
+Effect at line 114
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function parse_null with behavior invalid_encoding
+------------------------------------------------------------
+
+Goal Post-condition for 'invalid_encoding' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 78) in 'parse_null':
+Let a = shift_uint8(buf_0, 0).
+Let x = Mint_0[a].
+Let x_1 = Mint_0[shift_uint8(buf_0, 1)].
+Assume {
+  Type: is_uint8(x) /\ is_uint8(x_1).
+  (* Heap *)
+  Type: (region(buf_0.base) <= 0) /\ (region(parsed_0.base) <= 0) /\
+      IsArray_uint8(null_encoded_val_0) /\ linked(Malloc_0).
+  (* Initializer *)
+  Init: null_encoded_val_0[0] = 5.
+  (* Initializer *)
+  Init: null_encoded_val_0[1] = 0.
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, a, 2).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, parsed_0, 1).
+  (* Pre-condition for 'invalid_encoding' *)
+  Have: (null != buf_0) /\ (null != parsed_0).
+  (* Pre-condition for 'invalid_encoding' *)
+  Have: (x != 5) \/ (x_1 != 0).
+  (* Call 'bufs_differ' *)
+  Have: forall i : Z. ((0 <= i) -> ((i <= 1) ->
+      (Mint_0[shift_uint8(buf_0, i)] = null_encoded_val_0[i]))).
+}
+Prove: false.
+Prover Z3 4.8.12 returns Valid (Qed:30ms) (150ms) (119004)
+Prover Alt-Ergo  returns Valid (Qed:30ms) (32ms) (79)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_encoding' nothing in 'parse_null':
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_encoding' nothing in 'parse_null' (1/7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_encoding' nothing in 'parse_null' (2/7):
+Effect at line 95
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_encoding' nothing in 'parse_null' (3/7):
+Effect at line 101
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_encoding' nothing in 'parse_null' (4/7):
+Call Result at line 106
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_encoding' nothing in 'parse_null' (5/7):
+Effect at line 108
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_encoding' nothing in 'parse_null' (6/7):
+Effect at line 113
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_encoding' nothing in 'parse_null' (7/7):
+Effect at line 114
+Let a = shift_uint8(buf_0, 0).
+Let x = Mint_0[a].
+Let x_1 = Mint_0[shift_uint8(buf_0, 1)].
+Assume {
+  Type: is_uint8(x) /\ is_uint8(x_1).
+  (* Heap *)
+  Type: (region(buf_0.base) <= 0) /\ (region(parsed_0.base) <= 0) /\
+      IsArray_uint8(null_encoded_val_0) /\ linked(Malloc_0).
+  (* Initializer *)
+  Init: null_encoded_val_0[0] = 5.
+  (* Initializer *)
+  Init: null_encoded_val_0[1] = 0.
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, a, 2).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, parsed_0, 1).
+  (* Pre-condition for 'invalid_encoding' *)
+  Have: (null != buf_0) /\ (null != parsed_0).
+  (* Pre-condition for 'invalid_encoding' *)
+  Have: (x != 5) \/ (x_1 != 0).
+  (* Call 'bufs_differ' *)
+  Have: forall i : Z. ((0 <= i) -> ((i <= 1) ->
+      (Mint_0[shift_uint8(buf_0, i)] = null_encoded_val_0[i]))).
+}
+Prove: invalid(Malloc_0, parsed_0, 1).
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (140ms) (119269)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (31ms) (83)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function parse_null with behavior invalid_len
+------------------------------------------------------------
+
+Goal Post-condition for 'invalid_len' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 72) in 'parse_null':
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_len' nothing in 'parse_null':
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_len' nothing in 'parse_null' (1/7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_len' nothing in 'parse_null' (2/7):
+Effect at line 95
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_len' nothing in 'parse_null' (3/7):
+Effect at line 101
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_len' nothing in 'parse_null' (4/7):
+Call Result at line 106
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_len' nothing in 'parse_null' (5/7):
+Effect at line 108
+Prove: true.
+Prover Qed returns Valid (0.69ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_len' nothing in 'parse_null' (6/7):
+Effect at line 113
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'invalid_len' nothing in 'parse_null' (7/7):
+Effect at line 114
+Prove: true.
+Prover Qed returns Valid (0.82ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function parse_null with behavior valid_null
+------------------------------------------------------------
+
+Goal Post-condition for 'valid_null' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 84) in 'parse_null':
+Let a = shift_uint8(buf_0, 0).
+Assume {
+  (* Heap *)
+  Type: (region(buf_0.base) <= 0) /\ (region(parsed_0.base) <= 0) /\
+      IsArray_uint8(null_encoded_val_0) /\ linked(Malloc_0).
+  (* Initializer *)
+  Init: null_encoded_val_0[0] = 5.
+  (* Initializer *)
+  Init: null_encoded_val_0[1] = 0.
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, a, 2).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, parsed_0, 1).
+  (* Pre-condition for 'valid_null' *)
+  Have: (null != buf_0) /\ (null != parsed_0).
+  (* Pre-condition for 'valid_null' *)
+  Have: (Mint_0[a] = 5) /\ (Mint_0[shift_uint8(buf_0, 1)] = 0).
+  (* Call 'bufs_differ' *)
+  Have: exists i : Z.
+      (Mint_0[shift_uint8(buf_0, i)] != null_encoded_val_0[i]) /\ (0 <= i) /\
+      (i <= 1).
+}
+Prove: false.
+Prover Alt-Ergo  returns Valid (Qed:12ms) (23ms) (46)
+
+------------------------------------------------------------
+
+Goal Post-condition for 'valid_null' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 85) in 'parse_null':
+Let a = shift_uint8(buf_0, 0).
+Let x = Mint_0[parsed_0].
+Assume {
+  Type: is_uint32(x).
+  (* Heap *)
+  Type: (region(buf_0.base) <= 0) /\ (region(parsed_0.base) <= 0) /\
+      IsArray_uint8(null_encoded_val_0) /\ linked(Malloc_0).
+  (* Initializer *)
+  Init: null_encoded_val_0[0] = 5.
+  (* Initializer *)
+  Init: null_encoded_val_0[1] = 0.
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, a, 2).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, parsed_0, 1).
+  (* Pre-condition for 'valid_null' *)
+  Have: (null != buf_0) /\ (null != parsed_0).
+  (* Pre-condition for 'valid_null' *)
+  Have: (Mint_1[a] = 5) /\ (Mint_1[shift_uint8(buf_0, 1)] = 0).
+  (* Call 'bufs_differ' *)
+  Have: exists i : Z.
+      (Mint_1[shift_uint8(buf_0, i)] != null_encoded_val_0[i]) /\ (0 <= i) /\
+      (i <= 1).
+}
+Prove: x = 2.
+Prover Alt-Ergo  returns Valid (Qed:13ms) (24ms) (52)
+
+------------------------------------------------------------
+
+Goal Assigns for 'valid_null' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 83) in 'parse_null':
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns for 'valid_null' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 83) in 'parse_null' (1/7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns for 'valid_null' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 83) in 'parse_null' (2/7):
+Effect at line 95
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'valid_null' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 83) in 'parse_null' (3/7):
+Effect at line 101
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns for 'valid_null' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 83) in 'parse_null' (4/7):
+Call Result at line 106
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'valid_null' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 83) in 'parse_null' (5/7):
+Effect at line 108
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'valid_null' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 83) in 'parse_null' (6/7):
+Effect at line 113
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Assigns for 'valid_null' (file out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c, line 83) in 'parse_null' (7/7):
+Effect at line 114
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+[wp] out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c:90: Warning: 
+  Memory model hypotheses for function 'parse_null':
+  /*@
+     behavior wp_typed:
+       requires \separated(buf + (..), (u8 const *)null_encoded_val + (..));
+       requires \separated(parsed + (..), (u8 const *)null_encoded_val + (..));
+     */
+  int parse_null(u8 const *buf, u32 len, u32 *parsed);
+[wp:pedantic-assigns] out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c:127: Warning: 
+  No 'assigns' specification for function 'parse_algoid_params_none'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/254/254_0001/254_0003/254_gen_0.c:161: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

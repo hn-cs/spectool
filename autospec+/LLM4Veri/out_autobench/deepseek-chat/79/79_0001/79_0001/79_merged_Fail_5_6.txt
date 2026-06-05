@@ -1,0 +1,110 @@
+[kernel] Parsing out/deepseek-chat/79/79_0001/79_0001/79_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/deepseek-chat/79/79_0001/79_0001/79_merged.c:14: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/79/79_0001/79_0001/79_merged.c:6: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/79/79_0001/79_0001/79_merged.c:14: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 6 goals scheduled
+[wp] [Timeout] typed_foo_loop_invariant_2_preserved (Qed 8ms) (Z3 8s)
+[wp] Proved goals:    5 / 6
+  Qed:             4
+  Alt-Ergo :       1 (20ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/79/79_0001/79_0001/79_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/79/79_0001/79_0001/79_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.50ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/79/79_0001/79_0001/79_merged.c, line 11):
+Let x_2 = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(x_2).
+  (* Residual *)
+  When: i < y.
+  (* Pre-condition *)
+  Have: 0 <= y_1.
+  (* Pre-condition *)
+  Have: y_1 <= x_1.
+  (* Invariant *)
+  Have: ((y_1 <= 0) -> (y_1 = 0)).
+  (* Invariant *)
+  Have: 0 <= x_1.
+  (* Invariant *)
+  Have: i <= x.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: ((y <= x_2) -> (x_2 = y)).
+}
+Prove: i < x.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/79/79_0001/79_0001/79_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/79/79_0001/79_0001/79_merged.c, line 12):
+Let x_2 = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(x_2).
+  (* Residual *)
+  When: i < y.
+  (* Pre-condition *)
+  Have: 0 <= y_1.
+  (* Pre-condition *)
+  Have: y_1 <= x_1.
+  (* Invariant *)
+  Have: ((y_1 <= 0) -> (y_1 = 0)).
+  (* Invariant *)
+  Have: 0 <= x_1.
+  (* Invariant *)
+  Have: i <= x.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: ((y <= x_2) -> (x_2 = y)).
+  (* Invariant *)
+  Have: i < x.
+}
+Prove: (-1) <= i.
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (120ms) (37024)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (20ms) (17)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/79/79_0001/79_0001/79_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.75ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/79/79_0001/79_0001/79_merged.c:6: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/79/79_0001/79_0001/79_merged.c:14: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

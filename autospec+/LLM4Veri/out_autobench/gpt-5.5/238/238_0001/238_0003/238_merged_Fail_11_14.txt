@@ -1,0 +1,160 @@
+[kernel] Parsing out/gpt-5.5/238/238_0001/238_0003/238_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/238/238_0001/238_0003/238_merged.c:13: Warning: 
+  Calling function unknown_int that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/238/238_0001/238_0003/238_merged.c:11: Warning: 
+  Neither code nor implicit assigns clause for function unknown_int, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 14 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 20ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 19ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_3_preserved (Qed 11ms) (Z3 8s)
+[wp] Proved goals:   11 / 14
+  Qed:            11
+  Timeout:         3
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 24):
+Assume {
+  Type: is_uint32(b) /\ is_uint32(i) /\ is_uint32(j_1) /\ is_uint32(j) /\
+      is_sint32(tmp_0_0) /\ is_uint32(j - 1).
+  (* Invariant *)
+  Have: 0 <= b.
+  (* Invariant *)
+  Have: 0 < j.
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483647).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If to_uint32(to_uint32(2 + i) % 2) = 0
+  Then { Have: to_uint32(2 + j) = j_1. }
+  Else { Have: to_uint32(1 + j) = j_1. }
+}
+Prove: (1 + j) = j_1.
+Prover Z3 4.8.12 returns Timeout (Qed:20ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:20ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (0.74ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 25):
+Let x = 2 * a.
+Assume {
+  Type: is_uint32(a) /\ is_uint32(j) /\ is_uint32(j_1) /\
+      is_sint32(flag_0) /\ is_sint32(tmp_0_0) /\ is_uint32(x).
+  (* Goal *)
+  When: flag_0 != 0.
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= flag_0) /\ (flag_0 <= 2147483647).
+  (* Invariant *)
+  Have: 0 <= a.
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483647).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+}
+Prove: (2 * to_uint32(1 + a)) = to_uint32(2 + x).
+Prover Z3 4.8.12 returns Timeout (Qed:19ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:19ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 26):
+Let x = to_uint32(1 + a).
+Let x_1 = 2 * x.
+Let x_2 = 2 * a.
+Assume {
+  Type: is_uint32(a) /\ is_uint32(j) /\ is_sint32(flag_0) /\
+      is_sint32(tmp_0_0) /\ is_uint32(x_2) /\ is_uint32(x_1).
+  (* Goal *)
+  When: flag_0 != 0.
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= flag_0) /\ (flag_0 <= 2147483647).
+  (* Invariant *)
+  Have: 0 <= a.
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483647).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  Have: x_1 = to_uint32(2 + x_2).
+}
+Prove: to_uint32(a + to_uint32(j - x_2)) = x.
+Prover Z3 4.8.12 returns Timeout (Qed:11ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:11ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 30) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/238/238_0001/238_0003/238_merged.c, line 30) (2/2):
+Call Result at line 35
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/238/238_0001/238_0003/238_merged.c:9: Warning: 
+  No 'assigns' specification for function 'unknown_int'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/238/238_0001/238_0003/238_merged.c:11: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

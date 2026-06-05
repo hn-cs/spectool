@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 3, 'Iteration': 3, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=2, microseconds=237498), 'total_solve_time': datetime.timedelta(microseconds=757208), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 116, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant i <= SZ;', 'loop invariant \\forall integer j; 0 <= j < i ==> B[j] == A[j];', 'loop invariant \\forall integer j; 0 <= j < i ==> A[j] == B[j];', 'loop invariant 0 <= i;', 'loop assigns i;', 'loop assigns B[0..SZ-1];'], '2': [], 'MSLines': ['#include "assert.h"\n', '\n', '#define SZ 2048\n', '\n', '/* 2. FUNC CONTRACT */\nint main(void) {\n', '  int A[SZ];\n', '  int B[SZ];\n', '  int i;\n', '  int tmp;\n', '\n', '  /* 1. LOOP INVARIANT */\n  for (i = 0; i < SZ; i++) {\n', '    tmp = A[i];\n', '    B[i] = tmp;\n', '  }\n', '\n', '  //@ assert(A[SZ/2] == B[SZ/2]);\n', '}']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

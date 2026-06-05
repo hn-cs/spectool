@@ -1,0 +1,175 @@
+[kernel] Parsing out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 13 goals scheduled
+[wp] Proved goals:   13 / 13
+  Qed:            10
+  Alt-Ergo :       3 (29ms-37ms)
+------------------------------------------------------------
+  Function check
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 5) in 'check':
+Assume {
+  Type: is_sint32(check_0) /\ is_sint32(i) /\ is_sint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(b, 0), n).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(a, 0), n).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (Mint_0[shift_sint32(b, i_1)] = Mint_0[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: 0 <= i.
+  If i < n
+  Then {
+    (* Then *)
+    Have: Mint_0[shift_sint32(b, i)] != Mint_0[shift_sint32(a, i)].
+    Have: check_0 = 0.
+  }
+  Else { Have: check_0 = 1. }
+}
+Prove: (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+        (Mint_0[shift_sint32(b, i_1)] = Mint_0[shift_sint32(a, i_1)])))) <->
+    (check_0 = 1).
+Prover Alt-Ergo  returns Valid (Qed:15ms) (35ms) (151)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 6) in 'check':
+Assume {
+  Type: is_sint32(check_0) /\ is_sint32(i) /\ is_sint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(b, 0), n).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(a, 0), n).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (Mint_0[shift_sint32(b, i_1)] = Mint_0[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: 0 <= i.
+  If i < n
+  Then {
+    (* Then *)
+    Have: Mint_0[shift_sint32(b, i)] != Mint_0[shift_sint32(a, i)].
+    Have: check_0 = 0.
+  }
+  Else { Have: check_0 = 1. }
+}
+Prove: (exists i_1 : Z.
+        (Mint_0[shift_sint32(b, i_1)] != Mint_0[shift_sint32(a, i_1)]) /\
+        (0 <= i_1) /\ (i_1 < n)) <-> (check_0 = 0).
+Prover Alt-Ergo  returns Valid (Qed:9ms) (37ms) (152)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 11):
+Let x = Mint_0[shift_sint32(b, i_1)].
+Let x_1 = Mint_0[shift_sint32(a, i_1)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(1 + i_1) /\
+      is_sint32(x_1) /\ is_sint32(x).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(b, 0), n).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(a, 0), n).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (Mint_0[shift_sint32(b, i_2)] = Mint_0[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Else *)
+  Have: x = x_1.
+}
+Prove: Mint_0[shift_sint32(b, i)] = Mint_0[shift_sint32(a, i)].
+Prover Alt-Ergo  returns Valid (Qed:4ms) (29ms) (87)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.66ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.66ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'check' (1/3):
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'check' (2/3):
+Effect at line 17
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'check' (3/3):
+Effect at line 20
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 2) in 'check'' in 'main' at initialization of 'res' (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 25)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 3) in 'check'' in 'main' at initialization of 'res' (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 25)
+:
+Prove: true.
+Prover Qed returns Valid (0.69ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 4) in 'check'' in 'main' at initialization of 'res' (file out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c, line 25)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/more_arrays_equal_arrays/more_arrays_equal_arrays_0001/more_arrays_equal_arrays_0002/more_arrays_equal_arrays_merged.c:22: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

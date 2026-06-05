@@ -1,0 +1,108 @@
+[kernel] Parsing out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c:4: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 11 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 3ms) (Z3 8s)
+[wp] Proved goals:   10 / 11
+  Qed:             9
+  Alt-Ergo :       1 (33ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c, line 8):
+Assume { Type: is_sint32(i). (* Then *) Have: i <= 3. }
+Prove: 0 <= i.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c, line 9):
+Let x = 2 * i.
+Let x_1 = 2 + j.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(1 + i) /\
+      is_sint32(x_1).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Invariant *)
+  Have: i_1 <= 3.
+  (* Invariant *)
+  Have: j <= 4.
+  (* Invariant *)
+  Have: j <= x.
+  (* Invariant *)
+  Have: (j % 2) = 0.
+  (* Invariant *)
+  Have: x <= (6 + j).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j <= 2.
+}
+Prove: (x_1 % 2) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (130ms) (41887)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (33ms) (145)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.72ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.66ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-lit_bh2017-ex1-poly/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_0001/loop-lit_bh2017-ex1-poly_merged.c:2: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

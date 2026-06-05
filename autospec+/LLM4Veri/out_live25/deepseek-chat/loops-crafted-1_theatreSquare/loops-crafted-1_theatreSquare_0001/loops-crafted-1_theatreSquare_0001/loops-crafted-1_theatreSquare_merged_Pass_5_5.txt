@@ -1,0 +1,69 @@
+[kernel] Parsing out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c:57: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c:27: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c:21: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 5 goals scheduled
+[wp] Proved goals:    5 / 5
+  Qed:             4
+  Alt-Ergo :       1 (20ms)
+------------------------------------------------------------
+  Function correct_version
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 11):
+Let x = b - b_1.
+Let x_1 = 1 + i.
+Assume {
+  Type: is_sint32(b) /\ is_sint32(b_1) /\ is_sint32(i) /\ is_sint32(n) /\
+      is_sint32(x_1) /\ is_sint32(x).
+  (* Invariant *)
+  Have: (i * x) = b_1.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: b_1 < n.
+}
+Prove: (x_1 * x) = b.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (90ms) (12966)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (20ms) (25)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.56ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c:7: Warning: 
+  No 'assigns' specification for function 'correct_version'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c:34: Warning: 
+  No 'assigns' specification for function 'student_version'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c:55: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

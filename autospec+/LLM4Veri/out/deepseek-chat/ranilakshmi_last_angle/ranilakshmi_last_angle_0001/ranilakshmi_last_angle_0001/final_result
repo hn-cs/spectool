@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 2, 'Iteration': 2, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=1, microseconds=577259), 'total_solve_time': datetime.timedelta(microseconds=632458), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 61, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': [], '2': [], 'MSLines': ['/* 1. FUNC CONTRACT */\nint last_angle(int first,int second){\n', '    if(first < 0 || first > 180 || second < 0 || second > 180 || first + second > 180){\n', '        return -1;\n', '    }\n', '    return 180 - first - second;\n', '}\n', '/* 2. FUNC CONTRACT */\nint main(){\n', '    int first = 60;\n', '    int second = 90;\n', '    int result = last_angle(first,second);\n', '    //@ assert result == 30;\n', '\n', '    first = 100;\n', '    second = 100;\n', '    result = last_angle(first,second);\n', '    //@ assert result == -1;\n', '    return 0;\n', '}']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

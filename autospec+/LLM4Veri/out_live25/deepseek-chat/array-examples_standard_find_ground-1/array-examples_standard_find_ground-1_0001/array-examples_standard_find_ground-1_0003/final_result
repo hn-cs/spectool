@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 2, 'Iteration': 2, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=2, microseconds=593149), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=132624), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 89, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 3, 3, 1], '1': ['loop invariant j <= N;', 'loop invariant 0 <= j;', 'loop assigns j;', 'loop assigns a[0..N-1];'], '2': ['loop invariant i <= N;', 'loop invariant \\forall integer k; 0 <= k < i ==> a[k] != e;', 'loop invariant 0 <= i;', 'loop assigns i;'], '3': ['loop invariant x <= i;', 'loop invariant \\forall integer k; 0 <= k < x ==> a[k] != e;', 'loop invariant 0 <= x;', 'loop assigns x;'], '4': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result < INT_MAX;\n', '*/\n', 'int unknown();\n', '#include <assert.h>\n', '#define N 100000\n', '/* 4. FUNC CONTRACT */\nint main ( ) {\n', '  int a[N]; int e = unknown();\n', '  int i = 0;\n', '  int j;\n', '  /* 1. LOOP INVARIANT */\n  for ( j = 0 ; j < N; j++ ) {\n', '    a[j] = unknown();\n', '  }\n', '  /* 2. LOOP INVARIANT */\n  while( i < N && a[i] != e ) {\n', '    i = i + 1;\n', '  }\n', '  int x;\n', '  /* 3. LOOP INVARIANT */\n  for ( x = 0 ; x < i ; x++ ) {\n', '    //@ assert(a[x] != e  );\n', '  }\n', '  return 0;\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

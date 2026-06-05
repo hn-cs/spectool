@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 2, 'Iteration': 2, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=20, microseconds=722936), 'total_solve_time': datetime.timedelta(seconds=40, microseconds=405160), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 581, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1, 1], '1': ['loop invariant y == 0 ==> x == c;', 'loop invariant x > 0 ==> y < c;', 'loop invariant x == c - y;', 'loop invariant x <= c;', 'loop invariant x + y == c;', 'loop invariant c >= 0 ==> y <= c;', 'loop invariant c >= 0 ==> 0 <= x;', 'loop invariant 0 <= y;', 'loop assigns y;', 'loop assigns x;'], '2': ['ensures c > 0 ==> \\result == c;', 'ensures \\result >= 0;', 'assigns \\nothing;'], '3': [], 'MSLines': ['#include <stdio.h>\n', '/* 2. FUNC CONTRACT */\nint func(int c) {\n', '    int x = c;\n', '    int y = 0;\n', '    /* 1. LOOP INVARIANT */\n    while(x > 0) {\n', '        x = x - 1;\n', '        y = y + 1;\n', '    }\n', '    return y;\n', '}\n', '/* 3. FUNC CONTRACT */\nvoid main() {\n', '    int t = func(5);\n', '    //@ assert t == 5;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

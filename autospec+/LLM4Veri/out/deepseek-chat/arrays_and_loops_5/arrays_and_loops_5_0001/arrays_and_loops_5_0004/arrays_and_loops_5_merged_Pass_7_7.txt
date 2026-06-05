@@ -1,0 +1,80 @@
+[kernel] Parsing out/deepseek-chat/arrays_and_loops_5/arrays_and_loops_5_0001/arrays_and_loops_5_0004/arrays_and_loops_5_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 7 goals scheduled
+[wp] Proved goals:    7 / 7
+  Qed:             6
+  Alt-Ergo :       1 (36ms)
+------------------------------------------------------------
+  Function fun
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/arrays_and_loops_5/arrays_and_loops_5_0001/arrays_and_loops_5_0004/arrays_and_loops_5_merged.c, line 9):
+Let x = 1 + d.
+Let x_1 = d * y.
+Assume {
+  Type: is_sint32(d) /\ is_sint32(v) /\ is_sint32(y) /\ is_sint32(x) /\
+      is_sint32(v - y) /\ is_sint32(v + x_1).
+  (* Heap *)
+  Type: (region(r.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 < y.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, r, 1).
+  (* Invariant *)
+  Have: 0 <= d.
+  (* Then *)
+  Have: y <= v.
+}
+Prove: (y * x) = (y + x_1).
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (120ms) (28095)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (36ms) (30)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/arrays_and_loops_5/arrays_and_loops_5_0001/arrays_and_loops_5_0004/arrays_and_loops_5_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.66ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/arrays_and_loops_5/arrays_and_loops_5_0001/arrays_and_loops_5_0004/arrays_and_loops_5_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/arrays_and_loops_5/arrays_and_loops_5_0001/arrays_and_loops_5_0004/arrays_and_loops_5_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/arrays_and_loops_5/arrays_and_loops_5_0001/arrays_and_loops_5_0004/arrays_and_loops_5_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/arrays_and_loops_5/arrays_and_loops_5_0001/arrays_and_loops_5_0004/arrays_and_loops_5_merged.c, line 2) in 'fun'' in 'main' at initialization of 'num' (file out/deepseek-chat/arrays_and_loops_5/arrays_and_loops_5_0001/arrays_and_loops_5_0004/arrays_and_loops_5_merged.c, line 22)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/arrays_and_loops_5/arrays_and_loops_5_0001/arrays_and_loops_5_0004/arrays_and_loops_5_merged.c, line 3) in 'fun'' in 'main' at initialization of 'num' (file out/deepseek-chat/arrays_and_loops_5/arrays_and_loops_5_0001/arrays_and_loops_5_0004/arrays_and_loops_5_merged.c, line 22)
+:
+Prove: true.
+Prover Qed returns Valid (0.87ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/arrays_and_loops_5/arrays_and_loops_5_0001/arrays_and_loops_5_0004/arrays_and_loops_5_merged.c:5: Warning: 
+  No 'assigns' specification for function 'fun'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/arrays_and_loops_5/arrays_and_loops_5_0001/arrays_and_loops_5_0004/arrays_and_loops_5_merged.c:20: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

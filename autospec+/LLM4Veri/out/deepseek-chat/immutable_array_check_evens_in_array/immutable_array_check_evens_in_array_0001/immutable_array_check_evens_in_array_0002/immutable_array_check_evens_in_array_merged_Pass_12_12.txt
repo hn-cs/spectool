@@ -1,0 +1,159 @@
+[kernel] Parsing out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 12 goals scheduled
+[wp] Proved goals:   12 / 12
+  Qed:             9
+  Alt-Ergo :       3 (34ms-37ms)
+------------------------------------------------------------
+  Function areElementsEven
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c, line 4) in 'areElementsEven':
+Assume {
+  Type: is_sint32(areElementsEven_0) /\ is_sint32(n) /\ is_sint32(p).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(a, 0), n).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < p) ->
+      ((Mint_0[shift_sint32(a, i)] % 2) = 0))).
+  (* Invariant *)
+  Have: 0 <= p.
+  If p < n
+  Then {
+    (* Then *)
+    Have: (Mint_0[shift_sint32(a, p)] % 2) != 0.
+    Have: areElementsEven_0 = 0.
+  }
+  Else { Have: areElementsEven_0 = 1. }
+}
+Prove: (forall i : Z. ((0 <= i) -> ((i < n) ->
+        ((Mint_0[shift_sint32(a, i)] % 2) = 0)))) <->
+    (areElementsEven_0 = 1).
+Prover Alt-Ergo  returns Valid (Qed:13ms) (36ms) (200)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c, line 5) in 'areElementsEven':
+Assume {
+  Type: is_sint32(areElementsEven_0) /\ is_sint32(n) /\ is_sint32(p).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(a, 0), n).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < p) ->
+      ((Mint_0[shift_sint32(a, i)] % 2) = 0))).
+  (* Invariant *)
+  Have: 0 <= p.
+  If p < n
+  Then {
+    (* Then *)
+    Have: (Mint_0[shift_sint32(a, p)] % 2) != 0.
+    Have: areElementsEven_0 = 0.
+  }
+  Else { Have: areElementsEven_0 = 1. }
+}
+Prove: (exists i : Z. ((Mint_0[shift_sint32(a, i)] % 2) != 0) /\ (0 <= i) /\
+        (i < n)) <-> (areElementsEven_0 = 0).
+Prover Alt-Ergo  returns Valid (Qed:7ms) (37ms) (200)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c, line 11):
+Let x = Mint_0[shift_sint32(a, p)].
+Assume {
+  Type: is_sint32(n) /\ is_sint32(p) /\ is_sint32(1 + p) /\ is_sint32(x).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= p).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(a, 0), n).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < p) ->
+      ((Mint_0[shift_sint32(a, i_1)] % 2) = 0))).
+  (* Invariant *)
+  Have: 0 <= p.
+  (* Then *)
+  Have: p < n.
+  (* Else *)
+  Have: (x % 2) = 0.
+}
+Prove: (Mint_0[shift_sint32(a, i)] % 2) = 0.
+Prover Alt-Ergo  returns Valid (Qed:3ms) (34ms) (141)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'areElementsEven' (1/3):
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid (0.59ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'areElementsEven' (2/3):
+Effect at line 17
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'areElementsEven' (3/3):
+Effect at line 21
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c, line 2) in 'areElementsEven'' in 'main' at initialization of 'res' (file out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c, line 25)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c, line 3) in 'areElementsEven'' in 'main' at initialization of 'res' (file out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c, line 25)
+:
+Prove: true.
+Prover Qed returns Valid (0.71ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/immutable_array_check_evens_in_array/immutable_array_check_evens_in_array_0001/immutable_array_check_evens_in_array_0002/immutable_array_check_evens_in_array_merged.c:23: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

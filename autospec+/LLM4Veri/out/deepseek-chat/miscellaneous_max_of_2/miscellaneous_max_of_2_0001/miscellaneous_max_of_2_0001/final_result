@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(microseconds=936425), 'total_solve_time': datetime.timedelta(microseconds=489980), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 24, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': ['ensures \\result >= x && \\result >= y;', 'ensures \\result == x || \\result == y;'], '2': [], 'MSLines': ['/* 1. FUNC CONTRACT */\nint max(int x, int y) {\n', '    if (x >= y) {\n', '        return x;\n', '    }\n', '    return y;\n', '}\n', '/* 2. FUNC CONTRACT */\nint main() {\n', '    int a = 5;\n', '    int b = 10;\n', '    int result = max(a, b);\n', '    //@ assert result == 10;\n', '    return 0;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

@@ -1,0 +1,122 @@
+[kernel] Parsing out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c:16: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c:37: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c:19: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c:16: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 5 goals scheduled
+[wp] [Timeout] typed_main_loop_assigns_part3 (Qed 15ms) (Z3 3s) (Stronger)
+[wp] [Timeout] typed_main_loop_assigns_part4 (Qed 12ms) (Z3 3s) (Stronger)
+[wp] Proved goals:    3 / 5
+  Qed:             2
+  Alt-Ergo :       1 (21ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c, line 16):
+Assume {
+  Type: is_sint32(CELLCOUNT_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+}
+Prove: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (140ms) (34580)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (21ms) (16)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c, line 22) (1/4):
+out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c, line 22) (2/4):
+Effect at line 25
+out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c, line 22) (3/4):
+Effect at line 29
+out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(CELLCOUNT_1) /\
+      is_sint32(MINVAL_0) /\ is_sint32(i) /\ is_sint32(j).
+  (* Goal *)
+  When: !invalid(Malloc_0, shift_sint32(volArray_0, (3 * i) - j), 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_1) /\ (CELLCOUNT_1 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_1.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_1) /\ (CELLCOUNT_1 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_1 % 3) = 0.
+  (* Then *)
+  Have: i <= (CELLCOUNT_0 / 3).
+  (* Then *)
+  Have: 0 < j.
+  (* Then *)
+  Have: MINVAL_0 <= j.
+}
+Prove: j <= 3.
+Prover Z3 4.8.12 returns Timeout (Qed:15ms) (3s)
+Prover Alt-Ergo  returns Timeout (Qed:15ms) (3s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c, line 22) (4/4):
+Effect at line 33
+out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c:16: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(CELLCOUNT_1) /\
+      is_sint32(MINVAL_0) /\ is_sint32(i) /\ is_sint32(j).
+  (* Goal *)
+  When: !invalid(Malloc_0, shift_sint32(volArray_0, (3 * i) - j), 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_1) /\ (CELLCOUNT_1 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_1.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_1) /\ (CELLCOUNT_1 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_1 % 3) = 0.
+  (* Then *)
+  Have: i <= (CELLCOUNT_0 / 3).
+  (* Then *)
+  Have: 0 < j.
+  (* Else *)
+  Have: j < MINVAL_0.
+}
+Prove: j <= 3.
+Prover Z3 4.8.12 returns Timeout (Qed:12ms) (3s)
+Prover Alt-Ergo  returns Timeout (Qed:12ms) (3s)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-tiling_nr3/array-tiling_nr3_0001/array-tiling_nr3_0001/array-tiling_nr3_loop_assigns.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

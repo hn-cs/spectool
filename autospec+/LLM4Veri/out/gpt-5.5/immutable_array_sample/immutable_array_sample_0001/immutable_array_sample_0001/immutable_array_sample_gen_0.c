@@ -1,0 +1,16 @@
+int fun(int x, int y) {
+    int r = x;
+    int d = 0;
+    /*@
+    loop invariant r + d * y == x;
+    loop invariant d >= 0;
+    loop assigns r, d;
+    */
+    while (r >= y) {
+        printf("r = %d   d = %d   y = %d   x = %d\n", r, d, y, x);
+        r = r - y;
+        d = d + 1;
+    }
+    // @ assert r + d*y == x;
+    return d;
+}

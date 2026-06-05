@@ -1,0 +1,146 @@
+[kernel] Parsing out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 10 goals scheduled
+[wp] [Timeout] typed_increment_array_by_assert (Qed 5ms) (Z3 8s)
+[wp] [Timeout] typed_main_assert (Qed 5ms) (Z3 8s)
+[wp] Proved goals:    8 / 10
+  Qed:             7
+  Alt-Ergo :       1 (30ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function increment_array_by
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c, line 15):
+Let a = shift_sint32(arr_0, 0).
+Let a_1 = shift_sint32(arr_0, i).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n).
+  (* Heap *)
+  Type: (region(arr_0.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < n).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, n).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: n <= i_1.
+}
+Prove: havoc(Mint_undef_0, Mint_0, a, n)[a_1] = (c + Mint_0[a_1]).
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c, line 9) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c, line 9) (2/3):
+Effect at line 12
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c, line 9) (3/3):
+Effect at line 13
+Let a = shift_sint32(arr_0, 0).
+Let x = i - 1.
+Let a_1 = shift_sint32(arr_0, x).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x).
+  (* Heap *)
+  Type: (region(arr_0.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_1, 1).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, n).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= n.
+}
+Prove: included(a_1, 1, a, n).
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (140ms) (91271)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (30ms) (84)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c, line 4) in 'increment_array_by':
+Effect at line 12
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c, line 21):
+Assume {
+  (* Goal *)
+  When: (0 <= i) /\ (i <= 9).
+  (* Initializer *)
+  Init: arr_1[0] = 1.
+  (* Initializer *)
+  Init: arr_1[1] = 2.
+  (* Initializer *)
+  Init: arr_1[2] = 3.
+  (* Initializer *)
+  Init: arr_1[3] = 4.
+  (* Initializer *)
+  Init: arr_1[4] = 5.
+  (* Initializer *)
+  Init: arr_1[5] = 6.
+  (* Initializer *)
+  Init: arr_1[6] = 7.
+  (* Initializer *)
+  Init: arr_1[7] = 8.
+  (* Initializer *)
+  Init: arr_1[8] = 9.
+  (* Initializer *)
+  Init: arr_1[9] = 10.
+}
+Prove: arr_0[i] = (1 + arr_1[i]).
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c, line 2) in 'increment_array_by'' in 'main' at call 'increment_array_by' (file out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c, line 20)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c, line 3) in 'increment_array_by'' in 'main' at call 'increment_array_by' (file out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c, line 20)
+:
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/increment_arr/increment_arr_0001/increment_arr_0002/increment_arr_merged.c:17: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

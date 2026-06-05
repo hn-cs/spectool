@@ -1,0 +1,8 @@
+[kernel] Parsing out/gpt-5.5/frama-c-acsl-implementation_1/frama-c-acsl-implementation_1_0001/frama-c-acsl-implementation_1_0001/frama-c-acsl-implementation_1_merged.c (with preprocessing)
+[kernel:annot-error] out/gpt-5.5/frama-c-acsl-implementation_1/frama-c-acsl-implementation_1_0001/frama-c-acsl-implementation_1_0001/frama-c-acsl-implementation_1_merged.c:6: Warning: 
+  not a left value: n > 0? *p: *q. Ignoring logic specification of function f
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/gpt-5.5/frama-c-acsl-implementation_1/frama-c-acsl-implementation_1_0001/frama-c-acsl-implementation_1_0001/frama-c-acsl-implementation_1_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

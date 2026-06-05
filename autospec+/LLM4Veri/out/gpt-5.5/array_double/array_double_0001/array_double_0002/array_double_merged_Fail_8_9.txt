@@ -1,0 +1,118 @@
+[kernel] Parsing out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 7ms) (Z3 8s)
+[wp] Proved goals:    8 / 9
+  Qed:             6
+  Alt-Ergo :       2 (27ms-31ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function arrayDouble
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (19ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.94ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c, line 11) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c, line 11) (2/2):
+Effect at line 15
+Let a_1 = shift_sint32(a, 0).
+Let x = p - 1.
+Let a_2 = shift_sint32(a, x).
+Assume {
+  Type: is_sint32(n) /\ is_sint32(p) /\ is_sint32(x).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_2, 1).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Pre-condition *)
+  Have: forall i : Z. let x_1 = Mint_0[shift_sint32(a, i)] in ((0 <= i) ->
+      ((i < n) -> (((-1073741824) <= x_1) /\ (x_1 <= 1073741823)))).
+  (* Invariant *)
+  Have: 0 < p.
+  (* Then *)
+  Have: p <= n.
+}
+Prove: included(a_2, 1, a_1, n).
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (160ms) (98803)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (31ms) (98)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c, line 5) in 'arrayDouble':
+Effect at line 14
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c, line 22):
+Assume { (* Goal *) When: (0 <= i) /\ (i <= 5). }
+Prove: arr_0[i] = (2 * i).
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c, line 2) in 'arrayDouble'' in 'main' at call 'arrayDouble' (file out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c, line 21)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c, line 3) in 'arrayDouble'' in 'main' at call 'arrayDouble' (file out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c, line 21)
+:
+Prove: true.
+Prover Qed returns Valid (0.91ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c, line 4) in 'arrayDouble'' in 'main' at call 'arrayDouble' (file out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c, line 21)
+:
+Let x = arr_0[i].
+Assume {
+  (* Goal *)
+  When: (0 <= i) /\ (i <= 5).
+  (* Initializer *)
+  Init: arr_0[0] = 0.
+  (* Initializer *)
+  Init: arr_0[1] = 1.
+  (* Initializer *)
+  Init: arr_0[2] = 2.
+  (* Initializer *)
+  Init: arr_0[3] = 3.
+  (* Initializer *)
+  Init: arr_0[4] = 4.
+  (* Initializer *)
+  Init: arr_0[5] = 5.
+}
+Prove: ((-1073741824) <= x) /\ (x <= 1073741823).
+Prover Alt-Ergo  returns Valid (Qed:3ms) (27ms) (53)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array_double/array_double_0001/array_double_0002/array_double_merged.c:19: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

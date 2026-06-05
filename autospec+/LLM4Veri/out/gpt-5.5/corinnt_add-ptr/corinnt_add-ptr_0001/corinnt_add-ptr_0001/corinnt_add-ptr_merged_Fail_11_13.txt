@@ -1,0 +1,109 @@
+[kernel] Parsing out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_main_assert_3 (Qed 4ms) (Z3 8s)
+[wp] Proved goals:   11 / 13
+  Qed:            11
+  Timeout:         2
+------------------------------------------------------------
+  Function add
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 7) in 'add':
+Effect at line 11
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 20):
+Assume { Type: is_sint32(x). }
+Prove: x = 66.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (0.74ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 23):
+Assume { Type: is_sint32(x). }
+Prove: x = 48.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 3) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 19)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 4) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 19)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 5) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 19)
+:
+Prove: true.
+Prover Qed returns Valid (0.58ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 6) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 19)
+:
+Prove: true.
+Prover Qed returns Valid (0.53ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 3) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 22)
+:
+Prove: true.
+Prover Qed returns Valid (0.80ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 4) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 22)
+:
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 5) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 22)
+:
+Prove: true.
+Prover Qed returns Valid (0.74ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 6) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c, line 22)
+:
+Prove: true.
+Prover Qed returns Valid (0.60ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/corinnt_add-ptr/corinnt_add-ptr_0001/corinnt_add-ptr_0001/corinnt_add-ptr_merged.c:14: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

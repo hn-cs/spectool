@@ -1,0 +1,175 @@
+[kernel] Parsing out/gpt-5.5/249/249_0001/249_0002/249_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 16 goals scheduled
+[wp] Proved goals:   16 / 16
+  Qed:            13
+  Alt-Ergo :       3 (22ms-34ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 8):
+Let x = sn_0 / 2.
+Let x_1 = 2 + sn_0.
+Assume {
+  Type: is_sint32(n) /\ is_sint32(sn_0) /\ is_sint32(x_1) /\
+      is_sint32(1 + x).
+  (* Invariant *)
+  Have: (sn_0 % 2) = 0.
+  (* Invariant *)
+  Have: ((n <= 0) -> ((sn_0 = 0) /\ (x = 0))).
+  (* Invariant *)
+  Have: (x = 0) \/ (x <= n).
+  (* Invariant *)
+  Have: 0 <= sn_0.
+  (* Invariant *)
+  Have: (2 * x) = sn_0.
+  (* Invariant *)
+  Have: (-1) <= sn_0.
+  (* Then *)
+  Have: x < n.
+}
+Prove: (x_1 % 2) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (130ms) (38668)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (30ms) (177)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 10):
+Let x = sn_0 / 2.
+Let x_1 = 2 + sn_0.
+Let x_2 = 1 + x.
+Assume {
+  Type: is_sint32(n) /\ is_sint32(sn_0) /\ is_sint32(x_1) /\
+      is_sint32(x_2) /\ is_sint32(2 + x).
+  (* Invariant *)
+  Have: (sn_0 % 2) = 0.
+  (* Invariant *)
+  Have: ((n <= 0) -> ((sn_0 = 0) /\ (x = 0))).
+  (* Invariant *)
+  Have: (x = 0) \/ (x <= n).
+  (* Invariant *)
+  Have: 0 <= sn_0.
+  (* Invariant *)
+  Have: (2 * x) = sn_0.
+  (* Invariant *)
+  Have: (-1) <= sn_0.
+  (* Then *)
+  Have: x < n.
+  (* Invariant *)
+  Have: (x_1 % 2) = 0.
+  (* Invariant *)
+  Have: ((n <= 0) -> ((sn_0 = (-2)) /\ (x = (-1)))).
+}
+Prove: (x_1 / 2) = x_2.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (39533)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (34ms) (227)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.50ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.64ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.60ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 22):
+Let x = sn_0 / 2.
+Assume {
+  Type: is_sint32(n) /\ is_sint32(sn_0) /\ is_sint32(1 + x).
+  (* Invariant *)
+  Have: (sn_0 % 2) = 0.
+  (* Invariant *)
+  Have: ((n <= 0) -> ((sn_0 = 0) /\ (x = 0))).
+  (* Invariant *)
+  Have: (x = 0) \/ (x <= n).
+  (* Invariant *)
+  Have: 0 <= sn_0.
+  (* Invariant *)
+  Have: (2 * x) = sn_0.
+  (* Invariant *)
+  Have: (-1) <= sn_0.
+  (* Else *)
+  Have: n <= x.
+}
+Prove: (sn_0 = 0) \/ ((2 * n) = sn_0).
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (130ms) (37351)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (22ms) (32)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/249/249_0001/249_0002/249_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/249/249_0001/249_0002/249_merged.c:2: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

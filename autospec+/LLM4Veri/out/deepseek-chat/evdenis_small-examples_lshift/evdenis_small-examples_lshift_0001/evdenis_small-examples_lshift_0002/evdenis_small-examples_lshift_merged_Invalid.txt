@@ -1,0 +1,11 @@
+[kernel] Parsing out/deepseek-chat/evdenis_small-examples_lshift/evdenis_small-examples_lshift_0001/evdenis_small-examples_lshift_0002/evdenis_small-examples_lshift_merged.c (with preprocessing)
+[kernel] "/app/LLM4Veri/out/deepseek-chat/evdenis_small-examples_lshift/evdenis_small-examples_lshift_0001/evdenis_small-examples_lshift_0002/evdenis_small-examples_lshift_merged.c":17: User Error: 
+  Can't preprocess annotation: Preprocessor call exited with an error
+  Some annotations will be kept as is
+[kernel:annot-error] out/deepseek-chat/evdenis_small-examples_lshift/evdenis_small-examples_lshift_0001/evdenis_small-examples_lshift_0002/evdenis_small-examples_lshift_merged.c:3: Warning: 
+  lexical error, unexpected block-comment opening
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/evdenis_small-examples_lshift/evdenis_small-examples_lshift_0001/evdenis_small-examples_lshift_0002/evdenis_small-examples_lshift_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

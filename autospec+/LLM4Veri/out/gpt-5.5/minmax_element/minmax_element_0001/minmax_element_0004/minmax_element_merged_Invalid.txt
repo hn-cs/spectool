@@ -1,0 +1,17 @@
+[kernel] Parsing out/gpt-5.5/minmax_element/minmax_element_0001/minmax_element_0004/minmax_element_merged.c (with preprocessing)
+[kernel] out/gpt-5.5/minmax_element/minmax_element_0001/minmax_element_0004/minmax_element_merged.c:22: 
+  syntax error:
+  Location: between lines 22 and 27
+  20        ensures result: \result.second == second;
+  21    */
+  
+  22    static inline
+  23    size_type_pair
+  24    /*@
+  25    ensures \result.second == second;
+  26    ensures \result.first == first;
+  27    assigns \nothing;
+  
+  28    */
+  29    make_pair(size_type first, size_type second)
+[kernel] Frama-C aborted: invalid user input.

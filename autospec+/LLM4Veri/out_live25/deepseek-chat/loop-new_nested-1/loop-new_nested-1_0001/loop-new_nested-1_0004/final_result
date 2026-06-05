@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 3, 'Iteration': 3, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=4, microseconds=82397), 'total_solve_time': datetime.timedelta(seconds=106, microseconds=217383), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 140, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [2, 3, 1], '1': ['loop invariant i <= n;', 'loop invariant \\forall integer p, q; 0 <= p < i && 0 <= q < m ==> \\true;', 'loop invariant 0 <= i;', 'loop assigns k;', 'loop assigns j;'], '2': ['loop invariant i <= n;', 'loop invariant 0 <= i;', 'loop assigns k;', 'loop assigns j;', 'loop assigns i;'], '3': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result < INT_MAX;\n', '*/\n', 'int unknown();\n', '#include "assert.h"\n', '/* 3. FUNC CONTRACT */\nint main() {\n', '    int n = unknown();\n', '    int m = unknown();\n', '    int k = 0;\n', '    int i,j;\n', '    if (!(10 <= n && n <= 10000)) return 0;\n', '    if (!(10 <= m && m <= 10000)) return 0;\n', '    /* 2. LOOP INVARIANT */\n    for (i = 0; i < n; i++) {\n', '\t/* 1. LOOP INVARIANT */\n\tfor (j = 0; j < m; j++) {\n', '\t    k ++;\n', '\t}\n', '    }\n', '    //@ assert(k >= 100);\n', '    return 0;\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

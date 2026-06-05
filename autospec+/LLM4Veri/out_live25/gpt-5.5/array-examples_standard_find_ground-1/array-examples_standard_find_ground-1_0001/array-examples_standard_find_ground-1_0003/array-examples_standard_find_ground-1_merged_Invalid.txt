@@ -1,0 +1,11 @@
+[kernel] Parsing out/gpt-5.5/array-examples_standard_find_ground-1/array-examples_standard_find_ground-1_0001/array-examples_standard_find_ground-1_0003/array-examples_standard_find_ground-1_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-examples_standard_find_ground-1/array-examples_standard_find_ground-1_0001/array-examples_standard_find_ground-1_0003/array-examples_standard_find_ground-1_merged.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:annot-error] out/gpt-5.5/array-examples_standard_find_ground-1/array-examples_standard_find_ground-1_0001/array-examples_standard_find_ground-1_0003/array-examples_standard_find_ground-1_merged.c:18: Warning: 
+  unbound logic variable N. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/gpt-5.5/array-examples_standard_find_ground-1/array-examples_standard_find_ground-1_0001/array-examples_standard_find_ground-1_0003/array-examples_standard_find_ground-1_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

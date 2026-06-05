@@ -1,0 +1,142 @@
+[kernel] Parsing out/deepseek-chat/159/159_0001/159_0001/159_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/159/159_0001/159_0001/159_merged.c:20: Warning: 
+  Calling function unknown2 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/deepseek-chat/159/159_0001/159_0001/159_merged.c:26: Warning: 
+  Calling function unknown4 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/deepseek-chat/159/159_0001/159_0001/159_merged.c:10: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/159/159_0001/159_0001/159_merged.c:8: Warning: 
+  Neither code nor specification for function unknown1, generating default assigns from the prototype
+[kernel:annot:missing-spec] out/deepseek-chat/159/159_0001/159_0001/159_merged.c:8: Warning: 
+  Neither code nor specification for function unknown2, generating default assigns from the prototype
+[kernel:annot:missing-spec] out/deepseek-chat/159/159_0001/159_0001/159_merged.c:8: Warning: 
+  Neither code nor specification for function unknown4, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/159/159_0001/159_0001/159_merged.c:26: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/159/159_0001/159_0001/159_merged.c:10: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 12 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_established (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_3_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_4_established (Qed 2ms) (Z3 8s)
+[wp] Proved goals:    8 / 12
+  Qed:             8
+  Timeout:         4
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/159/159_0001/159_0001/159_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/159/159_0001/159_0001/159_merged.c, line 12):
+Assume {
+  Type: is_sint32(tmp_1_0) /\ is_sint32(z).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+}
+Prove: z = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/159/159_0001/159_0001/159_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/159/159_0001/159_0001/159_merged.c, line 13):
+Assume {
+  Type: is_sint32(tmp_1_0) /\ is_sint32(x) /\ is_sint32(y).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+}
+Prove: y = x.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/159/159_0001/159_0001/159_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/159/159_0001/159_0001/159_merged.c, line 14):
+Assume {
+  Type: is_sint32(tmp_1_0) /\ is_sint32(w).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+}
+Prove: w = 1.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/159/159_0001/159_0001/159_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/159/159_0001/159_0001/159_merged.c, line 15):
+Assume {
+  Type: is_sint32(tmp_1_0) /\ is_sint32(y).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+}
+Prove: 0 <= y.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/159/159_0001/159_0001/159_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/159/159_0001/159_0001/159_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/159/159_0001/159_0001/159_merged.c, line 17) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/159/159_0001/159_0001/159_merged.c, line 17) (2/2):
+Call Result at line 20
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/159/159_0001/159_0001/159_merged.c:3: Warning: 
+  No 'assigns' specification for function 'unknown1'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/159/159_0001/159_0001/159_merged.c:4: Warning: 
+  No 'assigns' specification for function 'unknown2'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/159/159_0001/159_0001/159_merged.c:6: Warning: 
+  No 'assigns' specification for function 'unknown4'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/159/159_0001/159_0001/159_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

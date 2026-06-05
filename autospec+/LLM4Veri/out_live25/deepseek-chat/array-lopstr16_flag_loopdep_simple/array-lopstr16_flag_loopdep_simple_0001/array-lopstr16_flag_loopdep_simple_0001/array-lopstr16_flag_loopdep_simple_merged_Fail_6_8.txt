@@ -1,0 +1,121 @@
+[kernel] Parsing out/deepseek-chat/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_merged.c:25: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] [Timeout] typed_init_loop_invariant_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_init_loop_invariant_2_preserved (Qed 5ms) (Z3 8s)
+[wp] Proved goals:    6 / 8
+  Qed:             5
+  Alt-Ergo :       1 (30ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function init
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_merged.c, line 17):
+Assume { Type: is_sint32(size_0). }
+Prove: 0 <= size_0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_merged.c, line 18):
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(size_0) /\ is_sint32(v) /\
+      is_sint32(1 + i_1).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: 0 <= size_0.
+  (* Invariant *)
+  Have: i_1 <= size_0.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      valid_rw(Malloc_0, shift_S1(a, i_2), 1))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < size_0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+}
+Prove: valid_rw(Malloc_0, shift_S1(a, i), 1).
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.89ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.72ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_merged.c, line 20) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_merged.c, line 20) (2/2):
+Call Result at line 25
+Let x = i - 1.
+Let a_1 = shiftfield_F1_n(shift_S1(a, x)).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(size_0) /\ is_sint32(v) /\ is_sint32(x).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_1, 1).
+  (* Invariant *)
+  Have: 0 <= size_0.
+  (* Invariant *)
+  Have: i <= (1 + size_0).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + i_1) <= i) ->
+      valid_rw(Malloc_0, shift_S1(a, i_1), 1))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= size_0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      valid_rw(Malloc_0, shift_S1(a, i_1), 1))).
+}
+Prove: included(a_1, 1, shift_S1(a, 0), size_0).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (140ms) (101963)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (30ms) (91)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_merged.c:13: Warning: 
+  No 'assigns' specification for function 'init'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/array-lopstr16_flag_loopdep_simple/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_0001/array-lopstr16_flag_loopdep_simple_merged.c:28: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

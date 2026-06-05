@@ -1,0 +1,46 @@
+/*@ 
+predicate is_dset{L}(int *a, integer n) =
+  \forall integer i; 0 <= i < n ==> (a[i] == 0 || a[i] == 1);
+predicate is_eq{L1,L2}(int *a, integer n) =
+  \forall integer i; 0 <= i < n ==> \at(a[i],L1) == \at(a[i],L2);
+predicate lt{L1,L2}(int* a, integer i) =
+  \at(a[i],L1) < \at(a[i],L2); 
+*/
+int nextSubset(int s[], int n) {
+  int i,k;
+  /*@
+  loop invariant n >= 0 ==> -1 <= k <= n - 1;
+  loop invariant k <= n - 1;
+  loop invariant k <= n - 1 || k + 1 <= n;
+  loop invariant k + 1 <= n;
+  loop invariant is_eq{Pre,Here}(s,n);
+  loop invariant \forall integer j; k < j < n ==> \at(s[j],Pre) != 0;
+  loop invariant \forall integer j; 0 <= j < n && s[j] == 0 ==> j <= k;
+  loop invariant n > 0 ==> -1 <= k <= n - 1;
+  loop invariant n <= 0 ==> k == n - 1;
+  loop invariant k < n;
+  loop invariant \forall integer j; k < j < n ==> s[j] == 1 || s[j] != 0;
+  loop invariant \forall integer j; k < j < n ==> s[j] != 0;
+  loop invariant \forall integer j; 0 <= j < n ==> s[j] == \at(s[j],Pre);
+  loop assigns k;
+  */
+  for (k = n-1; k >= 0; k--) { if (s[k] == 0) { break; } }
+  if (k == -1) { return -1; }
+  s[k] = 1;
+  /*@
+  loop invariant s[k] == 1;
+  loop invariant k < n;
+  loop invariant k < i;
+  loop invariant k + 1 <= i;
+  loop invariant i <= n;
+  loop invariant \forall integer j; k < j < i ==> s[j] == 0;
+  loop invariant \forall integer j; k < j < i ==> s[j] != 1;
+  loop invariant \forall integer j; i <= j < n ==> s[j] == \at(s[j],Pre);
+  loop invariant \forall integer j; 0 <= j < k ==> s[j] == \at(s[j],Pre);
+  loop assigns s[k+1..n-1];
+  loop assigns i;
+  */
+  for (i = k+1; i < n; i++) { s[i] = 0; }
+  // @ assert is_dset(s,n);
+  return k;
+}

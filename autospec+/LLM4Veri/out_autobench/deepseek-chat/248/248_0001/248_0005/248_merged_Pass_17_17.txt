@@ -1,0 +1,169 @@
+[kernel] Parsing out/deepseek-chat/248/248_0001/248_0005/248_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/248/248_0001/248_0005/248_merged.c:12: Warning: 
+  Calling function unknown_int that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/248/248_0001/248_0005/248_merged.c:7: Warning: 
+  Neither code nor implicit assigns clause for function unknown_int, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 17 goals scheduled
+[wp] Proved goals:   17 / 17
+  Qed:            15
+  Alt-Ergo :       2 (18ms-41ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.77ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.95ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 30):
+Let x = i0_0 + i1_0.
+Let x_1 = 1 + i0_0 + i1_0.
+Assume {
+  Type: is_sint32(i0_0) /\ is_sint32(i1_0) /\ is_sint32(n0_0) /\
+      is_sint32(n1_0) /\ is_sint32(1 + i1_0) /\ is_sint32(x) /\
+      is_sint32(x_1).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= n0_0) /\ (n0_0 <= 2147483647).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= n1_0) /\ (n1_0 <= 2147483647).
+  (* Invariant *)
+  Have: 0 <= i0_0.
+  (* Else *)
+  Have: n0_0 <= i0_0.
+  (* Invariant *)
+  Have: n0_0 <= x.
+  (* Invariant *)
+  Have: 0 <= i1_0.
+  (* Then *)
+  Have: i1_0 < n1_0.
+}
+Prove: n0_0 <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:16ms) (120ms) (36616)
+Prover Alt-Ergo  returns Valid (Qed:16ms) (18ms) (17)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 31):
+Let x = 1 + k.
+Let x_1 = -i0_0.
+Assume {
+  Type: is_sint32(i0_0) /\ is_sint32(k) /\ is_sint32(n0_0) /\
+      is_sint32(n1_0) /\ is_sint32(x) /\ is_sint32(k - i0_0) /\
+      is_sint32(1 + k - i0_0).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= n0_0) /\ (n0_0 <= 2147483647).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= n1_0) /\ (n1_0 <= 2147483647).
+  (* Invariant *)
+  Have: 0 <= i0_0.
+  (* Else *)
+  Have: n0_0 <= i0_0.
+  (* Invariant *)
+  Have: n0_0 <= k.
+  (* Invariant *)
+  Have: i0_0 <= k.
+  (* Then *)
+  Have: k < (i0_0 + n1_0).
+  (* Invariant *)
+  Have: n0_0 <= x.
+}
+Prove: i0_0 <= x.
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (170ms) (36780)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (41ms) (18)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 42):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 42):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/248/248_0001/248_0005/248_merged.c, line 43):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/248/248_0001/248_0005/248_merged.c:5: Warning: 
+  No 'assigns' specification for function 'unknown_int'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/248/248_0001/248_0005/248_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

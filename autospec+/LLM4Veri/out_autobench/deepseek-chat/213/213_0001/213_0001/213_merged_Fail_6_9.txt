@@ -1,0 +1,133 @@
+[kernel] Parsing out/deepseek-chat/213/213_0001/213_0001/213_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_array_find_loop_invariant_established (Qed 0.94ms) (Z3 8s)
+[wp] [Timeout] typed_array_find_loop_invariant_preserved (Qed 13ms) (Z3 8s)
+[wp] [Timeout] typed_array_find_loop_invariant_2_established (Qed 0.88ms) (Z3 8s)
+[wp] Proved goals:    6 / 9
+  Qed:             5
+  Alt-Ergo :       1 (30ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function array_find
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/213/213_0001/213_0001/213_merged.c, line 8):
+Let x_1 = Mint_0[shift_sint32(arr_0, i)].
+Let x_2 = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x) /\ is_sint32(x_2) /\
+      is_sint32(x_1).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (Mint_0[shift_sint32(arr_0, i_1)] != x))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Else *)
+  Have: x_1 != x.
+}
+Prove: x_2 != n.
+Prover Z3 4.8.12 returns Timeout (Qed:13ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:13ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/213/213_0001/213_0001/213_merged.c, line 8):
+Assume { Type: is_sint32(n). }
+Prove: n != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:0.94ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.94ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/213/213_0001/213_0001/213_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/213/213_0001/213_0001/213_merged.c, line 9):
+Assume { Type: is_sint32(n). (* Invariant *) Have: n != 0. }
+Prove: 0 <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:0.88ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.88ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/213/213_0001/213_0001/213_merged.c, line 10):
+Let x_1 = 1 + i_1.
+Let x_2 = Mint_0[shift_sint32(arr_0, i_1)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(x_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: n != i_1.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (Mint_0[shift_sint32(arr_0, i_2)] != x))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Else *)
+  Have: x_2 != x.
+  (* Invariant *)
+  Have: x_1 != n.
+}
+Prove: Mint_0[shift_sint32(arr_0, i)] != x.
+Prover Alt-Ergo  returns Valid (Qed:3ms) (30ms) (72)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/213/213_0001/213_0001/213_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/213/213_0001/213_0001/213_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/213/213_0001/213_0001/213_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/213/213_0001/213_0001/213_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/213/213_0001/213_0001/213_merged.c:4: Warning: 
+  No 'assigns' specification for function 'array_find'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/213/213_0001/213_0001/213_merged.c:23: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

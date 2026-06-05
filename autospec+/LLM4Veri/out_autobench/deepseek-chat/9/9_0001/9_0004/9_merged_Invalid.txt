@@ -1,0 +1,7 @@
+[kernel] Parsing out/deepseek-chat/9/9_0001/9_0004/9_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/9/9_0001/9_0004/9_merged.c:8: Warning: 
+  unexpected token '('
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on file "out/deepseek-chat/9/9_0001/9_0004/9_merged.c" that has
+  errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

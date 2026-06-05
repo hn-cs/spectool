@@ -1,0 +1,216 @@
+[kernel] Parsing out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 20 goals scheduled
+[wp] [Timeout] typed_func_to_recursive_line_20_to_24_0_assert (Qed 6ms) (Z3 8s)
+[wp] Proved goals:   19 / 20
+  Qed:            18
+  Alt-Ergo :       1 (45ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function func_to_recursive_line_20_to_24_0
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 6) in 'func_to_recursive_line_20_to_24_0':
+Prove: true.
+Prover Qed returns Valid (21ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 7) in 'func_to_recursive_line_20_to_24_0':
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 18):
+Let x = Mint_0[k].
+Let x_1 = Mint_0[i].
+Let x_2 = Mint_0[j].
+Let m = Mint_0[i <- to_uint32(1 + x_1)].
+Let x_3 = m[j].
+Let m_1 = m[j <- to_uint32(2 + x_3)].
+Let x_4 = m_1[k].
+Let x_5 = to_uint32(3 + x_4).
+Let m_2 = m_1[k <- x_5].
+Let x_6 = m_2[i].
+Let x_7 = m_2[j].
+Assume {
+  Type: is_uint32(x_1) /\ is_uint32(x_2) /\ is_uint32(x) /\ is_uint32(x_3) /\
+      is_uint32(x_4) /\ is_uint32(x_6) /\ is_uint32(x_7).
+  (* Heap *)
+  Type: (region(i.base) <= 0) /\ (region(j.base) <= 0) /\
+      (region(k.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, i, 1) /\ valid_rw(Malloc_0, j, 1) /\
+      valid_rw(Malloc_0, k, 1).
+  (* Pre-condition *)
+  Have: x = (3 * x_1).
+  (* Pre-condition *)
+  Have: x_2 = (2 * x_1).
+  (* Pre-condition *)
+  Have: x_1 <= 1431655765.
+  (* Then *)
+  Have: x <= 268435454.
+}
+Prove: ((3 * x_6) = x_5) /\ (x_7 = (2 * x_6)).
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 8) in 'func_to_recursive_line_20_to_24_0' (1/4):
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 8) in 'func_to_recursive_line_20_to_24_0' (2/4):
+Effect at line 16
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 8) in 'func_to_recursive_line_20_to_24_0' (3/4):
+Effect at line 17
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 8) in 'func_to_recursive_line_20_to_24_0' (4/4):
+Call Effect at line 20
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 8) in 'func_to_recursive_line_20_to_24_0' (1/4):
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 8) in 'func_to_recursive_line_20_to_24_0' (2/4):
+Effect at line 16
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 8) in 'func_to_recursive_line_20_to_24_0' (3/4):
+Effect at line 17
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 8) in 'func_to_recursive_line_20_to_24_0' (4/4):
+Call Effect at line 20
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 2) in 'func_to_recursive_line_20_to_24_0'' in 'func_to_recursive_line_20_to_24_0' at call 'func_to_recursive_line_20_to_24_0' (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 20)
+:
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 3) in 'func_to_recursive_line_20_to_24_0'' in 'func_to_recursive_line_20_to_24_0' at call 'func_to_recursive_line_20_to_24_0' (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 20)
+:
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 4) in 'func_to_recursive_line_20_to_24_0'' in 'func_to_recursive_line_20_to_24_0' at call 'func_to_recursive_line_20_to_24_0' (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 20)
+:
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 5) in 'func_to_recursive_line_20_to_24_0'' in 'func_to_recursive_line_20_to_24_0' at call 'func_to_recursive_line_20_to_24_0' (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 20)
+:
+Let x = Mint_0[i].
+Let m = Mint_0[i <- to_uint32(1 + x)].
+Let x_1 = m[j].
+Let m_1 = m[j <- to_uint32(2 + x_1)].
+Let x_2 = m_1[k].
+Let x_3 = to_uint32(3 + x_2).
+Let m_2 = m_1[k <- x_3].
+Let x_4 = m_2[i].
+Let x_5 = m_2[j].
+Let x_6 = Mint_0[k].
+Let x_7 = Mint_0[j].
+Assume {
+  Type: is_uint32(x) /\ is_uint32(x_7) /\ is_uint32(x_6) /\ is_uint32(x_1) /\
+      is_uint32(x_2) /\ is_uint32(x_4) /\ is_uint32(x_5).
+  (* Heap *)
+  Type: (region(i.base) <= 0) /\ (region(j.base) <= 0) /\
+      (region(k.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, i, 1) /\ valid_rw(Malloc_0, j, 1) /\
+      valid_rw(Malloc_0, k, 1).
+  (* Pre-condition *)
+  Have: x_6 = (3 * x).
+  (* Pre-condition *)
+  Have: x_7 = (2 * x).
+  (* Pre-condition *)
+  Have: x <= 1431655765.
+  (* Then *)
+  Have: x_6 <= 268435454.
+  (* Assertion *)
+  Have: ((3 * x_4) = x_3) /\ (x_5 = (2 * x_4)).
+}
+Prove: x_4 <= 1431655765.
+Prover Z3 4.8.12 returns Valid (Qed:11ms) (160ms) (96851)
+Prover Alt-Ergo  returns Valid (Qed:11ms) (45ms) (291)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 2) in 'func_to_recursive_line_20_to_24_0'' in 'main' at call 'func_to_recursive_line_20_to_24_0' (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 31)
+:
+Prove: true.
+Prover Qed returns Valid (0.67ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 3) in 'func_to_recursive_line_20_to_24_0'' in 'main' at call 'func_to_recursive_line_20_to_24_0' (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 31)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 4) in 'func_to_recursive_line_20_to_24_0'' in 'main' at call 'func_to_recursive_line_20_to_24_0' (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 31)
+:
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 5) in 'func_to_recursive_line_20_to_24_0'' in 'main' at call 'func_to_recursive_line_20_to_24_0' (file out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c, line 31)
+:
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/recursified_loop-crafted_recursified_simple_vardep_2/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_0001/recursified_loop-crafted_recursified_simple_vardep_2_merged.c:26: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

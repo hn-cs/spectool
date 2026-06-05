@@ -1,0 +1,301 @@
+[kernel] Parsing out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c:12: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c:38: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c:36: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c:15: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 17 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 12ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_4_established (Qed 7ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_7_established (Qed 8ms) (Z3 8s)
+[wp] Proved goals:   12 / 17
+  Qed:            10
+  Alt-Ergo :       1 (44ms)
+  Z3 4.8.12:       1 (130ms-6.7s-8s)
+  Timeout:         5
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 18):
+Let m_1 = A_1[i].
+Let x = 1 + j.
+Assume {
+  Type: is_sint32(C) /\ is_sint32(i) /\ is_sint32(j) /\ is_sint32(m) /\
+      is_sint32(n) /\ is_sint32(x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= C) /\ (C <= 2147483646).
+  (* Then *)
+  Have: i < m.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((0 <= i_1) ->
+      ((i_1 < n) -> (A[i_2][i_1] = C_1))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Loop assigns ... *)
+  Have: (forall i_1 : Z. ((i_1 != i) -> (A[i_1] = A_1[i_1]))) /\
+      (forall i_1 : Z. ((0 <= i_1) -> ((i <= 999) -> ((i_1 <= 1499) ->
+       (((i_1 < 0) \/ (n <= i_1)) -> (A[i][i_1] = m_1[i_1])))))).
+  (* Invariant *)
+  Have: n != j.
+  (* Invariant *)
+  Have: j <= n.
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((0 <= i_1) ->
+      ((i_1 < n) -> (A_1[i_2][i_1] = C_1))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < j) -> (m_1[i_1] = C_1))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j < n.
+}
+Prove: x != n.
+Prover Z3 4.8.12 returns Timeout (Qed:12ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:12ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 18):
+Assume {
+  Type: is_sint32(C) /\ is_sint32(i) /\ is_sint32(m) /\ is_sint32(n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= C) /\ (C <= 2147483646).
+  (* Then *)
+  Have: i < m.
+}
+Prove: n != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 19):
+Assume {
+  Type: is_sint32(C) /\ is_sint32(i) /\ is_sint32(m) /\ is_sint32(n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= C) /\ (C <= 2147483646).
+  (* Then *)
+  Have: i < m.
+  (* Invariant *)
+  Have: n != 0.
+}
+Prove: 0 <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 21):
+Let x = 1 + j.
+Let m_1 = A[i].
+Assume {
+  Type: is_sint32(C_1) /\ is_sint32(i) /\ is_sint32(j) /\ is_sint32(m) /\
+      is_sint32(n) /\ is_sint32(x).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 < i) /\ (0 <= i_2) /\ (i_2 < n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= C_1) /\ (C_1 <= 2147483646).
+  (* Then *)
+  Have: i < m.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: forall i_4,i_3 : Z. ((0 <= i_4) -> ((i_4 < i) -> ((0 <= i_3) ->
+      ((i_3 < n) -> (A_1[i_4][i_3] = C))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Loop assigns ... *)
+  Have: (forall i_3 : Z. ((i_3 != i) -> (A_1[i_3] = A[i_3]))) /\
+      (forall i_3 : Z. ((0 <= i_3) -> ((i <= 999) -> ((i_3 <= 1499) ->
+       (((i_3 < 0) \/ (n <= i_3)) -> (A_1[i][i_3] = m_1[i_3])))))).
+  (* Invariant *)
+  Have: n != j.
+  (* Invariant *)
+  Have: j <= n.
+  (* Invariant *)
+  Have: forall i_4,i_3 : Z. ((0 <= i_4) -> ((i_4 < i) -> ((0 <= i_3) ->
+      ((i_3 < n) -> (A[i_4][i_3] = C))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < j) -> (m_1[i_3] = C))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j < n.
+  (* Invariant *)
+  Have: x != n.
+}
+Prove: A[i <- m_1[j <- C]][i_1][i_2] = C.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (130ms) (42201)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 21):
+Assume {
+  Type: is_sint32(C_1) /\ is_sint32(i_2) /\ is_sint32(m) /\ is_sint32(n).
+  (* Goal *)
+  When: (0 <= i) /\ (i < i_2) /\ (0 <= i_1) /\ (i_1 < n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= C_1) /\ (C_1 <= 2147483646).
+  (* Then *)
+  Have: i_2 < m.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+}
+Prove: A[i][i_1] = C.
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 22):
+Let m_1 = A[i].
+Let m_2 = m_1[j <- C].
+Let x = 1 + j.
+Assume {
+  Type: is_sint32(C_1) /\ is_sint32(i) /\ is_sint32(j) /\ is_sint32(m) /\
+      is_sint32(n) /\ is_sint32(x).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= j).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= C_1) /\ (C_1 <= 2147483646).
+  (* Then *)
+  Have: i < m.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((0 <= i_2) ->
+      ((i_2 < n) -> (A_1[i_3][i_2] = C))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Loop assigns ... *)
+  Have: (forall i_2 : Z. ((i_2 != i) -> (A_1[i_2] = A[i_2]))) /\
+      (forall i_2 : Z. ((0 <= i_2) -> ((i <= 999) -> ((i_2 <= 1499) ->
+       (((i_2 < 0) \/ (n <= i_2)) -> (A_1[i][i_2] = m_1[i_2])))))).
+  (* Invariant *)
+  Have: n != j.
+  (* Invariant *)
+  Have: j <= n.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((0 <= i_2) ->
+      ((i_2 < n) -> (A[i_3][i_2] = C))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < j) -> (m_1[i_2] = C))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j < n.
+  (* Invariant *)
+  Have: x != n.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((0 <= i_2) ->
+      ((i_2 < n) -> (A[i <- m_2][i_3][i_2] = C))))).
+}
+Prove: m_2[i_1] = C.
+Prover Alt-Ergo  returns Valid (Qed:10ms) (44ms) (99)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (20ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 24):
+Assume {
+  Type: is_sint32(C) /\ is_sint32(i) /\ is_sint32(m) /\ is_sint32(n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= C) /\ (C <= 2147483646).
+  (* Then *)
+  Have: i < m.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((0 <= i_2) -> ((i_2 < i) -> ((0 <= i_1) ->
+      ((i_1 < n) -> (A[i_2][i_1] = C_1))))).
+}
+Prove: 0 <= i.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 25) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 25) (2/3):
+Effect at line 28
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c, line 25) (3/3):
+Effect at line 29
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-multidimensional_init-2-n-u/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_0001/array-multidimensional_init-2-n-u_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

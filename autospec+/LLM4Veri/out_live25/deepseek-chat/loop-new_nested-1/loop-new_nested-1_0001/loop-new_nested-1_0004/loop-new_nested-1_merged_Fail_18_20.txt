@@ -1,0 +1,223 @@
+[kernel] Parsing out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 20 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 14ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 4ms) (Z3 8s)
+[wp] Proved goals:   18 / 20
+  Qed:            17
+  Alt-Ergo :       1 (34ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 16):
+Let x = i * m.
+Let x_1 = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(j_1) /\ is_sint32(k) /\
+      is_sint32(m) /\ is_sint32(n) /\ is_sint32(x_1) /\ is_sint32(x) /\
+      is_sint32(k - x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= m) /\ (m <= 2147483646).
+  (* Then *)
+  Have: 10 <= n.
+  (* Then *)
+  Have: n <= 10000.
+  (* Then *)
+  Have: 10 <= m.
+  (* Then *)
+  Have: m <= 10000.
+  (* Invariant *)
+  Have: 0 <= j_1.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Else *)
+  Have: (m + x) <= k.
+}
+Prove: (m * x_1) = k.
+Prover Z3 4.8.12 returns Timeout (Qed:14ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:14ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 17):
+Let x = i * m.
+Let x_1 = 1 + i.
+Let x_2 = m * x_1.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(j_1) /\ is_sint32(m) /\
+      is_sint32(n) /\ is_sint32(x_1) /\ is_sint32(x) /\ is_sint32(x_2) /\
+      is_sint32(x_2 - x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= m) /\ (m <= 2147483646).
+  (* Then *)
+  Have: 10 <= n.
+  (* Then *)
+  Have: n <= 10000.
+  (* Then *)
+  Have: 10 <= m.
+  (* Then *)
+  Have: m <= 10000.
+  (* Invariant *)
+  Have: 0 <= j_1.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Else *)
+  Have: (m + x) <= x_2.
+}
+Prove: x <= x_2.
+Prover Alt-Ergo  returns Valid (Qed:20ms) (34ms) (35)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 17):
+Assume {
+  Type: is_sint32(j) /\ is_sint32(m) /\ is_sint32(n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= m) /\ (m <= 2147483646).
+  (* Then *)
+  Have: 10 <= n.
+  (* Then *)
+  Have: n <= 10000.
+  (* Then *)
+  Have: 10 <= m.
+  (* Then *)
+  Have: m <= 10000.
+}
+Prove: 0 <= j.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-new_nested-1/loop-new_nested-1_0001/loop-new_nested-1_0004/loop-new_nested-1_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

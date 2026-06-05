@@ -1,0 +1,808 @@
+[kernel] Parsing out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:46: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] FRAMAC_SHARE/libc/stdlib.h:394: Warning: 
+  Allocation, initialization and danglingness not yet implemented
+  (allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+[wp] out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 59 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_4_established (Qed 5ms) (Z3 8s) (Stronger, 2 warnings)
+[wp] Proved goals:   58 / 59
+  Qed:            58
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 14):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 14):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 15):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 15):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 16):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 16):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 17):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 17):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Assume {
+  Type: is_sint32(n).
+  (* Heap *)
+  Type: is_sint32(fc_heap_status_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Call 'malloc' *)
+  Have: ((!P_is_allocable(fc_heap_status_0, to_uint64(4 * to_uint64(n)))) ->
+      (null = malloc_0)).
+  (* Invariant *)
+  Have: n <= 1000.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 18):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 18):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.57ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 19):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 19):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 20):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.79ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 20):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.74ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 21):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.82ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 21):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.94ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 22):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.80ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 22):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 23):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.68ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 23):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 24):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.98ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 24):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 25):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 25):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.77ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 26):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 26):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.94ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 27):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.90ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 27):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.82ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 28):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 28):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 29):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.80ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 29):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 30):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.81ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 30):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.74ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 31):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 31):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.69ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 32):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 32):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.65ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 33):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 33):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.62ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 34):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 34):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.99ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 35):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.81ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 35):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 36):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 36):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.68ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 37):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 37):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.66ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 38):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 38):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.96ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 39):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.69ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 39):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 40):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 40):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.93ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 41):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 41):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 42) (1/3):
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 42) (2/3):
+Effect at line 45
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c, line 42) (3/3):
+Effect at line 45
+out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:12: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+FRAMAC_SHARE/libc/stdlib.h:394: warning from wp:
+ - Warning: Ignored Hypothesis
+   Reason: Allocation, initialization and danglingness not yet implemented
+(allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+Prove: true.
+Prover Qed returns Valid (0.72ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-lit_mcmillan2006/loop-lit_mcmillan2006_0001/loop-lit_mcmillan2006_0004/loop-lit_mcmillan2006_merged.c:9: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

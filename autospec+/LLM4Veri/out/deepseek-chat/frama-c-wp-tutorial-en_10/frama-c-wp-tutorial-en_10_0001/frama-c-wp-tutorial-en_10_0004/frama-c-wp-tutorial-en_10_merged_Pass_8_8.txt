@@ -1,0 +1,106 @@
+[kernel] Parsing out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0004/frama-c-wp-tutorial-en_10_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] Proved goals:    8 / 8
+  Qed:             7
+  Alt-Ergo :       1 (57ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0004/frama-c-wp-tutorial-en_10_merged.c, line 2) in 'order_3'' in 'main' at call 'order_3' (file out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0004/frama-c-wp-tutorial-en_10_merged.c, line 25)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function order_3
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0004/frama-c-wp-tutorial-en_10_merged.c, line 3) in 'order_3':
+Let x = Mint_3[c].
+Let x_1 = Mint_3[b].
+Let x_2 = Mint_5[c].
+Let x_3 = Mint_5[a].
+Let x_4 = Mint_1[b].
+Let x_5 = Mint_1[a].
+Assume {
+  Type: is_sint32(x_5) /\ is_sint32(x_4) /\ is_sint32(Mint_2[b]) /\
+      is_sint32(x_1) /\ is_sint32(x) /\ is_sint32(Mint_4[c]) /\
+      is_sint32(x_3) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\
+      (region(c.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (x_5 = i) \/ (x_4 = i) \/ (Mint_1[c] = i).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, 1) /\ valid_rw(Malloc_0, b, 1) /\
+      valid_rw(Malloc_0, c, 1).
+  If x_4 < x_5
+  Then { Have: Mint_1[b <- x_5][a <- x_4] = Mint_5. }
+  Else { Have: Mint_5 = Mint_1. }
+  If x_2 < x_3
+  Then {
+    Have: Mint_5 = Mint_4.
+    Have: Mint_4[c <- Mint_4[a]][a <- Mint_4[c]] = Mint_3.
+  }
+  Else { Have: Mint_5 = Mint_3. }
+  If x < x_1
+  Then {
+    Have: Mint_3 = Mint_2.
+    Have: Mint_2[b <- Mint_2[c]][c <- Mint_2[b]] = Mint_0.
+  }
+  Else { Have: Mint_3 = Mint_0. }
+}
+Prove: (Mint_0[a] = i) \/ (Mint_0[b] = i) \/ (Mint_0[c] = i).
+Prover Z3 4.8.12 returns Valid (Qed:39ms) (150ms) (133422)
+Prover Alt-Ergo  returns Valid (Qed:39ms) (57ms) (866)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0004/frama-c-wp-tutorial-en_10_merged.c, line 4) in 'order_3' (1/6):
+Effect at line 9
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0004/frama-c-wp-tutorial-en_10_merged.c, line 4) in 'order_3' (2/6):
+Effect at line 10
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0004/frama-c-wp-tutorial-en_10_merged.c, line 4) in 'order_3' (3/6):
+Effect at line 14
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0004/frama-c-wp-tutorial-en_10_merged.c, line 4) in 'order_3' (4/6):
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0004/frama-c-wp-tutorial-en_10_merged.c, line 4) in 'order_3' (5/6):
+Effect at line 19
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0004/frama-c-wp-tutorial-en_10_merged.c, line 4) in 'order_3' (6/6):
+Effect at line 20
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0004/frama-c-wp-tutorial-en_10_merged.c:23: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

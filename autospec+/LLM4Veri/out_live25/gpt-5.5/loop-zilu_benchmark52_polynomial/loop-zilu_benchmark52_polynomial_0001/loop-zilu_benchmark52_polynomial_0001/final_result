@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=7, microseconds=25811), 'total_solve_time': datetime.timedelta(seconds=9, microseconds=971051), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 228, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant i <= 10;', 'loop invariant -9 <= i;', 'loop assigns i;'], '2': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result < INT_MAX;\n', '*/\n', 'int unknown();\n', '#include <assert.h>\n', '/* 2. FUNC CONTRACT */\nint main() {\n', '  int i = unknown();\n', '  if (!(i < 10 && i > -10)) return 0;\n', '  /* 1. LOOP INVARIANT */\n  while (i * i < 100) {\n', '    i = i + 1;\n', '  }\n', '  //@ assert(i == 10);\n', '  return 0;\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

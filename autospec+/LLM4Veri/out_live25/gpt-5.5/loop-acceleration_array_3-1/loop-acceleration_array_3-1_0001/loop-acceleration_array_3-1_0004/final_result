@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 3, 'Iteration': 3, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=34, microseconds=706695), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=592377), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 1078, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 3, 1], '1': ['loop invariant i <= N;', 'loop invariant \\valid(A+(0..N-1));', 'loop invariant \\forall integer k; i <= k < N ==> \\valid(A+k);', 'loop invariant \\forall integer k; 0 <= k < i ==> INT_MIN <= A[k] < INT_MAX;', 'loop invariant \\forall integer k; 0 <= k < i ==> A[k] >= INT_MIN;', 'loop invariant \\forall integer k; 0 <= k < i ==> A[k] <= INT_MAX - 1;', 'loop invariant \\forall integer k; 0 <= k < i ==> A[k] < INT_MAX;', 'loop invariant N - i;', 'loop invariant 0 <= i;', 'loop assigns i;', 'loop assigns A[0..N-1];'], '2': ['loop invariant i > 0 ==> \\exists integer k; 0 <= k < i && A[k] != 0;', 'loop invariant i <= N-1;', 'loop invariant i < N;', 'loop invariant \\valid(A+(0..N-1));', 'loop invariant \\forall integer k; 0 <= k < i ==> A[k] < 0 || A[k] > 0;', 'loop invariant \\forall integer k; 0 <= k < i ==> A[k] != 0;', 'loop invariant \\forall integer k; 0 <= k < N ==> INT_MIN <= A[k] < INT_MAX;', 'loop invariant N - 1 - i;', 'loop invariant 0 <= i;', 'loop assigns i;'], '3': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result < INT_MAX;\n', '*/\n', 'int unknown();\n', '#include <assert.h>\n', '#define N 1024\n', '/* 3. FUNC CONTRACT */\nint main(void) {\n', '  int A[N];\n', '  int i;\n', '  /* 1. LOOP INVARIANT */\n  for (i = 0; i < N; i++) {\n', '    A[i] = unknown();\n', '  }\n', '  /* 2. LOOP INVARIANT */\n  for (i = 0; A[i] != 0; i++) {\n', '    if (i >= N-1) {\n', '      break;\n', '    }\n', '  }\n', '  //@ assert(i <= N);\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

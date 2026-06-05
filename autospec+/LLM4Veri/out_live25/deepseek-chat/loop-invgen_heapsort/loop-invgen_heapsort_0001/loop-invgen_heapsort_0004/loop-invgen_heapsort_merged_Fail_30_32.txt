@@ -1,0 +1,364 @@
+[kernel] Parsing out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 32 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 8ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_9_established (Qed 10ms) (Z3 8s)
+[wp] Proved goals:   30 / 32
+  Qed:            27
+  Alt-Ergo :       3 (18ms-21ms-27ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 20):
+Let x = 2 * i_1.
+Let x_1 = n / 2.
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(r) /\
+      is_sint32(r_1) /\ is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\
+      is_sint32(x) /\ is_sint32(2 * i) /\ is_sint32(x_1) /\
+      is_sint32(i - 1) /\ is_sint32(1 + x_1).
+  (* Residual *)
+  When: 2 <= n.
+  (* Residual *)
+  When: 2 <= i.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 < n.
+  (* Then *)
+  Have: n <= 2147483647.
+  (* Invariant *)
+  Have: x_1 <= n.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 < r_1.
+  (* Invariant *)
+  Have: r_1 <= n.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: 2 <= r_1.
+  (* Invariant *)
+  Have: i <= r_1.
+  (* Invariant *)
+  Have: i_1 <= r_1.
+  (* Invariant *)
+  Have: 0 < i_1.
+  If x <= r_1
+  Then {
+    Have: r_1 = r.
+    If x < r
+    Then {
+      (* Call 'unknown' *)
+      Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    }
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+    (* Then *)
+    Have: tmp_0_0 != 0.
+  }
+}
+Prove: i <= (1 + n).
+Prover Z3 4.8.12 returns Valid (Qed:75ms) (120ms) (39810)
+Prover Alt-Ergo  returns Valid (Qed:75ms) (19ms) (25)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 20):
+Let x = n / 2.
+Assume {
+  Type: is_sint32(n) /\ is_sint32(x) /\ is_sint32(1 + x).
+  (* Residual *)
+  When: 2 <= n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 < n.
+  (* Then *)
+  Have: n <= 2147483647.
+}
+Prove: x <= n.
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (120ms) (35476)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (27ms) (69)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (59ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 21):
+Assume {
+  Type: is_sint32(n) /\ is_sint32(1 + (n / 2)).
+  (* Residual *)
+  When: n <= 1.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: n <= 2147483647.
+  (* Invariant *)
+  Have: 0 < n.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 22):
+Let x = 2 * i.
+Let x_1 = n / 2.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(r) /\
+      is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(x) /\
+      is_sint32(2 * i_1) /\ is_sint32(x_1) /\ is_sint32(r - 1) /\
+      is_sint32(1 + x_1).
+  (* Residual *)
+  When: 2 <= n.
+  (* Residual *)
+  When: i_1 <= 1.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: n <= 2147483647.
+  (* Invariant *)
+  Have: x_1 <= n.
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: 0 < r.
+  (* Invariant *)
+  Have: r <= n.
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: 2 <= r.
+  (* Invariant *)
+  Have: i_1 <= r.
+  (* Invariant *)
+  Have: i <= r.
+  (* Invariant *)
+  Have: 0 < i.
+  If x <= r
+  Then {
+    If x < r
+    Then {
+      (* Call 'unknown' *)
+      Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    }
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+    (* Then *)
+    Have: tmp_0_0 != 0.
+  }
+}
+Prove: r <= (1 + n).
+Prover Alt-Ergo  returns Valid (Qed:80ms) (18ms) (24)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (59ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 34):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 34):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 35):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 35):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 36):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 36):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 37):
+Prove: true.
+Prover Qed returns Valid (34ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 37):
+Let x = n / 2.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(r) /\ is_sint32(2 * i) /\
+      is_sint32(x) /\ is_sint32(1 + x).
+  (* Residual *)
+  When: 2 <= n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 < n.
+  (* Then *)
+  Have: n <= 2147483647.
+  (* Invariant *)
+  Have: x <= n.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 < r.
+  (* Invariant *)
+  Have: r <= n.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: 2 <= r.
+}
+Prove: i <= r.
+Prover Z3 4.8.12 returns Timeout (Qed:10ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:10ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 38):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 38):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 39):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 39):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 40):
+Prove: true.
+Prover Qed returns Valid (45ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 40):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 41):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 41):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 25) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 25) (2/3):
+Call Result at line 51
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 25) (3/3):
+Call Result at line 56
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 42) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 42) (2/3):
+Call Result at line 51
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c, line 42) (3/3):
+Call Result at line 56
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-invgen_heapsort/loop-invgen_heapsort_0001/loop-invgen_heapsort_0004/loop-invgen_heapsort_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 5, 'Iteration': 5, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=34, microseconds=698694), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=751617), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 1144, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': [], '2': [], 'MSLines': ['/*@ \n', '   inductive is_gcd(integer a, integer b, integer d) {\n', '       case gcd_zero:\n', '          \\forall integer n; is_gcd(n,0,n);\n', '       case gcd_succ:\n', '          \\forall integer a,b,d; is_gcd(b, a % b, d) ==> is_gcd(a,b,d);\n', '    }\n', ' */\n', '/*@ \n', '   axiomatic gcd {\n', '       logic integer gcd(integer a, integer b);\n', '       axiom nil:\n', '          \\forall integer n; gcd(n,0) == n;\n', '       axiom next:\n', '          \\forall integer a,b; gcd(b, a % b) == gcd(a,b);\n', '    }\n', ' */\n', '/* 1. FUNC CONTRACT */\nunsigned gcd_rec(unsigned a, unsigned b)\n', '{\n', '   if (b == 0)\n', '      return a;\n', '   return gcd_rec(b, a % b);\n', '}\n', '/* 2. FUNC CONTRACT */\nint main()\n', '{\n', '   unsigned a = 48;\n', '   unsigned b = 18;\n', '   unsigned result = gcd_rec(a, b);\n', '   //@ assert result == 6;\n', '   return 0;\n', '}']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

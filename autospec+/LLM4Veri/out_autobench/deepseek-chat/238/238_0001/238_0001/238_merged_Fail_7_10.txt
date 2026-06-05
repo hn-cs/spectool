@@ -1,0 +1,247 @@
+[kernel] Parsing out/deepseek-chat/238/238_0001/238_0001/238_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/238/238_0001/238_0001/238_merged.c:13: Warning: 
+  Calling function unknown_int that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/238/238_0001/238_0001/238_merged.c:11: Warning: 
+  Neither code nor implicit assigns clause for function unknown_int, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 10 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 47ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 45ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_3_preserved (Qed 46ms) (Z3 8s)
+[wp] Proved goals:    7 / 10
+  Qed:             6
+  Z3 4.8.12:       1 (130ms-6s-8s)
+  Timeout:         3
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/238/238_0001/238_0001/238_merged.c, line 24):
+Let x = to_uint32(2 + i).
+Let x_1 = -(if (flag_0 = 0) then 1 else 0).
+Let x_2 = i_1 - (if (flag_0 = 0) then 1 else 0).
+Let x_3 = i - (if (flag_0 = 0) then 1 else 0).
+Let x_4 = x_3 / 2.
+Let x_5 = -(x_3 * x_4).
+Let x_6 = (j - 1) * x_4.
+Let x_7 = ((i + (if (flag_0 = 0) then 1 else 0) - 2) * x_3) / 4.
+Let x_8 = to_uint32(1 + x_4).
+Let x_9 = x - (if (flag_0 = 0) then 1 else 0).
+Assume {
+  Type: is_uint32(i) /\ is_uint32(i_1) /\ is_uint32(j_1) /\ is_uint32(j) /\
+      is_sint32(flag_0) /\ is_sint32(tmp_0_0) /\ is_uint32(x_4) /\
+      is_uint32(x_6 + x_7 - (x_3 * x_4)).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= flag_0) /\ (flag_0 <= 2147483647).
+  If flag_0 != 0
+  Then { Have: i_1 = 0. }
+  Else { Have: i_1 = 1. }
+  (* Invariant *)
+  Have: (((i_1 + (if (flag_0 = 0) then 1 else 0) - 2) * x_2) / 4) = 0.
+  (* Invariant *)
+  Have: (x_2 / 2) = 0.
+  (* Invariant *)
+  Have: if (flag_0 = 0) then (0 < i_1) else (0 <= i_1).
+  (* Invariant *)
+  Have: 0 < j.
+  (* Invariant *)
+  Have: if (flag_0 = 0) then (0 < i) else (0 <= i).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483647).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  If to_uint32(x % 2) = 0
+  Then { Have: to_uint32(2 + j) = j_1. }
+  Else { Have: to_uint32(1 + j) = j_1. }
+}
+Prove: ((x_8 * x_9) + to_uint32(to_uint32(j - i) + x_6 + x_7 - (x_3 * x_4)))
+         = (((x_9 * ((if (flag_0 = 0) then 1 else 0) + x - 2)) / 4)
+            + (x_8 * (j_1 - 1))).
+Prover Z3 4.8.12 returns Timeout (Qed:47ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:47ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/238/238_0001/238_0001/238_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/238/238_0001/238_0001/238_merged.c, line 25):
+Let x = to_uint32(2 + i).
+Let x_1 = -(if (flag_0 = 0) then 1 else 0).
+Let x_2 = i - (if (flag_0 = 0) then 1 else 0).
+Let x_3 = x_2 / 2.
+Let x_4 = -(x_2 * x_3).
+Let x_5 = (j_3 - 1) * x_3.
+Let x_6 = ((i + (if (flag_0 = 0) then 1 else 0) - 2) * x_2) / 4.
+Let x_7 = to_uint32(1 + x_3).
+Let x_8 = x - (if (flag_0 = 0) then 1 else 0).
+Let x_9 = x_7 * x_8.
+Let x_10 = x_7 * (j - 1).
+Let x_11 = (x_8 * ((if (flag_0 = 0) then 1 else 0) + x - 2)) / 4.
+Let x_12 = i_1 - (if (flag_0 = 0) then 1 else 0).
+Assume {
+  Type: is_uint32(i) /\ is_uint32(i_1) /\ is_uint32(j) /\ is_uint32(j_1) /\
+      is_uint32(j_2) /\ is_uint32(j_3) /\ is_sint32(flag_0) /\
+      is_sint32(tmp_0_0) /\ is_uint32(x_3) /\
+      is_uint32(x_5 + x_6 - (x_2 * x_3)) /\ is_uint32(x_11 + x_10 - x_9).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= flag_0) /\ (flag_0 <= 2147483647).
+  If flag_0 != 0
+  Then { Have: i_1 = 0. }
+  Else { Have: i_1 = 1. }
+  (* Invariant *)
+  Have: (((i_1 + (if (flag_0 = 0) then 1 else 0) - 2) * x_12) / 4) = 0.
+  (* Invariant *)
+  Have: (x_12 / 2) = 0.
+  (* Invariant *)
+  Have: if (flag_0 = 0) then (0 < i_1) else (0 <= i_1).
+  (* Invariant *)
+  Have: 0 < j_3.
+  (* Invariant *)
+  Have: if (flag_0 = 0) then (0 < i) else (0 <= i).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483647).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  Have: (x_9 + to_uint32(to_uint32(j_3 - i) + x_5 + x_6 - (x_2 * x_3)))
+          = (x_11 + x_10).
+  If to_uint32(x % 2) = 0
+  Then { Have: j_3 = j_1. Have: to_uint32(2 + j_1) = j. }
+  Else { Have: j_3 = j_2. Have: to_uint32(1 + j_2) = j. }
+}
+Prove: (x_8 / 2) = x_7.
+Prover Z3 4.8.12 returns Timeout (Qed:45ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:45ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/238/238_0001/238_0001/238_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/238/238_0001/238_0001/238_merged.c, line 26):
+Let x = to_uint32(2 + i).
+Let x_1 = -(if (flag_0 = 0) then 1 else 0).
+Let x_2 = i - (if (flag_0 = 0) then 1 else 0).
+Let x_3 = x_2 / 2.
+Let x_4 = -(x_2 * x_3).
+Let x_5 = (j_3 - 1) * x_3.
+Let x_6 = ((i + (if (flag_0 = 0) then 1 else 0) - 2) * x_2) / 4.
+Let x_7 = x - (if (flag_0 = 0) then 1 else 0).
+Let x_8 = x_7 / 2.
+Let x_9 = x_7 * x_8.
+Let x_10 = (j - 1) * x_8.
+Let x_11 = (x_7 * ((if (flag_0 = 0) then 1 else 0) + x - 2)) / 4.
+Let x_12 = i_1 - (if (flag_0 = 0) then 1 else 0).
+Assume {
+  Type: is_uint32(i) /\ is_uint32(i_1) /\ is_uint32(j) /\ is_uint32(j_1) /\
+      is_uint32(j_2) /\ is_uint32(j_3) /\ is_sint32(flag_0) /\
+      is_sint32(tmp_0_0) /\ is_uint32(x_3) /\ is_uint32(x_8) /\
+      is_uint32(x_5 + x_6 - (x_2 * x_3)) /\ is_uint32(x_10 + x_11 - x_9).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= flag_0) /\ (flag_0 <= 2147483647).
+  If flag_0 != 0
+  Then { Have: i_1 = 0. }
+  Else { Have: i_1 = 1. }
+  (* Invariant *)
+  Have: (((i_1 + (if (flag_0 = 0) then 1 else 0) - 2) * x_12) / 4) = 0.
+  (* Invariant *)
+  Have: (x_12 / 2) = 0.
+  (* Invariant *)
+  Have: if (flag_0 = 0) then (0 < i_1) else (0 <= i_1).
+  (* Invariant *)
+  Have: 0 < j_3.
+  (* Invariant *)
+  Have: if (flag_0 = 0) then (0 < i) else (0 <= i).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483647).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  Have: x_8 = to_uint32(1 + x_3).
+  Have: (x_9 + to_uint32(to_uint32(j_3 - i) + x_5 + x_6 - (x_2 * x_3)))
+          = (x_10 + x_11).
+  If to_uint32(x % 2) = 0
+  Then { Have: j_3 = j_1. Have: to_uint32(2 + j_1) = j. }
+  Else { Have: j_3 = j_2. Have: to_uint32(1 + j_2) = j. }
+}
+Prove: 0 < j.
+Prover Z3 4.8.12 returns Timeout (Qed:46ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:46ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/238/238_0001/238_0001/238_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/238/238_0001/238_0001/238_merged.c, line 27):
+Let x = to_uint32(2 + i).
+Let x_1 = i - 1.
+Let x_2 = x_1 / 2.
+Let x_3 = -(x_1 * x_2).
+Let x_4 = (j_3 - 1) * x_2.
+Let x_5 = (x_1 * x_1) / 4.
+Let x_6 = x - 1.
+Let x_7 = x_6 / 2.
+Let x_8 = x_6 * x_7.
+Let x_9 = (j - 1) * x_7.
+Let x_10 = (x_6 * x_6) / 4.
+Assume {
+  Type: is_uint32(i) /\ is_uint32(j) /\ is_uint32(j_1) /\ is_uint32(j_2) /\
+      is_uint32(j_3) /\ is_sint32(tmp_0_0) /\ is_uint32(x_2) /\
+      is_uint32(x_4 + x_5 - (x_1 * x_2)) /\ is_uint32(x_9 + x_10 - x_8).
+  (* Invariant *)
+  Have: 0 < j_3.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483647).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  Have: x_7 = to_uint32(1 + x_2).
+  Have: (x_8 + to_uint32(to_uint32(j_3 - i) + x_4 + x_5 - (x_1 * x_2)))
+          = (x_9 + x_10).
+  If to_uint32(x % 2) = 0
+  Then { Have: j_3 = j_1. Have: to_uint32(2 + j_1) = j. }
+  Else { Have: j_3 = j_2. Have: to_uint32(1 + j_2) = j. }
+  (* Invariant *)
+  Have: 0 < j.
+}
+Prove: 0 < x.
+Prover Z3 4.8.12 returns Valid (Qed:30ms) (130ms) (45916)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/238/238_0001/238_0001/238_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/238/238_0001/238_0001/238_merged.c, line 28) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/238/238_0001/238_0001/238_merged.c, line 28) (2/2):
+Call Result at line 33
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/238/238_0001/238_0001/238_merged.c:9: Warning: 
+  No 'assigns' specification for function 'unknown_int'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/238/238_0001/238_0001/238_merged.c:11: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

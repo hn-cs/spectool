@@ -1,0 +1,353 @@
+[kernel] Parsing out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:45: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:20: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 19 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 11ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_6_established (Qed 4ms) (Z3 8s) (Stronger)
+[wp] Proved goals:   17 / 19
+  Qed:            14
+  Alt-Ergo :       3 (18ms-26ms-32ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 17):
+Assume {
+  Type: is_sint32(CELLCOUNT_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+}
+Prove: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (120ms) (34580)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (18ms) (16)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 23):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 2 * i.
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(volArray_0, x - 2), 2).
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(CELLCOUNT_1) /\
+      is_sint32(MINVAL_0) /\ is_sint32(i) /\ is_sint32(j) /\
+      is_sint32(j - 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_1) /\ (CELLCOUNT_1 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_1.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_1) /\ (CELLCOUNT_1 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_1 % 2) = 0.
+  (* Then *)
+  Have: i <= (CELLCOUNT_0 / 2).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: j != 0.
+  (* Invariant *)
+  Have: j <= 2.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((MINVAL_0 <= i_1) -> ((j < i_1) -> ((i_1 <= 2) ->
+      (a[shift_sint32(volArray_0, x - i_1)] = i_1)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < MINVAL_0) -> ((j < i_1) -> ((i_1 <= 2) ->
+      (a[shift_sint32(volArray_0, x - i_1)] = 0)))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: 0 < j.
+}
+Prove: j != 1.
+Prover Z3 4.8.12 returns Timeout (Qed:11ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:11ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 23):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 24):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 24):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 25):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 25):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 26):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 2 * i_1.
+Let a = havoc(Mint_undef_0, Mint_1, shift_sint32(volArray_0, x - 2), 2).
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(CELLCOUNT_1) /\
+      is_sint32(MINVAL_0) /\ is_sint32(i_1) /\ is_sint32(j) /\
+      is_sint32(j - 1).
+  (* Goal *)
+  When: (MINVAL_0 <= i) /\ (j <= i) /\ (i <= 2).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_1) /\ (CELLCOUNT_1 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_1.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_1) /\ (CELLCOUNT_1 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_1 % 2) = 0.
+  (* Then *)
+  Have: i_1 <= (CELLCOUNT_0 / 2).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: j != 0.
+  (* Invariant *)
+  Have: j <= 2.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((MINVAL_0 <= i_2) -> ((j < i_2) -> ((i_2 <= 2) ->
+      (a[shift_sint32(volArray_0, x - i_2)] = i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < MINVAL_0) -> ((j < i_2) -> ((i_2 <= 2) ->
+      (a[shift_sint32(volArray_0, x - i_2)] = 0)))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: 0 < j.
+  If MINVAL_0 <= j
+  Then {
+    Have: a = Mint_2.
+    Have: Mint_2[shift_sint32(volArray_0, x - j) <- j] = Mint_0.
+  }
+  Else {
+    Have: a = Mint_3.
+    Have: Mint_3[shift_sint32(volArray_0, x - j) <- 0] = Mint_0.
+  }
+  (* Invariant *)
+  Have: j != 1.
+  (* Invariant *)
+  Have: j <= 3.
+}
+Prove: Mint_0[shift_sint32(volArray_0, x - i)] = i.
+Prover Alt-Ergo  returns Valid (Qed:33ms) (32ms) (70)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 26):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 27):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 2 * i_1.
+Let a = havoc(Mint_undef_0, Mint_1, shift_sint32(volArray_0, x - 2), 2).
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(CELLCOUNT_1) /\
+      is_sint32(MINVAL_0) /\ is_sint32(i_1) /\ is_sint32(j) /\
+      is_sint32(j - 1).
+  (* Goal *)
+  When: (i < MINVAL_0) /\ (j <= i) /\ (i <= 2).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_1) /\ (CELLCOUNT_1 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_1.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_1) /\ (CELLCOUNT_1 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_1 % 2) = 0.
+  (* Then *)
+  Have: i_1 <= (CELLCOUNT_0 / 2).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: j != 0.
+  (* Invariant *)
+  Have: j <= 2.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((MINVAL_0 <= i_2) -> ((j < i_2) -> ((i_2 <= 2) ->
+      (a[shift_sint32(volArray_0, x - i_2)] = i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < MINVAL_0) -> ((j < i_2) -> ((i_2 <= 2) ->
+      (a[shift_sint32(volArray_0, x - i_2)] = 0)))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: 0 < j.
+  If MINVAL_0 <= j
+  Then {
+    Have: a = Mint_2.
+    Have: Mint_2[shift_sint32(volArray_0, x - j) <- j] = Mint_0.
+  }
+  Else {
+    Have: a = Mint_3.
+    Have: Mint_3[shift_sint32(volArray_0, x - j) <- 0] = Mint_0.
+  }
+  (* Invariant *)
+  Have: j != 1.
+  (* Invariant *)
+  Have: j <= 3.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((MINVAL_0 <= i_2) -> ((j <= i_2) -> ((i_2 <= 2) ->
+      (Mint_0[shift_sint32(volArray_0, x - i_2)] = i_2)))).
+}
+Prove: Mint_0[shift_sint32(volArray_0, x - i)] = 0.
+Prover Alt-Ergo  returns Valid (Qed:32ms) (29ms) (72)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 27):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 28):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 28):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Assume {
+  Type: is_sint32(CELLCOUNT_0) /\ is_sint32(CELLCOUNT_1) /\ is_sint32(i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_1) /\ (CELLCOUNT_1 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_1.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_1) /\ (CELLCOUNT_1 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_1 % 2) = 0.
+  (* Then *)
+  Have: i <= (CELLCOUNT_0 / 2).
+}
+Prove: 0 < i.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 29):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 29):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 30) (1/4):
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 30) (2/4):
+Effect at line 33
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 30) (3/4):
+Effect at line 37
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c, line 30) (4/4):
+Effect at line 41
+out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:17: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-tiling_nr2/array-tiling_nr2_0001/array-tiling_nr2_0001/array-tiling_nr2_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

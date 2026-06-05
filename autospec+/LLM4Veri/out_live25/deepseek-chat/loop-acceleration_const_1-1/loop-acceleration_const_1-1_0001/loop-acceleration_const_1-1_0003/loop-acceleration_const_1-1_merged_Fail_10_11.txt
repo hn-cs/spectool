@@ -1,0 +1,81 @@
+[kernel] Parsing out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_established (Qed 1ms) (Z3 8s)
+[wp] Proved goals:   10 / 11
+  Qed:            10
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c, line 5):
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-acceleration_const_1-1/loop-acceleration_const_1-1_0001/loop-acceleration_const_1-1_0003/loop-acceleration_const_1-1_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

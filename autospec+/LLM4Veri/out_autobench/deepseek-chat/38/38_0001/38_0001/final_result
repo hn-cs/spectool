@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=1, microseconds=137887), 'total_solve_time': datetime.timedelta(seconds=9, microseconds=902274), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 16, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant 0 <= c;'], '2': [], 'MSLines': ['/*@\n', 'requires n > 0;\n', '*/\n', '/* 2. FUNC CONTRACT */\nvoid foo(int n) {\n', '    int c = 0;\n', '\n', '    /* 1. LOOP INVARIANT */\n    while (unknown()) {\n', '        if(c == n) {\n', '            c = 1;\n', '        }\n', '        else {\n', '            c = c + 1;\n', '        }\n', '    }\n', '\n', '    //post-condition\n', '    if(c == n) {\n', '        //@ assert( c >= 0);\n', '        ////@ assert( c <= n);\n', '    }\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

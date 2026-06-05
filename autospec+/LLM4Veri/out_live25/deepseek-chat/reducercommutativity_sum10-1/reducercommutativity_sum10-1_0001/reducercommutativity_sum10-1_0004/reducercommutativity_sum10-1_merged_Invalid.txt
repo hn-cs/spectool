@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/reducercommutativity_sum10-1/reducercommutativity_sum10-1_0001/reducercommutativity_sum10-1_0004/reducercommutativity_sum10-1_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/reducercommutativity_sum10-1/reducercommutativity_sum10-1_0001/reducercommutativity_sum10-1_0004/reducercommutativity_sum10-1_merged.c:11: Warning: 
+  unbound logic variable N. Ignoring logic specification of function sum
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/reducercommutativity_sum10-1/reducercommutativity_sum10-1_0001/reducercommutativity_sum10-1_0004/reducercommutativity_sum10-1_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

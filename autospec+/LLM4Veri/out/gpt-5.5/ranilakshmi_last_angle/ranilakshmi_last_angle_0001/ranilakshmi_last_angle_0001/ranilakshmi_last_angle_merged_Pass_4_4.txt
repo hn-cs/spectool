@@ -1,0 +1,38 @@
+[kernel] Parsing out/gpt-5.5/ranilakshmi_last_angle/ranilakshmi_last_angle_0001/ranilakshmi_last_angle_0001/ranilakshmi_last_angle_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 4 goals scheduled
+[wp] Proved goals:    4 / 4
+  Qed:             4
+------------------------------------------------------------
+  Function last_angle
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/ranilakshmi_last_angle/ranilakshmi_last_angle_0001/ranilakshmi_last_angle_0001/ranilakshmi_last_angle_merged.c, line 2) in 'last_angle':
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/ranilakshmi_last_angle/ranilakshmi_last_angle_0001/ranilakshmi_last_angle_0001/ranilakshmi_last_angle_merged.c, line 3) in 'last_angle':
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'last_angle' (1/2):
+Effect at line 8
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'last_angle' (2/2):
+Effect at line 10
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/ranilakshmi_last_angle/ranilakshmi_last_angle_0001/ranilakshmi_last_angle_0001/ranilakshmi_last_angle_merged.c:12: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

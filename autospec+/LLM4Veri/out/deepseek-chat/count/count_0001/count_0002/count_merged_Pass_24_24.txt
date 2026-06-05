@@ -1,0 +1,299 @@
+[kernel] Parsing out/deepseek-chat/count/count_0001/count_0002/count_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 24 goals scheduled
+[wp] Proved goals:   24 / 24
+  Qed:             9
+  Alt-Ergo :      15 (28ms-45ms-99ms)
+------------------------------------------------------------
+  Axiomatic 'Count'
+------------------------------------------------------------
+
+Lemma Count_Empty:
+Assume: 'Unchanged_Transitive' 'Unchanged_Symmetric' 'Unchanged_Extend'
+  'Unchanged_Shrink'
+Prove: (n_0<=m_0) -> (is_sint32 v_0)
+       -> ((L_Count_1_ Mint_0 a_0 m_0 n_0 v_0)=0)
+Prover Z3 4.8.12 returns Valid (180ms) (91379)
+Prover Alt-Ergo  returns Valid (34ms) (32)
+
+------------------------------------------------------------
+
+Lemma Count_Hit:
+Assume: 'Count_Empty' 'Unchanged_Transitive' 'Unchanged_Symmetric'
+  'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: let x_0 = (n_0-1) in
+       let x_1 = Mint_0[(shift_sint32 a_0 x_0)] in
+       (x_1=v_0) -> (m_0<n_0) -> (is_sint32 v_0) -> (is_sint32 x_1)
+       -> ((1+(L_Count_1_ Mint_0 a_0 m_0 x_0 v_0))=
+           (L_Count_1_ Mint_0 a_0 m_0 n_0 v_0))
+Prover Z3 4.8.12 returns Valid (190ms) (93303)
+Prover Alt-Ergo  returns Valid (42ms) (79)
+
+------------------------------------------------------------
+
+Lemma Count_Miss:
+Assume: 'Count_Hit' 'Count_Empty' 'Unchanged_Transitive'
+  'Unchanged_Symmetric' 'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: let x_0 = (n_0-1) in
+       let x_1 = Mint_0[(shift_sint32 a_0 x_0)] in
+       (x_1!=v_0) -> (m_0<n_0) -> (is_sint32 v_0) -> (is_sint32 x_1)
+       -> ((L_Count_1_ Mint_0 a_0 m_0 x_0 v_0)=
+           (L_Count_1_ Mint_0 a_0 m_0 n_0 v_0))
+Prover Alt-Ergo  returns Valid (39ms) (105)
+
+------------------------------------------------------------
+
+Lemma Count_One:
+Assume: 'Count_Miss' 'Count_Hit' 'Count_Empty' 'Unchanged_Transitive'
+  'Unchanged_Symmetric' 'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: let x_0 = (1+n_0) in
+       (m_0<=n_0) -> (is_sint32 v_0)
+       -> (((L_Count_1_ Mint_0 a_0 m_0 n_0 v_0)+
+            (L_Count_1_ Mint_0 a_0 n_0 x_0 v_0))=
+           (L_Count_1_ Mint_0 a_0 m_0 x_0 v_0))
+Prover Alt-Ergo  returns Valid (52ms) (309)
+
+------------------------------------------------------------
+
+Lemma Count_Single:
+Assume: 'Count_One' 'Count_Miss' 'Count_Hit' 'Count_Empty'
+  'Unchanged_Transitive' 'Unchanged_Symmetric' 'Unchanged_Extend'
+  'Unchanged_Shrink'
+Prove: let x_0 = Mint_1[(shift_sint32 a_0 m_0)] in
+       let x_1 = Mint_0[(shift_sint32 b_0 n_0)] in
+       (x_0=x_1) -> (is_sint32 v_0) -> (is_sint32 x_1) -> (is_sint32 x_0)
+       -> ((L_Count_1_ Mint_1 a_0 m_0 (1+m_0) v_0)=
+           (L_Count_1_ Mint_0 b_0 n_0 (1+n_0) v_0))
+Prover Alt-Ergo  returns Valid (45ms) (238)
+
+------------------------------------------------------------
+
+Lemma Count_Single_Bounds:
+Assume: 'Count_Single' 'Count_One' 'Count_Miss' 'Count_Hit' 'Count_Empty'
+  'Unchanged_Transitive' 'Unchanged_Symmetric' 'Unchanged_Extend'
+  'Unchanged_Shrink'
+Prove: let x_0 = (L_Count_1_ Mint_0 a_0 n_0 (1+n_0) v_0) in
+       (is_sint32 v_0) -> ((0<=x_0) /\ (x_0<=1))
+Prover Alt-Ergo  returns Valid (41ms) (130)
+
+------------------------------------------------------------
+
+Lemma Count_Single_Shift:
+Assume: 'Count_Single_Bounds' 'Count_Single' 'Count_One' 'Count_Miss'
+  'Count_Hit' 'Count_Empty' 'Unchanged_Transitive' 'Unchanged_Symmetric'
+  'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: (0<=n_0) -> (is_sint32 v_0)
+       -> ((L_Count_1_ Mint_0 (shift_sint32 a_0 n_0) 0 1 v_0)=
+           (L_Count_1_ Mint_0 a_0 n_0 (1+n_0) v_0))
+Prover Alt-Ergo  returns Valid (99ms) (1602)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Axiomatic 'UnchangedLemmas'
+------------------------------------------------------------
+
+Lemma Unchanged_Extend:
+Assume: 'Unchanged_Shrink'
+Prove: let a_1 = (shift_sint32 a_0 n_0) in
+       let x_0 = Mint_1[a_1] in
+       let x_1 = Mint_0[a_1] in
+       (x_0=x_1) -> (P_Unchanged_2_ Mint_0 Mint_1 a_0 n_0) -> (is_sint32 x_1)
+       -> (is_sint32 x_0) -> (P_Unchanged_2_ Mint_0 Mint_1 a_0 (1+n_0))
+Prover Alt-Ergo  returns Valid (37ms) (93)
+
+------------------------------------------------------------
+
+Lemma Unchanged_Shrink:
+Prove: (q_0<=n_0) -> (m_0<=p_0) -> (p_0<=q_0)
+       -> (P_Unchanged_1_ Mint_0 Mint_1 a_0 m_0 n_0)
+       -> (P_Unchanged_1_ Mint_0 Mint_1 a_0 p_0 q_0)
+Prover Alt-Ergo  returns Valid (43ms) (67)
+
+------------------------------------------------------------
+
+Lemma Unchanged_Symmetric:
+Assume: 'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: (P_Unchanged_1_ Mint_1 Mint_0 a_0 m_0 n_0)
+       -> (P_Unchanged_1_ Mint_0 Mint_1 a_0 m_0 n_0)
+Prover Alt-Ergo  returns Valid (40ms) (52)
+
+------------------------------------------------------------
+
+Lemma Unchanged_Transitive:
+Assume: 'Unchanged_Symmetric' 'Unchanged_Extend' 'Unchanged_Shrink'
+Prove: (P_Unchanged_1_ Mint_0 Mint_2 a_0 m_0 n_0)
+       -> (P_Unchanged_1_ Mint_2 Mint_1 a_0 m_0 n_0)
+       -> (P_Unchanged_1_ Mint_0 Mint_1 a_0 m_0 n_0)
+Prover Alt-Ergo  returns Valid (40ms) (59)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function count
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 104):
+Let x = Mint_0[shift_sint32(a, i)].
+Let x_1 = L_Count_1_(Mint_0, a, 0, i, v).
+Assume {
+  Type: is_uint32(counted_0) /\ is_uint32(counted_1) /\ is_uint32(i) /\
+      is_uint32(n) /\ is_sint32(v) /\ is_sint32(x) /\ is_uint32(x_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: L_Count_1_(Mint_0, a, 0, 0, v) = 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: x_1 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x = v
+  Then {
+    Have: L_Count_1_(Mint_0, a, 0, i, x) = counted_1.
+    Have: to_uint32(1 + counted_1) = counted_0.
+  }
+  Else { Have: x_1 = counted_0. }
+}
+Prove: L_Count_1_(Mint_0, a, 0, to_uint32(1 + i), v) = counted_0.
+Prover Alt-Ergo  returns Valid (Qed:22ms) (49ms) (465)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 104):
+Assume { Type: is_sint32(v). (* Heap *) Type: region(a.base) <= 0. }
+Prove: L_Count_1_(Mint_0, a, 0, 0, v) = 0.
+Prover Alt-Ergo  returns Valid (Qed:2ms) (28ms) (38)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 105):
+Let x = Mint_0[shift_sint32(a, i)].
+Let x_1 = L_Count_1_(Mint_0, a, 0, i, v).
+Let x_2 = to_uint32(1 + i).
+Let x_3 = L_Count_1_(Mint_0, a, 0, x_2, v).
+Assume {
+  Type: is_uint32(counted_0) /\ is_uint32(i) /\ is_uint32(n) /\
+      is_sint32(v) /\ is_sint32(x) /\ is_uint32(x_1) /\ is_uint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: L_Count_1_(Mint_0, a, 0, 0, v) = 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: x_1 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x = v
+  Then {
+    Have: L_Count_1_(Mint_0, a, 0, i, x) = counted_0.
+    Have: L_Count_1_(Mint_0, a, 0, x_2, x) = to_uint32(1 + counted_0).
+  }
+  Else { Have: x_3 = x_1. }
+}
+Prove: x_3 <= x_2.
+Prover Alt-Ergo  returns Valid (Qed:8ms) (50ms) (385)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 105):
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 106):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 106):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 107):
+Let x = to_uint32(1 + i).
+Let x_1 = L_Count_1_(Mint_0, a, 0, x, v).
+Let x_2 = Mint_0[shift_sint32(a, i)].
+Let x_3 = L_Count_1_(Mint_0, a, 0, i, v).
+Assume {
+  Type: is_uint32(counted_0) /\ is_uint32(i) /\ is_uint32(n) /\
+      is_sint32(v) /\ is_sint32(x_2) /\ is_uint32(x_3) /\ is_uint32(x_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: L_Count_1_(Mint_0, a, 0, 0, v) = 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: x_3 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x_2 = v
+  Then {
+    Have: L_Count_1_(Mint_0, a, 0, i, x_2) = counted_0.
+    Have: L_Count_1_(Mint_0, a, 0, x, x_2) = to_uint32(1 + counted_0).
+  }
+  Else { Have: x_1 = x_3. }
+  (* Invariant *)
+  Have: x_1 <= x.
+}
+Prove: x <= n.
+Prover Alt-Ergo  returns Valid (Qed:6ms) (38ms) (190)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 107):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 108):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 108):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 109):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 109):
+Prove: true.
+Prover Qed returns Valid (0.54ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/count/count_0001/count_0002/count_merged.c, line 110):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/count/count_0001/count_0002/count_merged.c:100: Warning: 
+  No 'assigns' specification for function 'count'.
+  Callers assumptions might be imprecise.

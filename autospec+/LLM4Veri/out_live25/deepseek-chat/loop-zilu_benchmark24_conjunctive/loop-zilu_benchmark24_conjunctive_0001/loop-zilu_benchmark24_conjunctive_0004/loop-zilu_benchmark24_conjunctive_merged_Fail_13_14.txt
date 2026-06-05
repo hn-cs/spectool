@@ -1,0 +1,191 @@
+[kernel] Parsing out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 14 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 4ms) (Z3 8s)
+[wp] Proved goals:   13 / 14
+  Qed:            10
+  Alt-Ergo :       3 (33ms-36ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.77ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 15):
+Let x = (-2) * k.
+Let x_1 = 2 * n.
+Let x_2 = x_1 - (2 * k).
+Let x_3 = 2 + x_1 - (2 * k).
+Let x_4 = x_3 % 2.
+Assume {
+  Type: is_sint32(k) /\ is_sint32(n) /\ is_sint32(k - 1) /\ is_sint32(x_2) /\
+      is_sint32(x_3).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (k + (x_2 / 2)) = n.
+  (* Invariant *)
+  Have: (x_2 % 2) = 0.
+  (* Invariant *)
+  Have: k <= n.
+  (* Then *)
+  Have: n < (2 * k).
+}
+Prove: (x_4 = 0) \/ (x_4 = 1).
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (130ms) (38572)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (33ms) (189)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.86ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 17):
+Let x = (-2) * k.
+Let x_1 = 2 * n.
+Let x_2 = 2 + x_1 - (2 * k).
+Let x_3 = x_2 % 2.
+Let x_4 = x_1 - (2 * k).
+Assume {
+  Type: is_sint32(k) /\ is_sint32(n) /\ is_sint32(k - 1) /\ is_sint32(x_4) /\
+      is_sint32(x_2).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (k + (x_4 / 2)) = n.
+  (* Invariant *)
+  Have: (x_4 % 2) = 0.
+  (* Invariant *)
+  Have: k <= n.
+  (* Then *)
+  Have: n < (2 * k).
+  (* Invariant *)
+  Have: (x_3 = 0) \/ (x_3 = 1).
+}
+Prove: (k + (x_2 / 2)) = (1 + n).
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (120ms) (39022)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (35ms) (263)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 18):
+Let x = 2 + i.
+Let x_1 = x % 2.
+Let x_2 = x / 2.
+Let x_3 = -x_2.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x) /\ is_sint32(n - x_2) /\
+      is_sint32(1 + n - x_2).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: x = (2 * x_2).
+  (* Invariant *)
+  Have: x_2 = (1 + (i / 2)).
+  (* Invariant *)
+  Have: (i % 2) = 0.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: (x_1 = 0) \/ (x_1 = 1).
+}
+Prove: x_1 = 0.
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (120ms) (38705)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (36ms) (266)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 27):
+Let x = 2 * k.
+Let x_1 = (2 * n) - x.
+Assume {
+  Type: is_sint32(k) /\ is_sint32(n) /\ is_sint32(x_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (k + (x_1 / 2)) = n.
+  (* Invariant *)
+  Have: (x_1 % 2) = 0.
+  (* Invariant *)
+  Have: k <= n.
+  (* Else *)
+  Have: x <= n.
+}
+Prove: n <= (1 + x).
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-zilu_benchmark24_conjunctive/loop-zilu_benchmark24_conjunctive_0001/loop-zilu_benchmark24_conjunctive_0004/loop-zilu_benchmark24_conjunctive_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

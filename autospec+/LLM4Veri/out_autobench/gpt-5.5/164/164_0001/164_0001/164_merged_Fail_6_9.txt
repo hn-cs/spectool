@@ -1,0 +1,137 @@
+[kernel] Parsing out/gpt-5.5/164/164_0001/164_0001/164_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/164/164_0001/164_0001/164_merged.c:14: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/164/164_0001/164_0001/164_merged.c:8: Warning: 
+  Neither code nor specification for function unknown1, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/164/164_0001/164_0001/164_merged.c:13: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/164/164_0001/164_0001/164_merged.c:12: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_established (Qed 5ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 7ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 6ms) (Z3 8s)
+[wp] Proved goals:    6 / 9
+  Qed:             6
+  Timeout:         3
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/164/164_0001/164_0001/164_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/164/164_0001/164_0001/164_merged.c, line 19):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(m) /\ is_sint32(m_1) /\
+      is_sint32(n) /\ is_sint32(n_1) /\ is_sint32(tmp_0) /\ is_sint32(1 + j).
+  (* Then *)
+  Have: (2 + m_1) <= n_1.
+  (* Then *)
+  Have: i < n.
+  (* Then *)
+  Have: j < m.
+  (* Then *)
+  Have: tmp_0 != 0.
+}
+Prove: (-1) <= j.
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/164/164_0001/164_0001/164_merged.c, line 20):
+Let x = 1 + j.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(m) /\
+      is_sint32(m_1) /\ is_sint32(n) /\ is_sint32(n_1) /\ is_sint32(tmp_0) /\
+      is_sint32(x) /\ is_sint32(1 + k).
+  (* Then *)
+  Have: (2 + m_1) <= n_1.
+  (* Then *)
+  Have: i < n.
+  (* Then *)
+  Have: j < m.
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: (-1) <= j.
+  (* Invariant *)
+  Have: j != (-1).
+  (* Invariant *)
+  Have: k <= x.
+  (* Invariant *)
+  Have: x != k.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: k <= j.
+}
+Prove: k != j.
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/164/164_0001/164_0001/164_merged.c, line 20):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(m) /\ is_sint32(m_1) /\
+      is_sint32(n) /\ is_sint32(n_1) /\ is_sint32(tmp_0) /\ is_sint32(1 + j).
+  (* Then *)
+  Have: (2 + m_1) <= n_1.
+  (* Then *)
+  Have: i < n.
+  (* Then *)
+  Have: j < m.
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: (-1) <= j.
+}
+Prove: j != (-1).
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/164/164_0001/164_0001/164_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/164/164_0001/164_0001/164_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/164/164_0001/164_0001/164_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/164/164_0001/164_0001/164_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/164/164_0001/164_0001/164_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/164/164_0001/164_0001/164_merged.c:2: Warning: 
+  No 'assigns' specification for function 'unknown1'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/164/164_0001/164_0001/164_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

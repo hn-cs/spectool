@@ -1,0 +1,8 @@
+[kernel] Parsing out/gpt-5.5/62/62_0001/62_0005/62_merged.c (with preprocessing)
+[kernel] "/app/LLM4Veri/out/gpt-5.5/62/62_0001/62_0005/62_merged.c":64: User Error: 
+  Can't preprocess annotation: eof while parsing a char literal
+  Some annotations will be kept as is
+[kernel] Failure: too few annotations in result file while pre-processing annotations
+[kernel] User Error: stopping on file "out/gpt-5.5/62/62_0001/62_0005/62_merged.c" that has
+  errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=11, microseconds=350970), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=444966), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 459, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant j == 0;', 'loop invariant i <= SIZE + 7;', 'loop invariant i % 4 == 0;', 'loop invariant SIZE - i;', 'loop invariant 0 <= i;', 'loop assigns i;'], '2': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result < INT_MAX;\n', '*/\n', 'int unknown();\n', 'int SIZE = 50000001;\n', '/* 2. FUNC CONTRACT */\nint main() {\n', '  int i,j;\n', '  i = 0; j=0;\n', '  /* 1. LOOP INVARIANT */\n  while(i<SIZE){ \n', '    if(unknown())\t  \n', '      i = i + 8; \n', '    else\n', '     i = i + 4;    \n', '  }\n', '  j = i/4 ;\n', '    //@ assert( (j * 4) == i);\n', '  return 0;\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

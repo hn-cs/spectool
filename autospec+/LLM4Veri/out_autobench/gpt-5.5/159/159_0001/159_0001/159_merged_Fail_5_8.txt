@@ -1,0 +1,112 @@
+[kernel] Parsing out/gpt-5.5/159/159_0001/159_0001/159_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/159/159_0001/159_0001/159_merged.c:18: Warning: 
+  Calling function unknown2 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/gpt-5.5/159/159_0001/159_0001/159_merged.c:24: Warning: 
+  Calling function unknown4 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/gpt-5.5/159/159_0001/159_0001/159_merged.c:10: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/159/159_0001/159_0001/159_merged.c:8: Warning: 
+  Neither code nor specification for function unknown1, generating default assigns from the prototype
+[kernel:annot:missing-spec] out/gpt-5.5/159/159_0001/159_0001/159_merged.c:8: Warning: 
+  Neither code nor specification for function unknown2, generating default assigns from the prototype
+[kernel:annot:missing-spec] out/gpt-5.5/159/159_0001/159_0001/159_merged.c:8: Warning: 
+  Neither code nor specification for function unknown4, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/159/159_0001/159_0001/159_merged.c:24: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/159/159_0001/159_0001/159_merged.c:10: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 8 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_3_established (Qed 3ms) (Z3 8s)
+[wp] Proved goals:    5 / 8
+  Qed:             5
+  Timeout:         3
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/159/159_0001/159_0001/159_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (16ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/159/159_0001/159_0001/159_merged.c, line 12):
+Assume {
+  Type: is_sint32(tmp_1_0) /\ is_sint32(x) /\ is_sint32(y).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+}
+Prove: y = x.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/159/159_0001/159_0001/159_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/159/159_0001/159_0001/159_merged.c, line 13):
+Assume {
+  Type: is_sint32(tmp_1_0) /\ is_sint32(w) /\ is_sint32(z).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+}
+Prove: (1 + z) = w.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/159/159_0001/159_0001/159_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/159/159_0001/159_0001/159_merged.c, line 14):
+Let x = 1 + z.
+Assume {
+  Type: is_sint32(tmp_1_0) /\ is_sint32(z) /\ is_sint32(x).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+}
+Prove: ((x % 2) = 1) <-> ((z % 2) = 0).
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/159/159_0001/159_0001/159_merged.c, line 15) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/159/159_0001/159_0001/159_merged.c, line 15) (2/2):
+Call Result at line 18
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/159/159_0001/159_0001/159_merged.c:3: Warning: 
+  No 'assigns' specification for function 'unknown1'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/159/159_0001/159_0001/159_merged.c:4: Warning: 
+  No 'assigns' specification for function 'unknown2'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/159/159_0001/159_0001/159_merged.c:6: Warning: 
+  No 'assigns' specification for function 'unknown4'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/159/159_0001/159_0001/159_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

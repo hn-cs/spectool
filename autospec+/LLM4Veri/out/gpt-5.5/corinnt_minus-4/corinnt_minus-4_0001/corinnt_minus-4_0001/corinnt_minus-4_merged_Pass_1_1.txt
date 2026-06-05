@@ -1,0 +1,18 @@
+[kernel] Parsing out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0001/corinnt_minus-4_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] Proved goals:    1 / 1
+  Qed:             1
+------------------------------------------------------------
+  Function minus_loop_2
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0001/corinnt_minus-4_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0001/corinnt_minus-4_merged.c:1: Warning: 
+  No 'assigns' specification for function 'minus_loop_2'.
+  Callers assumptions might be imprecise.

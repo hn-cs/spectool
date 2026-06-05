@@ -1,0 +1,93 @@
+[kernel] Parsing out/deepseek-chat/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 7 goals scheduled
+[wp] Proved goals:    7 / 7
+  Qed:             3
+  Alt-Ergo :       4 (15ms-26ms)
+------------------------------------------------------------
+  Function factorial
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 16):
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(1 + i_1) /\
+      is_sint32(L_fact(i_1 - 1)).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: L_fact(0) = 1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) -> (0 < L_fact(i_2)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 <= n.
+}
+Prove: 0 < L_fact(i).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (140ms) (38753)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (26ms) (57)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 16):
+Assume { (* Goal *) When: (i <= 0) /\ (0 <= i). }
+Prove: 0 < L_fact(0).
+Prover Z3 4.8.12 returns Valid (100ms) (2527)
+Prover Alt-Ergo  returns Valid (21ms) (12)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 17):
+Let x = L_fact(i - 1).
+Let x_1 = i * x.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\ is_sint32(x) /\
+      is_sint32(x_1).
+  (* Invariant *)
+  Have: L_fact(0) = 1.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) -> (0 < L_fact(i_1)))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 <= i) -> ((0 <= i_1) -> (0 < L_fact(i_1)))).
+}
+Prove: x_1 = L_fact(i).
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (120ms) (38540)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (24ms) (88)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 17):
+Let x = L_fact(0). Assume { (* Invariant *) Have: 0 < x. }
+Prove: x = 1.
+Prover Alt-Ergo  returns Valid (Qed:0.94ms) (15ms) (10)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c:12: Warning: 
+  No 'assigns' specification for function 'factorial'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/loops_fact/loops_fact_0001/loops_fact_0003/loops_fact_merged.c:28: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

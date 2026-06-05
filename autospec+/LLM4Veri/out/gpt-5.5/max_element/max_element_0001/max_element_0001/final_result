@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=15, microseconds=638797), 'total_solve_time': datetime.timedelta(seconds=10, microseconds=993667), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 55, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant max < i;', 'loop invariant i <= n;', 'loop invariant \\forall integer k; 0 <= k < i ==> a[k] <= a[max];', 'loop invariant 1 <= i;', 'loop invariant 0 <= max;', 'loop assigns max;', 'loop assigns i;'], '2': [], 'MSLines': ['#include <limits.h>\n', '#ifndef __cplusplus\n', 'typedef int bool;\n', '#define false\t\t((bool)0)\n', '#define true\t\t((bool)1)\n', '#endif\n', 'typedef int value_type;\n', '#define VALUE_TYPE_MAX  INT_MAX\n', '#define VALUE_TYPE_MIN  INT_MIN\n', 'typedef unsigned int size_type;\n', '#define SIZE_TYPE_MAX  UINT_MAX\n', 'size_type\n', '/* 2. FUNC CONTRACT */\nmax_element(const value_type* a, size_type n)\n', '{\n', '  if (0u < n) {\n', '    size_type max = 0u;\n', '    /* 1. LOOP INVARIANT */\n    for (size_type i = 1u; i < n; i++) {\n', '      if (a[max] < a[i]) {\n', '        max = i;\n', '      }\n', '    }\n', '    //@ assert \\forall integer i; 0 <= i < n ==> a[i] <= a[max];\n', '    return max;\n', '  }\n', '  return n;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

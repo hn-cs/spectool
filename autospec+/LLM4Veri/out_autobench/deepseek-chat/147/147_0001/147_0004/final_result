@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 5, 'Iteration': 5, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=4, microseconds=415019), 'total_solve_time': datetime.timedelta(seconds=31, microseconds=827545), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 135, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant j <= m + 1;', 'loop invariant a <= j;', 'loop invariant \\exists k; 0 <= k <= j && a == k - (j - k);', 'loop invariant \\abs(a) <= j;', 'loop invariant 0 <= j;', 'loop invariant -j <= a;', 'loop assigns j;', 'loop assigns a;'], '2': [], 'MSLines': ['#include <assert.h>\n', 'int unknown1();\n', 'int unknown2();\n', 'int unknown3();\n', 'int unknown4();\n', '\n', '\n', '/* 2. FUNC CONTRACT */\nint main() {\n', '  int a = 0;\n', '  int j;\n', '  int m;\n', '  if(m<=0)\n', '    return 0;\n', '  /* 1. LOOP INVARIANT */\n  for(j = 1; j <= m ; j++){\n', '    if(unknown1()) \n', '       a++;\n', '    else\n', '       a--; \n', '  }\n', '  //@ assert(a>=-m);\n', '  //@ assert(a<=m);\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

@@ -1,0 +1,50 @@
+[kernel] Parsing out/gpt-5.5/arepina_abs_impletentation/arepina_abs_impletentation_0001/arepina_abs_impletentation_0001/arepina_abs_impletentation_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 5 goals scheduled
+[wp] Proved goals:    5 / 5
+  Qed:             4
+  Alt-Ergo :       1 (18ms)
+------------------------------------------------------------
+  Function spec_abs1
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/arepina_abs_impletentation/arepina_abs_impletentation_0001/arepina_abs_impletentation_0001/arepina_abs_impletentation_merged.c, line 5) in 'spec_abs1':
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/arepina_abs_impletentation/arepina_abs_impletentation_0001/arepina_abs_impletentation_0001/arepina_abs_impletentation_merged.c, line 6) in 'spec_abs1':
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/arepina_abs_impletentation/arepina_abs_impletentation_0001/arepina_abs_impletentation_0001/arepina_abs_impletentation_merged.c, line 7) in 'spec_abs1':
+Assume {
+  Type: is_sint32(spec_abs1_0) /\ is_sint64(spec_abs1_0).
+  (* Residual *)
+  When: 0 <= spec_abs1_0.
+  (* Pre-condition *)
+  Have: ((-2147483648) <= spec_abs1_0) /\ (spec_abs1_0 <= 2147483647).
+}
+Prove: spec_abs1_0 <= 2147483648.
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (120ms) (34556)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (18ms) (17)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'spec_abs1' (1/2):
+Effect at line 13
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'spec_abs1' (2/2):
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------

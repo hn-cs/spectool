@@ -1,0 +1,131 @@
+[kernel] Parsing out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] [Timeout] typed_sum_loop_invariant_preserved (Qed 8ms) (Z3 8s)
+[wp] [Timeout] typed_sum_loop_invariant_2_preserved (Qed 5ms) (Z3 8s)
+[wp] [Timeout] typed_sum_loop_invariant_2_established (Qed 0.78ms) (Z3 8s)
+[wp] [Timeout] typed_sum_loop_invariant_4_preserved (Qed 2ms) (Z3 8s)
+[wp] Proved goals:    7 / 11
+  Qed:             7
+  Timeout:         4
+------------------------------------------------------------
+  Function sum
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 6):
+Let x = (k * (k - 1)) / 2.
+Let x_1 = k + x.
+Let x_2 = to_sint8(1 + k).
+Assume {
+  Type: is_sint8(k) /\ is_sint8(n) /\ is_sint32(x) /\ is_sint32(x_1).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: k <= n.
+  (* Invariant *)
+  Have: 0 <= k.
+}
+Prove: ((x_2 * (x_2 - 1)) / 2) = x_1.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 7):
+Let x = to_sint8(1 + k).
+Let x_1 = (x * (x - 1)) / 2.
+Assume {
+  Type: is_sint8(k) /\ is_sint8(n) /\ is_sint32(x_1) /\ is_sint32(x_1 - k).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: x_1 = (k + ((k * (k - 1)) / 2)).
+  (* Invariant *)
+  Have: k <= n.
+  (* Invariant *)
+  Have: 0 <= k.
+}
+Prove: x <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 7):
+Assume { Type: is_sint8(n). }
+Prove: 0 <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:0.78ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.78ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 9):
+Let x = to_sint8(1 + k).
+Let x_1 = (x * (x - 1)) / 2.
+Assume {
+  Type: is_sint8(k) /\ is_sint8(n) /\ is_sint32(x_1) /\ is_sint32(x_1 - k).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: x_1 = (k + ((k * (k - 1)) / 2)).
+  (* Invariant *)
+  Have: k <= n.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Invariant *)
+  Have: x <= n.
+}
+Prove: 0 <= x.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.99ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c:2: Warning: 
+  No 'assigns' specification for function 'sum'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c:21: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

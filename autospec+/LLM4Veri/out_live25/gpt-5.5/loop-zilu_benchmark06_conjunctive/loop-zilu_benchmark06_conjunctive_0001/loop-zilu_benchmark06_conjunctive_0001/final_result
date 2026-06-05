@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=4, microseconds=163433), 'total_solve_time': datetime.timedelta(microseconds=960660), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 27, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant x + y == k;', 'loop invariant 0 <= j;', 'loop assigns y;', 'loop assigns x;', 'loop assigns j;'], '2': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result < INT_MAX;\n', '*/\n', 'int unknown();\n', '#include <assert.h>\n', '/* 2. FUNC CONTRACT */\nint main() {\n', '  int j = unknown();\n', '  int i = unknown();\n', '  int x = unknown();\n', '  int y = unknown();\n', '  int k = unknown();\n', '  j=0;\n', '  if (!(x+y==k)) return 0;\n', '  /* 1. LOOP INVARIANT */\n  while (unknown()) {\n', '    if(j==i) {x++;y--;} else {y++;x--;} j++;\n', '  }\n', '  //@ assert(x+y==k);\n', '  return 0;\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

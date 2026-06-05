@@ -1,0 +1,109 @@
+[kernel] Parsing out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c:13: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c:1: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] [Timeout] typed_foo_loop_invariant_2_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_foo_loop_invariant_3_preserved (Qed 12ms) (Z3 8s)
+[wp] Proved goals:    6 / 8
+  Qed:             5
+  Alt-Ergo :       1 (23ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c, line 6):
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(y) /\
+      is_sint32(y_1) /\ is_sint32(y_1 - 1).
+  (* Invariant *)
+  Have: 2 <= y_1.
+  (* Invariant *)
+  Have: x_1 <= x.
+  (* Invariant *)
+  Have: 0 < x_1.
+  (* Invariant *)
+  Have: x_1 != x.
+  If tmp_0 != 0
+  Then { Have: y = x. }
+  Else { Have: (1 + x) = y. }
+  (* Invariant *)
+  Have: x <= y.
+}
+Prove: 0 < x.
+Prover Z3 4.8.12 returns Valid (Qed:15ms) (120ms) (36138)
+Prover Alt-Ergo  returns Valid (Qed:15ms) (23ms) (30)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c, line 6):
+Assume { Type: is_sint32(y) /\ is_sint32(y - 1). }
+Prove: 2 <= y.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c, line 7):
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(y) /\
+      is_sint32(y - 1).
+  (* Residual *)
+  When: tmp_0 != 0.
+  (* Invariant *)
+  Have: 2 <= y.
+  (* Invariant *)
+  Have: x_1 <= x.
+  (* Invariant *)
+  Have: 0 < x_1.
+  (* Invariant *)
+  Have: x_1 != x.
+  (* Invariant *)
+  Have: 0 < x.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:12ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:12ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c, line 8) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c, line 8) (2/2):
+Call Result at line 13
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c:1: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/code2_90/code2_90_0001/code2_90_0001/code2_90_merged.c:13: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

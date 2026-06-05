@@ -1,0 +1,15 @@
+[kernel] Parsing out/gpt-5.5/21176_LogicFunction2/21176_LogicFunction2_0001/21176_LogicFunction2_0004/21176_LogicFunction2_merged.c (with preprocessing)
+[kernel] :0: 
+  syntax error:
+  Location: between <unknown> and 10:54
+  
+  1     #include<limits.h>
+  2     /*@
+  3-7 [... omitted ...]
+  8     */
+  9     /*@
+  10    requires INT_MIN <= a * x + 4 <= INT_MAX;
+  
+  11    */
+  12    int func(int a,int x){
+[kernel] Frama-C aborted: invalid user input.

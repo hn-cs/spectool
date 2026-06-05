@@ -1,0 +1,310 @@
+[kernel] Parsing out/gpt-5.5/211/211_0001/211_0004/211_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 21 goals scheduled
+[wp] [Timeout] typed_func_ensures_2 (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_func_ensures (Qed 6ms) (Z3 8s)
+[wp] Proved goals:   19 / 21
+  Qed:            15
+  Alt-Ergo :       4 (30ms-34ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function func
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 2) in 'func':
+Assume {
+  Type: is_sint32(func_0) /\ is_sint32(i) /\ is_sint32(num_0).
+  (* Invariant *)
+  Have: i <= 9.
+  (* Invariant *)
+  Have: (0 <= num_0) /\ (num_0 <= 123).
+  (* Invariant *)
+  Have: 0 <= func_0.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: num_0 <= 0.
+}
+Prove: func_0 = 6.
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 3) in 'func':
+Assume {
+  Type: is_sint32(func_0) /\ is_sint32(i) /\ is_sint32(num_0) /\
+      is_sint32(num_1).
+  (* Goal *)
+  When: num_0 <= 0.
+  (* Invariant *)
+  Have: (num_1 = num_0) \/ (0 <= num_1).
+  (* Invariant *)
+  Have: i <= 9.
+  (* Invariant *)
+  Have: ((0 <= num_0) -> ((num_1 <= num_0) /\ (0 <= num_1))).
+  (* Invariant *)
+  Have: ((num_0 < 0) -> (func_0 = 0)).
+  (* Invariant *)
+  Have: ((num_0 < 0) -> (num_1 = num_0)).
+  (* Invariant *)
+  Have: ((num_0 < 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= func_0.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: num_1 <= 0.
+}
+Prove: func_0 = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 4) in 'func':
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 13):
+Let x = num_0 / 10.
+Let x_1 = num_0 % 10.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(num_1) /\ is_sint32(num_0) /\
+      is_sint32(sum_0) /\ is_sint32(x) /\ is_sint32(x_1).
+  (* Invariant *)
+  Have: (num_0 = num_1) \/ (0 <= num_0).
+  (* Invariant *)
+  Have: i <= 9.
+  (* Invariant *)
+  Have: ((0 <= num_1) -> ((num_0 <= num_1) /\ (0 <= num_0))).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (sum_0 = 0)).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (num_0 = num_1)).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= sum_0.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: 0 < num_0.
+  (* Invariant *)
+  Have: (x = num_1) \/ ((-9) <= num_0).
+}
+Prove: x_1 <= 9.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (37735)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (31ms) (112)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 14):
+Let x = num_0 % 10.
+Let x_1 = num_0 / 10.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(num_1) /\ is_sint32(num_0) /\
+      is_sint32(sum_0) /\ is_sint32(x_1) /\ is_sint32(x).
+  (* Goal *)
+  When: 0 <= num_1.
+  (* Invariant *)
+  Have: i <= 9.
+  (* Invariant *)
+  Have: (num_0 <= num_1) /\ (0 <= num_0).
+  (* Invariant *)
+  Have: 0 <= sum_0.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: 0 < num_0.
+  (* Invariant *)
+  Have: (x_1 = num_1) \/ ((-9) <= num_0).
+  (* Invariant *)
+  Have: x <= 9.
+}
+Prove: (x_1 <= num_1) /\ ((-9) <= num_0).
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (120ms) (37261)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (31ms) (153)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.53ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 18):
+Let x = num_0 % 10.
+Let x_1 = num_0 / 10.
+Let x_2 = sum_0 + x.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(num_1) /\ is_sint32(num_0) /\
+      is_sint32(sum_0) /\ is_sint32(x_1) /\ is_sint32(x) /\ is_sint32(x_2).
+  (* Invariant *)
+  Have: (num_0 = num_1) \/ (0 <= num_0).
+  (* Invariant *)
+  Have: i <= 9.
+  (* Invariant *)
+  Have: ((0 <= num_1) -> ((num_0 <= num_1) /\ (0 <= num_0))).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (sum_0 = 0)).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (num_0 = num_1)).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= sum_0.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: 0 < num_0.
+  (* Invariant *)
+  Have: (x_1 = num_1) \/ ((-9) <= num_0).
+  (* Invariant *)
+  Have: x <= 9.
+  (* Invariant *)
+  Have: ((0 <= num_1) -> ((x_1 <= num_1) /\ ((-9) <= num_0))).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (x_2 = 0)).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (x_1 = num_1)).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (x = 0)).
+}
+Prove: 0 <= x_2.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (130ms) (38890)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (34ms) (123)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.85ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 19):
+Let x = num_0 % 10.
+Let x_1 = sum_0 + x.
+Let x_2 = num_0 / 10.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(num_1) /\ is_sint32(num_0) /\
+      is_sint32(sum_0) /\ is_sint32(x_2) /\ is_sint32(x) /\ is_sint32(x_1).
+  (* Invariant *)
+  Have: (num_0 = num_1) \/ (0 <= num_0).
+  (* Invariant *)
+  Have: i <= 9.
+  (* Invariant *)
+  Have: ((0 <= num_1) -> ((num_0 <= num_1) /\ (0 <= num_0))).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (sum_0 = 0)).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (num_0 = num_1)).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (i = 0)).
+  (* Invariant *)
+  Have: 0 <= sum_0.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: 0 < num_0.
+  (* Invariant *)
+  Have: (x_2 = num_1) \/ ((-9) <= num_0).
+  (* Invariant *)
+  Have: x <= 9.
+  (* Invariant *)
+  Have: ((0 <= num_1) -> ((x_2 <= num_1) /\ ((-9) <= num_0))).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (x_1 = 0)).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (x_2 = num_1)).
+  (* Invariant *)
+  Have: ((num_1 < 0) -> (x = 0)).
+  (* Invariant *)
+  Have: 0 <= x_1.
+}
+Prove: 0 <= x.
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (140ms) (39005)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (30ms) (124)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/211/211_0001/211_0004/211_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func':
+Effect at line 24
+Prove: true.
+Prover Qed returns Valid (0.90ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/211/211_0001/211_0004/211_merged.c:33: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

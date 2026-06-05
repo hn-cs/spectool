@@ -1,0 +1,18 @@
+[kernel] Parsing out/deepseek-chat/axiom_top_of_push/axiom_top_of_push_0001/axiom_top_of_push_0003/axiom_top_of_push_gen_0.c (with preprocessing)
+[kernel] out/deepseek-chat/axiom_top_of_push/axiom_top_of_push_0001/axiom_top_of_push_0003/axiom_top_of_push_gen_0.c:135: 
+  syntax error:
+  Location: between lines 135 and 151
+  133   value_type
+  134   stack_top(const Stack* s);
+  
+  135   value_type
+  136   /*@
+  137   requires valid: \valid(s) && \valid(s->obj + (0..s->capacity-1)) && s->size < s->capacity || s->size == s->capacity;
+  138-148 [... omitted ...]
+  149   ensures StackEqual{Old,Here}(s, s);
+  150   complete behaviors;
+  151   disjoint behaviors;
+  
+  152   */
+  153   axiom_top_of_push(Stack* s, value_type v)
+[kernel] Frama-C aborted: invalid user input.

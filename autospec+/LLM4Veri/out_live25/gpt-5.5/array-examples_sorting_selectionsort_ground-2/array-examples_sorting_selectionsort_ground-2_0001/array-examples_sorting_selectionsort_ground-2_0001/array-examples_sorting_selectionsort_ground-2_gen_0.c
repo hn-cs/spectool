@@ -1,0 +1,55 @@
+#include<limits.h>
+/*@
+assigns \nothing;
+ensures INT_MIN <= \result < INT_MAX;
+*/
+int unknown();
+#include <assert.h>
+#define N 100000
+int main( ) {
+  int a[ N ];
+  int i = 0;
+  int x;
+  int y;
+	/*@
+	loop invariant 0 <= i <= N;
+	loop invariant \forall integer j; 0 <= j < i ==> INT_MIN <= a[j] < INT_MAX;
+	loop assigns i, a[0..N-1];
+	loop variant N - i;
+	*/
+	for(int i = 0; i < N; i++) 
+	{
+	    a[i] = unknown();
+	}
+	i = 0;
+  while ( i < N ) {
+    int k = i + 1;
+    int s = i;
+    while ( k < N ) {
+      if ( a[k] < a[s] ) {
+        s = k;
+      }
+      k = k+1;
+    }
+    if ( s != i ) {
+      int tmp = a[s];
+      a[s] = a[i];
+      a[i] = tmp;
+    }
+    for ( x = 0 ; x < i ; x++ ) {
+      for ( y = x + 1 ; y < i ; y++ ) {
+        // @ assert(a[x] <= a[y]  );
+      }
+    }
+    for ( x = i ; x < N ; x++ ) {
+      // @ assert(a[x] >= a[i]  );
+    }
+    i = i+1;
+  }
+  for ( x = 0 ; x < N ; x++ ) {
+    for ( y = x + 1 ; y < N ; y++ ) {
+      // @ assert(a[x] <= a[y]  );
+    }
+  }
+  return 0;
+}

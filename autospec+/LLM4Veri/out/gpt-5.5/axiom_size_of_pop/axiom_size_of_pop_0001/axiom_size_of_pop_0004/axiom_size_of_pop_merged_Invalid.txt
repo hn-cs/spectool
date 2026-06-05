@@ -1,0 +1,19 @@
+[kernel] Parsing out/gpt-5.5/axiom_size_of_pop/axiom_size_of_pop_0001/axiom_size_of_pop_0004/axiom_size_of_pop_merged.c (with preprocessing)
+[kernel] out/gpt-5.5/axiom_size_of_pop/axiom_size_of_pop_0001/axiom_size_of_pop_0004/axiom_size_of_pop_merged.c:132: 
+  syntax error:
+  Location: between lines 132 and 139
+  130   size_type
+  131   stack_size(const Stack* s);
+  
+  132   size_type
+  133   /*@
+  134   requires valid: \valid(s) && StackInvariant(s);
+  135   requires not_empty: !StackEmpty(s);
+  136   ensures valid: \valid(s) && StackInvariant(s);
+  137   ensures size: StackSize(s) == StackSize{Old}(s) - 1;
+  138   ensures result: \result == StackSize(s);
+  139   assigns s- > size;
+  
+  140   */
+  141   axiom_size_of_pop(Stack* s)
+[kernel] Frama-C aborted: invalid user input.

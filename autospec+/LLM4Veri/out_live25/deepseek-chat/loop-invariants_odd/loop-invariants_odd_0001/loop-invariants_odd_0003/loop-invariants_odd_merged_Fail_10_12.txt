@@ -1,0 +1,118 @@
+[kernel] Parsing out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c:17: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 12 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 7ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_5_preserved (Qed 7ms) (Z3 8s)
+[wp] Proved goals:   10 / 12
+  Qed:            10
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 10):
+Assume {
+  Type: is_uint32(x) /\ is_sint32(tmp_0).
+  (* Invariant *)
+  Have: 0 < x.
+  (* Invariant *)
+  Have: (x = 1) \/ ((x % 2) = 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_0 != 0.
+}
+Prove: 0 < to_uint32(2 + x).
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.98ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.53ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.58ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 14):
+Let x_1 = to_uint32(2 + x).
+Assume {
+  Type: is_uint32(x) /\ is_sint32(tmp_0).
+  (* Invariant *)
+  Have: 0 < x.
+  (* Invariant *)
+  Have: (x = 1) \/ ((x % 2) = 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: 0 < x_1.
+}
+Prove: (x_1 = 1) \/ ((x_1 % 2) = 1).
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 15) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c, line 15) (2/2):
+Call Result at line 17
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0003/loop-invariants_odd_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

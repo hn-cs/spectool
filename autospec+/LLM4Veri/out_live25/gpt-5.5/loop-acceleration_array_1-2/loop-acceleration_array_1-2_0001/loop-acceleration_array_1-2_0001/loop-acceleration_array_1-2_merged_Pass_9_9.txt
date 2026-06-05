@@ -1,0 +1,101 @@
+[kernel] Parsing out/gpt-5.5/loop-acceleration_array_1-2/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 9 goals scheduled
+[wp] Proved goals:    9 / 9
+  Qed:             7
+  Alt-Ergo :       2 (23ms-25ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_array_1-2/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_array_1-2/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_array_1-2/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_merged.c, line 6):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(1 + i).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Loop assigns ... *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= 2047) ->
+      (((i_2 < 0) \/ (1024 <= i_2)) -> (A_1[i_2] = A[i_2])))).
+  (* Invariant *)
+  Have: i <= 1024.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) -> (A[i_2] = i_2))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 1023.
+}
+Prove: A[i <- i][i_1] = i_1.
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (130ms) (37021)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (25ms) (71)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_array_1-2/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_array_1-2/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_array_1-2/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (0.60ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-acceleration_array_1-2/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_merged.c, line 14):
+Let x = A[1023].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(x).
+  (* Loop assigns ... *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 <= 2047) ->
+      (((i_1 < 0) \/ (1024 <= i_1)) -> (A_1[i_1] = A[i_1])))).
+  (* Invariant *)
+  Have: i <= 1024.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) -> (A[i_1] = i_1))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: 1024 <= i.
+}
+Prove: x = 1023.
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (110ms) (36198)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (23ms) (33)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-acceleration_array_1-2/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_merged.c, line 8) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-acceleration_array_1-2/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_merged.c, line 8) (2/2):
+Effect at line 12
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-acceleration_array_1-2/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_0001/loop-acceleration_array_1-2_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

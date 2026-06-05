@@ -1,0 +1,87 @@
+[kernel] Parsing out/deepseek-chat/loops-crafted-1_loopv3/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loops-crafted-1_loopv3/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_merged.c:17: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 6 goals scheduled
+[wp] Proved goals:    6 / 6
+  Qed:             4
+  Alt-Ergo :       2 (19ms-26ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_loopv3/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_merged.c, line 12):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(i_2) /\ is_sint32(i_3) /\
+      is_sint32(tmp_0).
+  (* Invariant *)
+  Have: (-3) <= i_3.
+  (* Invariant *)
+  Have: 0 <= i_3.
+  (* Then *)
+  Have: i_3 <= 50000000.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  If tmp_0 != 0
+  Then { Have: i_3 = i_1. Have: (8 + i_1) = i. }
+  Else { Have: i_3 = i_2. Have: (4 + i_2) = i. }
+}
+Prove: (-3) <= i.
+Prover Z3 4.8.12 returns Valid (Qed:13ms) (150ms) (36730)
+Prover Alt-Ergo  returns Valid (Qed:13ms) (26ms) (29)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_loopv3/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_loopv3/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_merged.c, line 13):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(i_2) /\ is_sint32(i_3) /\
+      is_sint32(tmp_0).
+  (* Invariant *)
+  Have: (-3) <= i_3.
+  (* Invariant *)
+  Have: 0 <= i_3.
+  (* Then *)
+  Have: i_3 <= 50000000.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  If tmp_0 != 0
+  Then { Have: i_3 = i_1. Have: (8 + i_1) = i. }
+  Else { Have: i_3 = i_2. Have: (4 + i_2) = i. }
+  (* Invariant *)
+  Have: (-3) <= i.
+}
+Prove: 0 <= i.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (150ms) (36843)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (19ms) (31)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_loopv3/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_loopv3/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_merged.c, line 14) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_loopv3/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_merged.c, line 14) (2/2):
+Call Result at line 17
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_loopv3/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_0001/loops-crafted-1_loopv3_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

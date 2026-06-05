@@ -1,0 +1,102 @@
+[kernel] Parsing out/gpt-5.5/nabinkrsah_Maximum_element_in_an_array/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 7 goals scheduled
+[wp] Proved goals:    7 / 7
+  Qed:             5
+  Alt-Ergo :       2 (31ms-50ms)
+------------------------------------------------------------
+  Function Max_in_Array
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/nabinkrsah_Maximum_element_in_an_array/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_merged.c, line 6):
+Let x = Mint_0[shift_sint32(arr_0, 0)].
+Let x_1 = Mint_0[shift_sint32(arr_0, j)].
+Assume {
+  Type: is_sint32(j) /\ is_sint32(max_0) /\ is_sint32(n) /\ is_sint32(x) /\
+      is_sint32(x_1).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Residual *)
+  When: max_0 < x_1.
+  (* Invariant *)
+  Have: x <= max_0.
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < j) ->
+      (Mint_0[shift_sint32(arr_0, i)] <= max_0))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j < n.
+}
+Prove: x <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:19ms) (170ms) (84603)
+Prover Alt-Ergo  returns Valid (Qed:19ms) (31ms) (22)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/nabinkrsah_Maximum_element_in_an_array/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (0.62ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/nabinkrsah_Maximum_element_in_an_array/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_merged.c, line 7):
+Let x = Mint_0[shift_sint32(arr_0, 0)].
+Let x_1 = Mint_0[shift_sint32(arr_0, j)].
+Assume {
+  Type: is_sint32(j) /\ is_sint32(max_0) /\ is_sint32(max_1) /\
+      is_sint32(n) /\ is_sint32(1 + j) /\ is_sint32(x) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= j).
+  (* Invariant *)
+  Have: x <= max_1.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < j) ->
+      (Mint_0[shift_sint32(arr_0, i_1)] <= max_1))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j < n.
+  If max_1 < x_1
+  Then { Have: x_1 = max_0. }
+  Else { Have: max_1 = max_0. }
+  (* Invariant *)
+  Have: x <= max_0.
+}
+Prove: Mint_0[shift_sint32(arr_0, i)] <= max_0.
+Prover Alt-Ergo  returns Valid (Qed:12ms) (50ms) (122)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/nabinkrsah_Maximum_element_in_an_array/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (0.94ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/nabinkrsah_Maximum_element_in_an_array/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/nabinkrsah_Maximum_element_in_an_array/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/nabinkrsah_Maximum_element_in_an_array/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/nabinkrsah_Maximum_element_in_an_array/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_merged.c:2: Warning: 
+  No 'assigns' specification for function 'Max_in_Array'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/nabinkrsah_Maximum_element_in_an_array/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_0001/nabinkrsah_Maximum_element_in_an_array_merged.c:21: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,297 @@
+[kernel] Parsing out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:15: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:16: Warning: 
+  Calling function unknown2 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:33: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 12ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_assert_alloca_bounds (Qed 6ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_established (Qed 5ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_3_established (Qed 4ms) (Z3 8s) (Stronger)
+[wp] Proved goals:    9 / 13
+  Qed:             7
+  Alt-Ergo :       2 (41ms-49ms)
+  Timeout:         4
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 18):
+Assume {
+  Type: is_sint32(j) /\ is_sint32(n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+}
+Prove: (0 < n) /\ (n <= 4611686018427387903).
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 21):
+out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(x).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: n <= 4611686018427387903.
+  (* Invariant *)
+  Have: n != 1.
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: 2 <= Mint_0[shift_sint32(a, 0)].
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      ((2 + i_1)
+         <= havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1)
+              [shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i < n.
+  (* Call 'unknown1' *)
+  Have: (0 < k) /\ (k <= 9999).
+}
+Prove: x != n.
+Prover Z3 4.8.12 returns Timeout (Qed:12ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:12ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 21):
+out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Assume {
+  Type: is_sint32(j) /\ is_sint32(n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+}
+Prove: n != 1.
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 22):
+out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 22):
+out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 23):
+out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 1 + i_1.
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(x).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: n <= 4611686018427387903.
+  (* Invariant *)
+  Have: n != 1.
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: 2 <= Mint_0[shift_sint32(a, 0)].
+  (* Invariant *)
+  Have: n != i_1.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Call 'unknown1' *)
+  Have: (0 < k) /\ (k <= 9999).
+  (* Invariant *)
+  Have: x != n.
+}
+Prove: (2 + i)
+         <= a_1[shift_sint32(a, i_1) <- i_1 + j + k][shift_sint32(a, i)].
+Prover Alt-Ergo  returns Valid (Qed:10ms) (41ms) (146)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 23):
+out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Assume {
+  Type: is_sint32(j) /\ is_sint32(n).
+  (* Goal *)
+  When: (i <= 0) /\ (0 <= i).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: n <= 4611686018427387903.
+  (* Invariant *)
+  Have: n != 1.
+  (* Invariant *)
+  Have: 0 < n.
+}
+Prove: 2 <= Mint_0[shift_sint32(a, 0)].
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 24):
+out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 24):
+out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 25) (1/4):
+out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 25) (2/4):
+Effect at line 28
+out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 25) (3/4):
+Call Result at line 29
+out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c, line 25) (4/4):
+Effect at line 31
+out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(a, 1).
+Let x = n - 1.
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, x).
+Let x_1 = i - 1.
+Let a_3 = shift_sint32(a, x_1).
+Let x_2 = 1 + n.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(x_1).
+  (* Heap *)
+  Type: linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: n <= 4611686018427387903.
+  (* Invariant *)
+  Have: n != 1.
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: 2 <= Mint_0[shift_sint32(a, 0)].
+  (* Invariant *)
+  Have: x_2 != i.
+  (* Invariant *)
+  Have: i <= x_2.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_3 = 2 + i_1 in ((0 <= i_1) -> ((x_3 <= i) ->
+      (x_3 <= a_2[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: 2 <= i.
+  (* Then *)
+  Have: i <= n.
+  (* Call 'unknown1' *)
+  Have: (0 < k) /\ (k <= 9999).
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      ((2 + i_1) <= a_2[a_3 <- i + j + k - 1][shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: 0 < i.
+}
+Prove: included(a_3, 1, a_1, x).
+Prover Z3 4.8.12 returns Valid (Qed:15ms) (180ms) (133607)
+Prover Alt-Ergo  returns Valid (Qed:15ms) (49ms) (190)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_merged.c:12: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

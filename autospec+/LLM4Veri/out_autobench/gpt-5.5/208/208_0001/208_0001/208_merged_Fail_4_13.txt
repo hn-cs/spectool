@@ -1,0 +1,307 @@
+[kernel] Parsing out/gpt-5.5/208/208_0001/208_0001/208_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] FRAMAC_SHARE/libc/math.h:1207: Warning: 
+  Builtin pow(float64,float64) not defined
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_fun_loop_invariant_established (Qed 0.58ms) (Z3 8s)
+[wp] [Timeout] typed_fun_loop_invariant_preserved (Qed 7ms) (Alt-Ergo 8s) (Stronger)
+[wp] [Timeout] typed_fun_loop_invariant_2_preserved (Qed 7ms) (Alt-Ergo 8s) (Stronger)
+[wp] [Timeout] typed_fun_loop_invariant_2_established (Qed 1ms) (Z3 8s)
+[wp] [Timeout] typed_fun_loop_invariant_3_preserved (Qed 5ms) (Alt-Ergo 8s) (Stronger)
+[wp] [Timeout] typed_fun_loop_invariant_4_preserved (Qed 4ms) (Alt-Ergo 8s) (Stronger)
+[wp] [Timeout] typed_fun_loop_assigns_part2 (Qed 7ms) (Alt-Ergo 8s) (Stronger)
+[wp] [Timeout] typed_fun_call_pow_requires_finite_logic_res (Qed 2ms) (Alt-Ergo 8s) (Stronger)
+[wp] [Timeout] typed_main_assert (Qed 1ms) (Z3 8s)
+[wp] Proved goals:    4 / 13
+  Qed:             4
+  Timeout:         9
+------------------------------------------------------------
+  Function fun
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 9):
+FRAMAC_SHARE/libc/math.h:1207: warning from wp:
+ - Warning: Hide sub-term definition
+   Reason: Builtin pow(float64,float64) not defined
+Let r = of_f64(i).
+Let r_1 = real_of_int(1 + n).
+Assume {
+  Type: is_sint32(fc_errno_0) /\ is_sint32(fc_errno_1) /\ is_sint32(n).
+  (* Invariant *)
+  Have: r_1 != .0.
+  (* Invariant *)
+  Have: .0 <= r_1.
+  (* Invariant *)
+  Have: r != r_1.
+  (* Invariant *)
+  Have: r <= r_1.
+  (* Invariant *)
+  Have: .0 <= of_f64(y).
+  (* Invariant *)
+  Have: .0 <= r.
+  (* Then *)
+  Have: le_f64(i, to_f64(real_of_int(n))).
+  (* Call 'pow' *)
+  Have: is_finite_f64(pow_0) /\
+      ((fc_errno_1 = 34) \/ (fc_errno_1 = fc_errno_0)).
+}
+Prove: of_f64(add_f64(i, to_f64(1.0))) != r_1.
+Prover Z3 4.8.12 returns Failed
+Unknown error
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 9):
+Assume { Type: is_sint32(n). }
+Prove: real_of_int(1 + n) != .0.
+Prover Z3 4.8.12 returns Timeout (Qed:0.58ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.58ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 10):
+FRAMAC_SHARE/libc/math.h:1207: warning from wp:
+ - Warning: Hide sub-term definition
+   Reason: Builtin pow(float64,float64) not defined
+Let r = of_f64(add_f64(i, to_f64(1.0))).
+Let r_1 = real_of_int(1 + n).
+Let r_2 = of_f64(i).
+Assume {
+  Type: is_sint32(fc_errno_0) /\ is_sint32(fc_errno_1) /\ is_sint32(n).
+  (* Invariant *)
+  Have: r_1 != .0.
+  (* Invariant *)
+  Have: .0 <= r_1.
+  (* Invariant *)
+  Have: r_2 != r_1.
+  (* Invariant *)
+  Have: r_2 <= r_1.
+  (* Invariant *)
+  Have: .0 <= of_f64(y).
+  (* Invariant *)
+  Have: .0 <= r_2.
+  (* Then *)
+  Have: le_f64(i, to_f64(real_of_int(n))).
+  (* Call 'pow' *)
+  Have: is_finite_f64(pow_0) /\
+      ((fc_errno_1 = 34) \/ (fc_errno_1 = fc_errno_0)).
+  (* Invariant *)
+  Have: r != r_1.
+}
+Prove: r <= r_1.
+Prover Z3 4.8.12 returns Failed
+Unknown error
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 10):
+Let r = real_of_int(1 + n).
+Assume { Type: is_sint32(n). (* Invariant *) Have: r != .0. }
+Prove: .0 <= r.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 11):
+FRAMAC_SHARE/libc/math.h:1207: warning from wp:
+ - Warning: Hide sub-term definition
+   Reason: Builtin pow(float64,float64) not defined
+Let r = of_f64(add_f64(i, to_f64(1.0))).
+Let r_1 = real_of_int(1 + n).
+Let r_2 = of_f64(i).
+Assume {
+  Type: is_sint32(fc_errno_0) /\ is_sint32(fc_errno_1) /\ is_sint32(n).
+  (* Invariant *)
+  Have: r_1 != .0.
+  (* Invariant *)
+  Have: .0 <= r_1.
+  (* Invariant *)
+  Have: r_2 != r_1.
+  (* Invariant *)
+  Have: r_2 <= r_1.
+  (* Invariant *)
+  Have: .0 <= of_f64(y).
+  (* Invariant *)
+  Have: .0 <= r_2.
+  (* Then *)
+  Have: le_f64(i, to_f64(real_of_int(n))).
+  (* Call 'pow' *)
+  Have: is_finite_f64(pow_0) /\
+      ((fc_errno_1 = 34) \/ (fc_errno_1 = fc_errno_0)).
+  (* Invariant *)
+  Have: r != r_1.
+  (* Invariant *)
+  Have: r <= r_1.
+}
+Prove: .0 <= of_f64(add_f64(y, pow_0)).
+Prover Z3 4.8.12 returns Failed
+Unknown error
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 12):
+FRAMAC_SHARE/libc/math.h:1207: warning from wp:
+ - Warning: Hide sub-term definition
+   Reason: Builtin pow(float64,float64) not defined
+Let r = of_f64(add_f64(i, to_f64(1.0))).
+Let r_1 = real_of_int(1 + n).
+Let r_2 = of_f64(i).
+Assume {
+  Type: is_sint32(fc_errno_0) /\ is_sint32(fc_errno_1) /\ is_sint32(n).
+  (* Invariant *)
+  Have: r_1 != .0.
+  (* Invariant *)
+  Have: .0 <= r_1.
+  (* Invariant *)
+  Have: r_2 != r_1.
+  (* Invariant *)
+  Have: r_2 <= r_1.
+  (* Invariant *)
+  Have: .0 <= of_f64(y).
+  (* Invariant *)
+  Have: .0 <= r_2.
+  (* Then *)
+  Have: le_f64(i, to_f64(real_of_int(n))).
+  (* Call 'pow' *)
+  Have: is_finite_f64(pow_0) /\
+      ((fc_errno_1 = 34) \/ (fc_errno_1 = fc_errno_0)).
+  (* Invariant *)
+  Have: r != r_1.
+  (* Invariant *)
+  Have: r <= r_1.
+  (* Invariant *)
+  Have: .0 <= of_f64(add_f64(y, pow_0)).
+}
+Prove: .0 <= r.
+Prover Z3 4.8.12 returns Failed
+Unknown error
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.60ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 13) (1/3):
+FRAMAC_SHARE/libc/math.h:1207: warning from wp:
+ - Warning: Hide sub-term definition
+   Reason: Builtin pow(float64,float64) not defined
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 13) (2/3):
+Call Effect at line 17
+FRAMAC_SHARE/libc/math.h:1207: warning from wp:
+ - Warning: Hide sub-term definition
+   Reason: Builtin pow(float64,float64) not defined
+Let r = of_f64(add_f64(i, to_f64(1.0))).
+Let r_1 = real_of_int(1 + n).
+Let r_2 = of_f64(i).
+Assume {
+  Type: is_sint32(fc_errno_0) /\ is_sint32(fc_errno_1) /\ is_sint32(n).
+  (* Invariant *)
+  Have: r_1 != .0.
+  (* Invariant *)
+  Have: .0 <= r_1.
+  (* Invariant *)
+  Have: r_2 != r_1.
+  (* Invariant *)
+  Have: r_2 <= r_1.
+  (* Invariant *)
+  Have: .0 <= of_f64(y).
+  (* Invariant *)
+  Have: .0 <= r_2.
+  (* Then *)
+  Have: le_f64(i, to_f64(real_of_int(n))).
+  (* Call 'pow' *)
+  Have: is_finite_f64(pow_0) /\
+      ((fc_errno_1 = 34) \/ (fc_errno_1 = fc_errno_0)).
+  (* Invariant *)
+  Have: r != r_1.
+  (* Invariant *)
+  Have: r <= r_1.
+  (* Invariant *)
+  Have: .0 <= of_f64(add_f64(y, pow_0)).
+  (* Invariant *)
+  Have: .0 <= r.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Failed
+out of memory
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 13) (3/3):
+Call Result at line 17
+FRAMAC_SHARE/libc/math.h:1207: warning from wp:
+ - Warning: Hide sub-term definition
+   Reason: Builtin pow(float64,float64) not defined
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition 'finite_logic_res' in 'pow'' in 'fun' at call 'pow' (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 17)
+:
+FRAMAC_SHARE/libc/math.h:1207: warning from wp:
+ - Warning: Hide sub-term definition
+   Reason: Builtin pow(float64,float64) not defined
+Let r = of_f64(i).
+Let r_1 = real_of_int(1 + n).
+Assume {
+  Type: is_sint32(n).
+  (* Invariant *)
+  Have: r_1 != .0.
+  (* Invariant *)
+  Have: .0 <= r_1.
+  (* Invariant *)
+  Have: r != r_1.
+  (* Invariant *)
+  Have: r <= r_1.
+  (* Invariant *)
+  Have: .0 <= of_f64(y).
+  (* Invariant *)
+  Have: .0 <= r.
+  (* Then *)
+  Have: le_f64(i, to_f64(real_of_int(n))).
+}
+Prove: is_finite_f64(w).
+Prover Z3 4.8.12 returns Failed
+out of memory
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/208/208_0001/208_0001/208_merged.c, line 25):
+Assume { Type: is_sint32(res_0). }
+Prove: res_0 = 7.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/208/208_0001/208_0001/208_merged.c:4: Warning: 
+  No 'assigns' specification for function 'fun'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/208/208_0001/208_0001/208_merged.c:23: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

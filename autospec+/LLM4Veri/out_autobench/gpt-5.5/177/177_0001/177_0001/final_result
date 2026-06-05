@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=8, microseconds=247943), 'total_solve_time': datetime.timedelta(seconds=9, microseconds=978161), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 242, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant j == n * i;', 'loop invariant flag == 1 ==> n == 1;', 'loop invariant flag == 1 ==> j == i;', 'loop invariant flag != 1 ==> n == 2;', 'loop invariant 0 <= i;', 'loop assigns j;', 'loop assigns i;'], '2': [], 'MSLines': ['#include <assert.h>\n', 'int unknown1();\n', 'int unknown2();\n', 'int unknown3();\n', 'int unknown4();\n', '\n', '/*\n', ' * Adapted from ex20 from NECLA Static Analysis Benchmarks\n', ' */\n', '\n', '/* 2. FUNC CONTRACT */\nvoid foo(int k, int flag)\n', '{\n', '  int i=0;\n', '  int j=0;\n', '  int n;\n', '  int __BLAST_NONDET;\n', '\n', '  if (flag == 1){\n', '     n=1;\n', '  } else {\n', '     n=2;\n', '  }\n', '\n', '  i=0;\n', '\n', '  /* 1. LOOP INVARIANT */\n  while ( i <= k) {\n', '    i++;\n', '    j = j + n;\n', '  }\n', '  if(flag == 1) {\n', '    //@ assert(j == i);\n', '  }\n', '\t\n', '}\n', '\n', '\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

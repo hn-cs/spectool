@@ -1,0 +1,11 @@
+[kernel] Parsing out/deepseek-chat/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0004/loop-invgen_large_const_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0004/loop-invgen_large_const_merged.c:14: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:annot-error] out/deepseek-chat/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0004/loop-invgen_large_const_merged.c:20: Warning: 
+  unbound logic function \num_of. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0004/loop-invgen_large_const_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

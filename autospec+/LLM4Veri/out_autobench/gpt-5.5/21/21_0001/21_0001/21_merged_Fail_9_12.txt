@@ -1,0 +1,108 @@
+[kernel] Parsing out/gpt-5.5/21/21_0001/21_0001/21_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/gpt-5.5/21/21_0001/21_0001/21_merged.c:17: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/21/21_0001/21_0001/21_merged.c:1: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 12 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_established (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_3_established (Qed 2ms) (Z3 8s)
+[wp] Proved goals:    9 / 12
+  Qed:             9
+  Timeout:         3
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/21/21_0001/21_0001/21_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/21/21_0001/21_0001/21_merged.c, line 8):
+Assume { Type: is_sint32(n). }
+Prove: 0 < n.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/21/21_0001/21_0001/21_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/21/21_0001/21_0001/21_merged.c, line 9):
+Assume { Type: is_sint32(n). (* Invariant *) Have: 0 < n. }
+Prove: n != 1.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/21/21_0001/21_0001/21_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/21/21_0001/21_0001/21_merged.c, line 10):
+Assume {
+  Type: is_sint32(n).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: n != 1.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/21/21_0001/21_0001/21_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/21/21_0001/21_0001/21_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/21/21_0001/21_0001/21_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/21/21_0001/21_0001/21_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/21/21_0001/21_0001/21_merged.c, line 13) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/21/21_0001/21_0001/21_merged.c, line 13) (2/2):
+Call Result at line 17
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/21/21_0001/21_0001/21_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/21/21_0001/21_0001/21_merged.c:17: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

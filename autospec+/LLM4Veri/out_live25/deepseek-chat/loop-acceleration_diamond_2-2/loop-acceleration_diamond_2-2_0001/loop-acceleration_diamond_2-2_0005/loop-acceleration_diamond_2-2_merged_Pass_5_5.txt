@@ -1,0 +1,45 @@
+[kernel] Parsing out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 5 goals scheduled
+[wp] Proved goals:    5 / 5
+  Qed:             5
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-acceleration_diamond_2-2/loop-acceleration_diamond_2-2_0001/loop-acceleration_diamond_2-2_0005/loop-acceleration_diamond_2-2_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

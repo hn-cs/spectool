@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=6, microseconds=205113), 'total_solve_time': datetime.timedelta(microseconds=682951), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 165, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': ['requires a >= b ==> a - b <= INT_MAX;', 'requires a < b ==> b - a <= INT_MAX;', 'ensures a >= b ==> \\result == a - b;', 'ensures a < b ==> \\result == b - a;', 'ensures \\result >= 0;', 'assigns \\nothing;'], '2': [], 'MSLines': ['#include <limits.h>\n', '/* 1. FUNC CONTRACT */\nint distance(int a, int b) {\n', '    if (a < b) return b - a; \n', '    else return a - b; \n', '}\n', '/* 2. FUNC CONTRACT */\nint main(){\n', '    int a = -10;\n', '    int b = 10;\n', '    int result = distance(a, b);\n', '    //@ assert result == 20;\n', '    return 0;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

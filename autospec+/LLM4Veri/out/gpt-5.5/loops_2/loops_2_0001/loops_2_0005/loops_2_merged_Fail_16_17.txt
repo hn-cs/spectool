@@ -1,0 +1,120 @@
+[kernel] Parsing out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 17 goals scheduled
+[wp] [Timeout] typed_sum_loop_invariant_6_established (Qed 4ms) (Z3 8s)
+[wp] Proved goals:   16 / 17
+  Qed:            16
+  Timeout:         1
+------------------------------------------------------------
+  Function sum
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.82ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.56ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.93ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 11):
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.50ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c:2: Warning: 
+  No 'assigns' specification for function 'sum'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/loops_2/loops_2_0001/loops_2_0005/loops_2_merged.c:24: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

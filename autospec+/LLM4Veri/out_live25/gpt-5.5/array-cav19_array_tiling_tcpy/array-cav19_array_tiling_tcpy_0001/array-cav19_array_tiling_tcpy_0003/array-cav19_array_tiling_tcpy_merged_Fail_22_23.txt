@@ -1,0 +1,398 @@
+[kernel] Parsing out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 23 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 13ms) (Z3 8s) (Stronger, 2 warnings)
+[wp] Proved goals:   22 / 23
+  Qed:            19
+  Alt-Ergo :       3 (27ms-54ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 13):
+Assume {
+  Type: is_sint32(S).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 1073741822).
+}
+Prove: 0 < to_sint32(2 * S).
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (150ms) (34590)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (27ms) (24)
+
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 14):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 16):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 16):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 17):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 2 * S.
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(acopy_0, 0), x).
+Let x_1 = x - 1 - i.
+Let a_2 = a_1[shift_sint32(acopy_0, x_1) <- a_1[shift_sint32(a, x_1)]].
+Let a_3 = a_2[shift_sint32(acopy_0, i) <- a_2[shift_sint32(a, i)]].
+Let x_2 = x - 1 - i_1.
+Assume {
+  Type: is_sint32(S) /\ is_sint32(i) /\ is_sint32(1 + i).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 1073741822).
+  (* Assertion 'alloca_bounds' *)
+  Have: 0 < to_sint32(x).
+  (* Invariant *)
+  Have: 0 <= S.
+  (* Invariant *)
+  Have: i <= S.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_3 = x - 1 - i_2 in ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(acopy_0, x_3)] = a_1[shift_sint32(a, x_3)]))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < S.
+}
+Prove: a_3[shift_sint32(acopy_0, x_2)] = a_3[shift_sint32(a, x_2)].
+Prover Z3 4.8.12 returns Timeout (Qed:13ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:13ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 17):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.71ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 18):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 18):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 19):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 19):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 20):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 20):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 21):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (20ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 21):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 30):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 30):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 31):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 31):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 22) (1/4):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 22) (2/4):
+Effect at line 25
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 22) (3/4):
+Effect at line 26
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(acopy_0, 0).
+Let x = 2 * S.
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, x).
+Let x_1 = x - i.
+Let a_3 = shift_sint32(acopy_0, x_1).
+Let a_4 = a_2[a_3 <- a_2[shift_sint32(a, x_1)]].
+Let x_2 = i - 1.
+Let a_5 = a_4[shift_sint32(acopy_0, x_2) <- a_4[shift_sint32(a, x_2)]].
+Assume {
+  Type: is_sint32(S) /\ is_sint32(i) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 1073741822).
+  (* Assertion 'alloca_bounds' *)
+  Have: 0 < to_sint32(x).
+  (* Invariant *)
+  Have: 0 <= S.
+  (* Invariant *)
+  Have: i <= (1 + S).
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_3 = x - 1 - i_1 in ((0 <= i_1) ->
+      (((2 + i_1) <= i) ->
+      (a_2[shift_sint32(acopy_0, x_3)] = a_2[shift_sint32(a, x_3)]))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= S.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_3 = x - 1 - i_1 in ((0 <= i_1) -> ((i_1 < i) ->
+      (a_5[shift_sint32(acopy_0, x_3)] = a_5[shift_sint32(a, x_3)]))).
+}
+Prove: included(a_3, 1, a_1, x).
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (150ms) (101662)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (54ms) (178)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 22) (4/4):
+Effect at line 27
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(acopy_0, 0).
+Let x = 2 * S.
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, x).
+Let x_1 = x - i.
+Let a_3 = a_2[shift_sint32(acopy_0, x_1) <- a_2[shift_sint32(a, x_1)]].
+Let x_2 = i - 1.
+Let a_4 = shift_sint32(acopy_0, x_2).
+Let a_5 = a_3[a_4 <- a_3[shift_sint32(a, x_2)]].
+Assume {
+  Type: is_sint32(S) /\ is_sint32(i) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_4, 1).
+  (* Call 'unknown' *)
+  Have: (2 <= S) /\ (S <= 1073741822).
+  (* Assertion 'alloca_bounds' *)
+  Have: 0 < to_sint32(x).
+  (* Invariant *)
+  Have: 0 <= S.
+  (* Invariant *)
+  Have: i <= (1 + S).
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_3 = x - 1 - i_1 in ((0 <= i_1) ->
+      (((2 + i_1) <= i) ->
+      (a_2[shift_sint32(acopy_0, x_3)] = a_2[shift_sint32(a, x_3)]))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= S.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_3 = x - 1 - i_1 in ((0 <= i_1) -> ((i_1 < i) ->
+      (a_5[shift_sint32(acopy_0, x_3)] = a_5[shift_sint32(a, x_3)]))).
+}
+Prove: included(a_4, 1, a_1, x).
+Prover Alt-Ergo  returns Valid (Qed:8ms) (37ms) (178)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c, line 32):
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:13: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:14: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-cav19_array_tiling_tcpy/array-cav19_array_tiling_tcpy_0001/array-cav19_array_tiling_tcpy_0003/array-cav19_array_tiling_tcpy_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

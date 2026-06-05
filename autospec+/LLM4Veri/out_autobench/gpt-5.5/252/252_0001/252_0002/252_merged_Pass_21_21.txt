@@ -1,0 +1,322 @@
+[kernel] Parsing out/gpt-5.5/252/252_0001/252_0002/252_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 21 goals scheduled
+[wp] Proved goals:   21 / 21
+  Qed:            16
+  Alt-Ergo :       5 (31ms-39ms)
+------------------------------------------------------------
+  Function bufs_differ
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 18) in 'bufs_differ':
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(bufs_differ_0) /\
+      is_sint32(ret_0).
+  (* Heap *)
+  Type: (region(b1_0.base) <= 0) /\ (region(b2_0.base) <= 0) /\
+      linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b2_0, 0), n).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b1_0, 0), n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: ((ret_0 = 1) ->
+      (exists i_1 : Z.
+       (Mint_0[shift_uint8(b2_0, i_1)] != Mint_0[shift_uint8(b1_0, i_1)]) /\
+       (0 <= i_1) /\ (i_1 < i))).
+  (* Invariant *)
+  Have: (ret_0 = 0) \/ (ret_0 = 1).
+  (* Invariant *)
+  Have: ((ret_0 = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+       (Mint_0[shift_uint8(b2_0, i_1)] = Mint_0[shift_uint8(b1_0, i_1)]))))).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  If i < n
+  Then {
+    (* Then *)
+    Have: Mint_0[shift_uint8(b2_0, i)] != Mint_0[shift_uint8(b1_0, i)].
+    Have: bufs_differ_0 = 1.
+  }
+  Else { Have: ret_0 = bufs_differ_0. }
+}
+Prove: (exists i_1 : Z.
+        (Mint_0[shift_uint8(b2_0, i_1)] != Mint_0[shift_uint8(b1_0, i_1)]) /\
+        (0 <= i_1) /\ (i_1 < n)) <-> (bufs_differ_0 = 1).
+Prover Alt-Ergo  returns Valid (Qed:19ms) (37ms) (219)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 19) in 'bufs_differ':
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 20) in 'bufs_differ':
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(bufs_differ_0) /\
+      is_sint32(ret_0).
+  (* Heap *)
+  Type: (region(b1_0.base) <= 0) /\ (region(b2_0.base) <= 0) /\
+      linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b2_0, 0), n).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b1_0, 0), n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: ((ret_0 = 1) ->
+      (exists i_1 : Z.
+       (Mint_0[shift_uint8(b2_0, i_1)] != Mint_0[shift_uint8(b1_0, i_1)]) /\
+       (0 <= i_1) /\ (i_1 < i))).
+  (* Invariant *)
+  Have: (ret_0 = 0) \/ (ret_0 = 1).
+  (* Invariant *)
+  Have: ((ret_0 = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+       (Mint_0[shift_uint8(b2_0, i_1)] = Mint_0[shift_uint8(b1_0, i_1)]))))).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  If i < n
+  Then {
+    (* Then *)
+    Have: Mint_0[shift_uint8(b2_0, i)] != Mint_0[shift_uint8(b1_0, i)].
+    Have: bufs_differ_0 = 1.
+  }
+  Else { Have: ret_0 = bufs_differ_0. }
+}
+Prove: (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+        (Mint_0[shift_uint8(b2_0, i_1)] = Mint_0[shift_uint8(b1_0, i_1)])))) <->
+    (bufs_differ_0 = 0).
+Prover Alt-Ergo  returns Valid (Qed:15ms) (39ms) (236)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 29):
+Let x = Mint_0[shift_uint8(b2_0, i)].
+Let x_1 = Mint_0[shift_uint8(b1_0, i)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_uint8(x_1) /\ is_uint8(x).
+  (* Heap *)
+  Type: (region(b1_0.base) <= 0) /\ (region(b2_0.base) <= 0) /\
+      linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b2_0, 0), n).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b1_0, 0), n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (Mint_0[shift_uint8(b2_0, i_1)] != Mint_0[shift_uint8(b1_0, i_1)]) /\
+      (0 <= i_1) /\ (i_1 < i).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Else *)
+  Have: x = x_1.
+}
+Prove: exists i_2 : Z.
+    (Mint_0[shift_uint8(b2_0, i_2)] != Mint_0[shift_uint8(b1_0, i_2)]) /\
+    (0 <= i_2) /\ (i_2 < to_uint32(1 + i)).
+Prover Alt-Ergo  returns Valid (Qed:6ms) (33ms) (111)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 31):
+Let x = Mint_0[shift_uint8(b2_0, i_1)].
+Let x_1 = Mint_0[shift_uint8(b1_0, i_1)].
+Assume {
+  Type: is_uint32(i_1) /\ is_uint32(n) /\ is_uint8(x_1) /\ is_uint8(x).
+  (* Heap *)
+  Type: (region(b1_0.base) <= 0) /\ (region(b2_0.base) <= 0) /\
+      linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < to_uint32(1 + i_1)).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b2_0, 0), n).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b1_0, 0), n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (Mint_0[shift_uint8(b2_0, i_2)] = Mint_0[shift_uint8(b1_0, i_2)]))).
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Else *)
+  Have: x = x_1.
+}
+Prove: Mint_0[shift_uint8(b2_0, i)] = Mint_0[shift_uint8(b1_0, i)].
+Prover Alt-Ergo  returns Valid (Qed:3ms) (31ms) (113)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 32):
+Let x = to_uint32(1 + i).
+Let x_1 = Mint_0[shift_uint8(b2_0, i)].
+Let x_2 = Mint_0[shift_uint8(b1_0, i)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(ret_0) /\ is_uint8(x_2) /\
+      is_uint8(x_1).
+  (* Heap *)
+  Type: (region(b1_0.base) <= 0) /\ (region(b2_0.base) <= 0) /\
+      linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b2_0, 0), n).
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, shift_uint8(b1_0, 0), n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: ((ret_0 = 1) ->
+      (exists i_1 : Z.
+       (Mint_0[shift_uint8(b2_0, i_1)] != Mint_0[shift_uint8(b1_0, i_1)]) /\
+       (0 <= i_1) /\ (i_1 < i))).
+  (* Invariant *)
+  Have: (ret_0 = 0) \/ (ret_0 = 1).
+  (* Invariant *)
+  Have: ((ret_0 = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+       (Mint_0[shift_uint8(b2_0, i_1)] = Mint_0[shift_uint8(b1_0, i_1)]))))).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Else *)
+  Have: x_1 = x_2.
+  (* Invariant *)
+  Have: ((ret_0 = 1) ->
+      (exists i_1 : Z.
+       (Mint_0[shift_uint8(b2_0, i_1)] != Mint_0[shift_uint8(b1_0, i_1)]) /\
+       (0 <= i_1) /\ (i_1 < x))).
+  (* Invariant *)
+  Have: ((ret_0 = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < x) ->
+       (Mint_0[shift_uint8(b2_0, i_1)] = Mint_0[shift_uint8(b1_0, i_1)]))))).
+}
+Prove: x <= n.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (140ms) (144881)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (35ms) (114)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid (0.99ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 34):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'bufs_differ' (1/3):
+Effect at line 37
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'bufs_differ' (2/3):
+Effect at line 37
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'bufs_differ' (3/3):
+Effect at line 39
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 16) in 'bufs_differ'' in 'main' at initialization of 'ret1' (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 54)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 17) in 'bufs_differ'' in 'main' at initialization of 'ret1' (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 54)
+:
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 16) in 'bufs_differ'' in 'main' at initialization of 'ret2' (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 57)
+:
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 17) in 'bufs_differ'' in 'main' at initialization of 'ret2' (file out/gpt-5.5/252/252_0001/252_0002/252_merged.c, line 57)
+:
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/252/252_0001/252_0002/252_merged.c:48: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

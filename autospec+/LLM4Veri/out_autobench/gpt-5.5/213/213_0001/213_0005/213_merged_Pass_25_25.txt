@@ -1,0 +1,349 @@
+[kernel] Parsing out/gpt-5.5/213/213_0001/213_0005/213_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 25 goals scheduled
+[wp] Proved goals:   25 / 25
+  Qed:            20
+  Alt-Ergo :       5 (23ms-49ms)
+------------------------------------------------------------
+  Function array_find
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (0.56ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 10):
+Let x_1 = Mint_0[shift_sint32(arr_0, i_1)].
+Let x_2 = Mint_0[shift_sint32(arr_0, i_1 - 1)].
+Let x_3 = Mint_0[shift_sint32(arr_0, i)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(x) /\
+      is_sint32(1 + i_1) /\ is_sint32(Mint_0[shift_sint32(arr_0, -1)]) /\
+      is_sint32(x_1) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_4 = Mint_0[shift_sint32(arr_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < i_1) -> ((x < x_4) \/ (x_4 < x)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (Mint_0[shift_sint32(arr_0, i_2)] != x))).
+  (* Invariant *)
+  Have: ((0 < i_1) -> ((x < x_2) \/ (x_2 < x))).
+  (* Invariant *)
+  Have: (i_1 = 0) \/ (x_2 != x).
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Else *)
+  Have: x_1 != x.
+}
+Prove: (x < x_3) \/ (x_3 < x).
+Prover Alt-Ergo  returns Valid (Qed:8ms) (49ms) (103)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 11):
+Let x_1 = Mint_0[shift_sint32(arr_0, i_1)].
+Let x_2 = Mint_0[shift_sint32(arr_0, i_1 - 1)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(x) /\
+      is_sint32(1 + i_1) /\ is_sint32(Mint_0[shift_sint32(arr_0, -1)]) /\
+      is_sint32(x_1) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_3 = Mint_0[shift_sint32(arr_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < i_1) -> ((x < x_3) \/ (x_3 < x)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (Mint_0[shift_sint32(arr_0, i_2)] != x))).
+  (* Invariant *)
+  Have: ((0 < i_1) -> ((x < x_2) \/ (x_2 < x))).
+  (* Invariant *)
+  Have: (i_1 = 0) \/ (x_2 != x).
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Else *)
+  Have: x_1 != x.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_3 = Mint_0[shift_sint32(arr_0, i_2)] in
+      ((i_2 <= i_1) -> ((0 <= i_2) -> ((x < x_3) \/ (x_3 < x)))).
+}
+Prove: Mint_0[shift_sint32(arr_0, i)] != x.
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (160ms) (90793)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (40ms) (108)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 12):
+Let x_1 = Mint_0[shift_sint32(arr_0, i)].
+Let x_2 = Mint_0[shift_sint32(arr_0, i - 1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x) /\ is_sint32(1 + i) /\
+      is_sint32(Mint_0[shift_sint32(arr_0, -1)]) /\ is_sint32(x_1) /\
+      is_sint32(x_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: 0 <= i.
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_3 = Mint_0[shift_sint32(arr_0, i_1)] in
+      ((0 <= i_1) -> ((i_1 < i) -> ((x < x_3) \/ (x_3 < x)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (Mint_0[shift_sint32(arr_0, i_1)] != x))).
+  (* Invariant *)
+  Have: ((0 < i) -> ((x < x_2) \/ (x_2 < x))).
+  (* Invariant *)
+  Have: (i = 0) \/ (x_2 != x).
+  (* Invariant *)
+  Have: i <= n.
+  (* Then *)
+  Have: i < n.
+  (* Else *)
+  Have: x_1 != x.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_3 = Mint_0[shift_sint32(arr_0, i_1)] in
+      ((i_1 <= i) -> ((0 <= i_1) -> ((x < x_3) \/ (x_3 < x)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 <= i) -> ((0 <= i_1) ->
+      (Mint_0[shift_sint32(arr_0, i_1)] != x))).
+}
+Prove: (x < x_1) \/ (x_1 < x).
+Prover Alt-Ergo  returns Valid (Qed:9ms) (23ms) (26)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.72ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 16):
+Let x_1 = Mint_0[shift_sint32(arr_0, i_1)].
+Let x_2 = Mint_0[shift_sint32(arr_0, i_1 - 1)].
+Let x_3 = Mint_0[shift_sint32(arr_0, i)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(x) /\
+      is_sint32(1 + i_1) /\ is_sint32(Mint_0[shift_sint32(arr_0, -1)]) /\
+      is_sint32(x_1) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_4 = Mint_0[shift_sint32(arr_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < i_1) -> ((x < x_4) \/ (x_4 < x)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (Mint_0[shift_sint32(arr_0, i_2)] != x))).
+  (* Invariant *)
+  Have: ((0 < i_1) -> ((x < x_2) \/ (x_2 < x))).
+  (* Invariant *)
+  Have: (i_1 = 0) \/ (x_2 != x).
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Else *)
+  Have: x_1 != x.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_4 = Mint_0[shift_sint32(arr_0, i_2)] in
+      ((i_2 <= i_1) -> ((0 <= i_2) -> ((x < x_4) \/ (x_4 < x)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i_1) -> ((0 <= i_2) ->
+      (Mint_0[shift_sint32(arr_0, i_2)] != x))).
+  (* Invariant *)
+  Have: (x < x_1) \/ (x_1 < x).
+}
+Prove: (x < x_3) \/ (x_3 < x).
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (140ms) (92134)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (34ms) (93)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 17):
+Let x_1 = Mint_0[shift_sint32(arr_0, i_1)].
+Let x_2 = Mint_0[shift_sint32(arr_0, i_1 - 1)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(x) /\
+      is_sint32(1 + i_1) /\ is_sint32(Mint_0[shift_sint32(arr_0, -1)]) /\
+      is_sint32(x_1) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_3 = Mint_0[shift_sint32(arr_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < i_1) -> ((x < x_3) \/ (x_3 < x)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (Mint_0[shift_sint32(arr_0, i_2)] != x))).
+  (* Invariant *)
+  Have: ((0 < i_1) -> ((x < x_2) \/ (x_2 < x))).
+  (* Invariant *)
+  Have: (i_1 = 0) \/ (x_2 != x).
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Else *)
+  Have: x_1 != x.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_3 = Mint_0[shift_sint32(arr_0, i_2)] in
+      ((i_2 <= i_1) -> ((0 <= i_2) -> ((x < x_3) \/ (x_3 < x)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i_1) -> ((0 <= i_2) ->
+      (Mint_0[shift_sint32(arr_0, i_2)] != x))).
+  (* Invariant *)
+  Have: (x < x_1) \/ (x_1 < x).
+}
+Prove: Mint_0[shift_sint32(arr_0, i)] != x.
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (130ms) (92470)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (35ms) (87)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.57ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.93ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.79ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/213/213_0001/213_0005/213_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/213/213_0001/213_0005/213_merged.c:4: Warning: 
+  No 'assigns' specification for function 'array_find'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/213/213_0001/213_0005/213_merged.c:31: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

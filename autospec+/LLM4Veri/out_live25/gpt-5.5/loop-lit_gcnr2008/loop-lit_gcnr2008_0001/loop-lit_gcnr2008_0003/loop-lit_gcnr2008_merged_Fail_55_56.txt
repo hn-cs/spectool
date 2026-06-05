@@ -1,0 +1,2211 @@
+[kernel] Parsing out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c:47: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 56 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_5_preserved (Qed 131ms) (Z3 8s)
+[wp] Proved goals:   55 / 56
+  Qed:            37
+  Alt-Ergo :      18 (24ms-45ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 12):
+Let x_4 = 10 * w.
+Let x_5 = 100 * x_2.
+Let x_6 = 10 + x_4.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(x_4) /\ is_sint32(x_6).
+  (* Invariant *)
+  Have: ((y_1 = 0) -> (x_2 = 0)).
+  (* Invariant *)
+  Have: y_1 <= 10099.
+  (* Invariant *)
+  Have: y_1 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_2) -> ((396 + x_2) <= y_1)).
+  (* Invariant *)
+  Have: ((x_2 = 0) -> (y_1 = 0)).
+  (* Invariant *)
+  Have: ((x_2 <= 4) -> (x_5 = y_1)).
+  (* Invariant *)
+  Have: x_2 <= 10099.
+  (* Invariant *)
+  Have: x_2 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_1 <= x_5.
+  (* Invariant *)
+  Have: y_1 <= (100 * w).
+  (* Invariant *)
+  Have: x_2 <= x_4.
+  (* Invariant *)
+  Have: x_2 <= y_1.
+  (* Invariant *)
+  Have: x_2 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_1.
+  (* Invariant *)
+  Have: 0 <= x_2.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_1 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Else {
+    Have: (x_2 = x_3) /\ (y_1 = y_2).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then { Have: x_3 = x_1. }
+    Else { Have: (x_3 = x) /\ (y_2 = y). }
+  }
+}
+Prove: (x_6 % 5) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:37ms) (150ms) (63802)
+Prover Alt-Ergo  returns Valid (Qed:37ms) (32ms) (208)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.66ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 13):
+Let x_4 = 10 * w.
+Let x_5 = 10 + x_4.
+Let x_6 = 100 * x_2.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(x_4) /\ is_sint32(x_5).
+  (* Invariant *)
+  Have: ((y_1 = 0) -> (x_2 = 0)).
+  (* Invariant *)
+  Have: y_1 <= 10099.
+  (* Invariant *)
+  Have: y_1 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_2) -> ((396 + x_2) <= y_1)).
+  (* Invariant *)
+  Have: ((x_2 = 0) -> (y_1 = 0)).
+  (* Invariant *)
+  Have: ((x_2 <= 4) -> (x_6 = y_1)).
+  (* Invariant *)
+  Have: x_2 <= 10099.
+  (* Invariant *)
+  Have: x_2 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_1 <= x_6.
+  (* Invariant *)
+  Have: y_1 <= (100 * w).
+  (* Invariant *)
+  Have: x_2 <= x_4.
+  (* Invariant *)
+  Have: x_2 <= y_1.
+  (* Invariant *)
+  Have: x_2 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_1.
+  (* Invariant *)
+  Have: 0 <= x_2.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_1 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Else {
+    Have: (x_2 = x_3) /\ (y_1 = y_2).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then { Have: x_3 = x_1. }
+    Else { Have: (x_3 = x) /\ (y_2 = y). }
+  }
+  (* Invariant *)
+  Have: (x_5 % 5) = 0.
+}
+Prove: (x_5 % 2) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:44ms) (140ms) (44852)
+Prover Alt-Ergo  returns Valid (Qed:44ms) (38ms) (258)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 14):
+Let x_4 = 10 * w.
+Let x_5 = 10 + x_4.
+Let x_6 = 100 * x_3.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_1_0) /\ is_sint32(w) /\
+      is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\
+      is_sint32(y) /\ is_sint32(x_4) /\ is_sint32(x_5).
+  (* Residual *)
+  When: 4 <= x_2.
+  (* Invariant *)
+  Have: ((y = 0) -> (x_3 = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_3) -> ((396 + x_3) <= y)).
+  (* Invariant *)
+  Have: ((x_3 = 0) -> (y = 0)).
+  (* Invariant *)
+  Have: ((x_3 <= 4) -> (x_6 = y)).
+  (* Invariant *)
+  Have: x_3 <= 10099.
+  (* Invariant *)
+  Have: x_3 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y <= x_6.
+  (* Invariant *)
+  Have: y <= (100 * w).
+  (* Invariant *)
+  Have: x_3 <= x_4.
+  (* Invariant *)
+  Have: x_3 <= y.
+  (* Invariant *)
+  Have: x_3 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: 0 <= x_3.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  If tmp_0 != 0
+  Then { Have: (x_2 = x_1) /\ (x_3 = x_1) /\ (y = (-1)). Have: (1 + x_1) = x.
+  }
+  Else { Have: (x_3 = x) /\ (y = 0). }
+  (* Invariant *)
+  Have: (x_5 % 5) = 0.
+  (* Invariant *)
+  Have: (x_5 % 2) = 0.
+}
+Prove: x = 0.
+Prover Z3 4.8.12 returns Valid (Qed:55ms) (130ms) (44118)
+Prover Alt-Ergo  returns Valid (Qed:55ms) (25ms) (78)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.90ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 15):
+Let x_4 = 10 * w.
+Let x_5 = 10 + x_4.
+Let x_6 = 100 * x_3.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_1_0) /\ is_sint32(w) /\
+      is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\
+      is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(y_2) /\ is_sint32(y_3) /\
+      is_sint32(y_4) /\ is_sint32(x_4) /\ is_sint32(x_5).
+  (* Invariant *)
+  Have: ((y_4 = 0) -> (x_3 = 0)).
+  (* Invariant *)
+  Have: y_4 <= 10099.
+  (* Invariant *)
+  Have: y_4 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_3) -> ((396 + x_3) <= y_4)).
+  (* Invariant *)
+  Have: ((x_3 = 0) -> (y_4 = 0)).
+  (* Invariant *)
+  Have: ((x_3 <= 4) -> (x_6 = y_4)).
+  (* Invariant *)
+  Have: x_3 <= 10099.
+  (* Invariant *)
+  Have: x_3 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_4 <= x_6.
+  (* Invariant *)
+  Have: y_4 <= (100 * w).
+  (* Invariant *)
+  Have: x_3 <= x_4.
+  (* Invariant *)
+  Have: x_3 <= y_4.
+  (* Invariant *)
+  Have: x_3 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_4.
+  (* Invariant *)
+  Have: 0 <= x_3.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_4 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  If tmp_0 != 0
+  Then {
+    Have: (x_3 = x_2) /\ (y_4 = y_5).
+    If 4 <= x_2
+    Then {
+      Have: (x_2 = x_1) /\ (y_5 = y_1).
+      Have: (1 + x_1) = x.
+      Have: (1 + y_1) = y.
+    }
+    Else { Have: (x_2 = x) /\ (y_5 = y). }
+  }
+  Else {
+    Have: (x_3 = x) /\ (y_4 = y_3).
+    If x_4 < y_3
+    Then {
+      Have: y_3 = y_6.
+      If (10 * x) <= w
+      Then { Have: y_6 = y_2. Have: (y + y_2) = 0. }
+      Else { Have: y_6 = y. }
+    }
+    Else { Have: y_3 = y. }
+  }
+  (* Invariant *)
+  Have: (x_5 % 5) = 0.
+  (* Invariant *)
+  Have: (x_5 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+}
+Prove: y <= 10099.
+Prover Z3 4.8.12 returns Valid (Qed:114ms) (130ms) (49759)
+Prover Alt-Ergo  returns Valid (Qed:114ms) (28ms) (145)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 16):
+Let x_6 = 10 * w.
+Let x_7 = 10 + x_6.
+Let x_8 = 100 * x_4.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\
+      is_sint32(x_6) /\ is_sint32(x_7).
+  (* Invariant *)
+  Have: ((y_5 = 0) -> (x_4 = 0)).
+  (* Invariant *)
+  Have: y_5 <= 10099.
+  (* Invariant *)
+  Have: y_5 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_4) -> ((396 + x_4) <= y_5)).
+  (* Invariant *)
+  Have: ((x_4 = 0) -> (y_5 = 0)).
+  (* Invariant *)
+  Have: ((x_4 <= 4) -> (x_8 = y_5)).
+  (* Invariant *)
+  Have: x_4 <= 10099.
+  (* Invariant *)
+  Have: x_4 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_5 <= x_8.
+  (* Invariant *)
+  Have: y_5 <= (100 * w).
+  (* Invariant *)
+  Have: x_4 <= x_6.
+  (* Invariant *)
+  Have: x_4 <= y_5.
+  (* Invariant *)
+  Have: x_4 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_5.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_5 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then {
+    Have: (x_4 = x_1) /\ (y_5 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (100 + y_1) = y.
+  }
+  Else {
+    Have: (x_4 = x_5) /\ (y_5 = y_6).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then {
+      Have: (x_5 = x_3) /\ (y_6 = y_7).
+      If 4 <= x_3
+      Then {
+        Have: (x_3 = x_2) /\ (y_7 = y_2).
+        Have: (1 + x_2) = x.
+        Have: (1 + y_2) = y.
+      }
+      Else { Have: (x_3 = x) /\ (y_7 = y). }
+    }
+    Else {
+      Have: (x_5 = x) /\ (y_6 = y_4).
+      If x_6 < y_4
+      Then {
+        Have: y_4 = y_8.
+        If (10 * x) <= w
+        Then { Have: y_8 = y_3. Have: (y + y_3) = 0. }
+        Else { Have: y_8 = y. }
+      }
+      Else { Have: y_4 = y. }
+    }
+  }
+  (* Invariant *)
+  Have: (x_7 % 5) = 0.
+  (* Invariant *)
+  Have: (x_7 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+}
+Prove: y <= 10098.
+Prover Z3 4.8.12 returns Timeout (Qed:131ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:131ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.92ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 17):
+Let x_6 = 10 * w.
+Let x_7 = 10 + x_6.
+Let x_8 = 100 * x_4.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\
+      is_sint32(x_6) /\ is_sint32(x_7).
+  (* Goal *)
+  When: 4 <= x.
+  (* Invariant *)
+  Have: ((y_5 = 0) -> (x_4 = 0)).
+  (* Invariant *)
+  Have: y_5 <= 10099.
+  (* Invariant *)
+  Have: y_5 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_4) -> ((396 + x_4) <= y_5)).
+  (* Invariant *)
+  Have: ((x_4 = 0) -> (y_5 = 0)).
+  (* Invariant *)
+  Have: ((x_4 <= 4) -> (x_8 = y_5)).
+  (* Invariant *)
+  Have: x_4 <= 10099.
+  (* Invariant *)
+  Have: x_4 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_5 <= x_8.
+  (* Invariant *)
+  Have: y_5 <= (100 * w).
+  (* Invariant *)
+  Have: x_4 <= x_6.
+  (* Invariant *)
+  Have: x_4 <= y_5.
+  (* Invariant *)
+  Have: x_4 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_5.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_5 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then {
+    Have: (x_4 = x_1) /\ (y_5 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (100 + y_1) = y.
+  }
+  Else {
+    Have: (x_4 = x_5) /\ (y_5 = y_6).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then {
+      Have: (x_5 = x_3) /\ (y_6 = y_7).
+      If 4 <= x_3
+      Then {
+        Have: (x_3 = x_2) /\ (y_7 = y_2).
+        Have: (1 + x_2) = x.
+        Have: (1 + y_2) = y.
+      }
+      Else { Have: (x_3 = x) /\ (y_7 = y). }
+    }
+    Else {
+      Have: (x_5 = x) /\ (y_6 = y_4).
+      If x_6 < y_4
+      Then {
+        Have: y_4 = y_8.
+        If (10 * x) <= w
+        Then { Have: y_8 = y_3. Have: (y + y_3) = 0. }
+        Else { Have: y_8 = y. }
+      }
+      Else { Have: y_4 = y. }
+    }
+  }
+  (* Invariant *)
+  Have: (x_7 % 5) = 0.
+  (* Invariant *)
+  Have: (x_7 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+}
+Prove: (396 + x) <= y.
+Prover Alt-Ergo  returns Valid (Qed:173ms) (43ms) (279)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 18):
+Let x_2 = 10 * w.
+Let x_3 = 10 + x_2.
+Let x_4 = 100 * x_1.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_1_0) /\ is_sint32(w) /\
+      is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(x_2) /\
+      is_sint32(x_3).
+  (* Residual *)
+  When: 4 <= x.
+  (* Invariant *)
+  Have: ((y_4 = 0) -> (x_1 = 0)).
+  (* Invariant *)
+  Have: y_4 <= 10099.
+  (* Invariant *)
+  Have: y_4 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_1) -> ((396 + x_1) <= y_4)).
+  (* Invariant *)
+  Have: ((x_1 = 0) -> (y_4 = 0)).
+  (* Invariant *)
+  Have: ((x_1 <= 4) -> (x_4 = y_4)).
+  (* Invariant *)
+  Have: x_1 <= 10099.
+  (* Invariant *)
+  Have: x_1 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_4 <= x_4.
+  (* Invariant *)
+  Have: y_4 <= (100 * w).
+  (* Invariant *)
+  Have: x_1 <= x_2.
+  (* Invariant *)
+  Have: x_1 <= y_4.
+  (* Invariant *)
+  Have: x_1 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_4.
+  (* Invariant *)
+  Have: 0 <= x_1.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_4 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  If tmp_0 != 0
+  Then {
+    Have: (x_1 = (-1)) /\ (y_4 = y_1).
+    Have: x = (-1).
+    Have: (1 + y_1) = y.
+  }
+  Else {
+    Have: (x_1 = 0) /\ (y_4 = y_3).
+    If x_2 < y_3
+    Then { Have: y_3 = y_2. Have: (y + y_2) = 0. }
+    Else { Have: y_3 = y. }
+  }
+  (* Invariant *)
+  Have: (x_3 % 5) = 0.
+  (* Invariant *)
+  Have: (x_3 % 2) = 0.
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+}
+Prove: y = 0.
+Prover Alt-Ergo  returns Valid (Qed:86ms) (29ms) (111)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 19):
+Let x_6 = 10 * w.
+Let x_7 = 10 + x_6.
+Let x_8 = 100 * x_4.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\
+      is_sint32(x_6) /\ is_sint32(x_7).
+  (* Goal *)
+  When: x <= 4.
+  (* Invariant *)
+  Have: ((y_5 = 0) -> (x_4 = 0)).
+  (* Invariant *)
+  Have: y_5 <= 10099.
+  (* Invariant *)
+  Have: y_5 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_4) -> ((396 + x_4) <= y_5)).
+  (* Invariant *)
+  Have: ((x_4 = 0) -> (y_5 = 0)).
+  (* Invariant *)
+  Have: ((x_4 <= 4) -> (x_8 = y_5)).
+  (* Invariant *)
+  Have: x_4 <= 10099.
+  (* Invariant *)
+  Have: x_4 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_5 <= x_8.
+  (* Invariant *)
+  Have: y_5 <= (100 * w).
+  (* Invariant *)
+  Have: x_4 <= x_6.
+  (* Invariant *)
+  Have: x_4 <= y_5.
+  (* Invariant *)
+  Have: x_4 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_5.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_5 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then {
+    Have: (x_4 = x_1) /\ (y_5 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (100 + y_1) = y.
+  }
+  Else {
+    Have: (x_4 = x_5) /\ (y_5 = y_6).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then {
+      Have: (x_5 = x_3) /\ (y_6 = y_7).
+      If 4 <= x_3
+      Then {
+        Have: (x_3 = x_2) /\ (y_7 = y_2).
+        Have: (1 + x_2) = x.
+        Have: (1 + y_2) = y.
+      }
+      Else { Have: (x_3 = x) /\ (y_7 = y). }
+    }
+    Else {
+      Have: (x_5 = x) /\ (y_6 = y_4).
+      If x_6 < y_4
+      Then {
+        Have: y_4 = y_8.
+        If (10 * x) <= w
+        Then { Have: y_8 = y_3. Have: (y + y_3) = 0. }
+        Else { Have: y_8 = y. }
+      }
+      Else { Have: y_4 = y. }
+    }
+  }
+  (* Invariant *)
+  Have: (x_7 % 5) = 0.
+  (* Invariant *)
+  Have: (x_7 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x) -> ((396 + x) <= y)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 0)).
+}
+Prove: (100 * x) = y.
+Prover Alt-Ergo  returns Valid (Qed:181ms) (33ms) (327)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 20):
+Let x_4 = 10 * w.
+Let x_5 = 10 + x_4.
+Let x_6 = 100 * x_3.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_1_0) /\ is_sint32(w) /\
+      is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\
+      is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(y_2) /\ is_sint32(y_3) /\
+      is_sint32(y_4) /\ is_sint32(x_4) /\ is_sint32(x_5).
+  (* Residual *)
+  When: 4 <= x_2.
+  (* Invariant *)
+  Have: ((y_4 = 0) -> (x_3 = 0)).
+  (* Invariant *)
+  Have: y_4 <= 10099.
+  (* Invariant *)
+  Have: y_4 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_3) -> ((396 + x_3) <= y_4)).
+  (* Invariant *)
+  Have: ((x_3 = 0) -> (y_4 = 0)).
+  (* Invariant *)
+  Have: ((x_3 <= 4) -> (x_6 = y_4)).
+  (* Invariant *)
+  Have: x_3 <= 10099.
+  (* Invariant *)
+  Have: x_3 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_4 <= x_6.
+  (* Invariant *)
+  Have: y_4 <= (100 * w).
+  (* Invariant *)
+  Have: x_3 <= x_4.
+  (* Invariant *)
+  Have: x_3 <= y_4.
+  (* Invariant *)
+  Have: x_3 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_4.
+  (* Invariant *)
+  Have: 0 <= x_3.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_4 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  If tmp_0 != 0
+  Then {
+    Have: (x_2 = x_1) /\ (x_3 = x_1) /\ (y_4 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (1 + y_1) = y.
+  }
+  Else {
+    Have: (x_3 = x) /\ (y_4 = y_3).
+    If x_4 < y_3
+    Then {
+      Have: y_3 = y_5.
+      If (10 * x) <= w
+      Then { Have: y_5 = y_2. Have: (y + y_2) = 0. }
+      Else { Have: y_5 = y. }
+    }
+    Else { Have: y_3 = y. }
+  }
+  (* Invariant *)
+  Have: (x_5 % 5) = 0.
+  (* Invariant *)
+  Have: (x_5 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x) -> ((396 + x) <= y)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 0)).
+  (* Invariant *)
+  Have: ((x <= 4) -> ((100 * x) = y)).
+}
+Prove: x <= 10099.
+Prover Alt-Ergo  returns Valid (Qed:158ms) (32ms) (91)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 22):
+Let x_6 = 10 * w.
+Let x_7 = 10 + x_6.
+Let x_8 = 100 * x_4.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\
+      is_sint32(x_6) /\ is_sint32(x_7).
+  (* Invariant *)
+  Have: ((y_5 = 0) -> (x_4 = 0)).
+  (* Invariant *)
+  Have: y_5 <= 10099.
+  (* Invariant *)
+  Have: y_5 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_4) -> ((396 + x_4) <= y_5)).
+  (* Invariant *)
+  Have: ((x_4 = 0) -> (y_5 = 0)).
+  (* Invariant *)
+  Have: ((x_4 <= 4) -> (x_8 = y_5)).
+  (* Invariant *)
+  Have: x_4 <= 10099.
+  (* Invariant *)
+  Have: x_4 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_5 <= x_8.
+  (* Invariant *)
+  Have: y_5 <= (100 * w).
+  (* Invariant *)
+  Have: x_4 <= x_6.
+  (* Invariant *)
+  Have: x_4 <= y_5.
+  (* Invariant *)
+  Have: x_4 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_5.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_5 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then {
+    Have: (x_4 = x_1) /\ (y_5 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (100 + y_1) = y.
+  }
+  Else {
+    Have: (x_4 = x_5) /\ (y_5 = y_6).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then {
+      Have: (x_5 = x_3) /\ (y_6 = y_7).
+      If 4 <= x_3
+      Then {
+        Have: (x_3 = x_2) /\ (y_7 = y_2).
+        Have: (1 + x_2) = x.
+        Have: (1 + y_2) = y.
+      }
+      Else { Have: (x_3 = x) /\ (y_7 = y). }
+    }
+    Else {
+      Have: (x_5 = x) /\ (y_6 = y_4).
+      If x_6 < y_4
+      Then {
+        Have: y_4 = y_8.
+        If (10 * x) <= w
+        Then { Have: y_8 = y_3. Have: (y + y_3) = 0. }
+        Else { Have: y_8 = y. }
+      }
+      Else { Have: y_4 = y. }
+    }
+  }
+  (* Invariant *)
+  Have: (x_7 % 5) = 0.
+  (* Invariant *)
+  Have: (x_7 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x) -> ((396 + x) <= y)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 0)).
+  (* Invariant *)
+  Have: ((x <= 4) -> ((100 * x) = y)).
+  (* Invariant *)
+  Have: x <= 10099.
+}
+Prove: x <= 10098.
+Prover Z3 4.8.12 returns Valid (Qed:191ms) (140ms) (49654)
+Prover Alt-Ergo  returns Valid (Qed:191ms) (39ms) (156)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 23):
+Let x_6 = 10 * w.
+Let x_7 = 10 + x_6.
+Let x_8 = 100 * x_4.
+Let x_9 = 1 + w.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\
+      is_sint32(x_6) /\ is_sint32(x_9) /\ is_sint32(x_7).
+  (* Invariant *)
+  Have: ((y_5 = 0) -> (x_4 = 0)).
+  (* Invariant *)
+  Have: y_5 <= 10099.
+  (* Invariant *)
+  Have: y_5 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_4) -> ((396 + x_4) <= y_5)).
+  (* Invariant *)
+  Have: ((x_4 = 0) -> (y_5 = 0)).
+  (* Invariant *)
+  Have: ((x_4 <= 4) -> (x_8 = y_5)).
+  (* Invariant *)
+  Have: x_4 <= 10099.
+  (* Invariant *)
+  Have: x_4 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_5 <= x_8.
+  (* Invariant *)
+  Have: y_5 <= (100 * w).
+  (* Invariant *)
+  Have: x_4 <= x_6.
+  (* Invariant *)
+  Have: x_4 <= y_5.
+  (* Invariant *)
+  Have: x_4 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_5.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_5 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then {
+    Have: (x_4 = x_1) /\ (y_5 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (100 + y_1) = y.
+  }
+  Else {
+    Have: (x_4 = x_5) /\ (y_5 = y_6).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then {
+      Have: (x_5 = x_3) /\ (y_6 = y_7).
+      If 4 <= x_3
+      Then {
+        Have: (x_3 = x_2) /\ (y_7 = y_2).
+        Have: (1 + x_2) = x.
+        Have: (1 + y_2) = y.
+      }
+      Else { Have: (x_3 = x) /\ (y_7 = y). }
+    }
+    Else {
+      Have: (x_5 = x) /\ (y_6 = y_4).
+      If x_6 < y_4
+      Then {
+        Have: y_4 = y_8.
+        If (10 * x) <= w
+        Then { Have: y_8 = y_3. Have: (y + y_3) = 0. }
+        Else { Have: y_8 = y. }
+      }
+      Else { Have: y_4 = y. }
+    }
+  }
+  (* Invariant *)
+  Have: (x_7 % 5) = 0.
+  (* Invariant *)
+  Have: (x_7 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x) -> ((396 + x) <= y)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 0)).
+  (* Invariant *)
+  Have: ((x <= 4) -> ((100 * x) = y)).
+  (* Invariant *)
+  Have: x <= 10099.
+  (* Invariant *)
+  Have: x <= 10098.
+}
+Prove: (x_7 / 10) = x_9.
+Prover Z3 4.8.12 returns Valid (Qed:137ms) (140ms) (53018)
+Prover Alt-Ergo  returns Valid (Qed:137ms) (43ms) (414)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (0.90ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 26):
+Let x_6 = 10 * w.
+Let x_7 = 10 + x_6.
+Let x_8 = 1 + w.
+Let x_9 = 100 * x_4.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\
+      is_sint32(x_6) /\ is_sint32(x_8) /\ is_sint32(x_7).
+  (* Invariant *)
+  Have: ((y_5 = 0) -> (x_4 = 0)).
+  (* Invariant *)
+  Have: y_5 <= 10099.
+  (* Invariant *)
+  Have: y_5 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_4) -> ((396 + x_4) <= y_5)).
+  (* Invariant *)
+  Have: ((x_4 = 0) -> (y_5 = 0)).
+  (* Invariant *)
+  Have: ((x_4 <= 4) -> (x_9 = y_5)).
+  (* Invariant *)
+  Have: x_4 <= 10099.
+  (* Invariant *)
+  Have: x_4 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_5 <= x_9.
+  (* Invariant *)
+  Have: y_5 <= (100 * w).
+  (* Invariant *)
+  Have: x_4 <= x_6.
+  (* Invariant *)
+  Have: x_4 <= y_5.
+  (* Invariant *)
+  Have: x_4 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_5.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_5 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then {
+    Have: (x_4 = x_1) /\ (y_5 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (100 + y_1) = y.
+  }
+  Else {
+    Have: (x_4 = x_5) /\ (y_5 = y_6).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then {
+      Have: (x_5 = x_3) /\ (y_6 = y_7).
+      If 4 <= x_3
+      Then {
+        Have: (x_3 = x_2) /\ (y_7 = y_2).
+        Have: (1 + x_2) = x.
+        Have: (1 + y_2) = y.
+      }
+      Else { Have: (x_3 = x) /\ (y_7 = y). }
+    }
+    Else {
+      Have: (x_5 = x) /\ (y_6 = y_4).
+      If x_6 < y_4
+      Then {
+        Have: y_4 = y_8.
+        If (10 * x) <= w
+        Then { Have: y_8 = y_3. Have: (y + y_3) = 0. }
+        Else { Have: y_8 = y. }
+      }
+      Else { Have: y_4 = y. }
+    }
+  }
+  (* Invariant *)
+  Have: (x_7 % 5) = 0.
+  (* Invariant *)
+  Have: (x_7 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x) -> ((396 + x) <= y)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 0)).
+  (* Invariant *)
+  Have: ((x <= 4) -> ((100 * x) = y)).
+  (* Invariant *)
+  Have: x <= 10099.
+  (* Invariant *)
+  Have: x <= 10098.
+  (* Invariant *)
+  Have: (x_7 / 10) = x_8.
+}
+Prove: (x_7 % 10) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:139ms) (130ms) (53112)
+Prover Alt-Ergo  returns Valid (Qed:139ms) (45ms) (463)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 27):
+Let x_4 = 10 * w.
+Let x_5 = 10 + x_4.
+Let x_6 = 1 + w.
+Let x_7 = 100 * x.
+Let x_8 = 100 * x_3.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_1_0) /\ is_sint32(w) /\
+      is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\
+      is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(y_2) /\ is_sint32(y_3) /\
+      is_sint32(y_4) /\ is_sint32(x_4) /\ is_sint32(x_6) /\ is_sint32(x_5).
+  (* Invariant *)
+  Have: ((y_4 = 0) -> (x_3 = 0)).
+  (* Invariant *)
+  Have: y_4 <= 10099.
+  (* Invariant *)
+  Have: y_4 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_3) -> ((396 + x_3) <= y_4)).
+  (* Invariant *)
+  Have: ((x_3 = 0) -> (y_4 = 0)).
+  (* Invariant *)
+  Have: ((x_3 <= 4) -> (x_8 = y_4)).
+  (* Invariant *)
+  Have: x_3 <= 10099.
+  (* Invariant *)
+  Have: x_3 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_4 <= x_8.
+  (* Invariant *)
+  Have: y_4 <= (100 * w).
+  (* Invariant *)
+  Have: x_3 <= x_4.
+  (* Invariant *)
+  Have: x_3 <= y_4.
+  (* Invariant *)
+  Have: x_3 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_4.
+  (* Invariant *)
+  Have: 0 <= x_3.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_4 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  If tmp_0 != 0
+  Then {
+    Have: (x_3 = x_2) /\ (y_4 = y_5).
+    If 4 <= x_2
+    Then {
+      Have: (x_2 = x_1) /\ (y_5 = y_1).
+      Have: (1 + x_1) = x.
+      Have: (1 + y_1) = y.
+    }
+    Else { Have: (x_2 = x) /\ (y_5 = y). }
+  }
+  Else {
+    Have: (x_3 = x) /\ (y_4 = y_3).
+    If x_4 < y_3
+    Then {
+      Have: y_3 = y_6.
+      If (10 * x) <= w
+      Then { Have: y_6 = y_2. Have: (y + y_2) = 0. }
+      Else { Have: y_6 = y. }
+    }
+    Else { Have: y_3 = y. }
+  }
+  (* Invariant *)
+  Have: (x_5 % 5) = 0.
+  (* Invariant *)
+  Have: (x_5 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x) -> ((396 + x) <= y)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 0)).
+  (* Invariant *)
+  Have: ((x <= 4) -> (x_7 = y)).
+  (* Invariant *)
+  Have: x <= 10099.
+  (* Invariant *)
+  Have: x <= 10098.
+  (* Invariant *)
+  Have: (x_5 / 10) = x_6.
+  (* Invariant *)
+  Have: (x_5 % 10) = 0.
+}
+Prove: y <= x_7.
+Prover Z3 4.8.12 returns Valid (Qed:114ms) (130ms) (55843)
+Prover Alt-Ergo  returns Valid (Qed:114ms) (29ms) (177)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 28):
+Let x_4 = 100 * x.
+Let x_5 = 10 * w.
+Let x_6 = 10 + x_5.
+Let x_7 = 1 + w.
+Let x_8 = 100 * w.
+Let x_9 = 100 * x_3.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_1_0) /\ is_sint32(w) /\
+      is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\
+      is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(y_2) /\ is_sint32(y_3) /\
+      is_sint32(y_4) /\ is_sint32(x_5) /\ is_sint32(x_7) /\ is_sint32(x_6).
+  (* Invariant *)
+  Have: ((y_4 = 0) -> (x_3 = 0)).
+  (* Invariant *)
+  Have: y_4 <= 10099.
+  (* Invariant *)
+  Have: y_4 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_3) -> ((396 + x_3) <= y_4)).
+  (* Invariant *)
+  Have: ((x_3 = 0) -> (y_4 = 0)).
+  (* Invariant *)
+  Have: ((x_3 <= 4) -> (x_9 = y_4)).
+  (* Invariant *)
+  Have: x_3 <= 10099.
+  (* Invariant *)
+  Have: x_3 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_4 <= x_9.
+  (* Invariant *)
+  Have: y_4 <= x_8.
+  (* Invariant *)
+  Have: x_3 <= x_5.
+  (* Invariant *)
+  Have: x_3 <= y_4.
+  (* Invariant *)
+  Have: x_3 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_4.
+  (* Invariant *)
+  Have: 0 <= x_3.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_4 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  If tmp_0 != 0
+  Then {
+    Have: (x_3 = x_2) /\ (y_4 = y_5).
+    If 4 <= x_2
+    Then {
+      Have: (x_2 = x_1) /\ (y_5 = y_1).
+      Have: (1 + x_1) = x.
+      Have: (1 + y_1) = y.
+    }
+    Else { Have: (x_2 = x) /\ (y_5 = y). }
+  }
+  Else {
+    Have: (x_3 = x) /\ (y_4 = y_3).
+    If x_5 < y_3
+    Then {
+      Have: y_3 = y_6.
+      If (10 * x) <= w
+      Then { Have: y_6 = y_2. Have: (y + y_2) = 0. }
+      Else { Have: y_6 = y. }
+    }
+    Else { Have: y_3 = y. }
+  }
+  (* Invariant *)
+  Have: (x_6 % 5) = 0.
+  (* Invariant *)
+  Have: (x_6 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x) -> ((396 + x) <= y)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 0)).
+  (* Invariant *)
+  Have: ((x <= 4) -> (x_4 = y)).
+  (* Invariant *)
+  Have: x <= 10099.
+  (* Invariant *)
+  Have: x <= 10098.
+  (* Invariant *)
+  Have: (x_6 / 10) = x_7.
+  (* Invariant *)
+  Have: (x_6 % 10) = 0.
+  (* Invariant *)
+  Have: y <= x_4.
+}
+Prove: y <= (100 + x_8).
+Prover Z3 4.8.12 returns Valid (Qed:145ms) (150ms) (54298)
+Prover Alt-Ergo  returns Valid (Qed:145ms) (32ms) (134)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 29):
+Let x_6 = 100 * w.
+Let x_7 = 100 * x.
+Let x_8 = 10 * w.
+Let x_9 = 10 + x_8.
+Let x_10 = 1 + w.
+Let x_11 = 100 * x_4.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\
+      is_sint32(x_8) /\ is_sint32(x_10) /\ is_sint32(x_9).
+  (* Invariant *)
+  Have: ((y_5 = 0) -> (x_4 = 0)).
+  (* Invariant *)
+  Have: y_5 <= 10099.
+  (* Invariant *)
+  Have: y_5 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_4) -> ((396 + x_4) <= y_5)).
+  (* Invariant *)
+  Have: ((x_4 = 0) -> (y_5 = 0)).
+  (* Invariant *)
+  Have: ((x_4 <= 4) -> (x_11 = y_5)).
+  (* Invariant *)
+  Have: x_4 <= 10099.
+  (* Invariant *)
+  Have: x_4 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_5 <= x_11.
+  (* Invariant *)
+  Have: y_5 <= x_6.
+  (* Invariant *)
+  Have: x_4 <= x_8.
+  (* Invariant *)
+  Have: x_4 <= y_5.
+  (* Invariant *)
+  Have: x_4 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_5.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_5 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then {
+    Have: (x_4 = x_1) /\ (y_5 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (100 + y_1) = y.
+  }
+  Else {
+    Have: (x_4 = x_5) /\ (y_5 = y_6).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then {
+      Have: (x_5 = x_3) /\ (y_6 = y_7).
+      If 4 <= x_3
+      Then {
+        Have: (x_3 = x_2) /\ (y_7 = y_2).
+        Have: (1 + x_2) = x.
+        Have: (1 + y_2) = y.
+      }
+      Else { Have: (x_3 = x) /\ (y_7 = y). }
+    }
+    Else {
+      Have: (x_5 = x) /\ (y_6 = y_4).
+      If x_8 < y_4
+      Then {
+        Have: y_4 = y_8.
+        If (10 * x) <= w
+        Then { Have: y_8 = y_3. Have: (y + y_3) = 0. }
+        Else { Have: y_8 = y. }
+      }
+      Else { Have: y_4 = y. }
+    }
+  }
+  (* Invariant *)
+  Have: (x_9 % 5) = 0.
+  (* Invariant *)
+  Have: (x_9 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x) -> ((396 + x) <= y)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 0)).
+  (* Invariant *)
+  Have: ((x <= 4) -> (x_7 = y)).
+  (* Invariant *)
+  Have: x <= 10099.
+  (* Invariant *)
+  Have: x <= 10098.
+  (* Invariant *)
+  Have: (x_9 / 10) = x_10.
+  (* Invariant *)
+  Have: (x_9 % 10) = 0.
+  (* Invariant *)
+  Have: y <= x_7.
+  (* Invariant *)
+  Have: y <= (100 + x_6).
+}
+Prove: x <= x_9.
+Prover Alt-Ergo  returns Valid (Qed:176ms) (42ms) (196)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 30):
+Let x_6 = 10 * w.
+Let x_7 = 10 + x_6.
+Let x_8 = 100 * w.
+Let x_9 = 100 * x.
+Let x_10 = 1 + w.
+Let x_11 = 100 * x_4.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\
+      is_sint32(x_6) /\ is_sint32(x_10) /\ is_sint32(x_7).
+  (* Invariant *)
+  Have: ((y_5 = 0) -> (x_4 = 0)).
+  (* Invariant *)
+  Have: y_5 <= 10099.
+  (* Invariant *)
+  Have: y_5 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_4) -> ((396 + x_4) <= y_5)).
+  (* Invariant *)
+  Have: ((x_4 = 0) -> (y_5 = 0)).
+  (* Invariant *)
+  Have: ((x_4 <= 4) -> (x_11 = y_5)).
+  (* Invariant *)
+  Have: x_4 <= 10099.
+  (* Invariant *)
+  Have: x_4 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_5 <= x_11.
+  (* Invariant *)
+  Have: y_5 <= x_8.
+  (* Invariant *)
+  Have: x_4 <= x_6.
+  (* Invariant *)
+  Have: x_4 <= y_5.
+  (* Invariant *)
+  Have: x_4 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_5.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_5 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then {
+    Have: (x_4 = x_1) /\ (y_5 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (100 + y_1) = y.
+  }
+  Else {
+    Have: (x_4 = x_5) /\ (y_5 = y_6).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then {
+      Have: (x_5 = x_3) /\ (y_6 = y_7).
+      If 4 <= x_3
+      Then {
+        Have: (x_3 = x_2) /\ (y_7 = y_2).
+        Have: (1 + x_2) = x.
+        Have: (1 + y_2) = y.
+      }
+      Else { Have: (x_3 = x) /\ (y_7 = y). }
+    }
+    Else {
+      Have: (x_5 = x) /\ (y_6 = y_4).
+      If x_6 < y_4
+      Then {
+        Have: y_4 = y_8.
+        If (10 * x) <= w
+        Then { Have: y_8 = y_3. Have: (y + y_3) = 0. }
+        Else { Have: y_8 = y. }
+      }
+      Else { Have: y_4 = y. }
+    }
+  }
+  (* Invariant *)
+  Have: (x_7 % 5) = 0.
+  (* Invariant *)
+  Have: (x_7 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x) -> ((396 + x) <= y)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 0)).
+  (* Invariant *)
+  Have: ((x <= 4) -> (x_9 = y)).
+  (* Invariant *)
+  Have: x <= 10099.
+  (* Invariant *)
+  Have: x <= 10098.
+  (* Invariant *)
+  Have: (x_7 / 10) = x_10.
+  (* Invariant *)
+  Have: (x_7 % 10) = 0.
+  (* Invariant *)
+  Have: y <= x_9.
+  (* Invariant *)
+  Have: y <= (100 + x_8).
+  (* Invariant *)
+  Have: x <= x_7.
+}
+Prove: x <= y.
+Prover Alt-Ergo  returns Valid (Qed:199ms) (45ms) (239)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 31):
+Let x_4 = 10 * w.
+Let x_5 = 10 + x_4.
+Let x_6 = 100 * w.
+Let x_7 = 100 * x.
+Let x_8 = 1 + w.
+Let x_9 = 100 * x_3.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_1_0) /\ is_sint32(w) /\
+      is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3) /\
+      is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(y_2) /\ is_sint32(y_3) /\
+      is_sint32(y_4) /\ is_sint32(x_4) /\ is_sint32(x_8) /\ is_sint32(x_5).
+  (* Invariant *)
+  Have: ((y_4 = 0) -> (x_3 = 0)).
+  (* Invariant *)
+  Have: y_4 <= 10099.
+  (* Invariant *)
+  Have: y_4 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_3) -> ((396 + x_3) <= y_4)).
+  (* Invariant *)
+  Have: ((x_3 = 0) -> (y_4 = 0)).
+  (* Invariant *)
+  Have: ((x_3 <= 4) -> (x_9 = y_4)).
+  (* Invariant *)
+  Have: x_3 <= 10099.
+  (* Invariant *)
+  Have: x_3 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_4 <= x_9.
+  (* Invariant *)
+  Have: y_4 <= x_6.
+  (* Invariant *)
+  Have: x_3 <= x_4.
+  (* Invariant *)
+  Have: x_3 <= y_4.
+  (* Invariant *)
+  Have: x_3 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_4.
+  (* Invariant *)
+  Have: 0 <= x_3.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_4 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  If tmp_0 != 0
+  Then {
+    Have: (x_3 = x_2) /\ (y_4 = y_5).
+    If 4 <= x_2
+    Then {
+      Have: (x_2 = x_1) /\ (y_5 = y_1).
+      Have: (1 + x_1) = x.
+      Have: (1 + y_1) = y.
+    }
+    Else { Have: (x_2 = x) /\ (y_5 = y). }
+  }
+  Else {
+    Have: (x_3 = x) /\ (y_4 = y_3).
+    If x_4 < y_3
+    Then {
+      Have: y_3 = y_6.
+      If (10 * x) <= w
+      Then { Have: y_6 = y_2. Have: (y + y_2) = 0. }
+      Else { Have: y_6 = y. }
+    }
+    Else { Have: y_3 = y. }
+  }
+  (* Invariant *)
+  Have: (x_5 % 5) = 0.
+  (* Invariant *)
+  Have: (x_5 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x) -> ((396 + x) <= y)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 0)).
+  (* Invariant *)
+  Have: ((x <= 4) -> (x_7 = y)).
+  (* Invariant *)
+  Have: x <= 10099.
+  (* Invariant *)
+  Have: x <= 10098.
+  (* Invariant *)
+  Have: (x_5 / 10) = x_8.
+  (* Invariant *)
+  Have: (x_5 % 10) = 0.
+  (* Invariant *)
+  Have: y <= x_7.
+  (* Invariant *)
+  Have: y <= (100 + x_6).
+  (* Invariant *)
+  Have: x <= x_5.
+  (* Invariant *)
+  Have: x <= y.
+}
+Prove: x <= x_8.
+Prover Alt-Ergo  returns Valid (Qed:158ms) (32ms) (124)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (22ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 34):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 34):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 35):
+Let x_6 = 1 + w.
+Let x_7 = 10 * w.
+Let x_8 = 10 + x_7.
+Let x_9 = 100 * w.
+Let x_10 = 100 * x.
+Let x_11 = 100 * x_4.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\
+      is_sint32(x_7) /\ is_sint32(x_6) /\ is_sint32(x_8).
+  (* Invariant *)
+  Have: ((y_5 = 0) -> (x_4 = 0)).
+  (* Invariant *)
+  Have: y_5 <= 10099.
+  (* Invariant *)
+  Have: y_5 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_4) -> ((396 + x_4) <= y_5)).
+  (* Invariant *)
+  Have: ((x_4 = 0) -> (y_5 = 0)).
+  (* Invariant *)
+  Have: ((x_4 <= 4) -> (x_11 = y_5)).
+  (* Invariant *)
+  Have: x_4 <= 10099.
+  (* Invariant *)
+  Have: x_4 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_5 <= x_11.
+  (* Invariant *)
+  Have: y_5 <= x_9.
+  (* Invariant *)
+  Have: x_4 <= x_7.
+  (* Invariant *)
+  Have: x_4 <= y_5.
+  (* Invariant *)
+  Have: x_4 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_5.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_5 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then {
+    Have: (x_4 = x_1) /\ (y_5 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (100 + y_1) = y.
+  }
+  Else {
+    Have: (x_4 = x_5) /\ (y_5 = y_6).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then {
+      Have: (x_5 = x_3) /\ (y_6 = y_7).
+      If 4 <= x_3
+      Then {
+        Have: (x_3 = x_2) /\ (y_7 = y_2).
+        Have: (1 + x_2) = x.
+        Have: (1 + y_2) = y.
+      }
+      Else { Have: (x_3 = x) /\ (y_7 = y). }
+    }
+    Else {
+      Have: (x_5 = x) /\ (y_6 = y_4).
+      If x_7 < y_4
+      Then {
+        Have: y_4 = y_8.
+        If (10 * x) <= w
+        Then { Have: y_8 = y_3. Have: (y + y_3) = 0. }
+        Else { Have: y_8 = y. }
+      }
+      Else { Have: y_4 = y. }
+    }
+  }
+  (* Invariant *)
+  Have: (x_8 % 5) = 0.
+  (* Invariant *)
+  Have: (x_8 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x) -> ((396 + x) <= y)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 0)).
+  (* Invariant *)
+  Have: ((x <= 4) -> (x_10 = y)).
+  (* Invariant *)
+  Have: x <= 10099.
+  (* Invariant *)
+  Have: x <= 10098.
+  (* Invariant *)
+  Have: (x_8 / 10) = x_6.
+  (* Invariant *)
+  Have: (x_8 % 10) = 0.
+  (* Invariant *)
+  Have: y <= x_10.
+  (* Invariant *)
+  Have: y <= (100 + x_9).
+  (* Invariant *)
+  Have: x <= x_8.
+  (* Invariant *)
+  Have: x <= y.
+  (* Invariant *)
+  Have: x <= x_6.
+  (* Invariant *)
+  Have: (-1) <= w.
+}
+Prove: 0 <= y.
+Prover Z3 4.8.12 returns Valid (Qed:195ms) (150ms) (49712)
+Prover Alt-Ergo  returns Valid (Qed:195ms) (24ms) (77)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 35):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 36):
+Let x_6 = 1 + w.
+Let x_7 = 10 * w.
+Let x_8 = 10 + x_7.
+Let x_9 = 100 * w.
+Let x_10 = 100 * x.
+Let x_11 = 100 * x_4.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\
+      is_sint32(x_7) /\ is_sint32(x_6) /\ is_sint32(x_8).
+  (* Invariant *)
+  Have: ((y_5 = 0) -> (x_4 = 0)).
+  (* Invariant *)
+  Have: y_5 <= 10099.
+  (* Invariant *)
+  Have: y_5 <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x_4) -> ((396 + x_4) <= y_5)).
+  (* Invariant *)
+  Have: ((x_4 = 0) -> (y_5 = 0)).
+  (* Invariant *)
+  Have: ((x_4 <= 4) -> (x_11 = y_5)).
+  (* Invariant *)
+  Have: x_4 <= 10099.
+  (* Invariant *)
+  Have: x_4 <= 10098.
+  (* Invariant *)
+  Have: (w = 0) \/ (0 < w).
+  (* Invariant *)
+  Have: y_5 <= x_11.
+  (* Invariant *)
+  Have: y_5 <= x_9.
+  (* Invariant *)
+  Have: x_4 <= x_7.
+  (* Invariant *)
+  Have: x_4 <= y_5.
+  (* Invariant *)
+  Have: x_4 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= y_5.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_5 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then {
+    Have: (x_4 = x_1) /\ (y_5 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (100 + y_1) = y.
+  }
+  Else {
+    Have: (x_4 = x_5) /\ (y_5 = y_6).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then {
+      Have: (x_5 = x_3) /\ (y_6 = y_7).
+      If 4 <= x_3
+      Then {
+        Have: (x_3 = x_2) /\ (y_7 = y_2).
+        Have: (1 + x_2) = x.
+        Have: (1 + y_2) = y.
+      }
+      Else { Have: (x_3 = x) /\ (y_7 = y). }
+    }
+    Else {
+      Have: (x_5 = x) /\ (y_6 = y_4).
+      If x_7 < y_4
+      Then {
+        Have: y_4 = y_8.
+        If (10 * x) <= w
+        Then { Have: y_8 = y_3. Have: (y + y_3) = 0. }
+        Else { Have: y_8 = y. }
+      }
+      Else { Have: y_4 = y. }
+    }
+  }
+  (* Invariant *)
+  Have: (x_8 % 5) = 0.
+  (* Invariant *)
+  Have: (x_8 % 2) = 0.
+  (* Invariant *)
+  Have: ((y = 0) -> (x = 0)).
+  (* Invariant *)
+  Have: y <= 10099.
+  (* Invariant *)
+  Have: y <= 10098.
+  (* Invariant *)
+  Have: ((4 <= x) -> ((396 + x) <= y)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y = 0)).
+  (* Invariant *)
+  Have: ((x <= 4) -> (x_10 = y)).
+  (* Invariant *)
+  Have: x <= 10099.
+  (* Invariant *)
+  Have: x <= 10098.
+  (* Invariant *)
+  Have: (x_8 / 10) = x_6.
+  (* Invariant *)
+  Have: (x_8 % 10) = 0.
+  (* Invariant *)
+  Have: y <= x_10.
+  (* Invariant *)
+  Have: y <= (100 + x_9).
+  (* Invariant *)
+  Have: x <= x_8.
+  (* Invariant *)
+  Have: x <= y.
+  (* Invariant *)
+  Have: x <= x_6.
+  (* Invariant *)
+  Have: (-1) <= w.
+  (* Invariant *)
+  Have: 0 <= y.
+}
+Prove: 0 <= x.
+Prover Alt-Ergo  returns Valid (Qed:208ms) (26ms) (66)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 36):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 37):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 37):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 38) (1/4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 38) (2/4):
+Call Result at line 43
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 38) (3/4):
+Call Result at line 44
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c, line 38) (4/4):
+Call Result at line 47
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0003/loop-lit_gcnr2008_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

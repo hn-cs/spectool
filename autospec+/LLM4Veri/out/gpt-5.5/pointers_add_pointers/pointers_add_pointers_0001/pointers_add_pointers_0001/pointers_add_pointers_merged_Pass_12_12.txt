@@ -1,0 +1,94 @@
+[kernel] Parsing out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 12 goals scheduled
+[wp] Proved goals:   12 / 12
+  Qed:            12
+------------------------------------------------------------
+  Function add
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 6) in 'add':
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'add':
+Effect at line 10
+Prove: true.
+Prover Qed returns Valid (0.74ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 3) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 16)
+:
+Prove: true.
+Prover Qed returns Valid (0.79ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 4) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 16)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 5) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 16)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 3) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 19)
+:
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 4) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 19)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 5) in 'add'' in 'main' at call 'add' (file out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c, line 19)
+:
+Prove: true.
+Prover Qed returns Valid (0.88ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/pointers_add_pointers/pointers_add_pointers_0001/pointers_add_pointers_0001/pointers_add_pointers_merged.c:12: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

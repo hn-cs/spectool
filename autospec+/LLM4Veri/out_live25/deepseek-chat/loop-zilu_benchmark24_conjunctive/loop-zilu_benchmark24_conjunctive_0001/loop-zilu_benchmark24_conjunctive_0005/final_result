@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 5, 'Iteration': 5, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=4, microseconds=693942), 'total_solve_time': datetime.timedelta(seconds=41, microseconds=252264), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 170, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant k == n - i/2;', 'loop invariant i == 2*(n - k);', 'loop invariant i <= n + 1;', 'loop invariant i % 2 == 0;', 'loop invariant i % 2 == 0 || i % 2 == 1;', 'loop invariant 0 <= i;', 'loop invariant (i <= n) ==> (2*k >= n - i);', 'loop assigns k;', 'loop assigns i;'], '2': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result < INT_MAX;\n', '*/\n', 'int unknown();\n', '#include <assert.h>\n', '/* 2. FUNC CONTRACT */\nint main() {\n', '  int i = unknown();\n', '  int k = unknown();\n', '  int n = unknown();\n', '  if (!(i==0 && k==n && n>=0)) return 0;\n', '  /* 1. LOOP INVARIANT */\n  while (i<n) {\n', '    k--;\n', '    i+=2;\n', '  }\n', '  //@ assert(2*k>=n-1);\n', '  return 0;\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

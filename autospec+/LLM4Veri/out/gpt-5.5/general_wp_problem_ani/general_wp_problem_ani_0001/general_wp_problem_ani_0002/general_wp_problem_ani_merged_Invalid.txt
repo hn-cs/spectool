@@ -1,0 +1,8 @@
+[kernel] Parsing out/gpt-5.5/general_wp_problem_ani/general_wp_problem_ani_0001/general_wp_problem_ani_0002/general_wp_problem_ani_merged.c (with preprocessing)
+[kernel:annot-error] out/gpt-5.5/general_wp_problem_ani/general_wp_problem_ani_0001/general_wp_problem_ani_0002/general_wp_problem_ani_merged.c:3: Warning: 
+  unbound logic variable INT_MAX. Ignoring logic specification of function fun
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/gpt-5.5/general_wp_problem_ani/general_wp_problem_ani_0001/general_wp_problem_ani_0002/general_wp_problem_ani_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

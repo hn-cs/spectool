@@ -1,0 +1,108 @@
+[kernel] Parsing out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 13 goals scheduled
+[wp] Proved goals:   13 / 13
+  Qed:            12
+  Alt-Ergo :       1 (18ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 14):
+Assume {
+  Type: is_sint32(j) /\ is_sint32(j_1) /\ is_sint32(j - 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j_1) /\ (j_1 <= 2147483646).
+  (* Then *)
+  Have: 0 < j_1.
+  (* Invariant *)
+  Have: j <= j_1.
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: 0 < j.
+}
+Prove: j <= (1 + j_1).
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (110ms) (35226)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (18ms) (24)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.88ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-zilu_benchmark19_conjunctive/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_0001/loop-zilu_benchmark19_conjunctive_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

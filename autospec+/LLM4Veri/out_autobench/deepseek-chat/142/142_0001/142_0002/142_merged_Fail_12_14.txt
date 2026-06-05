@@ -1,0 +1,147 @@
+[kernel] Parsing out/deepseek-chat/142/142_0001/142_0002/142_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/142/142_0001/142_0002/142_merged.c:23: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/deepseek-chat/142/142_0001/142_0002/142_merged.c:39: Warning: 
+  Calling function unknown2 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/deepseek-chat/142/142_0001/142_0002/142_merged.c:44: Warning: 
+  Calling function unknown3 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/142/142_0001/142_0002/142_merged.c:11: Warning: 
+  Neither code nor specification for function unknown1, generating default assigns from the prototype
+[kernel:annot:missing-spec] out/deepseek-chat/142/142_0001/142_0002/142_merged.c:11: Warning: 
+  Neither code nor specification for function unknown2, generating default assigns from the prototype
+[kernel:annot:missing-spec] out/deepseek-chat/142/142_0001/142_0002/142_merged.c:11: Warning: 
+  Neither code nor specification for function unknown3, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/142/142_0001/142_0002/142_merged.c:48: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/142/142_0001/142_0002/142_merged.c:44: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 14 goals scheduled
+[wp] [Timeout] typed_main_loop_assigns_2_part4 (Qed 8ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_assigns_2_part3 (Qed 15ms) (Z3 8s)
+[wp] Proved goals:   12 / 14
+  Qed:            12
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 34):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 34):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 35):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 35):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 36):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 36):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 21) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 21) (2/2):
+Call Result at line 23
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 37) (1/4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 37) (2/4):
+Call Result at line 39
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 37) (3/4):
+Effect at line 40
+Assume {
+  Type: is_sint32(i) /\ is_sint32(tmp_0_0).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: tmp_0_0 != 0.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:15ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:15ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/142/142_0001/142_0002/142_merged.c, line 37) (4/4):
+Effect at line 42
+Assume {
+  Type: is_sint32(i) /\ is_sint32(tmp_0_0).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: tmp_0_0 != 0.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/142/142_0001/142_0002/142_merged.c:3: Warning: 
+  No 'assigns' specification for function 'unknown1'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/142/142_0001/142_0002/142_merged.c:4: Warning: 
+  No 'assigns' specification for function 'unknown2'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/142/142_0001/142_0002/142_merged.c:5: Warning: 
+  No 'assigns' specification for function 'unknown3'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/142/142_0001/142_0002/142_merged.c:11: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

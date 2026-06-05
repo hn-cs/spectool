@@ -1,0 +1,539 @@
+[kernel] Parsing out/gpt-5.5/216/216_0001/216_0005/216_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 28 goals scheduled
+[wp] [Timeout] typed_increment_array_by_loop_invariant_established (Qed 0.63ms) (Z3 8s)
+[wp] [Timeout] typed_increment_array_by_loop_invariant_preserved (Qed 11ms) (Z3 8s)
+[wp] Proved goals:   26 / 28
+  Qed:            19
+  Alt-Ergo :       7 (31ms-37ms-49ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function increment_array_by
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 3):
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(arr_0, 0), n).
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(a[shift_sint32(arr_0, i)]).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_1 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      ((i_1 < i) -> ((i_1 < n) -> (a[a_1] = (c + Mint_0[a_1]))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_1 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      ((i <= i_1) -> ((i_1 < n) -> (a[a_1] = Mint_0[a_1])))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_1 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      ((i_1 < i) -> ((c < 0) \/ (Mint_0[a_1] <= a[a_1])))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_1 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      ((i_1 < i) -> (a[a_1] = (c + Mint_0[a_1])))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_1 = shift_sint32(arr_0, i_1) in ((i <= i_1) ->
+      ((i_1 < n) -> (a[a_1] = Mint_0[a_1]))).
+  (* Invariant *)
+  Have: 0 <= i.
+}
+Prove: (2 + i) <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:11ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:11ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 3):
+Assume { Type: is_sint32(n). }
+Prove: 0 < n.
+Prover Z3 4.8.12 returns Timeout (Qed:0.63ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.63ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 4):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 4):
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 6):
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(arr_0, 0), n).
+Let a_1 = shift_sint32(arr_0, i).
+Let a_2 = a[a_1].
+Let a_3 = shift_sint32(arr_0, i_1).
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(a_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 < n) /\ (i_1 <= i).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_4 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> ((i_2 < n) -> (a[a_4] = (c + Mint_0[a_4]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_4 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i <= i_2) -> ((i_2 < n) -> (a[a_4] = Mint_0[a_4])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_4 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> ((c < 0) \/ (Mint_0[a_4] <= a[a_4])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_4 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> (a[a_4] = (c + Mint_0[a_4])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_4 = shift_sint32(arr_0, i_2) in ((i <= i_2) ->
+      ((i_2 < n) -> (a[a_4] = Mint_0[a_4]))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: (2 + i) <= n.
+}
+Prove: a[a_1 <- c + a_2][a_3] = (c + Mint_0[a_3]).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (160ms) (203808)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (35ms) (200)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 7):
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(arr_0, 0), n).
+Let a_1 = shift_sint32(arr_0, i).
+Let a_2 = a[a_1].
+Let a_3 = a[a_1 <- c + a_2].
+Let a_4 = shift_sint32(arr_0, i_1).
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(a_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 < n) /\ (i < i_1).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> ((i_2 < n) -> (a[a_5] = (c + Mint_0[a_5]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i <= i_2) -> ((i_2 < n) -> (a[a_5] = Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> ((c < 0) \/ (Mint_0[a_5] <= a[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> (a[a_5] = (c + Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i <= i_2) ->
+      ((i_2 < n) -> (a[a_5] = Mint_0[a_5]))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: (2 + i) <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((i_2 < n) -> (a_3[a_5] = (c + Mint_0[a_5]))))).
+}
+Prove: a_3[a_4] = Mint_0[a_4].
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (140ms) (121608)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (34ms) (197)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 8):
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(arr_0, 0), n).
+Let a_1 = shift_sint32(arr_0, i_1).
+Let a_2 = a[a_1].
+Let a_3 = a[a_1 <- c + a_2].
+Let a_4 = shift_sint32(arr_0, i).
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i_1) /\ is_sint32(n) /\
+      is_sint32(1 + i_1) /\ is_sint32(a_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i_1 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i_1) -> ((i_2 < n) -> (a[a_5] = (c + Mint_0[a_5]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_1 <= i_2) -> ((i_2 < n) -> (a[a_5] = Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i_1) -> ((c < 0) \/ (Mint_0[a_5] <= a[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i_1) -> (a[a_5] = (c + Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in
+      ((i_1 <= i_2) -> ((i_2 < n) -> (a[a_5] = Mint_0[a_5]))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Invariant *)
+  Have: (2 + i_1) <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in
+      ((i_2 <= i_1) -> ((0 <= i_2) -> ((i_2 < n) ->
+      (a_3[a_5] = (c + Mint_0[a_5]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i_1 < i_2) ->
+      ((0 <= i_2) -> ((i_2 < n) -> (a_3[a_5] = Mint_0[a_5])))).
+}
+Prove: (c < 0) \/ (Mint_0[a_4] <= a_3[a_4]).
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (140ms) (122731)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (38ms) (213)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 9):
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(arr_0, 0), n).
+Let a_1 = shift_sint32(arr_0, i).
+Let a_2 = a[a_1].
+Let a_3 = a[a_1 <- c + a_2].
+Let a_4 = shift_sint32(arr_0, i_1).
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(a_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> ((i_2 < n) -> (a[a_5] = (c + Mint_0[a_5]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i <= i_2) -> ((i_2 < n) -> (a[a_5] = Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> ((c < 0) \/ (Mint_0[a_5] <= a[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> (a[a_5] = (c + Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i <= i_2) ->
+      ((i_2 < n) -> (a[a_5] = Mint_0[a_5]))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: (2 + i) <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((i_2 < n) -> (a_3[a_5] = (c + Mint_0[a_5]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i < i_2) ->
+      ((0 <= i_2) -> ((i_2 < n) -> (a_3[a_5] = Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((c < 0) \/ (Mint_0[a_5] <= a_3[a_5])))).
+}
+Prove: a_3[a_4] = (c + Mint_0[a_4]).
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (130ms) (96774)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (33ms) (222)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.65ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.82ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 13):
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(arr_0, 0), n).
+Let a_1 = shift_sint32(arr_0, i).
+Let a_2 = a[a_1].
+Let a_3 = a[a_1 <- c + a_2].
+Let a_4 = shift_sint32(arr_0, i_1).
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(a_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (i_1 < n) /\ (i < i_1).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> ((i_2 < n) -> (a[a_5] = (c + Mint_0[a_5]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i <= i_2) -> ((i_2 < n) -> (a[a_5] = Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> ((c < 0) \/ (Mint_0[a_5] <= a[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> (a[a_5] = (c + Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i <= i_2) ->
+      ((i_2 < n) -> (a[a_5] = Mint_0[a_5]))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: (2 + i) <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((i_2 < n) -> (a_3[a_5] = (c + Mint_0[a_5]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i < i_2) ->
+      ((0 <= i_2) -> ((i_2 < n) -> (a_3[a_5] = Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((c < 0) \/ (Mint_0[a_5] <= a_3[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i_2 <= i) ->
+      ((0 <= i_2) -> (a_3[a_5] = (c + Mint_0[a_5])))).
+}
+Prove: a_3[a_4] = Mint_0[a_4].
+Prover Z3 4.8.12 returns Valid (Qed:15ms) (140ms) (98331)
+Prover Alt-Ergo  returns Valid (Qed:15ms) (37ms) (107)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 14):
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(arr_0, 0), n).
+Let a_1 = shift_sint32(arr_0, i).
+Let a_2 = a[a_1].
+Let a_3 = a[a_1 <- c + a_2].
+Let a_4 = shift_sint32(arr_0, i_1).
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(a_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> ((i_2 < n) -> (a[a_5] = (c + Mint_0[a_5]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i <= i_2) -> ((i_2 < n) -> (a[a_5] = Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> ((c < 0) \/ (Mint_0[a_5] <= a[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> (a[a_5] = (c + Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i <= i_2) ->
+      ((i_2 < n) -> (a[a_5] = Mint_0[a_5]))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: (2 + i) <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((i_2 < n) -> (a_3[a_5] = (c + Mint_0[a_5]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i < i_2) ->
+      ((0 <= i_2) -> ((i_2 < n) -> (a_3[a_5] = Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i_2 <= i) ->
+      ((0 <= i_2) -> ((c < 0) \/ (Mint_0[a_5] <= a_3[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i_2 <= i) ->
+      ((0 <= i_2) -> (a_3[a_5] = (c + Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i < i_2) ->
+      ((i_2 < n) -> (a_3[a_5] = Mint_0[a_5]))).
+}
+Prove: a_3[a_4] = (c + Mint_0[a_4]).
+Prover Z3 4.8.12 returns Valid (Qed:13ms) (130ms) (99732)
+Prover Alt-Ergo  returns Valid (Qed:13ms) (31ms) (111)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 16) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/216/216_0001/216_0005/216_merged.c, line 16) (2/2):
+Effect at line 20
+Let a = shift_sint32(arr_0, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let x = i - 1.
+Let a_2 = shift_sint32(arr_0, x).
+Let a_3 = a_1[a_2].
+Let a_4 = a_1[a_2 <- c + a_3].
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(x) /\
+      is_sint32(a_3).
+  (* Heap *)
+  Type: (region(arr_0.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_2, 1).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      ((i_1 < n) -> (((2 + i_1) <= i) -> (a_1[a_5] = (c + Mint_0[a_5]))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      ((i_1 < n) -> ((i <= (1 + i_1)) -> (a_1[a_5] = Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      (((2 + i_1) <= i) -> ((c < 0) \/ (Mint_0[a_5] <= a_1[a_5])))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      (((2 + i_1) <= i) -> (a_1[a_5] = (c + Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((i_1 < n) ->
+      ((i <= (1 + i_1)) -> (a_1[a_5] = Mint_0[a_5]))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      ((i_1 < i) -> ((i_1 < n) -> (a_4[a_5] = (c + Mint_0[a_5]))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      ((i <= i_1) -> ((i_1 < n) -> (a_4[a_5] = Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      ((i_1 < i) -> ((c < 0) \/ (Mint_0[a_5] <= a_4[a_5])))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      ((i_1 < i) -> (a_4[a_5] = (c + Mint_0[a_5])))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((i <= i_1) ->
+      ((i_1 < n) -> (a_4[a_5] = Mint_0[a_5]))).
+}
+Prove: included(a_2, 1, a, n).
+Prover Z3 4.8.12 returns Valid (Qed:18ms) (150ms) (111951)
+Prover Alt-Ergo  returns Valid (Qed:18ms) (49ms) (474)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/216/216_0001/216_0005/216_merged.c:1: Warning: 
+  No 'assigns' specification for function 'increment_array_by'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/216/216_0001/216_0005/216_merged.c:26: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

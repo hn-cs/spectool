@@ -1,0 +1,11 @@
+[kernel] Parsing out/deepseek-chat/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0004/loop-acceleration_diamond_1-1_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0004/loop-acceleration_diamond_1-1_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:annot-error] out/deepseek-chat/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0004/loop-acceleration_diamond_1-1_merged.c:18: Warning: 
+  unbound logic variable x. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/loop-acceleration_diamond_1-1/loop-acceleration_diamond_1-1_0001/loop-acceleration_diamond_1-1_0004/loop-acceleration_diamond_1-1_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

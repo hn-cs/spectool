@@ -1,0 +1,3 @@
+/app/LLM4Veri/out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0004/loops-crafted-1_theatreSquare_merged.c:32:42: error: unterminated comment
+   32 |     loop invariant i == (n + a - 1) / a; /* ceiling of n/a;
+      |                                          ^

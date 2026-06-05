@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 3, 'Iteration': 3, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=54, microseconds=946618), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=727944), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 2554, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1, 1], '1': [], '2': [], '3': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'logic integer ax_b(integer a,integer x,integer b) = a*x+b;\n', '*/\n', '/*@\n', 'assigns \\nothing;\n', 'ensures \\result==ax_b(a,x,4);\n', '*/\n', '/* 1. FUNC CONTRACT */\nint func(int a,int x){\n', 'return a*x+4;\n', '}\n', '/* 2. FUNC CONTRACT */\nvoid check(int a,int x,int y){\n', 'int fmin,fmax;\n', 'if(x>y){\n', 'fmin=func(a,x);\n', 'fmax=func(a,y);\n', '}\n', 'else{\n', 'fmin=func(a,y);\n', 'fmax=func(a,x);\n', '}\n', '//@assert fmin<=fmax;\n', '}\n', '/* 3. FUNC CONTRACT */\nint main(){\n', 'int w=3;\n', 'int r=4;\n', 'int s=7;\n', 'int t=func(w,r);\n', 'check(w,r,s);\n', '}']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

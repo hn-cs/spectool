@@ -1,0 +1,61 @@
+[kernel] Parsing out/deepseek-chat/corinnt_remainder/corinnt_remainder_0001/corinnt_remainder_0004/corinnt_remainder_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 5 goals scheduled
+[wp] Proved goals:    5 / 5
+  Qed:             4
+  Alt-Ergo :       1 (32ms)
+------------------------------------------------------------
+  Function div_rem
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/corinnt_remainder/corinnt_remainder_0001/corinnt_remainder_0004/corinnt_remainder_merged.c, line 4) in 'div_rem':
+Let x_1 = x % y.
+Assume {
+  Type: is_uint32(x) /\ is_uint32(y).
+  (* Heap *)
+  Type: (region(q.base) <= 0) /\ (region(r.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 < y.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, q, 1) /\ valid_rw(Malloc_0, r, 1).
+}
+Prove: x_1 = to_uint32(x_1).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (140ms) (78531)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (32ms) (80)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/corinnt_remainder/corinnt_remainder_0001/corinnt_remainder_0004/corinnt_remainder_merged.c, line 5) in 'div_rem' (1/2):
+Effect at line 8
+Prove: true.
+Prover Qed returns Valid (0.56ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/corinnt_remainder/corinnt_remainder_0001/corinnt_remainder_0004/corinnt_remainder_merged.c, line 5) in 'div_rem' (2/2):
+Effect at line 9
+Prove: true.
+Prover Qed returns Valid (0.82ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/corinnt_remainder/corinnt_remainder_0001/corinnt_remainder_0004/corinnt_remainder_merged.c, line 2) in 'div_rem'' in 'main' at call 'div_rem' (file out/deepseek-chat/corinnt_remainder/corinnt_remainder_0001/corinnt_remainder_0004/corinnt_remainder_merged.c, line 14)
+:
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/corinnt_remainder/corinnt_remainder_0001/corinnt_remainder_0004/corinnt_remainder_merged.c, line 3) in 'div_rem'' in 'main' at call 'div_rem' (file out/deepseek-chat/corinnt_remainder/corinnt_remainder_0001/corinnt_remainder_0004/corinnt_remainder_merged.c, line 14)
+:
+Prove: true.
+Prover Qed returns Valid (0.58ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/corinnt_remainder/corinnt_remainder_0001/corinnt_remainder_0004/corinnt_remainder_merged.c:11: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

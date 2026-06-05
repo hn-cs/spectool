@@ -1,0 +1,124 @@
+[kernel] Parsing out/gpt-5.5/21/21_0001/21_0002/21_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/gpt-5.5/21/21_0001/21_0002/21_merged.c:18: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/21/21_0001/21_0002/21_merged.c:1: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 14 goals scheduled
+[wp] Proved goals:   14 / 14
+  Qed:            13
+  Alt-Ergo :       1 (20ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 11):
+Let x_1 = 1 + x.
+Assume {
+  Type: is_sint32(m) /\ is_sint32(n) /\ is_sint32(x) /\ is_sint32(x_1).
+  (* Invariant *)
+  Have: (x = 1) \/ (x <= n).
+  (* Invariant *)
+  Have: ((2 <= n) -> (m < n)).
+  (* Invariant *)
+  Have: (m = 1) \/ (m < x).
+  (* Invariant *)
+  Have: m <= x.
+  (* Invariant *)
+  Have: 0 < x.
+  (* Invariant *)
+  Have: 0 < m.
+  (* Then *)
+  Have: x < n.
+}
+Prove: m <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (130ms) (36208)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (20ms) (14)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.98ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.99ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 14) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/21/21_0001/21_0002/21_merged.c, line 14) (2/2):
+Call Result at line 18
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/21/21_0001/21_0002/21_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/21/21_0001/21_0002/21_merged.c:18: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

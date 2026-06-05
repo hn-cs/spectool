@@ -1,0 +1,60 @@
+[kernel] Parsing out/deepseek-chat/149/149_0001/149_0001/149_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 5 goals scheduled
+[wp] [Timeout] typed_foo_loop_invariant_2_established (Qed 0.79ms) (Z3 8s)
+[wp] Proved goals:    4 / 5
+  Qed:             3
+  Alt-Ergo :       1 (20ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/149/149_0001/149_0001/149_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/149/149_0001/149_0001/149_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/149/149_0001/149_0001/149_merged.c, line 19):
+Let x = i + y.
+Let x_1 = -j.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(y) /\ is_sint32(y - 1) /\
+      is_sint32(i + y - j) /\ is_sint32(i + y - 1 - j).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: j <= x.
+  (* Then *)
+  Have: x != j.
+}
+Prove: j < x.
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (110ms) (35656)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (20ms) (15)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/149/149_0001/149_0001/149_merged.c, line 19):
+Assume { Type: is_sint32(i). }
+Prove: 0 <= i.
+Prover Z3 4.8.12 returns Timeout (Qed:0.79ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.79ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/149/149_0001/149_0001/149_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/149/149_0001/149_0001/149_merged.c:12: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 4, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=37, microseconds=989223), 'total_solve_time': datetime.timedelta(seconds=62, microseconds=873854), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 1222, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [2, 2, 3, 1], '1': ['loop invariant k <= n;', 'loop invariant j <= k;', 'loop invariant 2 * i <= k;', 'loop invariant 2 * i <= j;', 'loop assigns k;'], '2': ['loop invariant k == n;', 'loop invariant i < n;', 'loop invariant 2 * i <= j;', 'loop invariant 0 <= i;', 'loop assigns k;', 'loop assigns j;'], '3': ['loop invariant n > 0 ==> 0 <= i <= n;', 'loop invariant n <= 0 ==> i == 0;', 'loop invariant k == n;', 'loop assigns k;', 'loop assigns j;', 'loop assigns i;'], '4': [], 'MSLines': ['#include <limits.h>\n', '/*@\n', '    ensures \\result >= INT_MIN && \\result <= INT_MAX;\n', '*/\n', 'int unknown_int();\n', '\n', '/* 4. FUNC CONTRACT */\nint main() {\n', '    int i,j,k,n;\n', '\n', '    k = unknown_int();\n', '    n = unknown_int();\n', '    if( k == n) {\n', '    }\n', '    else {\n', '        goto END;\n', '    }\n', '\n', '    /* 3. LOOP INVARIANT */\n    for (i = 0; i < n; i++) {\n', '        /* 2. LOOP INVARIANT */\n        for (j= 2 * i; j < n; j++) {\n', '            if( unknown_int()) {\n', '                /* 1. LOOP INVARIANT */\n                for (k = j; k < n; k++) {\n', '                    //@ assert(k >= 2*i);\n', '                }\n', '            }\n', '            else {\n', '                //@ assert( k >= n );\n', '                //@ assert( k <= n );\n', '            }\n', '        }\n', '    }\n', 'END:\n', '    return 0;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

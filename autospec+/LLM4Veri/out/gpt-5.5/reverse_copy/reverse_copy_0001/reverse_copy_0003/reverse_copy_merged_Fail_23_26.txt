@@ -1,0 +1,495 @@
+[kernel] Parsing out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 26 goals scheduled
+[wp] [Timeout] typed_reverse_copy_loop_invariant_3_preserved (Qed 5ms) (Z3 8s)
+[wp] [Timeout] typed_reverse_copy_loop_invariant_7_preserved (Qed 11ms) (Z3 8s)
+[wp] [Timeout] typed_reverse_copy_loop_invariant_7_established (Qed 4ms) (Z3 8s)
+[wp] Proved goals:   23 / 26
+  Qed:            15
+  Alt-Ergo :       8 (24ms-57ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function reverse_copy
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 48):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(b, 0), n).
+Let x = -i.
+Let a_2 = a_1[shift_sint32(b, i)
+            <- a_1[shift_sint32(a, to_uint32(to_uint32(n - 1) - i))]].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 < to_uint32(1 + i)).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(Mint_0, Mint_0, a, 0, shift_sint32(b, n)).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, n - 1 - i_2)] = a_1[shift_sint32(b, i_2)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_1, Mint_0, a, i, shift_sint32(b, n - i)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i < n.
+}
+Prove: a_2[shift_sint32(a, n - 1 - i_1)] = a_2[shift_sint32(b, i_1)].
+Prover Alt-Ergo  returns Valid (Qed:12ms) (45ms) (337)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 48):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 49):
+Let x = to_uint32(1 + i).
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(b, 0), n).
+Let x_1 = -i.
+Let a_2 = a_1[shift_sint32(b, i)
+            <- a_1[shift_sint32(a, to_uint32(to_uint32(n - 1) - i))]].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(Mint_0, Mint_0, a, 0, shift_sint32(b, n)).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(a, n - 1 - i_1)] = a_1[shift_sint32(b, i_1)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_1, Mint_0, a, i, shift_sint32(b, n - i)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < x) ->
+      (a_2[shift_sint32(a, n - 1 - i_1)] = a_2[shift_sint32(b, i_1)]))).
+}
+Prove: P_Unchanged_1_(a_2, Mint_0, b, x, n).
+Prover Alt-Ergo  returns Valid (Qed:6ms) (52ms) (377)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 49):
+Assume { Type: is_uint32(n). (* Heap *) Type: region(b.base) <= 0. }
+Prove: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+Prover Alt-Ergo  returns Valid (Qed:3ms) (24ms) (24)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 50):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(b, 0), n).
+Let x = -i.
+Let a_2 = a_1[shift_sint32(b, i)
+            <- a_1[shift_sint32(a, to_uint32(to_uint32(n - 1) - i))]].
+Let x_1 = to_uint32(1 + i).
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(Mint_0, Mint_0, a, 0, shift_sint32(b, n)).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(a, n - 1 - i_1)] = a_1[shift_sint32(b, i_1)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_1, Mint_0, a, i, shift_sint32(b, n - i)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < x_1) ->
+      (a_2[shift_sint32(a, n - 1 - i_1)] = a_2[shift_sint32(b, i_1)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_2, Mint_0, b, x_1, n).
+}
+Prove: P_Reverse_1_(a_2, Mint_0, a, x_1, shift_sint32(b, n - x_1)).
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 50):
+Assume {
+  Type: is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+}
+Prove: P_Reverse_1_(Mint_0, Mint_0, a, 0, shift_sint32(b, n)).
+Prover Alt-Ergo  returns Valid (Qed:2ms) (29ms) (48)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 51):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 51):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 52):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(b, 0), n).
+Let x = -i.
+Let a_2 = a_1[shift_sint32(b, i)
+            <- a_1[shift_sint32(a, to_uint32(to_uint32(n - 1) - i))]].
+Let x_1 = to_uint32(1 + i).
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(Mint_0, Mint_0, a, 0, shift_sint32(b, n)).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(a, n - 1 - i_1)] = a_1[shift_sint32(b, i_1)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_1, Mint_0, a, i, shift_sint32(b, n - i)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < x_1) ->
+      (a_2[shift_sint32(a, n - 1 - i_1)] = a_2[shift_sint32(b, i_1)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_2, Mint_0, b, x_1, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_2, Mint_0, a, x_1, shift_sint32(b, n - x_1)).
+}
+Prove: x_1 <= n.
+Prover Alt-Ergo  returns Valid (Qed:7ms) (37ms) (143)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 52):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 53):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 53):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 54):
+Let x = to_uint32(1 + i).
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(b, 0), n).
+Let x_1 = -i.
+Let a_2 = a_1[shift_sint32(b, i)
+            <- a_1[shift_sint32(a, to_uint32(to_uint32(n - 1) - i))]].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(Mint_0, Mint_0, a, 0, shift_sint32(b, n)).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_1[shift_sint32(a, n - 1 - i_1)] = a_1[shift_sint32(b, i_1)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_1, Mint_0, a, i, shift_sint32(b, n - i)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < x) ->
+      (a_2[shift_sint32(a, n - 1 - i_1)] = a_2[shift_sint32(b, i_1)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_2, Mint_0, b, x, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_2, Mint_0, a, x, shift_sint32(b, n - x)).
+  (* Invariant *)
+  Have: x <= n.
+}
+Prove: x < n.
+Prover Z3 4.8.12 returns Timeout (Qed:11ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:11ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 54):
+Assume {
+  Type: is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(Mint_0, Mint_0, a, 0, shift_sint32(b, n)).
+  (* Invariant *)
+  Have: 0 <= n.
+}
+Prove: 0 < n.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 55):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 55):
+Prove: true.
+Prover Qed returns Valid (0.68ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 56):
+Let x = to_uint32(1 + i).
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(b, 0), n).
+Let x_1 = -i.
+Let a_2 = a_1[shift_sint32(b, i)
+            <- a_1[shift_sint32(a, to_uint32(to_uint32(n - 1) - i))]].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 < x).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(Mint_0, Mint_0, a, 0, shift_sint32(b, n)).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, n - 1 - i_2)] = a_1[shift_sint32(b, i_2)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_1, Mint_0, a, i, shift_sint32(b, n - i)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < x) ->
+      (a_2[shift_sint32(a, n - 1 - i_2)] = a_2[shift_sint32(b, i_2)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_2, Mint_0, b, x, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_2, Mint_0, a, x, shift_sint32(b, n - x)).
+  (* Invariant *)
+  Have: x <= n.
+  (* Invariant *)
+  Have: x < n.
+}
+Prove: a_2[shift_sint32(a, n - 1 - i_1)] = a_2[shift_sint32(b, i_1)].
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (140ms) (100087)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (34ms) (94)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 56):
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 57):
+Let x = to_uint32(1 + i).
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(b, 0), n).
+Let x_1 = -i.
+Let a_2 = a_1[shift_sint32(b, i)
+            <- a_1[shift_sint32(a, to_uint32(to_uint32(n - 1) - i))]].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 < x).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(Mint_0, Mint_0, a, 0, shift_sint32(b, n)).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, n - 1 - i_2)] = a_1[shift_sint32(b, i_2)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_1, Mint_0, a, i, shift_sint32(b, n - i)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < x) ->
+      (a_2[shift_sint32(a, n - 1 - i_2)] = a_2[shift_sint32(b, i_2)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_2, Mint_0, b, x, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_2, Mint_0, a, x, shift_sint32(b, n - x)).
+  (* Invariant *)
+  Have: x <= n.
+  (* Invariant *)
+  Have: x < n.
+}
+Prove: a_2[shift_sint32(a, n - 1 - i_1)] = a_2[shift_sint32(b, i_1)].
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (160ms) (100087)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (39ms) (94)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 57):
+Prove: true.
+Prover Qed returns Valid (0.74ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 58):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 58):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 59):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 59):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 60) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c, line 60) (2/2):
+Effect at line 64
+Let x = to_uint32(1 + i).
+Let a_1 = shift_sint32(b, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Let a_3 = shift_sint32(b, i).
+Let x_1 = -i.
+Let a_4 = a_2[a_3 <- a_2[shift_sint32(a, to_uint32(to_uint32(n - 1) - i))]].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(Mint_0, Mint_0, a, 0, shift_sint32(b, n)).
+  (* Invariant *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_2[shift_sint32(a, n - 1 - i_1)] = a_2[shift_sint32(b, i_1)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_2, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_2, Mint_0, a, i, shift_sint32(b, n - i)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < x) ->
+      (a_4[shift_sint32(a, n - 1 - i_1)] = a_4[shift_sint32(b, i_1)]))).
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_4, Mint_0, b, x, n).
+  (* Invariant *)
+  Have: P_Reverse_1_(a_4, Mint_0, a, x, shift_sint32(b, n - x)).
+  (* Invariant *)
+  Have: x <= n.
+  (* Invariant *)
+  Have: x < n.
+}
+Prove: included(a_3, 1, a_1, n).
+Prover Alt-Ergo  returns Valid (Qed:6ms) (57ms) (229)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c:45: Warning: 
+  No 'assigns' specification for function 'reverse_copy'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,1171 @@
+[kernel] Parsing out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 45 goals scheduled
+[wp] [Timeout] typed_lower_bound_loop_invariant_4_preserved (Qed 20ms) (Z3 8s)
+[wp] [Timeout] typed_lower_bound_loop_invariant_5_preserved (Qed 29ms) (Z3 8s)
+[wp] Proved goals:   43 / 45
+  Qed:            32
+  Alt-Ergo :      11 (23ms-52ms-114ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function lower_bound
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 7):
+Let x = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_1 = Mint_0[shift_sint32(a, right_0)].
+Let x_2 = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(middle_0) /\ is_uint32(n) /\
+      is_uint32(right_0) /\ is_sint32(val_0) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(a, n)]) /\ is_sint32(x_1) /\
+      is_sint32(x) /\ is_sint32(Mint_0[shift_sint32(a, x_2)]).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (n = 0) \/ (middle_0 < n).
+  (* Invariant *)
+  Have: left_0 < n.
+  (* Invariant *)
+  Have: 0 < right_0.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_0 = n) \/ (val_0 <= x_1).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: middle_0 <= right_0.
+  (* Invariant *)
+  Have: middle_0 <= n.
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> (middle_0 <= left_0)).
+  (* Invariant *)
+  Have: (left_0 = 0) \/ (x < val_0).
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: left_0 <= (1 + middle_0).
+  (* Invariant *)
+  Have: 0 <= middle_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+}
+Prove: (n = 0) \/ (x_2 < n).
+Prover Z3 4.8.12 returns Valid (Qed:13ms) (170ms) (236477)
+Prover Alt-Ergo  returns Valid (Qed:13ms) (53ms) (407)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 7):
+Assume { Type: is_uint32(n). }
+Prove: (n = 0) \/ (0 < n).
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (130ms) (34212)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (23ms) (19)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 8):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_2 = Mint_0[shift_sint32(a, right_0)].
+Let x_3 = to_uint32(1 + x).
+Let x_4 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(middle_0) /\ is_uint32(n) /\
+      is_uint32(right_0) /\ is_sint32(val_0) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(a, n)]) /\ is_sint32(x_2) /\
+      is_sint32(x_1) /\ is_sint32(x_4) /\
+      is_sint32(Mint_0[shift_sint32(a, x_3 - 1)]).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_4 < val_0.
+  (* Goal *)
+  When: x_3 < right_0.
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (n = 0) \/ (middle_0 < n).
+  (* Invariant *)
+  Have: left_0 < n.
+  (* Invariant *)
+  Have: 0 < right_0.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_0 = n) \/ (val_0 <= x_2).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: middle_0 <= right_0.
+  (* Invariant *)
+  Have: middle_0 <= n.
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> (middle_0 <= left_0)).
+  (* Invariant *)
+  Have: (left_0 = 0) \/ (x_1 < val_0).
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: left_0 <= (1 + middle_0).
+  (* Invariant *)
+  Have: 0 <= middle_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: (n = 0) \/ (x < n).
+}
+Prove: x_3 < n.
+Prover Z3 4.8.12 returns Valid (Qed:20ms) (130ms) (91830)
+Prover Alt-Ergo  returns Valid (Qed:20ms) (23ms) (44)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 10):
+Let x = to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2)).
+Let x_1 = Mint_0[shift_sint32(a, x)].
+Let x_2 = Mint_0[shift_sint32(a, left_1 - 1)].
+Let x_3 = Mint_0[shift_sint32(a, right_1)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_0) /\ is_uint32(right_1) /\
+      is_sint32(val_0) /\ is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(a, n)]) /\
+      is_sint32(Mint_0[shift_sint32(a, right_0)]) /\ is_sint32(x_3) /\
+      is_sint32(Mint_0[shift_sint32(a, left_0 - 1)]) /\ is_sint32(x_2) /\
+      is_sint32(x_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (i < n) /\ (right_0 <= i).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (n = 0) \/ (middle_0 < n).
+  (* Invariant *)
+  Have: left_1 < n.
+  (* Invariant *)
+  Have: 0 < right_1.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((right_1 <= i_1) ->
+      (val_0 <= Mint_0[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < left_1) ->
+      (Mint_0[shift_sint32(a, i_1)] < val_0))).
+  (* Invariant *)
+  Have: (right_1 = n) \/ (val_0 <= x_3).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: right_1 <= (left_1 + n).
+  (* Invariant *)
+  Have: middle_0 <= right_1.
+  (* Invariant *)
+  Have: middle_0 <= n.
+  (* Invariant *)
+  Have: ((right_1 = left_1) -> (middle_0 <= left_1)).
+  (* Invariant *)
+  Have: (left_1 = 0) \/ (x_2 < val_0).
+  (* Invariant *)
+  Have: left_1 <= right_1.
+  (* Invariant *)
+  Have: left_1 <= (1 + middle_0).
+  (* Invariant *)
+  Have: 0 <= middle_0.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Then *)
+  Have: left_1 < right_1.
+  If x_1 < val_0
+  Then {
+    Have: right_1 = right_0.
+    Have: to_uint32(1
+            + to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2))) = left_0.
+  }
+  Else {
+    Have: left_1 = left_0.
+    Have: to_uint32(left_0 + (to_uint32(right_1 - left_0) / 2)) = right_0.
+  }
+  (* Invariant *)
+  Have: (n = 0) \/ (x < n).
+  (* Invariant *)
+  Have: ((left_0 < right_0) -> (left_0 < n)).
+  (* Invariant *)
+  Have: ((left_0 < right_0) -> (0 < right_0)).
+}
+Prove: val_0 <= Mint_0[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Timeout (Qed:20ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:20ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 11):
+Let x = to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2)).
+Let x_1 = Mint_0[shift_sint32(a, x)].
+Let x_2 = Mint_0[shift_sint32(a, left_1 - 1)].
+Let x_3 = Mint_0[shift_sint32(a, right_1)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_0) /\ is_uint32(right_1) /\
+      is_sint32(val_0) /\ is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(a, n)]) /\
+      is_sint32(Mint_0[shift_sint32(a, right_0)]) /\ is_sint32(x_3) /\
+      is_sint32(Mint_0[shift_sint32(a, left_0 - 1)]) /\ is_sint32(x_2) /\
+      is_sint32(x_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i < left_0).
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (n = 0) \/ (middle_0 < n).
+  (* Invariant *)
+  Have: left_1 < n.
+  (* Invariant *)
+  Have: 0 < right_1.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((right_1 <= i_1) ->
+      (val_0 <= Mint_0[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < left_1) ->
+      (Mint_0[shift_sint32(a, i_1)] < val_0))).
+  (* Invariant *)
+  Have: (right_1 = n) \/ (val_0 <= x_3).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: right_1 <= (left_1 + n).
+  (* Invariant *)
+  Have: middle_0 <= right_1.
+  (* Invariant *)
+  Have: middle_0 <= n.
+  (* Invariant *)
+  Have: ((right_1 = left_1) -> (middle_0 <= left_1)).
+  (* Invariant *)
+  Have: (left_1 = 0) \/ (x_2 < val_0).
+  (* Invariant *)
+  Have: left_1 <= right_1.
+  (* Invariant *)
+  Have: left_1 <= (1 + middle_0).
+  (* Invariant *)
+  Have: 0 <= middle_0.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Then *)
+  Have: left_1 < right_1.
+  If x_1 < val_0
+  Then {
+    Have: right_1 = right_0.
+    Have: to_uint32(1
+            + to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2))) = left_0.
+  }
+  Else {
+    Have: left_1 = left_0.
+    Have: to_uint32(left_0 + (to_uint32(right_1 - left_0) / 2)) = right_0.
+  }
+  (* Invariant *)
+  Have: (n = 0) \/ (x < n).
+  (* Invariant *)
+  Have: ((left_0 < right_0) -> (left_0 < n)).
+  (* Invariant *)
+  Have: ((left_0 < right_0) -> (0 < right_0)).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((right_0 <= i_1) ->
+      (val_0 <= Mint_0[shift_sint32(a, i_1)]))).
+}
+Prove: Mint_0[shift_sint32(a, i)] < val_0.
+Prover Z3 4.8.12 returns Timeout (Qed:29ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:29ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (27ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 13):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_2 = Mint_0[shift_sint32(a, right_0)].
+Let x_3 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(middle_0) /\ is_uint32(n) /\
+      is_uint32(right_0) /\ is_sint32(val_0) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(a, n)]) /\ is_sint32(x_2) /\
+      is_sint32(x_1) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: val_0 <= x_3.
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (n = 0) \/ (middle_0 < n).
+  (* Invariant *)
+  Have: left_0 < n.
+  (* Invariant *)
+  Have: 0 < right_0.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_0 = n) \/ (val_0 <= x_2).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: middle_0 <= right_0.
+  (* Invariant *)
+  Have: middle_0 <= n.
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> (middle_0 <= left_0)).
+  (* Invariant *)
+  Have: (left_0 = 0) \/ (x_1 < val_0).
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: left_0 <= (1 + middle_0).
+  (* Invariant *)
+  Have: 0 <= middle_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: (n = 0) \/ (x < n).
+  (* Invariant *)
+  Have: ((left_0 < x) -> (0 < x)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((x <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+}
+Prove: x <= n.
+Prover Z3 4.8.12 returns Valid (Qed:22ms) (140ms) (94683)
+Prover Alt-Ergo  returns Valid (Qed:22ms) (30ms) (79)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.93ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 14):
+Let x = Mint_0[shift_sint32(a, right_0)].
+Let x_1 = to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2)).
+Let x_2 = Mint_0[shift_sint32(a, x_1)].
+Let x_3 = Mint_0[shift_sint32(a, left_1 - 1)].
+Let x_4 = Mint_0[shift_sint32(a, right_1)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_0) /\ is_uint32(right_1) /\
+      is_sint32(val_0) /\ is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(a, n)]) /\ is_sint32(x) /\
+      is_sint32(x_4) /\ is_sint32(Mint_0[shift_sint32(a, left_0 - 1)]) /\
+      is_sint32(x_3) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (n = 0) \/ (middle_0 < n).
+  (* Invariant *)
+  Have: left_1 < n.
+  (* Invariant *)
+  Have: 0 < right_1.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_1 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_1) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_1 = n) \/ (val_0 <= x_4).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: right_1 <= (left_1 + n).
+  (* Invariant *)
+  Have: middle_0 <= right_1.
+  (* Invariant *)
+  Have: middle_0 <= n.
+  (* Invariant *)
+  Have: ((right_1 = left_1) -> (middle_0 <= left_1)).
+  (* Invariant *)
+  Have: (left_1 = 0) \/ (x_3 < val_0).
+  (* Invariant *)
+  Have: left_1 <= right_1.
+  (* Invariant *)
+  Have: left_1 <= (1 + middle_0).
+  (* Invariant *)
+  Have: 0 <= middle_0.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Then *)
+  Have: left_1 < right_1.
+  If x_2 < val_0
+  Then {
+    Have: right_1 = right_0.
+    Have: to_uint32(1
+            + to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2))) = left_0.
+  }
+  Else {
+    Have: left_1 = left_0.
+    Have: to_uint32(left_0 + (to_uint32(right_1 - left_0) / 2)) = right_0.
+  }
+  (* Invariant *)
+  Have: (n = 0) \/ (x_1 < n).
+  (* Invariant *)
+  Have: ((left_0 < right_0) -> (left_0 < n)).
+  (* Invariant *)
+  Have: ((left_0 < right_0) -> (0 < right_0)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_0 = n) \/ (val_0 <= x).
+  (* Invariant *)
+  Have: right_0 <= n.
+}
+Prove: right_0 <= (left_0 + n).
+Prover Z3 4.8.12 returns Valid (Qed:40ms) (130ms) (97203)
+Prover Alt-Ergo  returns Valid (Qed:40ms) (46ms) (273)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 15):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = to_uint32(1 + x).
+Let x_2 = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_3 = Mint_0[shift_sint32(a, right_0)].
+Let x_4 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(middle_0) /\ is_uint32(n) /\
+      is_uint32(right_0) /\ is_sint32(val_0) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(a, n)]) /\ is_sint32(x_3) /\
+      is_sint32(x_2) /\ is_sint32(x_4) /\
+      is_sint32(Mint_0[shift_sint32(a, x_1 - 1)]).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_4 < val_0.
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (n = 0) \/ (middle_0 < n).
+  (* Invariant *)
+  Have: left_0 < n.
+  (* Invariant *)
+  Have: 0 < right_0.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_0 = n) \/ (val_0 <= x_3).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: middle_0 <= right_0.
+  (* Invariant *)
+  Have: middle_0 <= n.
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> (middle_0 <= left_0)).
+  (* Invariant *)
+  Have: (left_0 = 0) \/ (x_2 < val_0).
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: left_0 <= (1 + middle_0).
+  (* Invariant *)
+  Have: 0 <= middle_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: (n = 0) \/ (x < n).
+  (* Invariant *)
+  Have: ((x_1 < right_0) -> (x_1 < n)).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < x_1) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: right_0 <= (n + x_1).
+}
+Prove: x <= right_0.
+Prover Z3 4.8.12 returns Valid (Qed:23ms) (130ms) (95790)
+Prover Alt-Ergo  returns Valid (Qed:23ms) (39ms) (155)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 17):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = to_uint32(1 + x).
+Let x_2 = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_3 = Mint_0[shift_sint32(a, right_0)].
+Let x_4 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(middle_0) /\ is_uint32(n) /\
+      is_uint32(right_0) /\ is_sint32(val_0) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(a, n)]) /\ is_sint32(x_3) /\
+      is_sint32(x_2) /\ is_sint32(x_4) /\
+      is_sint32(Mint_0[shift_sint32(a, x_1 - 1)]).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_4 < val_0.
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (n = 0) \/ (middle_0 < n).
+  (* Invariant *)
+  Have: left_0 < n.
+  (* Invariant *)
+  Have: 0 < right_0.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_0 = n) \/ (val_0 <= x_3).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: middle_0 <= right_0.
+  (* Invariant *)
+  Have: middle_0 <= n.
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> (middle_0 <= left_0)).
+  (* Invariant *)
+  Have: (left_0 = 0) \/ (x_2 < val_0).
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: left_0 <= (1 + middle_0).
+  (* Invariant *)
+  Have: 0 <= middle_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: (n = 0) \/ (x < n).
+  (* Invariant *)
+  Have: ((x_1 < right_0) -> (x_1 < n)).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < x_1) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: right_0 <= (n + x_1).
+  (* Invariant *)
+  Have: x <= right_0.
+}
+Prove: x <= n.
+Prover Z3 4.8.12 returns Valid (Qed:23ms) (130ms) (93924)
+Prover Alt-Ergo  returns Valid (Qed:23ms) (25ms) (47)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.93ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 19):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = to_uint32(1 + x).
+Let x_2 = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_3 = Mint_0[shift_sint32(a, right_0)].
+Let x_4 = Mint_0[shift_sint32(a, x)].
+Let x_5 = Mint_0[shift_sint32(a, x_1 - 1)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(middle_0) /\ is_uint32(n) /\
+      is_uint32(right_0) /\ is_sint32(val_0) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(a, n)]) /\ is_sint32(x_3) /\
+      is_sint32(x_2) /\ is_sint32(x_4) /\ is_sint32(x_5).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_4 < val_0.
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (n = 0) \/ (middle_0 < n).
+  (* Invariant *)
+  Have: left_0 < n.
+  (* Invariant *)
+  Have: 0 < right_0.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_0 = n) \/ (val_0 <= x_3).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: middle_0 <= right_0.
+  (* Invariant *)
+  Have: middle_0 <= n.
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> (middle_0 <= left_0)).
+  (* Invariant *)
+  Have: (left_0 = 0) \/ (x_2 < val_0).
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: left_0 <= (1 + middle_0).
+  (* Invariant *)
+  Have: 0 <= middle_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: (n = 0) \/ (x < n).
+  (* Invariant *)
+  Have: ((x_1 < right_0) -> (x_1 < n)).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < x_1) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: right_0 <= (n + x_1).
+  (* Invariant *)
+  Have: x <= right_0.
+  (* Invariant *)
+  Have: x <= n.
+  (* Invariant *)
+  Have: ((x_1 = right_0) -> (x <= x_1)).
+}
+Prove: (x_1 = 0) \/ (x_5 < val_0).
+Prover Alt-Ergo  returns Valid (Qed:24ms) (92ms) (802)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 20):
+Let x = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_1 = to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2)).
+Let x_2 = Mint_0[shift_sint32(a, right_0)].
+Let x_3 = Mint_0[shift_sint32(a, x_1)].
+Let x_4 = Mint_0[shift_sint32(a, left_1 - 1)].
+Let x_5 = Mint_0[shift_sint32(a, right_1)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_0) /\ is_uint32(right_1) /\
+      is_sint32(val_0) /\ is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(a, n)]) /\ is_sint32(x_2) /\
+      is_sint32(x_5) /\ is_sint32(x) /\ is_sint32(x_4) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (n = 0) \/ (middle_0 < n).
+  (* Invariant *)
+  Have: left_1 < n.
+  (* Invariant *)
+  Have: 0 < right_1.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_1 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_1) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_1 = n) \/ (val_0 <= x_5).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: right_1 <= (left_1 + n).
+  (* Invariant *)
+  Have: middle_0 <= right_1.
+  (* Invariant *)
+  Have: middle_0 <= n.
+  (* Invariant *)
+  Have: ((right_1 = left_1) -> (middle_0 <= left_1)).
+  (* Invariant *)
+  Have: (left_1 = 0) \/ (x_4 < val_0).
+  (* Invariant *)
+  Have: left_1 <= right_1.
+  (* Invariant *)
+  Have: left_1 <= (1 + middle_0).
+  (* Invariant *)
+  Have: 0 <= middle_0.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Then *)
+  Have: left_1 < right_1.
+  If x_3 < val_0
+  Then {
+    Have: right_1 = right_0.
+    Have: to_uint32(1
+            + to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2))) = left_0.
+  }
+  Else {
+    Have: left_1 = left_0.
+    Have: to_uint32(left_0 + (to_uint32(right_1 - left_0) / 2)) = right_0.
+  }
+  (* Invariant *)
+  Have: (n = 0) \/ (x_1 < n).
+  (* Invariant *)
+  Have: ((left_0 < right_0) -> (left_0 < n)).
+  (* Invariant *)
+  Have: ((left_0 < right_0) -> (0 < right_0)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_0 = n) \/ (val_0 <= x_2).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: x_1 <= right_0.
+  (* Invariant *)
+  Have: x_1 <= n.
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> (x_1 <= left_0)).
+  (* Invariant *)
+  Have: (left_0 = 0) \/ (x < val_0).
+}
+Prove: left_0 <= right_0.
+Prover Z3 4.8.12 returns Valid (Qed:44ms) (240ms) (404480)
+Prover Alt-Ergo  returns Valid (Qed:44ms) (106ms) (1160)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 21):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = to_uint32(1 + x).
+Let x_2 = Mint_0[shift_sint32(a, x_1 - 1)].
+Let x_3 = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_4 = Mint_0[shift_sint32(a, right_0)].
+Let x_5 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(middle_0) /\ is_uint32(n) /\
+      is_uint32(right_0) /\ is_sint32(val_0) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(a, n)]) /\ is_sint32(x_4) /\
+      is_sint32(x_3) /\ is_sint32(x_5) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_5 < val_0.
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (n = 0) \/ (middle_0 < n).
+  (* Invariant *)
+  Have: left_0 < n.
+  (* Invariant *)
+  Have: 0 < right_0.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_0 = n) \/ (val_0 <= x_4).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: middle_0 <= right_0.
+  (* Invariant *)
+  Have: middle_0 <= n.
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> (middle_0 <= left_0)).
+  (* Invariant *)
+  Have: (left_0 = 0) \/ (x_3 < val_0).
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: left_0 <= (1 + middle_0).
+  (* Invariant *)
+  Have: 0 <= middle_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: (n = 0) \/ (x < n).
+  (* Invariant *)
+  Have: ((x_1 < right_0) -> (x_1 < n)).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < x_1) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: right_0 <= (n + x_1).
+  (* Invariant *)
+  Have: x <= right_0.
+  (* Invariant *)
+  Have: x <= n.
+  (* Invariant *)
+  Have: ((x_1 = right_0) -> (x <= x_1)).
+  (* Invariant *)
+  Have: (x_1 = 0) \/ (x_2 < val_0).
+  (* Invariant *)
+  Have: x_1 <= right_0.
+}
+Prove: x_1 <= n.
+Prover Alt-Ergo  returns Valid (Qed:34ms) (26ms) (52)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 23):
+Let x = Mint_0[shift_sint32(a, left_0 - 1)].
+Let x_1 = to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2)).
+Let x_2 = Mint_0[shift_sint32(a, right_1)].
+Let x_3 = Mint_0[shift_sint32(a, x_1)].
+Let x_4 = Mint_0[shift_sint32(a, left_1 - 1)].
+Let x_5 = Mint_0[shift_sint32(a, right_0)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_1) /\ is_uint32(right_0) /\
+      is_sint32(val_0) /\ is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(a, n)]) /\ is_sint32(x_2) /\
+      is_sint32(x_5) /\ is_sint32(x) /\ is_sint32(x_4) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: (n = 0) \/ (0 < n).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (n = 0) \/ (middle_0 < n).
+  (* Invariant *)
+  Have: left_1 < n.
+  (* Invariant *)
+  Have: 0 < right_0.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_1) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_0 = n) \/ (val_0 <= x_5).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: right_0 <= (left_1 + n).
+  (* Invariant *)
+  Have: middle_0 <= right_0.
+  (* Invariant *)
+  Have: middle_0 <= n.
+  (* Invariant *)
+  Have: ((right_0 = left_1) -> (middle_0 <= left_1)).
+  (* Invariant *)
+  Have: (left_1 = 0) \/ (x_4 < val_0).
+  (* Invariant *)
+  Have: left_1 <= right_0.
+  (* Invariant *)
+  Have: left_1 <= (1 + middle_0).
+  (* Invariant *)
+  Have: 0 <= middle_0.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Then *)
+  Have: left_1 < right_0.
+  If x_3 < val_0
+  Then {
+    Have: right_0 = right_1.
+    Have: to_uint32(1
+            + to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2))) = left_0.
+  }
+  Else {
+    Have: left_1 = left_0.
+    Have: to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)) = right_1.
+  }
+  (* Invariant *)
+  Have: (n = 0) \/ (x_1 < n).
+  (* Invariant *)
+  Have: ((left_0 < right_1) -> (left_0 < n)).
+  (* Invariant *)
+  Have: ((left_0 < right_1) -> (0 < right_1)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_1 <= i) ->
+      (val_0 <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] < val_0))).
+  (* Invariant *)
+  Have: (right_1 = n) \/ (val_0 <= x_2).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: right_1 <= (left_0 + n).
+  (* Invariant *)
+  Have: x_1 <= right_1.
+  (* Invariant *)
+  Have: x_1 <= n.
+  (* Invariant *)
+  Have: ((right_1 = left_0) -> (x_1 <= left_0)).
+  (* Invariant *)
+  Have: (left_0 = 0) \/ (x < val_0).
+  (* Invariant *)
+  Have: left_0 <= right_1.
+  (* Invariant *)
+  Have: left_0 <= n.
+}
+Prove: left_0 <= (1 + x_1).
+Prover Z3 4.8.12 returns Valid (Qed:31ms) (210ms) (406953)
+Prover Alt-Ergo  returns Valid (Qed:31ms) (114ms) (1277)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/arepina_lower_bound/arepina_lower_bound_0001/arepina_lower_bound_0004/arepina_lower_bound_merged.c:1: Warning: 
+  No 'assigns' specification for function 'lower_bound'.
+  Callers assumptions might be imprecise.

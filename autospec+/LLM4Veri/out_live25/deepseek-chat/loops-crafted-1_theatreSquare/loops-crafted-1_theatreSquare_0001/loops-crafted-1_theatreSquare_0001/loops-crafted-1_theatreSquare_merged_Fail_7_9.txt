@@ -1,0 +1,127 @@
+[kernel] Parsing out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c:59: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c:29: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c:23: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_correct_version_loop_invariant_2_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_correct_version_loop_invariant_4_preserved (Qed 4ms) (Z3 8s)
+[wp] Proved goals:    7 / 9
+  Qed:             6
+  Alt-Ergo :       1 (20ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function correct_version
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 11):
+Let x = b + n.
+Let x_1 = b - b_1.
+Let x_2 = 1 + i.
+Assume {
+  Type: is_sint32(b) /\ is_sint32(b_1) /\ is_sint32(i) /\ is_sint32(n) /\
+      is_sint32(x_2) /\ is_sint32(x_1).
+  (* Invariant *)
+  Have: b_1 <= x.
+  (* Invariant *)
+  Have: (i * x_1) = b_1.
+  (* Invariant *)
+  Have: (2 * b_1) <= x.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: 0 <= b_1.
+  (* Then *)
+  Have: b_1 < n.
+}
+Prove: (x_2 * x_1) = b.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (90ms) (13130)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (20ms) (27)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.59ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 12):
+Assume { Type: is_sint32(a) /\ is_sint32(n). }
+Prove: 0 <= (a + n).
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.98ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 14):
+Let x = 1 + i.
+Let x_1 = a * x.
+Let x_2 = a + n.
+Assume {
+  Type: is_sint32(a) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_1 - a).
+  (* Invariant *)
+  Have: 0 <= x_2.
+  (* Invariant *)
+  Have: x_1 = (a + (a * i)).
+  (* Invariant *)
+  Have: x_1 <= (n + (2 * a)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: a <= x_1.
+  (* Then *)
+  Have: x_1 < x_2.
+  (* Invariant *)
+  Have: (-1) <= i.
+}
+Prove: 0 <= x_1.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c:7: Warning: 
+  No 'assigns' specification for function 'correct_version'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c:36: Warning: 
+  No 'assigns' specification for function 'student_version'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_merged.c:57: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

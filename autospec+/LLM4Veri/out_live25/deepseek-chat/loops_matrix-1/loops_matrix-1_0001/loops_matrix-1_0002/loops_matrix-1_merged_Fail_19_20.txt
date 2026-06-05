@@ -1,0 +1,147 @@
+[kernel] Parsing out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c:14: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 20 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_3_established (Qed 5ms) (Z3 8s)
+[wp] Proved goals:   19 / 20
+  Qed:            19
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.93ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 18):
+Assume {
+  Type: is_sint32(maior_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= maior_0) /\ (maior_0 <= 2147483646).
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 19) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 19) (2/3):
+Effect at line 24
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 19) (3/3):
+Effect at line 34
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 30) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 30) (2/3):
+Effect at line 34
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 30) (3/3):
+Call Result at line 36
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

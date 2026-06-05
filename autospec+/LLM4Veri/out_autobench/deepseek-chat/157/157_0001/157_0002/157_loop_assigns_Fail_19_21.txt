@@ -1,0 +1,205 @@
+[kernel] Parsing out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c:14: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 21 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 7ms) (Z3 3s)
+[wp] [Timeout] typed_main_loop_invariant_7_established (Qed 2ms) (Z3 3s)
+[wp] Proved goals:   19 / 21
+  Qed:            17
+  Alt-Ergo :       2 (19ms-22ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 20):
+Let x = 1 + k.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(n) /\ is_sint32(x).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n != k.
+  (* Invariant *)
+  Have: k <= n.
+  (* Invariant *)
+  Have: i <= k.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: k < n.
+}
+Prove: x != n.
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (3s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (3s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 20):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 21):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 21):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 22):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 22):
+Prove: true.
+Prover Qed returns Valid (0.95ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 23):
+Let x = 1 + k.
+Assume {
+  Type: is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\ is_sint32(x).
+  (* Then *)
+  Have: j < n.
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: n != k.
+  (* Invariant *)
+  Have: k <= n.
+  (* Invariant *)
+  Have: j <= k.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: k < n.
+  (* Invariant *)
+  Have: x != n.
+}
+Prove: j <= x.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (110ms) (35792)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (19ms) (15)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 23):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 24):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 24):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 25):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 25):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 26):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 26):
+Assume { Type: is_sint32(k) /\ is_sint32(n). (* Then *) Have: k < n. }
+Prove: 0 <= k.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (3s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (3s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 27):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 27):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 28):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 28):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 16) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 16) (2/2):
+Effect at line 18
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(n).
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: n != k.
+  (* Invariant *)
+  Have: k <= n.
+  (* Invariant *)
+  Have: i <= k.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Else *)
+  Have: n <= k.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (120ms) (35335)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (22ms) (14)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c, line 29):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/157/157_0001/157_0002/157_loop_assigns.c:11: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

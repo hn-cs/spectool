@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=10, microseconds=284131), 'total_solve_time': datetime.timedelta(seconds=20, microseconds=137465), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 143, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1, 1], '1': ['loop invariant \\forall integer k; i <= k < n ==> arr[k] == \\at(arr[k], Pre);', 'loop invariant \\forall integer k; 0 <= k < i ==> arr[k] == \\at(arr[k], Pre) + c;', 'loop invariant 0 <= i;', 'loop assigns i;', 'loop assigns arr[0..n-1];'], '2': ['requires n >= 0;', 'requires \\valid(arr + (0..n-1));', 'ensures \\forall integer k; 0 <= k < n ==> arr[k] == \\old(arr[k]) + c;', 'assigns arr[0..n-1];'], '3': [], 'MSLines': ['/* 2. FUNC CONTRACT */\nvoid increment_array_by(int* arr, int n, int c) {\n', '    /* 1. LOOP INVARIANT */\n    for (int  i = 0; i < n; i++) {\n', '        arr[i] = arr[i] + c;\n', '    }\n', '}\n', '/* 3. FUNC CONTRACT */\nvoid main() {\n', '    int arr[5] = {1, 2, 3, 4, 5};\n', '    increment_array_by(arr, 5, 2);\n', '    //@ assert arr[0] == 3;\n', '    //@ assert arr[1] == 4;\n', '    //@ assert arr[2] == 5;\n', '    //@ assert arr[3] == 6;\n', '    //@ assert arr[4] == 7;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

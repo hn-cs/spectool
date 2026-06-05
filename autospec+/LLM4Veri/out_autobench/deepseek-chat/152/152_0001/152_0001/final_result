@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=1, microseconds=454136), 'total_solve_time': datetime.timedelta(seconds=10, microseconds=564158), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 72, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant y == (x <= m ? m : x);', 'loop invariant y <= n;', 'loop invariant x <= n;', 'loop invariant m <= y;', 'loop invariant 0 <= x;', 'loop invariant (x > m) ==> (y == x);', 'loop invariant (x <= m) ==> (y == m);', 'loop assigns y;', 'loop assigns x;'], '2': [], 'MSLines': ['#include <assert.h>\n', 'int unknown1();\n', 'int unknown2();\n', 'int unknown3();\n', 'int unknown4();\n', '\n', '/*\n', ' * From "Simplifying Loop Invariant Generation using Splitter Predicates", Sharma et al. CAV\'11\n', ' */\n', '\n', '/*@\n', 'requires n >= 0;\n', 'requires m >= 0;\n', 'requires m < n;\n', '*/\n', '/* 2. FUNC CONTRACT */\nvoid foo(int n, int m)\n', '{\n', '  int x = 0; \n', '  int y = m;\n', '  /* 1. LOOP INVARIANT */\n  while(x < n) {\n', '    x++;\n', '    if(x > m) y++;\n', '  }\n', '  //@ assert(y==n);\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

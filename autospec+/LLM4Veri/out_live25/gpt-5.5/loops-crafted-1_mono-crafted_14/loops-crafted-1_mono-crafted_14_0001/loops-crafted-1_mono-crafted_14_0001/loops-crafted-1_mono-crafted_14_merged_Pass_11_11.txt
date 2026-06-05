@@ -1,0 +1,112 @@
+[kernel] Parsing out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c:21: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 11 goals scheduled
+[wp] Proved goals:   11 / 11
+  Qed:             9
+  Alt-Ergo :       2 (19ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c, line 7):
+Let x_1 = 1 + x.
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(x_1).
+  (* Residual *)
+  When: x <= 499999.
+  (* Invariant *)
+  Have: ((x <= 500000) -> (y = 500000)).
+  (* Invariant *)
+  Have: x <= 1000000.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: x <= 999999.
+  (* Invariant *)
+  Have: ((499999 <= x) -> (x_1 = y)).
+}
+Prove: y = 500000.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (110ms) (35420)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (19ms) (14)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c, line 9):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(1 + x).
+  (* Residual *)
+  When: x <= 499999.
+  (* Invariant *)
+  Have: x <= 1000000.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: x <= 999999.
+  (* Invariant *)
+  Have: ((499999 <= x) -> (x = 499999)).
+}
+Prove: (-1) <= x.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (130ms) (34997)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (18ms) (18)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.57ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops-crafted-1_mono-crafted_14/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_0001/loops-crafted-1_mono-crafted_14_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

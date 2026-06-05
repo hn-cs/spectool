@@ -1,0 +1,4 @@
+# spectool 运行时依赖：无。
+# 仅使用 Python 标准库（argparse / json / subprocess / re / pathlib 等）。
+# Frama-C / veri-clang / Alt-Ergo / Z3 由 docker 镜像（junjiehu1905/acslagent:latest）提供，
+# 不通过 pip 安装。

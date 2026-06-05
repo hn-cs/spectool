@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=1, microseconds=41400), 'total_solve_time': datetime.timedelta(seconds=18, microseconds=665217), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 38, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant \\exists integer k; 0 <= k ==> x == 1 << k;', 'loop invariant 1 <= x;', 'loop assigns x;'], '2': [], 'MSLines': ['/* 2. FUNC CONTRACT */\nvoid foo(int y) {\n', '  int x = 1;\n', '  \n', '  /* 1. LOOP INVARIANT */\n  while (x < y) {\n', '    x = x + x;\n', '  }\n', '  // post-condition\n', '  //@ assert(x >= 1);\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

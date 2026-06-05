@@ -1,0 +1,9 @@
+[kernel] Parsing out/deepseek-chat/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c:57: Warning: 
+  no such predicate or logic function Reverse(value_type const *, size_type,
+                                              value_type *, ℤ). Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/reverse_copy/reverse_copy_0001/reverse_copy_0003/reverse_copy_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

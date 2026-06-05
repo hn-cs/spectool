@@ -1,0 +1,8 @@
+[kernel] Parsing out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0003/loop-invariants_const_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0003/loop-invariants_const_merged.c:11: Warning: 
+  unbound logic variable s. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0003/loop-invariants_const_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

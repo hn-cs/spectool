@@ -1,0 +1,63 @@
+[kernel] Parsing out/deepseek-chat/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 5 goals scheduled
+[wp] Proved goals:    5 / 5
+  Qed:             4
+  Z3 4.8.12:       1 (140ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 14):
+Let x = 1 + i.
+Let x_1 = (i * (i - 1)) / 2.
+Let x_2 = i + x_1.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(x_2).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 < n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= n.
+}
+Prove: ((i * x) / 2) = x_2.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (140ms) (48292)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.72ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

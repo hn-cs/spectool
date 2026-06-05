@@ -1,0 +1,98 @@
+[kernel] Parsing out/deepseek-chat/code2_125/code2_125_0001/code2_125_0001/code2_125_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_foo_loop_invariant_3_established (Qed 1ms) (Z3 8s)
+[wp] Proved goals:    8 / 9
+  Qed:             6
+  Alt-Ergo :       2 (34ms-36ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_125/code2_125_0001/code2_125_0001/code2_125_merged.c, line 5):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(x).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: x <= i.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: x != 0.
+}
+Prove: x <= (1 + i).
+Prover Z3 4.8.12 returns Valid (Qed:13ms) (130ms) (34769)
+Prover Alt-Ergo  returns Valid (Qed:13ms) (34ms) (20)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_125/code2_125_0001/code2_125_0001/code2_125_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_125/code2_125_0001/code2_125_0001/code2_125_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_125/code2_125_0001/code2_125_0001/code2_125_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_125/code2_125_0001/code2_125_0001/code2_125_merged.c, line 7):
+Assume {
+  Type: is_sint32(j) /\ is_sint32(x) /\ is_sint32(y) /\ is_sint32(x - 1) /\
+      is_sint32(y - 1) /\ is_sint32(j + x - y).
+  (* Invariant *)
+  Have: y <= (j + x).
+  (* Invariant *)
+  Have: y <= j.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: x != 0.
+  (* Invariant *)
+  Have: y <= (1 + j).
+}
+Prove: 0 < x.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (150ms) (35926)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (36ms) (28)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_125/code2_125_0001/code2_125_0001/code2_125_merged.c, line 7):
+Assume { Type: is_sint32(x). }
+Prove: 0 <= x.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/code2_125/code2_125_0001/code2_125_0001/code2_125_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/code2_125/code2_125_0001/code2_125_0001/code2_125_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/code2_125/code2_125_0001/code2_125_0001/code2_125_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/code2_125/code2_125_0001/code2_125_0001/code2_125_merged.c:1: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

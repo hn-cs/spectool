@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=1, microseconds=90780), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=2114), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 49, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': ['requires val > INT_MIN; // ensures overflow safety;', 'ensures val >= 0 ==> \\result == val;', 'ensures val < 0 ==> \\result == -val;', 'ensures \\result >= 0;', 'assigns \\nothing;'], '2': [], 'MSLines': ['#include <limits.h>\n', '/* 1. FUNC CONTRACT */\nint abs(int val){\n', '    if (val < 0) {\n', '        /*@ assert rte: signed_overflow: -2147483647 <= val; */\n', '        return -val;\n', '    } \n', '    return val;\n', '}\n', '/*@\n', '    requires d_input_not_min: INT_MIN < a; \n', '    assigns \\nothing; \n', '*/\n', '/* 2. FUNC CONTRACT */\nvoid foo(int a){\n', ' int b = abs(42);\n', ' int c = abs(-42);\n', ' //@ assert c == 42;\n', ' int d = abs(a);\n', ' int e = abs(INT_MIN + 1);\n', ' //@ assert e == INT_MAX;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

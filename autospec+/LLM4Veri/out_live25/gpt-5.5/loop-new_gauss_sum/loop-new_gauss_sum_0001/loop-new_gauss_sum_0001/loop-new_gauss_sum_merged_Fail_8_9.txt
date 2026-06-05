@@ -1,0 +1,119 @@
+[kernel] Parsing out/gpt-5.5/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 7ms) (Z3 8s)
+[wp] Proved goals:    8 / 9
+  Qed:             7
+  Alt-Ergo :       1 (21ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 14):
+Let x = 1 + n.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(sum_0) /\ is_sint32(1 + i).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 < n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Invariant *)
+  Have: x != i.
+  (* Invariant *)
+  Have: i <= x.
+  (* Invariant *)
+  Have: (i * (i - 1)) = (2 * sum_0).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= n.
+}
+Prove: n != i.
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 16):
+Let x = 2 * sum_0.
+Let x_1 = 1 + n.
+Let x_2 = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(sum_0) /\ is_sint32(x_2) /\
+      is_sint32(i + sum_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 < n.
+  (* Then *)
+  Have: n <= 1000.
+  (* Invariant *)
+  Have: x_1 != i.
+  (* Invariant *)
+  Have: i <= x_1.
+  (* Invariant *)
+  Have: (i * (i - 1)) = x.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: n != i.
+}
+Prove: (i * x_2) = ((2 * i) + x).
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (90ms) (13242)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (21ms) (21)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.75ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-new_gauss_sum/loop-new_gauss_sum_0001/loop-new_gauss_sum_0001/loop-new_gauss_sum_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

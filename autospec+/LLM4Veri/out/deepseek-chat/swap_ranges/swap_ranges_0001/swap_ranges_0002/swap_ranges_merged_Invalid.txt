@@ -1,0 +1,18 @@
+[kernel] Parsing out/deepseek-chat/swap_ranges/swap_ranges_0001/swap_ranges_0002/swap_ranges_merged.c (with preprocessing)
+[kernel] out/deepseek-chat/swap_ranges/swap_ranges_0001/swap_ranges_0002/swap_ranges_merged.c:45: 
+  syntax error:
+  Location: between lines 45 and 51
+  43    */
+  44    void swap(int* a, int* b);
+  
+  45    void
+  46    /*@
+  47    requires \valid(b+(0..n-1));
+  48    requires \valid(a+(0..n-1));
+  49    ensures Equal{Old,Here}(b, 0, n, a, 0);
+  50    ensures Equal{Old,Here}(a, 0, n, b, 0);
+  51    assigns a[0..n-1], b[0..n-1];
+  
+  52    */
+  53    swap_ranges(value_type* a, size_type n, value_type* b)
+[kernel] Frama-C aborted: invalid user input.

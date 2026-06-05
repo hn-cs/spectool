@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 2, 'Iteration': 2, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=1, microseconds=947883), 'total_solve_time': datetime.timedelta(seconds=9, microseconds=938812), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 55, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': ['ensures a != 0 ==> \\result == 1;', 'assigns \\nothing;'], '2': [], 'MSLines': ['/* 1. FUNC CONTRACT */\nint func(int a) {\n', '    int x, y;\n', '    int sum, res;\n', '    if (a == 0){\n', '        x = 0; y = 0;\n', '    }\n', '    else {\n', '        x = 5; y = 5;\n', '    }\n', '    sum = x + y; \n', '    res = 10/sum; \n', '    return res;\n', '}\n', '/* 2. FUNC CONTRACT */\nint main(){\n', '    int a = 1;\n', '    int result = func(a);\n', '    //@ assert result == 1;\n', '    return 0;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

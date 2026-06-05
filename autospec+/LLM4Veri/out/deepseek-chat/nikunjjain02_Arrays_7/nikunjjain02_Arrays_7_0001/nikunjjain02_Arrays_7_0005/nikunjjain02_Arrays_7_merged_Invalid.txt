@@ -1,0 +1,18 @@
+[kernel] Parsing out/deepseek-chat/nikunjjain02_Arrays_7/nikunjjain02_Arrays_7_0001/nikunjjain02_Arrays_7_0005/nikunjjain02_Arrays_7_merged.c (with preprocessing)
+[kernel] out/deepseek-chat/nikunjjain02_Arrays_7/nikunjjain02_Arrays_7_0001/nikunjjain02_Arrays_7_0005/nikunjjain02_Arrays_7_merged.c:15: 
+  syntax error:
+  Location: between lines 15 and 24
+  13    		loop assigns i,max;
+  14    		loop variant n-i;
+  
+  15    	*/
+  16    	/*@
+  17    	loop invariant \exists integer k; 0 <= k < i && max == a[k];
+  18-21 [... omitted ...]
+  22    	loop assigns max;
+  23    	loop assigns i;
+  24    	*/
+  
+  25    	while(i<n) {
+  26    		if(a[i]>max)
+[kernel] Frama-C aborted: invalid user input.

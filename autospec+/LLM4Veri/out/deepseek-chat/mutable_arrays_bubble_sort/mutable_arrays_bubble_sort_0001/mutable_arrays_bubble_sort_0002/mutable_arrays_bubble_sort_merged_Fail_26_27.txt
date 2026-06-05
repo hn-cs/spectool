@@ -1,0 +1,607 @@
+[kernel] Parsing out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 27 goals scheduled
+[wp] [Timeout] typed_bubbleSort_loop_invariant_7_established (Qed 7ms) (Z3 8s)
+[wp] Proved goals:   26 / 27
+  Qed:            18
+  Alt-Ergo :       8 (42ms-63ms-107ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function bubbleSort
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 9):
+Let x = 2 + i.
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_0, a_1, n).
+Let x_1 = 1 + i.
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, x_1).
+Let a_4 = shift_sint32(a, x_1).
+Let x_2 = 1 + i_1.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(i - 1) /\
+      is_sint32(n - 1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (i <= x_2) /\ ((2 + i_1) <= n).
+  (* Else *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i <= i_2) -> (((2 + i_2) <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) -> ((x <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[a_4])))).
+  (* Then *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: j <= i.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i) -> ((j <= i_2) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= j) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, j)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) -> ((x <= n) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[a_4])))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Else *)
+  Have: i <= j.
+}
+Prove: a_3[shift_sint32(a, i_1)] <= a_3[shift_sint32(a, x_2)].
+Prover Alt-Ergo  returns Valid (Qed:22ms) (107ms) (869)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.57ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 10):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_0, a_1, n).
+Let x = 1 + i.
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, x).
+Let x_1 = 2 + i.
+Let a_4 = shift_sint32(a, x).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(i - 1) /\
+      is_sint32(n - 1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 < i) /\ (i < n).
+  (* Else *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i <= i_2) -> (((2 + i_2) <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) -> ((x_1 <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[a_4])))).
+  (* Then *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: j <= i.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i) -> ((j <= i_2) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= j) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, j)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) -> ((x_1 <= n) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[a_4])))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Else *)
+  Have: i <= j.
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_2 = 1 + i_2 in ((i <= x_2) ->
+      (((2 + i_2) <= n) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, x_2)]))).
+}
+Prove: a_3[shift_sint32(a, i_1)] <= a_3[shift_sint32(a, i)].
+Prover Alt-Ergo  returns Valid (Qed:21ms) (43ms) (124)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 21):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_1, a_1, n).
+Let x = 1 + i_1.
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, x).
+Let x_1 = 1 + j.
+Let a_4 = a_3[shift_sint32(a, x_1)].
+Let a_5 = a_3[shift_sint32(a, j)].
+Let x_2 = 2 + i_1.
+Let a_6 = shift_sint32(a, x).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(n - 1) /\
+      is_sint32(x_1) /\ is_sint32(a_5) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (i < i_1) /\ (j < i).
+  (* Else *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i_1 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 <= i_2) -> (((2 + i_2) <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i_1) -> ((0 <= i_2) -> ((x_2 <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[a_6])))).
+  (* Then *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: j <= i_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((j <= i_2) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= j) ->
+      (a_3[shift_sint32(a, i_2)] <= a_5))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i_1) -> ((0 <= i_2) -> ((x_2 <= n) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[a_6])))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j < i_1.
+  If a_4 < a_5
+  Then {
+    Have: a_3[shift_sint32(a, j) <- a_4][shift_sint32(a, x_1) <- a_5] =
+        Mint_0.
+  }
+  Else { Have: a_3 = Mint_0. }
+}
+Prove: Mint_0[shift_sint32(a, i)] <= Mint_0[shift_sint32(a, 1 + i)].
+Prover Alt-Ergo  returns Valid (Qed:65ms) (46ms) (206)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 21):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), n).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(n - 1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i < i_1).
+  (* Else *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i_1 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 <= i_2) -> (((2 + i_2) <= n) ->
+      (a_1[shift_sint32(a, i_2)] <= a_1[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i_1) -> ((0 <= i_2) -> (((2 + i_1) <= n) ->
+      (a_1[shift_sint32(a, i_2)] <= a_1[shift_sint32(a, 1 + i_1)])))).
+  (* Then *)
+  Have: 0 < i_1.
+}
+Prove: a_1[shift_sint32(a, i)] <= a_1[shift_sint32(a, 1 + i)].
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 22):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_1, a_1, n).
+Let x = 1 + i_1.
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, x).
+Let x_1 = 1 + j.
+Let a_4 = shift_sint32(a, x_1).
+Let a_5 = a_3[a_4].
+Let a_6 = a_3[shift_sint32(a, j)].
+Let x_2 = 2 + i_1.
+Let a_7 = shift_sint32(a, x).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(n - 1) /\
+      is_sint32(x_1) /\ is_sint32(a_6) /\ is_sint32(a_5).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= x_1).
+  (* Else *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i_1 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 <= i_2) -> (((2 + i_2) <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i_1) -> ((0 <= i_2) -> ((x_2 <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[a_7])))).
+  (* Then *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: j <= i_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((j <= i_2) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= j) ->
+      (a_3[shift_sint32(a, i_2)] <= a_6))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i_1) -> ((0 <= i_2) -> ((x_2 <= n) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[a_7])))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j < i_1.
+  If a_5 < a_6
+  Then { Have: a_3[shift_sint32(a, j) <- a_5][a_4 <- a_6] = Mint_0. }
+  Else { Have: a_3 = Mint_0. }
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((j < i_2) ->
+      (Mint_0[shift_sint32(a, i_2)] <= Mint_0[shift_sint32(a, 1 + i_2)]))).
+}
+Prove: Mint_0[shift_sint32(a, i)] <= Mint_0[a_4].
+Prover Alt-Ergo  returns Valid (Qed:77ms) (68ms) (353)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 23):
+Let x = 1 + j.
+Let a_1 = shift_sint32(a, x).
+Let a_2 = shift_sint32(a, 0).
+Let a_3 = havoc(Mint_undef_1, Mint_1, a_2, n).
+Let x_1 = 1 + i_1.
+Let a_4 = havoc(Mint_undef_0, a_3, a_2, x_1).
+Let a_5 = a_4[a_1].
+Let a_6 = a_4[shift_sint32(a, j)].
+Let a_7 = shift_sint32(a, x_1).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(n - 1) /\
+      is_sint32(x) /\ is_sint32(a_6) /\ is_sint32(a_5).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (i <= i_1) /\ (0 <= i) /\ ((2 + i_1) <= n).
+  (* Else *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i_1 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 <= i_2) -> (((2 + i_2) <= n) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i_1) -> ((0 <= i_2) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[a_7]))).
+  (* Then *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: j <= i_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((j <= i_2) ->
+      (a_4[shift_sint32(a, i_2)] <= a_4[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= j) ->
+      (a_4[shift_sint32(a, i_2)] <= a_6))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i_1) -> ((0 <= i_2) ->
+      (a_4[shift_sint32(a, i_2)] <= a_4[a_7]))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j < i_1.
+  If a_5 < a_6
+  Then { Have: a_4[shift_sint32(a, j) <- a_5][a_1 <- a_6] = Mint_0. }
+  Else { Have: a_4 = Mint_0. }
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((j < i_2) ->
+      (Mint_0[shift_sint32(a, i_2)] <= Mint_0[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= x) ->
+      (Mint_0[shift_sint32(a, i_2)] <= Mint_0[a_1]))).
+}
+Prove: Mint_0[shift_sint32(a, i)] <= Mint_0[a_7].
+Prover Alt-Ergo  returns Valid (Qed:84ms) (72ms) (240)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 23):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), n).
+Let a_2 = a_1[shift_sint32(a, 1 + i_1)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(n - 1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (i <= i_1) /\ (0 <= i) /\ ((2 + i_1) <= n).
+  (* Else *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i_1 < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 <= i_2) -> (((2 + i_2) <= n) ->
+      (a_1[shift_sint32(a, i_2)] <= a_1[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i_1) -> ((0 <= i_2) ->
+      (a_1[shift_sint32(a, i_2)] <= a_2))).
+  (* Then *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= a_1[shift_sint32(a, 1 + i_2)]))).
+}
+Prove: a_1[shift_sint32(a, i)] <= a_2.
+Prover Alt-Ergo  returns Valid (Qed:17ms) (42ms) (61)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (21ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 12) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 12) (2/3):
+Effect at line 17
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 12) (3/3):
+Effect at line 29
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 25) (1/4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 25) (2/4):
+Effect at line 29
+Prove: true.
+Prover Qed returns Valid (18ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 25) (3/4):
+Effect at line 32
+Let x = 2 + i.
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_0, a_1, n).
+Let x_1 = 1 + i.
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, x_1).
+Let x_2 = j - 1.
+Let a_4 = shift_sint32(a, x_2).
+Let a_5 = shift_sint32(a, j).
+Let a_6 = a_3[a_5].
+Let a_7 = a_3[a_4].
+Let a_8 = a_3[a_4 <- a_6][a_5 <- a_7].
+Let a_9 = shift_sint32(a, x_1).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(x_2) /\
+      is_sint32(n - 1) /\ is_sint32(a_6) /\ is_sint32(a_7).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_4, 1).
+  (* Else *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i <= i_1) -> (((2 + i_1) <= n) ->
+      (a_2[shift_sint32(a, i_1)] <= a_2[shift_sint32(a, 1 + i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 <= i) -> ((0 <= i_1) -> ((x <= n) ->
+      (a_2[shift_sint32(a, i_1)] <= a_2[a_9])))).
+  (* Then *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_2[shift_sint32(a, i_1)] <= a_2[shift_sint32(a, 1 + i_1)]))).
+  (* Invariant *)
+  Have: j <= x_1.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_3 = 1 + i_1 in ((i_1 < i) -> ((j <= x_3) ->
+      (a_3[shift_sint32(a, i_1)] <= a_3[shift_sint32(a, x_3)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < j) ->
+      (a_3[shift_sint32(a, i_1)] <= a_7))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 <= i) -> ((0 <= i_1) -> ((x <= n) ->
+      (a_3[shift_sint32(a, i_1)] <= a_3[a_9])))).
+  (* Invariant *)
+  Have: 0 < j.
+  (* Then *)
+  Have: j <= i.
+  (* Then *)
+  Have: a_6 < a_7.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < i) -> ((j <= i_1) ->
+      (a_8[shift_sint32(a, i_1)] <= a_8[shift_sint32(a, 1 + i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 <= j) ->
+      (a_8[shift_sint32(a, i_1)] <= a_7))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 <= i) -> ((0 <= i_1) -> ((x <= n) ->
+      (a_8[shift_sint32(a, i_1)] <= a_8[a_9])))).
+}
+Prove: included(a_4, 1, a_1, x_1).
+Prover Z3 4.8.12 returns Valid (Qed:51ms) (210ms) (130449)
+Prover Alt-Ergo  returns Valid (Qed:51ms) (61ms) (301)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c, line 25) (4/4):
+Effect at line 33
+Let x = 2 + i.
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_0, a_1, n).
+Let x_1 = 1 + i.
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, x_1).
+Let x_2 = j - 1.
+Let a_4 = shift_sint32(a, x_2).
+Let a_5 = shift_sint32(a, j).
+Let a_6 = a_3[a_5].
+Let a_7 = a_3[a_4].
+Let a_8 = a_3[a_4 <- a_6][a_5 <- a_7].
+Let a_9 = shift_sint32(a, x_1).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(x_2) /\
+      is_sint32(n - 1) /\ is_sint32(a_6) /\ is_sint32(a_7).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_5, 1).
+  (* Else *)
+  Have: 0 < n.
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i <= i_1) -> (((2 + i_1) <= n) ->
+      (a_2[shift_sint32(a, i_1)] <= a_2[shift_sint32(a, 1 + i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 <= i) -> ((0 <= i_1) -> ((x <= n) ->
+      (a_2[shift_sint32(a, i_1)] <= a_2[a_9])))).
+  (* Then *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_2[shift_sint32(a, i_1)] <= a_2[shift_sint32(a, 1 + i_1)]))).
+  (* Invariant *)
+  Have: j <= x_1.
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_3 = 1 + i_1 in ((i_1 < i) -> ((j <= x_3) ->
+      (a_3[shift_sint32(a, i_1)] <= a_3[shift_sint32(a, x_3)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < j) ->
+      (a_3[shift_sint32(a, i_1)] <= a_7))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 <= i) -> ((0 <= i_1) -> ((x <= n) ->
+      (a_3[shift_sint32(a, i_1)] <= a_3[a_9])))).
+  (* Invariant *)
+  Have: 0 < j.
+  (* Then *)
+  Have: j <= i.
+  (* Then *)
+  Have: a_6 < a_7.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < i) -> ((j <= i_1) ->
+      (a_8[shift_sint32(a, i_1)] <= a_8[shift_sint32(a, 1 + i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 <= j) ->
+      (a_8[shift_sint32(a, i_1)] <= a_7))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 <= i) -> ((0 <= i_1) -> ((x <= n) ->
+      (a_8[shift_sint32(a, i_1)] <= a_8[a_9])))).
+}
+Prove: included(a_5, 1, a_1, x_1).
+Prover Alt-Ergo  returns Valid (Qed:42ms) (66ms) (301)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c:2: Warning: 
+  No 'assigns' specification for function 'bubbleSort'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0002/mutable_arrays_bubble_sort_merged.c:38: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

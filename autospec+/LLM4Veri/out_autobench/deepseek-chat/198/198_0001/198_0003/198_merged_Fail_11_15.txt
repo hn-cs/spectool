@@ -1,0 +1,204 @@
+[kernel] Parsing out/deepseek-chat/198/198_0001/198_0003/198_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 15 goals scheduled
+[wp] [Timeout] typed_binarysearch_loop_invariant_established (Qed 0.85ms) (Z3 8s)
+[wp] [Timeout] typed_binarysearch_loop_invariant_preserved (Qed 21ms) (Z3 8s)
+[wp] [Timeout] typed_binarysearch_loop_invariant_2_preserved (Qed 17ms) (Z3 8s)
+[wp] [Timeout] typed_binarysearch_loop_invariant_2_established (Qed 1ms) (Z3 8s)
+[wp] Proved goals:   11 / 15
+  Qed:            10
+  Alt-Ergo :       1 (17ms)
+  Timeout:         4
+------------------------------------------------------------
+  Function binarysearch
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 8):
+Let x_1 = (high_0 + low_0) / 2.
+Let x_2 = Mint_0[shift_sint32(a, x_1)].
+Assume {
+  Type: is_sint32(high_1) /\ is_sint32(high_0) /\ is_sint32(high_2) /\
+      is_sint32(low_0) /\ is_sint32(p) /\ is_sint32(p_1) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: p_1 < high_2.
+  (* Invariant *)
+  Have: 0 <= p_1.
+  (* Invariant *)
+  Have: 0 <= high_2.
+  (* Invariant *)
+  Have: p < high_0.
+  (* Invariant *)
+  Have: low_0 < p.
+  (* Invariant *)
+  Have: low_0 < high_0.
+  (* Invariant *)
+  Have: forall i : Z. ((high_0 <= i) -> ((i < high_2) ->
+      (x <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i <= low_0) ->
+      (Mint_0[shift_sint32(a, i)] <= x))).
+  (* Invariant *)
+  Have: high_0 <= high_2.
+  (* Invariant *)
+  Have: (-1) <= low_0.
+  (* Then *)
+  Have: (2 + low_0) <= high_0.
+  (* Else *)
+  Have: x_2 != x.
+  If x_2 < x
+  Then { Have: high_0 = high_1. }
+  Else { Have: x_1 = high_1. }
+}
+Prove: x_1 < high_1.
+Prover Z3 4.8.12 returns Timeout (Qed:21ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:21ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 8):
+Assume { Type: is_sint32(high_0) /\ is_sint32(p). }
+Prove: p < high_0.
+Prover Z3 4.8.12 returns Timeout (Qed:0.85ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.85ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 9):
+Let x_1 = (high_0 + low_0) / 2.
+Let x_2 = Mint_0[shift_sint32(a, x_1)].
+Assume {
+  Type: is_sint32(high_0) /\ is_sint32(high_1) /\ is_sint32(low_0) /\
+      is_sint32(p) /\ is_sint32(p_1) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_2 < x.
+  (* Invariant *)
+  Have: p_1 < high_1.
+  (* Invariant *)
+  Have: 0 <= p_1.
+  (* Invariant *)
+  Have: 0 <= high_1.
+  (* Invariant *)
+  Have: p < high_0.
+  (* Invariant *)
+  Have: low_0 < p.
+  (* Invariant *)
+  Have: low_0 < high_0.
+  (* Invariant *)
+  Have: forall i : Z. ((high_0 <= i) -> ((i < high_1) ->
+      (x <= Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i <= low_0) ->
+      (Mint_0[shift_sint32(a, i)] <= x))).
+  (* Invariant *)
+  Have: high_0 <= high_1.
+  (* Invariant *)
+  Have: (-1) <= low_0.
+  (* Then *)
+  Have: (2 + low_0) <= high_0.
+  (* Invariant *)
+  Have: x_1 < high_0.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:17ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:17ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 9):
+Assume {
+  Type: is_sint32(high_0) /\ is_sint32(p).
+  (* Invariant *)
+  Have: p < high_0.
+}
+Prove: 0 <= p.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 10):
+Assume {
+  Type: is_sint32(high_0) /\ is_sint32(p).
+  (* Invariant *)
+  Have: p < high_0.
+  (* Invariant *)
+  Have: 0 <= p.
+}
+Prove: 0 <= high_0.
+Prover Z3 4.8.12 returns Valid (Qed:1ms) (110ms) (34544)
+Prover Alt-Ergo  returns Valid (Qed:1ms) (17ms) (16)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.65ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.79ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (18ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.87ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/198/198_0001/198_0003/198_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/198/198_0001/198_0003/198_merged.c:1: Warning: 
+  No 'assigns' specification for function 'binarysearch'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/198/198_0001/198_0003/198_merged.c:32: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

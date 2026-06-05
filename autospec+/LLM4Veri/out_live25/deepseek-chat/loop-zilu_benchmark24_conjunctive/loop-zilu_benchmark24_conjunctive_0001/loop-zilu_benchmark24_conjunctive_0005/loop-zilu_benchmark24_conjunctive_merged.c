@@ -1,0 +1,30 @@
+#include<limits.h>
+/*@
+assigns \nothing;
+ensures INT_MIN <= \result < INT_MAX;
+*/
+int unknown();
+#include <assert.h>
+int main() {
+  int i = unknown();
+  int k = unknown();
+  int n = unknown();
+  if (!(i==0 && k==n && n>=0)) return 0;
+  /*@
+  loop invariant i <= n + 1;
+  loop invariant k == n - i/2;
+  loop invariant i == 2*(n - k);
+  loop invariant i % 2 == 0;
+  loop invariant i % 2 == 0 || i % 2 == 1;
+  loop invariant 0 <= i;
+  loop invariant (i <= n) ==> (2*k >= n - i);
+  loop assigns k;
+  loop assigns i;
+  */
+  while (i<n) {
+    k--;
+    i+=2;
+  }
+  //@ assert(2*k>=n-1);
+  return 0;
+}

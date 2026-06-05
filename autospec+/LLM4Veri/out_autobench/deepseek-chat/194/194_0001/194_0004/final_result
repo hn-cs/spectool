@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 5, 'Iteration': 5, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=4, microseconds=807807), 'total_solve_time': datetime.timedelta(seconds=2, microseconds=68154), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 243, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': [], '2': [], 'MSLines': ['/* 1. FUNC CONTRACT */\nint triangle(int a, int b, int c) {\n', '    if ((a+b+c == 180) && a > 0 && b > 0 && c > 0) {\n', '        return 1;\n', '    } else {\n', '        return 0;\n', '    }\n', '}\n', '\n', '/* 2. FUNC CONTRACT */\nvoid check_validity() {\n', '    int res = triangle(90, 45, 45);\n', '    //@ assert res == 1;\n', '    res = triangle(90, 145, 145);\n', '    //@ assert res == 0;\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

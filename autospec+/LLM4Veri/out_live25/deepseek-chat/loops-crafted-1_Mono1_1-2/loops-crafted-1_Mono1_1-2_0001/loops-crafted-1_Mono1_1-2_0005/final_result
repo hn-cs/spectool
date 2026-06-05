@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 6, 'Iteration': 6, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=5, microseconds=361630), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=906528), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 263, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant x >= 10000000 ==> x % 2 == 0;', 'loop invariant x == 10000000 || x == 100000000;', 'loop invariant x == 0 || x >= 10000000 ==> x % 2 == 0;', 'loop invariant x <= 100000000;', 'loop invariant x < 10000000 ==> x == \\at(x, Pre) + x;', 'loop invariant 0 <= x;', 'loop invariant (x >= 10000000) ==> (x % 2 == 0);', 'loop invariant (x < 10000000) ==> (x == \\at(x, Pre) + (x - \\at(x, Pre)));', 'loop assigns x;'], '2': [], 'MSLines': ['/* 2. FUNC CONTRACT */\nint main(void) {\n', '  unsigned int x = 0;\n', '  /* 1. LOOP INVARIANT */\n  while (x < 100000000) {\n', '    if (x < 10000000) {\n', '      x++;\n', '    } else {\n', '      x += 2;\n', '    }\n', '  }\n', '  //@ assert(x == 100000000);\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

@@ -1,0 +1,137 @@
+[kernel] Parsing out/deepseek-chat/233/233_0001/233_0001/233_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 5ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_3_preserved (Qed 3ms) (Z3 8s)
+[wp] Proved goals:    9 / 11
+  Qed:             8
+  Alt-Ergo :       1 (18ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/233/233_0001/233_0001/233_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/233/233_0001/233_0001/233_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/233/233_0001/233_0001/233_merged.c, line 12):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(1 + y) /\ is_sint32(x + y).
+  (* Invariant *)
+  Have: y <= 1000.
+  (* Invariant *)
+  Have: y < x.
+  (* Invariant *)
+  Have: y != 1000.
+  (* Invariant *)
+  Have: 0 < x.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: y <= 999.
+}
+Prove: 2 <= x.
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/233/233_0001/233_0001/233_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/233/233_0001/233_0001/233_merged.c, line 13):
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(1 + y) /\ is_sint32(x + y).
+  (* Invariant *)
+  Have: y <= 1000.
+  (* Invariant *)
+  Have: y < x.
+  (* Invariant *)
+  Have: y != 1000.
+  (* Invariant *)
+  Have: 0 < x.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: y <= 999.
+  (* Invariant *)
+  Have: 2 <= x.
+}
+Prove: y != 999.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/233/233_0001/233_0001/233_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/233/233_0001/233_0001/233_merged.c, line 14):
+Let x_1 = x + y.
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(1 + y) /\ is_sint32(x_1).
+  (* Invariant *)
+  Have: y <= 1000.
+  (* Invariant *)
+  Have: y < x.
+  (* Invariant *)
+  Have: y != 1000.
+  (* Invariant *)
+  Have: 0 < x.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: y <= 999.
+  (* Invariant *)
+  Have: 2 <= x.
+  (* Invariant *)
+  Have: y != 999.
+}
+Prove: 0 < x_1.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (110ms) (35738)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (18ms) (18)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/233/233_0001/233_0001/233_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/233/233_0001/233_0001/233_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/233/233_0001/233_0001/233_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/233/233_0001/233_0001/233_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/233/233_0001/233_0001/233_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

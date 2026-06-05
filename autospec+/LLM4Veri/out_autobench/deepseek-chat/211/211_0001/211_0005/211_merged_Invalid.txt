@@ -1,0 +1,7 @@
+[kernel] Parsing out/deepseek-chat/211/211_0001/211_0005/211_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/211/211_0001/211_0005/211_merged.c:6: Warning: 
+  unbound logic variable sum. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on file "out/deepseek-chat/211/211_0001/211_0005/211_merged.c" that
+  has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

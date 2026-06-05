@@ -1,0 +1,580 @@
+[kernel] Parsing out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 52 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 9ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_4_established (Qed 4ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_5_established (Qed 6ms) (Z3 8s) (Stronger)
+[wp] Proved goals:   49 / 52
+  Qed:            48
+  Alt-Ergo :       1 (19ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 15):
+Assume {
+  Type: is_sint32(CELLCOUNT_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+}
+Prove: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (110ms) (34580)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (19ms) (16)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 22):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = CELLCOUNT_0 / 3.
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(volArray_0, 0), CELLCOUNT_0).
+Assume {
+  Type: is_sint32(CELLCOUNT_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+  (* Invariant *)
+  Have: forall i : Z. let x_1 = Mint_0[shift_sint32(volArray_0, 3 * i)] in
+      ((0 <= i) -> ((i < x) -> ((x_1 = 0) \/ (x_1 = 7)))).
+  (* Invariant *)
+  Have: forall i : Z. let x_1 = 3 * i in ((0 <= i) -> ((i < x) ->
+      ((Mint_0[shift_sint32(volArray_0, x_1)] = 0) \/
+       (Mint_0[shift_sint32(volArray_0, 1 + x_1)] = 7)))).
+  (* Invariant *)
+  Have: forall i : Z. let a_1 = a[shift_sint32(volArray_0, 3 * i)] in
+      ((0 <= i) -> ((i < x) -> ((a_1 = 0) \/ (a_1 = 7)))).
+  (* Invariant *)
+  Have: forall i : Z. let x_1 = 3 * i in ((0 <= i) -> ((i < x) ->
+      ((a[shift_sint32(volArray_0, x_1)] = 0) \/
+       (a[shift_sint32(volArray_0, 1 + x_1)] = 7)))).
+  (* Invariant *)
+  Have: (-2) <= CELLCOUNT_0.
+  (* Then *)
+  Have: 3 <= CELLCOUNT_0.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:9ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:9ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 22):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 23):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 23):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.80ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 24):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 24):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.97ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 25):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 25):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = Mint_0[shift_sint32(volArray_0, 3 * i)].
+Assume {
+  Type: is_sint32(CELLCOUNT_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < (CELLCOUNT_0 / 3)).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+}
+Prove: (x = 0) \/ (x = 7).
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 26):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 26):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = CELLCOUNT_0 / 3.
+Let x_1 = 3 * i.
+Assume {
+  Type: is_sint32(CELLCOUNT_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= CELLCOUNT_0) /\ (CELLCOUNT_0 <= 2147483646).
+  (* Then *)
+  Have: 2 <= CELLCOUNT_0.
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < CELLCOUNT_0) /\ (CELLCOUNT_0 <= 4611686018427387903).
+  (* Else *)
+  Have: (CELLCOUNT_0 % 3) = 0.
+  (* Invariant *)
+  Have: forall i_1 : Z.
+      let x_2 = Mint_0[shift_sint32(volArray_0, 3 * i_1)] in ((0 <= i_1) ->
+      ((i_1 < x) -> ((x_2 = 0) \/ (x_2 = 7)))).
+}
+Prove: (Mint_0[shift_sint32(volArray_0, x_1)] = 0) \/
+    (Mint_0[shift_sint32(volArray_0, 1 + x_1)] = 7).
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 27):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 27):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 28):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 28):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 29):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.99ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 29):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 47):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 47):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 48):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 48):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 49):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (17ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 49):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 67):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 67):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 68):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 68):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 69):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 69):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 87):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 87):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 88):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (23ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 88):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 30) (1/6):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 30) (2/6):
+Effect at line 33
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 30) (3/6):
+Effect at line 37
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 30) (4/6):
+Effect at line 41
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 30) (5/6):
+Effect at line 43
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 30) (6/6):
+Effect at line 44
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 50) (1/6):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 50) (2/6):
+Effect at line 53
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 50) (3/6):
+Effect at line 57
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 50) (4/6):
+Effect at line 61
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 50) (5/6):
+Effect at line 63
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 50) (6/6):
+Effect at line 64
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 70) (1/6):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 70) (2/6):
+Effect at line 73
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 70) (3/6):
+Effect at line 77
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 70) (4/6):
+Effect at line 81
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 70) (5/6):
+Effect at line 83
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 70) (6/6):
+Effect at line 84
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c, line 89):
+out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:15: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-tiling_mbpr3/array-tiling_mbpr3_0001/array-tiling_mbpr3_0005/array-tiling_mbpr3_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

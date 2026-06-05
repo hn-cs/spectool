@@ -1,0 +1,204 @@
+[kernel] Parsing out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c:14: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c:15: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 17 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_4_established (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_5_preserved (Qed 49ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_6_established (Qed 5ms) (Z3 8s)
+[wp] Proved goals:   13 / 17
+  Qed:            12
+  Alt-Ergo :       1 (30ms)
+  Timeout:         4
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 18):
+Assume {
+  Type: is_uint32(N_COL_0) /\ is_uint32(N_LIN_0) /\ is_uint32(j) /\
+      is_sint32(maior_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= maior_0) /\ (maior_0 <= 2147483646).
+  (* Then *)
+  Have: j < N_COL_0.
+  (* Invariant *)
+  Have: 0 <= N_LIN_0.
+}
+Prove: j = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 19):
+Assume {
+  Type: is_uint32(k) /\ is_sint32(maior_1) /\ is_sint32(maior_2) /\
+      is_sint32(v).
+  (* Goal *)
+  When: (0 <= i) /\ (i < to_uint32(1 + k)).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= maior_2) /\ (maior_2 <= 2147483646).
+  (* Loop assigns ... *)
+  Have: forall i_1 : Z. ((i_1 != 0) -> (matriz_1[i_1] = matriz_0[i_1])).
+  (* Invariant *)
+  Have: k <= 1.
+  (* Invariant *)
+  Have: k != 1.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: k <= 0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+  If maior_1 <= v
+  Then { Have: v = maior_0. }
+  Else { Have: maior_1 = maior_0. }
+}
+Prove: matriz_0[0][0 <- v][i] <= maior_0.
+Prover Z3 4.8.12 returns Valid (Qed:23ms) (130ms) (37457)
+Prover Alt-Ergo  returns Valid (Qed:23ms) (30ms) (75)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.87ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 20):
+Assume {
+  Type: is_uint32(N_COL_0) /\ is_uint32(N_LIN_0) /\ is_sint32(maior_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= maior_0) /\ (maior_0 <= 2147483646).
+  (* Then *)
+  Have: 0 < N_COL_0.
+  (* Invariant *)
+  Have: 0 <= N_LIN_0.
+}
+Prove: N_LIN_0 = 1.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 21):
+Assume {
+  Type: is_uint32(k) /\ is_sint32(maior_0) /\ is_sint32(maior_1) /\
+      is_sint32(v).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= maior_1) /\ (maior_1 <= 2147483646).
+  (* Loop assigns ... *)
+  Have: forall i : Z. ((i != 0) -> (matriz_0[i] = matriz_1[i])).
+  (* Invariant *)
+  Have: k <= 1.
+  (* Invariant *)
+  Have: k != 1.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: k <= 0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+  If maior_0 <= v
+  Then { Have: v = maior_2. }
+  Else { Have: maior_0 = maior_2. }
+  (* Invariant *)
+  Have: v <= maior_2.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:49ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:49ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 22):
+Assume {
+  Type: is_uint32(N_COL_0) /\ is_sint32(maior_0).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= maior_0) /\ (maior_0 <= 2147483646).
+  (* Then *)
+  Have: 0 < N_COL_0.
+}
+Prove: N_COL_0 = 1.
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 24) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 24) (2/3):
+Effect at line 28
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c, line 24) (3/3):
+Call Result at line 30
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

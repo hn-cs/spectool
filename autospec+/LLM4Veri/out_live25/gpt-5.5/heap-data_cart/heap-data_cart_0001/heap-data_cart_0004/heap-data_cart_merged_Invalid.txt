@@ -1,0 +1,8 @@
+[kernel] Parsing out/gpt-5.5/heap-data_cart/heap-data_cart_0001/heap-data_cart_0004/heap-data_cart_merged.c (with preprocessing)
+[kernel:annot-error] out/gpt-5.5/heap-data_cart/heap-data_cart_0001/heap-data_cart_0004/heap-data_cart_merged.c:45: Warning: 
+  unexpected token ')'
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/gpt-5.5/heap-data_cart/heap-data_cart_0001/heap-data_cart_0004/heap-data_cart_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

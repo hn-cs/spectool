@@ -1,0 +1,48 @@
+[kernel] Parsing out/deepseek-chat/101/101_0001/101_0001/101_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 4 goals scheduled
+[wp] [Timeout] typed_foo_assert (Qed 2ms) (Z3 8s)
+[wp] Proved goals:    3 / 4
+  Qed:             3
+  Timeout:         1
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/101/101_0001/101_0001/101_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/101/101_0001/101_0001/101_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/101/101_0001/101_0001/101_merged.c, line 13):
+Assume {
+  Type: is_sint32(n) /\ is_sint32(x).
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Else *)
+  Have: n <= x.
+  (* Then *)
+  Have: x != n.
+}
+Prove: n < 0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/101/101_0001/101_0001/101_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/101/101_0001/101_0001/101_merged.c:1: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

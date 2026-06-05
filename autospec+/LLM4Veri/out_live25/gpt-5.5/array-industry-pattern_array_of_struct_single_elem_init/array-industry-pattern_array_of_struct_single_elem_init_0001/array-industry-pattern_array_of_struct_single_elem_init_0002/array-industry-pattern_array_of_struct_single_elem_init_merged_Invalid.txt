@@ -1,0 +1,8 @@
+[kernel] Parsing out/gpt-5.5/array-industry-pattern_array_of_struct_single_elem_init/array-industry-pattern_array_of_struct_single_elem_init_0001/array-industry-pattern_array_of_struct_single_elem_init_0002/array-industry-pattern_array_of_struct_single_elem_init_merged.c (with preprocessing)
+[kernel:annot-error] out/gpt-5.5/array-industry-pattern_array_of_struct_single_elem_init/array-industry-pattern_array_of_struct_single_elem_init_0001/array-industry-pattern_array_of_struct_single_elem_init_0002/array-industry-pattern_array_of_struct_single_elem_init_merged.c:25: Warning: 
+  unbound logic variable SIZE. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/gpt-5.5/array-industry-pattern_array_of_struct_single_elem_init/array-industry-pattern_array_of_struct_single_elem_init_0001/array-industry-pattern_array_of_struct_single_elem_init_0002/array-industry-pattern_array_of_struct_single_elem_init_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

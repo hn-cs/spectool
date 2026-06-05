@@ -1,0 +1,7 @@
+[kernel] Parsing out/deepseek-chat/208/208_0001/208_0005/208_merged.c (with preprocessing)
+[kernel:annot-error] out/deepseek-chat/208/208_0001/208_0005/208_merged.c:9: Warning: 
+  invalid implicit conversion from ℝ to double. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on file "out/deepseek-chat/208/208_0001/208_0005/208_merged.c" that
+  has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

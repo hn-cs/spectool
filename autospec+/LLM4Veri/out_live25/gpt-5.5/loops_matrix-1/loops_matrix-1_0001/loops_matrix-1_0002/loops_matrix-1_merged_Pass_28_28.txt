@@ -1,0 +1,210 @@
+[kernel] Parsing out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c:14: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 28 goals scheduled
+[wp] Proved goals:   28 / 28
+  Qed:            27
+  Alt-Ergo :       1 (28ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.71ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.73ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (0.75ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 30):
+Assume {
+  Type: is_uint32(k) /\ is_sint32(maior_1) /\ is_sint32(maior_2) /\
+      is_sint32(v).
+  (* Goal *)
+  When: (0 <= i) /\ (i < to_uint32(1 + k)).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= maior_2) /\ (maior_2 <= 2147483646).
+  (* Loop assigns ... *)
+  Have: forall i_1 : Z. ((i_1 != 0) -> (matriz_1[i_1] = matriz_0[i_1])).
+  (* Invariant *)
+  Have: k <= 1.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: k <= 0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+  If maior_1 <= v
+  Then { Have: v = maior_0. }
+  Else { Have: maior_1 = maior_0. }
+}
+Prove: matriz_0[0][0 <- v][i] <= maior_0.
+Prover Z3 4.8.12 returns Valid (Qed:20ms) (130ms) (37347)
+Prover Alt-Ergo  returns Valid (Qed:20ms) (28ms) (72)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 21) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 21) (2/3):
+Effect at line 26
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 21) (3/3):
+Effect at line 38
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 34) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 34) (2/3):
+Effect at line 38
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c, line 34) (3/3):
+Call Result at line 40
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0002/loops_matrix-1_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

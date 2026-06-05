@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 2, 'Iteration': 2, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=2, microseconds=384174), 'total_solve_time': datetime.timedelta(seconds=38, microseconds=737117), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 88, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant y == x;', 'loop invariant x == y;', 'loop invariant i <= j;', 'loop invariant 0 <= y;', 'loop invariant 0 <= x;', 'loop invariant 0 <= j;', 'loop invariant 0 <= i;', 'loop assigns y;', 'loop assigns x;', 'loop assigns j;', 'loop assigns i;'], '2': [], 'MSLines': ['#include <assert.h>\n', 'int unknown1();\n', 'int unknown2();\n', 'int unknown3();\n', 'int unknown4();\n', '\n', '/* 2. FUNC CONTRACT */\nvoid main(int flag)\n', '{\n', '\n', '\tint x = 0;\n', '\tint y = 0;\n', '\n', '\tint j = 0;\n', '\tint i = 0;\n', '\n', '\t/* 1. LOOP INVARIANT */\n\twhile(unknown1())\n', '\t{\n', '\t  x++;\n', '\t  y++;\n', '\t  i += x;\n', '\t  j += y;\n', '\t  if (flag)\n', '\t  \tj+=1;\n', '\t} \n', '\t//@ assert(j>=i);\n', '\t\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

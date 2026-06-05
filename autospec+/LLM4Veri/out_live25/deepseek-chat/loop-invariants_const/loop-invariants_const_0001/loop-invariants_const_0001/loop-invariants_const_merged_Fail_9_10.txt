@@ -1,0 +1,97 @@
+[kernel] Parsing out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c:19: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 10 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 14ms) (Z3 8s)
+[wp] Proved goals:    9 / 10
+  Qed:             9
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c, line 20):
+Assume {
+  Type: is_uint32(s) /\ is_sint32(tmp_0) /\ is_sint32(tmp_0_0).
+  (* Residual *)
+  When: s != 0.
+  (* Invariant *)
+  Have: s <= 4294967295.
+  (* Invariant *)
+  Have: 0 <= s.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_0 != 0.
+}
+Prove: to_uint32(1 + s) = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:14ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:14ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c, line 13) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c, line 13) (2/3):
+Call Result at line 15
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c, line 13) (3/3):
+Call Result at line 19
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-invariants_const/loop-invariants_const_0001/loop-invariants_const_0001/loop-invariants_const_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

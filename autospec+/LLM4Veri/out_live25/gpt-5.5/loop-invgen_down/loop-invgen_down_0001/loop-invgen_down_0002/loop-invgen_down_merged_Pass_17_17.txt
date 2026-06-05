@@ -1,0 +1,154 @@
+[kernel] Parsing out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c:12: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 17 goals scheduled
+[wp] Proved goals:   17 / 17
+  Qed:            15
+  Alt-Ergo :       2 (18ms-21ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.62ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.92ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 28):
+Assume {
+  Type: is_sint32(j) /\ is_sint32(n) /\ is_sint32(j - 1).
+  (* Goal *)
+  When: 0 <= n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Invariant *)
+  Have: (0 <= j) /\ (j <= n).
+  (* Then *)
+  Have: 0 < j.
+}
+Prove: j <= (1 + n).
+Prover Z3 4.8.12 returns Valid (Qed:15ms) (120ms) (35230)
+Prover Alt-Ergo  returns Valid (Qed:15ms) (18ms) (24)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (0.51ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 34):
+Assume {
+  Type: is_sint32(j) /\ is_sint32(j_1) /\ is_sint32(k) /\ is_sint32(k_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j_1) /\ (j_1 <= 2147483646).
+  (* Invariant *)
+  Have: ((0 <= j_1) -> (k_1 <= j_1)).
+  (* Invariant *)
+  Have: ((j_1 < 0) -> (k_1 = 0)).
+  (* Invariant *)
+  Have: 0 <= k_1.
+  (* Else *)
+  Have: j_1 <= k_1.
+  (* Invariant *)
+  Have: ((0 <= j_1) -> (k_1 = j_1)).
+  (* Invariant *)
+  Have: ((0 <= j_1) -> (k = j)).
+  (* Invariant *)
+  Have: ((0 <= j_1) -> ((0 <= j) /\ (j <= j_1))).
+  (* Invariant *)
+  Have: ((j_1 < 0) -> ((j_1 = j) /\ (k = 0))).
+  (* Then *)
+  Have: 0 < j.
+}
+Prove: 0 < k.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (120ms) (37196)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (21ms) (29)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

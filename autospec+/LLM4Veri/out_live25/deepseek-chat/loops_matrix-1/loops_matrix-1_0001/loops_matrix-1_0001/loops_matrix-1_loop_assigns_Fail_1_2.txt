@@ -1,0 +1,47 @@
+[kernel] Parsing out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c:14: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c:15: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 2 goals scheduled
+[wp] [Timeout] typed_main_loop_assigns_part2 (Qed 11ms) (Z3 3s)
+[wp] Proved goals:    1 / 2
+  Qed:             1
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c, line 17) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c, line 17) (2/2):
+Call Result at line 22
+Assume {
+  Type: is_uint32(N_COL_0) /\ is_uint32(N_LIN_0) /\ is_uint32(k) /\
+      is_sint32(maior_0) /\ is_sint32(v).
+  (* Goal *)
+  When: (k <= 0) /\ (0 <= k).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= maior_0) /\ (maior_0 <= 2147483646).
+  (* Then *)
+  Have: 0 < N_COL_0.
+  (* Then *)
+  Have: 0 < N_LIN_0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= v) /\ (v <= 2147483646).
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:11ms) (3s)
+Prover Alt-Ergo  returns Timeout (Qed:11ms) (3s)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops_matrix-1/loops_matrix-1_0001/loops_matrix-1_0001/loops_matrix-1_loop_assigns.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

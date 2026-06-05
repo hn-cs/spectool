@@ -1,0 +1,219 @@
+[kernel] Parsing out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c:26: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 14 goals scheduled
+[wp] Proved goals:   14 / 14
+  Qed:            12
+  Alt-Ergo :       2 (24ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 12):
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\
+      is_sint32(10 * w).
+  (* Goal *)
+  When: 0 <= y.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_5 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then {
+    Have: (x_4 = x_1) /\ (y_5 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (100 + y_1) = y.
+  }
+  Else {
+    Have: (x_4 = x_5) /\ (y_5 = y_6).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then {
+      Have: (x_5 = x_3) /\ (y_6 = y_7).
+      If 4 <= x_3
+      Then {
+        Have: (x_3 = x_2) /\ (y_7 = y_2).
+        Have: (1 + x_2) = x.
+        Have: (1 + y_2) = y.
+      }
+      Else { Have: (x_3 = x) /\ (y_7 = y). }
+    }
+    Else {
+      Have: (x_5 = x) /\ (y_6 = y_4).
+      If (10 * w) < y_4
+      Then {
+        Have: y_4 = y_8.
+        If (10 * x) <= w
+        Then { Have: y_8 = y_3. Have: (y + y_3) = 0. }
+        Else { Have: y_8 = y. }
+      }
+      Else { Have: y_4 = y. }
+    }
+  }
+}
+Prove: 0 <= x.
+Prover Z3 4.8.12 returns Valid (Qed:97ms) (130ms) (45028)
+Prover Alt-Ergo  returns Valid (Qed:97ms) (24ms) (81)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.99ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.77ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 15):
+Let x_6 = 10 * w.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(tmp_0_0) /\ is_sint32(tmp_1_0) /\
+      is_sint32(w) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(x_2) /\
+      is_sint32(x_3) /\ is_sint32(x_4) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(y_2) /\ is_sint32(y_3) /\ is_sint32(y_4) /\ is_sint32(y_5) /\
+      is_sint32(x_6) /\ is_sint32(1 + w) /\ is_sint32(10 + x_6).
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_1_0) /\ (tmp_1_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_1_0 != 0.
+  (* Then *)
+  Have: y_5 <= 9999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then {
+    Have: (x_4 = x_1) /\ (y_5 = y_1).
+    Have: (1 + x_1) = x.
+    Have: (100 + y_1) = y.
+  }
+  Else {
+    Have: (x_4 = x_5) /\ (y_5 = y_6).
+    (* Block In *)
+    Have: (ta_tmp_0=false).
+    (* Call 'unknown' *)
+    Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+    If tmp_0 != 0
+    Then {
+      Have: (x_5 = x_3) /\ (y_6 = y_7).
+      If 4 <= x_3
+      Then {
+        Have: (x_3 = x_2) /\ (y_7 = y_2).
+        Have: (1 + x_2) = x.
+        Have: (1 + y_2) = y.
+      }
+      Else { Have: (x_3 = x) /\ (y_7 = y). }
+    }
+    Else {
+      Have: (x_5 = x) /\ (y_6 = y_4).
+      If x_6 < y_4
+      Then {
+        Have: y_4 = y_8.
+        If (10 * x) <= w
+        Then { Have: y_8 = y_3. Have: (y + y_3) = 0. }
+        Else { Have: y_8 = y. }
+      }
+      Else { Have: y_4 = y. }
+    }
+  }
+  (* Invariant *)
+  Have: ((0 <= y) -> (0 <= x)).
+  (* Invariant *)
+  Have: (-1) <= w.
+}
+Prove: 0 <= x.
+Prover Alt-Ergo  returns Valid (Qed:98ms) (24ms) (87)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.96ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.98ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 17) (1/4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 17) (2/4):
+Call Result at line 22
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 17) (3/4):
+Call Result at line 23
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c, line 17) (4/4):
+Call Result at line 26
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-lit_gcnr2008/loop-lit_gcnr2008_0001/loop-lit_gcnr2008_0002/loop-lit_gcnr2008_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

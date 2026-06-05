@@ -1,0 +1,104 @@
+[kernel] Parsing out/gpt-5.5/arepina_average/arepina_average_0001/arepina_average_0001/arepina_average_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 12 goals scheduled
+[wp] Proved goals:   12 / 12
+  Qed:            11
+  Alt-Ergo :       1 (37ms)
+------------------------------------------------------------
+  Function average
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/arepina_average/arepina_average_0001/arepina_average_0001/arepina_average_merged.c, line 2) in 'average':
+Prove: true.
+Prover Qed returns Valid (18ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/arepina_average/arepina_average_0001/arepina_average_0001/arepina_average_merged.c, line 3) in 'average':
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/arepina_average/arepina_average_0001/arepina_average_0001/arepina_average_merged.c, line 4) in 'average':
+Prove: true.
+Prover Qed returns Valid (21ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/arepina_average/arepina_average_0001/arepina_average_0001/arepina_average_merged.c, line 5) in 'average':
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/arepina_average/arepina_average_0001/arepina_average_0001/arepina_average_merged.c, line 6) in 'average':
+Let x = smaller_0 + ((greater_0 - smaller_0) / 2).
+Assume {
+  Type: is_sint32(a) /\ is_sint32(b) /\ is_sint32(greater_0) /\
+      is_sint32(smaller_0) /\ is_sint32(x).
+  (* Residual *)
+  When: 0 <= a.
+  (* Residual *)
+  When: 0 <= b.
+  (* Goal *)
+  When: (a <= 0) \/ (b <= 0).
+  If b < a
+  Then { Have: greater_0 = a. Have: smaller_0 = b. }
+  Else { Have: greater_0 = b. Have: smaller_0 = a. }
+}
+Prove: ((a + b) / 2) = x.
+Prover Z3 4.8.12 returns Valid (Qed:33ms) (150ms) (39961)
+Prover Alt-Ergo  returns Valid (Qed:33ms) (37ms) (38)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'average' (1/7):
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'average' (2/7):
+Effect at line 16
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'average' (3/7):
+Effect at line 18
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'average' (4/7):
+Effect at line 19
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'average' (5/7):
+Effect at line 22
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'average' (6/7):
+Effect at line 24
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'average' (7/7):
+Effect at line 26
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------

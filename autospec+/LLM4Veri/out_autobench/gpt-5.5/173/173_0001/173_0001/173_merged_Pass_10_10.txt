@@ -1,0 +1,109 @@
+[kernel] Parsing out/gpt-5.5/173/173_0001/173_0001/173_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/173/173_0001/173_0001/173_merged.c:25: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/gpt-5.5/173/173_0001/173_0001/173_merged.c:35: Warning: 
+  Calling function unknown2 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/173/173_0001/173_0001/173_merged.c:8: Warning: 
+  Neither code nor specification for function unknown1, generating default assigns from the prototype
+[kernel:annot:missing-spec] out/gpt-5.5/173/173_0001/173_0001/173_merged.c:8: Warning: 
+  Neither code nor specification for function unknown2, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/173/173_0001/173_0001/173_merged.c:35: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 10 goals scheduled
+[wp] Proved goals:   10 / 10
+  Qed:             9
+  Alt-Ergo :       1 (27ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/173/173_0001/173_0001/173_merged.c, line 18):
+Let x = j - 1.
+Let x_1 = 1 + j.
+Assume {
+  Type: is_sint32(flag_0) /\ is_sint32(j) /\ is_sint32(tmp_0) /\
+      is_sint32(x) /\ is_sint32(x_1).
+  (* Residual *)
+  When: (x_1 % 2) != 0.
+  (* Pre-condition *)
+  Have: 0 < flag_0.
+  (* Invariant *)
+  Have: (x % 2) = 0.
+  (* Invariant *)
+  Have: 0 < j.
+  (* Then *)
+  Have: tmp_0 != 0.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (130ms) (40894)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (27ms) (120)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/173/173_0001/173_0001/173_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/173/173_0001/173_0001/173_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/173/173_0001/173_0001/173_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.81ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/173/173_0001/173_0001/173_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/173/173_0001/173_0001/173_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (0.80ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/173/173_0001/173_0001/173_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/173/173_0001/173_0001/173_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/173/173_0001/173_0001/173_merged.c, line 22) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/173/173_0001/173_0001/173_merged.c, line 22) (2/2):
+Call Result at line 25
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/173/173_0001/173_0001/173_merged.c:2: Warning: 
+  No 'assigns' specification for function 'unknown1'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/173/173_0001/173_0001/173_merged.c:3: Warning: 
+  No 'assigns' specification for function 'unknown2'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/173/173_0001/173_0001/173_merged.c:8: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

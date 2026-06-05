@@ -1,0 +1,80 @@
+[kernel] Parsing out/gpt-5.5/general_wp_problem_triangle_angles/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 6 goals scheduled
+[wp] Proved goals:    6 / 6
+  Qed:             4
+  Alt-Ergo :       2 (19ms-28ms)
+------------------------------------------------------------
+  Function check_validity
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/general_wp_problem_triangle_angles/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/general_wp_problem_triangle_angles/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function triangle
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/general_wp_problem_triangle_angles/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_merged.c, line 2) in 'triangle':
+Let x = b + c.
+Assume {
+  Type: is_sint32(b) /\ is_sint32(c) /\ is_sint32(triangle_0) /\
+      is_sint32(180 - b - c).
+  (* Residual *)
+  When: 0 < c.
+  (* Residual *)
+  When: 0 < b.
+  If x <= 179
+  Then { Have: triangle_0 = 1. }
+  Else { Have: triangle_0 = 0. }
+}
+Prove: (x <= 179) <-> (triangle_0 = 1).
+Prover Z3 4.8.12 returns Valid (Qed:18ms) (140ms) (35419)
+Prover Alt-Ergo  returns Valid (Qed:18ms) (19ms) (13)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/general_wp_problem_triangle_angles/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_merged.c, line 3) in 'triangle':
+Let x = b + c.
+Assume {
+  Type: is_sint32(b) /\ is_sint32(c) /\ is_sint32(triangle_0) /\
+      is_sint32(180 - b - c).
+  (* Residual *)
+  When: 0 < c.
+  (* Residual *)
+  When: 0 < b.
+  If x <= 179
+  Then { Have: triangle_0 = 1. }
+  Else { Have: triangle_0 = 0. }
+}
+Prove: (180 <= x) <-> (triangle_0 = 0).
+Prover Z3 4.8.12 returns Valid (Qed:12ms) (140ms) (35501)
+Prover Alt-Ergo  returns Valid (Qed:12ms) (28ms) (29)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'triangle' (1/2):
+Effect at line 8
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'triangle' (2/2):
+Effect at line 10
+Prove: true.
+Prover Qed returns Valid (0.99ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/general_wp_problem_triangle_angles/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_merged.c:13: Warning: 
+  No 'assigns' specification for function 'check_validity'.
+  Callers assumptions might be imprecise.

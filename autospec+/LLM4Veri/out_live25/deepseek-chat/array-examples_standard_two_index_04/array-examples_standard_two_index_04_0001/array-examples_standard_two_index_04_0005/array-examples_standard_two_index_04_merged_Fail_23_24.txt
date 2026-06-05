@@ -1,0 +1,205 @@
+[kernel] Parsing out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c:23: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c:21: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 24 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_5_established (Qed 4ms) (Z3 8s)
+[wp] Proved goals:   23 / 24
+  Qed:            22
+  Alt-Ergo :       1 (52ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.53ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 28):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j).
+  (* Invariant *)
+  Have: j <= 25000.
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: 100000 <= i.
+}
+Prove: j = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 29):
+Let x = 4 * j.
+Let x_1 = 1 + x.
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(1 + j) /\
+      is_sint32(x_1) /\ is_sint32(5 + x).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= j).
+  (* Invariant *)
+  Have: i_1 <= 100000.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: 100000 <= i_1.
+  (* Loop assigns ... *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= 99999) ->
+      (((i_2 < 0) \/ (j <= i_2)) -> (a_1[i_2] = a[i_2])))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < j) ->
+      (b[1 + (4 * i_2)] = a[i_2]))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j <= 24999.
+}
+Prove: a[j <- b[x_1]][i] = b[1 + (4 * i)].
+Prover Z3 4.8.12 returns Valid (Qed:17ms) (210ms) (39551)
+Prover Alt-Ergo  returns Valid (Qed:17ms) (52ms) (84)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (0.92ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 45):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 45):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 46):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 46):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 32) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 32) (2/3):
+Effect at line 36
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 32) (3/3):
+Effect at line 38
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c, line 47):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-examples_standard_two_index_04/array-examples_standard_two_index_04_0001/array-examples_standard_two_index_04_0005/array-examples_standard_two_index_04_merged.c:9: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

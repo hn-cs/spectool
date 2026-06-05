@@ -1,0 +1,773 @@
+[kernel] Parsing out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 36 goals scheduled
+[wp] Proved goals:   36 / 36
+  Qed:            25
+  Alt-Ergo :      11 (31ms-56ms)
+------------------------------------------------------------
+  Function bubbleSort
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 5) in 'bubbleSort':
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(n - 1).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ ((2 + i) <= n).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i_1 < n.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((i_3 <= i_1) -> ((i_1 < i_2) -> ((0 <= i_3) ->
+      ((i_2 < n) ->
+      (a_2[shift_sint32(a, i_3)] <= a_2[shift_sint32(a, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 <= i_2) -> (((2 + i_2) <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 < i_2) -> ((i_2 < n) ->
+      (a_2[shift_sint32(a, i_2 - 1)] <= a_2[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: i_1 <= 0.
+}
+Prove: a_2[shift_sint32(a, i)] <= a_2[shift_sint32(a, 1 + i)].
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (140ms) (90398)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (31ms) (70)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 15):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_0, a_1, n).
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, 1 + i).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(i - 1) /\
+      is_sint32(n - 1).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 < i) /\ (i <= i_2) /\ (i_2 < n).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_4,i_3 : Z. ((i_4 <= i) -> ((i < i_3) -> ((0 <= i_4) ->
+      ((i_3 < n) ->
+      (a_2[shift_sint32(a, i_4)] <= a_2[shift_sint32(a, i_3)]))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i <= i_3) -> (((2 + i_3) <= n) ->
+      (a_2[shift_sint32(a, i_3)] <= a_2[shift_sint32(a, 1 + i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i < i_3) -> ((i_3 < n) ->
+      (a_2[shift_sint32(a, i_3 - 1)] <= a_2[shift_sint32(a, i_3)]))).
+  (* Then *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: j <= i.
+  (* Invariant *)
+  Have: forall i_4,i_3 : Z. ((i_4 <= i) -> ((i < i_3) -> ((0 <= i_4) ->
+      ((i_3 < n) ->
+      (a_3[shift_sint32(a, i_4)] <= a_3[shift_sint32(a, i_3)]))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i < i_3) -> ((i_3 < n) ->
+      (a_3[shift_sint32(a, i_3 - 1)] <= a_3[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 <= j) ->
+      (a_3[shift_sint32(a, i_3)] <= a_3[shift_sint32(a, j)]))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Else *)
+  Have: i <= j.
+}
+Prove: a_3[shift_sint32(a, i_1)] <= a_3[shift_sint32(a, i_2)].
+Prover Alt-Ergo  returns Valid (Qed:22ms) (35ms) (114)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 16):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_0, a_1, n).
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, 1 + i).
+Let x = 1 + i_1.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(i - 1) /\
+      is_sint32(n - 1).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (i <= x) /\ ((2 + i_1) <= n).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((i_3 <= i) -> ((i < i_2) -> ((0 <= i_3) ->
+      ((i_2 < n) ->
+      (a_2[shift_sint32(a, i_3)] <= a_2[shift_sint32(a, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i <= i_2) -> (((2 + i_2) <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i < i_2) -> ((i_2 < n) ->
+      (a_2[shift_sint32(a, i_2 - 1)] <= a_2[shift_sint32(a, i_2)]))).
+  (* Then *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: j <= i.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((i_3 <= i) -> ((i < i_2) -> ((0 <= i_3) ->
+      ((i_2 < n) ->
+      (a_3[shift_sint32(a, i_3)] <= a_3[shift_sint32(a, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i < i_2) -> ((i_2 < n) ->
+      (a_3[shift_sint32(a, i_2 - 1)] <= a_3[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= j) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, j)]))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Else *)
+  Have: i <= j.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((i <= i_2) ->
+      ((i_2 < n) ->
+      (a_3[shift_sint32(a, i_3)] <= a_3[shift_sint32(a, i_2)]))))).
+}
+Prove: a_3[shift_sint32(a, i_1)] <= a_3[shift_sint32(a, x)].
+Prover Alt-Ergo  returns Valid (Qed:22ms) (33ms) (105)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 17):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_0, a_1, n).
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, 1 + i).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(i - 1) /\
+      is_sint32(n - 1).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (i <= i_1) /\ (i_1 < n).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((i_3 <= i) -> ((i < i_2) -> ((0 <= i_3) ->
+      ((i_2 < n) ->
+      (a_2[shift_sint32(a, i_3)] <= a_2[shift_sint32(a, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i <= i_2) -> (((2 + i_2) <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i < i_2) -> ((i_2 < n) ->
+      (a_2[shift_sint32(a, i_2 - 1)] <= a_2[shift_sint32(a, i_2)]))).
+  (* Then *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: j <= i.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((i_3 <= i) -> ((i < i_2) -> ((0 <= i_3) ->
+      ((i_2 < n) ->
+      (a_3[shift_sint32(a, i_3)] <= a_3[shift_sint32(a, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i < i_2) -> ((i_2 < n) ->
+      (a_3[shift_sint32(a, i_2 - 1)] <= a_3[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= j) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, j)]))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Else *)
+  Have: i <= j.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < i) -> ((i <= i_2) ->
+      ((i_2 < n) ->
+      (a_3[shift_sint32(a, i_3)] <= a_3[shift_sint32(a, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let x = 1 + i_2 in ((i <= x) -> (((2 + i_2) <= n) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, x)]))).
+}
+Prove: a_3[shift_sint32(a, i_1 - 1)] <= a_3[shift_sint32(a, i_1)].
+Prover Alt-Ergo  returns Valid (Qed:25ms) (34ms) (111)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 28):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_1, a_1, n).
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, 1 + i_2).
+Let x = 1 + j.
+Let a_4 = a_3[shift_sint32(a, x)].
+Let a_5 = a_3[shift_sint32(a, j)].
+Assume {
+  Type: is_sint32(i_2) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(n - 1) /\
+      is_sint32(x) /\ is_sint32(a_5) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (i <= i_2) /\ (i_2 < i_1) /\ (0 <= i) /\ (i_1 < n).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i_2 < n.
+  (* Invariant *)
+  Have: forall i_4,i_3 : Z. ((i_4 <= i_2) -> ((i_2 < i_3) -> ((0 <= i_4) ->
+      ((i_3 < n) ->
+      (a_2[shift_sint32(a, i_4)] <= a_2[shift_sint32(a, i_3)]))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_2 <= i_3) -> (((2 + i_3) <= n) ->
+      (a_2[shift_sint32(a, i_3)] <= a_2[shift_sint32(a, 1 + i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_2 < i_3) -> ((i_3 < n) ->
+      (a_2[shift_sint32(a, i_3 - 1)] <= a_2[shift_sint32(a, i_3)]))).
+  (* Then *)
+  Have: 0 < i_2.
+  (* Invariant *)
+  Have: j <= i_2.
+  (* Invariant *)
+  Have: forall i_4,i_3 : Z. ((i_4 <= i_2) -> ((i_2 < i_3) -> ((0 <= i_4) ->
+      ((i_3 < n) ->
+      (a_3[shift_sint32(a, i_4)] <= a_3[shift_sint32(a, i_3)]))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_2 < i_3) -> ((i_3 < n) ->
+      (a_3[shift_sint32(a, i_3 - 1)] <= a_3[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 <= j) ->
+      (a_3[shift_sint32(a, i_3)] <= a_5))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j < i_2.
+  If a_4 < a_5
+  Then {
+    Have: a_3[shift_sint32(a, j) <- a_4][shift_sint32(a, x) <- a_5] = Mint_0.
+  }
+  Else { Have: a_3 = Mint_0. }
+}
+Prove: Mint_0[shift_sint32(a, i)] <= Mint_0[shift_sint32(a, i_1)].
+Prover Alt-Ergo  returns Valid (Qed:54ms) (56ms) (338)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 28):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Assume {
+  Type: is_sint32(i_2) /\ is_sint32(n) /\ is_sint32(n - 1).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (i <= i_2) /\ (i_2 < i_1) /\ (0 <= i) /\ (i_1 < n).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i_2 < n.
+  (* Invariant *)
+  Have: forall i_4,i_3 : Z. ((i_4 <= i_2) -> ((i_2 < i_3) -> ((0 <= i_4) ->
+      ((i_3 < n) ->
+      (a_2[shift_sint32(a, i_4)] <= a_2[shift_sint32(a, i_3)]))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_2 <= i_3) -> (((2 + i_3) <= n) ->
+      (a_2[shift_sint32(a, i_3)] <= a_2[shift_sint32(a, 1 + i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_2 < i_3) -> ((i_3 < n) ->
+      (a_2[shift_sint32(a, i_3 - 1)] <= a_2[shift_sint32(a, i_3)]))).
+  (* Then *)
+  Have: 0 < i_2.
+}
+Prove: a_2[shift_sint32(a, i)] <= a_2[shift_sint32(a, i_1)].
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (140ms) (90744)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (35ms) (65)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 29):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_1, a_1, n).
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, 1 + i_1).
+Let x = 1 + j.
+Let a_4 = a_3[shift_sint32(a, x)].
+Let a_5 = a_3[shift_sint32(a, j)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(n - 1) /\
+      is_sint32(x) /\ is_sint32(a_5) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (i_1 < i) /\ (i < n).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i_1 < n.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((i_3 <= i_1) -> ((i_1 < i_2) -> ((0 <= i_3) ->
+      ((i_2 < n) ->
+      (a_2[shift_sint32(a, i_3)] <= a_2[shift_sint32(a, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 <= i_2) -> (((2 + i_2) <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 < i_2) -> ((i_2 < n) ->
+      (a_2[shift_sint32(a, i_2 - 1)] <= a_2[shift_sint32(a, i_2)]))).
+  (* Then *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: j <= i_1.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((i_3 <= i_1) -> ((i_1 < i_2) -> ((0 <= i_3) ->
+      ((i_2 < n) ->
+      (a_3[shift_sint32(a, i_3)] <= a_3[shift_sint32(a, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 < i_2) -> ((i_2 < n) ->
+      (a_3[shift_sint32(a, i_2 - 1)] <= a_3[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= j) ->
+      (a_3[shift_sint32(a, i_2)] <= a_5))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j < i_1.
+  If a_4 < a_5
+  Then {
+    Have: a_3[shift_sint32(a, j) <- a_4][shift_sint32(a, x) <- a_5] = Mint_0.
+  }
+  Else { Have: a_3 = Mint_0. }
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((i_3 <= i_1) -> ((i_1 < i_2) -> ((0 <= i_3) ->
+      ((i_2 < n) ->
+      (Mint_0[shift_sint32(a, i_3)] <= Mint_0[shift_sint32(a, i_2)]))))).
+}
+Prove: Mint_0[shift_sint32(a, i - 1)] <= Mint_0[shift_sint32(a, i)].
+Prover Alt-Ergo  returns Valid (Qed:57ms) (48ms) (372)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 29):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n) /\ is_sint32(n - 1).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (i_1 < i) /\ (i < n).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i_1 < n.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((i_3 <= i_1) -> ((i_1 < i_2) -> ((0 <= i_3) ->
+      ((i_2 < n) ->
+      (a_2[shift_sint32(a, i_3)] <= a_2[shift_sint32(a, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 <= i_2) -> (((2 + i_2) <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 < i_2) -> ((i_2 < n) ->
+      (a_2[shift_sint32(a, i_2 - 1)] <= a_2[shift_sint32(a, i_2)]))).
+  (* Then *)
+  Have: 0 < i_1.
+}
+Prove: a_2[shift_sint32(a, i - 1)] <= a_2[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (140ms) (90211)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (31ms) (81)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 30):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_1, a_1, n).
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, 1 + i_1).
+Let x = 1 + j.
+Let a_4 = shift_sint32(a, x).
+Let a_5 = a_3[a_4].
+Let a_6 = a_3[shift_sint32(a, j)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(n - 1) /\
+      is_sint32(x) /\ is_sint32(a_6) /\ is_sint32(a_5).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= x).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i_1 < n.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((i_3 <= i_1) -> ((i_1 < i_2) -> ((0 <= i_3) ->
+      ((i_2 < n) ->
+      (a_2[shift_sint32(a, i_3)] <= a_2[shift_sint32(a, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 <= i_2) -> (((2 + i_2) <= n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, 1 + i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 < i_2) -> ((i_2 < n) ->
+      (a_2[shift_sint32(a, i_2 - 1)] <= a_2[shift_sint32(a, i_2)]))).
+  (* Then *)
+  Have: 0 < i_1.
+  (* Invariant *)
+  Have: j <= i_1.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((i_3 <= i_1) -> ((i_1 < i_2) -> ((0 <= i_3) ->
+      ((i_2 < n) ->
+      (a_3[shift_sint32(a, i_3)] <= a_3[shift_sint32(a, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 < i_2) -> ((i_2 < n) ->
+      (a_3[shift_sint32(a, i_2 - 1)] <= a_3[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 <= j) ->
+      (a_3[shift_sint32(a, i_2)] <= a_6))).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j < i_1.
+  If a_5 < a_6
+  Then { Have: a_3[shift_sint32(a, j) <- a_5][a_4 <- a_6] = Mint_0. }
+  Else { Have: a_3 = Mint_0. }
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((i_3 <= i_1) -> ((i_1 < i_2) -> ((0 <= i_3) ->
+      ((i_2 < n) ->
+      (Mint_0[shift_sint32(a, i_3)] <= Mint_0[shift_sint32(a, i_2)]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_1 < i_2) -> ((i_2 < n) ->
+      (Mint_0[shift_sint32(a, i_2 - 1)] <= Mint_0[shift_sint32(a, i_2)]))).
+}
+Prove: Mint_0[shift_sint32(a, i)] <= Mint_0[a_4].
+Prover Alt-Ergo  returns Valid (Qed:61ms) (53ms) (457)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (22ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 19) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 19) (2/3):
+Effect at line 24
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 19) (3/3):
+Effect at line 37
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 33) (1/4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 33) (2/4):
+Effect at line 37
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 33) (3/4):
+Effect at line 40
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_0, a_1, n).
+Let x = 1 + i.
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, x).
+Let x_1 = j - 1.
+Let a_4 = shift_sint32(a, x_1).
+Let a_5 = shift_sint32(a, j).
+Let a_6 = a_3[a_5].
+Let a_7 = a_3[a_4].
+Let a_8 = a_3[a_4 <- a_6][a_5 <- a_7].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(x_1) /\
+      is_sint32(n - 1) /\ is_sint32(a_6) /\ is_sint32(a_7).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_4, 1).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((i_2 <= i) -> ((i < i_1) -> ((0 <= i_2) ->
+      ((i_1 < n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, i_1)]))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i <= i_1) -> (((2 + i_1) <= n) ->
+      (a_2[shift_sint32(a, i_1)] <= a_2[shift_sint32(a, 1 + i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i < i_1) -> ((i_1 < n) ->
+      (a_2[shift_sint32(a, i_1 - 1)] <= a_2[shift_sint32(a, i_1)]))).
+  (* Then *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: j <= x.
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((i_2 <= i) -> ((i < i_1) -> ((0 <= i_2) ->
+      ((i_1 < n) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, i_1)]))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i < i_1) -> ((i_1 < n) ->
+      (a_3[shift_sint32(a, i_1 - 1)] <= a_3[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < j) ->
+      (a_3[shift_sint32(a, i_1)] <= a_7))).
+  (* Invariant *)
+  Have: 0 < j.
+  (* Then *)
+  Have: j <= i.
+  (* Then *)
+  Have: a_6 < a_7.
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((i_2 <= i) -> ((i < i_1) -> ((0 <= i_2) ->
+      ((i_1 < n) ->
+      (a_8[shift_sint32(a, i_2)] <= a_8[shift_sint32(a, i_1)]))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i < i_1) -> ((i_1 < n) ->
+      (a_8[shift_sint32(a, i_1 - 1)] <= a_8[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 <= j) ->
+      (a_8[shift_sint32(a, i_1)] <= a_7))).
+}
+Prove: included(a_4, 1, a_1, x).
+Prover Z3 4.8.12 returns Valid (Qed:32ms) (150ms) (135338)
+Prover Alt-Ergo  returns Valid (Qed:32ms) (50ms) (348)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 33) (4/4):
+Effect at line 41
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_1, Mint_0, a_1, n).
+Let x = 1 + i.
+Let a_3 = havoc(Mint_undef_0, a_2, a_1, x).
+Let x_1 = j - 1.
+Let a_4 = shift_sint32(a, x_1).
+Let a_5 = shift_sint32(a, j).
+Let a_6 = a_3[a_5].
+Let a_7 = a_3[a_4].
+Let a_8 = a_3[a_4 <- a_6][a_5 <- a_7].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(x_1) /\
+      is_sint32(n - 1) /\ is_sint32(a_6) /\ is_sint32(a_7).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_5, 1).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((i_2 <= i) -> ((i < i_1) -> ((0 <= i_2) ->
+      ((i_1 < n) ->
+      (a_2[shift_sint32(a, i_2)] <= a_2[shift_sint32(a, i_1)]))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i <= i_1) -> (((2 + i_1) <= n) ->
+      (a_2[shift_sint32(a, i_1)] <= a_2[shift_sint32(a, 1 + i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i < i_1) -> ((i_1 < n) ->
+      (a_2[shift_sint32(a, i_1 - 1)] <= a_2[shift_sint32(a, i_1)]))).
+  (* Then *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: j <= x.
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((i_2 <= i) -> ((i < i_1) -> ((0 <= i_2) ->
+      ((i_1 < n) ->
+      (a_3[shift_sint32(a, i_2)] <= a_3[shift_sint32(a, i_1)]))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i < i_1) -> ((i_1 < n) ->
+      (a_3[shift_sint32(a, i_1 - 1)] <= a_3[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < j) ->
+      (a_3[shift_sint32(a, i_1)] <= a_7))).
+  (* Invariant *)
+  Have: 0 < j.
+  (* Then *)
+  Have: j <= i.
+  (* Then *)
+  Have: a_6 < a_7.
+  (* Invariant *)
+  Have: forall i_2,i_1 : Z. ((i_2 <= i) -> ((i < i_1) -> ((0 <= i_2) ->
+      ((i_1 < n) ->
+      (a_8[shift_sint32(a, i_2)] <= a_8[shift_sint32(a, i_1)]))))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i < i_1) -> ((i_1 < n) ->
+      (a_8[shift_sint32(a, i_1 - 1)] <= a_8[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 <= j) ->
+      (a_8[shift_sint32(a, i_1)] <= a_7))).
+}
+Prove: included(a_5, 1, a_1, x).
+Prover Z3 4.8.12 returns Valid (Qed:33ms) (150ms) (135723)
+Prover Alt-Ergo  returns Valid (Qed:33ms) (55ms) (348)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 6) in 'bubbleSort' (1/2):
+Effect at line 24
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 6) in 'bubbleSort' (2/2):
+Effect at line 24
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 3) in 'bubbleSort'' in 'main' at call 'bubbleSort' (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 48)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 4) in 'bubbleSort'' in 'main' at call 'bubbleSort' (file out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c, line 48)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/mutable_arrays_bubble_sort/mutable_arrays_bubble_sort_0001/mutable_arrays_bubble_sort_0003/mutable_arrays_bubble_sort_merged.c:46: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

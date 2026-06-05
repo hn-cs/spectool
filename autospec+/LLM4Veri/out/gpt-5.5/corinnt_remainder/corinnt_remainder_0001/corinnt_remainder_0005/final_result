@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 6, 'Iteration': 6, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=19, microseconds=99396), 'total_solve_time': datetime.timedelta(seconds=53, microseconds=200510), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 330, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': [], '2': [], 'MSLines': ['/* 1. FUNC CONTRACT */\nvoid div_rem(unsigned x, unsigned y, unsigned* q, unsigned* r){\n', '     *q = x / y ;\n', '     *r = x % y ;\n', '}\n', '/* 2. FUNC CONTRACT */\nint main() {\n', '    unsigned x = 10, y = 3;\n', '    unsigned q, r;\n', '    div_rem(x, y, &q, &r);\n', '    //@ assert q == 3 && r == 1;\n', '    return 0;\n', '}']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

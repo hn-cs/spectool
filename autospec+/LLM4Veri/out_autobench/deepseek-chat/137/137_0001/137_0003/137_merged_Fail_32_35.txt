@@ -1,0 +1,397 @@
+[kernel] Parsing out/deepseek-chat/137/137_0001/137_0003/137_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 35 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 7ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_8_preserved (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_9_established (Qed 0.68ms) (Z3 8s)
+[wp] Proved goals:   32 / 35
+  Qed:            29
+  Alt-Ergo :       3 (19ms-21ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 13):
+Let x_1 = x + y.
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(1 + y) /\
+      is_sint32(x_1).
+  (* Invariant *)
+  Have: 2 <= y_1.
+  (* Invariant *)
+  Have: 0 <= y_1.
+  (* Invariant *)
+  Have: 0 < y_1.
+  (* Invariant *)
+  Have: (0 < y) \/ (x_1 <= 1).
+  (* Invariant *)
+  Have: x <= 0.
+  (* Invariant *)
+  Have: x < 0.
+  (* Invariant *)
+  Have: 2 <= y.
+  (* Invariant *)
+  Have: (-50) <= x.
+  (* Invariant *)
+  Have: (-50) <= x_1.
+  (* Invariant *)
+  Have: (-49) <= x_1.
+}
+Prove: (x_1 <= 0) \/ ((x + (2 * y)) <= 0).
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.66ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 17):
+Let x_1 = x + (2 * y).
+Let x_2 = x + y.
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(1 + y) /\
+      is_sint32(x_2).
+  (* Invariant *)
+  Have: 2 <= y_1.
+  (* Invariant *)
+  Have: 0 <= y_1.
+  (* Invariant *)
+  Have: 0 < y_1.
+  (* Invariant *)
+  Have: (0 < y) \/ (x_2 <= 1).
+  (* Invariant *)
+  Have: x <= 0.
+  (* Invariant *)
+  Have: x < 0.
+  (* Invariant *)
+  Have: 2 <= y.
+  (* Invariant *)
+  Have: (-50) <= x.
+  (* Invariant *)
+  Have: (-50) <= x_2.
+  (* Invariant *)
+  Have: (-49) <= x_2.
+  (* Invariant *)
+  Have: (x_2 <= 0) \/ (x_1 <= 0).
+  (* Invariant *)
+  Have: (0 <= y) \/ (x_1 <= 0).
+  (* Invariant *)
+  Have: (x_1 <= 0) \/ ((-51) <= x_1).
+}
+Prove: x_2 <= 0.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (120ms) (36580)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (19ms) (22)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.60ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 20):
+Let x_1 = x + y.
+Let x_2 = x + (2 * y).
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(1 + y) /\
+      is_sint32(x_1).
+  (* Invariant *)
+  Have: 2 <= y_1.
+  (* Invariant *)
+  Have: 0 <= y_1.
+  (* Invariant *)
+  Have: 0 < y_1.
+  (* Invariant *)
+  Have: (0 < y) \/ (x_1 <= 1).
+  (* Invariant *)
+  Have: x <= 0.
+  (* Invariant *)
+  Have: x < 0.
+  (* Invariant *)
+  Have: 2 <= y.
+  (* Invariant *)
+  Have: (-50) <= x.
+  (* Invariant *)
+  Have: (-50) <= x_1.
+  (* Invariant *)
+  Have: (-49) <= x_1.
+  (* Invariant *)
+  Have: (0 <= y) \/ (x_2 <= 0).
+  (* Invariant *)
+  Have: (x_2 <= 0) \/ ((-51) <= x_2).
+  (* Invariant *)
+  Have: x_1 <= 0.
+}
+Prove: x_1 < 0.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 21):
+Assume {
+  Type: is_sint32(y).
+  (* Invariant *)
+  Have: (0 < y) \/ (y <= 51).
+  (* Invariant *)
+  Have: (0 <= y) \/ (y <= 51).
+}
+Prove: 2 <= y.
+Prover Z3 4.8.12 returns Timeout (Qed:0.68ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.68ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (0.57ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (0.56ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 27):
+Let x_1 = x + y.
+Let x_2 = x + (2 * y).
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(1 + y) /\
+      is_sint32(x_1).
+  (* Invariant *)
+  Have: 2 <= y_1.
+  (* Invariant *)
+  Have: 0 <= y_1.
+  (* Invariant *)
+  Have: 0 < y_1.
+  (* Invariant *)
+  Have: x <= 0.
+  (* Invariant *)
+  Have: x < 0.
+  (* Invariant *)
+  Have: 2 <= y.
+  (* Invariant *)
+  Have: (-50) <= x.
+  (* Invariant *)
+  Have: (-50) <= x_1.
+  (* Invariant *)
+  Have: (-49) <= x_1.
+  (* Invariant *)
+  Have: (0 <= y) \/ (x_2 <= 0).
+  (* Invariant *)
+  Have: (x_2 <= 0) \/ ((-51) <= x_2).
+  (* Invariant *)
+  Have: x_1 <= 0.
+  (* Invariant *)
+  Have: x_1 < 0.
+  (* Invariant *)
+  Have: 0 < y.
+}
+Prove: (-51) <= x_2.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (120ms) (36591)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (21ms) (23)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (0.80ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 29):
+Let x_1 = x + (2 * y).
+Let x_2 = x + y.
+Assume {
+  Type: is_sint32(x) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(1 + y) /\
+      is_sint32(x_2).
+  (* Invariant *)
+  Have: 2 <= y_1.
+  (* Invariant *)
+  Have: 0 <= y_1.
+  (* Invariant *)
+  Have: 0 < y_1.
+  (* Invariant *)
+  Have: x <= 0.
+  (* Invariant *)
+  Have: x < 0.
+  (* Invariant *)
+  Have: 2 <= y.
+  (* Invariant *)
+  Have: (-50) <= x.
+  (* Invariant *)
+  Have: (-50) <= x_2.
+  (* Invariant *)
+  Have: (-49) <= x_2.
+  (* Invariant *)
+  Have: (0 <= y) \/ (x_1 <= 0).
+  (* Invariant *)
+  Have: x_2 <= 0.
+  (* Invariant *)
+  Have: x_2 < 0.
+  (* Invariant *)
+  Have: 0 < y.
+  (* Invariant *)
+  Have: (-51) <= x_1.
+}
+Prove: (-50) <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (110ms) (36793)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (20ms) (23)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (0.69ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/137/137_0001/137_0003/137_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/137/137_0001/137_0003/137_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,284 @@
+[kernel] Parsing out/deepseek-chat/220/220_0001/220_0001/220_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 15 goals scheduled
+[wp] Proved goals:   15 / 15
+  Qed:            10
+  Alt-Ergo :       5 (41ms-65ms)
+------------------------------------------------------------
+  Function reverse
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (0.66ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 8):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), n).
+Let x = -j.
+Let x_1 = n - 1 - j.
+Let a_2 = shift_sint32(a, x_1).
+Let a_3 = a_1[a_2].
+Let a_4 = shift_sint32(a, j).
+Assume {
+  Type: is_sint32(j) /\ is_sint32(n) /\ is_sint32(j - 1) /\
+      is_sint32(n - 1) /\ is_sint32(n - j) /\ is_sint32(x_1) /\
+      is_sint32(a_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (j <= i) /\ (i < n).
+  (* Invariant *)
+  Have: j < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((j < i_1) ->
+      (a_1[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, n - 1 - i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(a, i_1) in ((i_1 <= j) ->
+      ((n <= (1 + j + i_1)) -> (a_1[a_5] = Mint_0[a_5]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + j + i_1) <= n) ->
+      (a_1[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, n - 1 - i_1)]))).
+  (* Then *)
+  Have: n <= (j + (n / 2)).
+}
+Prove: a_1[a_2 <- a_1[a_4]][a_4 <- a_3][shift_sint32(a, i)] =
+    Mint_0[shift_sint32(a, n - 1 - i)].
+Prover Alt-Ergo  returns Valid (Qed:15ms) (58ms) (549)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (0.56ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 9):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), n).
+Let x = -j.
+Let x_1 = n - 1 - j.
+Let a_2 = shift_sint32(a, x_1).
+Let a_3 = shift_sint32(a, j).
+Let a_4 = a_1[a_2].
+Let a_5 = a_1[a_2 <- a_1[a_3]][a_3 <- a_4].
+Let a_6 = shift_sint32(a, i).
+Assume {
+  Type: is_sint32(j) /\ is_sint32(n) /\ is_sint32(j - 1) /\
+      is_sint32(n - 1) /\ is_sint32(n - j) /\ is_sint32(x_1) /\
+      is_sint32(a_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (i < j) /\ (n <= (i + j)).
+  (* Invariant *)
+  Have: j < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((j < i_1) ->
+      (a_1[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, n - 1 - i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_7 = shift_sint32(a, i_1) in ((i_1 <= j) ->
+      ((n <= (1 + j + i_1)) -> (a_1[a_7] = Mint_0[a_7]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + j + i_1) <= n) ->
+      (a_1[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, n - 1 - i_1)]))).
+  (* Then *)
+  Have: n <= (j + (n / 2)).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((j <= i_1) -> ((i_1 < n) ->
+      (a_5[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, n - 1 - i_1)]))).
+}
+Prove: a_5[a_6] = Mint_0[a_6].
+Prover Alt-Ergo  returns Valid (Qed:10ms) (41ms) (255)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 10):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), n).
+Let x = -j.
+Let x_1 = n - 1 - j.
+Let a_2 = shift_sint32(a, x_1).
+Let a_3 = shift_sint32(a, j).
+Let a_4 = a_1[a_2].
+Let a_5 = a_1[a_2 <- a_1[a_3]][a_3 <- a_4].
+Assume {
+  Type: is_sint32(j) /\ is_sint32(n) /\ is_sint32(j - 1) /\
+      is_sint32(n - 1) /\ is_sint32(n - j) /\ is_sint32(x_1) /\
+      is_sint32(a_4).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ ((i + j) < n).
+  (* Invariant *)
+  Have: j < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((j < i_1) ->
+      (a_1[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, n - 1 - i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = shift_sint32(a, i_1) in ((i_1 <= j) ->
+      ((n <= (1 + j + i_1)) -> (a_1[a_6] = Mint_0[a_6]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + j + i_1) <= n) ->
+      (a_1[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, n - 1 - i_1)]))).
+  (* Then *)
+  Have: n <= (j + (n / 2)).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((j <= i_1) -> ((i_1 < n) ->
+      (a_5[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, n - 1 - i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = shift_sint32(a, i_1) in ((i_1 < j) ->
+      ((n <= (j + i_1)) -> (a_5[a_6] = Mint_0[a_6]))).
+}
+Prove: a_5[shift_sint32(a, i)] = Mint_0[shift_sint32(a, n - 1 - i)].
+Prover Alt-Ergo  returns Valid (Qed:13ms) (65ms) (718)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.90ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 12) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 12) (2/3):
+Effect at line 18
+Let a_1 = shift_sint32(a, 0).
+Let x = i + j.
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, x).
+Let x_1 = i - 1.
+Let a_3 = shift_sint32(a, x_1).
+Let a_4 = shift_sint32(a, j).
+Let a_5 = a_2[a_3].
+Let a_6 = a_2[a_3 <- a_2[a_4]][a_4 <- a_5].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(x_1) /\ is_sint32(j - 1) /\
+      is_sint32(x) /\ is_sint32(i + j - 1) /\ is_sint32(a_5).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((j < i_1) -> ((i_1 < x) ->
+      (Mint_0[shift_sint32(a, i + j - 1 - i_1)] = a_2[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_7 = shift_sint32(a, i_1) in ((i_1 <= j) ->
+      ((i <= (1 + i_1)) -> (a_2[a_7] = Mint_0[a_7]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> (((2 + i_1) <= i) ->
+      (Mint_0[shift_sint32(a, i + j - 1 - i_1)] = a_2[shift_sint32(a, i_1)]))).
+  (* Then *)
+  Have: i <= (x / 2).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((j <= i_1) -> ((i_1 < x) ->
+      (a_6[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, i + j - 1 - i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_7 = shift_sint32(a, i_1) in ((i <= i_1) ->
+      ((i_1 < j) -> (a_6[a_7] = Mint_0[a_7]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_6[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, i + j - 1 - i_1)]))).
+}
+Prove: included(a_3, 1, a_1, x).
+Prover Alt-Ergo  returns Valid (Qed:14ms) (51ms) (469)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/220/220_0001/220_0001/220_merged.c, line 12) (3/3):
+Effect at line 19
+Let a_1 = shift_sint32(a, 0).
+Let x = 2 + i + j.
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, x).
+Let a_3 = shift_sint32(a, i).
+Let x_1 = 1 + j.
+Let a_4 = shift_sint32(a, x_1).
+Let a_5 = a_2[a_3].
+Let a_6 = a_2[a_3 <- a_2[a_4]][a_4 <- a_5].
+Let x_2 = 1 + i + j.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(1 + i) /\ is_sint32(x_1) /\
+      is_sint32(x_2) /\ is_sint32(x) /\ is_sint32(a_5).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_4, 1).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: forall i_1 : Z. (((2 + j) <= i_1) -> ((i_1 <= x_2) ->
+      (a_2[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, 1 + i + j - i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_7 = shift_sint32(a, i_1) in ((i <= i_1) ->
+      ((i_1 <= x_1) -> (a_2[a_7] = Mint_0[a_7]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (a_2[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, 1 + i + j - i_1)]))).
+  (* Then *)
+  Have: i < (x / 2).
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((j < i_1) -> ((i_1 <= x_2) ->
+      (a_6[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, 1 + i + j - i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_7 = shift_sint32(a, i_1) in ((i < i_1) ->
+      ((i_1 <= j) -> (a_6[a_7] = Mint_0[a_7]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 <= i) -> ((0 <= i_1) ->
+      (a_6[shift_sint32(a, i_1)] = Mint_0[shift_sint32(a, 1 + i + j - i_1)]))).
+}
+Prove: included(a_4, 1, a_1, x).
+Prover Alt-Ergo  returns Valid (Qed:10ms) (56ms) (472)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/220/220_0001/220_0001/220_merged.c:1: Warning: 
+  No 'assigns' specification for function 'reverse'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/220/220_0001/220_0001/220_merged.c:26: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

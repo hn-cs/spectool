@@ -1,0 +1,18 @@
+[kernel] Parsing out/deepseek-chat/stack_pop_wd/stack_pop_wd_0001/stack_pop_wd_0003/stack_pop_wd_merged.c (with preprocessing)
+[kernel] out/deepseek-chat/stack_pop_wd/stack_pop_wd_0001/stack_pop_wd_0003/stack_pop_wd_merged.c:125: 
+  syntax error:
+  Location: between lines 125 and 137
+  123   void
+  124   stack_pop(Stack* s);
+  
+  125   void
+  126   /*@
+  127   requires \valid(t) && StackInvariant(t);
+  128-134 [... omitted ...]
+  135   ensures StackInvariant(s) && StackInvariant(t);
+  136   ensures StackEqual{Here,Here}(s, t);
+  137   assigns s- > size, t- > size;
+  
+  138   */
+  139   stack_pop_wd(Stack* s, Stack* t)
+[kernel] Frama-C aborted: invalid user input.

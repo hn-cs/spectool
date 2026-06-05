@@ -1,0 +1,71 @@
+[kernel] Parsing out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c:12: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c:26: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 9 goals scheduled
+[wp] Proved goals:    9 / 9
+  Qed:             9
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.60ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.99ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.65ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0001/loop-invgen_down_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,43 @@
+[kernel] Parsing out/deepseek-chat/evdenis_small-examples_indaddr/evdenis_small-examples_indaddr_0001/evdenis_small-examples_indaddr_0005/evdenis_small-examples_indaddr_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 4 goals scheduled
+[wp] Proved goals:    4 / 4
+  Qed:             4
+------------------------------------------------------------
+  Function indaddr
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/evdenis_small-examples_indaddr/evdenis_small-examples_indaddr_0001/evdenis_small-examples_indaddr_0005/evdenis_small-examples_indaddr_merged.c, line 5) in 'indaddr':
+Effect at line 9
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/evdenis_small-examples_indaddr/evdenis_small-examples_indaddr_0001/evdenis_small-examples_indaddr_0005/evdenis_small-examples_indaddr_merged.c, line 2) in 'indaddr'' in 'main' at call 'indaddr' (file out/deepseek-chat/evdenis_small-examples_indaddr/evdenis_small-examples_indaddr_0001/evdenis_small-examples_indaddr_0005/evdenis_small-examples_indaddr_merged.c, line 14)
+:
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/evdenis_small-examples_indaddr/evdenis_small-examples_indaddr_0001/evdenis_small-examples_indaddr_0005/evdenis_small-examples_indaddr_merged.c, line 3) in 'indaddr'' in 'main' at call 'indaddr' (file out/deepseek-chat/evdenis_small-examples_indaddr/evdenis_small-examples_indaddr_0001/evdenis_small-examples_indaddr_0005/evdenis_small-examples_indaddr_merged.c, line 14)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/evdenis_small-examples_indaddr/evdenis_small-examples_indaddr_0001/evdenis_small-examples_indaddr_0005/evdenis_small-examples_indaddr_merged.c, line 4) in 'indaddr'' in 'main' at call 'indaddr' (file out/deepseek-chat/evdenis_small-examples_indaddr/evdenis_small-examples_indaddr_0001/evdenis_small-examples_indaddr_0005/evdenis_small-examples_indaddr_merged.c, line 14)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/evdenis_small-examples_indaddr/evdenis_small-examples_indaddr_0001/evdenis_small-examples_indaddr_0005/evdenis_small-examples_indaddr_merged.c:11: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

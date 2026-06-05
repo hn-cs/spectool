@@ -1,0 +1,17 @@
+[kernel] Parsing out/deepseek-chat/stack_size_wd/stack_size_wd_0001/stack_size_wd_0005/stack_size_wd_merged.c (with preprocessing)
+[kernel] out/deepseek-chat/stack_size_wd/stack_size_wd_0001/stack_size_wd_0005/stack_size_wd_merged.c:110: 
+  syntax error:
+  Location: between lines 110 and 115
+  108   size_type
+  109   stack_size(const Stack* s);
+  
+  110   bool
+  111   /*@
+  112   requires valid: \valid(t) && StackInvariant(t);
+  113   requires valid: \valid(s) && StackInvariant(s);
+  114   ensures \result <==> stack_size(s) == stack_size(t);
+  115   assigns     \nothing;
+  
+  116   */
+  117   stack_size_wd(const Stack* s, const Stack* t)
+[kernel] Frama-C aborted: invalid user input.

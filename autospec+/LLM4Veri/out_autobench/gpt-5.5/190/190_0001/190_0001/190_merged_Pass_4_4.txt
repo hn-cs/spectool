@@ -1,0 +1,38 @@
+[kernel] Parsing out/gpt-5.5/190/190_0001/190_0001/190_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 4 goals scheduled
+[wp] Proved goals:    4 / 4
+  Qed:             4
+------------------------------------------------------------
+  Function max
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/190/190_0001/190_0001/190_merged.c, line 4) in 'max':
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/190/190_0001/190_0001/190_merged.c, line 5) in 'max':
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'max' (1/2):
+Effect at line 10
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'max' (2/2):
+Effect at line 11
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/190/190_0001/190_0001/190_merged.c:14: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

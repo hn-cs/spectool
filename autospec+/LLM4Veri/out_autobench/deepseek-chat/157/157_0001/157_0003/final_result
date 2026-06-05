@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 4, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=4, microseconds=99666), 'total_solve_time': datetime.timedelta(seconds=150, microseconds=777650), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 211, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [2, 2, 3, 1], '1': ['loop invariant k <= n;', 'loop invariant j <= n;', 'loop invariant j <= k;', 'loop invariant i <= n;', 'loop invariant i <= j;', 'loop invariant 0 <= k;', 'loop invariant 0 <= j;', 'loop invariant 0 <= i;', 'loop assigns k;'], '2': ['loop invariant j <= n;', 'loop invariant i <= n;', 'loop invariant i <= j;', 'loop invariant \\forall integer p, q, r; 0 <= p <= i && i <= q <= j && j <= r <= k ==> p <= r;', 'loop invariant 0 <= j;', 'loop invariant 0 <= i;', 'loop assigns k;', 'loop assigns j;', 'loop assigns i;'], '3': ['loop invariant \\forall integer t; 0 <= t < i ==> \\forall integer u; t <= u < n ==> \\forall integer v; u <= v < n ==> v >= u;', 'loop invariant \\forall integer p, q, r; 0 <= p <= q <= r < i ==> r >= p;', 'loop invariant 0 <= i;', 'loop assigns k;', 'loop assigns j;', 'loop assigns i;'], '4': [], 'MSLines': ['#include <assert.h>\n', 'int unknown1();\n', 'int unknown2();\n', 'int unknown3();\n', 'int unknown4();\n', '\n', '/*\n', ' * "nested5.c" from InvGen test suite\n', ' */\n', '\n', '/* 4. FUNC CONTRACT */\nvoid main() {\n', '  int i,j,k,n;\n', '  \n', '  /* 3. LOOP INVARIANT */\n  for (i=0;i<n;i++)\n', '    /* 2. LOOP INVARIANT */\n    for (j=i;j<n;j++)\n', '      /* 1. LOOP INVARIANT */\n      for (k=j;k<n;k++){\n', '\t      //@ assert(k>=i);\n', '      }\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

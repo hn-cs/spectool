@@ -1,0 +1,650 @@
+[kernel] Parsing out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c:11: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 64 goals scheduled
+[wp] Proved goals:   64 / 64
+  Qed:            60
+  Alt-Ergo :       4 (20ms-140ms-493ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 16):
+Assume {
+  Type: is_sint32(a) /\ is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(last_0).
+  (* Residual *)
+  When: last_0 != 200000.
+  (* Goal *)
+  When: last_0 <= 199999.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= last_0) /\ (last_0 <= 2147483646).
+  (* Invariant *)
+  Have: 0 <= a.
+  (* Invariant *)
+  Have: ((c_1 = 0) -> (a = 0)).
+  (* Invariant *)
+  Have: c_1 <= 200000.
+  (* Invariant *)
+  Have: 0 <= c_1.
+  (* Invariant *)
+  Have: (c_1 = 0) \/ (c_1 = 200000).
+  (* Invariant *)
+  Have: (c = 0) \/ (c <= last_0).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < c) -> (i < last_0))).
+  (* Invariant *)
+  Have: c <= 200000.
+  (* Invariant *)
+  Have: 0 <= c.
+  (* Else *)
+  Have: 200000 <= c.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Valid (Qed:27ms) (120ms) (37076)
+Prover Alt-Ergo  returns Valid (Qed:27ms) (20ms) (37)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.82ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 17):
+Assume {
+  Type: is_sint32(a) /\ is_sint32(a_1) /\ is_sint32(a_2) /\ is_sint32(a_3) /\
+      is_sint32(a_4) /\ is_sint32(c) /\ is_sint32(c_1) /\ is_sint32(d) /\
+      is_sint32(last_0) /\ is_sint32(st_0) /\ is_sint32(st_1).
+  (* Residual *)
+  When: d != 200000.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= last_0) /\ (last_0 <= 2147483646).
+  (* Invariant *)
+  Have: ((st_1 = 1) -> (c_1 = 200000)).
+  (* Invariant *)
+  Have: ((last_0 <= 199999) -> (st_1 = 0)).
+  (* Invariant *)
+  Have: 0 <= a_4.
+  (* Invariant *)
+  Have: ((c_1 = 0) -> (st_1 = 0)).
+  (* Invariant *)
+  Have: ((c_1 = 0) -> (a_4 = 0)).
+  (* Invariant *)
+  Have: c_1 <= 200000.
+  (* Invariant *)
+  Have: 0 <= c_1.
+  (* Invariant *)
+  Have: (st_1 = 0) \/ (st_1 = 1).
+  (* Invariant *)
+  Have: (c_1 = 0) \/ (c_1 = 200000).
+  (* Invariant *)
+  Have: ((st_0 = 1) -> ((c = 0) \/ (c <= last_0))).
+  (* Invariant *)
+  Have: (forall i : Z. ((0 <= i) -> ((i < c) -> (i < last_0)))) <->
+      (st_0 = 1).
+  (* Invariant *)
+  Have: (st_0 = 0) \/ (st_0 = 1).
+  (* Invariant *)
+  Have: ((st_0 = 0) -> (last_0 < c)).
+  (* Invariant *)
+  Have: ((st_0 = 0) -> (last_0 <= 199999)).
+  (* Invariant *)
+  Have: ((st_0 = 0) -> (0 < c)).
+  (* Invariant *)
+  Have: (exists i : Z. (0 <= i) /\ (i < c) /\ (last_0 <= i)) <-> (st_0 = 0).
+  (* Invariant *)
+  Have: ((200000 <= last_0) -> (st_0 = 1)).
+  (* Invariant *)
+  Have: ((c = 0) -> (st_0 = 1)).
+  (* Invariant *)
+  Have: c <= 200000.
+  (* Invariant *)
+  Have: 0 <= c.
+  (* Else *)
+  Have: 200000 <= c.
+  If st_0 = 0
+  Then {
+    Have: a_4 = a_5.
+    If last_0 = 199999
+    Then { Have: a_5 = a_2. Have: (3 + a_2) = a_6. }
+    Else { Have: a_5 = a_3. Have: (2 + a_3) = a_6. }
+  }
+  Else { Have: a_4 = a_3. Have: (2 + a_3) = a_6. }
+  If last_0 = 200000
+  Then {
+    Have: a_6 = a_7.
+    Core: d = 0.
+    If st_0 = 0
+    Then { Have: a_7 = a_1. Have: (1 + a_1) = a. }
+    Else { Have: a_7 = a. }
+  }
+  Else {
+    Have: a_6 = a.
+    If st_0 = 1
+    Then { If last_0 <= 199999 Then { Have: d = 1. } Else { Have: d = 0. } }
+    Else { Have: d = 0. }
+  }
+  (* Invariant *)
+  Have: ((last_0 <= 199999) -> (st_0 = 0)).
+}
+Prove: d <= a.
+Prover Z3 4.8.12 returns Valid (Qed:123ms) (120ms) (46055)
+Prover Alt-Ergo  returns Valid (Qed:123ms) (26ms) (126)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (18ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (87ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 23):
+Assume {
+  Type: is_sint32(a) /\ is_sint32(a_1) /\ is_sint32(a_2) /\ is_sint32(a_3) /\
+      is_sint32(b) /\ is_sint32(b_1) /\ is_sint32(c) /\ is_sint32(c_1) /\
+      is_sint32(d) /\ is_sint32(last_0) /\ is_sint32(st_0) /\
+      is_sint32(st_1) /\ is_sint32(b + d).
+  (* Goal *)
+  When: (0 <= i) /\ (i < c).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= last_0) /\ (last_0 <= 2147483646).
+  (* Invariant *)
+  Have: ((st_1 = 1) -> (c_1 = 200000)).
+  (* Invariant *)
+  Have: ((last_0 <= 199999) -> (st_1 = 0)).
+  (* Invariant *)
+  Have: 0 <= a_3.
+  (* Invariant *)
+  Have: ((c_1 = 0) -> (st_1 = 0)).
+  (* Invariant *)
+  Have: ((c_1 = 0) -> (a_3 = 0)).
+  (* Invariant *)
+  Have: c_1 <= 200000.
+  (* Invariant *)
+  Have: 0 <= c_1.
+  (* Invariant *)
+  Have: (st_1 = 0) \/ (st_1 = 1).
+  (* Invariant *)
+  Have: (c_1 = 0) \/ (c_1 = 200000).
+  (* Invariant *)
+  Have: ((st_0 = 1) -> ((c = 0) \/ (c <= last_0))).
+  (* Invariant *)
+  Have: (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < c) -> (i_1 < last_0)))) <->
+      (st_0 = 1).
+  (* Invariant *)
+  Have: (st_0 = 0) \/ (st_0 = 1).
+  (* Invariant *)
+  Have: ((st_0 = 0) -> (last_0 < c)).
+  (* Invariant *)
+  Have: ((st_0 = 0) -> (last_0 <= 199999)).
+  (* Invariant *)
+  Have: ((st_0 = 0) -> (0 < c)).
+  (* Invariant *)
+  Have: (exists i_1 : Z. (0 <= i_1) /\ (i_1 < c) /\ (last_0 <= i_1)) <->
+      (st_0 = 0).
+  (* Invariant *)
+  Have: ((200000 <= last_0) -> (st_0 = 1)).
+  (* Invariant *)
+  Have: ((c = 0) -> (st_0 = 1)).
+  (* Invariant *)
+  Have: c <= 200000.
+  (* Invariant *)
+  Have: 0 <= c.
+  (* Else *)
+  Have: 200000 <= c.
+  If st_0 = 0
+  Then {
+    Have: a_3 = a_4.
+    If last_0 = 199999
+    Then { Let x = 3 + a_1. Have: a_4 = a_1. Have: x = a_5. Have: x = b. }
+    Else {
+      Let x_1 = 2 + a_2.
+      Have: (a_4 = a_2) /\ (b_1 = a_2).
+      Have: x_1 = a_5.
+      Have: x_1 = b.
+    }
+  }
+  Else { Have: (a_3 = a_2) /\ (b_1 = a_2). Have: x_1 = a_5. Have: x_1 = b. }
+  If last_0 = 200000
+  Then {
+    Have: a_5 = a_6.
+    Core: d = 0.
+    If st_0 = 0
+    Then { Have: a_6 = a. Have: (1 + a) = b. }
+    Else { Have: b = a_6. }
+  }
+  Else {
+    Have: (b + d) = a_5.
+    If st_0 = 1
+    Then { If last_0 <= 199999 Then { Have: d = 1. } Else { Have: d = 0. } }
+    Else { Have: d = 0. }
+  }
+  Have: d != 200000.
+  (* Invariant *)
+  Have: ((last_0 <= 199999) -> (st_0 = 0)).
+  (* Invariant *)
+  Have: 0 <= b.
+}
+Prove: i <= 199999.
+Prover Z3 4.8.12 returns Valid (Qed:108ms) (110ms) (45951)
+Prover Alt-Ergo  returns Valid (Qed:108ms) (21ms) (40)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (0.73ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (52ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (0.74ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (0.91ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (62ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (16ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (0.87ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 42):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 42):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 43):
+Assume {
+  Type: is_sint32(a) /\ is_sint32(c) /\ is_sint32(c_1) /\
+      is_sint32(last_0) /\ is_sint32(st_0) /\ is_sint32(st_1) /\
+      is_sint32(st_2) /\ is_sint32(1 + c).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= last_0) /\ (last_0 <= 2147483646).
+  (* Invariant *)
+  Have: ((st_2 = 1) -> (c_1 = 200000)).
+  (* Invariant *)
+  Have: ((last_0 <= 199999) -> (st_2 = 0)).
+  (* Invariant *)
+  Have: 0 <= a.
+  (* Invariant *)
+  Have: ((c_1 = 0) -> (st_2 = 0)).
+  (* Invariant *)
+  Have: ((c_1 = 0) -> (a = 0)).
+  (* Invariant *)
+  Have: c_1 <= 200000.
+  (* Invariant *)
+  Have: 0 <= c_1.
+  (* Invariant *)
+  Have: (st_2 = 0) \/ (st_2 = 1).
+  (* Invariant *)
+  Have: (c_1 = 0) \/ (c_1 = 200000).
+  (* Invariant *)
+  Have: ((st_1 = 1) -> ((c = 0) \/ (c <= last_0))).
+  (* Invariant *)
+  Have: (forall i : Z. ((0 <= i) -> ((i < c) -> (i < last_0)))) <->
+      (st_1 = 1).
+  (* Invariant *)
+  Have: (st_1 = 0) \/ (st_1 = 1).
+  (* Invariant *)
+  Have: ((st_1 = 0) -> (last_0 < c)).
+  (* Invariant *)
+  Have: ((st_1 = 0) -> (last_0 <= 199999)).
+  (* Invariant *)
+  Have: ((st_1 = 0) -> (0 < c)).
+  (* Invariant *)
+  Have: (exists i : Z. (0 <= i) /\ (i < c) /\ (last_0 <= i)) <-> (st_1 = 0).
+  (* Invariant *)
+  Have: ((200000 <= last_0) -> (st_1 = 1)).
+  (* Invariant *)
+  Have: ((c = 0) -> (st_1 = 1)).
+  (* Invariant *)
+  Have: c <= 200000.
+  (* Invariant *)
+  Have: 0 <= c.
+  (* Then *)
+  Have: c <= 199999.
+  If last_0 <= c
+  Then { Have: st_0 = 0. }
+  Else { Have: st_1 = st_0. }
+  (* Invariant *)
+  Have: ((st_0 = 1) -> ((c = (-1)) \/ (c < last_0))).
+}
+Prove: (forall i : Z. ((i <= c) -> ((0 <= i) -> (i < last_0)))) <->
+    (st_0 = 1).
+Prover Alt-Ergo  returns Valid (Qed:43ms) (493ms) (7711)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 43):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 44):
+Prove: true.
+Prover Qed returns Valid (16ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 44):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 45):
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 45):
+Prove: true.
+Prover Qed returns Valid (0.60ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 46):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 46):
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 47):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 47):
+Prove: true.
+Prover Qed returns Valid (0.68ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 48):
+Prove: true.
+Prover Qed returns Valid (17ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 48):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 49):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 49):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 50):
+Prove: true.
+Prover Qed returns Valid (0.98ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 50):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 51):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 51):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 52):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 52):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 53):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 53):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 54):
+Prove: true.
+Prover Qed returns Valid (16ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 54):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c, line 55):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops-crafted-1_nested_delay_nd/loops-crafted-1_nested_delay_nd_0001/loops-crafted-1_nested_delay_nd_0004/loops-crafted-1_nested_delay_nd_merged.c:9: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

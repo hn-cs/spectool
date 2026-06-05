@@ -1,0 +1,101 @@
+[kernel] Parsing out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] [Timeout] typed_reset_1st_if_2nd_is_true_ensures_2 (Qed 5ms) (Alt-Ergo 8s)
+[wp] [Timeout] typed_reset_1st_if_2nd_is_true_ensures (Qed 9ms) (Z3 8s)
+[wp] Proved goals:    6 / 8
+  Qed:             6
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c, line 2) in 'reset_1st_if_2nd_is_true'' in 'main' at call 'reset_1st_if_2nd_is_true' (file out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c, line 15)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c, line 3) in 'reset_1st_if_2nd_is_true'' in 'main' at call 'reset_1st_if_2nd_is_true' (file out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c, line 15)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c, line 2) in 'reset_1st_if_2nd_is_true'' in 'main' at call 'reset_1st_if_2nd_is_true' (file out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c, line 19)
+:
+Prove: true.
+Prover Qed returns Valid (0.96ms)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c, line 3) in 'reset_1st_if_2nd_is_true'' in 'main' at call 'reset_1st_if_2nd_is_true' (file out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c, line 19)
+:
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function reset_1st_if_2nd_is_true
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c, line 4) in 'reset_1st_if_2nd_is_true':
+Let x = Mint_0[b].
+Let x_1 = Mint_0[a <- 0][b].
+Assume {
+  Type: is_sint32(Mint_0[a]) /\ is_sint32(x) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Residual *)
+  When: x != 0.
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, b, 1).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, 1).
+}
+Prove: x_1 = x.
+Prover Z3 4.8.12 returns Timeout (Qed:9ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:9ms) (8s)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c, line 5) in 'reset_1st_if_2nd_is_true':
+Let x = Mint_0[b].
+Let x_1 = Mint_0[a].
+Assume {
+  Type: is_sint32(x_1) /\ is_sint32(x).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Residual *)
+  When: x != 0.
+  (* Goal *)
+  When: Mint_0[a <- 0][b] = 0.
+  (* Pre-condition *)
+  Have: valid_rd(Malloc_0, b, 1).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, 1).
+}
+Prove: x_1 = 0.
+Prover Z3 4.8.12 returns Unknown (Qed:5ms)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c, line 6) in 'reset_1st_if_2nd_is_true':
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c, line 7) in 'reset_1st_if_2nd_is_true':
+Effect at line 10
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/pointers_reset_1st/pointers_reset_1st_0001/pointers_reset_1st_0003/pointers_reset_1st_merged.c:12: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

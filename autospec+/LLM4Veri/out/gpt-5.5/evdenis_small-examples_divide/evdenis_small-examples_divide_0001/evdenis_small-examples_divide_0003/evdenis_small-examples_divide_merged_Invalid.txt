@@ -1,0 +1,8 @@
+[kernel] Parsing out/gpt-5.5/evdenis_small-examples_divide/evdenis_small-examples_divide_0001/evdenis_small-examples_divide_0003/evdenis_small-examples_divide_merged.c (with preprocessing)
+[kernel:annot-error] out/gpt-5.5/evdenis_small-examples_divide/evdenis_small-examples_divide_0001/evdenis_small-examples_divide_0003/evdenis_small-examples_divide_merged.c:3: Warning: 
+  unbound logic variable INT_MIN. Ignoring logic specification of function divide
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/gpt-5.5/evdenis_small-examples_divide/evdenis_small-examples_divide_0001/evdenis_small-examples_divide_0003/evdenis_small-examples_divide_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

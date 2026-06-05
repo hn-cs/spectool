@@ -1,0 +1,77 @@
+[kernel] Parsing out/gpt-5.5/evdenis_small-examples_avr/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 10 goals scheduled
+[wp] Proved goals:   10 / 10
+  Qed:            10
+------------------------------------------------------------
+  Function avr
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/evdenis_small-examples_avr/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_merged.c, line 2) in 'avr':
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/evdenis_small-examples_avr/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_merged.c, line 3) in 'avr':
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/evdenis_small-examples_avr/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_merged.c, line 4) in 'avr':
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/evdenis_small-examples_avr/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_merged.c, line 5) in 'avr':
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/evdenis_small-examples_avr/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_merged.c, line 6) in 'avr':
+Prove: true.
+Prover Qed returns Valid (29ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'avr' (1/5):
+Effect at line 14
+Prove: true.
+Prover Qed returns Valid (0.58ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'avr' (2/5):
+Effect at line 16
+Prove: true.
+Prover Qed returns Valid (0.87ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'avr' (3/5):
+Effect at line 20
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'avr' (4/5):
+Effect at line 22
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'avr' (5/5):
+Effect at line 25
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/evdenis_small-examples_avr/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_0001/evdenis_small-examples_avr_merged.c:29: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

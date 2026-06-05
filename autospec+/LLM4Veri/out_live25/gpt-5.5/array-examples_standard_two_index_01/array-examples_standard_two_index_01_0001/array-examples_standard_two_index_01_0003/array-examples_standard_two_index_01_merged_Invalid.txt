@@ -1,0 +1,8 @@
+[kernel] Parsing out/gpt-5.5/array-examples_standard_two_index_01/array-examples_standard_two_index_01_0001/array-examples_standard_two_index_01_0003/array-examples_standard_two_index_01_merged.c (with preprocessing)
+[kernel:annot-error] out/gpt-5.5/array-examples_standard_two_index_01/array-examples_standard_two_index_01_0001/array-examples_standard_two_index_01_0003/array-examples_standard_two_index_01_merged.c:21: Warning: 
+  unbound logic variable size. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/gpt-5.5/array-examples_standard_two_index_01/array-examples_standard_two_index_01_0001/array-examples_standard_two_index_01_0003/array-examples_standard_two_index_01_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

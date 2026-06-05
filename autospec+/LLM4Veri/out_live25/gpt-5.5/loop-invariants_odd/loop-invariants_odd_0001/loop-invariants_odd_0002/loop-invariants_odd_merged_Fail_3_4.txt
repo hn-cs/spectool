@@ -1,0 +1,52 @@
+[kernel] Parsing out/gpt-5.5/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0002/loop-invariants_odd_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0002/loop-invariants_odd_merged.c:13: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 4 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 6ms) (Z3 8s)
+[wp] Proved goals:    3 / 4
+  Qed:             3
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0002/loop-invariants_odd_merged.c, line 10):
+Assume {
+  Type: is_uint32(x) /\ is_sint32(tmp_0).
+  (* Invariant *)
+  Have: 0 < x.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_0 != 0.
+}
+Prove: 0 < to_uint32(2 + x).
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0002/loop-invariants_odd_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0002/loop-invariants_odd_merged.c, line 11) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0002/loop-invariants_odd_merged.c, line 11) (2/2):
+Call Result at line 13
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-invariants_odd/loop-invariants_odd_0001/loop-invariants_odd_0002/loop-invariants_odd_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

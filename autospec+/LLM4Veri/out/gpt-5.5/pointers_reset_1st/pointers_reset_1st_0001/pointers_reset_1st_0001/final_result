@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 2, 'Iteration': 2, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=4, microseconds=62837), 'total_solve_time': datetime.timedelta(seconds=9, microseconds=597625), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 60, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': [], '2': [], 'MSLines': ['/* 1. FUNC CONTRACT */\nvoid reset_1st_if_2nd_is_true(int* a, int const* b){\n', '    if(*b) *a = 0 ;\n', '}\n', '/* 2. FUNC CONTRACT */\nint main(){\n', '    int a = 5 ;\n', '    int x = 0 ;\n', '    reset_1st_if_2nd_is_true(&a, &x);\n', '    //@ assert a == 5 ;\n', '    //@ assert x == 0 ;\n', '    int const b = 1 ;\n', '    reset_1st_if_2nd_is_true(&a, &b);\n', '    //@ assert a == 0 ;\n', '    //@ assert b == 1 ;\n', '}']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

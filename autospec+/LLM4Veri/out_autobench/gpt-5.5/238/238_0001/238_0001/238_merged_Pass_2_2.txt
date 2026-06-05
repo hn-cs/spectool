@@ -1,0 +1,33 @@
+[kernel] Parsing out/gpt-5.5/238/238_0001/238_0001/238_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/238/238_0001/238_0001/238_merged.c:13: Warning: 
+  Calling function unknown_int that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/238/238_0001/238_0001/238_merged.c:11: Warning: 
+  Neither code nor implicit assigns clause for function unknown_int, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 2 goals scheduled
+[wp] Proved goals:    2 / 2
+  Qed:             2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/238/238_0001/238_0001/238_merged.c, line 24) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/238/238_0001/238_0001/238_merged.c, line 24) (2/2):
+Call Result at line 29
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/238/238_0001/238_0001/238_merged.c:9: Warning: 
+  No 'assigns' specification for function 'unknown_int'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/238/238_0001/238_0001/238_merged.c:11: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,60 @@
+[kernel] Parsing out/deepseek-chat/250/250_0001/250_0001/250_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 5 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 0.60ms) (Z3 8s)
+[wp] Proved goals:    4 / 5
+  Qed:             3
+  Alt-Ergo :       1 (42ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/250/250_0001/250_0001/250_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/250/250_0001/250_0001/250_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/250/250_0001/250_0001/250_merged.c, line 8):
+Let x_2 = -x.
+Assume {
+  Type: is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(y) /\ is_sint32(x + y).
+  (* Then *)
+  Have: 0 < y.
+  (* Invariant *)
+  Have: ((100 - x_1) / y) != (-1).
+  (* Invariant *)
+  Have: ((100 - x) / y) != (-1).
+  (* Then *)
+  Have: x <= 99.
+}
+Prove: ((100 - x - y) / y) != (-1).
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (140ms) (54010)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (42ms) (470)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/250/250_0001/250_0001/250_merged.c, line 8):
+Assume { Type: is_sint32(x) /\ is_sint32(y). (* Then *) Have: 0 < y. }
+Prove: ((100 - x) / y) != (-1).
+Prover Z3 4.8.12 returns Timeout (Qed:0.60ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.60ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/250/250_0001/250_0001/250_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/250/250_0001/250_0001/250_merged.c:2: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

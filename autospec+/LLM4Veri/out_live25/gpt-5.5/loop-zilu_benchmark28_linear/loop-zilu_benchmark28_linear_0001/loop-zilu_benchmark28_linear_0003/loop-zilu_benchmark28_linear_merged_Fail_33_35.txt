@@ -1,0 +1,434 @@
+[kernel] Parsing out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 35 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_4_preserved (Qed 9ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_4_established (Qed 2ms) (Z3 8s)
+[wp] Proved goals:   33 / 35
+  Qed:            27
+  Alt-Ergo :       3 (18ms-24ms)
+  Z3 4.8.12:       3 (140ms-3.5s-8s)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 14):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j).
+  (* Goal *)
+  When: j < 0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j * j).
+}
+Prove: j <= i.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (150ms) (38455)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 15):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j).
+  (* Goal *)
+  When: i < j.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j * j).
+  (* Invariant *)
+  Have: 0 <= j.
+}
+Prove: 0 < j.
+Prover Z3 4.8.12 returns Valid (Qed:1ms) (130ms) (36696)
+Prover Alt-Ergo  returns Valid (Qed:1ms) (22ms) (24)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 16):
+Let x = 2 * j.
+Let x_1 = j - j_1.
+Let x_2 = i + j_2.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j_1) /\ is_sint32(j) /\ is_sint32(j_2) /\
+      is_sint32(x_1).
+  (* Goal *)
+  When: j < (2 * j_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j_2) /\ (j_2 <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j_2 * j_2).
+  (* Invariant *)
+  Have: ((j_2 < 0) -> (j_2 <= i)).
+  (* Invariant *)
+  Have: ((i < j_2) -> (0 < j_2)).
+  (* Invariant *)
+  Have: ((i < j_2) -> ((2 * i) < j_2)).
+  (* Invariant *)
+  Have: j_2 != i.
+  (* Invariant *)
+  Have: (0 < j_2) \/ (j_2 <= i).
+  (* Invariant *)
+  Have: (j_2 <= i) \/ (0 <= x_2).
+  (* Invariant *)
+  Have: j_2 != 0.
+  (* Invariant *)
+  Have: ((i < j_2) -> (0 <= x_2)).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: (x_1 * x_1) < (j * j).
+  (* Invariant *)
+  Have: j_1 != 0.
+  (* Invariant *)
+  Have: 0 < j.
+  (* Invariant *)
+  Have: j_1 <= x.
+  (* Then *)
+  Have: 0 < j_1.
+}
+Prove: x < (3 * j_1).
+Prover Z3 4.8.12 returns Timeout (Qed:9ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:9ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 16):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j).
+  (* Goal *)
+  When: i < j.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j * j).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: 0 < j.
+}
+Prove: (2 * i) < j.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 19):
+Let x = 2 * j.
+Let x_1 = j - j_1.
+Let x_2 = x_1 * x_1.
+Let x_3 = i + j_2.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j_1) /\ is_sint32(j) /\ is_sint32(j_2) /\
+      is_sint32(x_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j_2) /\ (j_2 <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j_2 * j_2).
+  (* Invariant *)
+  Have: ((j_2 < 0) -> (j_2 <= i)).
+  (* Invariant *)
+  Have: ((i < j_2) -> (0 < j_2)).
+  (* Invariant *)
+  Have: ((i < j_2) -> ((2 * i) < j_2)).
+  (* Invariant *)
+  Have: j_2 != i.
+  (* Invariant *)
+  Have: (0 < j_2) \/ (j_2 <= i).
+  (* Invariant *)
+  Have: (j_2 <= i) \/ (0 <= x_3).
+  (* Invariant *)
+  Have: j_2 != 0.
+  (* Invariant *)
+  Have: ((i < j_2) -> (0 <= x_3)).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: j < (2 * j_1).
+  (* Invariant *)
+  Have: x_2 < (j * j).
+  (* Invariant *)
+  Have: j_1 != 0.
+  (* Invariant *)
+  Have: 0 < j.
+  (* Invariant *)
+  Have: j_1 <= x.
+  (* Then *)
+  Have: 0 < j_1.
+  (* Invariant *)
+  Have: x < (3 * j_1).
+}
+Prove: x_2 < (j_1 * j_1).
+Prover Z3 4.8.12 returns Valid (Qed:13ms) (1.1s) (3165539)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.94ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 20):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j * j).
+  (* Invariant *)
+  Have: ((j < 0) -> (j <= i)).
+  (* Invariant *)
+  Have: ((i < j) -> (0 < j)).
+  (* Invariant *)
+  Have: ((i < j) -> ((2 * i) < j)).
+}
+Prove: j != i.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 21):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j * j).
+  (* Invariant *)
+  Have: ((j < 0) -> (j <= i)).
+  (* Invariant *)
+  Have: ((i < j) -> (0 < j)).
+  (* Invariant *)
+  Have: ((i < j) -> ((2 * i) < j)).
+  (* Invariant *)
+  Have: j != i.
+}
+Prove: (0 < j) \/ (j <= i).
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (80ms) (5191)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (24ms) (24)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 22):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j * j).
+  (* Invariant *)
+  Have: ((j < 0) -> (j <= i)).
+  (* Invariant *)
+  Have: ((i < j) -> (0 < j)).
+  (* Invariant *)
+  Have: ((i < j) -> ((2 * i) < j)).
+  (* Invariant *)
+  Have: j != i.
+  (* Invariant *)
+  Have: (0 < j) \/ (j <= i).
+}
+Prove: (j <= i) \/ (0 <= (i + j)).
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (140ms) (37220)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 23):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Else *)
+  Have: (i * i) < (j * j).
+  (* Invariant *)
+  Have: ((j < 0) -> (j <= i)).
+  (* Invariant *)
+  Have: ((i < j) -> (0 < j)).
+  (* Invariant *)
+  Have: ((i < j) -> ((2 * i) < j)).
+  (* Invariant *)
+  Have: j != i.
+  (* Invariant *)
+  Have: (0 < j) \/ (j <= i).
+  (* Invariant *)
+  Have: (j <= i) \/ (0 <= (i + j)).
+}
+Prove: j != 0.
+Prover Alt-Ergo  returns Valid (Qed:2ms) (18ms) (12)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (0.88ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-zilu_benchmark28_linear/loop-zilu_benchmark28_linear_0001/loop-zilu_benchmark28_linear_0003/loop-zilu_benchmark28_linear_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

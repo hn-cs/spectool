@@ -1,0 +1,146 @@
+[kernel] Parsing out/deepseek-chat/miscellaneous_increment_arr/miscellaneous_increment_arr_0001/miscellaneous_increment_arr_0005/miscellaneous_increment_arr_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] Proved goals:    8 / 8
+  Qed:             5
+  Alt-Ergo :       3 (35ms-40ms)
+------------------------------------------------------------
+  Function increment_array_by
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/miscellaneous_increment_arr/miscellaneous_increment_arr_0001/miscellaneous_increment_arr_0005/miscellaneous_increment_arr_merged.c, line 3):
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(arr_0, 0), n).
+Let a_1 = shift_sint32(arr_0, i).
+Let a_2 = a[a_1].
+Let a_3 = shift_sint32(arr_0, i_1).
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(a_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (i_1 < n) /\ (i < i_1).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_4 = shift_sint32(arr_0, i_2) in ((i <= i_2) ->
+      ((i_2 < n) -> (a[a_4] = Mint_0[a_4]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_4 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> (a[a_4] = (c + Mint_0[a_4])))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+}
+Prove: a[a_1 <- c + a_2][a_3] = Mint_0[a_3].
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (150ms) (115459)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (35ms) (132)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/miscellaneous_increment_arr/miscellaneous_increment_arr_0001/miscellaneous_increment_arr_0005/miscellaneous_increment_arr_merged.c, line 3):
+Prove: true.
+Prover Qed returns Valid (0.52ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/miscellaneous_increment_arr/miscellaneous_increment_arr_0001/miscellaneous_increment_arr_0005/miscellaneous_increment_arr_merged.c, line 4):
+Let a = havoc(Mint_undef_0, Mint_0, shift_sint32(arr_0, 0), n).
+Let a_1 = shift_sint32(arr_0, i).
+Let a_2 = a[a_1].
+Let a_3 = a[a_1 <- c + a_2].
+Let a_4 = shift_sint32(arr_0, i_1).
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i) /\
+      is_sint32(a_2).
+  (* Heap *)
+  Type: region(arr_0.base) <= 0.
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i <= i_2) ->
+      ((i_2 < n) -> (a[a_5] = Mint_0[a_5]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((0 <= i_2) ->
+      ((i_2 < i) -> (a[a_5] = (c + Mint_0[a_5])))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_5 = shift_sint32(arr_0, i_2) in ((i < i_2) ->
+      ((i_2 < n) -> (a_3[a_5] = Mint_0[a_5]))).
+}
+Prove: a_3[a_4] = (c + Mint_0[a_4]).
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (170ms) (225996)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (40ms) (228)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/miscellaneous_increment_arr/miscellaneous_increment_arr_0001/miscellaneous_increment_arr_0005/miscellaneous_increment_arr_merged.c, line 4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/miscellaneous_increment_arr/miscellaneous_increment_arr_0001/miscellaneous_increment_arr_0005/miscellaneous_increment_arr_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/miscellaneous_increment_arr/miscellaneous_increment_arr_0001/miscellaneous_increment_arr_0005/miscellaneous_increment_arr_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (0.92ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/miscellaneous_increment_arr/miscellaneous_increment_arr_0001/miscellaneous_increment_arr_0005/miscellaneous_increment_arr_merged.c, line 6) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/miscellaneous_increment_arr/miscellaneous_increment_arr_0001/miscellaneous_increment_arr_0005/miscellaneous_increment_arr_merged.c, line 6) (2/2):
+Effect at line 10
+Let a = shift_sint32(arr_0, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let x = i - 1.
+Let a_2 = shift_sint32(arr_0, x).
+Let a_3 = a_1[a_2].
+Let a_4 = a_1[a_2 <- c + a_3].
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(x) /\
+      is_sint32(a_3).
+  (* Heap *)
+  Type: (region(arr_0.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_2, 1).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((i_1 < n) ->
+      ((i <= (1 + i_1)) -> (a_1[a_5] = Mint_0[a_5]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      (((2 + i_1) <= i) -> (a_1[a_5] = (c + Mint_0[a_5])))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((i <= i_1) ->
+      ((i_1 < n) -> (a_4[a_5] = Mint_0[a_5]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = shift_sint32(arr_0, i_1) in ((0 <= i_1) ->
+      ((i_1 < i) -> (a_4[a_5] = (c + Mint_0[a_5])))).
+}
+Prove: included(a_2, 1, a, n).
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (130ms) (102895)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (37ms) (211)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/miscellaneous_increment_arr/miscellaneous_increment_arr_0001/miscellaneous_increment_arr_0005/miscellaneous_increment_arr_merged.c:1: Warning: 
+  No 'assigns' specification for function 'increment_array_by'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/miscellaneous_increment_arr/miscellaneous_increment_arr_0001/miscellaneous_increment_arr_0005/miscellaneous_increment_arr_merged.c:13: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

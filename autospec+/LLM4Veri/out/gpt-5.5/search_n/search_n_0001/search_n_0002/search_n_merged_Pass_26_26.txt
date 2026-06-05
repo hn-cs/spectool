@@ -1,0 +1,589 @@
+[kernel] Parsing out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 26 goals scheduled
+[wp] Proved goals:   26 / 26
+  Qed:            14
+  Alt-Ergo :      12 (27ms-35ms-48ms)
+------------------------------------------------------------
+  Axiomatic 'AllSomeNot'
+------------------------------------------------------------
+
+Lemma NotAllEqual_SomeNotEqual:
+Prove: (is_sint32 v_0) -> (not (P_AllEqual_1_ Mint_0 a_0 m_0 n_0 v_0))
+       -> (P_SomeNotEqual_1_ Mint_0 a_0 m_0 n_0 v_0)
+Prover Alt-Ergo  returns Valid (34ms) (57)
+
+------------------------------------------------------------
+
+Lemma SomeNotEqual_NotAllEqual:
+Assume: 'NotAllEqual_SomeNotEqual'
+Prove: (is_sint32 v_0) -> (P_SomeNotEqual_1_ Mint_0 a_0 m_0 n_0 v_0)
+       -> (not (P_AllEqual_1_ Mint_0 a_0 m_0 n_0 v_0))
+Prover Alt-Ergo  returns Valid (29ms) (57)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Axiomatic 'HasConstantSubRange'
+------------------------------------------------------------
+
+Lemma HasConstantSubRange_Sizes:
+Prove: (is_sint32 v_0) -> (P_HasConstantSubRange_2_ Mint_0 a_0 n_0 v_0 p_0)
+       -> (p_0<=n_0)
+Prover Z3 4.8.12 returns Valid (140ms) (87635)
+Prover Alt-Ergo  returns Valid (32ms) (40)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function search_n
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 59):
+Let x = Mint_0[shift_sint32(a, start_0 - 1)].
+Let x_1 = Mint_0[shift_sint32(a, i)].
+Let x_2 = Mint_0[shift_sint32(a, start_1 - 1)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_uint32(p) /\ is_uint32(start_0) /\
+      is_uint32(start_1) /\ is_sint32(Mint_0[shift_sint32(a, -1)]) /\
+      is_sint32(x_1) /\ is_sint32(x) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Then *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: 0 < p.
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, 0, x, p).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, 0, 0, x).
+  (* Invariant *)
+  Have: (start_1 = 0) \/ (x_2 != x).
+  (* Invariant *)
+  Have: start_1 <= n.
+  (* Invariant *)
+  Have: i < (p + start_1).
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, i, x, p).
+  (* Invariant *)
+  Have: start_1 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, start_1, i, x).
+  (* Invariant *)
+  Have: 0 <= start_1.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x != x_1
+  Then { Have: to_uint32(1 + i) = start_0. }
+  Else {
+    Have: start_1 = start_0.
+    (* Else *)
+    Have: to_uint32(to_uint32(1 + i) - start_0) != p.
+  }
+}
+Prove: start_0 = 0.
+Prover Z3 4.8.12 returns Valid (Qed:11ms) (160ms) (188527)
+Prover Alt-Ergo  returns Valid (Qed:11ms) (42ms) (145)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 59):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 60):
+Let x = Mint_0[shift_sint32(a, start_0 - 1)].
+Let x_1 = Mint_0[shift_sint32(a, i)].
+Let x_2 = Mint_0[shift_sint32(a, start_1 - 1)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_uint32(p) /\ is_uint32(start_0) /\
+      is_uint32(start_1) /\ is_sint32(v) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\ is_sint32(x_1) /\
+      is_sint32(x) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Then *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: 0 < p.
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, 0, v, p).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: (start_1 = 0) \/ (x_2 != v).
+  (* Invariant *)
+  Have: start_1 <= n.
+  (* Invariant *)
+  Have: i < (p + start_1).
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, i, v, p).
+  (* Invariant *)
+  Have: start_1 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, start_1, i, v).
+  (* Invariant *)
+  Have: 0 <= start_1.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x_1 != v
+  Then { Have: to_uint32(1 + i) = start_0. }
+  Else {
+    Have: start_1 = start_0.
+    (* Else *)
+    Have: to_uint32(to_uint32(1 + i) - start_0) != p.
+  }
+  (* Invariant *)
+  Have: (start_0 = 0) \/ (x != v).
+}
+Prove: start_0 <= n.
+Prover Alt-Ergo  returns Valid (Qed:10ms) (34ms) (148)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 60):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 61):
+Let x = Mint_0[shift_sint32(a, start_0 - 1)].
+Let x_1 = Mint_0[shift_sint32(a, i)].
+Let x_2 = Mint_0[shift_sint32(a, start_1 - 1)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_uint32(p) /\ is_uint32(start_0) /\
+      is_uint32(start_1) /\ is_sint32(v) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\ is_sint32(x_1) /\
+      is_sint32(x) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Then *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: 0 < p.
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, 0, v, p).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: (start_1 = 0) \/ (x_2 != v).
+  (* Invariant *)
+  Have: start_1 <= n.
+  (* Invariant *)
+  Have: i < (p + start_1).
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, i, v, p).
+  (* Invariant *)
+  Have: start_1 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, start_1, i, v).
+  (* Invariant *)
+  Have: 0 <= start_1.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x_1 != v
+  Then { Have: to_uint32(1 + i) = start_0. }
+  Else {
+    Have: start_1 = start_0.
+    (* Else *)
+    Have: to_uint32(to_uint32(1 + i) - start_0) != p.
+  }
+  (* Invariant *)
+  Have: (start_0 = 0) \/ (x != v).
+  (* Invariant *)
+  Have: start_0 <= n.
+}
+Prove: to_uint32(1 + i) < (p + start_0).
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (160ms) (188940)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (36ms) (157)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 61):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 62):
+Let x = to_uint32(1 + i).
+Let x_1 = Mint_0[shift_sint32(a, start_0 - 1)].
+Let x_2 = Mint_0[shift_sint32(a, i)].
+Let x_3 = Mint_0[shift_sint32(a, start_1 - 1)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_uint32(p) /\ is_uint32(start_0) /\
+      is_uint32(start_1) /\ is_sint32(v) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\ is_sint32(x_2) /\
+      is_sint32(x_1) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Then *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: 0 < p.
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, 0, v, p).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: (start_1 = 0) \/ (x_3 != v).
+  (* Invariant *)
+  Have: start_1 <= n.
+  (* Invariant *)
+  Have: i < (p + start_1).
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, i, v, p).
+  (* Invariant *)
+  Have: start_1 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, start_1, i, v).
+  (* Invariant *)
+  Have: 0 <= start_1.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x_2 != v
+  Then { Have: x = start_0. }
+  Else {
+    Have: start_1 = start_0.
+    (* Else *)
+    Have: to_uint32(x - start_0) != p.
+  }
+  (* Invariant *)
+  Have: (start_0 = 0) \/ (x_1 != v).
+  (* Invariant *)
+  Have: start_0 <= n.
+  (* Invariant *)
+  Have: x < (p + start_0).
+}
+Prove: !P_HasConstantSubRange_2_(Mint_0, a, x, v, p).
+Prover Alt-Ergo  returns Valid (Qed:9ms) (48ms) (350)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 62):
+Assume {
+  Type: is_uint32(n) /\ is_uint32(p) /\ is_sint32(v) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Then *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: 0 < p.
+}
+Prove: !P_HasConstantSubRange_2_(Mint_0, a, 0, v, p).
+Prover Alt-Ergo  returns Valid (Qed:2ms) (27ms) (35)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 63):
+Let x = to_uint32(1 + i).
+Let x_1 = Mint_0[shift_sint32(a, start_0 - 1)].
+Let x_2 = Mint_0[shift_sint32(a, i)].
+Let x_3 = Mint_0[shift_sint32(a, start_1 - 1)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_uint32(p) /\ is_uint32(start_0) /\
+      is_uint32(start_1) /\ is_sint32(v) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\ is_sint32(x_2) /\
+      is_sint32(x_1) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Then *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: 0 < p.
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, 0, v, p).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: (start_1 = 0) \/ (x_3 != v).
+  (* Invariant *)
+  Have: start_1 <= n.
+  (* Invariant *)
+  Have: i < (p + start_1).
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, i, v, p).
+  (* Invariant *)
+  Have: start_1 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, start_1, i, v).
+  (* Invariant *)
+  Have: 0 <= start_1.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x_2 != v
+  Then { Have: x = start_0. }
+  Else {
+    Have: start_1 = start_0.
+    (* Else *)
+    Have: to_uint32(x - start_0) != p.
+  }
+  (* Invariant *)
+  Have: (start_0 = 0) \/ (x_1 != v).
+  (* Invariant *)
+  Have: start_0 <= n.
+  (* Invariant *)
+  Have: x < (p + start_0).
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, x, v, p).
+}
+Prove: start_0 <= x.
+Prover Alt-Ergo  returns Valid (Qed:7ms) (34ms) (162)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 63):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 64):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 64):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 65):
+Let x = to_uint32(1 + i).
+Let x_1 = Mint_0[shift_sint32(a, start_0 - 1)].
+Let x_2 = Mint_0[shift_sint32(a, i)].
+Let x_3 = Mint_0[shift_sint32(a, start_1 - 1)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_uint32(p) /\ is_uint32(start_0) /\
+      is_uint32(start_1) /\ is_sint32(v) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\ is_sint32(x_2) /\
+      is_sint32(x_1) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Then *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: 0 < p.
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, 0, v, p).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: (start_1 = 0) \/ (x_3 != v).
+  (* Invariant *)
+  Have: start_1 <= n.
+  (* Invariant *)
+  Have: i < (p + start_1).
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, i, v, p).
+  (* Invariant *)
+  Have: start_1 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, start_1, i, v).
+  (* Invariant *)
+  Have: 0 <= start_1.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x_2 != v
+  Then { Have: x = start_0. }
+  Else {
+    Have: start_1 = start_0.
+    (* Else *)
+    Have: to_uint32(x - start_0) != p.
+  }
+  (* Invariant *)
+  Have: (start_0 = 0) \/ (x_1 != v).
+  (* Invariant *)
+  Have: start_0 <= n.
+  (* Invariant *)
+  Have: x < (p + start_0).
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, x, v, p).
+  (* Invariant *)
+  Have: start_0 <= x.
+}
+Prove: x <= n.
+Prover Alt-Ergo  returns Valid (Qed:8ms) (37ms) (165)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 65):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 66):
+Let x = to_uint32(1 + i).
+Let x_1 = Mint_0[shift_sint32(a, start_0 - 1)].
+Let x_2 = Mint_0[shift_sint32(a, i)].
+Let x_3 = Mint_0[shift_sint32(a, start_1 - 1)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_uint32(p) /\ is_uint32(start_0) /\
+      is_uint32(start_1) /\ is_sint32(v) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]) /\ is_sint32(x_2) /\
+      is_sint32(x_1) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Then *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: 0 < p.
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, 0, v, p).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: (start_1 = 0) \/ (x_3 != v).
+  (* Invariant *)
+  Have: start_1 <= n.
+  (* Invariant *)
+  Have: i < (p + start_1).
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, i, v, p).
+  (* Invariant *)
+  Have: start_1 <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_AllEqual_1_(Mint_0, a, start_1, i, v).
+  (* Invariant *)
+  Have: 0 <= start_1.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If x_2 != v
+  Then { Have: x = start_0. }
+  Else {
+    Have: start_1 = start_0.
+    (* Else *)
+    Have: to_uint32(x - start_0) != p.
+  }
+  (* Invariant *)
+  Have: (start_0 = 0) \/ (x_1 != v).
+  (* Invariant *)
+  Have: start_0 <= n.
+  (* Invariant *)
+  Have: x < (p + start_0).
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, x, v, p).
+  (* Invariant *)
+  Have: start_0 <= x.
+  (* Invariant *)
+  Have: x <= n.
+}
+Prove: P_AllEqual_1_(Mint_0, a, start_0, x, v).
+Prover Alt-Ergo  returns Valid (Qed:9ms) (45ms) (333)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 66):
+Assume {
+  Type: is_uint32(n) /\ is_uint32(p) /\ is_sint32(v) /\
+      is_sint32(Mint_0[shift_sint32(a, -1)]).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Then *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: 0 < p.
+  (* Invariant *)
+  Have: !P_HasConstantSubRange_2_(Mint_0, a, 0, v, p).
+  (* Invariant *)
+  Have: 0 <= n.
+}
+Prove: P_AllEqual_1_(Mint_0, a, 0, 0, v).
+Prover Alt-Ergo  returns Valid (Qed:3ms) (29ms) (69)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 67):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 67):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 68):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 68):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 69):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 69):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c, line 70):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/search_n/search_n_0001/search_n_0002/search_n_merged.c:53: Warning: 
+  No 'assigns' specification for function 'search_n'.
+  Callers assumptions might be imprecise.

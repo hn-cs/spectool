@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 2, 'Iteration': 2, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=4, microseconds=8404), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=121160), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 147, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 3, 3, 1], '1': ['loop invariant i <= SIZE;', 'loop invariant \\forall integer j; 0 <= j < i ==> \\valid(a + j) && \\valid(b + j);', 'loop invariant 0 <= i;', 'loop assigns i;', 'loop assigns b[0..SIZE-1];', 'loop assigns a[0..SIZE-1];'], '2': ['loop invariant i <= SIZE;', 'loop invariant \\forall integer j; 0 <= j < i ==> c[j] == a[j] - b[j];', 'loop invariant 0 <= i;', 'loop assigns i;', 'loop assigns c[0..SIZE-1];'], '3': ['loop invariant x <= SIZE;', 'loop invariant \\forall integer j; 0 <= j < x ==> c[j] == a[j] - b[j];', 'loop invariant 0 <= x;', 'loop assigns x;'], '4': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result < INT_MAX;\n', '*/\n', 'int unknown();\n', '#include <assert.h>\n', '#define SIZE 100000\n', '/* 4. FUNC CONTRACT */\nint main( ) {\n', '  int a[SIZE];\n', '  int b[SIZE];\n', '  int c[SIZE];\n', '  int i = 0;\n', '\t/* 1. LOOP INVARIANT */\n\tfor(i = 0; i < SIZE; i++)\n', '\t{\n', '\t  a[i] = unknown();\n', '\t\tb[i] = unknown();\n', '\t}\n', '\ti = 0;\n', '  /* 2. LOOP INVARIANT */\n  while (i < SIZE) {\n', '    c[i] = a[i] - b[i];\n', '    i = i + 1;\n', '  }\n', '  int x;\n', '  /* 3. LOOP INVARIANT */\n  for ( x = 0 ; x < SIZE ; x++ ) {\n', '    //@ assert(c[x] == a[x] - b[x]  );\n', '  }\n', '  return 0;\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

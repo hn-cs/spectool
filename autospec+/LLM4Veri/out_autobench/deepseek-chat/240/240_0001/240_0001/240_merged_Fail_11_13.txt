@@ -1,0 +1,253 @@
+[kernel] Parsing out/deepseek-chat/240/240_0001/240_0001/240_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/240/240_0001/240_0001/240_merged.c:9: Warning: 
+  Calling function unknown_int that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/240/240_0001/240_0001/240_merged.c:7: Warning: 
+  Neither code nor implicit assigns clause for function unknown_int, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/240/240_0001/240_0001/240_merged.c:30: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_established (Qed 0.86ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_3_established (Qed 1ms) (Z3 8s)
+[wp] Proved goals:   11 / 13
+  Qed:             6
+  Alt-Ergo :       5 (25ms-37ms-44ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 14):
+Let x = i / 2.
+Let x_1 = 2 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x_1) /\ is_sint32(n - x).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483647).
+  (* Invariant *)
+  Have: (n % 2) = 0.
+  (* Invariant *)
+  Have: (-1) <= n.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (i % 2) = 0.
+  (* Invariant *)
+  Have: x <= (n / 2).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Then *)
+  Have: i < n.
+}
+Prove: (x_1 % 2) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (130ms) (40160)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (37ms) (264)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 14):
+Assume {
+  Type: is_sint32(n).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483647).
+}
+Prove: (n % 2) = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:0.86ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.86ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 15):
+Let x = 2 + i.
+Let x_1 = i / 2.
+Let x_2 = -x_1.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x) /\ is_sint32(n - x_1) /\
+      is_sint32(n - 1 - x_1).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483647).
+  (* Invariant *)
+  Have: (n % 2) = 0.
+  (* Invariant *)
+  Have: (-1) <= n.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: (i % 2) = 0.
+  (* Invariant *)
+  Have: x_1 <= (n / 2).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: (x % 2) = 0.
+}
+Prove: (x / 2) = (1 + x_1).
+Prover Alt-Ergo  returns Valid (Qed:5ms) (39ms) (287)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.99ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 16):
+Let x = 2 + i.
+Let x_1 = x / 2.
+Let x_2 = k + x_1.
+Let x_3 = i / 2.
+Let x_4 = k + x_1 - 1.
+Let x_5 = x_4 / 2.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(k - 1) /\ is_sint32(x) /\
+      is_sint32(x_4).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483647) <= x_2) /\ (x_2 <= 2147483648).
+  (* Invariant *)
+  Have: (x_4 % 2) = 0.
+  (* Invariant *)
+  Have: 0 <= x_2.
+  (* Invariant *)
+  Have: 0 < x_2.
+  (* Invariant *)
+  Have: (i % 2) = 0.
+  (* Invariant *)
+  Have: x_1 = (1 + x_3).
+  (* Invariant *)
+  Have: x_3 <= x_5.
+  (* Invariant *)
+  Have: i < x_2.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Then *)
+  Have: x <= x_2.
+  (* Invariant *)
+  Have: (x % 2) = 0.
+}
+Prove: x_1 <= x_5.
+Prover Alt-Ergo  returns Valid (Qed:5ms) (40ms) (314)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 16):
+Assume {
+  Type: is_sint32(n).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483647).
+  (* Invariant *)
+  Have: (n % 2) = 0.
+}
+Prove: (-1) <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 17):
+Let x = 2 + i.
+Let x_1 = x / 2.
+Let x_2 = k + x_1 - 1.
+Let x_3 = x_2 / 2.
+Let x_4 = k + x_1.
+Let x_5 = i / 2.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(k - 1) /\ is_sint32(x) /\
+      is_sint32(x_2).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483647) <= x_4) /\ (x_4 <= 2147483648).
+  (* Invariant *)
+  Have: (x_2 % 2) = 0.
+  (* Invariant *)
+  Have: 0 <= x_4.
+  (* Invariant *)
+  Have: 0 < x_4.
+  (* Invariant *)
+  Have: (i % 2) = 0.
+  (* Invariant *)
+  Have: x_1 = (1 + x_5).
+  (* Invariant *)
+  Have: x_5 <= x_3.
+  (* Invariant *)
+  Have: i < x_4.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: (-1) <= i.
+  (* Then *)
+  Have: x <= x_4.
+  (* Invariant *)
+  Have: (x % 2) = 0.
+  (* Invariant *)
+  Have: x_1 <= x_3.
+}
+Prove: (3 + i) <= x_4.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (130ms) (40479)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (44ms) (340)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 17):
+Assume {
+  Type: is_sint32(n).
+  (* Call 'unknown_int' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483647).
+  (* Invariant *)
+  Have: (n % 2) = 0.
+  (* Invariant *)
+  Have: (-1) <= n.
+}
+Prove: 0 <= n.
+Prover Alt-Ergo  returns Valid (Qed:2ms) (25ms) (75)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/240/240_0001/240_0001/240_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/240/240_0001/240_0001/240_merged.c:5: Warning: 
+  No 'assigns' specification for function 'unknown_int'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/240/240_0001/240_0001/240_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

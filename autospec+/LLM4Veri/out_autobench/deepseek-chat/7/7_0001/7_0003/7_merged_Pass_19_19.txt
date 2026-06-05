@@ -1,0 +1,304 @@
+[kernel] Parsing out/deepseek-chat/7/7_0001/7_0003/7_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/deepseek-chat/7/7_0001/7_0003/7_merged.c:19: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/7/7_0001/7_0003/7_merged.c:5: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 19 goals scheduled
+[wp] Proved goals:   19 / 19
+  Qed:            13
+  Alt-Ergo :       6 (17ms-32ms-67ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 8):
+Let x_1 = x + y_1 - y.
+Let x_2 = y_1 % 10.
+Let x_3 = x + y_1.
+Let x_4 = 10 + y.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(x_4) /\ is_sint32(x_1).
+  (* Pre-condition *)
+  Have: (y <= x_3) /\ (x_3 <= x_4).
+  (* Pre-condition *)
+  Have: (0 <= y_1) /\ (y_1 <= 10).
+  (* Invariant *)
+  Have: x_2 = (y % 10).
+  (* Invariant *)
+  Have: (x_1 % 10) = (x % 10).
+  (* Invariant *)
+  Have: y_1 <= y.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: tmp_0 != 0.
+}
+Prove: (x_4 % 10) = x_2.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (230ms) (384413)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (67ms) (749)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 10):
+Let x_1 = 10 + y.
+Let x_2 = y_1 % 10.
+Let x_3 = -y_1.
+Let x_4 = x + y - y_1.
+Let x_5 = x % 10.
+Let x_6 = 10 + x + y - y_1.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(y_1) /\ is_sint32(y) /\
+      is_sint32(x_1) /\ is_sint32(x_4) /\ is_sint32(x_6).
+  (* Pre-condition *)
+  Have: (0 <= x) /\ (x <= 10).
+  (* Pre-condition *)
+  Have: (0 <= y_1) /\ (y_1 <= 10).
+  (* Invariant *)
+  Have: (y % 10) = x_2.
+  (* Invariant *)
+  Have: (x_4 % 10) = x_5.
+  (* Invariant *)
+  Have: y_1 <= y.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Invariant *)
+  Have: y_1 <= (x + y).
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: (x_1 % 10) = x_2.
+}
+Prove: (x_6 % 10) = x_5.
+Prover Alt-Ergo  returns Valid (Qed:4ms) (54ms) (505)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.71ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 11):
+Let x_2 = 10 + x_1.
+Let x_3 = x % 10.
+Let x_4 = -x.
+Let x_5 = 10 + x_1 + y - x.
+Let x_6 = y % 10.
+Let x_7 = x_1 + y - x.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(x_1) /\ is_sint32(y) /\
+      is_sint32(x_2) /\ is_sint32(x_7) /\ is_sint32(x_5).
+  (* Pre-condition *)
+  Have: (0 <= x) /\ (x <= 10).
+  (* Pre-condition *)
+  Have: (0 <= y) /\ (y <= 10).
+  (* Invariant *)
+  Have: (x_7 % 10) = x_6.
+  (* Invariant *)
+  Have: (x_1 % 10) = x_3.
+  (* Invariant *)
+  Have: x <= x_1.
+  (* Invariant *)
+  Have: x <= (x_1 + y).
+  (* Invariant *)
+  Have: 0 <= x_1.
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: (x_5 % 10) = x_6.
+  (* Invariant *)
+  Have: (x_2 % 10) = x_3.
+}
+Prove: x <= x_2.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (110ms) (37702)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (17ms) (25)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.64ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.56ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 14):
+Let x_2 = 10 + x_1.
+Let x_3 = x % 10.
+Let x_4 = -x.
+Let x_5 = 10 + x_1 + y - x.
+Let x_6 = y % 10.
+Let x_7 = x_1 + y - x.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x_1) /\ is_sint32(x) /\ is_sint32(y) /\
+      is_sint32(x_2) /\ is_sint32(x_7) /\ is_sint32(x_5).
+  (* Pre-condition *)
+  Have: (0 <= x) /\ (x <= 10).
+  (* Pre-condition *)
+  Have: (0 <= y) /\ (y <= 10).
+  (* Invariant *)
+  Have: (x_7 % 10) = x_6.
+  (* Invariant *)
+  Have: x_3 = (x_1 % 10).
+  (* Invariant *)
+  Have: x <= x_1.
+  (* Invariant *)
+  Have: x <= (x_1 + y).
+  (* Invariant *)
+  Have: 0 <= x_1.
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: (x_5 % 10) = x_6.
+  (* Invariant *)
+  Have: (x_2 % 10) = x_3.
+  (* Invariant *)
+  Have: x <= x_2.
+}
+Prove: x <= (10 + x_1 + y).
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (120ms) (37780)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (18ms) (27)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.73ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 15):
+Let x_1 = 10 + y_1.
+Let x_2 = -y.
+Let x_3 = 10 + x + y_1 - y.
+Let x_4 = x % 10.
+Let x_5 = y % 10.
+Let x_6 = x + y_1 - y.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(x) /\ is_sint32(y) /\ is_sint32(y_1) /\
+      is_sint32(x_1) /\ is_sint32(x_6) /\ is_sint32(x_3).
+  (* Pre-condition *)
+  Have: (0 <= x) /\ (x <= 10).
+  (* Pre-condition *)
+  Have: (0 <= y) /\ (y <= 10).
+  (* Invariant *)
+  Have: (y_1 % 10) = x_5.
+  (* Invariant *)
+  Have: (x_6 % 10) = x_4.
+  (* Invariant *)
+  Have: y <= y_1.
+  (* Invariant *)
+  Have: 0 <= y_1.
+  (* Invariant *)
+  Have: y <= (x + y_1).
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: (x_1 % 10) = x_5.
+  (* Invariant *)
+  Have: (x_3 % 10) = x_4.
+  (* Invariant *)
+  Have: y <= x_1.
+  (* Invariant *)
+  Have: (-10) <= y_1.
+}
+Prove: y <= (10 + x + y_1).
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (110ms) (37916)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (19ms) (28)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.64ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 25):
+Let x = 20 + y_1 - y.
+Assume {
+  Type: is_sint32(y_1) /\ is_sint32(y) /\ is_sint32(x).
+  (* Pre-condition *)
+  Have: ((10 + y_1) <= y) /\ (y <= (20 + y_1)).
+  (* Pre-condition *)
+  Have: (0 <= y_1) /\ (y_1 <= 10).
+  (* Invariant *)
+  Have: (x % 10) = 0.
+  (* Invariant *)
+  Have: (y % 10) = (y_1 % 10).
+  (* Invariant *)
+  Have: y_1 <= y.
+  (* Invariant *)
+  Have: 0 <= y.
+}
+Prove: y != 0.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (110ms) (35106)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (18ms) (14)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 16) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/7/7_0001/7_0003/7_merged.c, line 16) (2/2):
+Call Result at line 19
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/7/7_0001/7_0003/7_merged.c:5: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/7/7_0001/7_0003/7_merged.c:19: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

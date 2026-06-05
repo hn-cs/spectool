@@ -1,0 +1,121 @@
+[kernel] Parsing out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_mul_loop_invariant_4_preserved (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_mul_loop_invariant_4_established (Qed 0.68ms) (Z3 8s)
+[wp] Proved goals:   11 / 13
+  Qed:            10
+  Alt-Ergo :       1 (18ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function mul
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 6):
+Assume {
+  Type: is_sint32(a) /\ is_sint32(x) /\ is_sint32(x - 1).
+  (* Invariant *)
+  Have: 0 < a.
+  (* Invariant *)
+  Have: x <= a.
+  (* Invariant *)
+  Have: 0 < x.
+}
+Prove: x <= (1 + a).
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (120ms) (34900)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (18ms) (20)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 8):
+Assume {
+  Type: is_sint32(a) /\ is_sint32(x) /\ is_sint32(x - 1).
+  (* Invariant *)
+  Have: 0 < a.
+  (* Invariant *)
+  Have: x <= a.
+  (* Invariant *)
+  Have: 0 < x.
+  (* Invariant *)
+  Have: x <= (1 + a).
+}
+Prove: 2 <= x.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 8):
+Assume { Type: is_sint32(x). }
+Prove: 0 < x.
+Prover Z3 4.8.12 returns Timeout (Qed:0.68ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.68ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c:2: Warning: 
+  No 'assigns' specification for function 'mul'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/loops_mult/loops_mult_0001/loops_mult_0005/loops_mult_merged.c:20: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

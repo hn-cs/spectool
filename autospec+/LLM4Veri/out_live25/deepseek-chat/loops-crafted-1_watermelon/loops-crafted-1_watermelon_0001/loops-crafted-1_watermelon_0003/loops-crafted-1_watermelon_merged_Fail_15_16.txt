@@ -1,0 +1,173 @@
+[kernel] Parsing out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c:54: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 16 goals scheduled
+[wp] [Timeout] typed_student_version_loop_invariant_preserved (Qed 6ms) (Z3 8s)
+[wp] Proved goals:   15 / 16
+  Qed:            13
+  Alt-Ergo :       2 (28ms-32ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function correct_version
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c, line 21):
+Let x = 2 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(w) /\ is_sint32(x).
+  (* Else *)
+  Have: 4 <= w.
+  (* Invariant *)
+  Have: (i % 2) = 0.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < w.
+}
+Prove: (x % 2) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (130ms) (37370)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (28ms) (115)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (0.71ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'correct_version' (1/4):
+Effect at line 16
+Prove: true.
+Prover Qed returns Valid (0.72ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'correct_version' (2/4):
+Effect at line 25
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'correct_version' (3/4):
+Effect at line 25
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'correct_version' (4/4):
+Effect at line 28
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function student_version
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c, line 41):
+Let x = 2 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(w) /\ is_sint32(x).
+  (* Else *)
+  Have: 4 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: i <= w.
+  (* Invariant *)
+  Have: (i % 2) = 0.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < w.
+}
+Prove: x <= w.
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c, line 41):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c, line 42):
+Let x = 2 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(w) /\ is_sint32(x).
+  (* Else *)
+  Have: 4 <= w.
+  (* Invariant *)
+  Have: 0 <= w.
+  (* Invariant *)
+  Have: i <= w.
+  (* Invariant *)
+  Have: (i % 2) = 0.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < w.
+  (* Invariant *)
+  Have: x <= w.
+}
+Prove: (x % 2) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (130ms) (37727)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (32ms) (126)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c, line 42):
+Prove: true.
+Prover Qed returns Valid (0.71ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c, line 43):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c, line 43):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c, line 44):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c:32: Warning: 
+  No 'assigns' specification for function 'student_version'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0003/loops-crafted-1_watermelon_merged.c:53: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

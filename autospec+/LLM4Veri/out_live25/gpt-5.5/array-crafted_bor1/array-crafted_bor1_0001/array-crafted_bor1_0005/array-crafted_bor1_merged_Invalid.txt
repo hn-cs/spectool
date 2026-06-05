@@ -1,0 +1,8 @@
+[kernel] Parsing out/gpt-5.5/array-crafted_bor1/array-crafted_bor1_0001/array-crafted_bor1_0005/array-crafted_bor1_merged.c (with preprocessing)
+[kernel:annot-error] out/gpt-5.5/array-crafted_bor1/array-crafted_bor1_0001/array-crafted_bor1_0005/array-crafted_bor1_merged.c:23: Warning: 
+  unexpected token 'integer'
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/gpt-5.5/array-crafted_bor1/array-crafted_bor1_0001/array-crafted_bor1_0005/array-crafted_bor1_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

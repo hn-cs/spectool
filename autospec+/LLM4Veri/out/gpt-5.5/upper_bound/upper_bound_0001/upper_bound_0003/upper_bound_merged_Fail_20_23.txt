@@ -1,0 +1,682 @@
+[kernel] Parsing out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 23 goals scheduled
+[wp] [Timeout] typed_upper_bound_loop_invariant_2_preserved (Qed 16ms) (Z3 8s)
+[wp] [Timeout] typed_upper_bound_loop_invariant_3_preserved (Qed 22ms) (Z3 8s)
+[wp] [Timeout] typed_upper_bound_loop_invariant_4_preserved (Qed 36ms) (Z3 8s)
+[wp] Proved goals:   20 / 23
+  Qed:            11
+  Alt-Ergo :       9 (32ms-65ms-133ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function upper_bound
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 67):
+Let x = Mint_0
+          [shift_sint32(a,
+             to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2)))].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_0) /\ is_uint32(right_1) /\
+      is_sint32(v) /\ is_sint32(x).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: ((n = 0) -> P_UpperBound_1_(Mint_0, a, 0, n, v)).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, n, n, v).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: right_1 <= (left_1 + n).
+  (* Invariant *)
+  Have: ((right_1 = left_1) -> P_UpperBound_1_(Mint_0, a, 0, right_1, v)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_1 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_1) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, left_1, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, right_1, n, v).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: left_1 <= right_1.
+  (* Invariant *)
+  Have: left_1 <= n.
+  (* Invariant *)
+  Have: 0 <= right_1.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Then *)
+  Have: left_1 < right_1.
+  If x <= v
+  Then {
+    Have: (right_1 = right_0) /\
+        (to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2)) = middle_0).
+    Have: to_uint32(1 + middle_0) = left_0.
+  }
+  Else {
+    Have: (left_1 = left_0) /\
+        (to_uint32(left_0 + (to_uint32(right_1 - left_0) / 2)) = right_0).
+  }
+}
+Prove: right_0 <= (left_0 + n).
+Prover Z3 4.8.12 returns Valid (Qed:25ms) (150ms) (111672)
+Prover Alt-Ergo  returns Valid (Qed:25ms) (46ms) (288)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 67):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 68):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(n) /\ is_uint32(right_0) /\
+      is_sint32(v) /\ is_sint32(x_1).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_1 <= v.
+  (* Invariant *)
+  Have: ((n = 0) -> P_UpperBound_1_(Mint_0, a, 0, n, v)).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, n, n, v).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> P_UpperBound_1_(Mint_0, a, 0, right_0, v)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, left_0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, right_0, n, v).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: left_0 <= n.
+  (* Invariant *)
+  Have: 0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+  Have: to_uint32(1 + x) = right_0.
+}
+Prove: P_UpperBound_1_(Mint_0, a, 0, right_0, v).
+Prover Z3 4.8.12 returns Timeout (Qed:16ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:16ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 68):
+Assume { Type: is_sint32(v). (* Heap *) Type: region(a.base) <= 0. }
+Prove: P_UpperBound_1_(Mint_0, a, 0, 0, v).
+Prover Alt-Ergo  returns Valid (Qed:1ms) (32ms) (40)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 69):
+Let x = Mint_0
+          [shift_sint32(a,
+             to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2)))].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_0) /\ is_uint32(right_1) /\
+      is_sint32(v) /\ is_sint32(x).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (i < n) /\ (right_0 <= i).
+  (* Invariant *)
+  Have: ((n = 0) -> P_UpperBound_1_(Mint_0, a, 0, n, v)).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, n, n, v).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: right_1 <= (left_1 + n).
+  (* Invariant *)
+  Have: ((right_1 = left_1) -> P_UpperBound_1_(Mint_0, a, 0, right_1, v)).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((right_1 <= i_1) ->
+      (v < Mint_0[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < left_1) ->
+      (Mint_0[shift_sint32(a, i_1)] <= v))).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, left_1, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, right_1, n, v).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: left_1 <= right_1.
+  (* Invariant *)
+  Have: left_1 <= n.
+  (* Invariant *)
+  Have: 0 <= right_1.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Then *)
+  Have: left_1 < right_1.
+  If x <= v
+  Then {
+    Have: (right_1 = right_0) /\
+        (to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2)) = middle_0).
+    Have: to_uint32(1 + middle_0) = left_0.
+  }
+  Else {
+    Have: (left_1 = left_0) /\
+        (to_uint32(left_0 + (to_uint32(right_1 - left_0) / 2)) = right_0).
+  }
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> P_UpperBound_1_(Mint_0, a, 0, right_0, v)).
+}
+Prove: v < Mint_0[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Timeout (Qed:22ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:22ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 69):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 70):
+Let x = Mint_0
+          [shift_sint32(a,
+             to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2)))].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_0) /\ is_uint32(right_1) /\
+      is_sint32(v) /\ is_sint32(x).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i < left_0).
+  (* Invariant *)
+  Have: ((n = 0) -> P_UpperBound_1_(Mint_0, a, 0, n, v)).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, n, n, v).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: right_1 <= (left_1 + n).
+  (* Invariant *)
+  Have: ((right_1 = left_1) -> P_UpperBound_1_(Mint_0, a, 0, right_1, v)).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((right_1 <= i_1) ->
+      (v < Mint_0[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < left_1) ->
+      (Mint_0[shift_sint32(a, i_1)] <= v))).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, left_1, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, right_1, n, v).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: left_1 <= right_1.
+  (* Invariant *)
+  Have: left_1 <= n.
+  (* Invariant *)
+  Have: 0 <= right_1.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Then *)
+  Have: left_1 < right_1.
+  If x <= v
+  Then {
+    Have: (right_1 = right_0) /\
+        (to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2)) = middle_0).
+    Have: to_uint32(1 + middle_0) = left_0.
+  }
+  Else {
+    Have: (left_1 = left_0) /\
+        (to_uint32(left_0 + (to_uint32(right_1 - left_0) / 2)) = right_0).
+  }
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> P_UpperBound_1_(Mint_0, a, 0, right_0, v)).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((right_0 <= i_1) ->
+      (v < Mint_0[shift_sint32(a, i_1)]))).
+}
+Prove: Mint_0[shift_sint32(a, i)] <= v.
+Prover Z3 4.8.12 returns Timeout (Qed:36ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:36ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 70):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 71):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = to_uint32(1 + x).
+Let x_2 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(n) /\ is_uint32(right_0) /\
+      is_sint32(v) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_2 <= v.
+  (* Invariant *)
+  Have: ((n = 0) -> P_UpperBound_1_(Mint_0, a, 0, n, v)).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, n, n, v).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> P_UpperBound_1_(Mint_0, a, 0, right_0, v)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, left_0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, right_0, n, v).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: left_0 <= n.
+  (* Invariant *)
+  Have: 0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: right_0 <= (n + x_1).
+  (* Invariant *)
+  Have: ((x_1 = right_0) -> P_UpperBound_1_(Mint_0, a, 0, right_0, v)).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < x_1) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+}
+Prove: P_UpperBound_1_(Mint_0, a, 0, x_1, v).
+Prover Alt-Ergo  returns Valid (Qed:33ms) (105ms) (517)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 71):
+Assume {
+  Type: is_uint32(n) /\ is_sint32(v).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: ((n = 0) -> P_UpperBound_1_(Mint_0, a, 0, n, v)).
+}
+Prove: P_UpperBound_1_(Mint_0, a, 0, 0, v).
+Prover Alt-Ergo  returns Valid (Qed:4ms) (34ms) (47)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 72):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = left_0 + n.
+Let x_2 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(n) /\ is_uint32(right_0) /\
+      is_sint32(v) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: v < x_2.
+  (* Invariant *)
+  Have: ((n = 0) -> P_UpperBound_1_(Mint_0, a, 0, n, v)).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, n, n, v).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: right_0 <= x_1.
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> P_UpperBound_1_(Mint_0, a, 0, right_0, v)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, left_0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, right_0, n, v).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: left_0 <= n.
+  (* Invariant *)
+  Have: 0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: x <= x_1.
+  (* Invariant *)
+  Have: ((x = left_0) -> P_UpperBound_1_(Mint_0, a, 0, x, v)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((x <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+}
+Prove: P_StrictLowerBound_1_(Mint_0, a, x, n, v).
+Prover Alt-Ergo  returns Valid (Qed:35ms) (89ms) (494)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 72):
+Assume {
+  Type: is_uint32(n) /\ is_sint32(v).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: ((n = 0) -> P_UpperBound_1_(Mint_0, a, 0, n, v)).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, 0, v).
+}
+Prove: P_StrictLowerBound_1_(Mint_0, a, n, n, v).
+Prover Alt-Ergo  returns Valid (Qed:5ms) (49ms) (51)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 73):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = left_0 + n.
+Let x_2 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(n) /\ is_uint32(right_0) /\
+      is_sint32(v) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: v < x_2.
+  (* Invariant *)
+  Have: ((n = 0) -> P_UpperBound_1_(Mint_0, a, 0, n, v)).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, n, n, v).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: right_0 <= x_1.
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> P_UpperBound_1_(Mint_0, a, 0, right_0, v)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, left_0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, right_0, n, v).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: left_0 <= n.
+  (* Invariant *)
+  Have: 0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: x <= x_1.
+  (* Invariant *)
+  Have: ((x = left_0) -> P_UpperBound_1_(Mint_0, a, 0, x, v)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((x <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, x, n, v).
+}
+Prove: x <= n.
+Prover Alt-Ergo  returns Valid (Qed:27ms) (62ms) (294)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 73):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 74):
+Let x = Mint_0
+          [shift_sint32(a,
+             to_uint32(left_1 + (to_uint32(right_1 - left_1) / 2)))].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(left_1) /\ is_uint32(middle_0) /\
+      is_uint32(n) /\ is_uint32(right_0) /\ is_uint32(right_1) /\
+      is_sint32(v) /\ is_sint32(x).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Invariant *)
+  Have: ((n = 0) -> P_UpperBound_1_(Mint_0, a, 0, n, v)).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, n, n, v).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: right_1 <= (left_1 + n).
+  (* Invariant *)
+  Have: ((right_1 = left_1) -> P_UpperBound_1_(Mint_0, a, 0, right_1, v)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_1 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_1) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, left_1, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, right_1, n, v).
+  (* Invariant *)
+  Have: right_1 <= n.
+  (* Invariant *)
+  Have: left_1 <= right_1.
+  (* Invariant *)
+  Have: left_1 <= n.
+  (* Invariant *)
+  Have: 0 <= right_1.
+  (* Invariant *)
+  Have: 0 <= left_1.
+  (* Then *)
+  Have: left_1 < right_1.
+  If x <= v
+  Then {
+    Have: (right_1 = right_0) /\
+        (to_uint32(left_1 + (to_uint32(right_0 - left_1) / 2)) = middle_0).
+    Have: to_uint32(1 + middle_0) = left_0.
+  }
+  Else {
+    Have: (left_1 = left_0) /\
+        (to_uint32(left_0 + (to_uint32(right_1 - left_0) / 2)) = right_0).
+  }
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> P_UpperBound_1_(Mint_0, a, 0, right_0, v)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, left_0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, right_0, n, v).
+  (* Invariant *)
+  Have: right_0 <= n.
+}
+Prove: left_0 <= right_0.
+Prover Alt-Ergo  returns Valid (Qed:44ms) (133ms) (777)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 74):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 75):
+Let x = to_uint32(left_0 + (to_uint32(right_0 - left_0) / 2)).
+Let x_1 = to_uint32(1 + x).
+Let x_2 = Mint_0[shift_sint32(a, x)].
+Assume {
+  Type: is_uint32(left_0) /\ is_uint32(n) /\ is_uint32(right_0) /\
+      is_sint32(v) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Residual *)
+  When: x_2 <= v.
+  (* Invariant *)
+  Have: ((n = 0) -> P_UpperBound_1_(Mint_0, a, 0, n, v)).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, 0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, n, n, v).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: right_0 <= (left_0 + n).
+  (* Invariant *)
+  Have: ((right_0 = left_0) -> P_UpperBound_1_(Mint_0, a, 0, right_0, v)).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((right_0 <= i) ->
+      (v < Mint_0[shift_sint32(a, i)]))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < left_0) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, left_0, v).
+  (* Invariant *)
+  Have: P_StrictLowerBound_1_(Mint_0, a, right_0, n, v).
+  (* Invariant *)
+  Have: right_0 <= n.
+  (* Invariant *)
+  Have: left_0 <= right_0.
+  (* Invariant *)
+  Have: left_0 <= n.
+  (* Invariant *)
+  Have: 0 <= right_0.
+  (* Invariant *)
+  Have: 0 <= left_0.
+  (* Then *)
+  Have: left_0 < right_0.
+  (* Invariant *)
+  Have: right_0 <= (n + x_1).
+  (* Invariant *)
+  Have: ((x_1 = right_0) -> P_UpperBound_1_(Mint_0, a, 0, right_0, v)).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < x_1) ->
+      (Mint_0[shift_sint32(a, i)] <= v))).
+  (* Invariant *)
+  Have: P_UpperBound_1_(Mint_0, a, 0, x_1, v).
+  (* Invariant *)
+  Have: x_1 <= right_0.
+}
+Prove: x_1 <= n.
+Prover Alt-Ergo  returns Valid (Qed:38ms) (40ms) (36)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 75):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 76):
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 76):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 77):
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 77):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c, line 78):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/upper_bound/upper_bound_0001/upper_bound_0003/upper_bound_merged.c:62: Warning: 
+  No 'assigns' specification for function 'upper_bound'.
+  Callers assumptions might be imprecise.

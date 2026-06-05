@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 1, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=3, microseconds=495626), 'total_solve_time': datetime.timedelta(microseconds=981371), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 35, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1], '1': ['ensures a >= b ==> \\result == a - b;', 'ensures a < b ==> \\result == b - a;', 'assigns \\nothing;'], 'MSLines': ['/* 1. FUNC CONTRACT */\nunsigned distance(unsigned a, unsigned b)\n', '{\n', '   return (a > b) ? (a - b) : (b - a);\n', '}\n', '#ifdef OUT_OF_TASK\n', '#include <stdio.h>\n', 'int main(void)\n', '{\n', '   int a = distance(5, 3);\n', '   //@ assert a == 2;\n', '   int b = distance(3, 5);\n', '   //@ assert b == 2;\n', '}\n', '#endif']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

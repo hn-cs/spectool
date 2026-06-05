@@ -1,0 +1,457 @@
+[kernel] Parsing out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c:9: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c:8: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 27 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_established (Qed 4ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_3_established (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_11_preserved (Qed 8ms) (Z3 8s)
+[wp] Proved goals:   24 / 27
+  Qed:            19
+  Alt-Ergo :       5 (18ms-20ms-25ms)
+  Timeout:         3
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 11):
+Assume {
+  Type: is_uint32(w) /\ is_uint32(x) /\ is_uint32(z).
+  (* Then *)
+  Have: w <= 268435454.
+  (* Then *)
+  Have: x <= 9.
+}
+Prove: z <= 10.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 12):
+Assume {
+  Type: is_uint32(v) /\ is_uint32(v_1) /\ is_uint32(v_2) /\ is_uint32(w) /\
+      is_uint32(x) /\ is_uint32(y) /\ is_uint32(z) /\ is_uint32(z_1) /\
+      is_uint32(z_2).
+  (* Then *)
+  Have: w <= 268435454.
+  (* Then *)
+  Have: x <= 9.
+  (* Invariant *)
+  Have: z_2 <= 10.
+  (* Invariant *)
+  Have: v_2 <= 10.
+  (* Invariant *)
+  Have: z_1 <= 10.
+  (* Invariant *)
+  Have: y <= 10.
+  (* Invariant *)
+  Have: v_1 <= 10.
+  (* Invariant *)
+  Have: y != 10.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: y <= 9.
+  (* Invariant *)
+  Have: z <= 10.
+  (* Invariant *)
+  Have: v <= 10.
+  (* Invariant *)
+  Have: z != 10.
+  (* Invariant *)
+  Have: 0 <= z.
+  (* Else *)
+  Have: 10 <= z.
+}
+Prove: to_uint32(1 + y) <= 10.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (110ms) (37472)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (18ms) (26)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 13):
+Assume {
+  Type: is_uint32(v) /\ is_uint32(w) /\ is_uint32(x) /\ is_uint32(z).
+  (* Then *)
+  Have: w <= 268435454.
+  (* Then *)
+  Have: x <= 9.
+  (* Invariant *)
+  Have: z <= 10.
+}
+Prove: v <= 10.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 14):
+Let x_1 = to_uint32(1 + y).
+Assume {
+  Type: is_uint32(v) /\ is_uint32(v_1) /\ is_uint32(v_2) /\ is_uint32(w) /\
+      is_uint32(x) /\ is_uint32(y) /\ is_uint32(z) /\ is_uint32(z_1) /\
+      is_uint32(z_2).
+  (* Then *)
+  Have: w <= 268435454.
+  (* Then *)
+  Have: x <= 9.
+  (* Invariant *)
+  Have: z_2 <= 10.
+  (* Invariant *)
+  Have: v_2 <= 10.
+  (* Invariant *)
+  Have: z_1 <= 10.
+  (* Invariant *)
+  Have: y <= 10.
+  (* Invariant *)
+  Have: v_1 <= 10.
+  (* Invariant *)
+  Have: y != 10.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: y <= 9.
+  (* Invariant *)
+  Have: z <= 10.
+  (* Invariant *)
+  Have: v <= 10.
+  (* Invariant *)
+  Have: z != 10.
+  (* Invariant *)
+  Have: 0 <= z.
+  (* Else *)
+  Have: 10 <= z.
+  (* Invariant *)
+  Have: x_1 <= 10.
+}
+Prove: x_1 != 10.
+Prover Alt-Ergo  returns Valid (Qed:11ms) (19ms) (23)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 22):
+Assume {
+  Type: is_uint32(v) /\ is_uint32(v_1) /\ is_uint32(v_2) /\ is_uint32(v_3) /\
+      is_uint32(w) /\ is_uint32(x) /\ is_uint32(y) /\ is_uint32(z) /\
+      is_uint32(z_1) /\ is_uint32(z_2).
+  (* Then *)
+  Have: w <= 268435454.
+  (* Then *)
+  Have: x <= 9.
+  (* Invariant *)
+  Have: z_2 <= 10.
+  (* Invariant *)
+  Have: v_3 <= 10.
+  (* Invariant *)
+  Have: z_1 <= 10.
+  (* Invariant *)
+  Have: y <= 10.
+  (* Invariant *)
+  Have: v_2 <= 10.
+  (* Invariant *)
+  Have: y != 10.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: y <= 9.
+  (* Invariant *)
+  Have: z <= 10.
+  (* Invariant *)
+  Have: v_1 <= 10.
+  (* Invariant *)
+  Have: z != 10.
+  (* Invariant *)
+  Have: 0 <= z.
+  (* Then *)
+  Have: z <= 9.
+  (* Invariant *)
+  Have: v <= 10.
+  (* Invariant *)
+  Have: v != 10.
+  (* Invariant *)
+  Have: 0 <= v.
+  (* Else *)
+  Have: 10 <= v.
+}
+Prove: to_uint32(1 + z) <= 10.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (120ms) (38287)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (19ms) (40)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 24):
+Let x_1 = to_uint32(1 + z).
+Assume {
+  Type: is_uint32(v) /\ is_uint32(v_1) /\ is_uint32(v_2) /\ is_uint32(v_3) /\
+      is_uint32(w) /\ is_uint32(x) /\ is_uint32(y) /\ is_uint32(z) /\
+      is_uint32(z_1) /\ is_uint32(z_2).
+  (* Then *)
+  Have: w <= 268435454.
+  (* Then *)
+  Have: x <= 9.
+  (* Invariant *)
+  Have: z_2 <= 10.
+  (* Invariant *)
+  Have: v_3 <= 10.
+  (* Invariant *)
+  Have: z_1 <= 10.
+  (* Invariant *)
+  Have: y <= 10.
+  (* Invariant *)
+  Have: v_2 <= 10.
+  (* Invariant *)
+  Have: y != 10.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: y <= 9.
+  (* Invariant *)
+  Have: z <= 10.
+  (* Invariant *)
+  Have: v_1 <= 10.
+  (* Invariant *)
+  Have: z != 10.
+  (* Invariant *)
+  Have: 0 <= z.
+  (* Then *)
+  Have: z <= 9.
+  (* Invariant *)
+  Have: v <= 10.
+  (* Invariant *)
+  Have: v != 10.
+  (* Invariant *)
+  Have: 0 <= v.
+  (* Else *)
+  Have: 10 <= v.
+  (* Invariant *)
+  Have: x_1 <= 10.
+}
+Prove: x_1 != 10.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (120ms) (38415)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (19ms) (26)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 31):
+Assume {
+  Type: is_uint32(v) /\ is_uint32(v_1) /\ is_uint32(v_2) /\ is_uint32(v_3) /\
+      is_uint32(w) /\ is_uint32(x) /\ is_uint32(y) /\ is_uint32(z) /\
+      is_uint32(z_1) /\ is_uint32(z_2).
+  (* Then *)
+  Have: w <= 268435454.
+  (* Then *)
+  Have: x <= 9.
+  (* Invariant *)
+  Have: z_2 <= 10.
+  (* Invariant *)
+  Have: v_3 <= 10.
+  (* Invariant *)
+  Have: z_1 <= 10.
+  (* Invariant *)
+  Have: y <= 10.
+  (* Invariant *)
+  Have: v_2 <= 10.
+  (* Invariant *)
+  Have: y != 10.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: y <= 9.
+  (* Invariant *)
+  Have: z <= 10.
+  (* Invariant *)
+  Have: v_1 <= 10.
+  (* Invariant *)
+  Have: z != 10.
+  (* Invariant *)
+  Have: 0 <= z.
+  (* Then *)
+  Have: z <= 9.
+  (* Invariant *)
+  Have: v <= 10.
+  (* Invariant *)
+  Have: v != 10.
+  (* Invariant *)
+  Have: 0 <= v.
+  (* Then *)
+  Have: v <= 9.
+}
+Prove: to_uint32(1 + v) <= 10.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (120ms) (38318)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (25ms) (75)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 32):
+Let x_1 = to_uint32(1 + v).
+Assume {
+  Type: is_uint32(v) /\ is_uint32(v_1) /\ is_uint32(v_2) /\ is_uint32(v_3) /\
+      is_uint32(w) /\ is_uint32(x) /\ is_uint32(y) /\ is_uint32(z) /\
+      is_uint32(z_1) /\ is_uint32(z_2).
+  (* Then *)
+  Have: w <= 268435454.
+  (* Then *)
+  Have: x <= 9.
+  (* Invariant *)
+  Have: z_2 <= 10.
+  (* Invariant *)
+  Have: v_3 <= 10.
+  (* Invariant *)
+  Have: z_1 <= 10.
+  (* Invariant *)
+  Have: y <= 10.
+  (* Invariant *)
+  Have: v_2 <= 10.
+  (* Invariant *)
+  Have: y != 10.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: y <= 9.
+  (* Invariant *)
+  Have: z <= 10.
+  (* Invariant *)
+  Have: v_1 <= 10.
+  (* Invariant *)
+  Have: z != 10.
+  (* Invariant *)
+  Have: 0 <= z.
+  (* Then *)
+  Have: z <= 9.
+  (* Invariant *)
+  Have: v <= 10.
+  (* Invariant *)
+  Have: v != 10.
+  (* Invariant *)
+  Have: 0 <= v.
+  (* Then *)
+  Have: v <= 9.
+  (* Invariant *)
+  Have: x_1 <= 10.
+}
+Prove: x_1 != 10.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c, line 34):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops-crafted-1_nested5-1/loops-crafted-1_nested5-1_0001/loops-crafted-1_nested5-1_0003/loops-crafted-1_nested5-1_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

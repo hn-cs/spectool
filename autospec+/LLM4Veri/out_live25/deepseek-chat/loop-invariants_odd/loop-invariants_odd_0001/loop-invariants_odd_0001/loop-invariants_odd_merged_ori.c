@@ -1,0 +1,18 @@
+#include<limits.h>
+/*@
+assigns \nothing;
+ensures INT_MIN <= \result < INT_MAX;
+*/
+int unknown();
+int main(void) {
+  unsigned int x = 1;
+  /*@
+  loop invariant x % 2 == 1;
+  loop assigns x;
+  */
+  while (unknown()) {
+    x += 2;
+  }
+  // @ assert(x % 2);
+  return 0;
+}

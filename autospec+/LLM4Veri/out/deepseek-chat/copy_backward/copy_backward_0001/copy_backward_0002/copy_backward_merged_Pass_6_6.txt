@@ -1,0 +1,63 @@
+[kernel] Parsing out/deepseek-chat/copy_backward/copy_backward_0001/copy_backward_0002/copy_backward_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/copy_backward/copy_backward_0001/copy_backward_0002/copy_backward_merged.c:47: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 6 goals scheduled
+[wp] Proved goals:    6 / 6
+  Qed:             5
+  Alt-Ergo :       1 (24ms)
+------------------------------------------------------------
+  Function copy_backward
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/copy_backward/copy_backward_0001/copy_backward_0002/copy_backward_merged.c, line 43):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/copy_backward/copy_backward_0001/copy_backward_0002/copy_backward_merged.c, line 43):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/copy_backward/copy_backward_0001/copy_backward_0002/copy_backward_merged.c, line 44):
+Assume {
+  Type: is_uint32(i) /\ is_uint32(i_1) /\ is_uint32(n).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: 0 < i.
+}
+Prove: to_uint32(i - 1) <= n.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (120ms) (35401)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (24ms) (44)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/copy_backward/copy_backward_0001/copy_backward_0002/copy_backward_merged.c, line 44):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/copy_backward/copy_backward_0001/copy_backward_0002/copy_backward_merged.c, line 45):
+Prove: true.
+Prover Qed returns Valid (0.96ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/copy_backward/copy_backward_0001/copy_backward_0002/copy_backward_merged.c, line 45):
+Prove: true.
+Prover Qed returns Valid (0.73ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/copy_backward/copy_backward_0001/copy_backward_0002/copy_backward_merged.c:40: Warning: 
+  No 'assigns' specification for function 'copy_backward'.
+  Callers assumptions might be imprecise.

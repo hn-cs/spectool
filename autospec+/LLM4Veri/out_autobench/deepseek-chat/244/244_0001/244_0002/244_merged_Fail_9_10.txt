@@ -1,0 +1,111 @@
+[kernel] Parsing out/deepseek-chat/244/244_0001/244_0002/244_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/244/244_0001/244_0002/244_merged.c:19: Warning: 
+  Calling function unknown_int that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/deepseek-chat/244/244_0001/244_0002/244_merged.c:29: Warning: 
+  Calling function unknown_int1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/244/244_0001/244_0002/244_merged.c:12: Warning: 
+  Neither code nor implicit assigns clause for function unknown_int, generating default assigns from the prototype
+[kernel:annot:missing-spec] out/deepseek-chat/244/244_0001/244_0002/244_merged.c:12: Warning: 
+  Neither code nor implicit assigns clause for function unknown_int1, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/244/244_0001/244_0002/244_merged.c:27: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 10 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 15ms) (Z3 8s)
+[wp] Proved goals:    9 / 10
+  Qed:             9
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/244/244_0001/244_0002/244_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/244/244_0001/244_0002/244_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (0.87ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/244/244_0001/244_0002/244_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/244/244_0001/244_0002/244_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/244/244_0001/244_0002/244_merged.c, line 40):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/244/244_0001/244_0002/244_merged.c, line 40):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/244/244_0001/244_0002/244_merged.c, line 41):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/244/244_0001/244_0002/244_merged.c, line 41):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/244/244_0001/244_0002/244_merged.c, line 46):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(n_1).
+  (* Call 'unknown_int' *)
+  Have: (0 <= n_1) /\ (n_1 <= 10).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: n <= i.
+  (* Invariant *)
+  Have: j <= i.
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: j < i.
+}
+Prove: 0 < k.
+Prover Z3 4.8.12 returns Timeout (Qed:15ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:15ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/244/244_0001/244_0002/244_merged.c, line 42):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/244/244_0001/244_0002/244_merged.c:5: Warning: 
+  No 'assigns' specification for function 'unknown_int'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/244/244_0001/244_0002/244_merged.c:10: Warning: 
+  No 'assigns' specification for function 'unknown_int1'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/244/244_0001/244_0002/244_merged.c:12: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

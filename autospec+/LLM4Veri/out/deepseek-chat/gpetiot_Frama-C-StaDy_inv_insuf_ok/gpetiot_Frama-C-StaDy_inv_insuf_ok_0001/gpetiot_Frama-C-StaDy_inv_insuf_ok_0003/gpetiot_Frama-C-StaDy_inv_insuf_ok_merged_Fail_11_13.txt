@@ -1,0 +1,215 @@
+[kernel] Parsing out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_f_loop_invariant_preserved (Qed 8ms) (Alt-Ergo 8s)
+[wp] [Timeout] typed_f_loop_invariant_2_preserved (Qed 7ms) (Z3 8s)
+[wp] Proved goals:   11 / 13
+  Qed:             9
+  Alt-Ergo :       2 (30ms-2.7s-8s)
+  Timeout:         2
+------------------------------------------------------------
+  Function f
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 10):
+Let x_1 = Mint_0[shift_sint32(t, 4)].
+Let x_2 = Mint_0[shift_sint32(t, 3)].
+Assume {
+  Type: is_sint32(found_0) /\ is_sint32(found_1) /\ is_sint32(x) /\
+      is_sint32(Mint_0[shift_sint32(t, -1)]) /\ is_sint32(x_2) /\
+      is_sint32(x_1).
+  (* Heap *)
+  Type: (region(t.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(t, 0), 5).
+  (* Invariant *)
+  Have: ((found_1 = 1) -> (x_2 = x)).
+  (* Invariant *)
+  Have: ((found_1 = 1) ->
+      (exists i : Z. (Mint_0[shift_sint32(t, i)] = x) /\ (0 <= i) /\
+       (i <= 3))).
+  (* Invariant *)
+  Have: ((found_1 = 0) ->
+      (forall i : Z. ((0 <= i) -> ((i <= 3) ->
+       (Mint_0[shift_sint32(t, i)] != x))))).
+  If x_1 = x
+  Then { Have: found_0 = 1. }
+  Else { Have: found_1 = found_0. }
+}
+Prove: (found_0 = 0) \/ ((found_0 = 1) /\ (x_1 = x)).
+Prover Z3 4.8.12 returns Unknown (Qed:8ms)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 11):
+Let x_1 = Mint_0[shift_sint32(t, 4)].
+Let x_2 = Mint_0[shift_sint32(t, i)].
+Let x_3 = Mint_0[shift_sint32(t, i - 1)].
+Assume {
+  Type: is_sint32(found_0) /\ is_sint32(i) /\ is_sint32(x) /\
+      is_sint32(1 + i) /\ is_sint32(Mint_0[shift_sint32(t, -1)]) /\
+      is_sint32(x_1) /\ is_sint32(x_2) /\ is_sint32(x_3).
+  (* Heap *)
+  Type: (region(t.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(t, 0), 5).
+  (* Invariant *)
+  Have: ((i = 5) -> ((found_0 = 0) \/ ((found_0 = 1) /\ (x_1 = x)))).
+  (* Invariant *)
+  Have: ((found_0 = 1) -> (x_3 = x)).
+  (* Invariant *)
+  Have: i <= 5.
+  (* Invariant *)
+  Have: ((found_0 = 1) ->
+      (exists i_1 : Z. (Mint_0[shift_sint32(t, i_1)] = x) /\ (0 <= i_1) /\
+       (i_1 < i))).
+  (* Invariant *)
+  Have: ((found_0 = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+       (Mint_0[shift_sint32(t, i_1)] != x))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 4.
+  If x_2 = x
+  Else { Have: found_0 = 1. }
+  (* Invariant *)
+  Have: ((i = 4) -> (x_1 = x)).
+}
+Prove: x_2 = x.
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.92ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 13):
+Let x = Mint_0[shift_sint32(t, i)].
+Let x_1 = Mint_0[shift_sint32(t, 4)].
+Let x_2 = Mint_0[shift_sint32(t, i - 1)].
+Assume {
+  Type: is_sint32(found_0) /\ is_sint32(i) /\ is_sint32(1 + i) /\
+      is_sint32(Mint_0[shift_sint32(t, -1)]) /\ is_sint32(x_1) /\
+      is_sint32(x) /\ is_sint32(x_2).
+  (* Heap *)
+  Type: (region(t.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(t, 0), 5).
+  (* Invariant *)
+  Have: ((i = 5) -> ((found_0 = 0) \/ ((found_0 = 1) /\ (x = x_1)))).
+  (* Invariant *)
+  Have: ((found_0 = 1) -> (x_2 = x)).
+  (* Invariant *)
+  Have: i <= 5.
+  (* Invariant *)
+  Have: ((found_0 = 1) ->
+      (exists i_1 : Z. (Mint_0[shift_sint32(t, i_1)] = x) /\ (0 <= i_1) /\
+       (i_1 < i))).
+  (* Invariant *)
+  Have: ((found_0 = 0) ->
+      (forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+       (Mint_0[shift_sint32(t, i_1)] != x))))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 4.
+  (* Invariant *)
+  Have: ((i = 4) -> (x = x_1)).
+}
+Prove: exists i_1 : Z. (Mint_0[shift_sint32(t, i_1)] = x) /\ (i_1 <= i) /\
+    (0 <= i_1).
+Prover Alt-Ergo  returns Valid (Qed:6ms) (30ms) (79)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 14):
+Let x_1 = Mint_0[shift_sint32(t, i_1)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(x) /\ is_sint32(1 + i_1) /\
+      is_sint32(Mint_0[shift_sint32(t, -1)]) /\
+      is_sint32(Mint_0[shift_sint32(t, 4)]) /\ is_sint32(x_1) /\
+      is_sint32(Mint_0[shift_sint32(t, i_1 - 1)]).
+  (* Heap *)
+  Type: (region(t.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, shift_sint32(t, 0), 5).
+  (* Invariant *)
+  Have: i_1 <= 5.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (Mint_0[shift_sint32(t, i_2)] != x))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 <= 4.
+  Have: x_1 != x.
+}
+Prove: Mint_0[shift_sint32(t, i)] != x.
+Prover Alt-Ergo  returns Valid (Qed:5ms) (32ms) (100)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c:5: Warning: 
+  No 'assigns' specification for function 'f'.
+  Callers assumptions might be imprecise.
+[wp] out/deepseek-chat/gpetiot_Frama-C-StaDy_inv_insuf_ok/gpetiot_Frama-C-StaDy_inv_insuf_ok_0001/gpetiot_Frama-C-StaDy_inv_insuf_ok_0003/gpetiot_Frama-C-StaDy_inv_insuf_ok_merged.c:5: Warning: 
+  Memory model hypotheses for function 'f':
+  /*@ behavior wp_typed:
+        requires \separated(t + (..), &found); */
+  void f(int *t, int x);

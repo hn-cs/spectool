@@ -1,0 +1,22 @@
+[kernel] Parsing out/gpt-5.5/136/136_0001/136_0001/136_loop_assigns.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/136/136_0001/136_0001/136_loop_assigns.c:21: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/136/136_0001/136_0001/136_loop_assigns.c:15: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] Proved goals:    1 / 1
+  Qed:             1
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/136/136_0001/136_0001/136_loop_assigns.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/136/136_0001/136_0001/136_loop_assigns.c:11: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

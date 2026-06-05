@@ -1,0 +1,134 @@
+[kernel] Parsing out/gpt-5.5/76/76_0001/76_0001/76_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/gpt-5.5/76/76_0001/76_0001/76_merged.c:17: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/76/76_0001/76_0001/76_merged.c:4: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 12 goals scheduled
+[wp] Proved goals:   12 / 12
+  Qed:            10
+  Alt-Ergo :       2 (18ms-21ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/76/76_0001/76_0001/76_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/76/76_0001/76_0001/76_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/76/76_0001/76_0001/76_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/76/76_0001/76_0001/76_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/76/76_0001/76_0001/76_merged.c, line 11):
+Let x = 36 * y.
+Let x_1 = (-36) * y.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(y) /\ is_sint32(z) /\ is_sint32(x) /\
+      is_sint32(1 + z) /\ is_sint32(z - x) /\ is_sint32(1 + z - x).
+  (* Residual *)
+  When: z <= (35 + x).
+  (* Pre-condition *)
+  Have: 127 <= y.
+  (* Invariant *)
+  Have: z <= (36 + x).
+  (* Invariant *)
+  Have: 4572 <= z.
+  (* Invariant *)
+  Have: x <= z.
+  (* Then *)
+  Have: tmp_0 != 0.
+}
+Prove: 4571 <= z.
+Prover Z3 4.8.12 returns Valid (Qed:12ms) (120ms) (36252)
+Prover Alt-Ergo  returns Valid (Qed:12ms) (21ms) (16)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/76/76_0001/76_0001/76_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/76/76_0001/76_0001/76_merged.c, line 12):
+Let x = 36 * y.
+Let x_1 = 1 + z.
+Let x_2 = (-36) * y.
+Assume {
+  Type: is_sint32(tmp_0) /\ is_sint32(y) /\ is_sint32(z) /\ is_sint32(x) /\
+      is_sint32(x_1) /\ is_sint32(z - x) /\ is_sint32(1 + z - x).
+  (* Residual *)
+  When: z <= (35 + x).
+  (* Pre-condition *)
+  Have: 127 <= y.
+  (* Invariant *)
+  Have: z <= (36 + x).
+  (* Invariant *)
+  Have: 4572 <= z.
+  (* Invariant *)
+  Have: x <= z.
+  (* Then *)
+  Have: tmp_0 != 0.
+  (* Invariant *)
+  Have: 4571 <= z.
+}
+Prove: x <= x_1.
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (120ms) (36368)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (18ms) (18)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/76/76_0001/76_0001/76_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.71ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/76/76_0001/76_0001/76_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/76/76_0001/76_0001/76_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.73ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/76/76_0001/76_0001/76_merged.c, line 14) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/76/76_0001/76_0001/76_merged.c, line 14) (2/2):
+Call Result at line 17
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/76/76_0001/76_0001/76_merged.c:4: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/76/76_0001/76_0001/76_merged.c:17: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

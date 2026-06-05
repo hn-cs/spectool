@@ -1,0 +1,120 @@
+[kernel] Parsing out/deepseek-chat/210/210_0001/210_0003/210_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] [Timeout] typed_mul_loop_invariant_3_established (Qed 3ms) (Z3 8s)
+[wp] Proved goals:   10 / 11
+  Qed:             8
+  Alt-Ergo :       2 (19ms-21ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function mul
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/210/210_0001/210_0003/210_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/210/210_0001/210_0003/210_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/210/210_0001/210_0003/210_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/210/210_0001/210_0003/210_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/210/210_0001/210_0003/210_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/210/210_0001/210_0003/210_merged.c, line 9):
+Assume { Type: is_sint32(x). }
+Prove: (-1) <= x.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/210/210_0001/210_0003/210_merged.c, line 10):
+Assume {
+  Type: is_sint32(a) /\ is_sint32(x) /\ is_sint32(x - 1).
+  (* Invariant *)
+  Have: (-1) <= a.
+  (* Invariant *)
+  Have: x <= a.
+  (* Invariant *)
+  Have: (-1) <= x.
+  (* Invariant *)
+  Have: x <= (1 + a).
+  (* Then *)
+  Have: 0 <= x.
+}
+Prove: x <= (2 + a).
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (35154)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (19ms) (21)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/210/210_0001/210_0003/210_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/210/210_0001/210_0003/210_merged.c, line 11):
+Let x_1 = -x.
+Let x_2 = b * (a - x).
+Let x_3 = b + x_2.
+Assume {
+  Type: is_sint32(a) /\ is_sint32(b) /\ is_sint32(x) /\ is_sint32(x - 1) /\
+      is_sint32(x_2) /\ is_sint32(x_3).
+  (* Invariant *)
+  Have: (-1) <= a.
+  (* Invariant *)
+  Have: x <= a.
+  (* Invariant *)
+  Have: (-1) <= x.
+  (* Invariant *)
+  Have: x <= (1 + a).
+  (* Then *)
+  Have: 0 <= x.
+  (* Invariant *)
+  Have: x <= (2 + a).
+}
+Prove: (b * (1 + a - x)) = x_3.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (90ms) (13170)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (21ms) (26)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/210/210_0001/210_0003/210_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.84ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/210/210_0001/210_0003/210_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/210/210_0001/210_0003/210_merged.c:3: Warning: 
+  No 'assigns' specification for function 'mul'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/210/210_0001/210_0003/210_merged.c:22: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

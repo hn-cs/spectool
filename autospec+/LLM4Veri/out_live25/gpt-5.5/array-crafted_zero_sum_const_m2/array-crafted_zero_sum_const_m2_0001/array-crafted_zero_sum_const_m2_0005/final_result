@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 6, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=23, microseconds=396263), 'total_solve_time': datetime.timedelta(seconds=24, microseconds=822), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 553, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 3, 3, 3, 3, 1], '1': ['loop invariant i <= SIZE;', 'loop invariant \\forall integer k; 0 <= k < i ==> a[k] == 1;', 'loop invariant 0 <= i;', 'loop assigns i;', 'loop assigns a[0..SIZE-1];'], '2': ['loop invariant sum == i;', 'loop invariant i <= SIZE;', 'loop invariant \\forall integer k; 0 <= k < SIZE ==> a[k] == 1;', 'loop invariant 0 <= i;', 'loop assigns sum;', 'loop assigns i;'], '3': ['loop invariant sum == SIZE + i;', 'loop invariant i <= SIZE;', 'loop invariant \\forall integer k; 0 <= k < SIZE ==> a[k] == 1;', 'loop invariant 0 <= i;', 'loop assigns sum;', 'loop assigns i;'], '4': ['loop invariant sum == 2 * SIZE - i;', 'loop invariant i <= SIZE;', 'loop invariant \\forall integer k; 0 <= k < SIZE ==> a[k] == 1;', 'loop invariant 0 <= i;', 'loop assigns sum;', 'loop assigns i;'], '5': ['loop invariant sum == SIZE - i;', 'loop invariant i <= SIZE;', 'loop invariant \\forall integer k; 0 <= k < SIZE ==> a[k] == 1;', 'loop invariant 0 <= i;', 'loop assigns sum;', 'loop assigns i;'], '6': [], 'MSLines': ['#include<stdlib.h>\n', '/*@\n', '\tassigns \\nothing;\n', '\tensures 1 < \\result < 100000;\n', '*/\n', 'int unknown();\n', 'long SIZE;\n', 'const int MAX = 100000;\n', '/* 6. FUNC CONTRACT */\nint main()\n', '{\n', '\tSIZE = unknown();\n', '\tif(SIZE > 1 && SIZE < MAX)\n', '\t{\n', '\t\tint i;\n', '\t\tlong *a = malloc(sizeof(long)*SIZE);\n', '\t\tlong long sum=0;\n', '\t\t/* 1. LOOP INVARIANT */\n\t\tfor(i = 0; i < SIZE; i++ )\n', '\t\t{\n', '\t\t\ta[i] = 1;\n', '\t\t}\n', '\t\t/* 2. LOOP INVARIANT */\n\t\tfor(i = 0; i < SIZE; i++ )\n', '\t\t{\n', '\t\t\tsum = sum + a[i];\n', '\t\t}\n', '\t\t/* 3. LOOP INVARIANT */\n\t\tfor(i = 0; i < SIZE; i++ )\n', '\t\t{\n', '\t\t\tsum = sum + a[i];\n', '\t\t}\n', '\t\t/* 4. LOOP INVARIANT */\n\t\tfor(i = 0; i < SIZE; i++)\n', '\t\t{\n', '\t\t\tsum = sum - a[i];\n', '\t\t}\n', '\t\t/* 5. LOOP INVARIANT */\n\t\tfor(i = 0; i < SIZE; i++)\n', '\t\t{\n', '\t\t\tsum = sum - a[i];\n', '\t\t}\n', '\t\t//@ assert(sum == 0);\n', '\t}\n', '\treturn 1;\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

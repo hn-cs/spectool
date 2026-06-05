@@ -1,0 +1,52 @@
+[kernel] Parsing out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0005/loop-invariants_mod4_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0005/loop-invariants_mod4_merged.c:14: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 6 goals scheduled
+[wp] Proved goals:    6 / 6
+  Qed:             6
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0005/loop-invariants_mod4_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0005/loop-invariants_mod4_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0005/loop-invariants_mod4_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.88ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0005/loop-invariants_mod4_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0005/loop-invariants_mod4_merged.c, line 12) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0005/loop-invariants_mod4_merged.c, line 12) (2/2):
+Call Result at line 14
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-invariants_mod4/loop-invariants_mod4_0001/loop-invariants_mod4_0005/loop-invariants_mod4_merged.c:7: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

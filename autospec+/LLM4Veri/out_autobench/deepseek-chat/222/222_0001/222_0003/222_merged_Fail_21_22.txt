@@ -1,0 +1,225 @@
+[kernel] Parsing out/deepseek-chat/222/222_0001/222_0003/222_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 22 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 3ms) (Z3 8s)
+[wp] Proved goals:   21 / 22
+  Qed:            19
+  Alt-Ergo :       2 (33ms-36ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function bubbleSort
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.67ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (19ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 15) (1/3):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 15) (2/3):
+Effect at line 20
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 15) (3/3):
+Effect at line 29
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 25) (1/4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 25) (2/4):
+Effect at line 29
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 25) (3/4):
+Effect at line 32
+Let a_1 = shift_sint32(a, 0).
+Let x = 1 + i.
+Let a_2 = havoc(Mint_undef_0, havoc(Mint_undef_1, Mint_0, a_1, n), a_1, x).
+Let a_3 = a_2[shift_sint32(a, j)].
+Let x_1 = j - 1.
+Let a_4 = shift_sint32(a, x_1).
+Let a_5 = a_2[a_4].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(x_1) /\
+      is_sint32(n - 1) /\ is_sint32(a_3) /\ is_sint32(a_5).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_4, 1).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i < n.
+  (* Then *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: j <= x.
+  (* Invariant *)
+  Have: 0 < j.
+  (* Then *)
+  Have: j <= i.
+  (* Then *)
+  Have: a_3 < a_5.
+}
+Prove: included(a_4, 1, a_1, x).
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (150ms) (120635)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (36ms) (130)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 25) (4/4):
+Effect at line 33
+Let a_1 = shift_sint32(a, 0).
+Let x = 1 + i.
+Let a_2 = havoc(Mint_undef_0, havoc(Mint_undef_1, Mint_0, a_1, n), a_1, x).
+Let a_3 = shift_sint32(a, j).
+Let a_4 = a_2[a_3].
+Let x_1 = j - 1.
+Let a_5 = a_2[shift_sint32(a, x_1)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\ is_sint32(x_1) /\
+      is_sint32(n - 1) /\ is_sint32(a_4) /\ is_sint32(a_5).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Invariant *)
+  Have: i < n.
+  (* Then *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: j <= x.
+  (* Invariant *)
+  Have: 0 < j.
+  (* Then *)
+  Have: j <= i.
+  (* Then *)
+  Have: a_4 < a_5.
+}
+Prove: included(a_3, 1, a_1, x).
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (140ms) (120677)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (33ms) (130)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 6) in 'bubbleSort' (1/2):
+Effect at line 20
+Prove: true.
+Prover Qed returns Valid (0.73ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 6) in 'bubbleSort' (2/2):
+Effect at line 20
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 43):
+Assume { (* Goal *) When: (0 <= i) /\ (i <= 3). }
+Prove: arr_0[i] <= arr_0[1 + i].
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 4) in 'bubbleSort'' in 'main' at call 'bubbleSort' (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 42)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 5) in 'bubbleSort'' in 'main' at call 'bubbleSort' (file out/deepseek-chat/222/222_0001/222_0003/222_merged.c, line 42)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/222/222_0001/222_0003/222_merged.c:40: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

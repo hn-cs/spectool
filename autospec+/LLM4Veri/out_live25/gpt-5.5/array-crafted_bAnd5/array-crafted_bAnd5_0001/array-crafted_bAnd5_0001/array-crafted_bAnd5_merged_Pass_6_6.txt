@@ -1,0 +1,96 @@
+[kernel] Parsing out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c:28: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c:30: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c:43: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c:35: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c:30: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 6 goals scheduled
+[wp] Proved goals:    6 / 6
+  Qed:             4
+  Alt-Ergo :       2 (18ms-39ms)
+------------------------------------------------------------
+  Function bAnd
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c, line 16):
+Let x_1 = Mint_0[shift_sint32(x, i_1)].
+Assume {
+  Type: is_sint32(N) /\ is_sint32(i_1) /\ is_sint64(res_0) /\
+      is_sint32(1 + i_1) /\ is_sint32(Mint_0[shift_sint32(x, 0)]) /\
+      is_sint32(x_1).
+  (* Heap *)
+  Type: region(x.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (land(res_0, Mint_0[shift_sint32(x, i_2)]) = res_0))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 < N.
+}
+Prove: land(res_0, land(Mint_0[shift_sint32(x, i)], x_1)) = land(res_0, x_1).
+Prover Alt-Ergo  returns Valid (Qed:10ms) (39ms) (215)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.56ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c, line 30):
+Assume {
+  Type: is_sint32(N).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= N) /\ (N <= 2147483646).
+  (* Then *)
+  Have: 2 <= N.
+}
+Prove: (0 < N) /\ (N <= 4611686018427387903).
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (110ms) (34580)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (18ms) (16)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c:10: Warning: 
+  No 'assigns' specification for function 'bAnd'.
+  Callers assumptions might be imprecise.
+[wp] out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c:10: Warning: 
+  Memory model hypotheses for function 'bAnd':
+  /*@ behavior wp_typed:
+        requires \separated(x + (..), &N); */
+  int bAnd(int x[N]);
+[wp:pedantic-assigns] out/gpt-5.5/array-crafted_bAnd5/array-crafted_bAnd5_0001/array-crafted_bAnd5_0001/array-crafted_bAnd5_merged.c:26: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

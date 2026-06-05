@@ -1,0 +1,79 @@
+[kernel] Parsing out/gpt-5.5/loop-lit_hh2012-ex2b/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-lit_hh2012-ex2b/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_merged.c:17: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] Proved goals:    8 / 8
+  Qed:             7
+  Alt-Ergo :       1 (19ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_hh2012-ex2b/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_hh2012-ex2b/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_hh2012-ex2b/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_merged.c, line 12):
+Assume {
+  Type: is_sint32(n) /\ is_sint32(tmp_0) /\ is_sint32(1 + n).
+  (* Residual *)
+  When: n <= 59.
+  (* Residual *)
+  When: tmp_0 != 0.
+  (* Invariant *)
+  Have: n <= 60.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0) /\ (tmp_0 <= 2147483646).
+}
+Prove: (-1) <= n.
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (120ms) (35128)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (19ms) (25)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_hh2012-ex2b/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-lit_hh2012-ex2b/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.57ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-lit_hh2012-ex2b/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_hh2012-ex2b/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_merged.c, line 13) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_hh2012-ex2b/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_merged.c, line 13) (2/2):
+Call Result at line 17
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-lit_hh2012-ex2b/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_0001/loop-lit_hh2012-ex2b_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

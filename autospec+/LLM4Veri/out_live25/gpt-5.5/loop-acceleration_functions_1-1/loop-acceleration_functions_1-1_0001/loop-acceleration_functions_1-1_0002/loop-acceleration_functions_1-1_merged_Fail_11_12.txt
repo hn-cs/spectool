@@ -1,0 +1,112 @@
+[kernel] Parsing out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 12 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_3_preserved (Qed 4ms) (Z3 8s)
+[wp] Proved goals:   11 / 12
+  Qed:             9
+  Alt-Ergo :       2 (25ms-38ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function f
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c, line 3) in 'f':
+Let x = 2 + z.
+Assume { Type: is_uint32(z). (* Pre-condition *) Have: z <= 268435454. }
+Prove: x = to_uint32(x).
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (120ms) (34525)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (25ms) (26)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c, line 4) in 'f':
+Assume { Type: is_uint32(z). (* Pre-condition *) Have: z <= 268435454. }
+Prove: (to_uint32(2 + z) % 2) = (z % 2).
+Prover Z3 4.8.12 returns Valid (Qed:0.91ms) (150ms) (44889)
+Prover Alt-Ergo  returns Valid (Qed:0.91ms) (38ms) (272)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'f':
+Effect at line 8
+Prove: true.
+Prover Qed returns Valid (0.68ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c, line 15):
+Let x_1 = x - 2.
+Assume {
+  Type: is_uint32(x) /\ is_uint32(x_1).
+  (* Invariant *)
+  Have: x <= 268435458.
+  (* Invariant *)
+  Have: (x_1 % 2) = 0.
+  (* Invariant *)
+  Have: x != 268435458.
+  (* Then *)
+  Have: x <= 268435456.
+  (* Call 'f' *)
+  Have: (x % 2) = 0.
+}
+Prove: x != 268435456.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c, line 2) in 'f'' in 'main' at call 'f' (file out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c, line 19)
+:
+Prove: true.
+Prover Qed returns Valid (0.72ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-acceleration_functions_1-1/loop-acceleration_functions_1-1_0001/loop-acceleration_functions_1-1_0002/loop-acceleration_functions_1-1_merged.c:10: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

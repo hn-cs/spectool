@@ -1,0 +1,213 @@
+[kernel] Parsing out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c:35: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c:28: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c:17: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 22 goals scheduled
+[wp] Proved goals:   22 / 22
+  Qed:            20
+  Alt-Ergo :       2 (28ms-29ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 14):
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(nodecount_0) /\ is_sint32(source_0) /\
+      is_sint32(1 + i_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: i_1 <= nodecount_0.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (distance_1[i_2] = (if (i_2 = source_0) then 0 else INFINITY_0)))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < nodecount_0.
+  If source_0 = i_1
+  Then {
+    Have: distance_1 = distance_2.
+    Have: distance_2[i_1 <- 0] = distance_0.
+  }
+  Else {
+    Have: distance_1 = distance_3.
+    Have: distance_3[i_1 <- INFINITY_0] = distance_0.
+  }
+}
+Prove: distance_0[i] = (if (source_0 = i) then 0 else INFINITY_0).
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (130ms) (39305)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (29ms) (128)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 31):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 33):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 46):
+Let x = Dest_0[i_1].
+Let x_1 = distance_0[x].
+Let x_2 = Weight_0[i_1].
+Let x_3 = Source_0[i_1].
+Let x_4 = distance_0[x_3].
+Assume {
+  Type: is_sint32(edgecount_0) /\ is_sint32(i_1) /\ is_sint32(i_2) /\
+      is_sint32(i_3) /\ is_sint32(nodecount_0) /\ is_sint32(nodecount_1) /\
+      is_sint32(source_0) /\ is_sint32(x) /\ is_sint32(x_3) /\
+      is_sint32(x_2) /\ is_sint32(x_1) /\ is_sint32(x_4) /\
+      is_sint32(1 + i_1).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: i_3 <= nodecount_1.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i_3) ->
+      (distance_1[i_4] = (if (i_4 = source_0) then 0 else INFINITY_0)))).
+  (* Invariant *)
+  Have: 0 <= i_3.
+  (* Else *)
+  Have: nodecount_1 <= i_3.
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: nodecount_0 <= i_2.
+  (* Invariant *)
+  Have: forall i_4 : Z. ((0 <= i_4) -> ((i_4 < i_1) ->
+      (distance_0[Dest_0[i_4]] <= (Weight_0[i_4] + distance_0[Source_0[i_4]])))).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < edgecount_0.
+  (* Else *)
+  Have: x_1 <= (x_2 + x_4).
+}
+Prove: distance_0[Dest_0[i]] <= (Weight_0[i] + distance_0[Source_0[i]]).
+Prover Z3 4.8.12 returns Valid (Qed:16ms) (130ms) (41069)
+Prover Alt-Ergo  returns Valid (Qed:16ms) (28ms) (89)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 46):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 47):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 47):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 62):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 62):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 48):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c, line 63):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops_eureka_01-2/loops_eureka_01-2_0001/loops_eureka_01-2_0005/loops_eureka_01-2_merged.c:2: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

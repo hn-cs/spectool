@@ -1,0 +1,157 @@
+[kernel] Parsing out/deepseek-chat/suman1406_ArrayDoubling1/suman1406_ArrayDoubling1_0001/suman1406_ArrayDoubling1_0003/suman1406_ArrayDoubling1_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] [Timeout] typed_arraydouble_loop_invariant_established (Qed 0.99ms) (Z3 8s)
+[wp] Proved goals:    7 / 8
+  Qed:             4
+  Alt-Ergo :       3 (44ms-49ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function arraydouble
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/suman1406_ArrayDoubling1/suman1406_ArrayDoubling1_0001/suman1406_ArrayDoubling1_0003/suman1406_ArrayDoubling1_merged.c, line 4):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), n).
+Let a_2 = shift_sint32(a, p).
+Let a_3 = a_1[a_2].
+Assume {
+  Type: is_sint32(n) /\ is_sint32(p) /\ is_sint32(1 + p) /\ is_sint32(a_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (i < n) /\ (p < i).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+      (Mint_0[shift_sint32(a, i_1)] = i_1))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((p <= i_1) ->
+      (a_1[shift_sint32(a, i_1)] = i_1))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < p) ->
+      (a_1[shift_sint32(a, i_1)] = (2 * i_1)))).
+  (* Invariant *)
+  Have: 0 <= p.
+  (* Then *)
+  Have: p < n.
+}
+Prove: a_1[a_2 <- 2 * a_3][shift_sint32(a, i)] = i.
+Prover Alt-Ergo  returns Valid (Qed:15ms) (47ms) (139)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/suman1406_ArrayDoubling1/suman1406_ArrayDoubling1_0001/suman1406_ArrayDoubling1_0003/suman1406_ArrayDoubling1_merged.c, line 4):
+Assume {
+  Type: is_sint32(n).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i < n).
+}
+Prove: Mint_0[shift_sint32(a, i)] = i.
+Prover Z3 4.8.12 returns Timeout (Qed:0.99ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:0.99ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/suman1406_ArrayDoubling1/suman1406_ArrayDoubling1_0001/suman1406_ArrayDoubling1_0003/suman1406_ArrayDoubling1_merged.c, line 5):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), n).
+Let a_2 = shift_sint32(a, p).
+Let a_3 = a_1[a_2].
+Let a_4 = a_1[a_2 <- 2 * a_3].
+Assume {
+  Type: is_sint32(n) /\ is_sint32(p) /\ is_sint32(1 + p) /\ is_sint32(a_3).
+  (* Heap *)
+  Type: region(a.base) <= 0.
+  (* Goal *)
+  When: (0 <= i) /\ (i <= p).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < n) ->
+      (Mint_0[shift_sint32(a, i_1)] = i_1))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((p <= i_1) ->
+      (a_1[shift_sint32(a, i_1)] = i_1))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < p) ->
+      (a_1[shift_sint32(a, i_1)] = (2 * i_1)))).
+  (* Invariant *)
+  Have: 0 <= p.
+  (* Then *)
+  Have: p < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((i_1 < n) -> ((p < i_1) ->
+      (a_4[shift_sint32(a, i_1)] = i_1))).
+}
+Prove: a_4[shift_sint32(a, i)] = (2 * i).
+Prover Alt-Ergo  returns Valid (Qed:13ms) (49ms) (202)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/suman1406_ArrayDoubling1/suman1406_ArrayDoubling1_0001/suman1406_ArrayDoubling1_0003/suman1406_ArrayDoubling1_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (0.77ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/suman1406_ArrayDoubling1/suman1406_ArrayDoubling1_0001/suman1406_ArrayDoubling1_0003/suman1406_ArrayDoubling1_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/suman1406_ArrayDoubling1/suman1406_ArrayDoubling1_0001/suman1406_ArrayDoubling1_0003/suman1406_ArrayDoubling1_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/suman1406_ArrayDoubling1/suman1406_ArrayDoubling1_0001/suman1406_ArrayDoubling1_0003/suman1406_ArrayDoubling1_merged.c, line 7) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/suman1406_ArrayDoubling1/suman1406_ArrayDoubling1_0001/suman1406_ArrayDoubling1_0003/suman1406_ArrayDoubling1_merged.c, line 7) (2/2):
+Effect at line 12
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Let x = p - 1.
+Let a_3 = shift_sint32(a, x).
+Let a_4 = a_2[a_3].
+Let a_5 = a_2[a_3 <- 2 * a_4].
+Assume {
+  Type: is_sint32(n) /\ is_sint32(p) /\ is_sint32(x) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < n) ->
+      (Mint_0[shift_sint32(a, i)] = i))).
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((p <= (1 + i)) ->
+      (a_2[shift_sint32(a, i)] = i))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> (((2 + i) <= p) ->
+      (a_2[shift_sint32(a, i)] = (2 * i)))).
+  (* Invariant *)
+  Have: 0 < p.
+  (* Then *)
+  Have: p <= n.
+  (* Invariant *)
+  Have: forall i : Z. ((i < n) -> ((p <= i) ->
+      (a_5[shift_sint32(a, i)] = i))).
+  (* Invariant *)
+  Have: forall i : Z. ((0 <= i) -> ((i < p) ->
+      (a_5[shift_sint32(a, i)] = (2 * i)))).
+}
+Prove: included(a_3, 1, a_1, n).
+Prover Alt-Ergo  returns Valid (Qed:11ms) (44ms) (170)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/suman1406_ArrayDoubling1/suman1406_ArrayDoubling1_0001/suman1406_ArrayDoubling1_0003/suman1406_ArrayDoubling1_merged.c:1: Warning: 
+  No 'assigns' specification for function 'arraydouble'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/suman1406_ArrayDoubling1/suman1406_ArrayDoubling1_0001/suman1406_ArrayDoubling1_0003/suman1406_ArrayDoubling1_merged.c:15: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

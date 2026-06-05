@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=1, microseconds=494291), 'total_solve_time': datetime.timedelta(seconds=19, microseconds=243470), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 38, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': ['requires \\valid(x);', 'assigns *x;'], '2': [], 'MSLines': ['#include<limits.h>\n', '/*@\n', 'assigns \\nothing;\n', 'ensures INT_MIN <= \\result < INT_MAX;\n', '*/\n', 'int unknown();\n', '/* 1. FUNC CONTRACT */\nvoid func_to_recursive_line_13_to_14_0(unsigned int *x)\n', '{\n', '  if (unknown())\n', '  {\n', '    {\n', '      *x += 2;\n', '    }\n', '    func_to_recursive_line_13_to_14_0(x);\n', '  }\n', '  else\n', '  {\n', '  }\n', '}\n', '/* 2. FUNC CONTRACT */\nint main(void)\n', '{\n', '  unsigned int x = 0;\n', '  func_to_recursive_line_13_to_14_0(&x);\n', '  //@assert(!(x % 2));\n', '  return 0;\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

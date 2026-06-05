@@ -1,0 +1,154 @@
+[kernel] Parsing out/gpt-5.5/216/216_0001/216_0002/216_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] [Timeout] typed_increment_array_by_ensures (Qed 9ms) (Z3 8s)
+[wp] Proved goals:   10 / 11
+  Qed:             8
+  Alt-Ergo :       2 (21ms-34ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function increment_array_by
+------------------------------------------------------------
+
+Goal Post-condition (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 5) in 'increment_array_by':
+Let a = shift_sint32(arr_0, 0).
+Let a_1 = shift_sint32(arr_0, i_1).
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i) /\ is_sint32(n).
+  (* Heap *)
+  Type: (region(arr_0.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 < n).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, n).
+  (* Pre-condition *)
+  Have: forall i_2 : Z. let x = c + Mint_0[shift_sint32(arr_0, i_2)] in
+      ((0 <= i_2) -> ((i_2 < n) ->
+      (((-2147483648) <= x) /\ (x <= 2147483647)))).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: n <= i.
+}
+Prove: havoc(Mint_undef_0, Mint_0, a, i)[a_1] = (c + Mint_0[a_1]).
+Prover Z3 4.8.12 returns Timeout (Qed:9ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:9ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 12) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 12) (2/2):
+Effect at line 16
+Let a = shift_sint32(arr_0, 0).
+Let x = i - 1.
+Let a_1 = shift_sint32(arr_0, x).
+Assume {
+  Type: is_sint32(c) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(x).
+  (* Heap *)
+  Type: (region(arr_0.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_1, 1).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a, n).
+  (* Pre-condition *)
+  Have: forall i_1 : Z. let x_1 = c + Mint_0[shift_sint32(arr_0, i_1)] in
+      ((0 <= i_1) -> ((i_1 < n) ->
+      (((-2147483648) <= x_1) /\ (x_1 <= 2147483647)))).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: i <= (1 + n).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= n.
+}
+Prove: included(a_1, 1, a, n).
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (150ms) (99244)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (34ms) (106)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 6) in 'increment_array_by':
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 2) in 'increment_array_by'' in 'main' at call 'increment_array_by' (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 24)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 3) in 'increment_array_by'' in 'main' at call 'increment_array_by' (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 24)
+:
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 4) in 'increment_array_by'' in 'main' at call 'increment_array_by' (file out/gpt-5.5/216/216_0001/216_0002/216_merged.c, line 24)
+:
+Let x = arr_0[i].
+Assume {
+  (* Goal *)
+  When: (0 <= i) /\ (i <= 4).
+  (* Initializer *)
+  Init: arr_0[0] = 1.
+  (* Initializer *)
+  Init: arr_0[1] = 2.
+  (* Initializer *)
+  Init: arr_0[2] = 3.
+  (* Initializer *)
+  Init: arr_0[3] = 4.
+  (* Initializer *)
+  Init: arr_0[4] = 5.
+}
+Prove: ((-2147483650) <= x) /\ (x <= 2147483645).
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (130ms) (23729)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (21ms) (47)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/216/216_0001/216_0002/216_merged.c:22: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

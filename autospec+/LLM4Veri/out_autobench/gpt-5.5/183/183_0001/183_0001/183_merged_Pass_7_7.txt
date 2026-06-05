@@ -1,0 +1,70 @@
+[kernel] Parsing out/gpt-5.5/183/183_0001/183_0001/183_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 7 goals scheduled
+[wp] Proved goals:    7 / 7
+  Qed:             6
+  Alt-Ergo :       1 (21ms)
+------------------------------------------------------------
+  Function test
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/183/183_0001/183_0001/183_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/183/183_0001/183_0001/183_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/183/183_0001/183_0001/183_merged.c, line 9):
+Let x = a + y.
+Assume {
+  Type: is_sint32(a) /\ is_sint32(y) /\ is_sint32(a - 1) /\
+      is_sint32(1 + y) /\ is_sint32(x).
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Invariant *)
+  Have: (0 <= a) /\ (0 <= y).
+  (* Then *)
+  Have: a != 0.
+}
+Prove: (0 < a) /\ ((-1) <= y).
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (120ms) (35675)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (21ms) (28)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/183/183_0001/183_0001/183_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.50ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/183/183_0001/183_0001/183_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/183/183_0001/183_0001/183_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/183/183_0001/183_0001/183_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/183/183_0001/183_0001/183_merged.c:3: Warning: 
+  No 'assigns' specification for function 'test'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/183/183_0001/183_0001/183_merged.c:21: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

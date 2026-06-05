@@ -1,0 +1,8 @@
+[kernel] Parsing out/gpt-5.5/recursified_loop-crafted_recursified_simple_vardep_1/recursified_loop-crafted_recursified_simple_vardep_1_0001/recursified_loop-crafted_recursified_simple_vardep_1_0001/recursified_loop-crafted_recursified_simple_vardep_1_merged.c (with preprocessing)
+[kernel:annot-error] out/gpt-5.5/recursified_loop-crafted_recursified_simple_vardep_1/recursified_loop-crafted_recursified_simple_vardep_1_0001/recursified_loop-crafted_recursified_simple_vardep_1_0001/recursified_loop-crafted_recursified_simple_vardep_1_merged.c:7: Warning: 
+  wrong order of clause in contract: decreases after post-condition, assigns or allocates.
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on
+  file "out/gpt-5.5/recursified_loop-crafted_recursified_simple_vardep_1/recursified_loop-crafted_recursified_simple_vardep_1_0001/recursified_loop-crafted_recursified_simple_vardep_1_0001/recursified_loop-crafted_recursified_simple_vardep_1_merged.c"
+  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

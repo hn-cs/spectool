@@ -1,0 +1,83 @@
+[kernel] Parsing out/deepseek-chat/loop-lit_cggmp2005/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 7 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 7ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_3_preserved (Qed 2ms) (Z3 8s)
+[wp] Proved goals:    5 / 7
+  Qed:             5
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_cggmp2005/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_merged.c, line 7):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(j - 1).
+  (* Invariant *)
+  Have: 0 < j.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: i <= (2 + j).
+  (* Then *)
+  Have: i <= j.
+}
+Prove: 2 <= j.
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_cggmp2005/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_cggmp2005/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_cggmp2005/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (0.65ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_cggmp2005/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_merged.c, line 9):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(j - 1) /\ is_sint32(2 + i).
+  (* Invariant *)
+  Have: 0 < j.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: i <= (2 + j).
+  (* Then *)
+  Have: i <= j.
+  (* Invariant *)
+  Have: 2 <= j.
+}
+Prove: i < j.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_cggmp2005/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (0.97ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-lit_cggmp2005/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-lit_cggmp2005/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_merged.c:2: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

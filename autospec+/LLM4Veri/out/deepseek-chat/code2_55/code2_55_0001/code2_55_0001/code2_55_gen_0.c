@@ -1,0 +1,26 @@
+/*@
+requires n > 0;
+*/
+void foo(int n) {
+  int c = 0;
+  /*@
+  loop invariant c >= 0;
+  loop invariant c <= n + 1;
+  */
+  while (unknown()) {  
+    if (unknown()) {
+      if (c > n) {
+        c = c + 1;
+      }
+    } else {
+      if (c == n) {
+        c = 1;
+      }
+    }
+  }
+  if (c < 0) {
+    if (c > n) {
+      // @ assert c == n;
+    }
+  }
+}

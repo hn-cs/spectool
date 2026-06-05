@@ -1,0 +1,135 @@
+[kernel] Parsing out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:17: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 12 goals scheduled
+[wp] [Timeout] typed_main_loop_assigns_part5 (Qed 7ms) (Z3 8s) (Stronger)
+[wp] Proved goals:   11 / 12
+  Qed:            10
+  Alt-Ergo :       1 (26ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c, line 7):
+out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c, line 7):
+out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.94ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c, line 8):
+out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(a, 0).
+Assume { (* Goal *) When: (0 <= i) /\ (i <= 2) /\ (i <= 300000). }
+Prove: havoc(Mint_undef_0, Mint_0, a_1, 300001)[a_1 <- 0][shift_sint32(a, 1)
+         <- 0][shift_sint32(a, 2) <- 0][shift_sint32(a, i)] = 0.
+Prover Alt-Ergo  returns Valid (Qed:6ms) (26ms) (34)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c, line 8):
+out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c, line 9):
+out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c, line 9):
+out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c, line 10) (1/5):
+Effect at line 12
+out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c, line 10) (2/5):
+Effect at line 13
+out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c, line 10) (3/5):
+Effect at line 14
+out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c, line 10) (4/5):
+Effect at line 15
+out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c, line 10) (5/5):
+Effect at line 12
+out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

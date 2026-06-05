@@ -1,0 +1,18 @@
+[kernel] Parsing out/gpt-5.5/stack_pop_wd/stack_pop_wd_0001/stack_pop_wd_0005/stack_pop_wd_merged.c (with preprocessing)
+[kernel] out/gpt-5.5/stack_pop_wd/stack_pop_wd_0001/stack_pop_wd_0005/stack_pop_wd_merged.c:125: 
+  syntax error:
+  Location: between lines 125 and 134
+  123   void
+  124   stack_pop(Stack* s);
+  
+  125   void
+  126   /*@
+  127   requires valid_t: \valid(t) && StackInvariant(t);
+  128-131 [... omitted ...]
+  132   ensures valid_s: \valid(s) && StackInvariant(s);
+  133   ensures equal: StackEqual{Here,Here}(s, t);
+  134   assigns s- > size, t- > size;
+  
+  135   */
+  136   stack_pop_wd(Stack* s, Stack* t)
+[kernel] Frama-C aborted: invalid user input.

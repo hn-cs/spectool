@@ -1,0 +1,7 @@
+[kernel] Parsing out/gpt-5.5/201/201_0001/201_0004/201_merged.c (with preprocessing)
+[kernel:annot-error] out/gpt-5.5/201/201_0001/201_0004/201_merged.c:23: Warning: 
+  unexpected token 'k'
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on file "out/gpt-5.5/201/201_0001/201_0004/201_merged.c" that has
+  errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

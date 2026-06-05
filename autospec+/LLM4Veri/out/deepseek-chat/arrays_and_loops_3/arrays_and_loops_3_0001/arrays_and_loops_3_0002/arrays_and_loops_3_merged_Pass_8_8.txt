@@ -1,0 +1,69 @@
+[kernel] Parsing out/deepseek-chat/arrays_and_loops_3/arrays_and_loops_3_0001/arrays_and_loops_3_0002/arrays_and_loops_3_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] Proved goals:    8 / 8
+  Qed:             8
+------------------------------------------------------------
+  Function func
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/arrays_and_loops_3/arrays_and_loops_3_0001/arrays_and_loops_3_0002/arrays_and_loops_3_merged.c, line 2) in 'func':
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func' (1/6):
+Effect at line 9
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func' (2/6):
+Effect at line 9
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func' (3/6):
+Effect at line 12
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func' (4/6):
+Effect at line 12
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func' (5/6):
+Effect at line 14
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func' (6/6):
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/arrays_and_loops_3/arrays_and_loops_3_0001/arrays_and_loops_3_0002/arrays_and_loops_3_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/arrays_and_loops_3/arrays_and_loops_3_0001/arrays_and_loops_3_0002/arrays_and_loops_3_merged.c:18: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

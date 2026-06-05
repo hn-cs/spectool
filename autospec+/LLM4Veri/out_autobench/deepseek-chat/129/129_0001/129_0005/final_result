@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 6, 'Iteration': 6, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=4, microseconds=858251), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=852811), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 148, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant y - x;', 'loop invariant x == 2^(i);', 'loop invariant x == (1 << i);', 'loop invariant x <= y;', 'loop invariant x <= 2*y;', 'loop invariant x < 2*y;', 'loop invariant \\exists integer k; 0 <= k && x == 2^k;', 'loop invariant \\exists integer k; 0 <= k && x <= 2 * 2^k;', 'loop invariant 1 <= x;', 'loop invariant 0 <= y - x;', 'loop invariant 0 <= x <= y ⟹ \\at(x, Pre) * 2^i == x;', 'loop invariant 0 < y - x;', 'loop assigns x;'], '2': [], 'MSLines': ['/* 2. FUNC CONTRACT */\nvoid foo(int y) {\n', '  int x = 1;\n', '  \n', '  /* 1. LOOP INVARIANT */\n  while (x < y) {\n', '    x = x + x;\n', '  }\n', '  // post-condition\n', '  //@ assert(x >= 1);\n', '}\n']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

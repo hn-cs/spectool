@@ -1,0 +1,18 @@
+[kernel] Parsing out/deepseek-chat/evdenis_acsl-examples_04_max_seq/evdenis_acsl-examples_04_max_seq_0001/evdenis_acsl-examples_04_max_seq_0004/evdenis_acsl-examples_04_max_seq_merged.c (with preprocessing)
+[kernel] out/deepseek-chat/evdenis_acsl-examples_04_max_seq/evdenis_acsl-examples_04_max_seq_0001/evdenis_acsl-examples_04_max_seq_0004/evdenis_acsl-examples_04_max_seq_merged.c:28: 
+  syntax error:
+  Location: between lines 28 and 39
+  26           loop assigns max, i;
+  27           loop variant n-i;
+  
+  28       */
+  29       /*@
+  30       loop invariant n-i;
+  31-36 [... omitted ...]
+  37       loop assigns max;
+  38       loop assigns i;
+  39       */
+  
+  40       for (int i = 1; i < n; i++) {
+  41          if (a[max] < a[i]) {
+[kernel] Frama-C aborted: invalid user input.

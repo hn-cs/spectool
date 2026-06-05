@@ -1,0 +1,12 @@
+[kernel] Parsing out/gpt-5.5/search/search_0001/search_0005/search_merged.c (with preprocessing)
+[kernel] out/gpt-5.5/search/search_0001/search_0005/search_merged.c:26: 
+  syntax error:
+  Location: between lines 26 and 27, before or at token: return
+  24      loop invariant 0 <= p;
+  25      loop invariant 0 < p;
+  
+  26      */
+  27      return 0;
+  
+  28    }
+[kernel] Frama-C aborted: invalid user input.

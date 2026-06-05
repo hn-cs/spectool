@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 2, 'Iteration': 2, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=13, microseconds=111181), 'total_solve_time': datetime.timedelta(seconds=1, microseconds=324767), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 406, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': ['requires -2147483648 <= b + c <= 2147483647;', 'requires -2147483648 <= a + c <= 2147483647;', 'requires -2147483648 <= a + b <= 2147483647;', 'ensures \\result == 1 <==> (a + b > c && a + c > b && b + c > a);', 'ensures \\result == 0 || \\result == 1;', 'assigns \\nothing;'], '2': [], 'MSLines': ['#include <stdio.h>\n', '/* 1. FUNC CONTRACT */\nint validts(int a, int b, int c) {\n', '    int valid = 0;\n', '    if ((a+b>c) && (a+c>b) && (b+c>a) && 1) {\n', '        valid = 1;\n', '    } else {\n', '        valid = 0;\n', '    }\n', '    return valid;\n', '}\n', '/* 2. FUNC CONTRACT */\nvoid test() {\n', '    int valid = validts(2,3,4);\n', '    //@ assert valid == 1;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

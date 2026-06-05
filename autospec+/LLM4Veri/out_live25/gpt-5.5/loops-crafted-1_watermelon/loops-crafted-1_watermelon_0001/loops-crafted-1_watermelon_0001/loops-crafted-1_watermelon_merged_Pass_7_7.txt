@@ -1,0 +1,81 @@
+[kernel] Parsing out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_merged.c:46: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 7 goals scheduled
+[wp] Proved goals:    7 / 7
+  Qed:             6
+  Alt-Ergo :       1 (30ms)
+------------------------------------------------------------
+  Function correct_version
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_merged.c, line 19):
+Let x = 2 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(w) /\ is_sint32(x).
+  (* Else *)
+  Have: 4 <= w.
+  (* Invariant *)
+  Have: (-1) <= w.
+  (* Invariant *)
+  Have: i <= (1 + w).
+  (* Invariant *)
+  Have: (i % 2) = 0.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < w.
+}
+Prove: (x % 2) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (130ms) (37618)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (30ms) (121)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_merged.c:9: Warning: 
+  No 'assigns' specification for function 'correct_version'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_merged.c:30: Warning: 
+  No 'assigns' specification for function 'student_version'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_merged.c:45: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

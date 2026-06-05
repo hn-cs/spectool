@@ -1,0 +1,20 @@
+[kernel] Parsing out/gpt-5.5/iota/iota_0001/iota_0004/iota_merged.c (with preprocessing)
+[kernel] out/gpt-5.5/iota/iota_0001/iota_0004/iota_merged.c:18: 
+  syntax error:
+  Location: between lines 18 and 26
+  16        IotaGenerate(value_type* a, integer n, value_type v) =
+  17          \forall integer i; 0 <= i < n  ==>  a[i] == v+i;
+  
+  18      }
+  19    */
+  20    void
+  21    /*@
+  22    requires \valid(a + (0..n-1));
+  23    requires (integer)v + (integer)n <= VALUE_TYPE_MAX;
+  24    ensures \forall integer i; 0 <= i < n ==> a[i] == \old(v) + i;
+  25    ensures IotaGenerate(a, n, \old(v));
+  26    assigns a[0..n-1];
+  
+  27    */
+  28    iota(value_type* a, size_type n, value_type v)
+[kernel] Frama-C aborted: invalid user input.

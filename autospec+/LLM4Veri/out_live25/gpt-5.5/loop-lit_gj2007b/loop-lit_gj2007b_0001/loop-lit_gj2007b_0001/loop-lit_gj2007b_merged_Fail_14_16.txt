@@ -1,0 +1,203 @@
+[kernel] Parsing out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c:11: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 16 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_4_preserved (Qed 13ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_4_established (Qed 1ms) (Z3 8s)
+[wp] Proved goals:   14 / 16
+  Qed:            12
+  Alt-Ergo :       2 (21ms-22ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (0.64ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 14):
+Assume {
+  Type: is_sint32(m) /\ is_sint32(n) /\ is_sint32(x) /\ is_sint32(1 + x).
+  (* Goal *)
+  When: 0 < n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Invariant *)
+  Have: x <= n.
+  (* Invariant *)
+  Have: (m = 0) \/ (m < x).
+  (* Invariant *)
+  Have: x != n.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Invariant *)
+  Have: 0 <= m.
+  (* Then *)
+  Have: x < n.
+}
+Prove: (m = 0) \/ (m <= x).
+Prover Z3 4.8.12 returns Valid (Qed:11ms) (120ms) (35932)
+Prover Alt-Ergo  returns Valid (Qed:11ms) (22ms) (30)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 16):
+Let x_1 = 1 + x.
+Assume {
+  Type: is_sint32(m) /\ is_sint32(m_1) /\ is_sint32(n) /\
+      is_sint32(tmp_0_0) /\ is_sint32(x) /\ is_sint32(x_1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Invariant *)
+  Have: ((0 < n) -> (0 <= n)).
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: ((0 < n) -> (x <= n)).
+  (* Invariant *)
+  Have: ((0 < n) -> ((m_1 = 0) \/ (m_1 < x))).
+  (* Invariant *)
+  Have: ((n <= 0) -> (x = 0)).
+  (* Invariant *)
+  Have: x != n.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Invariant *)
+  Have: 0 <= m_1.
+  (* Then *)
+  Have: x < n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  If tmp_0_0 != 0
+  Then { Have: x = m. }
+  Else { Have: m_1 = m. }
+  (* Invariant *)
+  Have: ((0 < n) -> ((m = 0) \/ (m <= x))).
+  (* Invariant *)
+  Have: ((n <= 0) -> (x = (-1))).
+}
+Prove: x_1 != n.
+Prover Z3 4.8.12 returns Timeout (Qed:13ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:13ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 16):
+Assume {
+  Type: is_sint32(n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Invariant *)
+  Have: ((0 < n) -> (0 <= n)).
+}
+Prove: n != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:1ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:1ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 29):
+Assume {
+  Type: is_sint32(m) /\ is_sint32(n) /\ is_sint32(x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Invariant *)
+  Have: ((0 < n) -> (0 <= n)).
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: ((0 < n) -> (x <= n)).
+  (* Invariant *)
+  Have: ((0 < n) -> ((m = 0) \/ (m < x))).
+  (* Invariant *)
+  Have: ((n <= 0) -> (x = 0)).
+  (* Invariant *)
+  Have: x != n.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Invariant *)
+  Have: 0 <= m.
+  (* Else *)
+  Have: n <= x.
+}
+Prove: (n <= 0) \/ (m < n).
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (120ms) (36113)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (21ms) (30)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 19) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c, line 19) (2/2):
+Call Result at line 23
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-lit_gj2007b/loop-lit_gj2007b_0001/loop-lit_gj2007b_0001/loop-lit_gj2007b_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

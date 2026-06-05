@@ -1,0 +1,2341 @@
+[kernel] Parsing out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:15: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:typing:no-proto] out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:16: Warning: 
+  Calling function unknown2 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] Computing [100 goals...]
+[wp] 128 goals scheduled
+[wp] [Timeout] typed_main_assert_alloca_bounds (Qed 11ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_5_established (Qed 7ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_22_established (Qed 3ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_35_established (Qed 3ms) (Z3 8s) (Stronger)
+[wp] Proved goals:  124 / 128
+  Qed:           106
+  Alt-Ergo :      18 (30ms-43ms-67ms)
+  Timeout:         4
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 18):
+Assume {
+  Type: is_sint32(j) /\ is_sint32(n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+}
+Prove: (0 < n) /\ (n <= 4611686018427387903).
+Prover Z3 4.8.12 returns Timeout (Qed:11ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:11ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 21):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 21):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 22):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 22):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 23):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 23):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 24):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 24):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 25):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 25):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Assume {
+  Type: is_sint32(j) /\ is_sint32(n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+}
+Prove: n <= 99998.
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 26):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 26):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 27):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 27):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 28):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 28):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 29):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 29):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 30):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 30):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 31):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 31):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 32):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 32):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 33):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 33):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 34):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 34):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 35):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 35):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 36):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 36):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 37):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 37):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 38):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 38):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 39):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 39):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 40):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 40):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 41):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 41):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 42):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 42):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Assume {
+  Type: is_sint32(j) /\ is_sint32(n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+}
+Prove: j <= 9998.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 43):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 43):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 44):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 44):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 45):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 45):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 46):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 46):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 47):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(1 + i).
+  (* Goal *)
+  When: (0 < i_1) /\ (i_1 <= i).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: ((2 <= n) -> (i <= n)).
+  (* Invariant *)
+  Have: (i <= n) \/ (n <= 1).
+  (* Invariant *)
+  Have: i <= 99999.
+  (* Invariant *)
+  Have: i <= 99998.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a_1[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 < i) -> (((j + i_2) < a_2) /\ (a_2 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: ((n <= 1) -> (i = 1)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, i_2)] <= (19998 + i_2)))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i < n.
+  (* Call 'unknown1' *)
+  Have: (0 < k) /\ (k <= 9999).
+  (* Invariant *)
+  Have: i <= 99997.
+}
+Prove: a_1[shift_sint32(a, i) <- i + j + k][shift_sint32(a, i_1)]
+         <= (9999 + i_1 + j).
+Prover Alt-Ergo  returns Valid (Qed:26ms) (51ms) (172)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 47):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 48):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Let a_2 = a_1[shift_sint32(a, i_1) <- i_1 + j + k].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(1 + i_1).
+  (* Goal *)
+  When: (0 < i) /\ (i <= i_1).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: ((2 <= n) -> (i_1 <= n)).
+  (* Invariant *)
+  Have: (i_1 <= n) \/ (n <= 1).
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_1[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 < i_1) -> (((j + i_2) < a_3) /\ (a_3 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: ((n <= 1) -> (i_1 = 1)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (19998 + i_2)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Call 'unknown1' *)
+  Have: (0 < k) /\ (k <= 9999).
+  (* Invariant *)
+  Have: i_1 <= 99997.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i_1) ->
+      (a_2[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+}
+Prove: (i + j) < a_2[shift_sint32(a, i)].
+Prover Alt-Ergo  returns Valid (Qed:26ms) (67ms) (186)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 48):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 49):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Let a_2 = a_1[shift_sint32(a, i) <- i + j + k].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(1 + i).
+  (* Goal *)
+  When: (0 < i_1) /\ (i_1 <= i).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: ((2 <= n) -> (i <= n)).
+  (* Invariant *)
+  Have: (i <= n) \/ (n <= 1).
+  (* Invariant *)
+  Have: i <= 99999.
+  (* Invariant *)
+  Have: i <= 99998.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_1[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 < i) -> (((j + i_2) < a_3) /\ (a_3 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: ((n <= 1) -> (i = 1)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, i_2)] <= (19998 + i_2)))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i < n.
+  (* Call 'unknown1' *)
+  Have: (0 < k) /\ (k <= 9999).
+  (* Invariant *)
+  Have: i <= 99997.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i) ->
+      (a_2[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i) ->
+      ((j + i_2) < a_2[shift_sint32(a, i_2)]))).
+}
+Prove: a_2[shift_sint32(a, i_1)] <= (9999 + i_1 + j).
+Prover Alt-Ergo  returns Valid (Qed:32ms) (48ms) (98)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 49):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 50):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Let a_2 = a_1[shift_sint32(a, i_1) <- i_1 + j + k].
+Let a_3 = a_2[shift_sint32(a, i)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(1 + i_1).
+  (* Goal *)
+  When: (0 < i) /\ (i <= i_1).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: ((2 <= n) -> (i_1 <= n)).
+  (* Invariant *)
+  Have: (i_1 <= n) \/ (n <= 1).
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_4 = a_1[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 < i_1) -> (((j + i_2) < a_4) /\ (a_4 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: ((n <= 1) -> (i_1 = 1)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (19998 + i_2)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Call 'unknown1' *)
+  Have: (0 < k) /\ (k <= 9999).
+  (* Invariant *)
+  Have: i_1 <= 99997.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i_1) ->
+      (a_2[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i_1) ->
+      ((j + i_2) < a_2[shift_sint32(a, i_2)]))).
+}
+Prove: ((i + j) < a_3) /\ (a_3 <= (9999 + i + j)).
+Prover Alt-Ergo  returns Valid (Qed:22ms) (55ms) (141)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 50):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 51):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 51):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 52):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 52):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 53):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 53):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 54):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 54):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 55):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 55):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Assume {
+  Type: is_sint32(j) /\ is_sint32(n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+}
+Prove: 2 <= j.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 56):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 56):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 57):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 57):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 58):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (24ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 58):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 59):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 59):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 60):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 60):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 61):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 61):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 62):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Let a_2 = a_1[shift_sint32(a, i_1) <- i_1 + j + k].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(1 + i_1).
+  (* Goal *)
+  When: (0 < i) /\ (i <= i_1).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_1[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 < i_1) -> (((j + i_2) < a_3) /\ (a_3 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (19998 + i_2)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Call 'unknown1' *)
+  Have: (0 < k) /\ (k <= 9999).
+  (* Invariant *)
+  Have: i_1 <= 99997.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i_1) ->
+      (a_2[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i_1) ->
+      ((j + i_2) < a_2[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_2[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 <= i_1) -> (((j + i_2) < a_3) /\ (a_3 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: 2 <= n.
+}
+Prove: (i + j) < a_2[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Valid (Qed:27ms) (200ms) (97115)
+Prover Alt-Ergo  returns Valid (Qed:27ms) (47ms) (106)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 62):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 63):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Let a_2 = a_1[shift_sint32(a, i_1) <- i_1 + j + k].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(1 + i_1).
+  (* Goal *)
+  When: (0 < i) /\ (i <= i_1).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_1[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 < i_1) -> (((j + i_2) < a_3) /\ (a_3 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (19998 + i_2)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Call 'unknown1' *)
+  Have: (0 < k) /\ (k <= 9999).
+  (* Invariant *)
+  Have: i_1 <= 99997.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i_1) ->
+      (a_2[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i_1) ->
+      ((j + i_2) < a_2[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_2[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 <= i_1) -> (((j + i_2) < a_3) /\ (a_3 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: 2 <= n.
+}
+Prove: (2 + i) <= a_2[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Valid (Qed:28ms) (180ms) (97157)
+Prover Alt-Ergo  returns Valid (Qed:28ms) (52ms) (105)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 63):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 64):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Let a_2 = a_1[shift_sint32(a, i_1) <- i_1 + j + k].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(1 + i_1).
+  (* Goal *)
+  When: (0 < i) /\ (i <= i_1).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_1[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 < i_1) -> (((j + i_2) < a_3) /\ (a_3 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (19998 + i_2)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 < n.
+  (* Call 'unknown1' *)
+  Have: (0 < k) /\ (k <= 9999).
+  (* Invariant *)
+  Have: i_1 <= 99997.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i_1) ->
+      (a_2[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i_1) ->
+      ((j + i_2) < a_2[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_2[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 <= i_1) -> (((j + i_2) < a_3) /\ (a_3 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: 2 <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i_1) ->
+      ((2 + i_2) <= a_2[shift_sint32(a, i_2)]))).
+}
+Prove: (i + j) < a_2[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Valid (Qed:37ms) (180ms) (98546)
+Prover Alt-Ergo  returns Valid (Qed:37ms) (65ms) (109)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 64):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 65):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Let a_2 = a_1[shift_sint32(a, i) <- i + j + k].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(1 + i).
+  (* Goal *)
+  When: (0 < i_1) /\ (i_1 <= i).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 99999.
+  (* Invariant *)
+  Have: i <= 99998.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_1[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 < i) -> (((j + i_2) < a_3) /\ (a_3 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i) ->
+      (a_1[shift_sint32(a, i_2)] <= (19998 + i_2)))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i < n.
+  (* Call 'unknown1' *)
+  Have: (0 < k) /\ (k <= 9999).
+  (* Invariant *)
+  Have: i <= 99997.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i) ->
+      (a_2[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i) ->
+      ((j + i_2) < a_2[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_2[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 <= i) -> (((j + i_2) < a_3) /\ (a_3 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: 2 <= n.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 <= i) ->
+      ((2 + i_2) <= a_2[shift_sint32(a, i_2)]))).
+}
+Prove: a_2[shift_sint32(a, i_1)] <= (19998 + i_1).
+Prover Z3 4.8.12 returns Valid (Qed:41ms) (180ms) (98599)
+Prover Alt-Ergo  returns Valid (Qed:41ms) (44ms) (109)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 65):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 66):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (17ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 66):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 67):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (12ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 67):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 77):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 77):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 78):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 78):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 79):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 79):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 80):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 80):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 81):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 81):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 82):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 82):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 83):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (17ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 83):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 84):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(a, 1).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, i_1 - 1).
+Let a_3 = havoc(Mint_undef_0, Mint_0, a_1, n - 1).
+Assume {
+  Type: is_sint32(i_2) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n) /\
+      is_sint32(1 + i_2).
+  (* Goal *)
+  When: (0 < i) /\ (i < n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      (a_3[shift_sint32(a, i_3)] <= (9999 + j + i_3)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((j + i_3) < a_3[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_4 = a_3[shift_sint32(a, i_3)] in ((0 < i_3) ->
+      ((i_3 < i_1) -> (((j + i_3) < a_4) /\ (a_4 <= (9999 + j + i_3))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((2 + i_3) <= a_3[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      (a_3[shift_sint32(a, i_3)] <= (19998 + i_3)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Else *)
+  Have: n <= i_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((j + i_3) < a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((2 + i_3) <= a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      (a_2[shift_sint32(a, i_3)] <= (19998 + i_3)))).
+  (* Invariant *)
+  Have: i_2 <= i_1.
+  (* Invariant *)
+  Have: i_2 <= 99999.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_2) ->
+      ((j + i_3) < a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: 0 < i_2.
+  (* Then *)
+  Have: i_2 < i_1.
+  (* Invariant *)
+  Have: 2 <= i_1.
+  (* Invariant *)
+  Have: i_2 <= 99998.
+}
+Prove: (i + j) < a_2[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Valid (Qed:22ms) (130ms) (97116)
+Prover Alt-Ergo  returns Valid (Qed:22ms) (35ms) (112)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 84):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n).
+  (* Goal *)
+  When: (0 < i) /\ (i < n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: ((2 <= n) -> (i_1 <= n)).
+  (* Invariant *)
+  Have: (i_1 <= n) \/ (n <= 1).
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a_1[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 < i_1) -> (((j + i_2) < a_2) /\ (a_2 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: ((n <= 1) -> (i_1 = 1)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (19998 + i_2)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Else *)
+  Have: n <= i_1.
+}
+Prove: (i + j) < a_1[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Valid (Qed:13ms) (140ms) (91813)
+Prover Alt-Ergo  returns Valid (Qed:13ms) (36ms) (84)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 85):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(a, 1).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, i_1 - 1).
+Let a_3 = havoc(Mint_undef_0, Mint_0, a_1, n - 1).
+Assume {
+  Type: is_sint32(i_2) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n) /\
+      is_sint32(1 + i_2).
+  (* Goal *)
+  When: (0 < i) /\ (i < n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      (a_3[shift_sint32(a, i_3)] <= (9999 + j + i_3)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((j + i_3) < a_3[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_4 = a_3[shift_sint32(a, i_3)] in ((0 < i_3) ->
+      ((i_3 < i_1) -> (((j + i_3) < a_4) /\ (a_4 <= (9999 + j + i_3))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((2 + i_3) <= a_3[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      (a_3[shift_sint32(a, i_3)] <= (19998 + i_3)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Else *)
+  Have: n <= i_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((j + i_3) < a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((2 + i_3) <= a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      (a_2[shift_sint32(a, i_3)] <= (19998 + i_3)))).
+  (* Invariant *)
+  Have: i_2 <= i_1.
+  (* Invariant *)
+  Have: i_2 <= 99999.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_2) ->
+      ((j + i_3) < a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: 0 < i_2.
+  (* Then *)
+  Have: i_2 < i_1.
+  (* Invariant *)
+  Have: 2 <= i_1.
+  (* Invariant *)
+  Have: i_2 <= 99998.
+}
+Prove: (2 + i) <= a_2[shift_sint32(a, i)].
+Prover Alt-Ergo  returns Valid (Qed:21ms) (30ms) (108)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 85):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n).
+  (* Goal *)
+  When: (0 < i) /\ (i < n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: ((2 <= n) -> (i_1 <= n)).
+  (* Invariant *)
+  Have: (i_1 <= n) \/ (n <= 1).
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a_1[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 < i_1) -> (((j + i_2) < a_2) /\ (a_2 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: ((n <= 1) -> (i_1 = 1)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (19998 + i_2)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Else *)
+  Have: n <= i_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < n) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+}
+Prove: (2 + i) <= a_1[shift_sint32(a, i)].
+Prover Alt-Ergo  returns Valid (Qed:14ms) (33ms) (84)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 86):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(a, 1).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, i_1 - 1).
+Let a_3 = havoc(Mint_undef_0, Mint_0, a_1, n - 1).
+Assume {
+  Type: is_sint32(i_2) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n) /\
+      is_sint32(1 + i_2).
+  (* Goal *)
+  When: (0 < i) /\ (i < n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      (a_3[shift_sint32(a, i_3)] <= (9999 + j + i_3)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((j + i_3) < a_3[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_4 = a_3[shift_sint32(a, i_3)] in ((0 < i_3) ->
+      ((i_3 < i_1) -> (((j + i_3) < a_4) /\ (a_4 <= (9999 + j + i_3))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((2 + i_3) <= a_3[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      (a_3[shift_sint32(a, i_3)] <= (19998 + i_3)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Else *)
+  Have: n <= i_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((j + i_3) < a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((2 + i_3) <= a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      (a_2[shift_sint32(a, i_3)] <= (19998 + i_3)))).
+  (* Invariant *)
+  Have: i_2 <= i_1.
+  (* Invariant *)
+  Have: i_2 <= 99999.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_2) ->
+      ((j + i_3) < a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: 0 < i_2.
+  (* Then *)
+  Have: i_2 < i_1.
+  (* Invariant *)
+  Have: 2 <= i_1.
+  (* Invariant *)
+  Have: i_2 <= 99998.
+}
+Prove: (i + j) < a_2[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Valid (Qed:19ms) (130ms) (97116)
+Prover Alt-Ergo  returns Valid (Qed:19ms) (34ms) (112)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 86):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n).
+  (* Goal *)
+  When: (0 < i) /\ (i < n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: ((2 <= n) -> (i_1 <= n)).
+  (* Invariant *)
+  Have: (i_1 <= n) \/ (n <= 1).
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a_1[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 < i_1) -> (((j + i_2) < a_2) /\ (a_2 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: ((n <= 1) -> (i_1 = 1)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (19998 + i_2)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Else *)
+  Have: n <= i_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < n) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < n) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+}
+Prove: (i + j) < a_1[shift_sint32(a, i)].
+Prover Z3 4.8.12 returns Valid (Qed:16ms) (130ms) (94043)
+Prover Alt-Ergo  returns Valid (Qed:16ms) (33ms) (87)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 87):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(a, 1).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, i - 1).
+Let a_3 = havoc(Mint_undef_0, Mint_0, a_1, n - 1).
+Assume {
+  Type: is_sint32(i_2) /\ is_sint32(i) /\ is_sint32(j) /\ is_sint32(n) /\
+      is_sint32(1 + i_2).
+  (* Goal *)
+  When: (0 < i_1) /\ (i_1 < n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: i <= 99999.
+  (* Invariant *)
+  Have: i <= 99998.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i) ->
+      (a_3[shift_sint32(a, i_3)] <= (9999 + j + i_3)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i) ->
+      ((j + i_3) < a_3[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_4 = a_3[shift_sint32(a, i_3)] in ((0 < i_3) ->
+      ((i_3 < i) -> (((j + i_3) < a_4) /\ (a_4 <= (9999 + j + i_3))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i) ->
+      ((2 + i_3) <= a_3[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i) ->
+      (a_3[shift_sint32(a, i_3)] <= (19998 + i_3)))).
+  (* Invariant *)
+  Have: 0 < i.
+  (* Else *)
+  Have: n <= i.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i) ->
+      ((j + i_3) < a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i) ->
+      ((2 + i_3) <= a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i) ->
+      (a_2[shift_sint32(a, i_3)] <= (19998 + i_3)))).
+  (* Invariant *)
+  Have: i_2 <= i.
+  (* Invariant *)
+  Have: i_2 <= 99999.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_2) ->
+      ((j + i_3) < a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: 0 < i_2.
+  (* Then *)
+  Have: i_2 < i.
+  (* Invariant *)
+  Have: 2 <= i.
+  (* Invariant *)
+  Have: i_2 <= 99998.
+}
+Prove: a_2[shift_sint32(a, i_1)] <= (19998 + i_1).
+Prover Alt-Ergo  returns Valid (Qed:18ms) (35ms) (107)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 87):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 1), n - 1).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n).
+  (* Goal *)
+  When: (0 < i) /\ (i < n).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: ((2 <= n) -> (i_1 <= n)).
+  (* Invariant *)
+  Have: (i_1 <= n) \/ (n <= 1).
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (9999 + j + i_2)))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a_1[shift_sint32(a, i_2)] in ((0 < i_2) ->
+      ((i_2 < i_1) -> (((j + i_2) < a_2) /\ (a_2 <= (9999 + j + i_2))))).
+  (* Invariant *)
+  Have: ((n <= 1) -> (i_1 = 1)).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < i_1) ->
+      (a_1[shift_sint32(a, i_2)] <= (19998 + i_2)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Else *)
+  Have: n <= i_1.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < n) ->
+      ((j + i_2) < a_1[shift_sint32(a, i_2)]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 < i_2) -> ((i_2 < n) ->
+      ((2 + i_2) <= a_1[shift_sint32(a, i_2)]))).
+}
+Prove: a_1[shift_sint32(a, i)] <= (19998 + i).
+Prover Alt-Ergo  returns Valid (Qed:14ms) (31ms) (85)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 88):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(a, 1).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, i_1 - 1).
+Let a_3 = havoc(Mint_undef_0, Mint_0, a_1, n - 1).
+Assume {
+  Type: is_sint32(i_2) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(n) /\
+      is_sint32(1 + i_2).
+  (* Goal *)
+  When: (0 < i) /\ (i <= i_2).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: i_1 <= 99999.
+  (* Invariant *)
+  Have: i_1 <= 99998.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      (a_3[shift_sint32(a, i_3)] <= (9999 + j + i_3)))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((j + i_3) < a_3[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_4 = a_3[shift_sint32(a, i_3)] in ((0 < i_3) ->
+      ((i_3 < i_1) -> (((j + i_3) < a_4) /\ (a_4 <= (9999 + j + i_3))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((2 + i_3) <= a_3[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      (a_3[shift_sint32(a, i_3)] <= (19998 + i_3)))).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Else *)
+  Have: n <= i_1.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((j + i_3) < a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      ((2 + i_3) <= a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_1) ->
+      (a_2[shift_sint32(a, i_3)] <= (19998 + i_3)))).
+  (* Invariant *)
+  Have: i_2 <= i_1.
+  (* Invariant *)
+  Have: i_2 <= 99999.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 < i_3) -> ((i_3 < i_2) ->
+      ((j + i_3) < a_2[shift_sint32(a, i_3)]))).
+  (* Invariant *)
+  Have: 0 < i_2.
+  (* Then *)
+  Have: i_2 < i_1.
+  (* Invariant *)
+  Have: 2 <= i_1.
+  (* Invariant *)
+  Have: i_2 <= 99998.
+}
+Prove: (i + j) < a_2[shift_sint32(a, i)].
+Prover Alt-Ergo  returns Valid (Qed:18ms) (35ms) (135)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 88):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 89):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 89):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 90):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 90):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 68) (1/4):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 68) (2/4):
+Effect at line 71
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 68) (3/4):
+Call Result at line 72
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 68) (4/4):
+Effect at line 74
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = shift_sint32(a, 1).
+Let x = n - 1.
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, x).
+Let x_1 = i - 1.
+Let a_3 = shift_sint32(a, x_1).
+Let a_4 = a_2[a_3 <- i + j + k - 1].
+Let x_2 = 1 + n.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(x_1).
+  (* Heap *)
+  Type: linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Call 'unknown1' *)
+  Have: (0 < j) /\ (j <= 9999).
+  (* Call 'unknown2' *)
+  Have: ((-2147483648) <= n) /\ (n <= 99999).
+  (* Assertion 'alloca_bounds' *)
+  Have: (0 < n) /\ (n <= 4611686018427387903).
+  (* Invariant *)
+  Have: n <= 99998.
+  (* Invariant *)
+  Have: j <= 9998.
+  (* Invariant *)
+  Have: 2 <= j.
+  (* Invariant *)
+  Have: ((2 <= n) -> (i <= x_2)).
+  (* Invariant *)
+  Have: (n <= 1) \/ (i <= x_2).
+  (* Invariant *)
+  Have: i <= 100000.
+  (* Invariant *)
+  Have: i <= 99999.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> (((2 + i_1) <= i) ->
+      (a_2[shift_sint32(a, i_1)] <= (9999 + j + i_1)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> (((2 + i_1) <= i) ->
+      ((j + i_1) < a_2[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = a_2[shift_sint32(a, i_1)] in ((0 < i_1) ->
+      (((2 + i_1) <= i) ->
+      (((j + i_1) < a_5) /\ (a_5 <= (9999 + j + i_1))))).
+  (* Invariant *)
+  Have: ((n <= 1) -> (i = 2)).
+  (* Invariant *)
+  Have: forall i_1 : Z. let x_3 = 2 + i_1 in ((0 < i_1) -> ((x_3 <= i) ->
+      (x_3 <= a_2[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> (((2 + i_1) <= i) ->
+      (a_2[shift_sint32(a, i_1)] <= (19998 + i_1)))).
+  (* Invariant *)
+  Have: 2 <= i.
+  (* Then *)
+  Have: i <= n.
+  (* Call 'unknown1' *)
+  Have: (0 < k) /\ (k <= 9999).
+  (* Invariant *)
+  Have: i <= 99998.
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < i) ->
+      (a_4[shift_sint32(a, i_1)] <= (9999 + j + i_1)))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < i) ->
+      ((j + i_1) < a_4[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_5 = a_4[shift_sint32(a, i_1)] in ((0 < i_1) ->
+      ((i_1 < i) -> (((j + i_1) < a_5) /\ (a_5 <= (9999 + j + i_1))))).
+  (* Invariant *)
+  Have: ((n <= 1) -> (i = 1)).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < i) ->
+      ((2 + i_1) <= a_4[shift_sint32(a, i_1)]))).
+  (* Invariant *)
+  Have: forall i_1 : Z. ((0 < i_1) -> ((i_1 < i) ->
+      (a_4[shift_sint32(a, i_1)] <= (19998 + i_1)))).
+  (* Invariant *)
+  Have: 0 < i.
+}
+Prove: included(a_3, 1, a_1, x).
+Prover Z3 4.8.12 returns Valid (Qed:23ms) (150ms) (142490)
+Prover Alt-Ergo  returns Valid (Qed:23ms) (44ms) (247)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c, line 91):
+out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:18: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-cav19_array_init_nondet_vars/array-cav19_array_init_nondet_vars_0001/array-cav19_array_init_nondet_vars_0005/array-cav19_array_init_nondet_vars_merged.c:12: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,70 @@
+[kernel] Parsing out/deepseek-chat/arrays_and_loops_3/arrays_and_loops_3_0001/arrays_and_loops_3_0002/arrays_and_loops_3_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] [Timeout] typed_func_ensures (Qed 6ms) (Z3 8s)
+[wp] Proved goals:    7 / 8
+  Qed:             7
+  Timeout:         1
+------------------------------------------------------------
+  Function func
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/arrays_and_loops_3/arrays_and_loops_3_0001/arrays_and_loops_3_0002/arrays_and_loops_3_merged.c, line 2) in 'func':
+Let x = 10 / 0. Assume { Type: is_sint32(x). }
+Prove: x = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/arrays_and_loops_3/arrays_and_loops_3_0001/arrays_and_loops_3_0002/arrays_and_loops_3_merged.c, line 3) in 'func':
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func' (1/6):
+Effect at line 10
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func' (2/6):
+Effect at line 10
+Prove: true.
+Prover Qed returns Valid (0.55ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func' (3/6):
+Effect at line 13
+Prove: true.
+Prover Qed returns Valid (0.73ms)
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func' (4/6):
+Effect at line 13
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func' (5/6):
+Effect at line 15
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns nothing in 'func' (6/6):
+Effect at line 16
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/arrays_and_loops_3/arrays_and_loops_3_0001/arrays_and_loops_3_0002/arrays_and_loops_3_merged.c:19: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

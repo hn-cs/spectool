@@ -1,0 +1,27 @@
+[kernel] Parsing out/deepseek-chat/miscellaneous_max_of_2/miscellaneous_max_of_2_0001/miscellaneous_max_of_2_0001/miscellaneous_max_of_2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 2 goals scheduled
+[wp] Proved goals:    2 / 2
+  Qed:             2
+------------------------------------------------------------
+  Function max
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/miscellaneous_max_of_2/miscellaneous_max_of_2_0001/miscellaneous_max_of_2_0001/miscellaneous_max_of_2_merged.c, line 2) in 'max':
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Post-condition (file out/deepseek-chat/miscellaneous_max_of_2/miscellaneous_max_of_2_0001/miscellaneous_max_of_2_0001/miscellaneous_max_of_2_merged.c, line 3) in 'max':
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/miscellaneous_max_of_2/miscellaneous_max_of_2_0001/miscellaneous_max_of_2_0001/miscellaneous_max_of_2_merged.c:5: Warning: 
+  No 'assigns' specification for function 'max'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/miscellaneous_max_of_2/miscellaneous_max_of_2_0001/miscellaneous_max_of_2_0001/miscellaneous_max_of_2_merged.c:11: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=10, microseconds=864162), 'total_solve_time': datetime.timedelta(seconds=18, microseconds=854596), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 437, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1], '1': ['loop invariant i < size;', 'loop invariant \\forall integer k; i < k < size ==> res[k] == a[size - k - 1];', 'loop assigns res[0..size-1];', 'loop assigns i;'], '2': [], 'MSLines': ['/* 2. FUNC CONTRACT */\nvoid reverse(int a[], int res[], int size)\n', '{\n', '   int i;\n', '   /* 1. LOOP INVARIANT */\n   for(i = size - 1; i >= 0; --i) {\n', '      res[i] = a[size - i - 1];\n', '   }\n', '}\n', '#ifdef OUT_OF_TASK\n', '#include <stdio.h>\n', 'int main(void)\n', '{\n', '   int a[] = {1,2,3,4,5,6,7,8,9,10};\n', '   int size = sizeof(a) / sizeof(a[0]);\n', '   reverse(a, b, size);\n', '   //@ assert \\forall integer i; 0 <= i < size ==> b[i] == a[size - i - 1];\n', '}\n', '#endif']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

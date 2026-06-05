@@ -1,0 +1,404 @@
+[kernel] Parsing out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c:47: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c:44: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 27 goals scheduled
+[wp] [Timeout] typed_main_call_SelectionSort_requires_2 (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_main_call_SelectionSort_requires (Qed 5ms) (Z3 8s)
+[wp] Proved goals:   25 / 27
+  Qed:            19
+  Alt-Ergo :       6 (26ms-39ms-78ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function SelectionSort
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 14):
+Let x = array_0[rh_0].
+Let x_1 = array_0[lh_0].
+Let m = array_0[lh_0 <- x][rh_0 <- x_1].
+Assume {
+  Type: is_sint32(i_2) /\ is_sint32(lh_0) /\ is_sint32(rh_0) /\
+      is_sint32(1 + lh_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= lh_0) /\ (lh_0 < i_1) /\ (i_1 <= 4).
+  (* Invariant *)
+  Have: 0 <= lh_0.
+  (* Then *)
+  Have: lh_0 <= 4.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((lh_0 <= i_3) -> ((i_3 <= lh_0) ->
+      (x_1 <= array_0[i_3]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < lh_0) ->
+      (array_0[i_3] <= x_1))).
+  (* Invariant *)
+  Have: rh_0 <= 4.
+  (* Invariant *)
+  Have: lh_0 <= rh_0.
+  (* Invariant *)
+  Have: lh_0 < i_2.
+  (* Invariant *)
+  Have: i_2 <= 5.
+  (* Invariant *)
+  Have: forall i_4,i_3 : Z. ((0 <= i_4) -> ((i_4 < lh_0) -> ((lh_0 <= i_3) ->
+      ((i_3 <= 4) -> (array_0[i_4] <= array_0[i_3]))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_3 < i_2) -> ((lh_0 <= i_3) ->
+      (x <= array_0[i_3]))).
+  (* Else *)
+  Have: 5 <= i_2.
+}
+Prove: m[i] <= m[i_1].
+Prover Z3 4.8.12 returns Valid (Qed:16ms) (140ms) (42453)
+Prover Alt-Ergo  returns Valid (Qed:16ms) (78ms) (1503)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.83ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (17ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (25ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (9ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 29):
+Let x = array_0[i_2].
+Let x_1 = array_0[rh_1].
+Let x_2 = array_0[lh_0].
+Assume {
+  Type: is_sint32(i_2) /\ is_sint32(lh_0) /\ is_sint32(rh_0) /\
+      is_sint32(rh_1) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(1 + i_2) /\ is_sint32(1 + lh_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < lh_0) /\ (lh_0 <= i_1) /\ (i_1 <= 4).
+  (* Invariant *)
+  Have: 0 <= lh_0.
+  (* Then *)
+  Have: lh_0 <= 4.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((lh_0 <= i_3) -> ((i_3 <= lh_0) ->
+      (x_2 <= array_0[i_3]))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((0 <= i_3) -> ((i_3 < lh_0) ->
+      (array_0[i_3] <= x_2))).
+  (* Invariant *)
+  Have: rh_1 <= 4.
+  (* Invariant *)
+  Have: lh_0 <= rh_1.
+  (* Invariant *)
+  Have: lh_0 < i_2.
+  (* Invariant *)
+  Have: i_2 <= 5.
+  (* Invariant *)
+  Have: forall i_4,i_3 : Z. ((0 <= i_4) -> ((i_4 < lh_0) -> ((lh_0 <= i_3) ->
+      ((i_3 <= 4) -> (array_0[i_4] <= array_0[i_3]))))).
+  (* Invariant *)
+  Have: forall i_3 : Z. ((i_3 < i_2) -> ((lh_0 <= i_3) ->
+      (x_1 <= array_0[i_3]))).
+  (* Then *)
+  Have: i_2 <= 4.
+  If x < x_1
+  Then { Have: rh_0 = i_2. }
+  Else { Have: rh_1 = rh_0. }
+  (* Invariant *)
+  Have: rh_0 <= 4.
+  (* Invariant *)
+  Have: lh_0 <= rh_0.
+}
+Prove: array_0[i] <= array_0[i_1].
+Prover Z3 4.8.12 returns Valid (Qed:29ms) (130ms) (42681)
+Prover Alt-Ergo  returns Valid (Qed:29ms) (32ms) (123)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 29):
+Assume {
+  Type: is_sint32(lh_0) /\ is_sint32(1 + lh_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < lh_0) /\ (lh_0 <= i_1) /\ (i_1 <= 4).
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < lh_0) -> ((lh_0 <= i_2) ->
+      ((i_2 <= 4) -> (array_0[i_3] <= array_0[i_2]))))).
+  (* Invariant *)
+  Have: 0 <= lh_0.
+  (* Then *)
+  Have: lh_0 <= 4.
+}
+Prove: array_0[i] <= array_0[i_1].
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (130ms) (36643)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (26ms) (33)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 30):
+Let x = array_0[i_1].
+Let x_1 = array_0[rh_1].
+Let x_2 = array_0[lh_0].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(lh_0) /\ is_sint32(rh_0) /\
+      is_sint32(rh_1) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(1 + i_1) /\ is_sint32(1 + lh_0).
+  (* Goal *)
+  When: (lh_0 <= i) /\ (i <= i_1).
+  (* Invariant *)
+  Have: 0 <= lh_0.
+  (* Then *)
+  Have: lh_0 <= 4.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((lh_0 <= i_2) -> ((i_2 <= lh_0) ->
+      (x_2 <= array_0[i_2]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < lh_0) ->
+      (array_0[i_2] <= x_2))).
+  (* Invariant *)
+  Have: rh_1 <= 4.
+  (* Invariant *)
+  Have: lh_0 <= rh_1.
+  (* Invariant *)
+  Have: lh_0 < i_1.
+  (* Invariant *)
+  Have: i_1 <= 5.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < lh_0) -> ((lh_0 <= i_2) ->
+      ((i_2 <= 4) -> (array_0[i_3] <= array_0[i_2]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((lh_0 <= i_2) ->
+      (x_1 <= array_0[i_2]))).
+  (* Then *)
+  Have: i_1 <= 4.
+  If x < x_1
+  Then { Have: rh_0 = i_1. }
+  Else { Have: rh_1 = rh_0. }
+  (* Invariant *)
+  Have: rh_0 <= 4.
+  (* Invariant *)
+  Have: lh_0 <= rh_0.
+}
+Prove: array_0[rh_0] <= array_0[i].
+Prover Z3 4.8.12 returns Valid (Qed:20ms) (150ms) (62879)
+Prover Alt-Ergo  returns Valid (Qed:20ms) (35ms) (266)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 31):
+Let x = array_0[i_1].
+Let x_1 = array_0[rh_1].
+Let x_2 = array_0[lh_0].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(lh_0) /\ is_sint32(rh_0) /\
+      is_sint32(rh_1) /\ is_sint32(x) /\ is_sint32(x_1) /\
+      is_sint32(1 + i_1) /\ is_sint32(1 + lh_0).
+  (* Goal *)
+  When: (0 <= i) /\ (i < lh_0).
+  (* Invariant *)
+  Have: 0 <= lh_0.
+  (* Then *)
+  Have: lh_0 <= 4.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((lh_0 <= i_2) -> ((i_2 <= lh_0) ->
+      (x_2 <= array_0[i_2]))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < lh_0) ->
+      (array_0[i_2] <= x_2))).
+  (* Invariant *)
+  Have: rh_1 <= 4.
+  (* Invariant *)
+  Have: lh_0 <= rh_1.
+  (* Invariant *)
+  Have: lh_0 < i_1.
+  (* Invariant *)
+  Have: i_1 <= 5.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_3 < lh_0) -> ((lh_0 <= i_2) ->
+      ((i_2 <= 4) -> (array_0[i_3] <= array_0[i_2]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((lh_0 <= i_2) ->
+      (x_1 <= array_0[i_2]))).
+  (* Then *)
+  Have: i_1 <= 4.
+  If x < x_1
+  Then { Have: rh_0 = i_1. }
+  Else { Have: rh_1 = rh_0. }
+  (* Invariant *)
+  Have: rh_0 <= 4.
+  (* Invariant *)
+  Have: lh_0 <= rh_0.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i_1) -> ((lh_0 <= i_2) ->
+      (array_0[rh_0] <= array_0[i_2]))).
+}
+Prove: array_0[i] <= x_2.
+Prover Z3 4.8.12 returns Valid (Qed:22ms) (120ms) (43284)
+Prover Alt-Ergo  returns Valid (Qed:22ms) (32ms) (115)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 31):
+Let x = i_1 - 1.
+Let x_1 = array_0[x].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(x).
+  (* Goal *)
+  When: (0 <= i) /\ ((2 + i) <= i_1).
+  (* Invariant *)
+  Have: 0 < i_1.
+  (* Then *)
+  Have: i_1 <= 5.
+  (* Invariant *)
+  Have: forall i_3,i_2 : Z. ((0 <= i_3) -> ((i_2 <= 4) ->
+      (((2 + i_3) <= i_1) -> ((i_1 <= (1 + i_2)) ->
+      (array_0[i_3] <= array_0[i_2]))))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 < i_1) -> ((i_1 <= (1 + i_2)) ->
+      (x_1 <= array_0[i_2]))).
+}
+Prove: array_0[i] <= x_1.
+Prover Alt-Ergo  returns Valid (Qed:8ms) (27ms) (37)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 16) (1/4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 16) (2/4):
+Effect at line 22
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 16) (3/4):
+Effect at line 38
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 16) (4/4):
+Effect at line 39
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 32):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 8) in 'SelectionSort' (1/2):
+Effect at line 22
+Prove: true.
+Prover Qed returns Valid (0.96ms)
+
+------------------------------------------------------------
+
+Goal Assigns (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 8) in 'SelectionSort' (2/2):
+Effect at line 22
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 6) in 'SelectionSort'' in 'main' at call 'SelectionSort' (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 46)
+:
+Assume { Type: is_sint32(i) /\ is_sint32(n). (* Else *) Have: i < 0. }
+Prove: n = 5.
+Prover Z3 4.8.12 returns Timeout (Qed:5ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:5ms) (8s)
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 7) in 'SelectionSort'' in 'main' at call 'SelectionSort' (file out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c, line 46)
+:
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n).
+  (* Goal *)
+  When: 0 < n.
+  (* Else *)
+  Have: i < 0.
+}
+Prove: n <= 5.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loops_eureka_05/loops_eureka_05_0001/loops_eureka_05_0003/loops_eureka_05_merged.c:42: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

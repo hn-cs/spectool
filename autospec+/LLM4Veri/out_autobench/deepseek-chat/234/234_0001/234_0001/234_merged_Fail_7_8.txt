@@ -1,0 +1,98 @@
+[kernel] Parsing out/deepseek-chat/234/234_0001/234_0001/234_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 4ms) (Z3 8s)
+[wp] Proved goals:    7 / 8
+  Qed:             6
+  Alt-Ergo :       1 (24ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/234/234_0001/234_0001/234_merged.c, line 9):
+Let x = 3 * i.
+Assume {
+  Type: is_sint32(a) /\ is_sint32(a_1) /\ is_sint32(a_2) /\ is_sint32(b) /\
+      is_sint32(b_1) /\ is_sint32(boolean_0) /\ is_sint32(i) /\
+      is_sint32(n) /\ is_sint32(x - b_1).
+  (* Invariant *)
+  Have: (0 <= b_1) /\ (b_1 <= x).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If boolean_0 != 0
+  Then {
+    Have: (a_1 + b_1) = x.
+    Have: (1 + x) = (a + b_1).
+    Have: (2 + b_1) = b.
+  }
+  Else {
+    Have: (a_2 + b_1) = x.
+    Have: (2 + x) = (a + b_1).
+    Have: (1 + b_1) = b.
+  }
+}
+Prove: (0 <= a) /\ (0 <= b).
+Prover Z3 4.8.12 returns Valid (Qed:19ms) (130ms) (38578)
+Prover Alt-Ergo  returns Valid (Qed:19ms) (24ms) (43)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/234/234_0001/234_0001/234_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/234/234_0001/234_0001/234_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (15ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/234/234_0001/234_0001/234_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.75ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/234/234_0001/234_0001/234_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/234/234_0001/234_0001/234_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.78ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/234/234_0001/234_0001/234_merged.c, line 28):
+Let x = 3 * i.
+Assume {
+  Type: is_sint32(b) /\ is_sint32(i) /\ is_sint32(n) /\ is_sint32(x - b).
+  (* Invariant *)
+  Have: (0 <= b) /\ (b <= x).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: n <= i.
+}
+Prove: n = i.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/234/234_0001/234_0001/234_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/234/234_0001/234_0001/234_merged.c:4: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

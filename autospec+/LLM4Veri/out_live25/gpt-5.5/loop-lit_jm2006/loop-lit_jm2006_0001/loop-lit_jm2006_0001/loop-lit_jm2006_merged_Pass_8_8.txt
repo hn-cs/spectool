@@ -1,0 +1,107 @@
+[kernel] Parsing out/gpt-5.5/loop-lit_jm2006/loop-lit_jm2006_0001/loop-lit_jm2006_0001/loop-lit_jm2006_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-lit_jm2006/loop-lit_jm2006_0001/loop-lit_jm2006_0001/loop-lit_jm2006_merged.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 8 goals scheduled
+[wp] Proved goals:    8 / 8
+  Qed:             6
+  Alt-Ergo :       2 (20ms-22ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_jm2006/loop-lit_jm2006_0001/loop-lit_jm2006_0001/loop-lit_jm2006_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_jm2006/loop-lit_jm2006_0001/loop-lit_jm2006_0001/loop-lit_jm2006_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (0.92ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_jm2006/loop-lit_jm2006_0001/loop-lit_jm2006_0001/loop-lit_jm2006_merged.c, line 17):
+Let x_1 = j + x.
+Assume {
+  Type: is_sint32(j) /\ is_sint32(x) /\ is_sint32(y) /\ is_sint32(x - 1) /\
+      is_sint32(y - 1) /\ is_sint32(j + x - y).
+  (* Call 'unknown' *)
+  Have: (x_1 <= (2147483646 + y)) /\ (y <= (2147483648 + j + x)).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Then *)
+  Have: y <= x_1.
+  (* Then *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: y <= j.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: x != 0.
+}
+Prove: y <= (1 + j).
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (130ms) (36395)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (20ms) (16)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_jm2006/loop-lit_jm2006_0001/loop-lit_jm2006_0001/loop-lit_jm2006_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (0.96ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-lit_jm2006/loop-lit_jm2006_0001/loop-lit_jm2006_0001/loop-lit_jm2006_merged.c, line 18):
+Let x = i + y.
+Let x_1 = -j.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(y) /\ is_sint32(y - 1) /\
+      is_sint32(i + y - j) /\ is_sint32(i + y - 1 - j).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= j) /\ (j <= 2147483646).
+  (* Then *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: y <= j.
+  (* Invariant *)
+  Have: j <= x.
+  (* Then *)
+  Have: x != j.
+  (* Invariant *)
+  Have: y <= (1 + j).
+}
+Prove: j < x.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (120ms) (36496)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (22ms) (19)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-lit_jm2006/loop-lit_jm2006_0001/loop-lit_jm2006_0001/loop-lit_jm2006_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loop-lit_jm2006/loop-lit_jm2006_0001/loop-lit_jm2006_0001/loop-lit_jm2006_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-lit_jm2006/loop-lit_jm2006_0001/loop-lit_jm2006_0001/loop-lit_jm2006_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-lit_jm2006/loop-lit_jm2006_0001/loop-lit_jm2006_0001/loop-lit_jm2006_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

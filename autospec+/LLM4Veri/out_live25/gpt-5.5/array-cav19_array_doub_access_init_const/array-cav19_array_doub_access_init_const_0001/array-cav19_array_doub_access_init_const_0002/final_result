@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=11, microseconds=222076), 'total_solve_time': datetime.timedelta(seconds=21, microseconds=574873), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 371, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 3, 1], '1': ['loop invariant i <= N + 1;', 'loop invariant \\forall integer k; 0 <= k < 2*i ==> a[k] == 0;', 'loop invariant 0 <= i;', 'loop assigns i;', 'loop assigns a[0..2*N+1];'], '2': ['loop invariant i <= 2*N + 1;', 'loop invariant \\forall integer k; 0 <= k <= 2*N + 1 ==> a[k] == 0;', 'loop invariant 0 <= i;', 'loop assigns i;'], '3': [], 'MSLines': ['/* 3. FUNC CONTRACT */\nint main()\n', '{\n', '  int i;\n', '  int N=100000;\n', '  int a[2*N+2];\n', '  /* 1. LOOP INVARIANT */\n  for(i=0;i<=N;i++) {\n', '    a[2*i]=0;\n', '    a[2*i+1]=0;\n', '  }\n', '  /* 2. LOOP INVARIANT */\n  for(i=0;i<=2*N;i++){\n', '    //@ assert(a[i]>=0);\n', '  }\n', '  return 0;\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

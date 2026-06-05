@@ -1,0 +1,17 @@
+/*@
+requires b != 0;
+requires !(a == -2147483647 - 1 && b == -1);
+ensures \result == a;
+assigns \nothing;
+*/
+int divmult(int a, int b)
+{
+	return (a / b) * b + (a % b);
+}
+int main(){
+    int a = 10;
+    int b = 3;
+    int c = divmult(a, b);
+    // @ assert c == 10;
+    return 0;
+}

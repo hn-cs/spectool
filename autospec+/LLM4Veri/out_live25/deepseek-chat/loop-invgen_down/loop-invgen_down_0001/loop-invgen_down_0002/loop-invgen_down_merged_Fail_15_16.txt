@@ -1,0 +1,138 @@
+[kernel] Parsing out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c:12: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 16 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_5_established (Qed 3ms) (Z3 8s)
+[wp] Proved goals:   15 / 16
+  Qed:            14
+  Alt-Ergo :       1 (18ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (0.61ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.58ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (0.97ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 26):
+Assume {
+  Type: is_sint32(k) /\ is_sint32(k_1) /\ is_sint32(k - 1).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= k_1) /\ (k_1 <= 2147483646).
+  (* Invariant *)
+  Have: 0 <= k_1.
+  (* Invariant *)
+  Have: k <= k_1.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: 0 < k.
+}
+Prove: k <= (1 + k_1).
+Prover Z3 4.8.12 returns Valid (Qed:5ms) (110ms) (35230)
+Prover Alt-Ergo  returns Valid (Qed:5ms) (18ms) (24)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 27):
+Assume {
+  Type: is_sint32(k) /\ is_sint32(n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Else *)
+  Have: n <= k.
+}
+Prove: n = k.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 28):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 29):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c, line 30):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-invgen_down/loop-invgen_down_0001/loop-invgen_down_0002/loop-invgen_down_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

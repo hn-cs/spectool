@@ -1,0 +1,128 @@
+[kernel] Parsing out/deepseek-chat/130/130_0001/130_0002/130_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 13 goals scheduled
+[wp] Proved goals:   13 / 13
+  Qed:            11
+  Alt-Ergo :       2 (19ms)
+------------------------------------------------------------
+  Function foo
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 9):
+Assume {
+  Type: is_sint32(x1_0) /\ is_sint32(x2_0) /\ is_sint32(x2_1) /\
+      is_sint32(x3_1) /\ is_sint32(x3_0) /\ is_sint32(x3_0 - 1).
+  (* Residual *)
+  When: 0 < x3_0.
+  (* Residual *)
+  When: 0 < x2_1.
+  (* Invariant *)
+  Have: x3_0 <= x3_1.
+  (* Invariant *)
+  Have: x2_1 <= x2_0.
+  (* Invariant *)
+  Have: 0 <= x1_0.
+  (* Then *)
+  Have: 0 < x1_0.
+}
+Prove: x3_0 <= (1 + x3_1).
+Prover Z3 4.8.12 returns Valid (Qed:15ms) (130ms) (35952)
+Prover Alt-Ergo  returns Valid (Qed:15ms) (19ms) (31)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 10):
+Assume {
+  Type: is_sint32(x1_0) /\ is_sint32(x2_1) /\ is_sint32(x2_0) /\
+      is_sint32(x3_0) /\ is_sint32(x3_1) /\ is_sint32(x2_0 - 1) /\
+      is_sint32(x3_1 - 1).
+  (* Residual *)
+  When: 0 < x3_1.
+  (* Residual *)
+  When: 0 < x2_0.
+  (* Invariant *)
+  Have: x3_1 <= x3_0.
+  (* Invariant *)
+  Have: x2_0 <= x2_1.
+  (* Invariant *)
+  Have: 0 <= x1_0.
+  (* Then *)
+  Have: 0 < x1_0.
+  (* Invariant *)
+  Have: x3_1 <= (1 + x3_0).
+}
+Prove: x2_0 <= (1 + x2_1).
+Prover Z3 4.8.12 returns Valid (Qed:17ms) (110ms) (36318)
+Prover Alt-Ergo  returns Valid (Qed:17ms) (18ms) (34)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.62ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (28ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/130/130_0001/130_0002/130_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/130/130_0001/130_0002/130_merged.c:2: Warning: 
+  No 'assigns' specification for function 'foo'.
+  Callers assumptions might be imprecise.

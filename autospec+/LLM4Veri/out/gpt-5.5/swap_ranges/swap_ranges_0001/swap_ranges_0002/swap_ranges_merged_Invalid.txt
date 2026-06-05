@@ -1,0 +1,19 @@
+[kernel] Parsing out/gpt-5.5/swap_ranges/swap_ranges_0001/swap_ranges_0002/swap_ranges_merged.c (with preprocessing)
+[kernel] out/gpt-5.5/swap_ranges/swap_ranges_0001/swap_ranges_0002/swap_ranges_merged.c:45: 
+  syntax error:
+  Location: between lines 45 and 52
+  43    */
+  44    void swap(int* a, int* b);
+  
+  45    void
+  46    /*@
+  47    requires \valid(b + (0..n-1));
+  48    requires \valid(a + (0..n-1));
+  49    requires \separated(a + (0..n-1), b + (0..n-1));
+  50    ensures Equal{Old,Here}(b, n, a);
+  51    ensures Equal{Old,Here}(a, n, b);
+  52    assigns a[0..n-1], b[0..n-1];
+  
+  53    */
+  54    swap_ranges(value_type* a, size_type n, value_type* b)
+[kernel] Frama-C aborted: invalid user input.

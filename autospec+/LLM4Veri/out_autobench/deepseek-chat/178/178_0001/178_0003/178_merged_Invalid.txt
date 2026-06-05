@@ -1,0 +1,10 @@
+[kernel] Parsing out/deepseek-chat/178/178_0001/178_0003/178_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/178/178_0001/178_0003/178_merged.c:21: Warning: 
+  Calling function unknown1 that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[kernel:annot-error] out/deepseek-chat/178/178_0001/178_0003/178_merged.c:51: Warning: 
+  unbound logic variable y. Ignoring loop annotation
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on file "out/deepseek-chat/178/178_0001/178_0003/178_merged.c" that
+  has errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

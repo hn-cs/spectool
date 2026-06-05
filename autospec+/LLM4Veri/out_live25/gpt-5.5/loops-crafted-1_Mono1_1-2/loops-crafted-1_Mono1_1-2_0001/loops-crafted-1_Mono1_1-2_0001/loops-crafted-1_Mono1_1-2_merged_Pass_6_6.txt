@@ -1,0 +1,77 @@
+[kernel] Parsing out/gpt-5.5/loops-crafted-1_Mono1_1-2/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 6 goals scheduled
+[wp] Proved goals:    6 / 6
+  Qed:             4
+  Alt-Ergo :       2 (31ms-40ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_Mono1_1-2/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_merged.c, line 4):
+Assume {
+  Type: is_uint32(x) /\ is_uint32(x_1) /\ is_uint32(x_2) /\ is_uint32(x_3).
+  (* Invariant *)
+  Have: x_3 <= 100000000.
+  (* Invariant *)
+  Have: ((x_3 % 2) = 0) \/ (x_3 <= 10000000).
+  (* Then *)
+  Have: x_3 <= 99999999.
+  If x_3 <= 9999999
+  Then { Have: x_3 = x_1. Have: to_uint32(1 + x_1) = x. }
+  Else { Have: x_3 = x_2. Have: to_uint32(2 + x_2) = x. }
+}
+Prove: x <= 100000000.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (130ms) (38105)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (31ms) (226)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_Mono1_1-2/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_merged.c, line 4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_Mono1_1-2/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_merged.c, line 5):
+Assume {
+  Type: is_uint32(x) /\ is_uint32(x_1) /\ is_uint32(x_2) /\ is_uint32(x_3).
+  (* Invariant *)
+  Have: x_3 <= 100000000.
+  (* Invariant *)
+  Have: ((x_3 % 2) = 0) \/ (x_3 <= 10000000).
+  (* Then *)
+  Have: x_3 <= 99999999.
+  If x_3 <= 9999999
+  Then { Have: x_3 = x_1. Have: to_uint32(1 + x_1) = x. }
+  Else { Have: x_3 = x_2. Have: to_uint32(2 + x_2) = x. }
+  (* Invariant *)
+  Have: x <= 100000000.
+}
+Prove: ((x % 2) = 0) \/ (x <= 10000000).
+Prover Z3 4.8.12 returns Valid (Qed:6ms) (130ms) (46031)
+Prover Alt-Ergo  returns Valid (Qed:6ms) (40ms) (399)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_Mono1_1-2/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (0.51ms)
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/loops-crafted-1_Mono1_1-2/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_Mono1_1-2/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops-crafted-1_Mono1_1-2/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_0001/loops-crafted-1_Mono1_1-2_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 4, 'Iteration': 4, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=6, microseconds=490913), 'total_solve_time': datetime.timedelta(seconds=73, microseconds=101441), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 739, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': [], '2': [], 'MSLines': ['/* 1. FUNC CONTRACT */\nvoid order_3(int *a, int *b, int *c) {\n', '    if (*a > *b) {\n', '        int temp = *a;\n', '        *b = *a;\n', '        *a = temp;\n', '    }\n', '    if (*a > *c) {    \n', '        int temp = *a;\n', '        *a = *c;\n', '        *c = temp;\n', '    }\n', '    if (*b > *c) {\n', '        int temp = *b;\n', '        *b = *c;\n', '        *c = temp;\n', '    }\n', '}\n', '\n', '/* 2. FUNC CONTRACT */\nvoid test(){\n', '    \n', '    int a1 = 5, b1 = 3, c1 = 4 ;\n', '    order_3(&a1, &b1, &c1) ;\n', '    //@ assert a1 == 3 && b1 == 4 && c1 == 5;\n', '    \n', '    int a2 = 2, b2 = 2, c2 = 2 ;\n', '    order_3(&a2, &b2, &c2) ;\n', '    //@ assert a2 == 2 && b2 == 2 && c2 == 2 ;\n', '\n', '    int a3 = 4, b3 = 3, c3 = 4 ;\n', '    order_3(&a3, &b3, &c3) ;\n', '    //@ assert a3 == 3 && b3 == 4 && c3 == 4 ;\n', '\n', '    int a4 = 4, b4 = 5, c4 = 4 ;\n', '    order_3(&a4, &b4, &c4) ;\n', '    //@ assert a4 == 4 && b4 == 4 && c4 == 5 ;\n', '}']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

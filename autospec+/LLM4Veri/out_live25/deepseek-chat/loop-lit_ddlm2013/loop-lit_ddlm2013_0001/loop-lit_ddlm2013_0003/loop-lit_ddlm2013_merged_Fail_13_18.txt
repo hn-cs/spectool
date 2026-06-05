@@ -1,0 +1,233 @@
+[kernel] Parsing out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c:10: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 18 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 16ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_2_preserved (Qed 25ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_5_preserved (Qed 27ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_5_established (Qed 4ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_6_preserved (Qed 24ms) (Z3 8s)
+[wp] Proved goals:   13 / 18
+  Qed:            13
+  Timeout:         5
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 20):
+Assume {
+  Type: is_uint32(a) /\ is_uint32(i) /\ is_uint32(j) /\ is_sint32(tmp_0_0).
+  (* Invariant *)
+  Have: 0 < j.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: ((i - j) % 2) = 0.
+  (* Invariant *)
+  Have: 0 <= a.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+}
+Prove: to_uint32(a + to_uint32(j - i)) = to_uint32(1 + a).
+Prover Z3 4.8.12 returns Timeout (Qed:16ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:16ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (0.76ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 21):
+Assume {
+  Type: is_uint32(a) /\ is_uint32(i) /\ is_uint32(j) /\ is_uint32(j_1) /\
+      is_uint32(j_2) /\ is_uint32(j_3) /\ is_sint32(tmp_0_0).
+  (* Invariant *)
+  Have: 0 < j_3.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: ((i - j_3) % 2) = 0.
+  (* Invariant *)
+  Have: 0 <= a.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  Have: to_uint32(a + to_uint32(j_3 - i)) = to_uint32(1 + a).
+  If to_uint32(to_uint32(2 + i) % 2) = 0
+  Then { Have: j_3 = j_1. Have: to_uint32(2 + j_1) = j. }
+  Else { Have: j_3 = j_2. Have: to_uint32(1 + j_2) = j. }
+}
+Prove: 0 < j.
+Prover Z3 4.8.12 returns Timeout (Qed:25ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:25ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 24):
+Let x = to_uint32(2 + i).
+Assume {
+  Type: is_uint32(a) /\ is_uint32(i) /\ is_uint32(j) /\ is_uint32(j_1) /\
+      is_uint32(j_2) /\ is_uint32(j_3) /\ is_sint32(tmp_0_0).
+  (* Invariant *)
+  Have: 0 < j_3.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: ((i - j_3) % 2) = 0.
+  (* Invariant *)
+  Have: 0 <= a.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  Have: to_uint32(a + to_uint32(j_3 - i)) = to_uint32(1 + a).
+  If to_uint32(x % 2) = 0
+  Then { Have: j_3 = j_1. Have: to_uint32(2 + j_1) = j. }
+  Else { Have: j_3 = j_2. Have: to_uint32(1 + j_2) = j. }
+  (* Invariant *)
+  Have: 0 < j.
+}
+Prove: 0 < x.
+Prover Z3 4.8.12 returns Timeout (Qed:27ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:27ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 24):
+Assume {
+  Type: is_sint32(flag_0).
+  (* Residual *)
+  When: flag_0 != 0.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= flag_0) /\ (flag_0 <= 2147483646).
+}
+Prove: false.
+Prover Z3 4.8.12 returns Timeout (Qed:4ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:4ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 25):
+Let x = to_uint32(2 + i).
+Assume {
+  Type: is_uint32(a) /\ is_uint32(i) /\ is_uint32(j) /\ is_uint32(j_1) /\
+      is_uint32(j_2) /\ is_uint32(j_3) /\ is_sint32(tmp_0_0).
+  (* Invariant *)
+  Have: 0 < j_3.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Invariant *)
+  Have: ((i - j_3) % 2) = 0.
+  (* Invariant *)
+  Have: 0 <= a.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= tmp_0_0) /\ (tmp_0_0 <= 2147483646).
+  (* Then *)
+  Have: tmp_0_0 != 0.
+  Have: to_uint32(a + to_uint32(j_3 - i)) = to_uint32(1 + a).
+  If to_uint32(x % 2) = 0
+  Then { Have: j_3 = j_1. Have: to_uint32(2 + j_1) = j. }
+  Else { Have: j_3 = j_2. Have: to_uint32(1 + j_2) = j. }
+  (* Invariant *)
+  Have: 0 < j.
+  (* Invariant *)
+  Have: 0 < x.
+}
+Prove: ((x - j) % 2) = 0.
+Prover Z3 4.8.12 returns Timeout (Qed:24ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:24ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 27):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 28) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c, line 28) (2/2):
+Call Result at line 33
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-lit_ddlm2013/loop-lit_ddlm2013_0001/loop-lit_ddlm2013_0003/loop-lit_ddlm2013_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

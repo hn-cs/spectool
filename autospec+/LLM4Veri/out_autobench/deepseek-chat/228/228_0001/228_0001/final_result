@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 2, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=1, microseconds=7600), 'total_solve_time': datetime.timedelta(microseconds=539231), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 32, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [1, 1], '1': ['requires \\valid(a) && \\valid(b);', 'ensures \\result == (*a < *b ? *b : *a);', 'assigns \\nothing;'], '2': [], 'MSLines': ['/* 1. FUNC CONTRACT */\nint max_ptr(int *a, int *b){\n', '    return (*a < *b) ? *b : *a ;\n', '}\n', '\n', 'extern int h;\n', '\n', '/* 2. FUNC CONTRACT */\nint main() {\n', '    h = 42;\n', '    int a = 24;\n', '    int b = 42;\n', '\n', '    int x = max_ptr(&a, &b);\n', '\n', '    //@ assert x == 42;\n', '    //@ assert h == 42;\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

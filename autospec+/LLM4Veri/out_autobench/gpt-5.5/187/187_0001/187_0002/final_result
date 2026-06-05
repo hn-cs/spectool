@@ -1,0 +1,12 @@
+Fail
+{'CurTaskID': 1, 'Round': 2, 'Iteration': 2, 'Status': 0, 'llms_query_times': datetime.timedelta(seconds=19, microseconds=962593), 'total_solve_time': datetime.timedelta(seconds=27, microseconds=896528), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 81, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1, 1], '1': ['loop invariant i == 3 * x + 4;', 'loop invariant 7 <= i;', 'loop invariant 1 <= x;', 'loop assigns x;', 'loop assigns i;'], '2': [], '3': [], 'MSLines': ['#include <stdio.h>\n', '\n', '/* 2. FUNC CONTRACT */\nint fun(int n) {\n', '    int i = 7;\n', '    int x = 1;\n', '\n', '    /* 1. LOOP INVARIANT */\n    while(i <= n) {\n', '        x += 1;\n', '        i += 3;\n', '    }\n', '    return x;\n', '}\n', '\n', '/* 3. FUNC CONTRACT */\nint main() {\n', '    int a = fun(10);\n', '    //@ assert a == 3;\n', '}']}
+                  __  __
+      _ _        /_@>_@> \          /^^\ /^\ /^^\_ 
+    _/oo \____/~''. . .  '~\       /'''  ~ ''~~' -'\_ 
+   / '.'. ~.~.~.       .'    ~ |     /'\~~..''''.'' ''  ~\_ 
+  <'_'_'_'_'_'_'_'_  ' :   '     \_/' '.''  . '.   .''  '.  ~\_ 
+             ~V~V~V~V  \   ~\  '' '~  '   '' ~   `   ~  ''   ~\_ 
+    /\~/\~/\~/\~/|/  '   ''  _   ' ~ ''  '    ~  '' __  '  ..  \_ 
+ <-- --- ---.---.--/'   ''   /'  '\_ '' ': ~ ;;''    ' /''; \ ;'''''' '' ~\ _ 
+    \~ '. . : .:: ~. :.  /_'''_'' \_' :'''_ : _ ''/''_' '_ \:_ '''' #''..\/\/\/~/\~ ''~~~~~O
+ ~~ \-~ `---~~~---- \<_><_><_>/ ~ ~~' ~\<_><_><_>\_~_~_~_~_~/˜¤¹

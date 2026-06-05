@@ -1,0 +1,286 @@
+[kernel] Parsing out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c:14: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c:41: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 13 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_established (Qed 2ms) (Z3 8s)
+[wp] [Timeout] typed_main_loop_invariant_preserved (Qed 11ms) (Z3 8s)
+[wp] Proved goals:   11 / 13
+  Qed:             8
+  Alt-Ergo :       3 (19ms-21ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 19):
+Let x = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(n) /\
+      is_sint32(unknown_0) /\ is_sint32(x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: n <= 9.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: k <= (10000 * i).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: (2000 * i) <= k.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Then *)
+  Have: 0 <= unknown_0.
+  (* Then *)
+  Have: n <= 1.
+}
+Prove: x != n.
+Prover Z3 4.8.12 returns Timeout (Qed:11ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:11ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 19):
+Assume {
+  Type: is_sint32(n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: 0 <= n.
+  (* Then *)
+  Have: n <= 9.
+}
+Prove: n != 0.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 20):
+Let x = 1 + i.
+Let x_1 = 10000 * i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(k_1) /\ is_sint32(k_2) /\
+      is_sint32(k_3) /\ is_sint32(k_4) /\ is_sint32(n) /\
+      is_sint32(unknown_0) /\ is_sint32(x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: n <= 9.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: k_4 <= x_1.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: (2000 * i) <= k_4.
+  (* Invariant *)
+  Have: 0 <= k_4.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Then *)
+  Have: 0 <= unknown_0.
+  (* Then *)
+  Have: n <= 1.
+  If unknown_0 = 0
+  Then { Have: k_4 = k_1. Have: (4000 + k_1) = k. }
+  Else {
+    Have: k_4 = k_5.
+    If unknown_0 = 1
+    Then { Have: k_5 = k_2. Have: (2000 + k_2) = k. }
+    Else { Have: k_5 = k_3. Have: (10000 + k_3) = k. }
+  }
+  (* Invariant *)
+  Have: x != n.
+}
+Prove: k <= (10000 + x_1).
+Prover Z3 4.8.12 returns Valid (Qed:37ms) (120ms) (40243)
+Prover Alt-Ergo  returns Valid (Qed:37ms) (20ms) (30)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 22):
+Let x = 10000 * i.
+Let x_1 = 1 + i.
+Let x_2 = 2000 * i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(k_1) /\ is_sint32(k_2) /\
+      is_sint32(k_3) /\ is_sint32(n) /\ is_sint32(unknown_0) /\
+      is_sint32(x_1).
+  (* Residual *)
+  When: unknown_0 != 1.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: n <= 9.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: k_3 <= x.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: x_2 <= k_3.
+  (* Invariant *)
+  Have: 0 <= k_3.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Then *)
+  Have: 0 <= unknown_0.
+  (* Then *)
+  Have: n <= 1.
+  If unknown_0 = 0
+  Then { Have: k_3 = k_1. Have: (4000 + k_1) = k. }
+  Else { Have: k_3 = k_2. Have: (10000 + k_2) = k. }
+  (* Invariant *)
+  Have: x_1 != n.
+  (* Invariant *)
+  Have: k <= (10000 + x).
+}
+Prove: (2000 + x_2) <= k.
+Prover Z3 4.8.12 returns Valid (Qed:29ms) (130ms) (39546)
+Prover Alt-Ergo  returns Valid (Qed:29ms) (21ms) (30)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 22):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 23):
+Let x = 2000 * i.
+Let x_1 = 10000 * i.
+Let x_2 = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(k_1) /\ is_sint32(k_2) /\
+      is_sint32(k_3) /\ is_sint32(k_4) /\ is_sint32(n) /\
+      is_sint32(unknown_0) /\ is_sint32(x_2).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Then *)
+  Have: n <= 9.
+  (* Invariant *)
+  Have: n != 0.
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: n != i.
+  (* Invariant *)
+  Have: k_4 <= x_1.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: x <= k_4.
+  (* Invariant *)
+  Have: 0 <= k_4.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= unknown_0) /\ (unknown_0 <= 2147483646).
+  (* Then *)
+  Have: 0 <= unknown_0.
+  (* Then *)
+  Have: n <= 1.
+  If unknown_0 = 0
+  Then { Have: k_4 = k_1. Have: (4000 + k_1) = k. }
+  Else {
+    Have: k_4 = k_5.
+    If unknown_0 = 1
+    Then { Have: k_5 = k_2. Have: (2000 + k_2) = k. }
+    Else { Have: k_5 = k_3. Have: (10000 + k_3) = k. }
+  }
+  (* Invariant *)
+  Have: x_2 != n.
+  (* Invariant *)
+  Have: k <= (10000 + x_1).
+  (* Invariant *)
+  Have: (2000 + x) <= k.
+}
+Prove: 0 <= k.
+Prover Z3 4.8.12 returns Valid (Qed:31ms) (120ms) (40067)
+Prover Alt-Ergo  returns Valid (Qed:31ms) (19ms) (31)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-invgen_large_const/loop-invgen_large_const_0001/loop-invgen_large_const_0001/loop-invgen_large_const_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

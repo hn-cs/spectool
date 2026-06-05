@@ -1,0 +1,169 @@
+[kernel] Parsing out/gpt-5.5/loops_2/loops_2_0001/loops_2_0001/loops_2_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 9 goals scheduled
+[wp] [Timeout] typed_sum_loop_invariant_preserved (Qed 7ms) (Z3 8s)
+[wp] [Timeout] typed_sum_loop_invariant_3_preserved (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_sum_loop_invariant_3_established (Qed 3ms) (Z3 8s)
+[wp] [Timeout] typed_sum_loop_invariant_4_preserved (Qed 8ms) (Z3 8s)
+[wp] Proved goals:    5 / 9
+  Qed:             4
+  Alt-Ergo :       1 (74ms)
+  Timeout:         4
+------------------------------------------------------------
+  Function sum
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0001/loops_2_merged.c, line 6):
+Let x = 1 + n.
+Let x_1 = (k * (k - 1)) / 2.
+Let x_2 = k + x_1.
+Let x_3 = to_sint8(1 + k).
+Assume {
+  Type: is_sint8(k) /\ is_sint8(n) /\ is_sint32(x_1) /\ is_sint32(x_2).
+  (* Invariant *)
+  Have: ((0 <= n) -> ((-1) <= n)).
+  (* Invariant *)
+  Have: n != (-1).
+  (* Invariant *)
+  Have: ((0 <= n) -> (k <= x)).
+  (* Invariant *)
+  Have: x != k.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: k <= n.
+}
+Prove: ((x_3 * (x_3 - 1)) / 2) = x_2.
+Prover Z3 4.8.12 returns Timeout (Qed:7ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:7ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0001/loops_2_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0001/loops_2_merged.c, line 7):
+Let x = 1 + n.
+Let x_1 = to_sint8(1 + k).
+Let x_2 = (x_1 * (x_1 - 1)) / 2.
+Assume {
+  Type: is_sint8(k) /\ is_sint8(n) /\ is_sint32(x_2) /\ is_sint32(x_2 - k).
+  (* Goal *)
+  When: 0 <= n.
+  (* Invariant *)
+  Have: (-1) <= n.
+  (* Invariant *)
+  Have: n != (-1).
+  (* Invariant *)
+  Have: x_2 = (k + ((k * (k - 1)) / 2)).
+  (* Invariant *)
+  Have: k <= x.
+  (* Invariant *)
+  Have: x != k.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: k <= n.
+}
+Prove: x_1 <= x.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (150ms) (39264)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (74ms) (1169)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0001/loops_2_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (0.81ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0001/loops_2_merged.c, line 8):
+Let x = to_sint8(1 + k).
+Let x_1 = 1 + n.
+Let x_2 = (x * (x - 1)) / 2.
+Assume {
+  Type: is_sint8(k) /\ is_sint8(n) /\ is_sint32(x_2) /\ is_sint32(x_2 - k).
+  (* Invariant *)
+  Have: ((0 <= n) -> ((-1) <= n)).
+  (* Invariant *)
+  Have: n != (-1).
+  (* Invariant *)
+  Have: x_2 = (k + ((k * (k - 1)) / 2)).
+  (* Invariant *)
+  Have: ((0 <= n) -> (k <= x_1)).
+  (* Invariant *)
+  Have: x_1 != k.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: k <= n.
+  (* Invariant *)
+  Have: ((0 <= n) -> (x <= x_1)).
+}
+Prove: x_1 != x.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0001/loops_2_merged.c, line 8):
+Assume { Type: is_sint8(n). (* Invariant *) Have: ((0 <= n) -> ((-1) <= n)).
+}
+Prove: n != (-1).
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0001/loops_2_merged.c, line 9):
+Let x = 1 + n.
+Let x_1 = to_sint8(1 + k).
+Let x_2 = (x_1 * (x_1 - 1)) / 2.
+Assume {
+  Type: is_sint8(k) /\ is_sint8(n) /\ is_sint32(x_2) /\ is_sint32(x_2 - k).
+  (* Invariant *)
+  Have: ((0 <= n) -> ((-1) <= n)).
+  (* Invariant *)
+  Have: n != (-1).
+  (* Invariant *)
+  Have: x_2 = (k + ((k * (k - 1)) / 2)).
+  (* Invariant *)
+  Have: ((0 <= n) -> (k <= x)).
+  (* Invariant *)
+  Have: x != k.
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Then *)
+  Have: k <= n.
+  (* Invariant *)
+  Have: ((0 <= n) -> (x_1 <= x)).
+  (* Invariant *)
+  Have: x != x_1.
+}
+Prove: 0 <= x_1.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0001/loops_2_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops_2/loops_2_0001/loops_2_0001/loops_2_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops_2/loops_2_0001/loops_2_0001/loops_2_merged.c:2: Warning: 
+  No 'assigns' specification for function 'sum'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/loops_2/loops_2_0001/loops_2_0001/loops_2_merged.c:20: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

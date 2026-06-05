@@ -1,0 +1,172 @@
+[kernel] Parsing out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c:37: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 11 goals scheduled
+[wp] [Timeout] typed_bAnd_loop_invariant_preserved (Qed 15ms) (Z3 8s)
+[wp] [Timeout] typed_bAnd_loop_invariant_3_preserved (Qed 6ms) (Z3 8s)
+[wp] [Timeout] typed_bAnd_loop_invariant_4_preserved (Qed 11ms) (Z3 8s)
+[wp] Proved goals:    8 / 11
+  Qed:             8
+  Timeout:         3
+------------------------------------------------------------
+  Function bAnd
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c, line 16):
+Let x_1 = Mint_0[shift_sint32(x, 0)].
+Let x_2 = Mint_0[shift_sint32(x, i)].
+Let x_3 = land(res_0, x_2).
+Assume {
+  Type: is_sint32(i) /\ is_sint64(res_0) /\ is_sint32(x_1) /\
+      is_sint32(x_2) /\ is_sint64(x_3).
+  (* Heap *)
+  Type: region(x.base) <= 0.
+  (* Invariant *)
+  Have: x_1 <= 2147483647.
+  (* Invariant *)
+  Have: (-2147483648) <= x_1.
+  (* Invariant *)
+  Have: res_0 <= 2147483647.
+  (* Invariant *)
+  Have: i <= 10000.
+  (* Invariant *)
+  Have: i != 10000.
+  (* Invariant *)
+  Have: (-2147483648) <= res_0.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= 9999.
+}
+Prove: x_3 <= 2147483647.
+Prover Z3 4.8.12 returns Timeout (Qed:15ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:15ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c, line 18):
+Let x_1 = Mint_0[shift_sint32(x, i)].
+Let x_2 = land(res_0, x_1).
+Let x_3 = Mint_0[shift_sint32(x, 0)].
+Assume {
+  Type: is_sint32(i) /\ is_sint64(res_0) /\ is_sint32(1 + i) /\
+      is_sint32(x_3) /\ is_sint32(x_1) /\ is_sint64(x_2).
+  (* Heap *)
+  Type: region(x.base) <= 0.
+  (* Invariant *)
+  Have: x_3 <= 2147483647.
+  (* Invariant *)
+  Have: (-2147483648) <= x_3.
+  (* Invariant *)
+  Have: res_0 <= 2147483647.
+  (* Invariant *)
+  Have: i <= 10000.
+  (* Invariant *)
+  Have: i != 10000.
+  (* Invariant *)
+  Have: (-2147483648) <= res_0.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= 9999.
+  (* Invariant *)
+  Have: x_2 <= 2147483647.
+}
+Prove: i != 9999.
+Prover Z3 4.8.12 returns Timeout (Qed:6ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:6ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c, line 19):
+Let x_1 = Mint_0[shift_sint32(x, i)].
+Let x_2 = land(res_0, x_1).
+Let x_3 = Mint_0[shift_sint32(x, 0)].
+Assume {
+  Type: is_sint32(i) /\ is_sint64(res_0) /\ is_sint32(1 + i) /\
+      is_sint32(x_3) /\ is_sint32(x_1) /\ is_sint64(x_2).
+  (* Heap *)
+  Type: region(x.base) <= 0.
+  (* Invariant *)
+  Have: x_3 <= 2147483647.
+  (* Invariant *)
+  Have: (-2147483648) <= x_3.
+  (* Invariant *)
+  Have: res_0 <= 2147483647.
+  (* Invariant *)
+  Have: i <= 10000.
+  (* Invariant *)
+  Have: i != 10000.
+  (* Invariant *)
+  Have: (-2147483648) <= res_0.
+  (* Invariant *)
+  Have: 0 < i.
+  (* Then *)
+  Have: i <= 9999.
+  (* Invariant *)
+  Have: x_2 <= 2147483647.
+  (* Invariant *)
+  Have: i != 9999.
+}
+Prove: (-2147483648) <= x_2.
+Prover Z3 4.8.12 returns Timeout (Qed:11ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:11ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c, line 20):
+Prove: true.
+Prover Qed returns Valid (0.95ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c, line 21):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c:10: Warning: 
+  No 'assigns' specification for function 'bAnd'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0001/array-crafted_bAnd3_merged.c:29: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

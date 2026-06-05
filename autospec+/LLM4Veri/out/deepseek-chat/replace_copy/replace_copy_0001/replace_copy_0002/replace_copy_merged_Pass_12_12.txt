@@ -1,0 +1,272 @@
+[kernel] Parsing out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 12 goals scheduled
+[wp] Proved goals:   12 / 12
+  Qed:             6
+  Alt-Ergo :       6 (27ms-43ms-84ms)
+------------------------------------------------------------
+  Function replace_copy
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c, line 42):
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(b, 0), n).
+Let a_2 = a_1[shift_sint32(a, i_1)].
+Let a_3 = shift_sint32(b, i).
+Assume {
+  Type: is_uint32(i_1) /\ is_uint32(n) /\ is_sint32(v) /\ is_sint32(a_2).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Goal *)
+  When: (i < n) /\ (to_uint32(1 + i_1) <= i) /\ is_uint32(i).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_4 = shift_sint32(b, i_2) in ((i_1 <= i_2) ->
+      ((i_2 < n) -> (a_1[a_4] = Mint_0[a_4]))).
+  (* Invariant *)
+  Have: i_1 <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i_1, n).
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 < n.
+  If a_2 = v
+  Then {
+    Have: a_1 = Mint_2.
+    Have: Mint_2[shift_sint32(b, i_1) <- w] = Mint_1.
+  }
+  Else {
+    Have: a_1 = Mint_3.
+    Have: Mint_3[shift_sint32(b, i_1) <- Mint_3[shift_sint32(a, i_1)]] =
+        Mint_1.
+  }
+}
+Prove: Mint_0[a_3] = Mint_1[a_3].
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (170ms) (184617)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (39ms) (256)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c, line 42):
+Prove: true.
+Prover Qed returns Valid (0.63ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c, line 43):
+Let x = to_uint32(1 + i).
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(b, 0), n).
+Let a_2 = a_1[shift_sint32(a, i)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(v) /\ is_sint32(a_2).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_3 = shift_sint32(b, i_1) in ((i <= i_1) ->
+      ((i_1 < n) -> (a_1[a_3] = Mint_0[a_3]))).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If a_2 = v
+  Then { Have: a_1 = Mint_1. Have: Mint_1[shift_sint32(b, i) <- w] = Mint_2.
+  }
+  Else {
+    Have: a_1 = Mint_3.
+    Have: Mint_3[shift_sint32(b, i) <- Mint_3[shift_sint32(a, i)]] = Mint_2.
+  }
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_3 = shift_sint32(b, i_1) in ((i_1 < n) ->
+      ((x <= i_1) -> (is_uint32(i_1) -> (Mint_0[a_3] = Mint_2[a_3])))).
+}
+Prove: x <= n.
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (140ms) (144114)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (34ms) (134)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c, line 43):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c, line 44):
+Let x = to_uint32(1 + i).
+Let a_1 = havoc(Mint_undef_0, Mint_1, shift_sint32(b, 0), n).
+Let a_2 = a_1[shift_sint32(a, i)].
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(v) /\ is_sint32(a_2).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_1, Mint_1, b, 0, n).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_3 = shift_sint32(b, i_1) in ((i <= i_1) ->
+      ((i_1 < n) -> (a_1[a_3] = Mint_1[a_3]))).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_1, b, i, n).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  If a_2 = v
+  Then { Have: a_1 = Mint_2. Have: Mint_2[shift_sint32(b, i) <- w] = Mint_0.
+  }
+  Else {
+    Have: a_1 = Mint_3.
+    Have: Mint_3[shift_sint32(b, i) <- Mint_3[shift_sint32(a, i)]] = Mint_0.
+  }
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_3 = shift_sint32(b, i_1) in ((i_1 < n) ->
+      ((x <= i_1) -> (is_uint32(i_1) -> (Mint_1[a_3] = Mint_0[a_3])))).
+  (* Invariant *)
+  Have: x <= n.
+}
+Prove: P_Unchanged_1_(Mint_0, Mint_1, b, x, n).
+Prover Alt-Ergo  returns Valid (Qed:9ms) (84ms) (1186)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c, line 44):
+Assume {
+  Type: is_uint32(n).
+  (* Heap *)
+  Type: region(b.base) <= 0.
+  (* Invariant *)
+  Have: 0 <= n.
+}
+Prove: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+Prover Alt-Ergo  returns Valid (Qed:2ms) (27ms) (25)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c, line 45):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c, line 45):
+Prove: true.
+Prover Qed returns Valid (0.89ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c, line 46) (1/4):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c, line 46) (2/4):
+Effect at line 49
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c, line 46) (3/4):
+Effect at line 50
+Let a = shift_sint32(b, 0).
+Let a_1 = havoc(Mint_undef_0, Mint_0, a, n).
+Let a_2 = shift_sint32(b, i).
+Let a_3 = a_1[a_2 <- w].
+Let x = to_uint32(1 + i).
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n).
+  (* Heap *)
+  Type: (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_2, 1).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_4 = shift_sint32(b, i_1) in ((i <= i_1) ->
+      ((i_1 < n) -> (a_1[a_4] = Mint_0[a_4]))).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_1, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_4 = shift_sint32(b, i_1) in ((i_1 < n) ->
+      ((x <= i_1) -> (is_uint32(i_1) -> (a_3[a_4] = Mint_0[a_4])))).
+  (* Invariant *)
+  Have: x <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_3, Mint_0, b, x, n).
+}
+Prove: included(a_2, 1, a, n).
+Prover Z3 4.8.12 returns Valid (Qed:15ms) (140ms) (102998)
+Prover Alt-Ergo  returns Valid (Qed:15ms) (32ms) (114)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c, line 46) (4/4):
+Effect at line 50
+Let a_1 = shift_sint32(b, 0).
+Let a_2 = havoc(Mint_undef_0, Mint_0, a_1, n).
+Let a_3 = shift_sint32(b, i).
+Let a_4 = a_2[shift_sint32(a, i)].
+Let a_5 = a_2[a_3 <- a_4].
+Let x = to_uint32(1 + i).
+Assume {
+  Type: is_uint32(i) /\ is_uint32(n) /\ is_sint32(v) /\ is_sint32(a_4).
+  (* Heap *)
+  Type: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Invariant *)
+  Have: 0 <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(Mint_0, Mint_0, b, 0, n).
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = shift_sint32(b, i_1) in ((i <= i_1) ->
+      ((i_1 < n) -> (a_2[a_6] = Mint_0[a_6]))).
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_2, Mint_0, b, i, n).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+  (* Else *)
+  Have: a_4 != v.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_6 = shift_sint32(b, i_1) in ((i_1 < n) ->
+      ((x <= i_1) -> (is_uint32(i_1) -> (a_5[a_6] = Mint_0[a_6])))).
+  (* Invariant *)
+  Have: x <= n.
+  (* Invariant *)
+  Have: P_Unchanged_1_(a_5, Mint_0, b, x, n).
+}
+Prove: included(a_3, 1, a_1, n).
+Prover Alt-Ergo  returns Valid (Qed:12ms) (41ms) (178)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/replace_copy/replace_copy_0001/replace_copy_0002/replace_copy_merged.c:38: Warning: 
+  No 'assigns' specification for function 'replace_copy'.
+  Callers assumptions might be imprecise.

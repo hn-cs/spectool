@@ -1,0 +1,30 @@
+int main()
+{
+	int x=0,y=500000,z=0;
+	x=0;
+	/*@
+	loop invariant z == 0;
+	loop invariant x >= 500000 ==> y == x;
+	loop invariant x <= 500000 ==> y == 500000;
+	loop invariant x <= 1000000;
+	loop invariant 1000000 - x;
+	loop invariant 0 <= x;
+	loop assigns y;
+	loop assigns x;
+	*/
+	while(x<1000000){
+		if(x<500000)
+			x++;
+		else{
+			x++;
+			y++;
+		}
+	}
+	while(y>0){
+		x--;
+		z++;
+		y=y-2;
+	}
+	// @ assert(x==z);
+	return 0;
+}

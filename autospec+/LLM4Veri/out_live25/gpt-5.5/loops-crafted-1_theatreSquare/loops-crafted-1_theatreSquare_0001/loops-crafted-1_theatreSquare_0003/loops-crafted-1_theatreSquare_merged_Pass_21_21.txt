@@ -1,0 +1,216 @@
+[kernel] Parsing out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c:72: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 21 goals scheduled
+[wp] Proved goals:   21 / 21
+  Qed:            18
+  Alt-Ergo :       3 (20ms-22ms)
+------------------------------------------------------------
+  Function correct_version
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 11):
+Let x = b - b_1.
+Let x_1 = 1 + i.
+Assume {
+  Type: is_sint32(b) /\ is_sint32(b_1) /\ is_sint32(i) /\ is_sint32(n) /\
+      is_sint32(x_1) /\ is_sint32(x).
+  (* Invariant *)
+  Have: (i * x) = b_1.
+  (* Invariant *)
+  Have: ((b_1 < b) -> (0 <= b_1)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: b_1 < n.
+}
+Prove: (x_1 * x) = b.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (90ms) (13054)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (20ms) (26)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (0.58ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid (0.81ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 13):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 23):
+Let x = l - l_1.
+Let x_1 = i * x.
+Let x_2 = 1 + j.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(j) /\ is_sint32(l) /\ is_sint32(l_1) /\
+      is_sint32(m) /\ is_sint32(n) /\ is_sint32(x_2) /\ is_sint32(x) /\
+      is_sint32(x_1).
+  (* Invariant *)
+  Have: ((l_1 < l) -> (0 <= x_1)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: n <= x_1.
+  (* Invariant *)
+  Have: (j * x) = l_1.
+  (* Invariant *)
+  Have: ((l_1 < l) -> (0 <= l_1)).
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Then *)
+  Have: l_1 < m.
+}
+Prove: (x_2 * x) = l.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (90ms) (13362)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (22ms) (65)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 23):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 24):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 25):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 36):
+Let x_1 = y - y_1.
+Let x_2 = a * x_1.
+Let x_3 = a * i.
+Let x_4 = 1 + x.
+Assume {
+  Type: is_sint32(a) /\ is_sint32(i) /\ is_sint32(m) /\ is_sint32(n) /\
+      is_sint32(x) /\ is_sint32(y) /\ is_sint32(y_1) /\ is_sint32(x_4) /\
+      is_sint32(x_3) /\ is_sint32(x_1) /\ is_sint32(x_2).
+  (* Invariant *)
+  Have: ((0 < a) -> (0 <= x_3)).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Else *)
+  Have: n <= x_3.
+  (* Invariant *)
+  Have: ((0 < a) -> (0 <= x_2)).
+  (* Invariant *)
+  Have: y_1 <= y.
+  (* Else *)
+  Have: m <= x_2.
+  (* Invariant *)
+  Have: (x * x_1) = y_1.
+  (* Invariant *)
+  Have: x <= i.
+  (* Invariant *)
+  Have: 0 <= x.
+  (* Then *)
+  Have: x < i.
+}
+Prove: (x_4 * x_1) = y.
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (90ms) (13592)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (22ms) (115)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 36):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 37):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 37):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 38):
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 38):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 14):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 26):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c, line 39):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c:7: Warning: 
+  No 'assigns' specification for function 'correct_version'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c:49: Warning: 
+  No 'assigns' specification for function 'student_version'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/loops-crafted-1_theatreSquare/loops-crafted-1_theatreSquare_0001/loops-crafted-1_theatreSquare_0003/loops-crafted-1_theatreSquare_merged.c:70: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

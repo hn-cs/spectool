@@ -1,0 +1,76 @@
+[kernel] Parsing out/deepseek-chat/21/21_0001/21_0001/21_merged.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] out/deepseek-chat/21/21_0001/21_0001/21_merged.c:14: Warning: 
+  Calling undeclared function unknown. Old style K&R code?
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/deepseek-chat/21/21_0001/21_0001/21_merged.c:1: Warning: 
+  Neither code nor specification for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] 7 goals scheduled
+[wp] [Timeout] typed_main_assert (Qed 3ms) (Z3 8s)
+[wp] Proved goals:    6 / 7
+  Qed:             6
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/21/21_0001/21_0001/21_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/21/21_0001/21_0001/21_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/21/21_0001/21_0001/21_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/21/21_0001/21_0001/21_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/deepseek-chat/21/21_0001/21_0001/21_merged.c, line 22):
+Assume {
+  Type: is_sint32(m) /\ is_sint32(n) /\ is_sint32(x).
+  (* Invariant *)
+  Have: 0 < x.
+  (* Invariant *)
+  Have: 0 < m.
+  (* Else *)
+  Have: n <= x.
+  (* Then *)
+  Have: 2 <= n.
+}
+Prove: m < n.
+Prover Z3 4.8.12 returns Timeout (Qed:3ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:3ms) (8s)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/21/21_0001/21_0001/21_merged.c, line 10) (1/2):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/21/21_0001/21_0001/21_merged.c, line 10) (2/2):
+Call Result at line 14
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/21/21_0001/21_0001/21_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/deepseek-chat/21/21_0001/21_0001/21_merged.c:14: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.

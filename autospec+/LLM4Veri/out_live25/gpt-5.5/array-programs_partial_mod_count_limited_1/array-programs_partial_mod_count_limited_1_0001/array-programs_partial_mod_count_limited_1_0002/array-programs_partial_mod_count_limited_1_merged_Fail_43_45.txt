@@ -1,0 +1,761 @@
+[kernel] Parsing out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[kernel:annot:missing-spec] out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:8: Warning: 
+  Neither code nor implicit assigns clause for function unknown, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+[wp] out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 45 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_14_established (Qed 9ms) (Z3 8s) (Stronger)
+[wp] [Timeout] typed_main_loop_invariant_16_preserved (Qed 26ms) (Z3 8s) (Stronger)
+[wp] Proved goals:   43 / 45
+  Qed:            36
+  Alt-Ergo :       7 (21ms-29ms-49ms)
+  Timeout:         2
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 14):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 14):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 15):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_1, shift_sint32(a, 0), 1000000).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(lim_0) /\ is_sint32(1 + k).
+  (* Residual *)
+  When: Mint_0[shift_sint32(a, i)] = 0.
+  (* Call 'unknown' *)
+  Have: (0 < lim_0) /\ (lim_0 <= 999999).
+  (* Invariant *)
+  Have: k <= lim_0.
+  (* Invariant *)
+  Have: i <= 1000000.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_2 = a_1[shift_sint32(a, i_1)] in ((0 <= i_1) ->
+      ((i_1 < i) -> ((0 <= a_2) /\ (a_2 <= (1 + i_1))))).
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 999999.
+  If k < lim_0
+  Then { Have: a_1[shift_sint32(a, i) <- 0] = Mint_0. }
+  Else { Have: a_1[shift_sint32(a, i) <- 1 + i] = Mint_0. }
+}
+Prove: k < lim_0.
+Prover Z3 4.8.12 returns Valid (Qed:33ms) (140ms) (97322)
+Prover Alt-Ergo  returns Valid (Qed:33ms) (25ms) (27)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 15):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 16):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 16):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 17):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = Mint_0[shift_sint32(a, i_1)].
+Let a_1 = havoc(Mint_undef_0, Mint_1, shift_sint32(a, 0), 1000000).
+Let x_1 = Mint_0[shift_sint32(a, i)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(k) /\ is_sint32(k_1) /\ is_sint32(k_2) /\
+      is_sint32(lim_0) /\ is_sint32(1 + i_1) /\ is_sint32(x).
+  (* Goal *)
+  When: (0 <= i) /\ (i <= i_1).
+  (* Call 'unknown' *)
+  Have: (0 < lim_0) /\ (lim_0 <= 999999).
+  (* Invariant *)
+  Have: k_2 <= lim_0.
+  (* Invariant *)
+  Have: i_1 <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a_1[shift_sint32(a, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i_1) -> ((0 <= a_2) /\ (a_2 <= (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= k_2.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 <= 999999.
+  If k_2 < lim_0
+  Then { Have: a_1[shift_sint32(a, i_1) <- 0] = Mint_0. }
+  Else { Have: a_1[shift_sint32(a, i_1) <- 1 + i_1] = Mint_0. }
+  If x = 0
+  Then { Have: k_2 = k_1. Have: (1 + k_1) = k. }
+  Else { Have: k_2 = k. }
+  (* Invariant *)
+  Have: k <= lim_0.
+}
+Prove: (0 <= x_1) /\ (x_1 <= (1 + i)).
+Prover Z3 4.8.12 returns Valid (Qed:46ms) (150ms) (193031)
+Prover Alt-Ergo  returns Valid (Qed:46ms) (49ms) (569)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 17):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.56ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 18):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 18):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.85ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 19):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 19):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 20):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), 1000000).
+Let a_2 = a_1[shift_sint32(a, i) <- 0].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(k) /\ is_sint32(lim_0) /\
+      is_sint32(1 + i) /\ is_sint32(1 + k).
+  (* Call 'unknown' *)
+  Have: (0 < lim_0) /\ (lim_0 <= 999999).
+  (* Invariant *)
+  Have: k <= lim_0.
+  (* Invariant *)
+  Have: i <= 1000000.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_3 = a_1[shift_sint32(a, i_1)] in ((0 <= i_1) ->
+      ((i_1 < i) -> ((0 <= a_3) /\ (a_3 <= (1 + i_1))))).
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 999999.
+  (* Invariant *)
+  Have: k < lim_0.
+  (* Invariant *)
+  Have: forall i_1 : Z. let a_3 = a_2[shift_sint32(a, i_1)] in ((i_1 <= i) ->
+      ((0 <= i_1) -> ((0 <= a_3) /\ (a_3 <= (1 + i_1))))).
+}
+Prove: (-1) <= k.
+Prover Alt-Ergo  returns Valid (Qed:32ms) (21ms) (19)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 20):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 21):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (14ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 21):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 22):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 22):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 34):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 34):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 35):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), 1000000).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(k) /\
+      is_sint32(lim_0) /\ is_sint32(1 + j).
+  (* Residual *)
+  When: a_1[shift_sint32(a, i)] = 0.
+  (* Call 'unknown' *)
+  Have: (0 < lim_0) /\ (lim_0 <= 999999).
+  (* Invariant *)
+  Have: k <= lim_0.
+  (* Invariant *)
+  Have: i_1 <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a_1[shift_sint32(a, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i_1) -> ((0 <= a_2) /\ (a_2 <= (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: 1000000 <= i_1.
+  (* Invariant *)
+  Have: j <= lim_0.
+  (* Invariant *)
+  Have: j <= i.
+  (* Invariant *)
+  Have: i <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((a_1[shift_sint32(a, i_2)] = 0) -> ((0 <= i_2) ->
+      ((i_2 <= 999999) -> (i_2 < lim_0)))).
+  (* Invariant *)
+  Have: i != 1000000.
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 999999.
+}
+Prove: j < lim_0.
+Prover Z3 4.8.12 returns Valid (Qed:34ms) (130ms) (88219)
+Prover Alt-Ergo  returns Valid (Qed:34ms) (30ms) (84)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 35):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 36):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), 1000000).
+Let a_2 = a_1[shift_sint32(a, i)].
+Let x = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(k) /\
+      is_sint32(lim_0) /\ is_sint32(x) /\ is_sint32(a_2).
+  (* Residual *)
+  When: a_2 != 0.
+  (* Call 'unknown' *)
+  Have: (0 < lim_0) /\ (lim_0 <= 999999).
+  (* Invariant *)
+  Have: k <= lim_0.
+  (* Invariant *)
+  Have: i_1 <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_1[shift_sint32(a, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i_1) -> ((0 <= a_3) /\ (a_3 <= (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: 1000000 <= i_1.
+  (* Invariant *)
+  Have: j <= lim_0.
+  (* Invariant *)
+  Have: j <= i.
+  (* Invariant *)
+  Have: i <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((a_1[shift_sint32(a, i_2)] = 0) -> ((0 <= i_2) ->
+      ((i_2 <= 999999) -> (i_2 < lim_0)))).
+  (* Invariant *)
+  Have: i != 1000000.
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 999999.
+}
+Prove: j <= x.
+Prover Z3 4.8.12 returns Valid (Qed:25ms) (120ms) (87529)
+Prover Alt-Ergo  returns Valid (Qed:25ms) (21ms) (26)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 36):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 37):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 37):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 38):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 1 + i_1.
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), 1000000).
+Let a_2 = a_1[shift_sint32(a, i_1)].
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(i_2) /\ is_sint32(j) /\ is_sint32(j_1) /\
+      is_sint32(j_2) /\ is_sint32(k) /\ is_sint32(lim_0) /\ is_sint32(x) /\
+      is_sint32(a_2).
+  (* Goal *)
+  When: (a_1[shift_sint32(a, i)] = 0) /\ (0 <= i) /\ (i <= 999999).
+  (* Call 'unknown' *)
+  Have: (0 < lim_0) /\ (lim_0 <= 999999).
+  (* Invariant *)
+  Have: k <= lim_0.
+  (* Invariant *)
+  Have: i_2 <= 1000000.
+  (* Invariant *)
+  Have: forall i_3 : Z. let a_3 = a_1[shift_sint32(a, i_3)] in ((0 <= i_3) ->
+      ((i_3 < i_2) -> ((0 <= a_3) /\ (a_3 <= (1 + i_3))))).
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Invariant *)
+  Have: 0 <= i_2.
+  (* Else *)
+  Have: 1000000 <= i_2.
+  (* Invariant *)
+  Have: j_2 <= lim_0.
+  (* Invariant *)
+  Have: j_2 <= i_1.
+  (* Invariant *)
+  Have: i_1 <= 1000000.
+  (* Invariant *)
+  Have: forall i_3 : Z. ((a_1[shift_sint32(a, i_3)] = 0) -> ((0 <= i_3) ->
+      ((i_3 <= 999999) -> (i_3 < lim_0)))).
+  (* Invariant *)
+  Have: i_1 != 1000000.
+  (* Invariant *)
+  Have: 0 <= j_2.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Then *)
+  Have: i_1 <= 999999.
+  If a_2 = 0
+  Then { Have: j_2 = j_1. Have: (1 + j_1) = j. }
+  Else { Have: j_2 = j. }
+  (* Invariant *)
+  Have: j <= lim_0.
+  (* Invariant *)
+  Have: j <= x.
+}
+Prove: i < lim_0.
+Prover Z3 4.8.12 returns Valid (Qed:28ms) (130ms) (91043)
+Prover Alt-Ergo  returns Valid (Qed:28ms) (34ms) (126)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 38):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), 1000000).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(k) /\ is_sint32(lim_0).
+  (* Goal *)
+  When: (a_1[shift_sint32(a, i)] = 0) /\ (0 <= i) /\ (i <= 999999).
+  (* Call 'unknown' *)
+  Have: (0 < lim_0) /\ (lim_0 <= 999999).
+  (* Invariant *)
+  Have: k <= lim_0.
+  (* Invariant *)
+  Have: i_1 <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a_1[shift_sint32(a, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i_1) -> ((0 <= a_2) /\ (a_2 <= (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: 1000000 <= i_1.
+}
+Prove: i < lim_0.
+Prover Z3 4.8.12 returns Timeout (Qed:9ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:9ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 39):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (5ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 39):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 40):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 1 + i.
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), 1000000).
+Let a_2 = a_1[shift_sint32(a, i)].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(j_1) /\
+      is_sint32(j_2) /\ is_sint32(k) /\ is_sint32(lim_0) /\ is_sint32(x) /\
+      is_sint32(a_2).
+  (* Call 'unknown' *)
+  Have: (0 < lim_0) /\ (lim_0 <= 999999).
+  (* Invariant *)
+  Have: k <= lim_0.
+  (* Invariant *)
+  Have: i_1 <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_3 = a_1[shift_sint32(a, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i_1) -> ((0 <= a_3) /\ (a_3 <= (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: 1000000 <= i_1.
+  (* Invariant *)
+  Have: j_2 <= lim_0.
+  (* Invariant *)
+  Have: j_2 <= i.
+  (* Invariant *)
+  Have: i <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((a_1[shift_sint32(a, i_2)] = 0) -> ((0 <= i_2) ->
+      ((i_2 <= 999999) -> (i_2 < lim_0)))).
+  (* Invariant *)
+  Have: i != 1000000.
+  (* Invariant *)
+  Have: 0 <= j_2.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 999999.
+  If a_2 = 0
+  Then { Have: j_2 = j_1. Have: (1 + j_1) = j. }
+  Else { Have: j_2 = j. }
+  (* Invariant *)
+  Have: j <= lim_0.
+  (* Invariant *)
+  Have: j <= x.
+}
+Prove: i != 999999.
+Prover Z3 4.8.12 returns Timeout (Qed:26ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:26ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 40):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 41):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let a_1 = havoc(Mint_undef_0, Mint_0, shift_sint32(a, 0), 1000000).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(j) /\ is_sint32(k) /\
+      is_sint32(lim_0) /\ is_sint32(1 + i) /\ is_sint32(1 + j).
+  (* Residual *)
+  When: a_1[shift_sint32(a, i)] = 0.
+  (* Call 'unknown' *)
+  Have: (0 < lim_0) /\ (lim_0 <= 999999).
+  (* Invariant *)
+  Have: k <= lim_0.
+  (* Invariant *)
+  Have: i_1 <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. let a_2 = a_1[shift_sint32(a, i_2)] in ((0 <= i_2) ->
+      ((i_2 < i_1) -> ((0 <= a_2) /\ (a_2 <= (1 + i_2))))).
+  (* Invariant *)
+  Have: 0 <= k.
+  (* Invariant *)
+  Have: 0 <= i_1.
+  (* Else *)
+  Have: 1000000 <= i_1.
+  (* Invariant *)
+  Have: j <= lim_0.
+  (* Invariant *)
+  Have: j <= i.
+  (* Invariant *)
+  Have: i <= 1000000.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((a_1[shift_sint32(a, i_2)] = 0) -> ((0 <= i_2) ->
+      ((i_2 <= 999999) -> (i_2 < lim_0)))).
+  (* Invariant *)
+  Have: i != 1000000.
+  (* Invariant *)
+  Have: 0 <= j.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= 999999.
+  (* Invariant *)
+  Have: j < lim_0.
+  (* Invariant *)
+  Have: i != 999999.
+}
+Prove: (-1) <= j.
+Prover Z3 4.8.12 returns Valid (Qed:30ms) (120ms) (87526)
+Prover Alt-Ergo  returns Valid (Qed:30ms) (23ms) (26)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 41):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 42):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 42):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 43):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (6ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 43):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 23) (1/4):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 23) (2/4):
+Effect at line 27
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (8ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 23) (3/4):
+Effect at line 28
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (13ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 23) (4/4):
+Effect at line 30
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 44):
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 3) in 'unknown'' in 'main' at initialization of 'lim' (file out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c, line 11)
+:
+out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:9: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:6: Warning: 
+  No 'assigns' specification for function 'unknown'.
+  Callers assumptions might be imprecise.
+[wp:pedantic-assigns] out/gpt-5.5/array-programs_partial_mod_count_limited_1/array-programs_partial_mod_count_limited_1_0001/array-programs_partial_mod_count_limited_1_0002/array-programs_partial_mod_count_limited_1_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

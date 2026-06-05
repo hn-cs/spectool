@@ -1,0 +1,188 @@
+[kernel] Parsing out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 14 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_4_preserved (Qed 8ms) (Z3 8s)
+[wp] Proved goals:   13 / 14
+  Qed:            10
+  Alt-Ergo :       3 (28ms-34ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 6):
+Assume {
+  Type: is_uint32(x) /\ is_uint32(y) /\ is_uint32(y_1).
+  (* Invariant *)
+  Have: ((0 < x) -> (y_1 = 10)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y_1 = 0)).
+  (* Invariant *)
+  Have: x <= 268435455.
+  (* Invariant *)
+  Have: x != 268435455.
+  (* Then *)
+  Have: x <= 268435454.
+  (* Invariant *)
+  Have: y <= 10.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Else *)
+  Have: 10 <= y.
+  Have: to_uint32(1 + x) = 0.
+}
+Prove: false.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (170ms) (35945)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (28ms) (91)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 7):
+Let x_1 = to_uint32(1 + x).
+Assume {
+  Type: is_uint32(x) /\ is_uint32(y) /\ is_uint32(y_1).
+  (* Invariant *)
+  Have: ((0 < x) -> (y_1 = 10)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y_1 = 0)).
+  (* Invariant *)
+  Have: x <= 268435455.
+  (* Invariant *)
+  Have: x != 268435455.
+  (* Then *)
+  Have: x <= 268435454.
+  (* Invariant *)
+  Have: y <= 10.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Else *)
+  Have: 10 <= y.
+  (* Invariant *)
+  Have: x_1 != 0.
+}
+Prove: x_1 <= 268435455.
+Prover Z3 4.8.12 returns Valid (Qed:4ms) (160ms) (36021)
+Prover Alt-Ergo  returns Valid (Qed:4ms) (34ms) (95)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 8):
+Let x_1 = to_uint32(1 + x).
+Assume {
+  Type: is_uint32(x) /\ is_uint32(y) /\ is_uint32(y_1).
+  (* Invariant *)
+  Have: ((0 < x) -> (y_1 = 10)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y_1 = 0)).
+  (* Invariant *)
+  Have: x <= 268435455.
+  (* Invariant *)
+  Have: x != 268435455.
+  (* Then *)
+  Have: x <= 268435454.
+  (* Invariant *)
+  Have: y <= 10.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Else *)
+  Have: 10 <= y.
+  (* Invariant *)
+  Have: x_1 != 0.
+  (* Invariant *)
+  Have: x_1 <= 268435455.
+}
+Prove: x_1 != 268435455.
+Prover Z3 4.8.12 returns Timeout (Qed:8ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:8ms) (8s)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 15):
+Assume {
+  Type: is_uint32(x) /\ is_uint32(y) /\ is_uint32(y_1).
+  (* Invariant *)
+  Have: ((0 < x) -> (y_1 = 10)).
+  (* Invariant *)
+  Have: ((x = 0) -> (y_1 = 0)).
+  (* Invariant *)
+  Have: x <= 268435455.
+  (* Invariant *)
+  Have: x != 268435455.
+  (* Then *)
+  Have: x <= 268435454.
+  (* Invariant *)
+  Have: y <= 10.
+  (* Invariant *)
+  Have: 0 <= y.
+  (* Then *)
+  Have: y <= 9.
+}
+Prove: to_uint32(1 + y) <= 10.
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (160ms) (35914)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (34ms) (41)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/loop-acceleration_nested_1-1/loop-acceleration_nested_1-1_0001/loop-acceleration_nested_1-1_0002/loop-acceleration_nested_1-1_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

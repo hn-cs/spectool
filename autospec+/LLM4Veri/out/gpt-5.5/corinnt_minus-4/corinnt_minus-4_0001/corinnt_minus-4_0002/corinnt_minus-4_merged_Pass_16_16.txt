@@ -1,0 +1,156 @@
+[kernel] Parsing out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 16 goals scheduled
+[wp] Proved goals:   16 / 16
+  Qed:            13
+  Alt-Ergo :       3 (17ms-24ms-28ms)
+------------------------------------------------------------
+  Function minus_loop_2
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 5):
+Let x_1 = (-x) / 4.
+Assume {
+  Type: is_sint32(x) /\ is_sint32(4 + x) /\ is_sint32(x_1).
+  (* Invariant *)
+  Have: x <= 0.
+  (* Invariant *)
+  Have: (x + (4 * x_1)) = 0.
+  (* Invariant *)
+  Have: (x % 4) = 0.
+  (* Invariant *)
+  Have: (-23) <= x.
+  (* Invariant *)
+  Have: x <= 3.
+  (* Invariant *)
+  Have: (-20) <= x.
+  (* Then *)
+  Have: x < 0.
+}
+Prove: x <= (-4).
+Prover Z3 4.8.12 returns Valid (Qed:7ms) (120ms) (37127)
+Prover Alt-Ergo  returns Valid (Qed:7ms) (17ms) (15)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 6):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 7):
+Let x = (-4) * rm_0.
+Let x_1 = 4 - (4 * rm_0).
+Assume {
+  Type: is_sint32(rm_0) /\ is_sint32(x) /\ is_sint32(rm_0 - 1) /\
+      is_sint32(x_1).
+  (* Invariant *)
+  Have: 0 <= rm_0.
+  (* Invariant *)
+  Have: rm_0 <= 5.
+  (* Then *)
+  Have: 0 < rm_0.
+}
+Prove: (x_1 % 4) = 0.
+Prover Z3 4.8.12 returns Valid (Qed:3ms) (130ms) (37302)
+Prover Alt-Ergo  returns Valid (Qed:3ms) (27ms) (98)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 7):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 8):
+Let x = (-4) * rm_0.
+Let x_1 = 4 - (4 * rm_0).
+Assume {
+  Type: is_sint32(rm_0) /\ is_sint32(x) /\ is_sint32(rm_0 - 1) /\
+      is_sint32(x_1).
+  (* Invariant *)
+  Have: 0 <= rm_0.
+  (* Invariant *)
+  Have: rm_0 <= 5.
+  (* Then *)
+  Have: 0 < rm_0.
+  (* Invariant *)
+  Have: (x_1 % 4) = 0.
+}
+Prove: (1 + (((4 * rm_0) - 4) / 4)) = rm_0.
+Prover Z3 4.8.12 returns Valid (Qed:2ms) (120ms) (37753)
+Prover Alt-Ergo  returns Valid (Qed:2ms) (28ms) (144)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 8):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 9):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 10):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid (3ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 11):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Assertion (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 19):
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c, line 12):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/gpt-5.5/corinnt_minus-4/corinnt_minus-4_0001/corinnt_minus-4_0002/corinnt_minus-4_merged.c:1: Warning: 
+  No 'assigns' specification for function 'minus_loop_2'.
+  Callers assumptions might be imprecise.

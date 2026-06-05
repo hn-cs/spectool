@@ -1,0 +1,96 @@
+[kernel] Parsing out/deepseek-chat/loop-zilu_benchmark02_linear/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_merged.c (with preprocessing)
+[kernel:typing:no-proto] out/deepseek-chat/loop-zilu_benchmark02_linear/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_merged.c:9: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] 7 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_2_established (Qed 2ms) (Z3 8s)
+[wp] Proved goals:    6 / 7
+  Qed:             5
+  Alt-Ergo :       1 (18ms)
+  Timeout:         1
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark02_linear/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_merged.c, line 15):
+Let x = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(l) /\ is_sint32(n) /\
+      is_sint32(x).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i_1) /\ (i_1 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= l) /\ (l <= 2147483646).
+  (* Else *)
+  Have: 0 < l.
+  (* Invariant *)
+  Have: l <= n.
+  (* Invariant *)
+  Have: l <= i.
+  (* Invariant *)
+  Have: i <= n.
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i < n.
+}
+Prove: l <= x.
+Prover Z3 4.8.12 returns Valid (Qed:8ms) (120ms) (36402)
+Prover Alt-Ergo  returns Valid (Qed:8ms) (18ms) (16)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark02_linear/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_merged.c, line 15):
+Prove: true.
+Prover Qed returns Valid (0.85ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark02_linear/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_merged.c, line 16):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark02_linear/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_merged.c, line 16):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(i_1) /\ is_sint32(n).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= n) /\ (n <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i_1) /\ (i_1 <= 2147483646).
+  (* Call 'unknown' *)
+  Have: ((-2147483648) <= i) /\ (i <= 2147483646).
+  (* Else *)
+  Have: 0 < i.
+}
+Prove: i <= n.
+Prover Z3 4.8.12 returns Timeout (Qed:2ms) (8s)
+Prover Alt-Ergo  returns Timeout (Qed:2ms) (8s)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/loop-zilu_benchmark02_linear/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/loop-zilu_benchmark02_linear/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_merged.c, line 17):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/loop-zilu_benchmark02_linear/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_merged.c, line 18):
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/loop-zilu_benchmark02_linear/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_0001/loop-zilu_benchmark02_linear_merged.c:8: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

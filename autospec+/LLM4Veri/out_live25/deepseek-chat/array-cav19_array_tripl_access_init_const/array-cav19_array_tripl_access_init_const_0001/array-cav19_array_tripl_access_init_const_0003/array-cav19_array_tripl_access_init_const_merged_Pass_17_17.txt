@@ -1,0 +1,305 @@
+[kernel] Parsing out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: Warning: 
+  Cast with incompatible pointers types (source: sint32*) (target: sint8*)
+[wp] out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:14: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+[wp] 17 goals scheduled
+[wp] Proved goals:   17 / 17
+  Qed:            13
+  Alt-Ergo :       4 (31ms-42ms-66ms)
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion 'alloca_bounds' (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 5):
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 7):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Assume {
+  Type: is_sint32(N) /\ is_sint32(i) /\ is_sint32(1 + i).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, 3 * i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, 2 + (3 * i_2))] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, 1 + (3 * i_2))] = 0))).
+  (* Invariant *)
+  Have: i <= (1 + N).
+  (* Invariant *)
+  Have: forall i_2 : Z. let x = 3 * i_2 in ((0 <= i_2) -> ((i_2 < i) ->
+      ((Mint_0[shift_sint32(a, x)] = 0) /\
+       (Mint_0[shift_sint32(a, 1 + x)] = 0) /\
+       (Mint_0[shift_sint32(a, 2 + x)] = 0)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= N.
+}
+Prove: Mint_0[shift_sint32(a, 3 * i) <- 0][shift_sint32(a, 3 * i_1)] = 0.
+Prover Z3 4.8.12 returns Valid (Qed:10ms) (170ms) (215356)
+Prover Alt-Ergo  returns Valid (Qed:10ms) (31ms) (108)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 7):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 8):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 3 * i.
+Let m = Mint_0[shift_sint32(a, x) <- 0].
+Assume {
+  Type: is_sint32(N) /\ is_sint32(i) /\ is_sint32(1 + i).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, 3 * i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, 2 + (3 * i_2))] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, 1 + (3 * i_2))] = 0))).
+  (* Invariant *)
+  Have: i <= (1 + N).
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_1 = 3 * i_2 in ((0 <= i_2) -> ((i_2 < i) ->
+      ((Mint_0[shift_sint32(a, x_1)] = 0) /\
+       (Mint_0[shift_sint32(a, 1 + x_1)] = 0) /\
+       (Mint_0[shift_sint32(a, 2 + x_1)] = 0)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      (m[shift_sint32(a, 3 * i_2)] = 0))).
+}
+Prove: m[shift_sint32(a, 1 + x) <- 0][shift_sint32(a, 2 + x) <- 0]
+         [shift_sint32(a, 2 + (3 * i_1))] = 0.
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (160ms) (180561)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (34ms) (198)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 8):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 9):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 3 * i.
+Let m = Mint_0[shift_sint32(a, x) <- 0].
+Let m_1 = m[shift_sint32(a, 1 + x) <- 0].
+Assume {
+  Type: is_sint32(N) /\ is_sint32(i) /\ is_sint32(1 + i).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, 3 * i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, 2 + (3 * i_2))] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, 1 + (3 * i_2))] = 0))).
+  (* Invariant *)
+  Have: i <= (1 + N).
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_1 = 3 * i_2 in ((0 <= i_2) -> ((i_2 < i) ->
+      ((Mint_0[shift_sint32(a, x_1)] = 0) /\
+       (Mint_0[shift_sint32(a, 1 + x_1)] = 0) /\
+       (Mint_0[shift_sint32(a, 2 + x_1)] = 0)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      (m[shift_sint32(a, 3 * i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      (m_1[shift_sint32(a, 2 + x) <- 0][shift_sint32(a, 2 + (3 * i_2))] = 0))).
+}
+Prove: m_1[shift_sint32(a, 1 + (3 * i_1))] = 0.
+Prover Z3 4.8.12 returns Valid (Qed:14ms) (180ms) (312746)
+Prover Alt-Ergo  returns Valid (Qed:14ms) (36ms) (159)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 9):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 10):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 10):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (1ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 11):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Let x = 3 * i.
+Let m = Mint_0[shift_sint32(a, x) <- 0].
+Let m_1 = m[shift_sint32(a, 1 + x) <- 0].
+Let m_2 = m_1[shift_sint32(a, 2 + x) <- 0].
+Let x_1 = 3 * i_1.
+Assume {
+  Type: is_sint32(N) /\ is_sint32(i) /\ is_sint32(1 + i).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, 3 * i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, 2 + (3 * i_2))] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, 1 + (3 * i_2))] = 0))).
+  (* Invariant *)
+  Have: i <= (1 + N).
+  (* Invariant *)
+  Have: forall i_2 : Z. let x_2 = 3 * i_2 in ((0 <= i_2) -> ((i_2 < i) ->
+      ((Mint_0[shift_sint32(a, x_2)] = 0) /\
+       (Mint_0[shift_sint32(a, 1 + x_2)] = 0) /\
+       (Mint_0[shift_sint32(a, 2 + x_2)] = 0)))).
+  (* Invariant *)
+  Have: 0 <= i.
+  (* Then *)
+  Have: i <= N.
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      (m[shift_sint32(a, 3 * i_2)] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      (m_2[shift_sint32(a, 2 + (3 * i_2))] = 0))).
+  (* Invariant *)
+  Have: forall i_2 : Z. ((i_2 <= i) -> ((0 <= i_2) ->
+      (m_1[shift_sint32(a, 1 + (3 * i_2))] = 0))).
+}
+Prove: (m[shift_sint32(a, x_1)] = 0) /\
+    (m_1[shift_sint32(a, 1 + x_1)] = 0) /\
+    (m_2[shift_sint32(a, 2 + x_1)] = 0).
+Prover Z3 4.8.12 returns Valid (Qed:9ms) (200ms) (185159)
+Prover Alt-Ergo  returns Valid (Qed:9ms) (66ms) (398)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 11):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (0.70ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 12):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (10ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 12):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (2ms)
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 20):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (11ms)
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 20):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (4ms)
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 21) (1/2):
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid
+
+------------------------------------------------------------
+
+Goal Loop assigns (file out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c, line 21) (2/2):
+Effect at line 24
+out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:5: warning from Typed Model:
+ - Warning: Hide \result
+   Reason: Cast with incompatible pointers types (source: sint8*) (target: sint32*)
+Prove: true.
+Prover Qed returns Valid (7ms)
+
+------------------------------------------------------------
+[wp:pedantic-assigns] out/deepseek-chat/array-cav19_array_tripl_access_init_const/array-cav19_array_tripl_access_init_const_0001/array-cav19_array_tripl_access_init_const_0003/array-cav19_array_tripl_access_init_const_merged.c:1: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

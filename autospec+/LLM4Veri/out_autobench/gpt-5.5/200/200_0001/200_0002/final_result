@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=7, microseconds=185238), 'total_solve_time': datetime.timedelta(seconds=28, microseconds=568668), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 130, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 1, 1], '1': ['loop invariant \\forall integer k; 0 <= k < i ==> max >= a[k];', 'loop invariant \\exists integer k; 0 <= k < i && max == a[k];', 'loop invariant 1 <= i;', 'loop assigns max;', 'loop assigns i;'], '2': ['requires n > 0;', 'requires \\valid(a + (0..n-1));', 'ensures \\forall integer k; 0 <= k < n ==> \\result >= a[k];', 'assigns \\nothing;'], '3': [], 'MSLines': ['/* 2. FUNC CONTRACT */\nint arraymax(int* a, int n) {\n', '  int i = 1;\n', '  int max = a[0];\n', '\n', '  /* 1. LOOP INVARIANT */\n  while (i < n) {\n', '    // Beginning of loop\n', '    if (max < a[i])\n', '    max = a[i];\n', '    i = i + 1;\n', '    // End of loop: Loop invariant comes here\n', '  }\n', '  return max;\n', '}  \n', '\n', '// write a test\n', '/* 3. FUNC CONTRACT */\nvoid main() {\n', '  int arr[5] = {1, 2, 3, 4, 5};\n', '  int sum = arraymax(arr, 5);\n', '  //@ assert sum >= arr[0];\n', '  //@ assert sum >= arr[1];\n', '  //@ assert sum >= arr[2];\n', '  //@ assert sum >= arr[3];\n', '  //@ assert sum >= arr[4];\n', '}']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿

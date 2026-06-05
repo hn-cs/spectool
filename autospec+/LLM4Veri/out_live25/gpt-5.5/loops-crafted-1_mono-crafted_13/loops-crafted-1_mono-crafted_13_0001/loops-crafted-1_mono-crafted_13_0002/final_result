@@ -1,0 +1,15 @@
+Pass
+{'CurTaskID': 3, 'Round': 1, 'Iteration': 1, 'Status': 1, 'llms_query_times': datetime.timedelta(seconds=24, microseconds=531562), 'total_solve_time': datetime.timedelta(seconds=33, microseconds=830834), 'simplified_time': datetime.timedelta(0), 'tokens_usage': 984, 'spec_num_original': 0, 'spec_num_simplified': 0, 'TaskList': [3, 3, 1], '1': ['loop invariant z == 0;', 'loop invariant y <= 1000000;', 'loop invariant x >= 50000 ==> x == y;', 'loop invariant x >= 50000 ==> x % 2 == 0;', 'loop invariant x <= y;', 'loop invariant x <= 1000000;', 'loop invariant x < 50000 ==> y == 50000;', 'loop invariant 50000 <= y;', 'loop invariant 0 <= x;', 'loop assigns y;', 'loop assigns x;'], '2': ['loop invariant z == 0;', 'loop invariant y <= 1000000;', 'loop invariant x == y;', 'loop invariant x <= 1000000;', 'loop invariant 0 <= y;', 'loop invariant 0 <= x;', 'loop assigns y;', 'loop assigns x;'], '3': [], 'MSLines': ['/* 3. FUNC CONTRACT */\nint main(){\n', '\tint x=0,y=50000,z=0;\n', '\tx=0;\n', '\t/* 1. LOOP INVARIANT */\n\twhile(x<1000000){\n', '\t\tif(x<50000)\n', '\t\t\tx++;\n', '\t\telse{\n', '\t\t\tx=x+2;\n', '\t\t\ty=y+2;\n', '\t\t}\n', '\t}\n', '\t/* 2. LOOP INVARIANT */\n\twhile(y>z){\n', '\t\ty--;\n', '\t\tx--;\n', '\t}\n', '\t//@assert((x%2==0));\n', '\treturn 0;\n', '}\n']}
+    へ　　　　　／|
+　　/＼7　　　 ∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿
