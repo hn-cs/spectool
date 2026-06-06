@@ -1,7 +1,0 @@
-[
-  {"line": 19, "acsl": "loop invariant 1 <= i <= N;\nloop invariant res == xor_all(x, i);\nloop assigns i, res;\nloop variant N - i;"},
-  {"line": 31, "acsl": "loop invariant 0 <= i <= N;\nloop assigns i, x[0 .. N-1];\nloop variant N - i;"},
-  {"line": 37, "acsl": "admit ret == ret2;"},
-  {"line": 38, "acsl": "loop invariant 0 <= i <= N-1;\nloop invariant \\forall integer j; 0 <= j < i ==> x[j] == \\at(x[j+1], LoopEntry);\nloop invariant \\forall integer j; i <= j < N ==> x[j] == \\at(x[j], LoopEntry);\nloop assigns i, x[0 .. N-2];\nloop variant N-1 - i;"},
-  {"line": 43, "acsl": "admit ret == ret5;"}
-]

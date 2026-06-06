@@ -1,1 +1,0 @@
-[{"line": 7, "acsl": "loop invariant 1 <= x;\nloop invariant 1 <= m;\nloop invariant (n > 1) ==> (m < n);\nloop assigns x, m;\nloop variant n - x;"}]

@@ -1,7 +1,0 @@
-[kernel] Parsing output/live24/replace_copy/replace_copy_test4.c (with preprocessing)
-[kernel:annot-error] output/live24/replace_copy/replace_copy_test4.c:5: Warning: 
-  unexpected token '\base_addr'
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on file "output/live24/replace_copy/replace_copy_test4.c" that has
-  errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

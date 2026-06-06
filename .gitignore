@@ -14,4 +14,4 @@ venv/
 
 # spec runtime state
 .spec/
-.output/
+output/
