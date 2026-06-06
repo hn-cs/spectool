@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0002/array-crafted_bAnd3_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0002/array-crafted_bAnd3_merged.c:21: Warning: 
-  unexpected token 'k'
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/array-crafted_bAnd3/array-crafted_bAnd3_0001/array-crafted_bAnd3_0002/array-crafted_bAnd3_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

@@ -1,8 +1,0 @@
-[kernel] Parsing out/gpt-5.5/evdenis_acsl-examples_11_gcd/evdenis_acsl-examples_11_gcd_0001/evdenis_acsl-examples_11_gcd_0001/evdenis_acsl-examples_11_gcd_merged.c (with preprocessing)
-[kernel:annot-error] out/gpt-5.5/evdenis_acsl-examples_11_gcd/evdenis_acsl-examples_11_gcd_0001/evdenis_acsl-examples_11_gcd_0001/evdenis_acsl-examples_11_gcd_merged.c:21: Warning: 
-  wrong order of clause in contract: decreases after post-condition, assigns or allocates.
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/gpt-5.5/evdenis_acsl-examples_11_gcd/evdenis_acsl-examples_11_gcd_0001/evdenis_acsl-examples_11_gcd_0001/evdenis_acsl-examples_11_gcd_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

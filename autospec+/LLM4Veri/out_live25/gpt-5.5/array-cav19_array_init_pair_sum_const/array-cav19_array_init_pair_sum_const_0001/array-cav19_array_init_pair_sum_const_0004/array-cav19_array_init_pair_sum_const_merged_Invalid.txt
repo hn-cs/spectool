@@ -1,8 +1,0 @@
-[kernel] Parsing out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0004/array-cav19_array_init_pair_sum_const_merged.c (with preprocessing)
-[kernel:annot-error] out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0004/array-cav19_array_init_pair_sum_const_merged.c:9: Warning: 
-  unbound logic variable b. Ignoring loop annotation
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/gpt-5.5/array-cav19_array_init_pair_sum_const/array-cav19_array_init_pair_sum_const_0001/array-cav19_array_init_pair_sum_const_0004/array-cav19_array_init_pair_sum_const_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

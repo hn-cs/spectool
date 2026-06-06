@@ -1,8 +1,0 @@
-[kernel] Parsing out/gpt-5.5/array-programs_partial_mod_count_3/array-programs_partial_mod_count_3_0001/array-programs_partial_mod_count_3_0003/array-programs_partial_mod_count_3_merged.c (with preprocessing)
-[kernel:annot-error] out/gpt-5.5/array-programs_partial_mod_count_3/array-programs_partial_mod_count_3_0001/array-programs_partial_mod_count_3_0003/array-programs_partial_mod_count_3_merged.c:30: Warning: 
-  unexpected token 'k'
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/gpt-5.5/array-programs_partial_mod_count_3/array-programs_partial_mod_count_3_0001/array-programs_partial_mod_count_3_0003/array-programs_partial_mod_count_3_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

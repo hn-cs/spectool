@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/loop-crafted_simple_array_index_value_3/loop-crafted_simple_array_index_value_3_0001/loop-crafted_simple_array_index_value_3_0004/loop-crafted_simple_array_index_value_3_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/loop-crafted_simple_array_index_value_3/loop-crafted_simple_array_index_value_3_0001/loop-crafted_simple_array_index_value_3_0004/loop-crafted_simple_array_index_value_3_merged.c:15: Warning: 
-  unbound logic variable SIZE. Ignoring loop annotation
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/loop-crafted_simple_array_index_value_3/loop-crafted_simple_array_index_value_3_0001/loop-crafted_simple_array_index_value_3_0004/loop-crafted_simple_array_index_value_3_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

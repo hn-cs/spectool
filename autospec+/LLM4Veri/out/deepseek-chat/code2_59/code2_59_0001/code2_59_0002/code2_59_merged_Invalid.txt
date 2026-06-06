@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/code2_59/code2_59_0001/code2_59_0002/code2_59_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/code2_59/code2_59_0001/code2_59_0002/code2_59_merged.c:9: Warning: 
-  unbound logic variable c. Ignoring loop annotation
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/code2_59/code2_59_0001/code2_59_0002/code2_59_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

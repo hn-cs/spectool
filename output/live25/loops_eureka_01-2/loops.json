@@ -1,0 +1,7 @@
+[
+  {"line": 12, "acsl": "loop invariant 0 <= i <= nodecount;\nloop invariant \\forall integer k; 0 <= k < i ==> distance[k] >= 0;\nloop assigns i, distance[0 .. nodecount-1];\nloop variant nodecount - i;"},
+  {"line": 20, "acsl": "loop invariant 0 <= i <= nodecount;\nloop invariant \\forall integer k; 0 <= k < nodecount ==> distance[k] >= 0;\nloop assigns i, j, x, y, distance[0 .. nodecount-1];\nloop variant nodecount - i;"},
+  {"line": 22, "acsl": "loop invariant 0 <= j <= edgecount;\nloop invariant \\forall integer k; 0 <= k < nodecount ==> distance[k] >= 0;\nloop assigns j, x, y, distance[0 .. nodecount-1];\nloop variant edgecount - j;"},
+  {"line": 32, "acsl": "loop invariant 0 <= i <= edgecount;\nloop invariant \\forall integer k; 0 <= k < nodecount ==> distance[k] >= 0;\nloop assigns i, x, y;\nloop variant edgecount - i;"},
+  {"line": 41, "acsl": "loop invariant 0 <= i <= nodecount;\nloop invariant \\forall integer k; 0 <= k < nodecount ==> distance[k] >= 0;\nloop assigns i;\nloop variant nodecount - i;"}
+]

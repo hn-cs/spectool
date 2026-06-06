@@ -1,3 +1,0 @@
-/app/LLM4Veri/out/deepseek-chat/evdenis_small-examples_lshift/evdenis_small-examples_lshift_0001/evdenis_small-examples_lshift_0002/evdenis_small-examples_lshift_merged.c:3:27: error: unterminated comment
-    3 | requires a <= 2147483647; /* prevent shift overflow for unsigned 32-bit;
-      |                           ^

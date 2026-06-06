@@ -1,3 +1,0 @@
-/app/LLM4Veri/out/deepseek-chat/62/62_0001/62_0005/62_merged.c:22:41: error: unterminated comment
-   22 |   loop invariant (c == 0) ==> (1 == 2); /* always false, always holds;
-      |                                         ^

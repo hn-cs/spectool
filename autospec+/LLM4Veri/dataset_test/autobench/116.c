@@ -9,5 +9,6 @@ int main() {
   // post-condition
   if (sn != x) {
     //@ assert(sn == -1);
+
   }
 }

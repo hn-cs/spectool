@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/general_wp_problem_triangle_angles/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/general_wp_problem_triangle_angles/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_merged.c:2: Warning: 
-  \result meaningless. Ignoring logic specification of function triangle
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/general_wp_problem_triangle_angles/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_0001/general_wp_problem_triangle_angles_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

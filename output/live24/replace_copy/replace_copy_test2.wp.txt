@@ -1,0 +1,7 @@
+[kernel] Parsing output/live24/replace_copy/replace_copy_test2.c (with preprocessing)
+[kernel:annot-error] output/live24/replace_copy/replace_copy_test2.c:5: Warning: 
+  unexpected token '\separated'
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on file "output/live24/replace_copy/replace_copy_test2.c" that has
+  errors. Add '-kernel-msg-key pp' for preprocessing command.
+[kernel] Frama-C aborted: invalid user input.

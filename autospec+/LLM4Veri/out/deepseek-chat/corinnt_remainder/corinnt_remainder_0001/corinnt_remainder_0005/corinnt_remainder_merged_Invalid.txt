@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/corinnt_remainder/corinnt_remainder_0001/corinnt_remainder_0005/corinnt_remainder_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/corinnt_remainder/corinnt_remainder_0001/corinnt_remainder_0005/corinnt_remainder_merged.c:2: Warning: 
-  unbound logic variable UINT_MAX. Ignoring logic specification of function div_rem
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/corinnt_remainder/corinnt_remainder_0001/corinnt_remainder_0005/corinnt_remainder_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

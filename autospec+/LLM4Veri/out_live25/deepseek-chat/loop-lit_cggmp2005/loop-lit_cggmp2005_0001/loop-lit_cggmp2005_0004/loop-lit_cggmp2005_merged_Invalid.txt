@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/loop-lit_cggmp2005/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_0004/loop-lit_cggmp2005_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/loop-lit_cggmp2005/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_0004/loop-lit_cggmp2005_merged.c:20: Warning: 
-  unbound logic variable i. Ignoring loop annotation
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/loop-lit_cggmp2005/loop-lit_cggmp2005_0001/loop-lit_cggmp2005_0004/loop-lit_cggmp2005_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

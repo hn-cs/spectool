@@ -1,0 +1,3 @@
+requires \valid(x + (0 .. N-1));
+assigns \nothing;
+ensures \result == sum_i_plus_x(x, N);

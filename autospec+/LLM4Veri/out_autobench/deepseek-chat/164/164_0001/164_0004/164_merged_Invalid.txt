@@ -1,7 +1,0 @@
-[kernel] Parsing out/deepseek-chat/164/164_0001/164_0004/164_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/164/164_0001/164_0004/164_merged.c:42: Warning: 
-  \old undefined in this context. Ignoring loop annotation
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on file "out/deepseek-chat/164/164_0001/164_0004/164_merged.c" that
-  has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

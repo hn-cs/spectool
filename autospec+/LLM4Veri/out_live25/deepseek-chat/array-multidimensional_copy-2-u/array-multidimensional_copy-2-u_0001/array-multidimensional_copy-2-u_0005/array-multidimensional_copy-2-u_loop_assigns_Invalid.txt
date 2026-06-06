@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/array-multidimensional_copy-2-u/array-multidimensional_copy-2-u_0001/array-multidimensional_copy-2-u_0005/array-multidimensional_copy-2-u_loop_assigns.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/array-multidimensional_copy-2-u/array-multidimensional_copy-2-u_0001/array-multidimensional_copy-2-u_0005/array-multidimensional_copy-2-u_loop_assigns.c:18: Warning: 
-  unbound logic variable B. Ignoring loop annotation
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/array-multidimensional_copy-2-u/array-multidimensional_copy-2-u_0001/array-multidimensional_copy-2-u_0005/array-multidimensional_copy-2-u_loop_assigns.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

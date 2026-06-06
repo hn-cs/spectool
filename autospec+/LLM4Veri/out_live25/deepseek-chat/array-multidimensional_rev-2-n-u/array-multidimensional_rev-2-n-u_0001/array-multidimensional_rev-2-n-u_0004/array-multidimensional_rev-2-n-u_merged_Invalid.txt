@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/array-multidimensional_rev-2-n-u/array-multidimensional_rev-2-n-u_0001/array-multidimensional_rev-2-n-u_0004/array-multidimensional_rev-2-n-u_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/array-multidimensional_rev-2-n-u/array-multidimensional_rev-2-n-u_0001/array-multidimensional_rev-2-n-u_0004/array-multidimensional_rev-2-n-u_merged.c:19: Warning: 
-  unexpected token ')'
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/array-multidimensional_rev-2-n-u/array-multidimensional_rev-2-n-u_0001/array-multidimensional_rev-2-n-u_0004/array-multidimensional_rev-2-n-u_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

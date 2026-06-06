@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/Tasmina0609_1/Tasmina0609_1_0001/Tasmina0609_1_0001/Tasmina0609_1_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/Tasmina0609_1/Tasmina0609_1_0001/Tasmina0609_1_0001/Tasmina0609_1_merged.c:2: Warning: 
-  unbound logic variable INT_MAX. Ignoring logic specification of function max3
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/Tasmina0609_1/Tasmina0609_1_0001/Tasmina0609_1_0001/Tasmina0609_1_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

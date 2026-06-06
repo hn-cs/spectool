@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/array-crafted_bAnd4/array-crafted_bAnd4_0001/array-crafted_bAnd4_0004/array-crafted_bAnd4_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/array-crafted_bAnd4/array-crafted_bAnd4_0001/array-crafted_bAnd4_0004/array-crafted_bAnd4_merged.c:11: Warning: 
-  unbound logic variable N. Ignoring logic specification of function bAnd
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/array-crafted_bAnd4/array-crafted_bAnd4_0001/array-crafted_bAnd4_0004/array-crafted_bAnd4_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

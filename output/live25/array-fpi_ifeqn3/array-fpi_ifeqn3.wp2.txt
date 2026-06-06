@@ -1,0 +1,44 @@
+[kernel] Parsing output/live25/array-fpi_ifeqn3/array-fpi_ifeqn3.acsl.c (with preprocessing)
+/tmp/claude-501/ppannotded30d.c:454:9: warning: redefining builtin macro [-Wbuiltin-macro-redefined]
+  454 | #define __STDC_EMBED_NOT_FOUND__ 0
+      |         ^
+/tmp/claude-501/ppannotded30d.c:455:9: warning: redefining builtin macro [-Wbuiltin-macro-redefined]
+  455 | #define __STDC_EMBED_FOUND__ 1
+      |         ^
+/tmp/claude-501/ppannotded30d.c:456:9: warning: redefining builtin macro [-Wbuiltin-macro-redefined]
+  456 | #define __STDC_EMBED_EMPTY__ 2
+      |         ^
+/tmp/claude-501/ppannotded30d.c:764:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+  764 | #undef __FLT_EVAL_METHOD__
+      |        ^
+4 warnings generated.
+[kernel:typing:no-proto] output/live25/array-fpi_ifeqn3/array-fpi_ifeqn3.acsl.c:11: Warning: 
+  Calling function unknown that is declared without prototype.
+  Its formals will be inferred from actual arguments
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] FRAMAC_SHARE/libc/stdlib.h:394: Warning: 
+  Allocation, initialization and danglingness not yet implemented
+  (allocation: \fresh{Old, Here}(\at(\result,wp:post),\at(size,wp:pre)))
+[wp] output/live25/array-fpi_ifeqn3/array-fpi_ifeqn3.acsl.c:16: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+[wp] output/live25/array-fpi_ifeqn3/array-fpi_ifeqn3.acsl.c:15: Warning: 
+  Cast with incompatible pointers types (source: sint8*) (target: sint64*)
+Warning: Missing field 'driver' in [prover] section
+
+Warning: Missing field 'driver' in [prover] section
+
+Warning: Missing field 'command' in [prover] section
+
+Warning: Missing field 'command' in [prover] section
+
+[wp] 44 goals scheduled
+[wp] [Timeout] typed_main_loop_invariant_5_preserved_part2 (Qed 15ms) (Alt-Ergo) (Stronger, 3 warnings)
+[wp] [Timeout] typed_main_assert_3 (Qed 11ms) (Alt-Ergo) (Stronger, 3 warnings)
+[wp] Proved goals:   42 / 44
+  Qed:            34
+  Alt-Ergo :       8 (11ms-14ms-24ms)
+  Timeout:         2
+[wp:pedantic-assigns] output/live25/array-fpi_ifeqn3/array-fpi_ifeqn3.acsl.c:9: Warning: 
+  No 'assigns' specification for function 'main'.
+  Callers assumptions might be imprecise.

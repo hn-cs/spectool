@@ -1,0 +1,8 @@
+[kernel] Parsing output/live24/replace_copy/replace_copy_test6.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Warning: Missing RTE guards
+[wp] Warning: No goal generated
+[wp] No proof obligations
+[wp:pedantic-assigns] output/live24/replace_copy/replace_copy_test6.c:4: Warning: 
+  No 'assigns' specification for function 'test'.
+  Callers assumptions might be imprecise.

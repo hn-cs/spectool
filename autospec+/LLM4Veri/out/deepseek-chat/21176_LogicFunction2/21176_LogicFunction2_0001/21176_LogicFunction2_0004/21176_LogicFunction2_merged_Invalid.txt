@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/21176_LogicFunction2/21176_LogicFunction2_0001/21176_LogicFunction2_0004/21176_LogicFunction2_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/21176_LogicFunction2/21176_LogicFunction2_0001/21176_LogicFunction2_0004/21176_LogicFunction2_merged.c:10: Warning: 
-  unexpected token 'a'
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/21176_LogicFunction2/21176_LogicFunction2_0001/21176_LogicFunction2_0004/21176_LogicFunction2_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

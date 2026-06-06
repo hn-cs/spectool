@@ -1,8 +1,0 @@
-[kernel] Parsing out/gpt-5.5/array-multidimensional_min-3-n-u/array-multidimensional_min-3-n-u_0001/array-multidimensional_min-3-n-u_0005/array-multidimensional_min-3-n-u_loop_assigns.c (with preprocessing)
-[kernel:annot-error] out/gpt-5.5/array-multidimensional_min-3-n-u/array-multidimensional_min-3-n-u_0001/array-multidimensional_min-3-n-u_0005/array-multidimensional_min-3-n-u_loop_assigns.c:92: Warning: 
-  unexpected token 'invariant'
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/gpt-5.5/array-multidimensional_min-3-n-u/array-multidimensional_min-3-n-u_0001/array-multidimensional_min-3-n-u_0005/array-multidimensional_min-3-n-u_loop_assigns.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

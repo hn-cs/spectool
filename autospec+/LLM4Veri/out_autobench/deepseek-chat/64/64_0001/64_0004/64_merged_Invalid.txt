@@ -1,7 +1,0 @@
-[kernel] Parsing out/deepseek-chat/64/64_0001/64_0004/64_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/64/64_0001/64_0004/64_merged.c:7: Warning: 
-  Assignment operators not allowed in annotations.
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on file "out/deepseek-chat/64/64_0001/64_0004/64_merged.c" that has
-  errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

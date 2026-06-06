@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/evdenis_small-examples_lshift/evdenis_small-examples_lshift_0001/evdenis_small-examples_lshift_0001/evdenis_small-examples_lshift_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/evdenis_small-examples_lshift/evdenis_small-examples_lshift_0001/evdenis_small-examples_lshift_0001/evdenis_small-examples_lshift_merged.c:4: Warning: 
-  unbound logic variable UINT_MAX. Ignoring logic specification of function lshift
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/evdenis_small-examples_lshift/evdenis_small-examples_lshift_0001/evdenis_small-examples_lshift_0001/evdenis_small-examples_lshift_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

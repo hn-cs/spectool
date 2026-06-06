@@ -1,0 +1,10 @@
+[
+  {"line": 17, "acsl": "admit \\valid(a+(0 .. SIZE-1));"},
+  {"line": 17, "acsl": "loop invariant 0 <= i <= SIZE;\nloop invariant \\forall integer j; 0 <= j < i ==> a[j] == 1;\nloop assigns i, a[0 .. SIZE-1];\nloop variant SIZE - i;"},
+  {"line": 21, "acsl": "loop invariant 0 <= i <= SIZE;\nloop invariant \\forall integer j; 0 <= j < SIZE ==> a[j] == 1;\nloop invariant sum == i;\nloop assigns i, sum;\nloop variant SIZE - i;"},
+  {"line": 25, "acsl": "loop invariant 0 <= i <= SIZE;\nloop invariant \\forall integer j; 0 <= j < SIZE ==> a[j] == 1;\nloop invariant sum == SIZE - i;\nloop assigns i, sum;\nloop variant SIZE - i;"},
+  {"line": 29, "acsl": "loop invariant 0 <= i <= SIZE;\nloop invariant \\forall integer j; 0 <= j < SIZE ==> a[j] == 1;\nloop invariant sum == i;\nloop assigns i, sum;\nloop variant SIZE - i;"},
+  {"line": 33, "acsl": "loop invariant 0 <= i <= SIZE;\nloop invariant \\forall integer j; 0 <= j < SIZE ==> a[j] == 1;\nloop invariant sum == SIZE - i;\nloop assigns i, sum;\nloop variant SIZE - i;"},
+  {"line": 37, "acsl": "loop invariant 0 <= i <= SIZE;\nloop invariant \\forall integer j; 0 <= j < SIZE ==> a[j] == 1;\nloop invariant sum == i;\nloop assigns i, sum;\nloop variant SIZE - i;"},
+  {"line": 41, "acsl": "loop invariant 0 <= i <= SIZE;\nloop invariant \\forall integer j; 0 <= j < SIZE ==> a[j] == 1;\nloop invariant sum == SIZE - i;\nloop assigns i, sum;\nloop variant SIZE - i;"}
+]

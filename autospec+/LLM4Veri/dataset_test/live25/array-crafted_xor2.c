@@ -1,5 +1,9 @@
 #include<limits.h>
 /*@
+  logic integer xor_all(int *a, integer n) =
+    n <= 0 ? 0 : xor_all(a, n-1) ^ a[n-1];
+*/
+/*@
 assigns \nothing;
 ensures INT_MIN <= \result < INT_MAX;
 */

@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0002/frama-c-wp-tutorial-en_10_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0002/frama-c-wp-tutorial-en_10_merged.c:4: Warning: 
-  unexpected token ';'
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/frama-c-wp-tutorial-en_10/frama-c-wp-tutorial-en_10_0001/frama-c-wp-tutorial-en_10_0002/frama-c-wp-tutorial-en_10_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

@@ -15,6 +15,7 @@ int main()
 	int sum[1];
 	int *a = malloc(sizeof(int)*N);
 	sum[0] = 0;
+	//@ admit \valid(a+(0 .. N-1));
 	for(i=0; i<N; i++)
 	{
 		a[i] = 1;

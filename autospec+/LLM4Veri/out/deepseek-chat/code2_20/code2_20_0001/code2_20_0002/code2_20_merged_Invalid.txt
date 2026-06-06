@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/code2_20/code2_20_0001/code2_20_0002/code2_20_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/code2_20/code2_20_0001/code2_20_0002/code2_20_merged.c:9: Warning: 
-  unexpected token ')'
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/code2_20/code2_20_0001/code2_20_0002/code2_20_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

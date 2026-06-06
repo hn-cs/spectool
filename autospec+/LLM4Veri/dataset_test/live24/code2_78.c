@@ -1,3 +1,6 @@
+/*@ assigns \nothing; */
+int unknown(void);
+
 /*@
 requires x >= 0;
 requires y >= 0;

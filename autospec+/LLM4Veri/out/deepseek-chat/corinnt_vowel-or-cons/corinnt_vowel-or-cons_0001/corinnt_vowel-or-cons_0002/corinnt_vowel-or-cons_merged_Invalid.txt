@@ -1,9 +1,0 @@
-[kernel] Parsing out/deepseek-chat/corinnt_vowel-or-cons/corinnt_vowel-or-cons_0001/corinnt_vowel-or-cons_0002/corinnt_vowel-or-cons_merged.c (with preprocessing)
-[kernel] "/app/LLM4Veri/out/deepseek-chat/corinnt_vowel-or-cons/corinnt_vowel-or-cons_0001/corinnt_vowel-or-cons_0002/corinnt_vowel-or-cons_merged.c":27: User Error: 
-  Can't preprocess annotation: eof while parsing a char literal
-  Some annotations will be kept as is
-[kernel] Failure: too few annotations in result file while pre-processing annotations
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/corinnt_vowel-or-cons/corinnt_vowel-or-cons_0001/corinnt_vowel-or-cons_0002/corinnt_vowel-or-cons_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

@@ -1,0 +1,7 @@
+[
+  {"line": 21, "acsl": "admit \\valid(a+(0 .. N-1));\nadmit \\valid(b+(0 .. N-1));\nadmit \\valid(c+(0 .. N-1));\nadmit \\separated(a+(0 .. N-1), b+(0 .. N-1), c+(0 .. N-1));"},
+  {"line": 21, "acsl": "loop invariant 1 <= i <= N;\nloop invariant a[0] == 6;\nloop invariant \\forall integer j; 1 <= j < i ==> a[j] == 6*(j+1);\nloop assigns i, a[1 .. N-1];\nloop variant N - i;"},
+  {"line": 25, "acsl": "loop invariant 1 <= i <= N;\nloop invariant b[0] == 1;\nloop invariant \\forall integer j; 0 <= j < N ==> a[j] == 6*(j+1);\nloop invariant \\forall integer j; 1 <= j < i ==> b[j] == 1 + 3*j*(j+1);\nloop assigns i, b[1 .. N-1];\nloop variant N - i;"},
+  {"line": 29, "acsl": "loop invariant 1 <= i <= N;\nloop invariant c[0] == N;\nloop invariant \\forall integer j; 0 <= j < N ==> a[j] == 6*(j+1);\nloop invariant \\forall integer j; 0 <= j < N ==> b[j] == 1 + 3*j*(j+1);\nloop invariant \\forall integer j; 1 <= j < i ==> c[j] == N + j*j*j;\nloop assigns i, c[1 .. N-1];\nloop variant N - i;"},
+  {"line": 33, "acsl": "loop invariant 0 <= i <= N;\nloop invariant \\forall integer j; 0 <= j < N ==> c[j] == N + j*j*j;\nloop assigns i;\nloop variant N - i;"}
+]

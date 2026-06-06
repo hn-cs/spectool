@@ -1,6 +1,0 @@
-[kernel] Parsing out/deepseek-chat/ranilakshmi_last_angle/ranilakshmi_last_angle_0001/ranilakshmi_last_angle_0003/ranilakshmi_last_angle_merged.c (with preprocessing)
-[wp] Running WP plugin...
-[wp] Warning: Missing RTE guards
-[wp] out/deepseek-chat/ranilakshmi_last_angle/ranilakshmi_last_angle_0001/ranilakshmi_last_angle_0003/ranilakshmi_last_angle_merged.c:2: User Error: 
-  Address of logic value (second_0)
-[kernel] Plug-in wp aborted: invalid user input.

@@ -1,7 +1,0 @@
-[kernel] Parsing out/deepseek-chat/129/129_0001/129_0001/129_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/129/129_0001/129_0001/129_merged.c:7: Warning: 
-  invalid operands to binary ^; unexpected 𝔹 and ℤ. Ignoring loop annotation
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on file "out/deepseek-chat/129/129_0001/129_0001/129_merged.c" that
-  has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

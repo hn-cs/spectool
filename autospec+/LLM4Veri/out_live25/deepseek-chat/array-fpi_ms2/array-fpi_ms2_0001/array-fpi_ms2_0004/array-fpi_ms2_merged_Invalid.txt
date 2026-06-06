@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/array-fpi_ms2/array-fpi_ms2_0001/array-fpi_ms2_0004/array-fpi_ms2_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/array-fpi_ms2/array-fpi_ms2_0001/array-fpi_ms2_0004/array-fpi_ms2_merged.c:18: Warning: 
-  Assignment operators not allowed in annotations.
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/array-fpi_ms2/array-fpi_ms2_0001/array-fpi_ms2_0004/array-fpi_ms2_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

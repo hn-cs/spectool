@@ -1,8 +1,0 @@
-[kernel] Parsing out/gpt-5.5/corinnt_vowel-or-cons/corinnt_vowel-or-cons_0001/corinnt_vowel-or-cons_0001/corinnt_vowel-or-cons_merged.c (with preprocessing)
-[kernel:annot-error] out/gpt-5.5/corinnt_vowel-or-cons/corinnt_vowel-or-cons_0001/corinnt_vowel-or-cons_0001/corinnt_vowel-or-cons_merged.c:3: Warning: 
-  unexpected token 'e'
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/gpt-5.5/corinnt_vowel-or-cons/corinnt_vowel-or-cons_0001/corinnt_vowel-or-cons_0001/corinnt_vowel-or-cons_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

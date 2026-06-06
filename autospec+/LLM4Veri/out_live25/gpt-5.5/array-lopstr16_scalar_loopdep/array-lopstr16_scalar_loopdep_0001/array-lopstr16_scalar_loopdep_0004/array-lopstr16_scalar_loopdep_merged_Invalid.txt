@@ -1,8 +1,0 @@
-[kernel] Parsing out/gpt-5.5/array-lopstr16_scalar_loopdep/array-lopstr16_scalar_loopdep_0001/array-lopstr16_scalar_loopdep_0004/array-lopstr16_scalar_loopdep_merged.c (with preprocessing)
-[kernel:annot-error] out/gpt-5.5/array-lopstr16_scalar_loopdep/array-lopstr16_scalar_loopdep_0001/array-lopstr16_scalar_loopdep_0004/array-lopstr16_scalar_loopdep_merged.c:31: Warning: 
-  unbound logic variable SIZE. Ignoring loop annotation
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/gpt-5.5/array-lopstr16_scalar_loopdep/array-lopstr16_scalar_loopdep_0001/array-lopstr16_scalar_loopdep_0004/array-lopstr16_scalar_loopdep_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

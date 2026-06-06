@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/heap-data_hash_fun/heap-data_hash_fun_0001/heap-data_hash_fun_0001/heap-data_hash_fun_gen_0.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/heap-data_hash_fun/heap-data_hash_fun_0001/heap-data_hash_fun_0001/heap-data_hash_fun_gen_0.c:15: Warning: 
-  unbound logic variable list. Ignoring logic specification of function hash_fun
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/heap-data_hash_fun/heap-data_hash_fun_0001/heap-data_hash_fun_0001/heap-data_hash_fun_gen_0.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

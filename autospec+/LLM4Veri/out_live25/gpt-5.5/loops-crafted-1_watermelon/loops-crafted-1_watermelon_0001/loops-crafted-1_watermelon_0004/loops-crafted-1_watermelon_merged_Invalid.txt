@@ -1,8 +1,0 @@
-[kernel] Parsing out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0004/loops-crafted-1_watermelon_merged.c (with preprocessing)
-[kernel:annot-error] out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0004/loops-crafted-1_watermelon_merged.c:36: Warning: 
-  unbound logic function correct_version. Ignoring logic specification of function student_version
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/gpt-5.5/loops-crafted-1_watermelon/loops-crafted-1_watermelon_0001/loops-crafted-1_watermelon_0004/loops-crafted-1_watermelon_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.

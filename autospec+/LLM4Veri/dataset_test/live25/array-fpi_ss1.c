@@ -6,6 +6,12 @@ ensures INT_MIN <= \result <= INT_MAX/4;
 int unknown();
 #include<stdlib.h>
 int N;
+
+void __VERIFIER_assert(int x) {
+    //@ assert x != 0;
+    return;
+}
+
 int main()
 {
 	N = unknown();

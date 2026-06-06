@@ -1,8 +1,0 @@
-[kernel] Parsing out/deepseek-chat/loop-acceleration_array_4/loop-acceleration_array_4_0001/loop-acceleration_array_4_0004/loop-acceleration_array_4_merged.c (with preprocessing)
-[kernel:annot-error] out/deepseek-chat/loop-acceleration_array_4/loop-acceleration_array_4_0001/loop-acceleration_array_4_0004/loop-acceleration_array_4_merged.c:14: Warning: 
-  unbound logic variable A. Ignoring loop annotation
-[kernel] User Error: warning annot-error treated as fatal error.
-[kernel] User Error: stopping on
-  file "out/deepseek-chat/loop-acceleration_array_4/loop-acceleration_array_4_0001/loop-acceleration_array_4_0004/loop-acceleration_array_4_merged.c"
-  that has errors. Add '-kernel-msg-key pp' for preprocessing command.
-[kernel] Frama-C aborted: invalid user input.
